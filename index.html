@@ -7,27 +7,72 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
 body {
   font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
-  background: #FCFCFB;
-  color: #2E2C27;
+  background: var(--bg-bottom);
+  color: var(--text-main);
   -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
 
 .header-band {
-  background: #F9F9F7;
+  background: var(--bg-top);
   border-bottom: 1px solid #E1E1DF;
-  padding: 64px 32px 40px;
+  padding: 56px 40px 40px;
 }
 
 .inner {
-  max-width: 860px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
 .site-subtitle {
-  color: #C6613F;
-  font-size: 13px;
+  color: var(--accent-color);
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -36,92 +81,97 @@ body {
 
 .site-title {
   font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
-  font-size: 38px;
+  font-size: 2.375rem;
   font-weight: 600;
   line-height: 1.3;
-  color: #2E2C27;
+  color: var(--text-main);
   margin-bottom: 16px;
 }
 
 .site-desc {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #6B6A63;
-  max-width: 680px;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text-sub);
+  max-width: 800px;
 }
 
 .main-content {
-  padding: 48px 32px;
+  padding: 48px 40px;
 }
 
 .section-title {
-  font-size: 13px;
+  font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #2E2C27;
+  color: var(--text-main);
   margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
 }
 
 .brief-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
 }
 
 .brief-card {
   background: #FFFFFF;
-  border: 1px solid #E4E3DC;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 24px;
+  padding: 28px;
   text-decoration: none;
   color: inherit;
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 180px;
 }
 
 .brief-card:hover {
-  border-color: #C6613F;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transform: translateY(-2px);
 }
 
 .card-date {
-  font-size: 13px;
-  color: #6B6A63;
-  margin-bottom: 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 12px;
 }
 
 .card-title {
   font-family: "Noto Serif TC", Georgia, serif;
-  font-size: 17px;
+  font-size: 1.1875rem;
   font-weight: 600;
-  line-height: 1.4;
-  color: #2E2C27;
-  margin-bottom: 12px;
+  line-height: 1.45;
+  color: var(--text-main);
+  margin-bottom: 16px;
 }
 
 .card-tags {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   flex-wrap: wrap;
-  margin-top: 16px;
+  margin-top: auto;
 }
 
 .tag {
-  font-size: 11px;
-  padding: 3px 8px;
+  font-size: 0.75rem;
+  padding: 4px 10px;
   background: #F4F4F0;
-  color: #6B6A63;
+  color: var(--text-sub);
   border-radius: 4px;
+  font-weight: 500;
 }
 
-@media (max-width: 640px) {
-  .header-band { padding: 40px 20px 28px; }
+@media (max-width: 768px) {
+  .header-band { padding: 36px 20px 28px; }
   .main-content { padding: 32px 20px; }
-  .site-title { font-size: 28px; }
+  .site-title { font-size: 1.75rem; }
   .brief-grid { grid-template-columns: 1fr; }
 }
 </style>
@@ -130,6 +180,15 @@ body {
 
 <header class="header-band">
   <div class="inner">
+    <div class="toolbar">
+      <!-- 字體大小調整按鈕 (與日報頁面保持連動與記憶) -->
+      <div class="control-btn-group">
+        <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+        <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+        <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+      </div>
+    </div>
+
     <div class="site-subtitle">Antigravity Scheduled Briefings</div>
     <h1 class="site-title">設計、UI/UX 與 AI 治理每日日報庫</h1>
     <p class="site-desc">每天早上 8:00 自動檢索、摘要並呈獻最新設計動態、政府數位創新與 AI 輔助治理前沿。專為自主學習與決策思維奠基。</p>
@@ -138,7 +197,7 @@ body {
 
 <main class="main-content">
   <div class="inner">
-    <div class="section-title">所有每日日報紀錄</div>
+    <div class="section-title">所有每日日報紀錄 · All Archives</div>
     <div class="brief-grid" id="brief-grid">
 <!-- BRIEF_CARDS_START -->
       <a href="briefs/morning_brief_2026-07-24.html" class="brief-card">
@@ -163,6 +222,27 @@ body {
     </div>
   </div>
 </main>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+</script>
 
 </body>
 </html>
