@@ -1,6 +1,6 @@
 # Antigravity 每日設計與 AI 治理日報生成任務 Prompt
 
-> **任務目標**：每天早上 08:00，由 Antigravity 自動進行網路檢索，精選出「設計界與 UI/UX 前沿 5 則」以及「政府治理與 AI 協助治理 5 則」（共 10 則），生成可調整字體、雙語切換且寬屏美觀的 HTML 簡報。
+> **任務目標**：每天早上 08:00，由 Antigravity 自動進行網路檢索，精選出「設計界與 UI/UX 前沿 5 則」以及「政府治理與 AI 協助治理 5 則」（共 10 則），來自 **10 個完全不同且具備廣度的全球權威機構與媒體**，生成可調整字體、雙語切換且寬屏美觀的 HTML 簡報。
 
 ---
 
@@ -11,25 +11,32 @@
 
 ---
 
-## 2. ⚠️ 深度文章連結硬性規定 (Critical Deep Link Requirement)
+## 2. 🌐 來源多樣性與廣度硬性規範 (Diverse Sources & Breadth Rules)
 
-> 🚨 **絕對禁止只填寫首頁網址（如 `https://uxdesign.cc` 或 `https://oecd.org`）！**
-> 每次檢索到的新聞與報告，**連結 `href="..."` 必須為該篇深度文章或報告的「完整直接 URL」**（例如：`https://uxdesign.cc/mapping-ai-presence-to-user-intent-76b6680caae2`），確保點擊標題能直接打開該篇原文閱讀！
+> 🚨 **10 則新聞必須來自 10 個完全不同的獨立機構與網域 (Domains)！**
+> 絕對禁止將來源侷限於單一網站（例如全部來自同一媒體），必須廣泛涵蓋國際研究機構、標準組織、政府數位部門與權威設計媒體：
+
+### 🎨 UI / UX 推薦多樣來源庫（選擇 5 個不重複網域）：
+1. **Nielsen Norman Group (nngroup.com)** — 人機互動與 UX 實證研究
+2. **W3C WAI (w3.org)** — 國際 Web 標準與 WCAG 無障礙規範
+3. **Design Systems Collective (designsystemscollective.com)** — 設計系統與 DESIGN.md 規範
+4. **ACM CHI Conference (chi2026.acm.org)** — 全球人機互動頂級學術大會
+5. **Figma Developer Portal (figma.com)** — 開放 Design Tokens 與 API 技術門戶
+6. **Smashing Magazine (smashingmagazine.com)** — 前端與 UI 架構媒體
+
+### 🏛️ 公共治理與 AI 推薦多樣來源庫（選擇 5 個不重複網域）：
+1. **European Commission (digital-strategy.ec.europa.eu)** — 歐盟 AI 法規與數位策略
+2. **OECD.AI Policy Observatory (oecd.ai)** — OECD 全球 AI 治理觀測站
+3. **GovTech Singapore (tech.gov.sg)** — 新加坡智慧國家數位政府團隊
+4. **Digital.gov (digital.gov)** — 美國聯邦數位服務與 UX 指引
+5. **Nesta UK (nesta.org.uk)** — 英國國家公共創新基金會
+6. **World Economic Forum (weforum.org)** — 全球經濟論壇 AI 治理聯盟
 
 ---
 
-## 3. 檢索主題與數量要求 (Search & Quantity Specifications)
+## 3. ⚠️ 深度文章連結硬性規定 (Critical Deep Link Requirement)
 
-1. **🎨 每日設計新聞與 UI/UX 前沿 (Design & UI/UX)** — **精選 5 則**
-   - 關鍵字：`UI UX design trends 2026`, `Design Systems Collective`, `Figma updates`, `Nielsen Norman Group UX`, `AI design tools`, `Agentic UX`
-   - 焦點：AI Agent 介面規範（如 `DESIGN.md`）、設計系統演進、微互動、GenUI、多模態體驗。
-
-2. **🏛️ 政府治理與 AI 協助治理 (Government Governance & Public AI)** — **精選 5 則**
-   - 關鍵字：`GovTech innovation`, `digital government policy`, `public service design`, `OECD public governance`, `AI in public sector`, `EU AI Act public`
-   - 焦點：數位政府創新、智慧城市治理、公共服務 UI/UX 重構、AI 審核公文/法規、演算法透明度與護欄。
-
-3. **💡 每日中英格言 (Daily Quote)**
-   - 挑選一對精闢的設計或治理領域名人金句，提供英文原文 (`QUOTE_EN`)、繁體中文翻譯 (`QUOTE_ZH`) 與作者來源 (`QUOTE_AUTHOR`)。
+> 每次檢索到的新聞與報告，**連結 `href="..."` 必須為該篇專文或報告的「實時有效 200 OK 網址」**，確保點擊標題能直接開啟該篇原文閱讀！
 
 ---
 
@@ -45,7 +52,7 @@
   <div class="item-num">1</div>
   <div class="item-body">
     <div class="item-title">
-      <a href="精準文章完整URL" target="_blank" rel="noopener">完整文章標題 (Full Article Title)</a>
+      <a href="精準文章完整URL" target="_blank" rel="noopener">機構名稱: 完整文章標題 (Full Article Title)</a>
     </div>
     <div class="item-sentence lang-zh-only">繁體中文摘要，並標註<a class="src" href="精準文章完整URL" target="_blank" rel="noopener">來源專文</a>。</div>
     <div class="item-sentence-en lang-en-only">English summary sentence with <a class="src" href="精準文章完整URL" target="_blank" rel="noopener">Source Article</a>.</div>
