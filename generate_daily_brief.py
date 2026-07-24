@@ -17,8 +17,8 @@ def generate_news_with_gemini(api_key, date_str):
         import google.generativeai as genai
         genai.configure(api_key=api_key)
         
-        # 使用 Gemini 2.5 Flash / 1.5 Flash 模型
-        model = genai.GenerativeModel('gemini-2.5-flash')
+        # 使用 Gemini 3.6 Flash 模型
+        model = genai.GenerativeModel('gemini-3.6-flash')
         
         prompt = f"""你是一個專業的 UI/UX 設計與政府 AI 治理日報總編輯。
 今天是 {date_str}。請協助檢索並撰寫今日全網最新的熱門動態。
@@ -40,8 +40,7 @@ def generate_news_with_gemini(api_key, date_str):
       "url": "https://example.com",
       "sentence_zh": "繁體中文重點摘要",
       "sentence_en": "English summary"
-    }},
-    ...共 5 則
+    }}
   ],
   "gov_news": [
     {{
@@ -49,14 +48,12 @@ def generate_news_with_gemini(api_key, date_str):
       "url": "https://example.com",
       "sentence_zh": "繁體中文重點摘要",
       "sentence_en": "English summary"
-    }},
-    ...共 5 則
+    }}
   ]
 }}
 """
         response = model.generate_content(prompt)
         text = response.text.strip()
-        # 清理可能包覆的 ```json 標籤
         text = re.sub(r'^```json\s*', '', text)
         text = re.sub(r'\s*```$', '', text)
         data = json.loads(text)
@@ -155,8 +152,7 @@ def main():
         print("Running in Cloud mode with GEMINI_API_KEY...")
         data = generate_news_with_gemini(api_key, date_str)
         if data:
-            print("Successfully generated daily data via Gemini API.")
-            # 可擴充將 data 寫入 HTML 樣板
+            print("Successfully generated daily data via Gemini 3.6 Flash API.")
     
     update_index_archive()
 
