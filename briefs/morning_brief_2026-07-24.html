@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>早晨簡報 · 2026年7月24日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">星期五・2026年7月24日</div>
+    <div class="headline">早安 Vincent，今日精選 10 則設計與 AI 治理深度動態。</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">"Design is not just what it looks like and feels like. Design is how it works."</div>
+      <div class="quote-text-zh lang-zh-only">「設計不只是外觀與感覺，設計是運作的方式。」</div>
+      <div class="quote-author">— Steve Jobs</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+        <li class="flash-item">
+          <span class="lang-zh-only">【UI/UX】2026 年設計系統正全面升級為「AI 原生多模態架構」，自動化支援無障礙與合規檢查。</span>
+          <span class="lang-en-only">【UI/UX】Design systems in 2026 are evolving into AI-native, multimodal frameworks with automated accessibility.</span>
+        </li>
+        <li class="flash-item">
+          <span class="lang-zh-only">【公共治理】OECD 最新報告強調高風險公共 AI 系統必須強制實施演算法審計清冊與人類最終簽核。</span>
+          <span class="lang-en-only">【Governance】OECD mandates human-in-the-loop sign-offs and auditable registries for high-risk public sector AI.</span>
+        </li>
+        <li class="flash-item">
+          <span class="lang-zh-only">【AI 政策】歐盟 AI 法規 (EU AI Act) 透明度條款生效，公共機構網站強制顯性標註 AI 生成內容。</span>
+          <span class="lang-en-only">【AI Policy】EU AI Act mandates explicit disclosures for AI-generated content on public digital portals.</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+
+    <div class="calm-line">為您呈現今日 10 則精選主題動態（電腦端採用 1140px 寬屏卡片呈現）：</div>
+
+    <!-- 第一單元：設計與 UI/UX 5 則 -->
+    <div class="list-block" style="margin-top: 36px;">
+      <div class="section-heading">🎨 每日設計新聞與 UI/UX 前沿 · Design & UI/UX (精選 5 則)</div>
+      <div class="item-grid">
+
+        <div class="item">
+          <div class="item-num">1</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc" target="_blank" rel="noopener">設計系統走向「AI 原生 (AI-Native)」與合規性介面規範</a></div>
+            <div class="item-sentence lang-zh-only">根據<a class="src" href="https://uxdesign.cc" target="_blank" rel="noopener">UX Collective 報導</a>，2026 年設計系統不再只是靜態組件庫，而是整合多模態（語音、手勢、動態視覺）且具備自動化合規提示 (Compliance-by-design) 的活體系統。</div>
+            <div class="item-sentence-en lang-en-only">According to <a class="src" href="https://uxdesign.cc" target="_blank" rel="noopener">UX Collective</a>, design systems in 2026 are shifting from static UI component kits to AI-native frameworks that incorporate multimodal inputs and automated compliance-by-design workflows.</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-num">2</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://zeroheight.com" target="_blank" rel="noopener">設計師角色演變為「AI 超級實習生」的引導者</a></div>
+            <div class="item-sentence lang-zh-only">根據<a class="src" href="https://zeroheight.com" target="_blank" rel="noopener">Zeroheight 設計動向分析</a>，設計師已無須耗費大量時間手動微調無障礙說明或撰寫文案，AI 承擔重複作業，讓設計師集中於戰略價值與人性化決策。</div>
+            <div class="item-sentence-en lang-en-only">According to <a class="src" href="https://zeroheight.com" target="_blank" rel="noopener">Zeroheight</a>, designers are treating AI as a high-powered partner for repetitive tasks like microcopy and accessibility checks, focusing human effort on high-level strategic decisions.</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-num">3</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://mockflow.com" target="_blank" rel="noopener">Generative & Adaptive UI (GenUI) 動態介面普及化</a></div>
+            <div class="item-sentence lang-zh-only">根據<a class="src" href="https://mockflow.com" target="_blank" rel="noopener">MockFlow 趨勢報告</a>，現代系統 UI 正在拋棄死板的預設畫面，改為根據使用者即時操作情境，由 AI 實時生成最適切的圖表與互動面板。</div>
+            <div class="item-sentence-en lang-en-only">According to <a class="src" href="https://mockflow.com" target="_blank" rel="noopener">MockFlow</a>, interfaces are dynamically adapting to user intent in real-time, reducing cognitive friction and custom layout code.</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-num">4</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://orizon.co" target="_blank" rel="noopener">Liquid Glass 微互動與光影質感視覺新浪潮</a></div>
+            <div class="item-sentence lang-zh-only">根據<a class="src" href="https://orizon.co" target="_blank" rel="noopener">Orizon Design 分析</a>，2026 年主流視覺語言走入 Liquid Glass（流體玻璃），兼具透光度、層次感與擬真動態回饋，兼顧美感與視認性。</div>
+            <div class="item-sentence-en lang-en-only">According to <a class="src" href="https://orizon.co" target="_blank" rel="noopener">Orizon Design</a>, Liquid Glass brings realistic light depth, responsive transparency, and fluid micro-animations to modern web interfaces.</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-num">5</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.designsystemscollective.com" target="_blank" rel="noopener">DESIGN.md 標準普及：AI Coding Agent 的共通視覺規範</a></div>
+            <div class="item-sentence lang-zh-only">根據<a class="src" href="https://www.designsystemscollective.com" target="_blank" rel="noopener">Design Systems Collective 報導</a>，純文字規範 `DESIGN.md` 正成為 AI Agent 生成前端程式碼時遵循的統一基準，有效抑制視覺漂移。</div>
+            <div class="item-sentence-en lang-en-only">According to <a class="src" href="https://www.designsystemscollective.com" target="_blank" rel="noopener">Design Systems Collective</a>, plain-text DESIGN.md files ensure AI coding agents produce code aligned with established visual guidelines.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 第二單元：政府治理與 AI 協助治理 5 則 -->
+    <div class="list-block">
+      <div class="section-heading">🏛️ 政府治理與 AI 協助治理 · Government Governance & AI (精選 5 則)</div>
+      <div class="item-grid">
+
+        <div class="item">
+          <div class="item-num">1</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.oecd.org" target="_blank" rel="noopener">OECD 發布 2026 公共部門 AI 治理多層級審查機制</a></div>
+            <div class="item-sentence lang-zh-only">根據<a class="src" href="https://www.oecd.org" target="_blank" rel="noopener">OECD 官方報告</a>，針對高風險公共決策（如資源分配與福利審查），各國正加速立法強制實施「Human-in-the-Loop」最終簽核與 AI 演算法審計清冊。</div>
+            <div class="item-sentence-en lang-en-only">The <a class="src" href="https://www.oecd.org" target="_blank" rel="noopener">OECD 2026 Report</a> emphasizes multi-layered governance frameworks, mandating human-in-the-loop sign-offs and auditable AI registries for high-risk public services.</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-num">2</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://europa.eu" target="_blank" rel="noopener">歐盟 AI 法規 (EU AI Act) 透明度條款生效：公共服務介面強制標註 AI 介入</a></div>
+            <div class="item-sentence lang-zh-only">根據<a class="src" href="https://europa.eu" target="_blank" rel="noopener">歐盟委員會說明</a>，政府與公共機關在線上服務與出版物中若使用生成式 AI，介面必須顯性揭露，促使政府網站介面設計掀起新一波透明度 UX 革命。</div>
+            <div class="item-sentence-en lang-en-only">Under the <a class="src" href="https://europa.eu" target="_blank" rel="noopener">EU AI Act</a>, public sector digital portals must clearly disclose AI-generated content or interactions, prompting a new wave of transparency-first UX standards.</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-num">3</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://oecd.ai" target="_blank" rel="noopener">全球超過 200 個政府 AI 應用案例：公共審計與法規檢索創新</a></div>
+            <div class="item-sentence lang-zh-only">根據<a class="src" href="https://oecd.ai" target="_blank" rel="noopener">OECD AI Policy Observatory</a>，各國政府正加速在社會安全、教育與跨機關法規比對中導入 GenAI 協助，顯著降低基層公務員行政負擔。</div>
+            <div class="item-sentence-en lang-en-only">According to <a class="src" href="https://oecd.ai" target="_blank" rel="noopener">OECD AI Observatory</a>, over 200 public sector AI use cases demonstrate productivity gains in legislative retrieval and administrative review.</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-num">4</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.granicus.com" target="_blank" rel="noopener">GovTech 2026：數位政府從單純「E 化」走向「AI 賦能治理」</a></div>
+            <div class="item-sentence lang-zh-only">根據<a class="src" href="https://www.granicus.com" target="_blank" rel="noopener">Granicus 數位政府報告</a>，數位公共基礎設施已轉變為提供智慧、便民與個人化公共服務的主幹，跨機關資料整合更具透明度。</div>
+            <div class="item-sentence-en lang-en-only">According to <a class="src" href="https://www.granicus.com" target="_blank" rel="noopener">Granicus</a>, digital public infrastructure is shifting from static portals to intelligent, citizen-centered digital service ecosystems.</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-num">5</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.mckinsey.com" target="_blank" rel="noopener">公共部門 AI 採購監管沙盒 (Procurement Sandboxes) 興起</a></div>
+            <div class="item-sentence lang-zh-only">根據<a class="src" href="https://www.mckinsey.com" target="_blank" rel="noopener">McKinsey 公共領域研究</a>，多國政府設立「創新採購沙盒」，允許公務機關在可控安全環境下測試民間 AI 工具，並評估社會防護效益。</div>
+            <div class="item-sentence-en lang-en-only">According to <a class="src" href="https://www.mckinsey.com" target="_blank" rel="noopener">McKinsey</a>, governments are using procurement sandboxes to test innovative commercial AI solutions in controlled, ethically monitored environments.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
