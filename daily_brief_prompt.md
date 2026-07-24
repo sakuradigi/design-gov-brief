@@ -1,6 +1,8 @@
 # Antigravity 每日設計與 AI 治理日報生成任務 Prompt
 
-> **任務目標**：每天早上 08:00，由 Antigravity 自動進行網路檢索，精選出「設計界與 UI/UX 前沿 5 則」以及「政府治理與 AI 協助治理 5 則」（共 10 則），來自 **10 個完全不同且具備廣度的全球權威機構與媒體**，生成可調整字體、雙語切換且寬屏美觀的 HTML 簡報。
+> **任務目標**：每天早上 08:00，由 Antigravity 自動進行網路檢索，精選出「設計界與 UI/UX 前沿 5 則」以及「政府治理與 AI 協助治理 5 則」（共 10 則），來自 **10 個完全不同且具備廣度的全球權威機構與媒體**。
+>
+> 💡 **核心價值要求**：摘要**絕對禁止寫成平鋪直敘的「本篇文章介紹了...」**，必須提煉該文章的**「高價值戰略洞見 (Core Strategic Insights)」**，說明該趨勢對設計實務、技術架構或公共政策的深層影響與啟示！
 
 ---
 
@@ -11,10 +13,19 @@
 
 ---
 
-## 2. 🌐 來源多樣性與廣度硬性規範 (Diverse Sources & Breadth Rules)
+## 2. 💡 摘要洞見規範 (High-Value Insight Summary Rules)
+
+> 🚨 **摘要必須包含「核心洞見」標籤與實質戰略提煉！**
+
+### 正確洞見摘要寫法範例：
+- ❌ **錯誤寫法 (平鋪直敘無洞見)**：「根據 NN/g 的報導，這篇文章介紹了 AI 在 UX 設計流程中的各種應用與工具。」
+- ✅ **正確洞見寫法 (體現 AI 提煉價值)**：「<span class="insight-tag">核心洞見</span> UX 工作流正從『視覺交接 (Handoff)』全面演進為『意圖與 Agent 編排 (Orchestration)』。NN/g 實證指出，AI 能承擔 70% 的重複性圖稿作業，將設計師價值提升至品牌精神審核、責任 AI 護欄與戰略脈絡設定。」
+
+---
+
+## 3. 🌐 來源多樣性與廣度規範 (10 獨立網域)
 
 > 🚨 **10 則新聞必須來自 10 個完全不同的獨立機構與網域 (Domains)！**
-> 絕對禁止將來源侷限於單一網站（例如全部來自同一媒體），必須廣泛涵蓋國際研究機構、標準組織、政府數位部門與權威設計媒體：
 
 ### 🎨 UI / UX 推薦多樣來源庫（選擇 5 個不重複網域）：
 1. **Nielsen Norman Group (nngroup.com)** — 人機互動與 UX 實證研究
@@ -34,17 +45,13 @@
 
 ---
 
-## 3. ⚠️ 深度文章連結硬性規定 (Critical Deep Link Requirement)
+## 4. ⚠️ 深度文章連結硬性規定 (Critical Deep Link Requirement)
 
 > 每次檢索到的新聞與報告，**連結 `href="..."` 必須為該篇專文或報告的「實時有效 200 OK 網址」**，確保點擊標題能直接開啟該篇原文閱讀！
 
 ---
 
-## 4. 網頁版面與雙語 DOM 規範
-
-請依照 `templates/brief_template.html` 結構輸出 HTML：
-- **容器寬度**：`max-width: 1140px;`（電腦大螢幕寬闊舒服，同時支援 RWD 手機/BOOX 閱覽）。
-- **工具列功能**：包含字體縮放按鈕 (`A-` / `標準` / `A+`) 與語言切換按鈕 (`中英` / `繁中` / `EN`)。
+## 5. 網頁版面與雙語 DOM 規範
 
 每筆新聞條目格式：
 ```html
@@ -54,18 +61,12 @@
     <div class="item-title">
       <a href="精準文章完整URL" target="_blank" rel="noopener">機構名稱: 完整文章標題 (Full Article Title)</a>
     </div>
-    <div class="item-sentence lang-zh-only">繁體中文摘要，並標註<a class="src" href="精準文章完整URL" target="_blank" rel="noopener">來源專文</a>。</div>
-    <footer class="page-footer">
-      <div class="meta-item">
-        <span>🤖 生成模型：</span>
-        <span class="meta-pill">Gemini 3.6 Flash / Antigravity Agent</span>
-      </div>
-      <div class="meta-item">
-        <span>⏱️ 生成時間戳記：</span>
-        <span class="meta-pill">YYYY-MM-DD HH:MM:SS (Asia/Taipei)（請動態帶入實際發起生成當下的秒級時間）</span>
-      </div>
-    </footer>
-    <div class="item-sentence-en lang-en-only">English summary sentence with <a class="src" href="精準文章完整URL" target="_blank" rel="noopener">Source Article</a>.</div>
+    <div class="item-sentence lang-zh-only">
+      <span class="insight-tag">核心洞見</span>提煉文章的實質戰略洞見與影響，並標註<a class="src" href="精準文章完整URL" target="_blank" rel="noopener">來源專文</a>。
+    </div>
+    <div class="item-sentence-en lang-en-only">
+      <span class="insight-tag">Core Insight</span>Extract key strategic takeaway, referencing <a class="src" href="精準文章完整URL" target="_blank" rel="noopener">Source Article</a>.
+    </div>
   </div>
 </div>
 ```
