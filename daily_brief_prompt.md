@@ -11,7 +11,14 @@
 
 ---
 
-## 2. 檢索主題與數量要求 (Search & Quantity Specifications)
+## 2. ⚠️ 深度文章連結硬性規定 (Critical Deep Link Requirement)
+
+> 🚨 **絕對禁止只填寫首頁網址（如 `https://uxdesign.cc` 或 `https://oecd.org`）！**
+> 每次檢索到的新聞與報告，**連結 `href="..."` 必須為該篇深度文章或報告的「完整直接 URL」**（例如：`https://uxdesign.cc/mapping-ai-presence-to-user-intent-76b6680caae2`），確保點擊標題能直接打開該篇原文閱讀！
+
+---
+
+## 3. 檢索主題與數量要求 (Search & Quantity Specifications)
 
 1. **🎨 每日設計新聞與 UI/UX 前沿 (Design & UI/UX)** — **精選 5 則**
    - 關鍵字：`UI UX design trends 2026`, `Design Systems Collective`, `Figma updates`, `Nielsen Norman Group UX`, `AI design tools`, `Agentic UX`
@@ -26,7 +33,7 @@
 
 ---
 
-## 3. 網頁版面與雙語 DOM 規範
+## 4. 網頁版面與雙語 DOM 規範
 
 請依照 `templates/brief_template.html` 結構輸出 HTML：
 - **容器寬度**：`max-width: 1140px;`（電腦大螢幕寬闊舒服，同時支援 RWD 手機/BOOX 閱覽）。
@@ -38,10 +45,10 @@
   <div class="item-num">1</div>
   <div class="item-body">
     <div class="item-title">
-      <a href="URL" target="_blank" rel="noopener">標題 (Title)</a>
+      <a href="精準文章完整URL" target="_blank" rel="noopener">完整文章標題 (Full Article Title)</a>
     </div>
-    <div class="item-sentence lang-zh-only">繁體中文摘要，並標註<a class="src" href="URL" target="_blank" rel="noopener">來源</a>。</div>
-    <div class="item-sentence-en lang-en-only">English summary sentence with <a class="src" href="URL" target="_blank" rel="noopener">Source</a>.</div>
+    <div class="item-sentence lang-zh-only">繁體中文摘要，並標註<a class="src" href="精準文章完整URL" target="_blank" rel="noopener">來源專文</a>。</div>
+    <div class="item-sentence-en lang-en-only">English summary sentence with <a class="src" href="精準文章完整URL" target="_blank" rel="noopener">Source Article</a>.</div>
   </div>
 </div>
 ```
