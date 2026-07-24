@@ -3,25 +3,36 @@ import os
 import re
 import glob
 import json
+import urllib.request
 import argparse
 from datetime import datetime
 
 WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
 BRIEFS_DIR = os.path.join(WORKSPACE_DIR, 'briefs')
 INDEX_PATH = os.path.join(WORKSPACE_DIR, 'index.html')
-TEMPLATE_PATH = os.path.join(WORKSPACE_DIR, 'templates', 'brief_template.html')
+
+def verify_url_live(url):
+    """在沙盒/雲端環境中發送 HTTP GET 請求驗證 URL 是否回傳 HTTP 200 OK 避免 404 死連結"""
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'})
+        with urllib.request.urlopen(req, timeout=6) as resp:
+            return resp.status == 200
+    except Exception as e:
+        print(f"URL Verification Failed for {url}: {e}")
+        return False
 
 def generate_news_with_gemini(api_key, date_str):
-    """在 GitHub Actions 雲端環境中使用 Gemini API 檢索最新主題新聞並撰寫簡報內容"""
+    """在雲端環境中使用 Gemini API 檢索最新主題新聞，並強制要求驗證 URL"""
     try:
         import google.generativeai as genai
         genai.configure(api_key=api_key)
         
-        # 使用 Gemini 3.6 Flash 模型
         model = genai.GenerativeModel('gemini-3.6-flash')
         
         prompt = f"""你是一個專業的 UI/UX 設計與政府 AI 治理日報總編輯。
 今天是 {date_str}。請協助檢索並撰寫今日全網最新的熱門動態。
+
+【連結硬性要求】：所有填寫的 url 必須為實時存在、可開啟的深度文章或權威機構報告頁面，絕對禁止寫死或構造無效 404 連結！
 
 請依據以下格式輸出純 JSON (不要包含 markdown 標籤)：
 {{
@@ -36,16 +47,16 @@ def generate_news_with_gemini(api_key, date_str):
   ],
   "design_news": [
     {{
-      "title": "繁體中文標題 1",
-      "url": "https://example.com",
+      "title": "文章標題 1",
+      "url": "https://www.nngroup.com/articles/xxx/",
       "sentence_zh": "繁體中文重點摘要",
       "sentence_en": "English summary"
     }}
   ],
   "gov_news": [
     {{
-      "title": "繁體中文標題 1",
-      "url": "https://example.com",
+      "title": "文章標題 1",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/xxx",
       "sentence_zh": "繁體中文重點摘要",
       "sentence_en": "English summary"
     }}
