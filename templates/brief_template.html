@@ -145,7 +145,7 @@ body {
   text-align: right;
 }
 
-/* 「一句話快訊」區塊 (位於格言下方、新聞上方) */
+/* 「一句話快訊」區塊 */
 .flash-card {
   background: #FFFFFF;
   border: 1px solid var(--border-color);
@@ -283,6 +283,34 @@ body {
   padding: 8px 0 0;
 }
 
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
 body.lang-zh-mode .lang-en-only { display: none !important; }
 body.lang-en-mode .lang-zh-only { display: none !important; }
 
@@ -292,6 +320,7 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
   .band-top .inner { padding: 32px 20px 24px; }
   .toolbar { flex-direction: column; align-items: flex-start; }
   .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
@@ -327,7 +356,7 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
       <div class="quote-author">— {{QUOTE_AUTHOR}}</div>
     </div>
 
-    <!-- ⚡ 今日一句話快訊 (置於格言下方、新聞上方) -->
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
     <div class="flash-card">
       <div class="flash-header">
         <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
@@ -345,6 +374,19 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
   <div class="inner">
     <div class="calm-line">{{CALM_LINE}}</div>
     {{CONTENT_SECTIONS}}
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">{{GENERATED_MODEL}}</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">{{GENERATED_TIME}}</span>
+      </div>
+    </footer>
+
   </div>
 </div>
 

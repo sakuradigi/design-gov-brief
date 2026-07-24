@@ -144,7 +144,6 @@ body {
   text-align: right;
 }
 
-/* 「一句話快訊」區塊 */
 .flash-card {
   background: #FFFFFF;
   border: 1px solid var(--border-color);
@@ -282,6 +281,33 @@ body {
   padding: 8px 0 0;
 }
 
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
 body.lang-zh-mode .lang-en-only { display: none !important; }
 body.lang-en-mode .lang-zh-only { display: none !important; }
 
@@ -291,6 +317,7 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
   .band-top .inner { padding: 32px 20px 24px; }
   .toolbar { flex-direction: column; align-items: flex-start; }
   .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
@@ -318,7 +345,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
     <div class="day-date">星期五・2026年7月24日</div>
     <div class="headline">早安 Vincent，今日精選 10 則設計與 AI 治理深度動態。</div>
 
-    <!-- 💡 每日格言 -->
     <div class="quote-card">
       <div class="quote-title">💡 每日格言 · Daily Insight</div>
       <div class="quote-text-en lang-en-only">"Design is not just what it looks like and feels like. Design is how it works."</div>
@@ -326,7 +352,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
       <div class="quote-author">— Steve Jobs</div>
     </div>
 
-    <!-- ⚡ 今日重點速覽（一句話快訊） -->
     <div class="flash-card">
       <div class="flash-header">
         <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
@@ -356,7 +381,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
 
     <div class="calm-line">為您呈現今日 10 則精選主題動態（電腦端採用 1140px 寬屏卡片呈現）：</div>
 
-    <!-- 第一單元：設計與 UI/UX 5 則 -->
     <div class="list-block" style="margin-top: 36px;">
       <div class="section-heading">🎨 每日設計新聞與 UI/UX 前沿 · Design & UI/UX (精選 5 則)</div>
       <div class="item-grid">
@@ -409,7 +433,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
       </div>
     </div>
 
-    <!-- 第二單元：政府治理與 AI 協助治理 5 則 -->
     <div class="list-block">
       <div class="section-heading">🏛️ 政府治理與 AI 協助治理 · Government Governance & AI (精選 5 則)</div>
       <div class="item-grid">
@@ -461,6 +484,18 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
 
       </div>
     </div>
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">Google Gemini 2.5 Flash / Antigravity Agent</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-07-24 08:00:15 (Asia/Taipei)</span>
+      </div>
+    </footer>
 
   </div>
 </div>
