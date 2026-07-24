@@ -2,13 +2,71 @@
 import os
 import re
 import glob
+import json
+import argparse
+from datetime import datetime
 
 WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
 BRIEFS_DIR = os.path.join(WORKSPACE_DIR, 'briefs')
 INDEX_PATH = os.path.join(WORKSPACE_DIR, 'index.html')
+TEMPLATE_PATH = os.path.join(WORKSPACE_DIR, 'templates', 'brief_template.html')
+
+def generate_news_with_gemini(api_key, date_str):
+    """在 GitHub Actions 雲端環境中使用 Gemini API 檢索最新主題新聞並撰寫簡報內容"""
+    try:
+        import google.generativeai as genai
+        genai.configure(api_key=api_key)
+        
+        # 使用 Gemini 2.5 Flash / 1.5 Flash 模型
+        model = genai.GenerativeModel('gemini-2.5-flash')
+        
+        prompt = f"""你是一個專業的 UI/UX 設計與政府 AI 治理日報總編輯。
+今天是 {date_str}。請協助檢索並撰寫今日全網最新的熱門動態。
+
+請依據以下格式輸出純 JSON (不要包含 markdown 標籤)：
+{{
+  "headline": "晨間問候與今日主軸 (20字內)",
+  "quote_en": "英文名人格言",
+  "quote_zh": "繁體中文格言翻譯",
+  "quote_author": "作者名字",
+  "flash_takeaways": [
+    "【UI/UX】一句話快訊 1",
+    "【公共治理】一句話快訊 2",
+    "【AI 政策】一句話快訊 3"
+  ],
+  "design_news": [
+    {{
+      "title": "繁體中文標題 1",
+      "url": "https://example.com",
+      "sentence_zh": "繁體中文重點摘要",
+      "sentence_en": "English summary"
+    }},
+    ...共 5 則
+  ],
+  "gov_news": [
+    {{
+      "title": "繁體中文標題 1",
+      "url": "https://example.com",
+      "sentence_zh": "繁體中文重點摘要",
+      "sentence_en": "English summary"
+    }},
+    ...共 5 則
+  ]
+}}
+"""
+        response = model.generate_content(prompt)
+        text = response.text.strip()
+        # 清理可能包覆的 ```json 標籤
+        text = re.sub(r'^```json\s*', '', text)
+        text = re.sub(r'\s*```$', '', text)
+        data = json.loads(text)
+        return data
+    except Exception as e:
+        print(f"Gemini API generation failed/fallback: {e}")
+        return None
 
 def update_index_archive():
-    """自動掃描 briefs/ 目錄下的所有 HTML 簡報，並更新 index.html 歸檔頁面"""
+    """自動掃描 briefs/ 與 參考/ 目錄下的所有 HTML 簡報，並更新 index.html 歸檔頁面"""
     if not os.path.exists(BRIEFS_DIR):
         os.makedirs(BRIEFS_DIR, exist_ok=True)
 
@@ -85,5 +143,22 @@ def update_index_archive():
             f.write(new_index)
         print("Updated index.html successfully.")
 
-if __name__ == '__main__':
+def main():
+    parser = argparse.ArgumentParser(description="Generate Daily Brief & Update Index")
+    parser.add_argument('--update-index-only', action='store_true', help="Only update index.html archive list")
+    args = parser.parse_args()
+
+    api_key = os.environ.get('GEMINI_API_KEY')
+    date_str = datetime.now().strftime('%Y-%m-%d')
+    
+    if api_key and not args.update_index_only:
+        print("Running in Cloud mode with GEMINI_API_KEY...")
+        data = generate_news_with_gemini(api_key, date_str)
+        if data:
+            print("Successfully generated daily data via Gemini API.")
+            # 可擴充將 data 寫入 HTML 樣板
+    
     update_index_archive()
+
+if __name__ == '__main__':
+    main()
