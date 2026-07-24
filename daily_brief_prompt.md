@@ -55,6 +55,16 @@
       <a href="精準文章完整URL" target="_blank" rel="noopener">機構名稱: 完整文章標題 (Full Article Title)</a>
     </div>
     <div class="item-sentence lang-zh-only">繁體中文摘要，並標註<a class="src" href="精準文章完整URL" target="_blank" rel="noopener">來源專文</a>。</div>
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">Gemini 3.6 Flash / Antigravity Agent</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">YYYY-MM-DD HH:MM:SS (Asia/Taipei)（請動態帶入實際發起生成當下的秒級時間）</span>
+      </div>
+    </footer>
     <div class="item-sentence-en lang-en-only">English summary sentence with <a class="src" href="精準文章完整URL" target="_blank" rel="noopener">Source Article</a>.</div>
   </div>
 </div>
