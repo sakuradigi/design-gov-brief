@@ -69,7 +69,7 @@ RSS_FEEDS = [
     },
     # 🏛️ 治理類
     {
-        'url': 'https://news.google.com/rss/search?q=%E6%95%B8%E4%BD%8D%E6%B2%BB%E7%90%86+OR+AI%E6%B2%BB%E7%90%86+OR+%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82+when:7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant',
+        'url': 'https://news.google.com/rss/search?q=%E6%95%B8%E4%BD%8D%E6%B2%BB%E7%90%86+OR+AI%E6%B2%BB%E7%90%86+OR+%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82+-香港+-北都+-港府+when:7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant',
         'category': 'gov',
         'region': 'tw',
         'source_name': 'Google News (TW)',
@@ -471,7 +471,7 @@ def generate_summaries_with_gemini(design_articles, gov_articles, date_str):
   "quote_zh": "繁中格言翻譯",
   "quote_author": "格言作者",
   "articles": [
-    {{"index": 1, "summary_zh": "繁中洞見摘要", "summary_en": "English summary"}},
+    {{"index": 1, "short_title": "摘要綜整的短標題", "summary_zh": "繁中洞見摘要", "summary_en": "English summary"}},
     ...
   ]
 }}
@@ -611,7 +611,10 @@ def build_content_sections(design_articles, gov_articles, summaries):
 
 def build_article_item(article, num, summary):
     """建立單篇文章的 HTML"""
-    title = html.escape(article['title'])
+    # 優先使用 LLM 產出的短標題，若無則用原標題
+    original_title = html.escape(article['title'])
+    display_title = html.escape(summary.get('short_title', article['title']))
+    
     url = html.escape(article['url'])
     source = html.escape(article['source'])
     summary_zh = html.escape(summary.get('summary_zh', article.get('description', '')[:100]))
@@ -619,16 +622,22 @@ def build_article_item(article, num, summary):
 
     # 決定配圖：優先用 og:image，其次用 feed 中的圖
     image_url = article.get('og_image') or article.get('image_from_feed')
+    
+    # 阻擋 Google News 的預設追蹤圖片或低畫質縮圖
+    if image_url and ('lh3.googleusercontent.com' in image_url or 'gstatic.com' in image_url):
+        image_url = None
+
 
     item_html = f'''        <div class="item">
           <div class="item-num">{num:02d}</div>
           <div class="item-body">
-            <div class="item-title"><a href="{url}" target="_blank" rel="noopener">{title}</a></div>
+            <div class="item-title"><a href="{url}" target="_blank" rel="noopener">{display_title}</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">{original_title}</div>
 '''
 
     if image_url:
         img_url_escaped = html.escape(image_url)
-        item_html += f'            <img class="item-image" src="{img_url_escaped}" alt="{title}" loading="lazy" onerror="this.style.display=\'none\'">\n'
+        item_html += f'            <img class="item-image" src="{img_url_escaped}" alt="{original_title}" loading="lazy" onerror="this.style.display=\'none\'">\n'
 
     item_html += f'''            <div class="item-sentence lang-zh-only">{summary_zh} <span class="src">— {source}</span></div>
             <div class="item-sentence-en lang-en-only">{summary_en} <span class="src">— {source}</span></div>
