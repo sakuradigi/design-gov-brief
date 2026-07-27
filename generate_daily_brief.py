@@ -38,56 +38,66 @@ HEADERS = {
 RSS_FEEDS = [
     # 🎨 設計類
     {
-        'url': 'https://www.itsnicethat.com/rss/all',
+        'url': 'https://uxdesign.cc/feed',
         'category': 'design',
-        'source_name': "It's Nice That",
+        'region': 'none',
+        'source_name': 'UX Collective',
     },
     {
-        'url': 'https://www.dezeen.com/feed/',
+        'url': 'https://www.creativeboom.com/feed/',
         'category': 'design',
-        'source_name': 'Dezeen',
+        'region': 'none',
+        'source_name': 'Creative Boom',
     },
     {
-        'url': 'https://www.creativebloq.com/feed',
+        'url': 'https://abduzeedo.com/rss.xml',
         'category': 'design',
-        'source_name': 'Creative Bloq',
+        'region': 'none',
+        'source_name': 'Abduzeedo',
+    },
+    {
+        'url': 'https://tympanus.net/codrops/feed/',
+        'category': 'design',
+        'region': 'none',
+        'source_name': 'Codrops',
     },
     {
         'url': 'https://www.smashingmagazine.com/feed/',
         'category': 'design',
+        'region': 'none',
         'source_name': 'Smashing Magazine',
-    },
-    {
-        'url': 'https://eyeondesign.aiga.org/feed/',
-        'category': 'design',
-        'source_name': 'AIGA Eye on Design',
-    },
-    {
-        'url': 'https://www.designweek.co.uk/feed/',
-        'category': 'design',
-        'source_name': 'Design Week',
     },
     # 🏛️ 治理類
     {
-        'url': 'https://news.google.com/rss/search?q=digital+governance+OR+civic+tech+OR+public+innovation+OR+AI+regulation&hl=en&gl=US&ceid=US:en',
+        'url': 'https://news.google.com/rss/search?q=%E6%95%B8%E4%BD%8D%E6%B2%BB%E7%90%86+OR+AI%E6%B2%BB%E7%90%86+OR+%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82+when:7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant',
         'category': 'gov',
-        'source_name': 'Google News (Gov/Civic Tech EN)',
+        'region': 'tw',
+        'source_name': 'Google News (TW)',
     },
     {
-        'url': 'https://news.google.com/rss/search?q=%E6%95%B8%E4%BD%8D%E6%B2%BB%E7%90%86+OR+AI%E6%B2%BB%E7%90%86+OR+%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82+OR+%E9%96%8B%E6%94%BE%E6%94%BF%E5%BA%9C&hl=zh-TW&gl=TW&ceid=TW:zh-Hant',
+        'url': 'https://news.google.com/rss/search?q="AI+governance"+OR+"digital+governance"+OR+"tech+policy"+when:7d&hl=en-US&gl=US&ceid=US:en',
         'category': 'gov',
-        'source_name': 'Google News (數位治理 TW)',
+        'region': 'us_eu',
+        'source_name': 'Google News (US/EU)',
+    },
+    {
+        'url': 'https://news.google.com/rss/search?q=%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%AC%E3%83%90%E3%83%8A%E3%83%B3%E3%82%B9+OR+AI%E3%82%AC%E3%83%90%E3%83%8A%E3%83%B3%E3%82%B9+OR+%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B7%E3%83%86%E3%82%A3+when:7d&hl=ja&gl=JP&ceid=JP:ja',
+        'category': 'gov',
+        'region': 'jp',
+        'source_name': 'Google News (JP)',
     },
     {
         'url': 'https://www.govtech.com/rss',
         'category': 'gov',
+        'region': 'insight',
         'source_name': 'GovTech',
     },
     {
         'url': 'https://thegovlab.org/feed',
         'category': 'gov',
+        'region': 'insight',
         'source_name': 'The GovLab',
-    },
+    }
 ]
 
 # === 文章數量設定 ===
@@ -114,7 +124,7 @@ def fetch_url(url, timeout=10):
         return None, None
 
 
-def parse_rss_feed(feed_url, source_name, category):
+def parse_rss_feed(feed_url, source_name, category, region):
     """解析 RSS/Atom feed，回傳文章列表"""
     print(f"📡 Fetching feed: {source_name} ({feed_url[:80]}...)")
     status, content = fetch_url(feed_url, timeout=15)
@@ -141,7 +151,7 @@ def parse_rss_feed(feed_url, source_name, category):
         cutoff_date = datetime.now(timezone.utc) - timedelta(days=MAX_ARTICLE_AGE_DAYS)
 
         for item in items:
-            article = extract_article_from_item(item, source_name, category, cutoff_date)
+            article = extract_article_from_item(item, source_name, category, region, cutoff_date)
             if article:
                 articles.append(article)
 
@@ -155,7 +165,7 @@ def parse_rss_feed(feed_url, source_name, category):
     return articles
 
 
-def extract_article_from_item(item, source_name, category, cutoff_date):
+def extract_article_from_item(item, source_name, category, region, cutoff_date):
     """從 RSS item 中提取文章資訊"""
     # 取得標題
     title_el = item.find('title')
@@ -235,6 +245,7 @@ def extract_article_from_item(item, source_name, category, cutoff_date):
         'url': link,
         'source': source_name,
         'category': category,
+        'region': region,
         'pub_date': pub_date.isoformat() if pub_date else None,
         'description': description,
         'image_from_feed': image_from_media or image_from_desc,
@@ -340,6 +351,14 @@ def select_articles(all_articles):
     design = [a for a in all_articles if a['category'] == 'design' and a['verified']]
     gov = [a for a in all_articles if a['category'] == 'gov' and a['verified']]
 
+    # 1. 垃圾文章過濾器 (Anti-Junk Filter)
+    def is_junk(article):
+        bad_words = ['review', 'buying guide', 'deal', 'discount', 'headphones', 'earbuds', 'power station', 'laptop', 'hands-on', 'save', 'off', 'amazon prime']
+        text = (article['title'] + " " + article['url']).lower()
+        return any(bw in text for bw in bad_words)
+
+    design = [a for a in design if not is_junk(a)]
+
     # 按日期排序（最新在前），無日期的放最後
     def sort_key(a):
         if a['pub_date']:
@@ -353,7 +372,28 @@ def select_articles(all_articles):
     gov = dedupe_by_domain(gov, max_per_domain=5)
 
     selected_design = design[:TARGET_DESIGN_ARTICLES]
-    selected_gov = gov[:TARGET_GOV_ARTICLES]
+
+    # 2. 治理配額制: 1 TW, 2 US/EU, 1 JP, 1 Insight
+    gov_tw = [a for a in gov if a.get('region') == 'tw']
+    gov_us_eu = [a for a in gov if a.get('region') == 'us_eu']
+    gov_jp = [a for a in gov if a.get('region') == 'jp']
+    gov_insight = [a for a in gov if a.get('region') == 'insight']
+
+    selected_gov = []
+    if gov_tw: selected_gov.append(gov_tw.pop(0))
+    selected_gov.extend(gov_us_eu[:2])
+    gov_us_eu = gov_us_eu[2:]
+    if gov_jp: selected_gov.append(gov_jp.pop(0))
+    if gov_insight: selected_gov.append(gov_insight.pop(0))
+
+    # 如果不足 5 篇，從剩餘的裡面補足
+    remaining = gov_tw + gov_us_eu + gov_jp + gov_insight
+    used_urls = {a['url'] for a in selected_gov + remaining}
+    other_gov = [a for a in gov if a['url'] not in used_urls]
+    remaining.extend(other_gov)
+    
+    while len(selected_gov) < TARGET_GOV_ARTICLES and remaining:
+        selected_gov.append(remaining.pop(0))
 
     print(f"\n📊 Final selection: {len(selected_design)} design + {len(selected_gov)} governance articles")
     return selected_design, selected_gov
@@ -409,19 +449,19 @@ def generate_summaries_with_gemini(design_articles, gov_articles, date_str):
 今天是 {date_str}。
 
 以下是今天從 RSS 爬取到的 {len(all_articles)} 篇真實文章，請你為每篇寫出：
-1. 一句繁體中文白話摘要（50-80字，像在跟朋友聊天一樣自然好讀，嚴禁公文體）
-2. 一句英文摘要（30-50字）
+1. 一句繁體中文「洞見摘要」（50-80字）。【絕對禁止單純翻譯或流水帳總結！】你必須一針見血地指出『這件事背後的趨勢意義』以及『讀者看完能得到什麼啟發與洞見 (Why it matters)』。要像跟朋友聊天一樣自然好讀，嚴禁公文體。
+2. 一句英文摘要（30-50字，可以較平實地總結）。
 
 另外請產出：
 3. 一個今日大標題（繁中，20-35字，反映今天最具代表性的 2-3 個議題關鍵字）
-4. 三句「今日重點速覽」快訊（繁中，每句 15-25 字，用白話講今天最重要的三件事）
-5. 一句每日格言（英文原文 + 繁中翻譯 + 作者，主題跟設計或治理相關）
+4. 三句「今日重點速覽」快訊（繁中，每句 15-25 字，用白話講今天最重要的三件事的「洞見」）
+5. 一句每日格言（英文原文 + 繁中翻譯 + 作者，主題跟設計趨勢或治理創新相關）
 
-【文體要求】
-- 白話、通俗、精闢、好閱讀
-- 像咖啡時間跟懂行的朋友聊天
-- 嚴禁「貫徹」「實施嚴格規範」「責任可追溯性」等公文套話
-- 嚴禁學術論文腔
+【文體與洞見要求】
+- 洞見至上：不要告訴我「這篇文章說了什麼」，告訴我「這為什麼重要」、「它代表了什麼趨勢」。
+- 白話、通俗、精闢、好閱讀：像咖啡時間跟懂行的朋友交流觀點。
+- 嚴禁「貫徹」「實施嚴格規範」「責任可追溯性」等公文套話。
+- 嚴禁學術論文腔。
 
 【輸出格式】嚴格用以下 JSON 格式回傳，不要加任何其他文字：
 {{
@@ -431,7 +471,7 @@ def generate_summaries_with_gemini(design_articles, gov_articles, date_str):
   "quote_zh": "繁中格言翻譯",
   "quote_author": "格言作者",
   "articles": [
-    {{"index": 1, "summary_zh": "繁中摘要", "summary_en": "English summary"}},
+    {{"index": 1, "summary_zh": "繁中洞見摘要", "summary_en": "English summary"}},
     ...
   ]
 }}
@@ -756,7 +796,7 @@ def main():
     print("=" * 40)
     all_articles = []
     for feed in RSS_FEEDS:
-        articles = parse_rss_feed(feed['url'], feed['source_name'], feed['category'])
+        articles = parse_rss_feed(feed['url'], feed['source_name'], feed['category'], feed.get('region', 'none'))
         all_articles.extend(articles)
 
     if not all_articles:
