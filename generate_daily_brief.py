@@ -142,13 +142,12 @@ def build_html_from_data(data, date_str):
     with open(TEMPLATE_PATH, 'r', encoding='utf-8') as f:
         tmpl = f.read()
 
-    # 快訊列表
+    # 快訊列表 (極簡精準 3-4 句)
     flash_html = ""
     for item in data.get('flash_takeaways', []):
         flash_html += f"""
         <li class="flash-item">
-          <span class="lang-zh-only">{item}</span>
-          <span class="lang-en-only">{item}</span>
+          {item}
         </li>"""
 
     # 設計新聞 5 則 (強制限用 100% 驗證通過之 200 OK 深層連結)

@@ -144,24 +144,28 @@ body {
   text-align: right;
 }
 
+/* ⚡ 今日重點速覽卡片 (極簡精準 3-4 句) */
 .flash-card {
   background: #FFFFFF;
   border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
   border-radius: 8px;
-  padding: 20px 26px;
+  padding: 24px 28px;
   margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
 .flash-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.8125rem;
+  gap: 10px;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--text-main);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border-color);
 }
 
 .flash-badge {
@@ -181,11 +185,11 @@ body {
 
 .flash-item {
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 8px;
+  padding-left: 24px;
+  margin-bottom: 12px;
   font-size: 0.9375rem;
   color: var(--text-main);
-  line-height: 1.55;
+  line-height: 1.6;
 }
 .flash-item:last-child { margin-bottom: 0; }
 
@@ -193,8 +197,20 @@ body {
   content: "⚡";
   position: absolute;
   left: 0;
-  top: 1px;
+  top: 2px;
+  font-size: 0.875rem;
+  color: var(--accent-color);
+}
+
+.flash-tag {
+  display: inline-block;
+  font-weight: 700;
   font-size: 0.8125rem;
+  color: var(--accent-color);
+  background: #F4EBE7;
+  padding: 1px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
 }
 
 .section-heading {
@@ -401,6 +417,7 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
       <div class="quote-author">— Edgar Degas (愛德加·德加，法國印象派大師)</div>
     </div>
 
+    <!-- ⚡ 今日重點速覽（精準 3-4 句高價值重點） -->
     <div class="flash-card">
       <div class="flash-header">
         <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
@@ -408,16 +425,13 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
       </div>
       <ul class="flash-list">
         <li class="flash-item">
-          <span class="lang-zh-only">【視覺與美學】NN/g 指出 AI 在 UX 中扮演輔助思考角色，設計師核心價值在於說故事與品味設定。</span>
-          <span class="lang-en-only">【Aesthetics & Design】NN/g highlights AI as a thought-assistant in UX, freeing designers for storytelling and taste direction.</span>
+          <span class="flash-tag">UX 人機協動</span> NN/g 實證研究指出：AI 在 UX 流程中為輔助角色，設計師核心價值在於「說故事能力與品味設定」。
         </li>
         <li class="flash-item">
-          <span class="lang-zh-only">【治理與社會創新】歐盟 AI 法案與 Brookings 分析指出全球公共治理強調演算法透明度與負責任創新。</span>
-          <span class="lang-en-only">【Civic Innovation】EU AI Act & Brookings research show global governance focusing on algorithmic transparency and public accountability.</span>
+          <span class="flash-tag">公共治理防護</span> 歐盟 AI 法案與 Brookings 研究劃下硬性紅線：影響權益的公共 AI 必須具備透明審計履歷，保留人類最終簽核。
         </li>
         <li class="flash-item">
-          <span class="lang-zh-only">【實用規範】W3C WCAG 無障礙與 DESIGN.md 規範建構兼具美感與無障礙包容力的產品體系。</span>
-          <span class="lang-en-only">【Design Infrastructure】W3C WCAG & DESIGN.md frameworks ensure accessible, inclusive, and scalable product architecture.</span>
+          <span class="flash-tag">通用包容美學</span> W3C WCAG 無障礙規範與 Design Tokens (DESIGN.md) 協助建置兼具頂級美感與廣泛視認度的產品架構。
         </li>
       </ul>
     </div>
@@ -430,12 +444,11 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
 
     <div class="calm-line">為您提煉今日 10 則全數通過 HTTP 200 OK 實體驗證之「美學視覺、設計系統與全球治理」深層專文洞見：</div>
 
-    <!-- 第一單元：設計與視覺美學、平面、動態藝術 5 則全實體驗證深層專文 -->
+    <!-- 第一單元：設計與視覺美學 5 則 -->
     <div class="list-block" style="margin-top: 36px;">
       <div class="section-heading">🎨 視覺藝術、平面設計趨勢與 UI/UX 美學 · Design Aesthetics & Visual Art (5 則深層專文)</div>
       <div class="item-grid">
 
-        <!-- 條目 1：NN/g UX Roles (HTTP 200 OK Deep Article) -->
         <div class="item">
           <div class="item-num">1</div>
           <div class="item-body">
@@ -447,7 +460,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
           </div>
         </div>
 
-        <!-- 條目 2：W3C WCAG (HTTP 200 OK Deep Article) -->
         <div class="item">
           <div class="item-num">2</div>
           <div class="item-body">
@@ -459,7 +471,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
           </div>
         </div>
 
-        <!-- 條目 3：Figma Developer API (HTTP 200 OK Deep Article) -->
         <div class="item">
           <div class="item-num">3</div>
           <div class="item-body">
@@ -471,7 +482,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
           </div>
         </div>
 
-        <!-- 條目 4：Smashing Magazine Accessibility (HTTP 200 OK Deep Article) -->
         <div class="item">
           <div class="item-num">4</div>
           <div class="item-body">
@@ -483,7 +493,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
           </div>
         </div>
 
-        <!-- 條目 5：Design Systems Collective (HTTP 200 OK Deep Article) -->
         <div class="item">
           <div class="item-num">5</div>
           <div class="item-body">
@@ -498,12 +507,11 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
       </div>
     </div>
 
-    <!-- 第二單元：政府治理、政治性實驗與社會創新 5 則全實體驗證深層專文 -->
+    <!-- 第二單元：政府治理 5 則 -->
     <div class="list-block">
       <div class="section-heading">🏛️ 全球公共治理、政治性實驗與社會創新 · Public Governance & Civic Innovation (5 則深層專文)</div>
       <div class="item-grid">
 
-        <!-- 條目 1：European Commission EU AI Act (HTTP 200 OK Deep Article) -->
         <div class="item">
           <div class="item-num">1</div>
           <div class="item-body">
@@ -513,7 +521,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
           </div>
         </div>
 
-        <!-- 條目 2：OECD.AI Policy Observatory (HTTP 200 OK Deep Article) -->
         <div class="item">
           <div class="item-num">2</div>
           <div class="item-body">
@@ -523,7 +530,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
           </div>
         </div>
 
-        <!-- 條目 3：GovTech Singapore (HTTP 200 OK Deep Article) -->
         <div class="item">
           <div class="item-num">3</div>
           <div class="item-body">
@@ -533,7 +539,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
           </div>
         </div>
 
-        <!-- 條目 4：US Digital.gov (HTTP 200 OK Deep Article) -->
         <div class="item">
           <div class="item-num">4</div>
           <div class="item-body">
@@ -543,7 +548,6 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
           </div>
         </div>
 
-        <!-- 條目 5：Brookings Institution (HTTP 200 OK Deep Article) -->
         <div class="item">
           <div class="item-num">5</div>
           <div class="item-body">
@@ -564,7 +568,7 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
       </div>
       <div class="meta-item">
         <span>⏱️ 生成時間戳記：</span>
-        <span class="meta-pill">2026-07-27 11:18:00 (Asia/Taipei)</span>
+        <span class="meta-pill">2026-07-27 11:20:00 (Asia/Taipei)</span>
       </div>
     </footer>
 
