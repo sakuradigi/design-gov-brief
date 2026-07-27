@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>早晨簡報 · 2026年7月27日</title>
+<title>早晨簡報 · 2026-07-27</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -104,6 +104,7 @@ body {
   margin-bottom: 28px;
 }
 
+/* 每日格言區塊 */
 .quote-card {
   background: #FFFFFF;
   border: 1px solid var(--border-color);
@@ -144,28 +145,25 @@ body {
   text-align: right;
 }
 
-/* ⚡ 今日重點速覽卡片 (白話親切對話感) */
+/* 「一句話快訊」區塊 */
 .flash-card {
   background: #FFFFFF;
   border: 1px solid var(--border-color);
-  border-left: 4px solid var(--accent-color);
   border-radius: 8px;
-  padding: 24px 28px;
+  padding: 20px 26px;
   margin-bottom: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
 .flash-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.875rem;
+  gap: 8px;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--text-main);
-  margin-bottom: 16px;
-  padding-bottom: 10px;
-  border-bottom: 1px dashed var(--border-color);
+  margin-bottom: 12px;
 }
 
 .flash-badge {
@@ -185,11 +183,11 @@ body {
 
 .flash-item {
   position: relative;
-  padding-left: 24px;
-  margin-bottom: 12px;
+  padding-left: 20px;
+  margin-bottom: 8px;
   font-size: 0.9375rem;
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.55;
 }
 .flash-item:last-child { margin-bottom: 0; }
 
@@ -197,20 +195,8 @@ body {
   content: "⚡";
   position: absolute;
   left: 0;
-  top: 2px;
-  font-size: 0.875rem;
-  color: var(--accent-color);
-}
-
-.flash-tag {
-  display: inline-block;
-  font-weight: 700;
+  top: 1px;
   font-size: 0.8125rem;
-  color: var(--accent-color);
-  background: #F4EBE7;
-  padding: 1px 8px;
-  border-radius: 4px;
-  margin-right: 8px;
 }
 
 .section-heading {
@@ -230,13 +216,13 @@ body {
 .item-grid {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .item {
   display: flex;
   gap: 20px;
-  padding: 24px;
+  padding: 20px 24px;
   background: #FFFFFF;
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -260,7 +246,7 @@ body {
   font-weight: 700;
   font-size: 1.0625rem;
   color: var(--text-main);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .item-title a, .item-sentence a, .item-sentence-en a {
@@ -273,64 +259,15 @@ body {
 
 .item-sentence {
   font-size: 0.9375rem;
-  line-height: 1.65;
-  color: var(--text-main);
-  margin-bottom: 8px;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
 }
 
 .item-sentence-en {
   font-size: 0.875rem;
   line-height: 1.55;
-  color: #5C5B54;
-}
-
-.insight-tag {
-  display: inline-block;
-  background: #F4EBE7;
-  color: var(--accent-color);
-  font-weight: 700;
-  font-size: 0.75rem;
-  padding: 1px 6px;
-  border-radius: 4px;
-  margin-right: 6px;
-}
-
-.aesthetic-tag {
-  display: inline-block;
-  background: #EBF3F5;
-  color: #2B6CB0;
-  font-weight: 700;
-  font-size: 0.75rem;
-  padding: 1px 6px;
-  border-radius: 4px;
-  margin-right: 6px;
-}
-
-.civic-tag {
-  display: inline-block;
-  background: #EFEFEE;
-  color: #4A5568;
-  font-weight: 700;
-  font-size: 0.75rem;
-  padding: 1px 6px;
-  border-radius: 4px;
-  margin-right: 6px;
-}
-
-.item-image {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  margin: 12px 0 10px;
-}
-
-.item-image-caption {
-  font-size: 0.8125rem;
-  color: var(--text-sub);
-  margin-bottom: 10px;
-  font-style: italic;
+  color: #7B7973;
 }
 
 .item-sentence .src, .item-sentence-en .src {
@@ -346,6 +283,7 @@ body {
   padding: 8px 0 0;
 }
 
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
 .page-footer {
   margin-top: 56px;
   padding-top: 24px;
@@ -407,32 +345,28 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
       </div>
     </div>
 
-    <div class="day-date">星期一・2026年7月27日</div>
-    <div class="headline">IBM 企業 AI 設計系統、公共 AI 整備度評估與 2026 數位縣政治理</div>
+    <div class="day-date">2026-07-27</div>
+    <div class="headline">今日設計與治理精選 · 2026-07-27</div>
 
+    <!-- 💡 每日格言 -->
     <div class="quote-card">
       <div class="quote-title">💡 每日格言 · Daily Insight</div>
-      <div class="quote-text-en lang-en-only">"Art is not what you see, but what you make others see."</div>
-      <div class="quote-text-zh lang-zh-only">「藝術不在於你看到了什麼，而在於你讓別人看到了什麼。」</div>
-      <div class="quote-author">— Edgar Degas (愛德加·德加，法國印象派大師)</div>
+      <div class="quote-text-en lang-en-only">&quot;Design is not just what it looks like and feels like. Design is how it works.&quot;</div>
+      <div class="quote-text-zh lang-zh-only">「設計不只是外表和感覺，設計是讓東西好用。」</div>
+      <div class="quote-author">— Steve Jobs</div>
     </div>
 
-    <!-- ⚡ 今日重點速覽（白話親切對話感） -->
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
     <div class="flash-card">
       <div class="flash-header">
         <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
         <span class="flash-badge">30秒速讀</span>
       </div>
       <ul class="flash-list">
-        <li class="flash-item">
-          <span class="flash-tag">AI 拿不走你的靈魂</span> 別再花時間手動對齊按鈕了！IBM 最新報告指出：排版與尺寸調整等雜事交給 AI，設計師該專心的只有兩件事——挑出好看的配色，以及講一個打動人的好故事。
-        </li>
-        <li class="flash-item">
-          <span class="flash-tag">政府引進 AI 別裝懂</span> OECD 發出警訊：不少政府機關急著用 AI 展現創新，但底層數據跟審計履歷根本還沒準備好。沒有人類簽核與透明問責，再炫的演算法都是空談。
-        </li>
-        <li class="flash-item">
-          <span class="flash-tag">好的服務該像線上購物</span> 搬家變更地址憑什麼要跑三個機關？新加坡 GovTech 與美國數位團隊示範：打通跨部門 API 數據共享，讓公共服務順暢得像 Momo 購物，這才是現代政府該有的尊嚴感。
-        </li>
+                <li class="flash-item">OneOdio Studio Max 2 review: ambitious D</li>
+        <li class="flash-item">This artist&#x27;s 3D scenes feel like steppi</li>
+        <li class="flash-item">Burger King’s new ad is shameless nostal</li>
+
       </ul>
     </div>
 
@@ -441,134 +375,119 @@ body.lang-en-mode .lang-zh-only { display: none !important; }
 
 <div class="band band-bottom">
   <div class="inner">
-
-    <div class="calm-line">為您提煉今日 10 則全數通過 100% HTTP 200 OK 實體測試與內容對應之「視覺美學與公共治理」白話洞見：</div>
-
-    <!-- 第一單元：設計與視覺美學 5 則 -->
-    <div class="list-block" style="margin-top: 36px;">
-      <div class="section-heading">🎨 視覺藝術、平面設計趨勢與 UI/UX 美學 · Design Aesthetics & Visual Art (5 則 100% 驗證專文)</div>
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
       <div class="item-grid">
-
         <div class="item">
-          <div class="item-num">1</div>
+          <div class="item-num">01</div>
           <div class="item-body">
-            <div class="item-title"><a href="https://www.ibm.com/design/" target="_blank" rel="noopener">IBM Design 2026: Enterprise AI Design Systems & Intent Architecture</a></div>
-            <img class="item-image" src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80" alt="IBM AI Design Systems 2026">
-            <div class="item-image-caption">🖼️ 美學選圖：展示 2026 企業級 UI/UX 介面架構與 AI 輔助流程</div>
-            <div class="item-sentence lang-zh-only"><span class="insight-tag">白話洞見</span>設計師不用怕被 AI 取代！IBM 最新專題告訴我們：尺寸調整與排版這些重複雜事通通可以讓 AI 代勞，設計師正升級為「意圖架構師」，專心掌控產品的審美靈魂與品牌情緒。參見 <a class="src" href="https://www.ibm.com/design/" target="_blank" rel="noopener">IBM Design 來源專文</a>。</div>
-            <div class="item-sentence-en lang-en-only"><span class="insight-tag">Core Insight</span>IBM Design 2026 highlights how generative AI transforms Enterprise Design Systems, recasting designers as Intent Architects. Refer to <a class="src" href="https://www.ibm.com/design/" target="_blank" rel="noopener">IBM Design Source</a>.</div>
+            <div class="item-title"><a href="https://www.creativebloq.com/tech/headphones-earbuds/oneodio-studio-max-2-review-ambitious-dj-cans-with-big-energy-but-little-nuance" target="_blank" rel="noopener">OneOdio Studio Max 2 review: ambitious DJ cans with big energy, but little nuance</a></div>
+            <img class="item-image" src="https://cdn.mos.cms.futurecdn.net/tEPNu2wLfHRpPWHSGgAao3-2560-80.jpg" alt="OneOdio Studio Max 2 review: ambitious DJ cans with big energy, but little nuance" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">A rare example of regression from its predecessor... <span class="src">— Creative Bloq</span></div>
+            <div class="item-sentence-en lang-en-only">OneOdio Studio Max 2 review: ambitious DJ cans with big energy, but little nuance <span class="src">— Creative Bloq</span></div>
           </div>
         </div>
-
         <div class="item">
-          <div class="item-num">2</div>
+          <div class="item-num">02</div>
           <div class="item-body">
-            <div class="item-title"><a href="https://www.smashingmagazine.com/category/design/" target="_blank" rel="noopener">Smashing Magazine 2026: Modern Graphic Design & Print Aesthetics</a></div>
-            <img class="item-image" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80" alt="Print Aesthetics 2026">
-            <div class="item-image-caption">🖼️ 美學選圖：展現印刷質感墨痕與現代幾何視覺美學</div>
-            <div class="item-sentence lang-zh-only"><span class="aesthetic-tag">視覺美學</span>告別 AI 生成的同質化插圖！Smashing Magazine 點出平面設計的新脈動：頂尖創作者正全面擁抱傳統印刷的墨痕質感與復古字體，用略帶瑕疵的真實手作感，給予版面溫暖的人文溫度。參見 <a class="src" href="https://www.smashingmagazine.com/category/design/" target="_blank" rel="noopener">Smashing Magazine 專文</a>。</div>
-            <div class="item-sentence-en lang-en-only"><span class="aesthetic-tag">Graphic Aesthetics</span>Rejecting sterile AI-generated templates, 2026 graphic design embraces tactile print textures and expressive typography. Refer to <a class="src" href="https://www.smashingmagazine.com/category/design/" target="_blank" rel="noopener">Smashing Magazine Source</a>.</div>
+            <div class="item-title"><a href="https://www.creativebloq.com/3d/this-artists-3d-scenes-feel-like-stepping-inside-a-pencil-sketch" target="_blank" rel="noopener">This artist&#x27;s 3D scenes feel like stepping inside a pencil sketch</a></div>
+            <img class="item-image" src="https://cdn.mos.cms.futurecdn.net/hpWY32NDryd7L2Vgdgv4dc-1000-80.jpg" alt="This artist&#x27;s 3D scenes feel like stepping inside a pencil sketch" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">2D drawings become 3D in the free software Blender. <span class="src">— Creative Bloq</span></div>
+            <div class="item-sentence-en lang-en-only">This artist&#x27;s 3D scenes feel like stepping inside a pencil sketch <span class="src">— Creative Bloq</span></div>
           </div>
         </div>
-
         <div class="item">
-          <div class="item-num">3</div>
+          <div class="item-num">03</div>
           <div class="item-body">
-            <div class="item-title"><a href="https://chi2026.acm.org/" target="_blank" rel="noopener">ACM CHI 2026: Kinetic Typography & Spatial Motion Interaction</a></div>
-            <img class="item-image" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80" alt="Kinetic Typography 2026">
-            <div class="item-image-caption">🖼️ 美學選圖：展示動態字體與空間視覺流體互動作品</div>
-            <div class="item-sentence lang-zh-only"><span class="aesthetic-tag">動態美學</span>文字不再只是靜靜待在畫面上！ACM CHI 2026 互動藝術研究展示：動態字體被賦予了重力與光影回饋，每次滾動螢幕都是一場充滿動力的視覺表演，讓文字成為品牌最好的主角。參見 <a class="src" href="https://chi2026.acm.org/" target="_blank" rel="noopener">ACM CHI 2026 專文</a>。</div>
-            <div class="item-sentence-en lang-en-only"><span class="aesthetic-tag">Motion Art</span>Motion is no longer decorative—it drives brand identity. Kinetic typography turns words into spatial dynamic performers. Refer to <a class="src" href="https://chi2026.acm.org/" target="_blank" rel="noopener">ACM CHI 2026 Source</a>.</div>
+            <div class="item-title"><a href="https://www.creativebloq.com/design/branding/burger-kings-new-ad-is-shameless-nostalgia-bait" target="_blank" rel="noopener">Burger King’s new ad is shameless nostalgia bait</a></div>
+            <img class="item-image" src="https://cdn.mos.cms.futurecdn.net/k5QZrLH6n9paw2MyBV7PsQ-1920-80.jpg" alt="Burger King’s new ad is shameless nostalgia bait" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">And it’s perfect. <span class="src">— Creative Bloq</span></div>
+            <div class="item-sentence-en lang-en-only">Burger King’s new ad is shameless nostalgia bait <span class="src">— Creative Bloq</span></div>
           </div>
         </div>
-
         <div class="item">
-          <div class="item-num">4</div>
+          <div class="item-num">04</div>
           <div class="item-body">
-            <div class="item-title"><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">W3C WAI 2026: Web Content Accessibility Guidelines (WCAG) Standard</a></div>
-            <img class="item-image" src="https://www.w3.org/WAI/content-images/wcag/general-social.png" alt="W3C WCAG Standard">
-            <div class="item-image-caption">🖼️ 專文實體配圖：擷取自 w3.org 官方宣倡門戶</div>
-            <div class="item-sentence lang-zh-only"><span class="aesthetic-tag">包容美學</span>真正高級的美學，絕對不會把長輩或視力不好的人擋在門外！W3C 無障礙指引提醒：高對比度色彩與清晰字體階層，不僅能幫助視力受限者，更讓整體介面顯得乾淨、大氣且專業。參見 <a class="src" href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">W3C 來源專文</a>。</div>
-            <div class="item-sentence-en lang-en-only"><span class="aesthetic-tag">Inclusive Design</span>True visual excellence includes everyone. W3C guidelines show that WCAG-compliant color contrast enhances readability for all users. Refer to <a class="src" href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">W3C Source Article</a>.</div>
+            <div class="item-title"><a href="https://www.creativebloq.com/design/fonts-typography/apple-tvs-neuromancer-poster-raises-questions-about-its-adaptation-of-an-unfilmable-novel" target="_blank" rel="noopener">Apple TV&#x27;s Neuromancer poster raises questions about its adaptation of an &#x27;unfilmable&#x27; novel</a></div>
+            <img class="item-image" src="https://cdn.mos.cms.futurecdn.net/qrK4L5B2F3ts8pSPEqWoLk-2000-80.jpg" alt="Apple TV&#x27;s Neuromancer poster raises questions about its adaptation of an &#x27;unfilmable&#x27; novel" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">It follows the book covers&#x27; long tradition of retro-futuristic design, but is Apple going to change  <span class="src">— Creative Bloq</span></div>
+            <div class="item-sentence-en lang-en-only">Apple TV&#x27;s Neuromancer poster raises questions about its adaptation of an &#x27;unfilmable&#x27; novel <span class="src">— Creative Bloq</span></div>
           </div>
         </div>
-
         <div class="item">
-          <div class="item-num">5</div>
+          <div class="item-num">05</div>
           <div class="item-body">
-            <div class="item-title"><a href="https://www.designsystemscollective.com/what-is-design-md-and-why-your-ai-coding-agent-needs-it-879a54d668f5" target="_blank" rel="noopener">Design Systems Collective 2026: What is DESIGN.md and Why You Need It</a></div>
-            <img class="item-image" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" alt="DESIGN.md Guide">
-            <div class="item-image-caption">🖼️ 美學選圖：展現設計系統規範與現代美學架構</div>
-            <div class="item-sentence lang-zh-only"><span class="insight-tag">白話洞見</span>把你的視覺品味直接寫成文字檔！Design Systems Collective 報導指出：透過 `DESIGN.md` 定義好留白、字體與顏色邏輯，就算是 AI 寫程式工具也能乖乖產出 100% 符合作圖品質的完美網頁。參見 <a class="src" href="https://www.designsystemscollective.com/what-is-design-md-and-why-your-ai-coding-agent-needs-it-879a54d668f5" target="_blank" rel="noopener">Design Systems Collective 專文</a>。</div>
-            <div class="item-sentence-en lang-en-only"><span class="insight-tag">Core Insight</span>Translating visual taste into code. Design Systems Collective shows how DESIGN.md files keep automated output aligned with human design standards. Refer to <a class="src" href="https://www.designsystemscollective.com/what-is-design-md-and-why-your-ai-coding-agent-needs-it-879a54d668f5" target="_blank" rel="noopener">Source Article</a>.</div>
+            <div class="item-title"><a href="https://www.creativebloq.com/tech/accessories/bluetti-elite-10-power-station-review-portable-electricity-in-a-brick" target="_blank" rel="noopener">Bluetti Elite 10 Power Station review: portable electricity, in a brick</a></div>
+            <img class="item-image" src="https://cdn.mos.cms.futurecdn.net/Jsqu7BXGofYeiSeBKXohCR-2560-80.jpg" alt="Bluetti Elite 10 Power Station review: portable electricity, in a brick" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Like me, with the Bluetti Elite 10, you too can pretend you&#x27;re a rugged survivalist. <span class="src">— Creative Bloq</span></div>
+            <div class="item-sentence-en lang-en-only">Bluetti Elite 10 Power Station review: portable electricity, in a brick <span class="src">— Creative Bloq</span></div>
           </div>
         </div>
-
       </div>
     </div>
 
-    <!-- 第二單元：政府治理 5 則 -->
     <div class="list-block">
-      <div class="section-heading">🏛️ 全球公共治理、政治性實驗與社會創新 · Public Governance & Civic Innovation (5 則 100% 驗證專文)</div>
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
       <div class="item-grid">
-
         <div class="item">
-          <div class="item-num">1</div>
+          <div class="item-num">01</div>
           <div class="item-body">
-            <div class="item-title"><a href="https://digital.gov/topics/plain-language/" target="_blank" rel="noopener">US Digital.gov 2026: Plain Language Civic UX & Digital Governance Review</a></div>
-            <div class="item-sentence lang-zh-only"><span class="civic-tag">公共服務</span>公務機關別再講聽不懂的官話了！美國 Digital.gov 2026 指引強調：把饒舌的法律條文改成日常白話文 (Plain Language)，讓民眾一眼看懂申請步驟，才是好政府最重要的貼心細節。參見 <a class="src" href="https://digital.gov/topics/plain-language/" target="_blank" rel="noopener">Digital.gov 專文</a>。</div>
-            <div class="item-sentence-en lang-en-only"><span class="civic-tag">Public UX</span>US Federal Digital.gov guidelines focus on plain language and user-centered public service design. Refer to <a class="src" href="https://digital.gov/topics/plain-language/" target="_blank" rel="noopener">Digital.gov Source Guide</a>.</div>
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE9nc1VhTGU3X3RRSHVURnFvZ3cyRUpUWElTRFdiRmtDamRwMDZ0VVVfRWFlekxzLVl4R0lDaU9sTzJldUU4c0sxZHh3MF9Hc2FwNlF1R2xCcjFndER5T3VnZE9aX1l1VFpETnZPVE5NWTRaYktYUHdRdg?oc=5" target="_blank" rel="noopener">EU report urges structured AI adoption across public administrations - Digital Watch Observatory</a></div>
+            <img class="item-image" src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw" alt="EU report urges structured AI adoption across public administrations - Digital Watch Observatory" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">EU report urges structured AI adoption across public administrations  Digital Watch Observatory <span class="src">— Google News (Gov/Civic Tech EN)</span></div>
+            <div class="item-sentence-en lang-en-only">EU report urges structured AI adoption across public administrations - Digital Watch Observatory <span class="src">— Google News (Gov/Civic Tech EN)</span></div>
           </div>
         </div>
-
         <div class="item">
-          <div class="item-num">2</div>
+          <div class="item-num">02</div>
           <div class="item-body">
-            <div class="item-title"><a href="https://oecd.ai/en/dashboards/overview" target="_blank" rel="noopener">OECD.AI 2026: Public Sector AI Infrastructure Readiness Review</a></div>
-            <div class="item-sentence lang-zh-only"><span class="insight-tag">治理問責</span>政府用 AI 不能當盲目趕流行的甩手掌櫃！OECD 最新報告警示：公共機關引進 AI 決策前，必須建立可追溯的演算法審計履歷，而且攸關民眾權益的最終審核權，絕對不能交給機器。參見 <a class="src" href="https://oecd.ai/en/dashboards/overview" target="_blank" rel="noopener">OECD.AI 專文</a>。</div>
-            <div class="item-sentence-en lang-en-only"><span class="insight-tag">Public Oversight</span>OECD.AI report warns that public sector AI ambitions outpace infrastructure readiness, emphasizing auditability. Refer to <a class="src" href="https://oecd.ai/en/dashboards/overview" target="_blank" rel="noopener">OECD.AI Source Article</a>.</div>
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi7ANBVV95cUxQUGh6LXZyV3JZU1lQR1p5UzJmRlA1alNacVp0YlhCVHB2NVRHX0Z5Mk8xR1hjU1czTGtxbjdoRzRFZGdlSE1UYnFuQi1xYi1iR2hEVHFOVlA3UWJ5ZzVOQTYycjkwTUNHN0RybDJUOWYwWnFMRUNmU3B0cUk5VVoydmE4YzdmWUxZTHl3c2wzWVRIODFGdUI1b2R3ckxNcEV2U1VEM1JBVGpOTHdmbUhZRUJjQlpXVGNkVGJNeXVBRTFTVHhiR2JLWjVmU1M3djVVakFheTVQUGZwMWRMbzhCb3FURFZsYjNCVkJ0MERxSFhMVm53STNyTVJQVUkwemwxcnREM1VfZFJKck00Y0YzS0c3ZUlUZ3FGc1hGRlNjWkR4eEdzN1kwVHc5d29YV2tkRXVsdjVQbXV3UTFKVWxxZjk3d2QwVmNaLVpUVzZWNURkWDkxUWRWWkV6alNvZG1zNG93VzhBZkYxbHltM1FOVEE2NmRIUXUtWEdtMW1aMEtiS2pNMnFrNDhIbW85QkdQdk9aQmN1RHBjcFgxS0lOMUM3SUl2eXpmX3NyUXZvVDdnR29fMXhNSUw0aFpFU1JWV0tRT1dsOEpweklZN1I2bE1ETXR0U0F5ZElITGpPTThIVlZoQ1RwQ3AzaHI?oc=5" target="_blank" rel="noopener">陳茂波網誌：北都未來十年提供24萬伙及千萬方呎樓面，智慧城市基建持續升級|香港經濟日報 - 香港經濟日報HKET</a></div>
+            <img class="item-image" src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw" alt="陳茂波網誌：北都未來十年提供24萬伙及千萬方呎樓面，智慧城市基建持續升級|香港經濟日報 - 香港經濟日報HKET" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">陳茂波網誌：北都未來十年提供24萬伙及千萬方呎樓面，智慧城市基建持續升級|香港經濟日報  香港經濟日報HKET <span class="src">— Google News (數位治理 TW)</span></div>
+            <div class="item-sentence-en lang-en-only">陳茂波網誌：北都未來十年提供24萬伙及千萬方呎樓面，智慧城市基建持續升級|香港經濟日報 - 香港經濟日報HKET <span class="src">— Google News (數位治理 TW)</span></div>
           </div>
         </div>
-
         <div class="item">
-          <div class="item-num">3</div>
+          <div class="item-num">03</div>
           <div class="item-body">
-            <div class="item-title"><a href="https://www.tech.gov.sg/media/technews/" target="_blank" rel="noopener">GovTech Singapore 2026: Digital Public Infrastructure & Cross-Agency API</a></div>
-            <div class="item-sentence lang-zh-only"><span class="civic-tag">治理思維</span>申辦育兒津貼何必填三次表格？新加坡 GovTech 團隊展示：打通跨部門安全 API 數據連動，民眾變更地址或領取補助一鍵搞定，像網路購物一樣流暢，用效率贏回公民信任。參見 <a class="src" href="https://www.tech.gov.sg/media/technews/" target="_blank" rel="noopener">GovTech 專文</a>。</div>
-            <div class="item-sentence-en lang-en-only"><span class="civic-tag">Gov Mindset</span>GovTech Singapore shares insights on building seamless digital public infrastructure and cross-agency data sharing. Refer to <a class="src" href="https://www.tech.gov.sg/media/technews/" target="_blank" rel="noopener">GovTech Official News</a>.</div>
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE02ZVhNazNYZWxpS3ljYndWaVA0U3prRWN6MXdjZWprYzBDcVFLVnlDS2loRUExeFpqeUM4emVnMVRHRWMwNU9MVmo5c0puV0pvYlRNTHdTYzhDdw?oc=5" target="_blank" rel="noopener">致理科大引領AI治理教育 攜手中正大學打造國際法遵科技交流平台 | 產學研訓 | 商情 - 經濟日報</a></div>
+            <img class="item-image" src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw" alt="致理科大引領AI治理教育 攜手中正大學打造國際法遵科技交流平台 | 產學研訓 | 商情 - 經濟日報" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">致理科大引領AI治理教育 攜手中正大學打造國際法遵科技交流平台 | 產學研訓 | 商情  經濟日報 <span class="src">— Google News (數位治理 TW)</span></div>
+            <div class="item-sentence-en lang-en-only">致理科大引領AI治理教育 攜手中正大學打造國際法遵科技交流平台 | 產學研訓 | 商情 - 經濟日報 <span class="src">— Google News (數位治理 TW)</span></div>
           </div>
         </div>
-
         <div class="item">
-          <div class="item-num">4</div>
+          <div class="item-num">04</div>
           <div class="item-body">
-            <div class="item-title"><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">European Commission 2026: EU AI Act Public System Accountability</a></div>
-            <div class="item-sentence lang-zh-only"><span class="insight-tag">治理問責</span>防範演算法黑箱！歐盟執行委員會劃下硬性規定：公共部門使用的算法系統必須具備透明度報告，民眾有權知道自己為何得到這項評核結果，保障民權不受黑箱侵犯。參見 <a class="src" href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">歐盟執委會專文</a>。</div>
-            <div class="item-sentence-en lang-en-only"><span class="insight-tag">Public Oversight</span>The European Commission outlines the official risk-based regulatory framework under the EU AI Act for public transparency. Refer to <a class="src" href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">EU Commission Source</a>.</div>
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTFBUd0xtZWUzNHgzSDU3VTRyMnNIM094ZkMyN0hLVHBJTTVDNERvdEVvaXp1alJFdy1tTWdMcHhWUzFCVjh0RHRDMk80XzBRYk9VUllrVnE3MG1uODI5YTlEX01lNWZNdkRwcVN6SWtnWEZWVjBJMnlsS1d1VDg?oc=5" target="_blank" rel="noopener">【他鄉港聲】從墨子智慧看AI治理 - 香港文匯報</a></div>
+            <img class="item-image" src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw" alt="【他鄉港聲】從墨子智慧看AI治理 - 香港文匯報" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">【他鄉港聲】從墨子智慧看AI治理  香港文匯報 <span class="src">— Google News (數位治理 TW)</span></div>
+            <div class="item-sentence-en lang-en-only">【他鄉港聲】從墨子智慧看AI治理 - 香港文匯報 <span class="src">— Google News (數位治理 TW)</span></div>
           </div>
         </div>
-
         <div class="item">
-          <div class="item-num">5</div>
+          <div class="item-num">05</div>
           <div class="item-body">
-            <div class="item-title"><a href="https://www.brookings.edu/articles/how-artificial-intelligence-is-transforming-the-world/" target="_blank" rel="noopener">Brookings Institution 2026: AI & Global Democratic Governance</a></div>
-            <div class="item-sentence lang-zh-only"><span class="insight-tag">戰略洞見</span>科技不能脫韁！美國智庫 Brookings 研究指出：AI 正在深度滲透民主機制，國家決策者必須在追求科技進步與維護民主問責之間，打造一套靈活好用的監理安全網。參見 <a class="src" href="https://www.brookings.edu/articles/how-artificial-intelligence-is-transforming-the-world/" target="_blank" rel="noopener">Brookings 專文</a>。</div>
-            <div class="item-sentence-en lang-en-only"><span class="insight-tag">Strategic Vision</span>Brookings research explores how AI is reshaping global governance and public sector institutions. Refer to <a class="src" href="https://www.brookings.edu/articles/how-artificial-intelligence-is-transforming-the-world/" target="_blank" rel="noopener">Brookings Research Article</a>.</div>
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE9VNUJIMVJYQTdhVXp0VVllVkI4LUJEa1ppVGFPN25hR1VWUmlndVQ1T080LXVSNGlHYkdnY2RSeGpoVUxKbVNQUmpJMFIxQjFZWkE?oc=5" target="_blank" rel="noopener">AI治理成企業新競爭力 台灣AI稽核技術獲日德學界採用與合作 - 蕃新聞</a></div>
+            <img class="item-image" src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw" alt="AI治理成企業新競爭力 台灣AI稽核技術獲日德學界採用與合作 - 蕃新聞" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">AI治理成企業新競爭力 台灣AI稽核技術獲日德學界採用與合作  蕃新聞 <span class="src">— Google News (數位治理 TW)</span></div>
+            <div class="item-sentence-en lang-en-only">AI治理成企業新競爭力 台灣AI稽核技術獲日德學界採用與合作 - 蕃新聞 <span class="src">— Google News (數位治理 TW)</span></div>
           </div>
         </div>
-
       </div>
     </div>
 
-    <!-- 頁尾生成資訊欄位 -->
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
     <footer class="page-footer">
       <div class="meta-item">
         <span>🤖 生成模型：</span>
-        <span class="meta-pill">Gemini 3.6 Flash / Antigravity Agent</span>
+        <span class="meta-pill">RSS + Gemini 2.0 Flash</span>
       </div>
       <div class="meta-item">
         <span>⏱️ 生成時間戳記：</span>
-        <span class="meta-pill">2026-07-27 15:11:00 (Asia/Taipei)</span>
+        <span class="meta-pill">2026-07-27 15:31:49 (UTC+8)</span>
       </div>
     </footer>
 
