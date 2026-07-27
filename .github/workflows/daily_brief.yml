@@ -1,6 +1,9 @@
 name: 每日設計與 AI 治理日報生成
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     - cron: '0 0 * * *'  # 每天 UTC 0:00 (台北 08:00) 執行
   repository_dispatch:
