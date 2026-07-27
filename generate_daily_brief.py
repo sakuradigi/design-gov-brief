@@ -4,6 +4,7 @@ import re
 import glob
 import json
 import urllib.request
+from urllib.parse import urlparse
 import argparse
 from datetime import datetime
 
@@ -11,6 +12,33 @@ WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
 BRIEFS_DIR = os.path.join(WORKSPACE_DIR, 'briefs')
 INDEX_PATH = os.path.join(WORKSPACE_DIR, 'index.html')
 TEMPLATE_PATH = os.path.join(WORKSPACE_DIR, 'templates', 'brief_template.html')
+
+# 高畫質真實設計與藝術圖床備用庫 (Unsplash Design & Motion HD Collections)
+DESIGN_AESTHETIC_IMAGES = [
+    ("https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80", "平面設計與字體美學風格展示"),
+    ("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80", "動態視覺與空間光影藝術展示"),
+    ("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80", "抽象幾何與現代視覺美學展示"),
+    ("https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80", "數位 UI/UX 介面美學與系統展示")
+]
+
+def fetch_og_image(url):
+    """雲端實時抓取文章的 Open Graph 預覽配圖 (og:image)"""
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            html = resp.read().decode('utf-8', errors='ignore')
+            m = re.search(r'<meta[^>]+property=[\"\']og:image[\"\'][^>]+content=[\"\']([^\"\']+)[\"\']', html, re.I)
+            if not m:
+                m = re.search(r'<meta[^>]+content=[\"\']([^\"\']+)[\"\'][^>]+property=[\"\']og:image[\"\']', html, re.I)
+            if m:
+                img_url = m.group(1).strip()
+                if img_url.startswith('/'):
+                    parsed = urlparse(url)
+                    img_url = f"{parsed.scheme}://{parsed.netloc}{img_url}"
+                return img_url
+    except Exception as e:
+        print(f"OG Image Fetch Notice for {url}: {e}")
+    return None
 
 def verify_url_live(url):
     """在沙盒/雲端環境中發送 HTTP GET 請求驗證 URL 是否回傳 HTTP 200 OK 避免 404 死連結"""
@@ -85,7 +113,7 @@ def generate_news_with_gemini(api_key, date_str):
         return None
 
 def build_html_from_data(data, date_str):
-    """將 Gemini API 產出的 JSON 數據填入 brief_template.html 並輸出至 briefs/ 檔案"""
+    """將 Gemini API 產出的 JSON 數據填入 brief_template.html，並自動實時擷取文章配圖 (og:image) 存成檔案"""
     if not os.path.exists(TEMPLATE_PATH):
         print(f"Template not found at {TEMPLATE_PATH}")
         return False
@@ -102,18 +130,33 @@ def build_html_from_data(data, date_str):
           <span class="lang-en-only">{item}</span>
         </li>"""
 
-    # 設計新聞 5 則
+    # 設計新聞 5 則 (自動擷取文章真實 og:image 配圖或匹配真實圖床)
     design_items_html = ""
     for i, item in enumerate(data.get('design_news', []), 1):
         url = item.get('url', '#')
         title = item.get('title', '')
         zh = item.get('sentence_zh', '')
         en = item.get('sentence_en', '')
+        
+        # 雲端自動抓取該專文的實體 OG 圖片
+        og_img = fetch_og_image(url) if url != '#' else None
+        img_html = ""
+        if og_img:
+            img_html = f"""
+            <img class="item-image" src="{og_img}" alt="{title}">
+            <div class="item-image-caption">🖼️ 專文實體配圖：擷取自 {urlparse(url).netloc} 文章原文</div>"""
+        elif i <= len(DESIGN_AESTHETIC_IMAGES):
+            fallback_img, caption = DESIGN_AESTHETIC_IMAGES[i-1]
+            img_html = f"""
+            <img class="item-image" src="{fallback_img}" alt="{title}">
+            <div class="item-image-caption">🖼️ 美學選圖：{caption}</div>"""
+
         design_items_html += f"""
         <div class="item">
           <div class="item-num">{i}</div>
           <div class="item-body">
             <div class="item-title"><a href="{url}" target="_blank" rel="noopener">{title}</a></div>
+            {img_html}
             <div class="item-sentence lang-zh-only">{zh} <a class="src" href="{url}" target="_blank" rel="noopener">來源專文</a></div>
             <div class="item-sentence-en lang-en-only">{en} <a class="src" href="{url}" target="_blank" rel="noopener">Source Article</a></div>
           </div>
@@ -126,11 +169,20 @@ def build_html_from_data(data, date_str):
         title = item.get('title', '')
         zh = item.get('sentence_zh', '')
         en = item.get('sentence_en', '')
+        
+        og_img = fetch_og_image(url) if url != '#' else None
+        img_html = ""
+        if og_img:
+            img_html = f"""
+            <img class="item-image" src="{og_img}" alt="{title}">
+            <div class="item-image-caption">🖼️ 報告實體配圖：擷取自 {urlparse(url).netloc} 官方門戶</div>"""
+
         gov_items_html += f"""
         <div class="item">
           <div class="item-num">{i}</div>
           <div class="item-body">
             <div class="item-title"><a href="{url}" target="_blank" rel="noopener">{title}</a></div>
+            {img_html}
             <div class="item-sentence lang-zh-only">{zh} <a class="src" href="{url}" target="_blank" rel="noopener">來源專文</a></div>
             <div class="item-sentence-en lang-en-only">{en} <a class="src" href="{url}" target="_blank" rel="noopener">Source Article</a></div>
           </div>
@@ -163,7 +215,7 @@ def build_html_from_data(data, date_str):
     output_path = os.path.join(BRIEFS_DIR, output_filename)
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
-    print(f"Successfully generated HTML brief at: {output_path}")
+    print(f"Successfully generated HTML brief with live OpenGraph images at: {output_path}")
     return True
 
 def update_index_archive():
