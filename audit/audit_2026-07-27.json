@@ -1,8 +1,8 @@
 {
   "date": "2026-07-27",
-  "generated_at": "2026-07-27T08:10:49.061030+00:00",
-  "total_raw_articles": 246,
-  "total_verified": 246,
+  "generated_at": "2026-07-27T08:15:42.354831+00:00",
+  "total_raw_articles": 244,
+  "total_verified": 244,
   "total_failed": 0,
   "selected_design": 5,
   "selected_gov": 5,
@@ -204,15 +204,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-07-21T07:00:00+01:00"
-    },
-    {
-      "title": "Sawako Kabuki on butts, bodily fluids and making work that refuses to behave",
-      "url": "https://www.creativeboom.com/inspiration/sawako-kabuki-on-butts-bodily-fluids-and-making-work-that-refuses-to-behave/",
-      "source": "Creative Boom",
-      "category": "design",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-07-20T09:13:00+01:00"
     },
     {
       "title": "Minimalist Streetwear Branding for NevertoolateApparel",
@@ -771,15 +762,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-07-23T09:09:34+00:00"
-    },
-    {
-      "title": "行政院推食安修法 五大強化提升源頭與數位治理 - 蕃新聞",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1OSG5zdlVvRXVUWDJBeW9Qa0NRaldrV2MxcmtRR1Y0UUFVMGU0bkIwTENXYVp3b1FieVB2UFViNjF3U3BJMU1fWkFfaFhNRWRPUUE?oc=5",
-      "source": "Google News (TW)",
-      "category": "gov",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-07-20T08:11:00+00:00"
     },
     {
       "title": "鍾麗玲新加坡推廣中國AI治理倡議 簽備忘錄發揮星港「門戶」優勢 - 星島頭條",
@@ -1493,15 +1475,6 @@
       "pub_date": "2026-07-20T11:57:41+00:00"
     },
     {
-      "title": "AI Governance Playbook Authors to Speak at AI Governance World Conference in Las Vegas - EIN Presswire",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQcGVmZmJGd0cxb1VjTkE3UVIxMm5CR2tkcklHb2RfM3NzNVhGNnp4eUtjYU01UDR6cDdPTTRHN09fSFZXaUxZZG5yTGJHdWVyRnBsSndqTDdDNmh2bWhWTFE0bjlvd0RZUmdRSlZTWGl1T055VVNXcGUwSXpJcEQ5a2o5X2YycDJJaWVPUy1kR2ViZVhsVUVITUlONEJKRnlJQlRfMkVKekM2Ymo4SWtxbGJUNmNJVGhpbWFjR3lHS0d0Zk4xc3EyVjdET3FQUQ?oc=5",
-      "source": "Google News (US/EU)",
-      "category": "gov",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-07-23T18:47:00+00:00"
-    },
-    {
       "title": "DiMe launches initiative to build operational AI governance tools - RamaOnHealthcare",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPMlAxUzRYR0YxeUk1ZlE2ZjBuWHJhdzhyMkg5Q2hqRzQxcGVJUlJUd3BIaE51QUhTSmZwVVRhOUNGQ3FKZll5eWhHblNtRzlydDZ3SG9tbUtkcmhtcWRyM3pSbEMtM0o4RjJXT3kzY1dMczcyUmxTbklFOHE1VGNveG1kRTZ2cE8tdmVnWlB6VkRqRW8yb05Tc0NGVQ?oc=5",
       "source": "Google News (US/EU)",
@@ -1527,6 +1500,15 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-07-23T12:54:36+00:00"
+    },
+    {
+      "title": "AI Governance Playbook Authors to Speak at AI Governance World Conference in Las Vegas - EIN News",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPc1pqMmxpdGhCNVFHblp3SmJaTktncmN6d3RBemExX2htWlhrRFNENkFzN0l0bF9VQlpVeng3ZGpOc2I4MWdDelVvc2NvVjVDaDhleDBDS2FtY1dwN1lIS2ZqR29tUjEwbnVoWGxOeHVMRlJpX3lqbGJLdkFxdm5RYXpHcHd1dnY5cGdPYjFqVnJ4NkVRNllTcXpLUDNxLWZHelZHNUlvY3pQeXZyMEc1ZDB4WVpPY1lZdUJWaXl5ajJaZ09PMFpJ?oc=5",
+      "source": "Google News (US/EU)",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-23T18:47:00+00:00"
     },
     {
       "title": "AI governance checklist: 10 practical actions every legal team should take now - Lexology",
@@ -1638,12 +1620,12 @@
     },
     {
       "title": "Austinites help shape community-led AI governance framework - Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPMHlwcTVMMlZhMkM5cDRqdjNQcFgzSWNjLVBCdU9waUdhUmg4eWY5THp3cDVVR3JOZ3gyVDNEM3g3V0JwdTNVaGlVRWQ5SEVLVW5INGFPYzdId25kT1cwcGNsY0dBS3ZjRXRjNW9Pa2dTVmZGZWpQcDRwLUJHbjd0Qk9fbzNjS3ZSME1MMg?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQWXNHSDliaFpuZG4tTjBTVkxRRjlIV1k5Y0VUbWRrUnhZMzRBNDF2VHBTUUViMkFLRHZIMVlWUGxLc1lnUm1YT2ZfVXhkMERzbVRmMC1FNXh2RXdhN3c5ODExczlZRDZ5Q0s4X3ZDb21jcjQxQWNJNTk3U1hHYnhEUUxFbnF6QUYzMHBOQw?oc=5",
       "source": "Google News (US/EU)",
       "category": "gov",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-07-21T23:11:45+00:00"
+      "pub_date": "2026-07-21T23:11:25+00:00"
     },
     {
       "title": "Cyber War 2031: AI, Governance and Digital Force - debuglies.com",
