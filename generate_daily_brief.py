@@ -664,7 +664,7 @@ def update_index_archive():
             title = "每日設計與治理簡報"
             try:
                 with open(filepath, 'r', encoding='utf-8') as f:
-                    content = f.read(5000)  # 只讀開頭找標題
+                    content = f.read(50000)  # 擴大讀取範圍以涵蓋 CSS 後的 body 內容
                     h_match = re.search(r'<div class="headline">(.*?)</div>', content, re.DOTALL)
                     if h_match:
                         raw_title = re.sub('<[^<]+?>', '', h_match.group(1)).strip()
