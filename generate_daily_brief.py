@@ -385,7 +385,7 @@ def generate_summaries_with_gemini(design_articles, gov_articles, date_str):
     try:
         import google.generativeai as genai
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-2.0-flash')
+        model = genai.GenerativeModel('gemini-3.6-flash')
     except ImportError:
         print("⚠ google-generativeai not installed, using fallback")
         return generate_fallback_summaries(design_articles, gov_articles, date_str)
@@ -510,7 +510,7 @@ def generate_brief_html(design_articles, gov_articles, summaries, date_str):
         '{{QUOTE_EN}}': html.escape(summaries.get('quote_en', '')),
         '{{QUOTE_ZH}}': html.escape(summaries.get('quote_zh', '')),
         '{{QUOTE_AUTHOR}}': html.escape(summaries.get('quote_author', '')),
-        '{{GENERATED_MODEL}}': 'RSS + Gemini 2.0 Flash',
+        '{{GENERATED_MODEL}}': 'RSS + Gemini 3.6 Flash',
         '{{GENERATION_TIMESTAMP}}': now.strftime('%Y-%m-%d %H:%M:%S (UTC+8)'),
         '{{CALM_LINE}}': '以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。',
     }
