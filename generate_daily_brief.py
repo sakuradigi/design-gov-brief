@@ -10,6 +10,7 @@ from datetime import datetime
 WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
 BRIEFS_DIR = os.path.join(WORKSPACE_DIR, 'briefs')
 INDEX_PATH = os.path.join(WORKSPACE_DIR, 'index.html')
+TEMPLATE_PATH = os.path.join(WORKSPACE_DIR, 'templates', 'brief_template.html')
 
 def verify_url_live(url):
     """在沙盒/雲端環境中發送 HTTP GET 請求驗證 URL 是否回傳 HTTP 200 OK 避免 404 死連結"""
@@ -22,7 +23,7 @@ def verify_url_live(url):
         return False
 
 def generate_news_with_gemini(api_key, date_str):
-    """在 GitHub Actions 雲端環境中使用 Gemini API 檢索最新主題新聞（嚴格遵循 10 獨立網域、AI佔比控管、美學選圖與政治性實驗規範）"""
+    """在 GitHub Actions 雲端環境中使用 Gemini API 檢索最新主題新聞"""
     try:
         import google.generativeai as genai
         genai.configure(api_key=api_key)
@@ -82,6 +83,88 @@ def generate_news_with_gemini(api_key, date_str):
     except Exception as e:
         print(f"Gemini API generation failed/fallback: {e}")
         return None
+
+def build_html_from_data(data, date_str):
+    """將 Gemini API 產出的 JSON 數據填入 brief_template.html 並輸出至 briefs/ 檔案"""
+    if not os.path.exists(TEMPLATE_PATH):
+        print(f"Template not found at {TEMPLATE_PATH}")
+        return False
+
+    with open(TEMPLATE_PATH, 'r', encoding='utf-8') as f:
+        tmpl = f.read()
+
+    # 快訊列表
+    flash_html = ""
+    for item in data.get('flash_takeaways', []):
+        flash_html += f"""
+        <li class="flash-item">
+          <span class="lang-zh-only">{item}</span>
+          <span class="lang-en-only">{item}</span>
+        </li>"""
+
+    # 設計新聞 5 則
+    design_items_html = ""
+    for i, item in enumerate(data.get('design_news', []), 1):
+        url = item.get('url', '#')
+        title = item.get('title', '')
+        zh = item.get('sentence_zh', '')
+        en = item.get('sentence_en', '')
+        design_items_html += f"""
+        <div class="item">
+          <div class="item-num">{i}</div>
+          <div class="item-body">
+            <div class="item-title"><a href="{url}" target="_blank" rel="noopener">{title}</a></div>
+            <div class="item-sentence lang-zh-only">{zh} <a class="src" href="{url}" target="_blank" rel="noopener">來源專文</a></div>
+            <div class="item-sentence-en lang-en-only">{en} <a class="src" href="{url}" target="_blank" rel="noopener">Source Article</a></div>
+          </div>
+        </div>"""
+
+    # 治理新聞 5 則
+    gov_items_html = ""
+    for i, item in enumerate(data.get('gov_news', []), 1):
+        url = item.get('url', '#')
+        title = item.get('title', '')
+        zh = item.get('sentence_zh', '')
+        en = item.get('sentence_en', '')
+        gov_items_html += f"""
+        <div class="item">
+          <div class="item-num">{i}</div>
+          <div class="item-body">
+            <div class="item-title"><a href="{url}" target="_blank" rel="noopener">{title}</a></div>
+            <div class="item-sentence lang-zh-only">{zh} <a class="src" href="{url}" target="_blank" rel="noopener">來源專文</a></div>
+            <div class="item-sentence-en lang-en-only">{en} <a class="src" href="{url}" target="_blank" rel="noopener">Source Article</a></div>
+          </div>
+        </div>"""
+
+    sections_html = f"""
+    <div class="list-block" style="margin-top: 36px;">
+      <div class="section-heading">🎨 視覺藝術、平面設計趨勢與 UI/UX 美學 · Design Aesthetics & Visual Art (5 則)</div>
+      <div class="item-grid">{design_items_html}</div>
+    </div>
+    <div class="list-block">
+      <div class="section-heading">🏛️ 全球公共治理、政治性實驗與社會創新 · Public Governance & Civic Innovation (5 則)</div>
+      <div class="item-grid">{gov_items_html}</div>
+    </div>"""
+
+    now_ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S (Asia/Taipei)')
+
+    html = tmpl.replace('{{DATE_STRING}}', date_str)
+    html = html.replace('{{HEADLINE}}', data.get('headline', f'早安 Vincent，今日精選美學與治理簡報 ({date_str})'))
+    html = html.replace('{{QUOTE_EN}}', data.get('quote_en', ''))
+    html = html.replace('{{QUOTE_ZH}}', data.get('quote_zh', ''))
+    html = html.replace('{{QUOTE_AUTHOR}}', data.get('quote_author', ''))
+    html = html.replace('{{FLASH_NEWS_ITEMS}}', flash_html)
+    html = html.replace('{{CALM_LINE}}', '為您提煉今日 10 則結合「視覺美學素養、動態藝術、多元治理與科技分寸」的白話洞見：')
+    html = html.replace('{{CONTENT_SECTIONS}}', sections_html)
+    html = html.replace('{{GENERATED_MODEL}}', 'Gemini 3.6 Flash / Antigravity Agent')
+    html = html.replace('{{GENERATION_TIMESTAMP}}', now_ts)
+
+    output_filename = f"morning_brief_{date_str}.html"
+    output_path = os.path.join(BRIEFS_DIR, output_filename)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(html)
+    print(f"Successfully generated HTML brief at: {output_path}")
+    return True
 
 def update_index_archive():
     """自動掃描 briefs/ 與 參考/ 目錄下的所有 HTML 簡報，並更新 index.html 歸檔頁面"""
@@ -174,6 +257,7 @@ def main():
         data = generate_news_with_gemini(api_key, date_str)
         if data:
             print("Successfully generated daily data via Gemini 3.6 Flash API under new aesthetics & civic governance rules.")
+            build_html_from_data(data, date_str)
     
     update_index_archive()
 
