@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>早晨簡報 · 2026-07-28</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-07-28</div>
+    <div class="headline">從製造阻力的有感設計到實戰 AI 治理：打造人性與責任並存的數位新秩序</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Simplicity is about subtracting the obvious and adding the meaningful.</div>
+      <div class="quote-text-zh lang-zh-only">極簡並非盲目刪減，而是扣除顯而易見的陳詞，注入真正有意義的靈魂。</div>
+      <div class="quote-author">— John Maeda</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">體驗設計不再追求無痛順暢，適度阻力才能創造深度連結。</li>
+        <li class="flash-item">AI 治理告別紙上談兵，實戰落地與工具鏈防線成企業關鍵。</li>
+        <li class="flash-item">保險業量化 AI 風險，治理成效將直接連動企業財務成本。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/from-frictionless-to-meaningful-2dc785d6cc4e?source=rss----138adf9c44c---4" target="_blank" rel="noopener">別再追求無痛順暢！適度製造阻力才能打造有溫度的產品</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">From frictionless to meaningful</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/0*9hBLouW0xkc74_qt.jpeg" alt="From frictionless to meaningful" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">我們總以為越順暢、越無縫的設計就是好設計，但盲目追求「零摩擦」往往只會讓使用者陷入無意識的沉迷。適度在關鍵流程中故意加入一點「阻力」，反而能迫使人們停下來思考，創造更有感、更有價值的互動體驗。這代表體驗設計的範式正在轉移：從效率至上，走向重塑人與產品之間的深層連結。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">UX design has long championed frictionless experiences, but seamless interaction often leads to mindless consumption. Introducing intentional friction creates meaningful moments that encourage user reflection and conscious engagement. The future of product design lies in balancing seamless efficiency with deliberate friction to build deeper human connections rather than passive user habits. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/07/27/between-print-and-digital-the-making-of-mersis-website/" target="_blank" rel="noopener">打破螢幕與紙本邊界：用靜態裝幀質感翻轉數位視覺體感</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Between Print and Digital: The Making of MERSI’s Website</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/07/Aw-Main.jpg?x48895" alt="Between Print and Digital: The Making of MERSI’s Website" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當所有網站都被模組化組件搞得千篇一律時，將紙本雜誌的文字裝幀與靜謐排版導入數位空間，反而成了突破視覺疲勞的奇招。這個案例示範了如何利用流暢的微互動與建築感視覺，把瀏覽網頁變成一場沉浸式的閱讀展演。對品牌來說，數位轉型不該只是功能搬家，更是把「紙本儀式感」轉譯成專屬質感語彙的絕佳契機。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">Modern web design often suffers from template fatigue, making custom digital experiences essential for luxury and architectural branding. By fusing print editorial layouts with subtle web motion, designers can transform standard scrolling into an immersive storytelling journey. This hybrid approach demonstrates that digital presence should convey tactile elegance and brand identity rather than merely organizing functional features into standardized layout grids. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/kimori-studio-crafts-playful-matcha-cafe-branding-kimori/" target="_blank" rel="noopener">抹茶色加萌貓效應！模組化視覺打造高社群黏著度的餐飲</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Kimori Studio Crafts Playful Matcha Cafe Branding for Kimori</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/kimori-matcha_0.jpg" alt="Kimori Studio Crafts Playful Matcha Cafe Branding for Kimori" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">抹茶貓咪咖啡館聽起來很萌，但真正讓它脫穎而出的是背後極其聰明的模組化品牌識別。設計師透過強烈的特調綠色調與童趣繪本風格，把視覺系統做成可以靈活拆解、擴充的模組，讓包裝和社群周邊瞬間變成潮流符號。這告訴我們，當代餐飲品牌光靠產品好吃不夠，視覺必須具備「迷因化」與「模組彈性」，才能在視覺經濟中通殺。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">The branding for Kimori Matcha Cat Cafe uses modular visual identity and vibrant packaging to build a cohesive brand world. Combining playful feline illustrations with strategic color psychology, the design seamlessly scales from coffee cups to social media content. It proves that modern hospitality design must balance emotional storytelling with versatile design systems to foster strong customer loyalty across touchpoints. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/inspiration/how-yurie-left-a-fashion-design-career-to-draw-fashion-loving-women-in-coloured-pencil/" target="_blank" rel="noopener">離開快時尚擁抱色鉛筆手繪：用溫暖質感重找創作純粹快樂</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How Yurie left a fashion design career to draw fashion-loving women in coloured pencil</div>
+            <img class="item-image" src="https://www.creativeboom.com/upload/articles/63/63f4292161160d7eb1e12eaa3ffaf94d984e32a7_800.png" alt="How Yurie left a fashion design career to draw fashion-loving women in coloured pencil" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">離開高壓卻同質化嚴重的時尚工業，選擇用最原始的色鉛筆重新描繪女性韻味，這不只是一個職涯轉向故事，更反映了創作者對「手作溫度」的集體渴望。在 AI 與數位工具氾濫的當代，這種帶著不完美質感的手繪作品反而更有辨識度與情感穿透力。對設計師來說，最珍貴的品牌資產從來不是產能，而是你眼中看世界的那份獨特視角。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Former fashion designer Yurie transitioned from fast-paced product development to hand-drawn colored pencil illustrations, turning a personal passion into a thriving creative career. Her story underscores a growing movement where artists reject industrial speed in favor of analog craftsmanship. In an automated design world, authentic human touch and personal storytelling offer a uniquely compelling artistic identity. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/the-anthropomorphism-consciousness-mirage-in-ai-design-ux-framework-8e23beb1d7c1?source=rss----138adf9c44c---4" target="_blank" rel="noopener">明知 AI 只是程式卻動情？揭開擬人化設計背後的心理幻象</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The consciousness mirage in AI design</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*Xx_QJGDYiRYoPJEqJWEA6A.png" alt="The consciousness mirage in AI design" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">我們明明知道對面只是演算法，卻還是會因為幾句貼心對話而產生「被理解」的錯覺。這種擬人化設計機制，正在成為產品經理與設計師手上的雙面刃：做得好能大幅提升信任感與陪伴價值，做過頭卻可能演變成情感操縱。當 AI 介面越來越像真人，設計師的使命不再只是優化體驗，更要清楚拿捏同理心與透明度之間的道德界線。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">AI interfaces often evoke psychological mind attribution, making users feel genuinely heard despite knowing they interact with code. This anthropomorphic design dynamic acts as a powerful lever, boosting engagement while raising ethical concerns about illusion and emotional manipulation. UX designers must navigate this delicate balance, leveraging human-like warmth to build user confidence without distorting reality or exploiting user vulnerability. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxPbTdYVEQxYUxrV3g1UDJkR0RHQnRRNzNzbS04ekt3VnRlVU5DeDRFS0w3NS1FVkdOS1M1M05pc2d5Z212ZDhrRHl4Nzd1dkZDSmppa01fdXJKZHRKUjg4MDBhcENqYzNPRGFQRUsyWURrUnIyb0tIdGptcWt3N2JfaUE0dGZvVm5pbGdnQTNscl9ia1J3S1FUc3Q0NTFlcTVxamRvUWd4TEdFdkxLWUtKRGNOakFKeTNYNDUzMg?oc=5" target="_blank" rel="noopener">科技政策引路人獲獎：從法規開路看當代科技治理戰略轉型</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Kelly Carnes Named Trailblazer Of The Year in Tech Policy by IAOTP - azcentral.com and The Arizona Republic</div>
+            <div class="item-sentence lang-zh-only">Kelly Carnes 榮獲科技政策年度開路先鋒獎，標誌著科技治理正從「事後補救」轉變為「前瞻戰略」。現代科技演進速度極快，政策制定者不再只是坐在辦公室審查法條，而是要成為連結技術創新與社會安全網的架構師。這讓公共治理領域的思維徹底洗牌：懂技術、懂產業又懂政策的跨界領袖，才是決定未來科技發展方向的關鍵角色。 <span class="src">— Google News (US/EU)</span></div>
+            <div class="item-sentence-en lang-en-only">Kelly Carnes&#x27; recognition as Tech Policy Trailblazer of the Year highlights the evolving role of public policy in tech governance. Modern technology policy requires visionary leaders who can bridge the gap between rapid technological innovation and societal safety nets. Effective governance no longer focuses solely on reactive legislation, but rather on proactively building frameworks that foster innovation while protecting public interest. <span class="src">— Google News (US/EU)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5VUkgtTDVwT1ZXZzh3bUN0SVFEcUd3MnRnNVlpeGo1UnprMlJGQWVqSlFLM25yOUdYUklXOHJUdjc5WXRMcDU1NUNqZENWZHNucmZtUHd4aFVMbU9BdTM0R3NKVW5mQUItSWdVa0RESEpJU2xzbi1Mb0xtYWFoZ0k?oc=5" target="_blank" rel="noopener">告別空洞大道理！工程團隊需要的 AI 治理實戰落地手冊</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance Framework for Engineering Orgs - Augment Code</div>
+            <div class="item-sentence lang-zh-only">許多企業喊 AI 治理喊得天花亂墜，落地到工程團隊時卻只剩下無所適從的抽象宣言。這套實用框架直接深入開發第一線，告訴你如何在程式碼生成、內部測試與工具導入中建立清晰的安全防線。這代表 AI 治理正告別紙上談兵階段，唯有把倫理與合規內化成工程師日常開發的工具鏈，企業才能在狂飆創新的同時不摔車。 <span class="src">— Google News (US/EU)</span></div>
+            <div class="item-sentence-en lang-en-only">Augment Code&#x27;s AI governance framework targets engineering organizations, bridging the gap between abstract policy principles and daily coding workflows. By embedding compliance checks directly into development toolchains, engineering teams can maintain high velocity without compromising system security or code integrity. This approach signals a shift toward practical, developer-centric AI governance in modern tech architecture. <span class="src">— Google News (US/EU)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNbTBoTlNZd2xNdzl4dG51eXBXckhwYnZJam1VSDBKeGJmSm93OFBwdGh4UzlDcXZka19acGxneWxfOVhvSi1KTlVqZ29rbjAwOTVNcWlXSUFQMXg5dldWZDFoSDRSVnczZEQyOUtwaUhGY3lZTTBLVGxTX3F2TmViVS1IcVpvcjFENFFUYVp6Z3piUEswa3Vvb2RXTDUtNmo4Rm5nVg?oc=5" target="_blank" rel="noopener">填補責任真空地帶：為何我們需要打造全球連線的課責基建</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">From the AI Accountability Gap to a Global Accountability Infrastructure - Tech Policy Press</div>
+            <div class="item-sentence lang-zh-only">當前 AI 技術的擴散是全球性的，但監管制度卻各自為政，導致風險出現時大家互甩皮球。這篇文章呼籲建立「全球課責基礎設施」，主張治理不該只是單一國家的法律，而是要像網際網路底層協定一樣跨國連網。這對於所有關注科技社會學的人來說是個重要訊號：未來的數位治理競爭，贏家將是那些能跨國界搭建信任與查核機制的聯盟。 <span class="src">— Google News (US/EU)</span></div>
+            <div class="item-sentence-en lang-en-only">Addressing the global AI accountability gap requires moving beyond fragmented national regulations toward an interconnected accountability infrastructure. As artificial intelligence models transcend borders, isolated oversight mechanisms prove inadequate for mitigating systematic risks. Establishing global standards and shared verification frameworks will be vital for building trustworthy technology ecosystems worldwide in the coming decade. <span class="src">— Google News (US/EU)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNNkMxeUQyTk1rNFpfMzVyMGRZOGxobU04V3B0TkwzR0haYl9fM3hCTHJ6OUdjX3lHM3R4WW1tVmxETm51UGd4Y05oVWVsYXZSOTVaUnZJVWNqMnZiTm1WUmFmVVd3Umk4QjhKVkZrTFF6ZXI5eU5KanVSYlhNYTNPVFdYNFg5dHM?oc=5" target="_blank" rel="noopener">告別做半套的合規演戲！如何讓 AI 治理跟上業務導入速度</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Compliance theatre: How can AI governance keep up with adoption? - NEXT.io</div>
+            <div class="item-sentence lang-zh-only">許多公司為了應付稽核，趕快簽署幾份政策或買套工具，這種「合規演戲」根本防不住真正的 AI 風險。文章直白地點出，當業務端導入 AI 的速度像高鐵，治理機制卻像慢車，這種脫節只會帶來虛假的安全感。真正的治理應該是動態且具備營運彈性的，要能隨演算法疊代即時調整策略，而不是拿幾頁死板表格來假裝沒事。 <span class="src">— Google News (US/EU)</span></div>
+            <div class="item-sentence-en lang-en-only">Many organizations engage in compliance theatre, implementing superficial policies that fail to address real operational AI risks. As AI adoption accelerates exponentially, traditional static compliance methods quickly become obsolete and dangerous. Effective governance demands agile, continuous risk monitoring mechanisms that evolve alongside technological tools, ensuring safety without choking enterprise innovation and operational momentum. <span class="src">— Google News (US/EU)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPeldZSDlrRVlFQkRsNXdTaVliYzJSUVRJNjNlUk1qRTNyc3hEV1d5MUw1eWhJdXlUb3VkYy10VlgzWFZEYVpmWHJJcjFRR0xEQ29qMmxyTU15VTBIR2NGQXFXTWp1ajJ4UjVjckRCM3BIRDJWaE5pYmFmdGh2SUZPaWM4ck5VSE1FdTh3YVo3d2dKRzlyMGlLamdaWlQ?oc=5" target="_blank" rel="noopener">險商也來算 AI 帳！保險業正將 AI 治理化為財務量化指標</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Aon launches AI governance assessment tool - Insurance Times</div>
+            <div class="item-sentence lang-zh-only">當保險巨頭 Aon 都推出 AI 治理評估工具，這意味著 AI 風險已經正式從「倫理討論」進入「商業定價」階段。企業如果沒有搞定 AI 治理，未來可能連保險都買不到，或者保費高到嚇人。這對企業營運者來說是個醒鐘：把治理搞好不再只是品牌公關的事，而是直接關乎企業財務風險控制與資本市場信任度的硬指標。 <span class="src">— Google News (US/EU)</span></div>
+            <div class="item-sentence-en lang-en-only">Insurance giant Aon&#x27;s launch of an AI governance assessment tool signals that AI risk management has moved into financial quantification. Insurers now evaluate AI compliance and safety posture as critical criteria for risk underwriting and business liability. This market shift forces corporate leaders to treat AI governance as an essential component of financial risk management rather than mere public relations. <span class="src">— Google News (US/EU)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-07-28 08:03:02 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
