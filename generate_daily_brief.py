@@ -179,11 +179,22 @@ def parse_rss_feed(feed_url, source_name, category, region):
 
 def extract_article_from_item(item, source_name, category, region, cutoff_date):
     """從 RSS item 中提取文章資訊"""
+    # 嘗試從 Google News 取得真實媒體名稱
+    real_source_el = item.find('source')
+    if real_source_el is not None and real_source_el.text:
+        source_name = html.unescape(real_source_el.text.strip())
+        
     # 取得標題
     title_el = item.find('title')
     if title_el is None or not title_el.text:
         return None
     title = html.unescape(title_el.text.strip())
+
+    # 強制過濾 TW 配額中的港澳新聞
+    if region == 'tw':
+        hk_keywords = ['香港', '澳門', '紫荊', 'TVB', '信報', '星洲', '大公報', '文匯報', '東網', 'HKET']
+        if any(kw in title for kw in hk_keywords) or any(kw in source_name for kw in hk_keywords):
+            return None
 
     # 取得連結
     link = None
@@ -401,7 +412,7 @@ def select_articles(all_articles):
             selected_design.append(a)
             used_design_urls.add(a['url'])
 
-    # 2. 治理配額制: 1 TW, 2 US/EU, 1 JP, 1 Insight
+    # 2. 治理配額制: 1 TW, 1 US/EU, 2 JP, 1 Insight
     gov_tw = [a for a in gov if a.get('region') == 'tw']
     gov_us_eu = [a for a in gov if a.get('region') == 'us_eu']
     gov_jp = [a for a in gov if a.get('region') == 'jp']
@@ -409,9 +420,12 @@ def select_articles(all_articles):
 
     selected_gov = []
     if gov_tw: selected_gov.append(gov_tw.pop(0))
-    selected_gov.extend(gov_us_eu[:2])
-    gov_us_eu = gov_us_eu[2:]
-    if gov_jp: selected_gov.append(gov_jp.pop(0))
+    
+    if gov_us_eu: selected_gov.append(gov_us_eu.pop(0))
+    
+    selected_gov.extend(gov_jp[:2])
+    gov_jp = gov_jp[2:]
+    
     if gov_insight: selected_gov.append(gov_insight.pop(0))
 
     # 如果不足 5 篇，從剩餘的裡面補足
