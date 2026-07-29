@@ -89,8 +89,14 @@ RSS_FEEDS = [
     {
         'url': 'https://news.google.com/rss/search?q="AI+governance"+OR+"digital+governance"+OR+"tech+policy"+when:7d&hl=en-US&gl=US&ceid=US:en',
         'category': 'gov',
-        'region': 'us_eu',
-        'source_name': 'Google News (US/EU)',
+        'region': 'us',
+        'source_name': 'Google News (US)',
+    },
+    {
+        'url': 'https://news.google.com/rss/search?q="AI+governance"+OR+"digital+governance"+OR+"tech+policy"+OR+"EU+AI+Act"+when:7d&hl=en-GB&gl=GB&ceid=GB:en',
+        'category': 'gov',
+        'region': 'eu',
+        'source_name': 'Google News (EU)',
     },
     {
         'url': 'https://news.google.com/rss/search?q=%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%AC%E3%83%90%E3%83%8A%E3%83%B3%E3%82%B9+OR+AI%E3%82%AC%E3%83%90%E3%83%8A%E3%83%B3%E3%82%B9+OR+%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B7%E3%83%86%E3%82%A3+when:7d&hl=ja&gl=JP&ceid=JP:ja',
@@ -412,24 +418,22 @@ def select_articles(all_articles):
             selected_design.append(a)
             used_design_urls.add(a['url'])
 
-    # 2. 治理配額制: 1 TW, 1 US/EU, 2 JP, 1 Insight
+    # 2. 治理配額制: 1 TW, 1 EU, 1 NA, 1 JP, 1 Insight
     gov_tw = [a for a in gov if a.get('region') == 'tw']
-    gov_us_eu = [a for a in gov if a.get('region') == 'us_eu']
+    gov_eu = [a for a in gov if a.get('region') == 'eu']
+    gov_us = [a for a in gov if a.get('region') == 'us']
     gov_jp = [a for a in gov if a.get('region') == 'jp']
     gov_insight = [a for a in gov if a.get('region') == 'insight']
 
     selected_gov = []
     if gov_tw: selected_gov.append(gov_tw.pop(0))
-    
-    if gov_us_eu: selected_gov.append(gov_us_eu.pop(0))
-    
-    selected_gov.extend(gov_jp[:2])
-    gov_jp = gov_jp[2:]
-    
+    if gov_eu: selected_gov.append(gov_eu.pop(0))
+    if gov_us: selected_gov.append(gov_us.pop(0))
+    if gov_jp: selected_gov.append(gov_jp.pop(0))
     if gov_insight: selected_gov.append(gov_insight.pop(0))
 
     # 如果不足 5 篇，從剩餘的裡面補足
-    remaining = gov_tw + gov_us_eu + gov_jp + gov_insight
+    remaining = gov_tw + gov_eu + gov_us + gov_jp + gov_insight
     used_urls = {a['url'] for a in selected_gov + remaining}
     other_gov = [a for a in gov if a['url'] not in used_urls]
     remaining.extend(other_gov)
