@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>早晨簡報 · 2026-07-29</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-07-29</div>
+    <div class="headline">品牌自建智庫崛起與AI治理軟體化：美學轉型與企業合規的新局</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design is so simple, that&#x27;s why it is so complicated.</div>
+      <div class="quote-text-zh lang-zh-only">設計是如此簡單，這正是它為何如此複雜的原因。</div>
+      <div class="quote-author">— Paul Rand</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">品牌自建創意智庫崛起，傳統代理商面臨去中介化考驗。</li>
+        <li class="flash-item">AI治理化身實體軟體，金融養老業將其列為合規剛需。</li>
+        <li class="flash-item">工業科技與傳統零售翻新美學，用觸感極簡重塑品牌信任。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/monga-design-crafts-sophisticated-branding-vogau/" target="_blank" rel="noopener">幾何結構與視覺極簡：精品品牌如何用設計創造高溢價？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Monga Design Crafts Sophisticated Branding for Vogau</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/vogau-visual-identity_0.jpg" alt="Monga Design Crafts Sophisticated Branding for Vogau" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">你有發現嗎？現在頂級品牌不再靠繁複圖騰來張揚奢華，而是轉向極度精準的幾何美學。Monga Design 為 Vogau 打造的新形象，就是這種趨勢的縮影。這背後代表的洞察是，越高檔的品牌越需要「克制」——用點、線、面的幾何秩序，給人一種穩定且可信賴的現代感。對企業來說，視覺簡化不只是為了好看，更是重新定調品牌高端市場定位的商業戰略。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Monga Design and Mateus Yuzo rebranded Vogau using strategic geometric aesthetics. This design direction reflects a broader industry trend where luxury and high-end brands abandon loud visual clutter in favor of structured minimalism to convey long-term market stability, refined architectural elegance, and premium strategic positioning in competitive global markets. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/tactile-bakery-branding-cocomoco-identity-system/" target="_blank" rel="noopener">數位時代的觸覺反撲：陶土配色如何幫傳統烘焙建立連結？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Tactile Bakery Branding for Cocomoco Identity System</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/cocomoco_2.jpg" alt="Tactile Bakery Branding for Cocomoco Identity System" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在這個大家都透過螢幕看世界的時代，實體的「觸覺感」反而成了品牌最稀缺的資產。Cocomoco Studio 幫這家烘焙咖啡店選用了陶土色系與模組化包裝，瞬間拉近了與顧客的距離。這件事告訴我們，未來的實體零售不能只做美觀的視覺，更要創造讓人想親手摸到的「溫度感」。這種將工藝手感轉化為品牌識別的作法，是實體門市抵抗純線上競爭的關鍵武器。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Cocomoco Studio created a warm, tactile visual identity for Cocomoco Bakery using earthy terracotta tones and modular packaging systems. The project highlights how physical brands can use tactile aesthetics and craft-driven design to build deep emotional connections with urban customers in a screen-dominated, highly digitalized world. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/branding-ellis-butchers-studio-blackburn/" target="_blank" rel="noopener">傳統肉舖的現代轉型：雙門市雙識別如何打破傳統零售框架？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Branding for Ellis Butchers by Studio Blackburn</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/meat-ellis_0_0.jpg" alt="Branding for Ellis Butchers by Studio Blackburn" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">肉舖這種看似傳統的在地老行業，該怎麼吸引新一代的永續消費者？Studio Blackburn 給出了一個絕佳範例：他們為 Ellis Butchers 發展出具備雙重個性又符合永續原則的視覺系統。這代表傳統零售在擴展不同社區門市時，不必再死守一套死板板的公版 CI，而是能透過彈性的品牌架構，既保持傳統工藝的精神，又能無縫融入現代都市的人文質感。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Studio Blackburn designed a versatile dual-identity visual system for Ellis Butchers&#x27; expansion across two distinct neighborhood locations. By integrating sustainable materials and flexible brand architecture into a traditional trade, this project demonstrates how legacy local businesses can modernize and appeal to conscious modern urban consumers without losing their artisanal roots. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/partstack-reimagines-industrial-tech-modern-branding/" target="_blank" rel="noopener">工業科技美學大革新：B2B品牌如何靠消費級設計贏得信任？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Partstack Reimagines Industrial Tech with Modern Branding</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/partstack_0.jpg" alt="Partstack Reimagines Industrial Tech with Modern Branding" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">過去我們總覺得工業科技的網站跟系統長得很硬派、很難用，但 Clay 幫 Partstack 做的品牌重構打破了這個偏見。這標誌著一個重要趨勢：B2B 與硬核科技產品的視覺正在「消費級化」。現在的企業買家也是一般消費者，他們同樣渴望流暢、極簡且具備美感的互動體驗。把工業系統做得很性感，已經成為 B2B 科技公司在激烈競爭中脫穎而出的核武器。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Silicon Valley agency Clay redesigned the brand identity for industrial technology platform Partstack with a sleek, intuitive visual architecture. This transformation illustrates a critical ongoing trend: B2B and industrial platforms are adopting consumer-grade design standards to shed clunky perceptions, build immediate user trust, and streamline complex digital workflows. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/do-clients-still-need-creative-agencies-the-launch-of-the-ideation-bureau-suggests-maybe-not/" target="_blank" rel="noopener">品牌自建創意智庫崛起：傳統代理商的仲介紅利還能留多久？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Should agencies be worried? This launch suggests clients increasingly don&#x27;t need them</div>
+            <img class="item-image" src="https://www.creativeboom.com/upload/articles/1e/1ead046d888486bdf2fe6dbcc83455bf059d6576_800.jpg" alt="Should agencies be worried? This launch suggests clients increasingly don&#x27;t need them" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">著名的夜店巨頭自己成立了創意機構 The Ideation Bureau，這絕對給傳統廣告圈敲響了一記警鐘！這現象透露出企業主已經看破傳統代理商的層層轉包與高昂溝通成本，轉而選擇將創意核心內核「自研化」或直接與產業專家合作。對設計師與創作者來說，未來的戰場不再只是進大代理商，而是如何直接深入特定產業，提供具備商業洞察的精準創意。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">The launch of The Ideation Bureau by Ibiza superclub operators signals a pivotal shift toward brand-owned creative hubs. As enterprises increasingly bypass traditional middleman agencies to control their narrative directly, creative agencies must pivot toward deep domain specialization and agile, high-impact strategic advisory to remain indispensable to ambitious clients. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQYWh3QXRQczlyOW55RV81c1pGazBlZXFqYXpjaWRNNXhuM3lOZ3gxQ29KUWYxOXRZR2g0dWhPcjN3SmNSN0FYbE5GZTd4dVpBak1MbGxuTHR4WDFFZEwzLTBoVTNVUTNMV3pwUnlBWHhPQ1lPdFZPUm5NNGtyY19keDJqVmxrOEVUS0YzWFdrMlJQZndxNndmczFSRzUxQXc0OHk0?oc=5" target="_blank" rel="noopener">退休基金也瘋AI？高風險金融業如何用治理框架防範決策風險？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">SPP launches AI governance framework for pensions industry - Finextra Research</div>
+            <div class="item-sentence lang-zh-only">連最保守、絕對不能賠錢的養老金產業，現在都不得不正視 AI 治理了！SPP 推出的 AI 治理框架代表一個轉折點：AI 應用已經從前端行銷探索，深入到最核心的資產配置與風險評估。這時候「治理」不再是阻礙創新的絆腳石，而是防止演算法偏差造成巨大財務災難的煞車系統。缺乏清晰治理機制的金融機構，未來將面臨極高的高度合規與信任危機。 <span class="src">— Google News (US/EU)</span></div>
+            <div class="item-sentence-en lang-en-only">The SPP released a comprehensive AI governance framework specifically tailored for the pensions sector. This landmark move underscores that institutional finance can no longer treat artificial intelligence as a speculative sandbox; risk mitigation and algorithmic accountability are now integral components of fiduciary responsibility and long-term portfolio asset protection. <span class="src">— Google News (US/EU)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNNWVxV2pCaGdTWEZrd0lJWmNURXNWOGRhUGZXRlNfZ3JLMG80X0s0M25EblpMWjVBVzR0T3BQUEQ3Z0x6UlhhOWJiZ1NCcVJ4U2l4c01lRWZjT2ozMFdEdHJFVkNwazZGZkRsVFZYdmQyc0kwZUFEa3V2cDNXVVpZYWdKTEFnMnI3eWNQS3NVNHo1RkthdXhZRl80Yw?oc=5" target="_blank" rel="noopener">拒當AI蓋章工具人：金融治理中的「人類監督」如何真正落地？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">SPP AI Governance Framework: What &quot;Human Oversight&quot; Now Has to Mean - CFI.co — Capital Finance International</div>
+            <div class="item-sentence lang-zh-only">很多公司在喊「我們有演算法人類監督」，最後卻只是工作人員閉著眼睛按同意。SPP 的新框架深刻重新定義了「人類監督」：管理者必須真正看得懂演算法邏輯、並有能力在關鍵時刻切斷系統。這個趨勢提醒我們，未來的組織治理不能只停留在宣示層面，必須培養具備「AI 識讀能力」的管理團隊，才能真正承擔起決策失敗後的責任。 <span class="src">— Google News (US/EU)</span></div>
+            <div class="item-sentence-en lang-en-only">SPP&#x27;s updated framework fundamentally redefines &quot;human oversight&quot; in pension AI governance from a passive compliance checkbox into an active, measurable management capability. Organizations are now challenged to build true algorithmic literacy among executive teams, ensuring human operators can effectively audit, challenge, and override automated decision-making processes. <span class="src">— Google News (US/EU)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxPU25pUVRHbmYxbHI0LVpuMVZSaUxTdklXdjRhU0EySENUUzZ0U1dNOVdDdkVXc0p3SVVHbzFHM2FfelhSN2gxa2tmU25TalJNRXpVbmdhXzNIVGt0eXF0MW8yY1NCbVVNR2RFU3VseTdjS0Frc1RwLTEyaHkwZzVhdkhCQWh5XzhrS2F5T052VDdTOUV4ZU1CbzhDTmRSbFZ3Y1N2blZhMmlRV2xsVkVXSGMtdmhYX1BKZzY5S0FlYll3M0lsVEtSbFE0M09NcnA4RDJlYUJXQTJaTUR4V0pFbUFRUlRLZkJKcU1qZWlJWQ?oc=5" target="_blank" rel="noopener">氣候人權與AI合流：大企業董監事會如何重塑永續治理天花板？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Telefônica Brasil Board Backs Climate, Human Rights and AI Governance Overhaul - The Globe and Mail</div>
+            <div class="item-sentence lang-zh-only">巴西電信董事會這次的高層動作非常關鍵，他們把 AI 治理、氣候變遷跟人權保障合而為一了！這代表科技治理不再是 IT 部門的技術問題，而是躍升為董監事會級別的 ESG 核心戰略。企業如果只把 AI 當成提昇效率的工具，卻忽視了它在能源消耗與人權隱私上的潛在危害，很快就會遭到資本市場與監管機關的嚴厲挑戰。 <span class="src">— Google News (US/EU)</span></div>
+            <div class="item-sentence-en lang-en-only">Telefônica Brasil&#x27;s board of directors approved a unified corporate governance overhaul linking climate action, human rights protection, and AI ethics. This board-level decision demonstrates that technology governance is no longer isolated within IT departments, but has become a core element of enterprise ESG frameworks and sustainable corporate leadership. <span class="src">— Google News (US/EU)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNNzZXNkVINDFENXdXaHpSRndwSjh5emlvOXBiamNzeTRUcUkzWVUxdEV6ZzZYa1gwLUNWb3NUN2g4amotYk4xcXNFVWFtT3Z4N3I0amtlUjUwd005dmhYVXItWElaSzdmZE8ybUp4V1RHU1NXbFpjOURISFFEa3FFeFNoWHp5QXRFVE5UT0VZc0ROUER3MDNF?oc=5" target="_blank" rel="noopener">從合規文件到自動化軟體：2026年企業AI治理平台如何轉型？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The best AI governance tools and platforms in 2026 - TechTarget</div>
+            <div class="item-sentence lang-zh-only">到了 2026 年，如果你管理 AI 還是靠印出來的 Word 合規手冊，那就徹底落伍了。現在的 AI 治理已經全面「軟體化」，變成透過平台即時監控模型偏差、數據隱私與合規風險。這意味著企業治理正從事後的法務審查，走向自動化、連續性的技術防護網。掌握好這些治理工具，企業才能在極速迭代的 AI 浪潮中安心放手狂飆。 <span class="src">— Google News (US/EU)</span></div>
+            <div class="item-sentence-en lang-en-only">In 2026, AI governance has evolved from static policy manuals into automated software platforms that continuously monitor model risk, data privacy, and compliance. This operational shift enables enterprises to transform passive regulatory compliance into real-time risk mitigation, allowing teams to innovate and scale artificial intelligence deployment safely. <span class="src">— Google News (US/EU)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNOEZmeG5ZSVdhcmVFWWdDNUpvVGVSclc3WEw4d05ySjRCM0twRXYtVnhPeTN1RFN6NnBPUllXb1E4YWU4WjZLNUdjMHdFclpoUUxSU0x1OEFCbkNlZl9MeEdfbkVFbkdNeERzazJJVUYwMlhtYkdRdWVGVTVhcGZFdTJFelNuaTVRWVRKMDFJdWMwZm5weFpYdHpiQ1MxamlkUHJ3dE10bllFOUg4?oc=5" target="_blank" rel="noopener">銀行業AI合規告白：把風險控管轉化為商業競爭力的實操策略</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance in Banking | Managing AI Risks and Scaling Responsible AI Adoption - Deloitte</div>
+            <div class="item-sentence lang-zh-only">勤業眾信這份報告點出了銀行業的真實現狀：大家都想用 AI 提昇放款與客服效率，但又怕演算法暴走引發監管裁罰。解法不是禁用 AI，而是把治理機制直接嵌入到業務流程的核心。這項洞察適用於所有想規模化導入 AI 的企業——唯有把「負責任的 AI」變成產品設計的一環，合規才能從被動成本，翻轉為比競爭對手更值得信賴的商業優勢。 <span class="src">— Google News (US/EU)</span></div>
+            <div class="item-sentence-en lang-en-only">Deloitte&#x27;s banking report highlights how financial institutions can balance AI-driven risk management with rapid innovation. By embedding governance mechanisms directly into software workflows and operational architecture, banks demonstrate that responsible AI adoption transforms mandatory regulatory compliance into a trusted brand differentiator and sustained competitive advantage. <span class="src">— Google News (US/EU)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-07-29 08:03:24 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
