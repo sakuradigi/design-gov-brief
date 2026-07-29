@@ -67,6 +67,18 @@ RSS_FEEDS = [
         'region': 'none',
         'source_name': 'Smashing Magazine',
     },
+    {
+        'url': 'https://www.japandesign.ne.jp/feed/',
+        'category': 'design',
+        'region': 'jp',
+        'source_name': 'JDN (Japan Design Net)',
+    },
+    {
+        'url': 'https://www.axismag.jp/feed',
+        'category': 'design',
+        'region': 'jp',
+        'source_name': 'AXIS Web',
+    },
     # 🏛️ 治理類
     {
         'url': 'https://news.google.com/rss/search?q=%E6%95%B8%E4%BD%8D%E6%B2%BB%E7%90%86+OR+AI%E6%B2%BB%E7%90%86+OR+%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82+-香港+-北都+-港府+when:7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant',
@@ -371,7 +383,23 @@ def select_articles(all_articles):
     design = dedupe_by_domain(design, max_per_domain=5)
     gov = dedupe_by_domain(gov, max_per_domain=5)
 
-    selected_design = design[:TARGET_DESIGN_ARTICLES]
+    # 1.5. 設計配額制: 2 JP, 其餘歐美
+    design_jp = [a for a in design if a.get('region') == 'jp']
+    design_other = [a for a in design if a.get('region') != 'jp']
+
+    selected_design = []
+    selected_design.extend(design_jp[:2])
+    design_jp = design_jp[2:]
+
+    remaining_design = design_other + design_jp
+    used_design_urls = {a['url'] for a in selected_design}
+    # 把剩下的照順序加進來
+    for a in remaining_design:
+        if len(selected_design) >= TARGET_DESIGN_ARTICLES:
+            break
+        if a['url'] not in used_design_urls:
+            selected_design.append(a)
+            used_design_urls.add(a['url'])
 
     # 2. 治理配額制: 1 TW, 2 US/EU, 1 JP, 1 Insight
     gov_tw = [a for a in gov if a.get('region') == 'tw']
