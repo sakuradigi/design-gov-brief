@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>早晨簡報 · 2026-07-30</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-07-30</div>
+    <div class="headline">從稻田織品到智慧城市：當 AI 賦能員工，治理與設計如何回歸人本本質？</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design must become an innovative, highly creative, cross-disciplinary tool responsive to true human needs.</div>
+      <div class="quote-text-zh lang-zh-only">設計必須成為一種具備創新力、高度創意且跨領域的工具，以回應人們真正的需求。</div>
+      <div class="quote-author">— Victor Papanek</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">企業別做 AI 轉型的擋路石，信任懂工具的員工才能搶得先機。</li>
+        <li class="flash-item">韓國推雙向對接智慧城市平台，讓科技精準回應民眾真實需求。</li>
+        <li class="flash-item">面對 AI 帶來的資訊疲勞，設計師應掌握主導權而非被工具綁架。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/07/717228.html" target="_blank" rel="noopener">日本梯田織入羊毛地毯：傳統工藝在當代空間的跨國重生</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">堀田カーペットとフィリックス・コンランの協作「Tanbo」。日本の田んぼと四季を床に映すウールタイルカーペット発売</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/07/01_Tanbo_main.jpg" alt="堀田カーペットとフィリックス・コンランの協作「Tanbo」。日本の田んぼと四季を床に映すウールタイルカーペット発売" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">英國設計師 Felix Conran 與日本堀田地毯的這項合作，展現了傳統在地產業如何藉由當代美學語彙開創新市場。這不只是發售新產品，更是將「梯田」這類帶有時間感與自然生態的在地意象，轉化為居家生活體驗。它告訴我們，工藝轉型的關鍵不在於拋棄傳統，而是用國際通用語言重新說好在地故事。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese wool carpet manufacturer Hotta Carpet collaborates with British designer Felix Conran to launch &#x27;Tanbo,&#x27; a modular wool tile collection inspired by Japanese rice paddies and seasonal transitions. This partnership demonstrates how traditional craftsmanship can be modernized through global design perspectives, transforming cultural landscape heritage into scalable, contemporary interior products for modern living. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/07/89203/" target="_blank" rel="noopener">竹尾紙展「祝與禮」：數位時代下實體材質的情感重塑</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">テーマは「祝と礼」、紙とデザインのイベント「竹尾ペーパーショウ」が10月に開催</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/07/takeo2.jpg" alt="テーマは「祝と礼」、紙とデザインのイベント「竹尾ペーパーショウ」が10月に開催" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">著名紙張商社竹尾將展覽主題定為「祝賀與禮儀」，深刻切中了數位化時代的痛點。當通訊與祝福大多被冰冷的文字訊息取代時，紙張的觸感與儀式感反而成為稀缺的情感載體。這場展覽提醒設計界，實體材質的未來不在於效率，而在於創造不可替代的人際連結與儀式價值。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The 50th Takeo Paper Show explores the theme of &#x27;Celebration and Respect,&#x27; focusing on paper&#x27;s emotional and ritualistic values in a digitized world. As digital communication displaces physical interactions, the tactile experience of paper acquires newfound significance. This event highlights how tangible materials can offer unique emotional connection and storytelling leverage that screen interactions simply cannot match. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/archivr-branding-visual-identity-grid-layout-typography-archivr/" target="_blank" rel="noopener">Archivr 品牌識別：用幾何系統重塑工作流的視覺秩序</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Archivr: Branding Visual Identity Grid Layout Typography Archivr</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_archivr-lain-branding-lain.jpg" alt="Archivr: Branding Visual Identity Grid Layout Typography Archivr" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">LAIN Branding 為 Archivr 打造的品牌視覺系統，展示了當代數位產品如何透過嚴謹的網格與排版來傳達「秩序感」。在資訊氾濫的任務管理領域，簡潔且結構化的視覺語言能大幅降低使用者的認知負擔。這個案例證明，好的品牌識別不只是標誌好看，更要能反映產品核心邏輯並改善用戶體驗。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">LAIN Branding created a systematic brand identity for task management platform Archivr, utilizing structured grid layouts and clear typography. By prioritizing visual order and functional clarity, the identity reflects the tool&#x27;s goal of streamlining workflow. It proves that modern branding must transcend visual aesthetics to directly reinforce product usability and reduce cognitive friction for daily users. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/your-people-get-ai-get-out-of-their-way-131370c157f8?source=rss----138adf9c44c---4" target="_blank" rel="noopener">企業AI轉型關鍵：信任第一線員工，放手讓懂工具的人發揮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Your people get AI. Get out of their way.</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*_tbqWSUDWwlbodgdCxT7bQ.jpeg" alt="Your people get AI. Get out of their way." loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這篇文章給了盲目追捧 AI 的企業重重一擊。許多公司花大錢買工具卻設下重重審查，反而閹割了創新力。真正能勝出的企業，往往是那些敢於信任組織內早已自發使用 AI 的基層玩家，並主動幫他們清除官僚障礙。AI 轉型的核心不是技術採購，而是組織文化與信任機制的解鎖。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">This article argues that enterprise AI success hinges on organizational trust rather than tool procurement. Most companies already have employees adept at leveraging AI, but corporate bureaucracy stifles their potential. Winning organizations will be those that remove operational friction, empower self-starters, and let knowledgeable employees innovate freely without over-regulating their creative workflows. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/battling-ai-fatigue-as-a-designer-and-developer-a-practical-guide-d04a2549e802?source=rss----138adf9c44c---4" target="_blank" rel="noopener">擺脫AI疲勞症候群：設計師如何重新找回創作者主導權？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Battling AI fatigue as a designer and developer: a practical guide</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*i7d7zE7lb4_vuKCifaKtTQ.png" alt="Battling AI fatigue as a designer and developer: a practical guide" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當所有軟體都硬塞 AI 功能、生成式內容滿天飛時，設計師與開發者正面臨嚴重的疲勞感。這篇指南精準指出，過度依賴 AI 容易讓人失去解決問題的原創思考。聰明的創作者應該把 AI 定位為重複性工作助手，而不是交出設計思考的導航權。唯有保持人類獨特的審美與同理心，才不會在技術浪潮中迷失。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">As AI integration saturates creative workflows, designers and developers face mounting fatigue and loss of intentionality. This practical guide warns against relying on AI for every problem-solving step. Instead, creatives should treat AI as an efficiency tool for repetitive tasks while retaining control over strategy, human empathy, and critical design thinking to maintain genuine creative agency. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPanV5X2FIWHBuM2JrZnFuN2pMcTE3Y3FoY3NYal9iMXlPSzZ2dWdwc1V2X3N4T01ka04zcDBNSERvY3FVam9ibEd1WUlFNmFoUGhSYzNQekFVci10aUlvN1pFU1BoTFJqMGVMd0xoWUVQMS16UkR4QjBQQTh4YmhKRVVNN0FCQlNxc3hJUTIzV1FjckdrcWthcmtGZ2F1QmlvcHU2S0NlQzNweDhzUWFlOXZmdHAzT2U4?oc=5" target="_blank" rel="noopener">科索沃區域AI治理：平衡國家安全與科技创新的實踐</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">RIT Kosovo Advances AI Governance Through the National Security and Innovation Consortium - Rochester Institute of Technology</div>
+            <div class="item-sentence lang-zh-only">羅徹斯特理工學院科索沃分校參與國家安全與創新聯盟，凸顯了新興經濟體在全球 AI 治理浪潮中的戰略思維。AI 治理不再只是大國專利，小國更需要結合學術界與政府力量，兼顧地緣政治安全與技術創新。這代表數位治理的戰場已轉向區域合作，旨在建立既安全又具競爭力的在地科技生態。 <span class="src">— Rochester Institute of Technology</span></div>
+            <div class="item-sentence-en lang-en-only">RIT Kosovo&#x27;s involvement in the National Security and Innovation Consortium marks a strategic step in regional AI governance. It emphasizes how smaller nations can bridge academia, national security, and technology policy to navigate global AI risks. This initiative reflects a growing trend where governance framework development becomes essential for both national safety and regional tech competitiveness. <span class="src">— Rochester Institute of Technology</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiiwJBVV95cUxPVDFZM2tLWG8tdXlDdWI1RU1IZDkxaFVhY1hIRUpPQjRmX0o5bWEtU3A0VzJLTjh2a1RqLWsyR3Qtdm5vWXIwVHpaTF9ubzRzVVBoN29VMDg5VGZUSTRpV0w5d0VIZHFEOXF0WFNFYWQ2UXp4NHVSR3hEcUh0UVJGMkJ6QUNMZ1FwQ0JZSWEydGtfWVkweHE4UWdtbEQ1VDBDeFVXaVFFV0tWRkJaQjZ1V2RoNXNXWXFVVnoxQ3BLZlBtaWpQb1JDSVh2OFpQZm04OG5aQkJFWU1KWFFCbGdRZllmU1I5UW5wQUg5WTF4Q2lVaFVDYUxWT3d2UTd1cl9EeDlxSlM0TmUzM28?oc=5" target="_blank" rel="noopener">當AI深入企業骨幹：資料外洩防護成為AI治理的核心基石</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">GTB Technologies to Highlight AI Governance and Enterprise Data Protection at Black Hat USA 2026 and AI Summit Las Vegas - StreetInsider</div>
+            <div class="item-sentence lang-zh-only">GTB Technologies 將在資安大會發布的新方案，宣告了企業 AI 治理已從「合規宣示」走向「技術實踐」。當員工大量將敏感資料輸入 AI 模型時，企業面臨前所未有的資安風險。這意味著未來的 AI 治理不能只靠制度宣導，必須配備即時的資料流控管技術，才能在擁抱 AI 生產力的同時守住企業商業機密。 <span class="src">— StreetInsider</span></div>
+            <div class="item-sentence-en lang-en-only">At Black Hat 2026, GTB Technologies addresses the vital intersection of enterprise AI adoption and data loss prevention. As companies deploy AI models, preventing sensitive data leakage has become a primary governance challenge. The trend shows that effective AI governance must pair policy guidelines with technical enforcement to secure enterprise data without crippling operational speed. <span class="src">— StreetInsider</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPRENCX0xmYU0xQmdqQ1E4bmVCWFFoUklXWHlYcUtPdmNydmQ2NkZfQUtPQ2FyM3o1czZZM2pGWndORlhkRWtKYXpzRHgxXzRiRkxpcjE4UkNsVWR5TWZFN3NWaElWYi1zU1VyaGFsZGxRT2RIMzNNVUVMd1VYNFd6VVhiZVnSAZgBQVVfeXFMTk8zaDFnNW04Y01RSTlRWVZEV1RnbmlDLUxlaGtBRmN5T3VHYWY2dXIwSjRxSVJpYlhpQ25XLUc0MzlwMXg4M2NTVGtpR2V6ZmdwT2o0WnBrR3d4aHV6WFVFRDVXY0Ixbjh1cXBOQktkMlU3V3dNaEZYSTJHMi0zcThPNE41a1psNUZfbmZSMG1VcVNwekJYTTg?oc=5" target="_blank" rel="noopener">韓國智慧城市平台升級：改採雙向對接模式推動公民共治</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">国土交通部がスマートシティ総合ポータル刷新し双方向マッチング導入 - CHOSUNBIZ - Chosunbiz</div>
+            <div class="item-sentence lang-zh-only">韓國國土交通部重構智慧城市入口網站，導入「雙向對接」機制，打破了過去由上而下的政令宣導模式。現在都市問題可由地方直接提案，廠商則精準提供解決方案。這項轉變代表智慧城市治理正邁向「平台化」，透過降低公私合作的溝通門檻，讓城市科技能更靈活地滿足在地民眾的實質需求。 <span class="src">— Chosunbiz</span></div>
+            <div class="item-sentence-en lang-en-only">South Korea&#x27;s Ministry of Land, Infrastructure and Transport revamped its Smart City Portal to feature two-way matching between urban demand and solutions. Moving away from top-down administration, this platform enables dynamic public-private collaboration. It signals a shift toward governance-as-a-platform, making smart city deployments more responsive, market-driven, and centered on real community needs. <span class="src">— Chosunbiz</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi-gFBVV95cUxNVXl0U05Qd3BFeUZJTXpuLUZXZGZiRTBhMHNUWEc2WVR5bWhqS1pTQ3hYX3FGak9FTXg5dkZrVHZPUk1MOFVWOU1wQklxVTlaTUx6Q0UydEU4UTRXTnVrQkR2UndvT0d6YktDRURFT0VFMk1XbHUzUlgwZ3FVLWVKZE8wSzZXVS1uRmEybTBDaEVxOGhUVldvZnNjTmJaeTVvUmdEYjd0WkRLNUN1cWxDamNFZk43U0lQNDBwOFBYMVBPc19hWWNHSWRUN0ZqX3JobjNlQzYxcEVyM0tQWU1pNTkzSFdyQjdxd2RXVlFjTDRqWXlyc2swQjhR?oc=5" target="_blank" rel="noopener">資安峰會焦點：以資料防禦技術為AI治理建立落地支撐</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">GTB Technologies to Highlight AI Governance and Enterprise Data Protection at Black Hat USA 2026 and AI Summit Las Vegas - PRWeb</div>
+            <div class="item-sentence lang-zh-only">這則新聞再次凸顯了 AI 時代企業資安架構的思維轉變。許多組織以為買了 AI 防火牆就萬事大吉，卻忽略了資料本身的流動安全。真正的 AI 治理必須貫穿資料的生命週期，從源頭辨識機密資料並防止非法存取。這提醒了治理者，唯有將資安防禦融入業務流程，AI 的創新價值才能被安心釋放。 <span class="src">— PRWeb</span></div>
+            <div class="item-sentence-en lang-en-only">Highlighted ahead of the AI Summit, GTB Technologies reinforces the need for precise enterprise data protection within AI governance frameworks. Organizations must monitor data flow thoroughly to avoid inadvertent exposure through AI applications. This insight underlines that modern AI governance is impossible without deep, real-time data inspection capabilities integrated into daily corporate workflows. <span class="src">— PRWeb</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPanV5X2FIWHBuM2JrZnFuN2pMcTE3Y3FoY3NYal9iMXlPSzZ2dWdwc1V2X3N4T01ka04zcDBNSERvY3FVam9ibEd1WUlFNmFoUGhSYzNQekFVci10aUlvN1pFU1BoTFJqMGVMd0xoWUVQMS16UkR4QjBQQTh4YmhKRVVNN0FCQlNxc3hJUTIzV1FjckdrcWthcmtGZ2F1QmlvcHU2S0NlQzNweDhzUWFlOXZmdHAzT2U4?oc=5" target="_blank" rel="noopener">產學攜手築AI防線：學術機構在國家安全政策的戰略要角</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">RIT Kosovo Advances AI Governance Through the National Security and Innovation Consortium - Rochester Institute of Technology</div>
+            <div class="item-sentence lang-zh-only">羅徹斯特理工學院科索沃分校推動的這項計畫，深化了學術機構在國家科技安全中的橋樑角色。面對生成式 AI 帶來的政策空白與安全隱憂，單靠政府監管往往落後於技術進展。學術界介入能提供中立的科研實證與人才培育，為政府制定負責任的 AI 政策提供支撐，成為推動區域數位民主的重要推手。 <span class="src">— Rochester Institute of Technology</span></div>
+            <div class="item-sentence-en lang-en-only">RIT Kosovo&#x27;s partnership within the National Security and Innovation Consortium underlines academia&#x27;s crucial role in formulating responsible AI policy. As governments struggle to keep pace with AI risks, academic institutions serve as crucial bridges, combining technological research with policy insights to ensure AI adoption aligns with national security priorities and ethical governance standards. <span class="src">— Rochester Institute of Technology</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-07-30 08:03:28 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
