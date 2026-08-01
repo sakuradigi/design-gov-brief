@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>早晨簡報 · 2026-08-01</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-01</div>
+    <div class="headline">2026美學與治理趨勢：從生成式演算視覺到歐盟 AI 法案下的透明度大考</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Simplicity is about subtracting the obvious and adding the meaningful.</div>
+      <div class="quote-text-zh lang-zh-only">簡約，就是扣除顯而易見的雜訊，並注入真正重要的意義。</div>
+      <div class="quote-author">— John Maeda</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">演算法讓品牌識別活起來，動態字型成為當代設計新顯學。</li>
+        <li class="flash-item">歐盟 AI 法案逼近，透明顧客體驗成企業信任的勝負點。</li>
+        <li class="flash-item">影子 AI 在企業內部蔓延，資安長正面臨黑盒治理大考驗。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/07/718643.html" target="_blank" rel="noopener">穿著即自由：從《They Are Dandy》看現代男裝的自我風格重塑</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">現代紳士のポートレイト集『They Are Dandy』刊行。 スタイルを通して、アイデンティティと自由を描く</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/07/p.031lowercenterPhoto-Rose-Callahan-They-are-Dandy-gestalten-2026_1.jpg" alt="現代紳士のポートレイト集『They Are Dandy』刊行。 スタイルを通して、アイデンティティと自由を描く" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">你以為紳士穿搭只是西裝革履的復古教條？這本書直接打破了這個刻板印象！它告訴我們，當代男裝早就從傳統社會規範解綁，變成一種探索自我身份與生活態度的實驗。當大家的穿著不再為了滿足別人的期待，服飾就成了最真實的個體宣言。對設計師來說，這意味著男裝市場的溝通語彙已經徹底改變，唯有抓住這種「獨特性與自由」的靈魂，才能真正打動新一代的消費者。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The new photo book &#x27;They Are Dandy&#x27; published by Gestalten showcases how modern menswear has evolved beyond traditional fashion norms. It highlights men using style as an authentic expression of personal identity and freedom, signaling a shift in fashion communication towards individuality and nuanced self-expression. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/07/718959.html" target="_blank" rel="noopener">三澤遙米蘭個展：放大日常微細視角，開闢視覺感知的新地平線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">微視的な視点から立ち上がる、未知の感覚。 三澤 遥がミラノで提示したデザインの力。</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/07/ax237_sco_bitbybit_01.jpg" alt="微視的な視点から立ち上がる、未知の感覚。 三澤 遥がミラノで提示したデザインの力。" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在米蘭設計週一片聲光刺激的喧囂中，日本設計師三澤遙選擇了一條完全相反的路——把視角縮小到極致。她用微觀的角度去剖析材質與結構，帶給觀者一種既陌生又驚喜的感官震撼。這提醒了我們，好的設計不一定要搞大場面或炫技；有時候，只要蹲下來仔細看，日常生活中那些被忽略的微小細節，就能激發出翻轉常識的靈感。這種「微觀思考」正是當代設計師突破同質化困境的關鍵一把鑰匙。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Designer Haruka Misawa showcased her first European solo exhibition at the ADI Design Museum during Milan Design Week. By focusing on microscopic perspectives, she creates subtle yet powerful sensory experiences, proving that profound design innovation often stems from noticing overlooked details in daily life. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/typography-visual-identity-grid-layout-typography-mat-voyce/" target="_blank" rel="noopener">動態字型與網格的交鋒：Mat Voyce 如何用視覺動能打破品牌沉悶</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Typography Visual Identity Grid Layout Typography by Mat Voyce</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_no-rain-no-flowers-mat-voyce.jpg" alt="Typography Visual Identity Grid Layout Typography by Mat Voyce" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">過去我們做品牌識別，總是死守著靜態的排版網格，但 Mat Voyce 這次示範了什麼叫做「讓字型活起來」。他透過賦予字型動態韻律，在嚴謹的結構與張力十足的動能之間找到了完美平衡。這代表靜態視覺識別的時代已經過去了！在如今手機螢幕當道的時代，品牌視覺如果不具備流動感與生命力，就很難在三秒內抓住大眾的眼球。會動的結構，才是未來的設計新標配。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Mat Voyce demonstrates a dynamic visual identity system that merges structured grid layouts with kinetic typography. By introducing motion into traditional graphic rules, the work shows how contemporary branding must leverage dynamic energy and flexibility to stand out across digital screens. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/generative-identity-name-constellation-aishwarya-anand-singh/" target="_blank" rel="noopener">演算法視覺新典範：用 p5.js 程式碼把品牌標誌變成動態演化的星圖</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Generative Identity Name Constellation - Aishwarya Anand Singh</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_generative-identity-name-constellation-aishwarya-anand-singh_1.jpg" alt="Generative Identity Name Constellation - Aishwarya Anand Singh" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">想像一下，品牌的視覺標誌不再是一顆印死在那裡的 Logo，而是一座會隨著數據與互動不斷演化的動態星空！設計師 Aishwarya Anand Singh 利用 p5.js 寫出這套生成式系統，直接展示了演算法藝術在品牌設計上的龐大潛力。這意味著設計師的角色正在轉變，我們不再只是畫圖的人，而是制定規則的「邏輯架構師」。程式碼讓品牌擁有了無限多種面貌，同時又能保有統一的核心靈魂，這絕對是未來品牌設計的大趨勢。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Designer Aishwarya Anand Singh created Name Constellation, a generative code visual identity using p5.js. The project explores how algorithms and computational design can transform standard brand logos into living, dynamic typographic systems that adapt continuously. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://smashingmagazine.com/2026/07/desktop-wallpaper-calendars-august-2026/" target="_blank" rel="noopener">8月桌布裡的靈感儀式感：用微小的視覺驚喜為數位創作者充電</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Small Joys And Big Adventures (August 2026 Wallpapers Edition)</div>
+            <img class="item-image" src="https://archive.smashing.media/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/9d979d10-f87f-4935-828a-de2ecd2de311/aug-17-happiness-happens-in-august-preview.png" alt="Small Joys And Big Adventures (August 2026 Wallpapers Edition)" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">每天打開電腦看到的第一個畫面，其實無形中決定了你今天的創作心境。Smashing Magazine 每個月推出的創作者桌布月曆，看起來只是個小贈品，但背後隱藏的是對數位工作者心理健康的溫柔照顧。在步調極快、焦慮感滿載的科技時代，我們太需要這種「微小卻精緻」的視覺儀式感來幫大腦清空雜訊。它提醒我們，設計不一定要拯救世界，能為別人的日常生活注入一點點快樂與靈感，就是很有價值的事。 <span class="src">— Smashing Magazine</span></div>
+            <div class="item-sentence-en lang-en-only">Smashing Magazine releases its August 2026 desktop wallpaper collection created by artists worldwide. Beyond aesthetic appeal, these wallpapers serve as subtle emotional catalysts and daily creative rituals for digital professionals managing busy workloads. <span class="src">— Smashing Magazine</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxPVjU4RllCaW9aRk4wN3RpQ1pNaUhQYjhSRUQxSGljR1FnMXlLcnZwVndPNndxUl9RTVRWUHhYd29rRHdjaDV2UVFsc2tUS1o1M2wyU2tmMkJOTjg0Q3ZleDAyQ3gtZUpkRXR1Y2VLV0M3VUcxV0xjbnRIcXg5WDBIZ2ZxWGo4NWdTeXFRWmUtQlh5cW5YN0VHcnlkbG05NHM2RkRiX291Wmt4dTZqdEtpSnJKaVdYS3pWN1ZaLTR3TVlaaTRROVJGS1JlY1VmeWR3MHc?oc=5" target="_blank" rel="noopener">重工業巨頭拿下 ISO 42001：負責任 AI 成全球企業必備通行證</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">TechnipFMC Achieves ISO/IEC 42001 Certification, Strengthening Responsible AI Governance - TechnipFMC plc</div>
+            <div class="item-sentence lang-zh-only">離岸工程與能源巨頭 TechnipFMC 拿下 ISO/IEC 42001 人工智慧管理系統認證，這件事的意義非同小可。這代表 AI 治理早就不是矽谷科技公司的專利，連最傳統、最講求安全的重工業，都開始把「負責任的 AI」當成核心營運標準。大家別再把治理當成束縛創新的枷鎖了！當大型企業陸續拿到這張通行證，未來所有供應鏈廠商如果拿不出嚴謹的 AI 治理體系，恐怕連投標的門檻都跨不過去，這就是大航海時代的新規則。 <span class="src">— TechnipFMC plc</span></div>
+            <div class="item-sentence-en lang-en-only">TechnipFMC achieved ISO/IEC 42001 certification, marking a major milestone in responsible AI management. This indicates that AI governance standards are rapidly migrating from big tech to heavy industry, turning responsible AI practices into an essential business qualification. <span class="src">— TechnipFMC plc</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxPVjU4RllCaW9aRk4wN3RpQ1pNaUhQYjhSRUQxSGljR1FnMXlLcnZwVndPNndxUl9RTVRWUHhYd29rRHdjaDV2UVFsc2tUS1o1M2wyU2tmMkJOTjg0Q3ZleDAyQ3gtZUpkRXR1Y2VLV0M3VUcxV0xjbnRIcXg5WDBIZ2ZxWGo4NWdTeXFRWmUtQlh5cW5YN0VHcnlkbG05NHM2RkRiX291Wmt4dTZqdEtpSnJKaVdYS3pWN1ZaLTR3TVlaaTRROVJGS1JlY1VmeWR3MHc?oc=5" target="_blank" rel="noopener">AI 治理認證的商業牌局：負責任 AI 成為企業贏得信任的秘密武器</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">TechnipFMC Achieves ISO/IEC 42001 Certification, Strengthening Responsible AI Governance - TechnipFMC plc</div>
+            <div class="item-sentence lang-zh-only">TechnipFMC 通過 ISO 42001 認證背後還有個關鍵視角：在 AI 模型漏洞百出、資安風險加劇的今天，「信任」成了最昂貴的奢侈品。這家公司主動將 AI 運作納入國際標準管轄，其實是在向全球客戶與投資人宣示其風險控管能力。看完這案例我們要明白，負責任的 AI 治理不是為了應付政府查核，而是拿來建立品牌護城河的商業戰略。誰能先讓客戶放心把數據與流程交給你，誰就是市場上的最後贏家。 <span class="src">— TechnipFMC plc</span></div>
+            <div class="item-sentence-en lang-en-only">TechnipFMC&#x27;s attainment of ISO/IEC 42001 highlights how AI governance acts as a strategic trust builder in B2B markets. Adopting standardized AI management frameworks allows industrial enterprises to mitigate operational risks and secure competitive advantages in complex supply chains. <span class="src">— TechnipFMC plc</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPdWpOTy1ZbklJZnFsa0FZeTVHNEc1bU4yTTA2Y0NEYTdKM096b09Ld0Q4UDZHT2NqclVuQXZaUTZJZHd4ZlRQWnFnOFZrUlk2dTFkcU8tNlVWMmNZRjFGbV9SSGcteTFxUHNHdFFWYlZGOGE0UC1MMXplNjhGZV9HM25KSHdlcVpGcEJZX2JXX09xRkdiQTRyOW9Mbk8wMzFnRnlwVEFySDBwVlVMMjV2eWo1UXUtUQ?oc=5" target="_blank" rel="noopener">歐盟 AI 法案開罰前夕：顧客體驗的勝負取決於你敢不敢對用戶坦白</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The EU AI Act requires AI transparency. What does it mean for CX? - Customer Experience Dive</div>
+            <div class="item-sentence lang-zh-only">歐盟 AI 法案對「透明度」砸下重拳，要求企業必須明確告知用戶哪些服務是由 AI 提供。很多企業擔心這樣會破壞顧客體驗，但聰明的品牌反而把它當成翻轉信任度的絕佳契機！如果你的客服機器人或推薦系統總是在裝真人，只會讓用戶發現後產生強烈背叛感。敢於開誠布公地說明 AI 的角色與數據用途，反而能建立起真誠、透明的品牌形象。透明度不再是法律包袱，而是當代 CX 設計的最核心考驗。 <span class="src">— Customer Experience Dive</span></div>
+            <div class="item-sentence-en lang-en-only">The EU AI Act&#x27;s new transparency rules are reshaping customer experience (CX) strategies. Companies must now explicitly inform users when AI is at play, shifting transparency from a legal compliance burden into a vital competitive asset for customer trust. <span class="src">— Customer Experience Dive</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTFA2VkZNLTBRZUlNc2t0LWxza0RHOUViS0tmTWM4S3RLQ3AwRk1ZQVVZUmFLTmpNZlpxekgtRnVyQTgwRkN5WDlOcU9jTzdDbFlBcFRpN3BvQTlOLU01YldvekFOS2VhWVVOdnNFNUdGSzJWNFpIbThNbmNPRktjdw?oc=5" target="_blank" rel="noopener">影子 AI 代理人襲來：超過八成資安長最害怕看得到卻管不到的黑盒</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance Gap: 81% of CISOs Fear Agents They Can’t Fully See - Cybersecurity Insiders</div>
+            <div class="item-sentence lang-zh-only">高達 81% 的資安長（CISO）坦言，他們最害怕那些在企業系統裡趴趴走、自己卻無法完全掌握的自主 AI Agent！員工為了省事私下引進各種 AI 工具，導致「影子 AI」比當年的影子 IT 更加失控。這件事給我們的啟示是：傳統那一套靠圍牆築壁壘的控管思維已經徹底失效了。現在的治理必須跟上 AI 自主運行的節奏，建立具備即時可視性與彈性動態的防禦架構，否則企業內部的核心數據隨時可能在無意間被「打包外流」。 <span class="src">— Cybersecurity Insiders</span></div>
+            <div class="item-sentence-en lang-en-only">A recent survey reveals 81% of CISOs fear autonomous AI agents operating without clear visibility inside enterprise networks. The rise of shadow AI requires security teams to move away from legacy perimeter defenses toward real-time monitoring and dynamic governance. <span class="src">— Cybersecurity Insiders</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcmJ2YXFoZW51V3FvdXNKZTR1ZERwcVVnVEJ3dHU5SmRuajdYNmRfZ1FDOTNGTVhTaXpzT1JBTnpNU2lkRWJWUThjb3ZWQkRnLXdCNF9Rbi12YzlnNjVKc3pxRi1odTR3dmJiemtJWHVrRFVqQThXR09QOGtPWV9tMU9teWd4QXpMLUxJVVdZUGdTUHZBSlFGbXgtUGx3LURjbjktc3JPY0duUQ?oc=5" target="_blank" rel="noopener">駭客二次震撼彈破防：揭穿企業紙上 AI 治理漏洞與防禦體系危機</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Here’s how a second major hacking incident is exposing the fragility of AI governance - VCU News</div>
+            <div class="item-sentence lang-zh-only">近期的第二次重大駭客攻擊事件，無情地刺破了許多企業「紙上談兵」的 AI 治理假象。很多公司以為訂幾條內部規範、開個合規會議就算做好治理了，但在真實的網絡攻擊面前，這些未經壓力測試的體系簡直比紙還脆弱。這事件深刻地告誡我們：AI 治理絕不是行銷公關的神明牌位，而是需要不斷進行演練、系統性防禦與動態修正的實戰工程。如果防禦邏輯跟不上 AI 的演化速度，再漂亮的治理宣告都只是紙老虎。 <span class="src">— VCU News</span></div>
+            <div class="item-sentence-en lang-en-only">A second major hacking incident exposed critical flaws in superficial AI governance frameworks. The breach emphasizes that standard compliance policies are insufficient without continuous stress-testing, active security protocols, and operational adaptability to emerging threats. <span class="src">— VCU News</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-01 08:04:34 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
