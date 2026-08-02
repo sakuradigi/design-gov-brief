@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>早晨簡報 · 2026-08-02</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-02</div>
+    <div class="headline">從語境UX到歐盟AI法案實施：當視覺美學碰撞治理防線</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Good design is as little design as possible.</div>
+      <div class="quote-text-zh lang-zh-only">好的設計就是盡可能少地設計。</div>
+      <div class="quote-author">— Dieter Rams</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">體驗設計轉向：航空公司開始搞懂情境感知與焦慮。</li>
+        <li class="flash-item">AI治理商業化：合規不再是成本而是建立信任優勢。</li>
+        <li class="flash-item">細節設計力量：微觀視角在混亂時代激發深刻共鳴。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/07/718643.html" target="_blank" rel="noopener">從紳士穿搭看現代風格：用視覺打破身份與性別框架</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">現代紳士のポートレイト集『They Are Dandy』刊行。 スタイルを通して、アイデンティティと自由を描く</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/07/p.031lowercenterPhoto-Rose-Callahan-They-are-Dandy-gestalten-2026_1.jpg" alt="現代紳士のポートレイト集『They Are Dandy』刊行。 スタイルを通して、アイデンティティと自由を描く" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這本書可不是在教你怎麼扣西裝鈕扣，它展示的是風格如何成為個體宣言。當代紳士文化早已擺脫了傳統階級與刻板男性的包袱，轉而成為一種展現自我主體性的視覺語言。這背後代表的趨勢是：服裝不再是社會規範的枷鎖，而是個人自由與跨界美學的日常載體。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The photography book &#x27;They Are Dandy&#x27; published by gestalten explores contemporary menswear culture through vivid portraits. It illustrates how modern gentleman style has evolved beyond rigid class dress codes into an expressive visual medium for individual identity, personal freedom, and self-definition in modern society. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/07/718959.html" target="_blank" rel="noopener">三澤遙的米蘭展覽：微觀視角如何在狂歡聲量中贏得共鳴</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">微視的な視点から立ち上がる、未知の感覚。 三澤 遥がミラノで提示したデザインの力。</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/07/ax237_sco_bitbybit_01.jpg" alt="微視的な視点から立ち上がる、未知の感覚。 三澤 遥がミラノで提示したデザインの力。" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在米蘭設計週這種大聲疾呼、搶奪眼球的狂歡節裡，三澤遙選擇用極度細膩的微觀視角切入展覽。這種「安靜的力量」非常關鍵，它提醒我們：當所有品牌都在追求宏大敘事與視覺衝擊時，機能讓人停下腳步、重新感知微小變化的設計，反而更能直擊人心，創造無法取代的情感連結與深層感官體驗。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Designer Haruka Misawa presented her serene solo exhibition at the ADI Design Museum during Milan Design Week. Curated by Olivier Zeitoun, the display uses a microscopic perspective to ignite subtle sensory curiosity, proving that quiet and meticulous design can create profound emotional engagement even amidst the noisy atmosphere of major design festivals. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/branding-visual-identity-grid-layout-typography-us-vs-them/" target="_blank" rel="noopener">街頭次文化的嚴謹轉身：用幾何網格打造電影感品牌視覺</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Branding Visual Identity Grid Layout Typography for Us Vs Them</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_us-vs-them-visual-identity-monga-design.jpg" alt="Branding Visual Identity Grid Layout Typography for Us Vs Them" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Monga Design 為 &#x27;Us Vs Them&#x27; 做的這套視覺識別，把街頭次文化的叛逆感抓得非常準，但最厲害的是背後極其嚴謹的幾何網格。這反映了當代品牌設計的走勢：街頭風格不再只是隨性塗鴉，透過高精度的網格系統來調和混亂與秩序，機能讓視覺既保有狂放的態度，又具備可延伸至各式媒介的強大系統力。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Monga Design crafted a cinematic brand identity for Us Vs Them, seamlessly blending raw street subculture with a strict geometric grid system. This design approach demonstrates how structured visual frameworks can organize dynamic media while maintaining an authentic, edgy street tone, providing modern brands with a versatile and highly scalable design system. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/why-airlines-are-finally-waking-up-to-context-aware-design-9cdb67722d03?source=rss----138adf9c44c---4" target="_blank" rel="noopener">航空公司 UX 覺醒：用情境感知設計拯救登機焦慮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why airlines are finally waking up to context-aware design</div>
+            <img class="item-image" src="https://miro.medium.com/v2/da:true/resize:fit:1200/0*f747OZL4UEmBCN2J" alt="Why airlines are finally waking up to context-aware design" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">你一定也有過在機場奔跑時，手忙腳亂翻找手機登機證的崩潰體驗。這篇文章點出了一個關鍵趨勢：產品設計正在從單純的「功能堆疊」轉向「動態情境感知」。好設計不該把資訊死板地塞在 App 裡，而是要能感知用戶當下的空間與焦慮，在最需要的那幾秒鐘裡，把最關鍵的按鈕自動遞到面前。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Airline digital platforms are finally shifting from static feature delivery to real-time context-aware user experiences. By analyzing actual physical environments and user stress points—such as rushing through an airport—apps can dynamically present critical boarding pass details at the exact moment passengers need them, dramatically reducing travel friction. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/goga-mono-monospaced-typeface-specimen-typography-narrow-type/" target="_blank" rel="noopener">等寬字體的逆襲：從程式碼變成前衛排版的視覺主角</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Goga mono monospaced typeface specimen typography narrow type</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_goga-mono-free-try-narrow-type.jpg" alt="Goga mono monospaced typeface specimen typography narrow type" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Goga Mono 這套字體示範了等寬字體如何從傳統寫程式的工具，轉變成視覺設計的前衛主角。它基於 630 單位網格的極簡架構，展現出高度結構化的工藝美學。這代表當代視覺正流行一種「數位秩序感」，設計師透過緊湊而精密的字體編排，機能為現代品牌創造出冷靜、理智且極具科技溫度的視覺質感。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">The Goga Mono monospaced typeface specimen presents a refined typographic system structured around a precise 630-unit grid. Utilizing narrow letterforms and meticulous spacing, the project illustrates how functional coding typefaces are transforming into stylish visual heroes, driving a new trend of structured digital aesthetics in modern layout design. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxOUzFPMzhKenUzcm40RllhVTNpOVBITklFMklaakhlWjV2RlQ3ZndsNFFEUE8yZTRJVWhPQW9idjJ3bXFveHlDRDhiNEp3SWJDTWY4V3c2N2d0ZEFwdGRjWkY1OXF0ZVppUkJ1SlZKWm82TUVMWUYtVWl6YWg2dmJGVlg5SVJTV3ZhOEhPZGdrRGFVRFJ1ZlVLaENHb0ItVExrWkNnWXp3VnNYTWdjd2NnTG45c0JGY3NqRXN5RTh1S3BqTWJDWGtOQy1JUjRzOUM2X3Uw?oc=5" target="_blank" rel="noopener">全球法規動起來：AI 治理證照成為企業人才標配</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">CertiProf Accelerates Adoption of AI Governance and AI Security Amid Global Regulatory Demands - EIN News</div>
+            <div class="item-sentence lang-zh-only">CertiProf 推出的 AI 治理證照看似硬梆梆，背後卻是整個產業的集體焦慮。過去大家談 AI 治理只停留在倫理宣導，現在各國法規收緊，企業發現沒有經過驗證的人才根本不敢上線新模型。這意味著 AI 治理正快速「職業化」，學會怎麼搭設安全防護欄，已經成為下一個世代技術人與法務團隊的核心競爭力。 <span class="src">— EIN News</span></div>
+            <div class="item-sentence-en lang-en-only">CertiProf is accelerating the global deployment of AI Governance and AI Security certifications in response to tightening global regulatory mandates. As regulatory compliance becomes mandatory, organizations are rapidly transitioning from abstract policy statements to certified skill standards, establishing governance expertise as a vital asset for future technical professionals. <span class="src">— EIN News</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNeVp5cVo2N1hDb1B5VzgwTVFPaFF5SldoVHFxaEthcTF6elJ0NVFJT2xqUTJBWm1peHp2ODJ4TWFVMXk3T0lTRmNuUmttWTNEa2IxMzhUUzROOHN2Zl9HaFNMUmFoWjdOT2pReDA4U1hzV09MM1dfSlE1ZzBJdmY0ZFY4dXpFaVdDUGZfQThmT3BFU253dzRiNXdGNWNoWlpuX2FTN3RrX1lSak1qZmRfZUlsVU4xeE1QR3haeUd6MjRjTkk?oc=5" target="_blank" rel="noopener">治理不是煞車皮：把 AI 合規轉換為企業信任資產</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Building Competitive Advantage through AI Governance - CIOReview</div>
+            <div class="item-sentence lang-zh-only">CIOReview 這篇論述完全打破了「治理會拖慢創新」的迷思。當市場上充滿不可預測的 AI 產出時，擁有透明且可預測的治理機制，反而成了品牌最大的護城河。未來的競爭力不再是誰模型跑得快，而是誰能給客戶足夠的安全感——把合規做得優雅又透明，才是最頂級的商業差異化策略。 <span class="src">— CIOReview</span></div>
+            <div class="item-sentence-en lang-en-only">CIOReview highlights how robust AI governance serves as a crucial strategic advantage rather than an operational bottleneck. Companies that integrate proactive risk management and transparent operational protocols into their AI initiatives build stronger brand reputation, enhance market trust, and navigate evolving global compliance requirements far more effectively than competitors who bypass ethical standards. <span class="src">— CIOReview</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE9vVi1fWlRRSHpFNjZGYk5ERWZlUkFuaWxxdjh6WEJ6U0llZjNmQ3VaeHZtS2h1TjBXbVNSbWh5THEwRG5hNzhISVRBYWZkVTNFSnkyZGwza0lldWxlZ1RfU3BXRUZ5VDBNYkgzZTdDMWZWS19vcFE?oc=5" target="_blank" rel="noopener">歐盟 AI 法案落地：全球科技產品架構迎來大重組</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">EU AI Act Enters Its Main Phase - The European Times</div>
+            <div class="item-sentence lang-zh-only">歐盟 AI 法案正式進入核心執行階段，這可不只是歐洲人的事，而是全世界科技巨頭的期末考。就跟當年 GDPR 一樣，歐盟的新標準將強迫全球開發者重新審視產品邏輯與資料來源。這標誌著「無官府狀態的 AI 蠻荒時代」正式終結，接下來機能存活下來的產品，必然是從第一天就把合規與倫理寫進架構里的玩家。 <span class="src">— The European Times</span></div>
+            <div class="item-sentence-en lang-en-only">The European Union AI Act has entered its core operational phase, shifting from legislative discussion to direct enforcement. This landmark regulation forces technology vendors globally to audit their model architectures and data pipelines, officially ending the unmonitored era of artificial intelligence and setting a mandatory compliance standard for global software markets. <span class="src">— The European Times</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxOUzFPMzhKenUzcm40RllhVTNpOVBITklFMklaakhlWjV2RlQ3ZndsNFFEUE8yZTRJVWhPQW9idjJ3bXFveHlDRDhiNEp3SWJDTWY4V3c2N2d0ZEFwdGRjWkY1OXF0ZVppUkJ1SlZKWm82TUVMWUYtVWl6YWg2dmJGVlg5SVJTV3ZhOEhPZGdrRGFVRFJ1ZlVLaENHb0ItVExrWkNnWXp3VnNYTWdjd2NnTG45c0JGY3NqRXN5RTh1S3BqTWJDWGtOQy1JUjRzOUM2X3Uw?oc=5" target="_blank" rel="noopener">解決技術團隊焦慮：把 AI 信任架構轉化為日常工程</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">CertiProf Accelerates Adoption of AI Governance and AI Security Amid Global Regulatory Demands - EIN News</div>
+            <div class="item-sentence lang-zh-only">推動 AI 治理認證的另一層意義，是幫開發團隊尋求運作上的解答。工程師往往夾在「業務要快速上線」與「系統暴走風險」之間。透過標準化的安全框架，技術團隊終於有了一套客觀的共同語言與決策指標，讓創新不再像是矇著眼睛走鋼索，而是能在明確的安全網之上放手嘗試，降低企業內部的溝通摩擦。 <span class="src">— EIN News</span></div>
+            <div class="item-sentence-en lang-en-only">CertiProf&#x27;s push for standardized AI governance certifications provides software engineering teams with actionable operational frameworks. By establishing clear security protocols and risk metrics, organizations bridge the gap between product innovation and ethical compliance, enabling developers to build cutting-edge artificial intelligence solutions safely without causing severe institutional or legal exposure. <span class="src">— EIN News</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxOcUdlbUtpM3czcm5mSTB6bk55TzNHX3dhVld3MklGWGJsN0djRTMtaExZcndqdElBUUxSek5KOVhzdjVGRWk3TDFXcGNTR1hYYVVjcnBRZW1wUG1oeGhDUVFSeGMwTDgzc0RzbnlnQ3pnZ09mYjdsc3JmcXNiQjFZZm0tYlpUYWZMajRTOXV1R25VaUtMNmJ3a3JTYVlWMlQ4MnRGbThvT2Z4X3JxVTg2amU4T0RoZEQ3NzlrSWNZNFRhSXJxaVp1U09TOG1QcmRCeU9JdFNfOFk?oc=5" target="_blank" rel="noopener">供應鏈風險新防線：企業採購 AI 軟體防範機制</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">CertiProf Accelerates Adoption of AI Governance and AI Security Amid Global Regulatory Demands - EIN Presswire</div>
+            <div class="item-sentence lang-zh-only">企業現在導入外部 AI 工具時，最怕吃到潛在風險的毒藥。當 AI 安全認證普及化，代表採購與審查團隊擁有了明確的檢驗量尺。未來的 B2B 市場裡，如果你的 AI 產品拿不出權威的治理與安全驗證證明，即使功能再炫，也根本進不了大企業的供應鏈名單。這是一場重塑 B2B 商業信任鏈條的產業大洗牌。 <span class="src">— EIN Presswire</span></div>
+            <div class="item-sentence-en lang-en-only">The widespread adoption of AI governance certifications is reshaping corporate software procurement and vendor evaluation. As enterprises prioritize system safety, third-party AI vendors must validate their compliance and risk mitigation capabilities. Standardized governance credentials are rapidly becoming an essential requirement for entering enterprise supply chains and closing enterprise deals. <span class="src">— EIN Presswire</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-02 08:03:37 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
