@@ -1,0 +1,3269 @@
+{
+  "date": "2026-08-07",
+  "generated_at": "2026-08-07T00:05:05.543446+00:00",
+  "total_raw_articles": 362,
+  "total_verified": 350,
+  "total_failed": 12,
+  "selected_design": 5,
+  "selected_gov": 5,
+  "articles": [
+    {
+      "title": "Defining ethical design for machines",
+      "url": "https://uxdesign.cc/defining-ethical-design-for-machines-10d8f7309eec?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-06T02:06:36+00:00"
+    },
+    {
+      "title": "Bottle your judgment and make it outlive you",
+      "url": "https://uxdesign.cc/bottle-your-judgment-and-make-it-outlive-you-14f422772262?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-05T20:55:03+00:00"
+    },
+    {
+      "title": "The future of work belongs to the knowledge DJs",
+      "url": "https://uxdesign.cc/the-future-of-work-belongs-to-the-knowledge-djs-7cc596be1f77?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-05T07:36:54+00:00"
+    },
+    {
+      "title": "What Star Trek got right about AI",
+      "url": "https://uxdesign.cc/what-star-trek-got-right-about-ai-a4fb09e0d6c6?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-04T21:10:21+00:00"
+    },
+    {
+      "title": "What your AI co-designer can’t infer from your hex values",
+      "url": "https://uxdesign.cc/what-your-ai-co-designer-cant-infer-from-your-hex-values-d2023364e80e?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-04T21:09:48+00:00"
+    },
+    {
+      "title": "How Korea & Japan turned ordering food into a UX masterclass",
+      "url": "https://uxdesign.cc/how-korea-and-japan-turned-ordering-food-into-a-ux-masterclass-f64c31bd4c98?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-04T09:25:56+00:00"
+    },
+    {
+      "title": "Why 10,000 experiments work better than 10,000 hours for designers",
+      "url": "https://uxdesign.cc/why-10-000-experiments-work-better-than-10-000-hours-for-designers-1a07aa35df7f?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-04T07:34:49+00:00"
+    },
+    {
+      "title": "Own the room, or leave it",
+      "url": "https://uxdesign.cc/own-the-room-or-leave-it-39436e89a256?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-04T07:33:45+00:00"
+    },
+    {
+      "title": "IA for AI, The UX of contrast, Battling AI fatigue",
+      "url": "https://uxdesign.cc/ia-for-ai-the-ux-of-contrast-battling-ai-fatigue-4f623495bed8?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-03T09:47:06+00:00"
+    },
+    {
+      "title": "Chat is the wrong interface for AI",
+      "url": "https://uxdesign.cc/chat-is-the-wrong-interface-for-ai-de14d352de1b?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-03T06:10:39+00:00"
+    },
+    {
+      "title": "Stan Hema rebrands Stadtmuseum Berlin as the Berlin Museum, with a wordmark built from the city itself",
+      "url": "https://www.creativeboom.com/news/stan-hema-rebrands-stadtmuseum-berlin-as-the-berlin-museum-with-a-wordmark-built-from-the-city-itself/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T12:46:00+01:00"
+    },
+    {
+      "title": "Johnson Banks reimagines the green toy soldier for IWM London's Childhood in War",
+      "url": "https://www.creativeboom.com/news/johnson-banks-reimagines-the-green-toy-soldier-for-iwm-londons-childhood-in-war/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T11:34:00+01:00"
+    },
+    {
+      "title": "Heaps Normal channels Memphis, Devo and Barbara Kruger for its first non-alc wine",
+      "url": "https://www.creativeboom.com/inspiration/heaps-normal-channels-memphis-devo-and-barbara-kruger-for-its-first-non-alcoholic-wine/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T10:42:00+01:00"
+    },
+    {
+      "title": "'We're not here to beg for a seat': how Victoria Montgomery & Tamira Hamden built Women in Brand",
+      "url": "https://www.creativeboom.com/insight/were-not-here-to-beg-for-a-seat-how-victoria-montgomery-and-tamira-hamden-built-women-in-brand/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-06T08:45:00+01:00"
+    },
+    {
+      "title": "Can you actually grow old as a creative, successfully?",
+      "url": "https://www.creativeboom.com/tips/can-you-actually-grow-old-as-a-creative/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T07:35:00+01:00"
+    },
+    {
+      "title": "Meet the design studio that's paid in wine, meals and travel rather than money",
+      "url": "https://www.creativeboom.com/insight/meet-the-design-studio-thats-paid-in-wine-meals-and-travel-rather-than-money/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T07:33:00+01:00"
+    },
+    {
+      "title": "Luke McConkey on what making box art for a game can teach you about standing out",
+      "url": "https://www.creativeboom.com/resources/designing-for-a-crowded-shelf-what-party-game-illustration-can-teach-you-about-standing-out/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T07:32:00+01:00"
+    },
+    {
+      "title": "Two Berlin graduates asked 30 design leaders if AI has ended their industry. The answers were somewhat surprising",
+      "url": "https://www.creativeboom.com/resources/two-berlin-graduates-asked-30-design-leaders-if-ai-has-ended-their-industry-the-answers-surprised-them/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T07:30:00+01:00"
+    },
+    {
+      "title": "How Erin Aniker's sketchbook doodles ended up painted over penis graffiti on the Tour de France route",
+      "url": "https://www.creativeboom.com/news/how-erin-anikers-sketchbook-doodles-ended-up-painted-over-penis-graffiti-on-the-tour-de-france-route/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-08-04T20:00:00+01:00"
+    },
+    {
+      "title": "Stanley Chow fills the Arndale with 13 giant inflatable Manchester icons for a free summer trail",
+      "url": "https://www.creativeboom.com/news/stanley-chow-fills-the-arndale-with-13-giant-inflatable-manchester-icons-for-a-free-summer-trail/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T11:13:00+01:00"
+    },
+    {
+      "title": "How DNCO turned Vermont from a place people admire into one they actually want to visit",
+      "url": "https://www.creativeboom.com/news/how-dnco-turned-vermont-from-a-place-people-admire-into-one-they-actually-want-to-visit/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T10:07:00+01:00"
+    },
+    {
+      "title": "Using pencil and fine liners, Anna Karetnikova knows when to thrash the traditional rulebook when needed",
+      "url": "https://www.creativeboom.com/inspiration/using-pencil-and-fine-liners-anna-karetnikova-knows-when-to-thrash-the-traditional-rulebook-when-needed/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T09:59:00+01:00"
+    },
+    {
+      "title": "Emma Giacalone turns retro food packaging into stitched reminders to be kinder to ourselves",
+      "url": "https://www.creativeboom.com/inspiration/emma-giacalone-turns-retro-food-packaging-into-stitched-reminders-to-be-kinder-to-ourselves/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T08:50:00+01:00"
+    },
+    {
+      "title": "Adam Lin's intimate series documents male family members in Taiwan and London",
+      "url": "https://www.creativeboom.com/inspiration/adam-lins-intimate-series-documents-male-family-members-in-taiwan-and-london/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T08:40:00+01:00"
+    },
+    {
+      "title": "'I'll keep finding new ways to tell stories': Meet chronicler stroke illustrator Sun Bai",
+      "url": "https://www.creativeboom.com/inspiration/ill-keep-finding-new-ways-to-tell-stories-meet-chronicler-stroke-illustrator-sun-bai/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T08:22:00+01:00"
+    },
+    {
+      "title": "From gemstones to 10m giants: Wallace Chan's Vessels of Other Worlds spans Venice and Shanghai",
+      "url": "https://www.creativeboom.com/news/wallace-chan-vessels-of-other-worlds/",
+      "source": "Creative Boom",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T07:00:00+01:00"
+    },
+    {
+      "title": "AI Design: Introducing Adobe for ChatGPT",
+      "url": "https://abduzeedo.com/ai-design-introducing-adobe-chatgpt/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T17:11:44+00:00"
+    },
+    {
+      "title": "Bord Restaurant Visual Identity and Web Branding",
+      "url": "https://abduzeedo.com/bord-restaurant-visual-identity-and-web-branding/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T13:30:53+00:00"
+    },
+    {
+      "title": "KORBA Architectural Studio Branding System",
+      "url": "https://abduzeedo.com/korba-architectural-studio-branding-system/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T12:51:39+00:00"
+    },
+    {
+      "title": "WOW Visual Identity Branding by Plural Branding Studio",
+      "url": "https://abduzeedo.com/wow-visual-identity-branding-plural-branding-studio/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T12:10:37+00:00"
+    },
+    {
+      "title": "Gregory Lalle Portfolio Concept UI UX Design by Dmitri Semenov",
+      "url": "https://abduzeedo.com/gregory-lalle-portfolio-concept-ui-ux-design-dmitri-semenov/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T11:35:27+00:00"
+    },
+    {
+      "title": "Mucho Gusto Tactile Branding and Packaging System",
+      "url": "https://abduzeedo.com/mucho-gusto-tactile-branding-and-packaging-system/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T03:44:08+00:00"
+    },
+    {
+      "title": "noise-scape 2025 holger lippmann generative art",
+      "url": "https://abduzeedo.com/noise-scape-2025-holger-lippmann-generative-art/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T22:04:17+00:00"
+    },
+    {
+      "title": "Bona Nova Mateusz Machalski Free Typeface",
+      "url": "https://abduzeedo.com/bona-nova-mateusz-machalski-free-typeface/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T19:04:34+00:00"
+    },
+    {
+      "title": "Design Spells UI UX Interaction Gallery Showcase",
+      "url": "https://abduzeedo.com/design-spells-ui-ux-interaction-gallery-showcase/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T18:42:34+00:00"
+    },
+    {
+      "title": "Zwqy .lab Redefines Artistic Identity with Artevive Branding",
+      "url": "https://abduzeedo.com/zwqy-lab-redefines-artistic-identity-artevive-branding/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T16:28:33+00:00"
+    },
+    {
+      "title": "Neurath Mono Geometric Typography by René Bieder",
+      "url": "https://abduzeedo.com/neurath-mono-geometric-typography-rene-bieder/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T14:08:28+00:00"
+    },
+    {
+      "title": "Ton Bui Crafts Rustic Industrial Branding for Xuong Caphe",
+      "url": "https://abduzeedo.com/ton-bui-crafts-rustic-industrial-branding-xuong-caphe/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:34:35+00:00"
+    },
+    {
+      "title": "Generative Type Experiments GTX Mariam Badawy: Arabic Layouts",
+      "url": "https://abduzeedo.com/generative-type-experiments-gtx-mariam-badawy-arabic-layouts/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:01:30+00:00"
+    },
+    {
+      "title": "Here & Away Travel Platform UI UX Design by Andrea Jelić",
+      "url": "https://abduzeedo.com/here-away-travel-platform-ui-ux-design-andrea-jelic/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T03:59:58+00:00"
+    },
+    {
+      "title": "Flightmode Exhibition Identity Catalogue Heather Lynn Billyclub",
+      "url": "https://abduzeedo.com/flightmode-exhibition-identity-catalogue-heather-lynn-billyclub/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T22:05:15+00:00"
+    },
+    {
+      "title": "Freaky Lizard Branding Packaging Yevheniia Dutchak",
+      "url": "https://abduzeedo.com/freaky-lizard-branding-packaging-yevheniia-dutchak/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T19:03:05+00:00"
+    },
+    {
+      "title": "WORM Visual Identity Branding by Jonas Bombardelli",
+      "url": "https://abduzeedo.com/worm-visual-identity-branding-jonas-bombardelli/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T15:38:48+00:00"
+    },
+    {
+      "title": "Kopalnia Magazine 2 World Cup 2026 Ania Wielunska Design",
+      "url": "https://abduzeedo.com/kopalnia-magazine-2-world-cup-2026-ania-wielunska-design/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:05:18+00:00"
+    },
+    {
+      "title": "INKDRUM Browser Risograph Print Simulator by INKDRUM Team",
+      "url": "https://abduzeedo.com/inkdrum-browser-risograph-print-simulator-inkdrum-team/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T12:50:29+00:00"
+    },
+    {
+      "title": "Bar Popolare Visual Identity Branding by Leonardo Maltese",
+      "url": "https://abduzeedo.com/bar-popolare-visual-identity-branding-leonardo-maltese/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T03:27:56+00:00"
+    },
+    {
+      "title": "Imogen Oke Visual Identity Branding by Thought & Found",
+      "url": "https://abduzeedo.com/imogen-oke-visual-identity-branding-thought-found/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T03:08:05+00:00"
+    },
+    {
+      "title": "Drawink Animals Illustrations Getillustrations: Line Art",
+      "url": "https://abduzeedo.com/drawink-animals-illustrations-getillustrations-line-art/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T22:01:40+00:00"
+    },
+    {
+      "title": "diesta streamlining insurance payments significa.co UI",
+      "url": "https://abduzeedo.com/diesta-streamlining-insurance-payments-significaco-ui/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T19:07:44+00:00"
+    },
+    {
+      "title": "Petbarn Visual Identity Branding by Landor Australia",
+      "url": "https://abduzeedo.com/petbarn-visual-identity-branding-landor-australia/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T14:14:41+00:00"
+    },
+    {
+      "title": "Gideon Phillip Directs Striking Monochromatic Branding for PM",
+      "url": "https://abduzeedo.com/gideon-phillip-directs-striking-monochromatic-branding-pm/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T13:37:56+00:00"
+    },
+    {
+      "title": "Minimalist Branding for ELYO Brand Identity",
+      "url": "https://abduzeedo.com/minimalist-branding-elyo-brand-identity/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T13:28:39+00:00"
+    },
+    {
+      "title": "Minimalist Branding for nesia Visual Identity System",
+      "url": "https://abduzeedo.com/minimalist-branding-nesia-visual-identity-system/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T09:37:41+00:00"
+    },
+    {
+      "title": "Branding System for Ginga Capoeira Cultural Project",
+      "url": "https://abduzeedo.com/branding-system-ginga-capoeira-cultural-project/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T01:18:51+00:00"
+    },
+    {
+      "title": "Best of the Week: High-Contrast Systems and Monospaced Grids",
+      "url": "https://abduzeedo.com/best-week-high-contrast-systems-and-monospaced-grids/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T13:01:56+00:00"
+    },
+    {
+      "title": "Ayala Coffee Co. Visual Identity: Crafting Tactile Packaging",
+      "url": "https://abduzeedo.com/ayala-coffee-co-visual-identity-crafting-tactile-packaging/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-01T22:03:27+00:00"
+    },
+    {
+      "title": "Branding Visual Identity Grid Layout Typography for Us Vs Them",
+      "url": "https://abduzeedo.com/branding-visual-identity-grid-layout-typography-us-vs-them/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-01T19:05:29+00:00"
+    },
+    {
+      "title": "Packaging Design for TOUM Middle Eastern Street Food",
+      "url": "https://abduzeedo.com/packaging-design-toum-middle-eastern-street-food/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-01T18:19:33+00:00"
+    },
+    {
+      "title": "Goga mono monospaced typeface specimen typography narrow type",
+      "url": "https://abduzeedo.com/goga-mono-monospaced-typeface-specimen-typography-narrow-type/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-01T13:03:19+00:00"
+    },
+    {
+      "title": "Minimalist Spatial Branding for Moos Architecture Cafe",
+      "url": "https://abduzeedo.com/minimalist-spatial-branding-moos-architecture-cafe/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-01T02:03:01+00:00"
+    },
+    {
+      "title": "Pentagram Crafts Refined Health Branding for Rugiet",
+      "url": "https://abduzeedo.com/pentagram-crafts-refined-health-branding-rugiet/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-01T01:40:10+00:00"
+    },
+    {
+      "title": "Garden Anomaly: A Tiny WebGPU and TSL Experiment",
+      "url": "https://tympanus.net/codrops/2026/08/06/garden-anomaly-a-tiny-webgpu-and-tsl-experiment/",
+      "source": "Codrops",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T16:30:42+00:00"
+    },
+    {
+      "title": "A Canvas for Individuality: Creating Websites That Feel Unmistakably Human with Readymag",
+      "url": "https://tympanus.net/codrops/2026/08/05/a-canvas-for-individuality-creating-websites-that-feel-unmistakably-human-with-readymag/",
+      "source": "Codrops",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T10:22:14+00:00"
+    },
+    {
+      "title": "Building an Endless Interactive Glass Xylophone with Three.js",
+      "url": "https://tympanus.net/codrops/2026/08/04/building-an-endless-interactive-glass-xylophone-with-three-js/",
+      "source": "Codrops",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T10:58:37+00:00"
+    },
+    {
+      "title": "The Story Is in the Interaction: Bonhomme’s Digital Experiences for Luxury Brands",
+      "url": "https://tympanus.net/codrops/2026/08/03/the-story-is-in-the-interaction-bonhommes-digital-experiences-for-luxury-brands/",
+      "source": "Codrops",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T11:10:44+00:00"
+    },
+    {
+      "title": "Small Joys And Big Adventures (August 2026 Wallpapers Edition)",
+      "url": "https://smashingmagazine.com/2026/07/desktop-wallpaper-calendars-august-2026/",
+      "source": "Smashing Magazine",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T08:00:00+00:00"
+    },
+    {
+      "title": "【求人情報】ダイレクトマーケティングを主軸とした広告代理店の株式会社ラインが、グラフィックデザイナーを募集",
+      "url": "https://www.japandesign.ne.jp/news/2026/08/89303/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-07T00:00:44+00:00"
+    },
+    {
+      "title": "MUJI BOOKS『人と物』特別展 宮脇綾子",
+      "url": "https://www.japandesign.ne.jp/event/miyawakiayako-mujibooks/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T23:45:53+00:00"
+    },
+    {
+      "title": "LAND/TRACE -大地のプロダクト展-",
+      "url": "https://www.japandesign.ne.jp/event/landtrace-shido/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T23:45:12+00:00"
+    },
+    {
+      "title": "台湾最大のデザイン見本市「2026台湾クリエイティブエキスポ」が8月31日まで開催",
+      "url": "https://www.japandesign.ne.jp/news/2026/08/89185/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T03:30:59+00:00"
+    },
+    {
+      "title": "Brigitte Tanaka ā go go",
+      "url": "https://www.japandesign.ne.jp/event/brigittetanaka-ofsgallery/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T03:05:12+00:00"
+    },
+    {
+      "title": "日本初上陸、ティム・バートンの没入型展覧会「ティム・バートンのラビリンス」が東京・豊洲で開催",
+      "url": "https://www.japandesign.ne.jp/news/2026/08/89345/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T03:00:04+00:00"
+    },
+    {
+      "title": "路上、お邪魔ですか？",
+      "url": "https://www.japandesign.ne.jp/event/rojo-kanazawa21/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T06:35:02+00:00"
+    },
+    {
+      "title": "佐藤可士和、中村勇吾、MIKIKOらが登壇、広告クリエイティブフェスティバル「虎ノ門広告祭」の第2回が開催",
+      "url": "https://www.japandesign.ne.jp/news/2026/08/89337/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T03:00:40+00:00"
+    },
+    {
+      "title": "【求人情報】広告を中心としたグラフィックデザインを手がける株式会社THREEが、グラフィックデザイナーを募集",
+      "url": "https://www.japandesign.ne.jp/news/2026/08/89301/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T00:00:11+00:00"
+    },
+    {
+      "title": "ダフィ・クーネ：ポスターを構築する ―形をつくる、版をつくる、表現をつくる―",
+      "url": "https://www.japandesign.ne.jp/event/dafikuhne-ggg/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T08:10:54+00:00"
+    },
+    {
+      "title": "Takashi Makabe Solo Exhibition “The Aesthetics of Rubber Wrinkles”",
+      "url": "https://www.japandesign.ne.jp/event/makabetakashi-sonatine/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T06:25:32+00:00"
+    },
+    {
+      "title": "没入型音楽ライブショー「アニマーシブライブ『竜とそばかすの姫』」がＭoN Takanawaで開催",
+      "url": "https://www.japandesign.ne.jp/news/2026/08/89332/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T03:00:26+00:00"
+    },
+    {
+      "title": "空間デザイン事例 | 株式会社メルカリ「Culture Hub」",
+      "url": "https://www.japandesign.ne.jp/space/mercari/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T06:30:17+00:00"
+    },
+    {
+      "title": "国立科学博物館が、性の多様性を紹介する特別展「生きものたちの性」を10月31日から開催",
+      "url": "https://www.japandesign.ne.jp/news/2026/08/89229/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T03:00:25+00:00"
+    },
+    {
+      "title": "Amazonギフト券1万円分プレゼント！「デザインのお仕事」読者アンケートを9月4日まで実施中！",
+      "url": "https://www.japandesign.ne.jp/news/2026/08/89201/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T00:05:36+00:00"
+    },
+    {
+      "title": "Morrama、家族の会話を支えるAIデバイス「Alight」を発表。データ取得ではなく、人とのつながりのためのプロダクト",
+      "url": "https://www.axismag.jp/posts/2026/08/717636.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T06:22:26+00:00"
+    },
+    {
+      "title": "社会インフラになりつつある「公共UX」 誰も迷わない行政サービスの実現に向けて",
+      "url": "https://www.axismag.jp/posts/2026/08/719484.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T02:26:06+00:00"
+    },
+    {
+      "title": "小泉 創が韓国・ソウルで初の個展を開催。POINTTWOFIVE·SECONDとのコラボレーション",
+      "url": "https://www.axismag.jp/posts/2026/08/719434.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T01:44:17+00:00"
+    },
+    {
+      "title": "フォルマファンタズマ、サーペンタイン・ギャラリーの生態学分野・主任研究開発フェローに就任",
+      "url": "https://www.axismag.jp/posts/2026/08/719165.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T06:22:08+00:00"
+    },
+    {
+      "title": "謎の飛行物体？ JAL、JetZeroが開発する次世代航空機「Z4」。 翼胴一体形状で燃費改善を目指す中型ジェット旅客機",
+      "url": "https://www.axismag.jp/posts/2026/08/717906.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T04:45:41+00:00"
+    },
+    {
+      "title": "久留米市美術館開館10周年。「ちくごist　河北秀也 デザインの旅」展開催",
+      "url": "https://www.axismag.jp/posts/2026/08/719042.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T07:24:44+00:00"
+    },
+    {
+      "title": "家具や窓、階段を1:50の縮尺で配置できるアナログツール「プラノーラ（Planora）」。 スウェーデンから日本に初上陸",
+      "url": "https://www.axismag.jp/posts/2026/08/718815.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T02:49:19+00:00"
+    },
+    {
+      "title": "時間と自然を受け継ぐ美術館へ セゾン現代美術館、45年目のリニューアル",
+      "url": "https://www.axismag.jp/posts/2026/08/718008.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T06:01:01+00:00"
+    },
+    {
+      "title": "「大手町ゲートビルディング」竣工。大手町と神田をつなぐ新たな都市の結節点",
+      "url": "https://www.axismag.jp/posts/2026/08/719014.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T01:19:05+00:00"
+    },
+    {
+      "title": "現代紳士のポートレイト集『They Are Dandy』刊行。 スタイルを通して、アイデンティティと自由を描く",
+      "url": "https://www.axismag.jp/posts/2026/07/718643.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T05:25:17+00:00"
+    },
+    {
+      "title": "微視的な視点から立ち上がる、未知の感覚。 三澤 遥がミラノで提示したデザインの力。",
+      "url": "https://www.axismag.jp/posts/2026/07/718959.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T05:03:50+00:00"
+    },
+    {
+      "title": "とても小さい頃に、1973年 When I Was Very Small, 1973",
+      "url": "https://www.axismag.jp/posts/2026/07/718929.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T02:45:07+00:00"
+    },
+    {
+      "title": "COVER STORY マルタン・マルジェラ（アーティスト）",
+      "url": "https://www.axismag.jp/posts/2026/07/718913.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T02:05:05+00:00"
+    },
+    {
+      "title": "手をかける時間も、贅沢になる。群馬・みなかみ「しらかば荘」で過ごす1日",
+      "url": "https://www.axismag.jp/posts/2026/07/718316.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T01:00:00+00:00"
+    },
+    {
+      "title": "Immigration as a Test Case for Executive AI Governance - Lawfare",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOU0FQQW1FeUg0VmNEQWp6S1EwbGJnSlI1WGlrenItaU9mTW1IRUlUUGJiQlRVZlZTbUNBNlBwczBqUV9hb2VoQWJTSmlralppTk5KWXlxcnpFVWNIdXFYZk9ZQm1MUWFfa3FJM1NtcFNUOFJrMWR2M2J4ckhUTXljTW5uM0JqUmtsVjgyNUxJaUJqRkR2OFE?oc=5",
+      "source": "Lawfare",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T19:10:44+00:00"
+    },
+    {
+      "title": "How To Give Everyday People A Say In AI Governance - Noema Magazine",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNb2RLb2xmbk10N0xIWDkyR0h4TWlHMkp5elNoeVhJSlVicDdOQXJ2STFkenNwdDM3Q1oyR0ttQ09NSTlhaVdtM1hUWFVjUHJiWTVDLXlpNlo0NUNKZ3kzWmowdjZGalNqV2I5anZLSm0xNE0xYzFVZnc2WVItQUtiVw?oc=5",
+      "source": "Noema Magazine",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:13:05+00:00"
+    },
+    {
+      "title": "What Every Employer Should Know About AI Governance Before the EU AI Act Deadline - Seyfarth Shaw",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQLWo5Y19Fc1g2QTQtaXpKQlNIUnRidzlxZDRKUmhiUkhtemVsNk1pUmVhVl8zbHBNY2RoWjhFeFd5MS1GLWdfb1VLZEdwZDY4LU1BU1pXWEZ1QWtVYnpNOWtfTkgxZ2tVbEFlZVhaM0FkZVlIOHVLcXVDTlZPOUxOZ1Z5LUV4bGhQbFVkMjBYT1BJaE5xT2t4WVFaNmluNFNRVTJVRDIzZkFjdGVvSVFjWDdib0ZNWEJaSmlBcURKcUppY00?oc=5",
+      "source": "Seyfarth Shaw",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T04:07:07+00:00"
+    },
+    {
+      "title": "Strategies for Cyber Resilience, AI Governance & Smarter Municipal Decision Making - National League of Cities",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNaVg1VXpfSVpqM2NIMUd2TFdDbHBGOUJOVWRqOXR4Nm90T0lnRDRIQ0VGWHpQcWt2WFVBSVRCRUp3b1dRSWpGOGFoejVQUGNQV2YxQ3duNndVQ1YzaGJRMUowZ2c0di13M0FSWWNXR0V2dHhvUWRBTGtaOWJjWWxsMWRtUVhPNHpETDRndXNHUW53ajV4Q0pFX2xjMzd1bW9sbUFKeS1Tb29EdVU?oc=5",
+      "source": "National League of Cities",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T04:40:28+00:00"
+    },
+    {
+      "title": "Fannie Mae AI Governance Deadline Arrives Aug. 6 - National Mortgage Professional",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTFlwaThkdVgwRnNXcWNnUXpCQktqS1kwUVFFVjhuRHE1VjFTVUlxWUZ3eDZZOU1DZ0d4TUZtUG9ZUmZ4RlBhT3JzT28wRFNVNFBLQ1dqOGN0YXNrcGt1TVRiVDV4UWJhNFdaNV9uTHR3Zko4aHFRZllyNFdjNlBqSzZYX2xYWWlXUGNibUpYaXNRcTR4dFROcQ?oc=5",
+      "source": "National Mortgage Professional",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T16:04:15+00:00"
+    },
+    {
+      "title": "Most US companies lack mature AI governance frameworks - ESG Dive",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQeVdacFA1NTJoUDdwS3NSSFZTdzdEUVBFUWhHc2hYckFFVUowMlhtZDJ2eE1QanZfUnZjSTBnRV9rVWZiV1Awa0hOcnFKQ3FUTmZ1d0kwaVJNUnR6LWVBZFFsR200SHB6Q3ZhTUxuZk13WFctZ1VZTXZrVmlwbTZEWnc0bE8wZHJNYVE?oc=5",
+      "source": "ESG Dive",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T19:00:04+00:00"
+    },
+    {
+      "title": "AI Agent Sprawl: Why AI Governance Is Now a Board-Level Issue - SAP News Center",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNSXl3aXlKdURBSDJHdE1TcEtNRDNteURPbnVaNmtKT0tHVkhLV2VPSGszeTFfaXdIVzl1R3ByUFJyVW9naGhzeDFGSzhsanBQUHNzYk8xOUhucjMzZ1V6OUdiX1oxd09CSVg3MUFUWVVqRGRPRE5wak5XYjNVNURDczJIc1lVSUtldjNBR3FR?oc=5",
+      "source": "SAP News Center",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T12:21:28+00:00"
+    },
+    {
+      "title": "Buyer's guide: AI governance – Navigating new regulations and mitigating risks - Wolters Kluwer",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxON0Rtb3Vqb3JtSFNZQnBQcXFYM2JkUFpPRUpnVGxJYy1qNzlTSWp1bV94THZjRGoxUGtUMm5aYUFvaFozcDJuNmxPZElsaU55R2pNSFBSUjJtdVFFSnZQdnNteGxXSDdTdFdqZjhKVzZ5VmZsaEZtVkFhOUYwNEwxMlVOSW9Kb29yMXZFVlJnbXpjVVNTaXBNMGZmMWZtbWJQM3hVNHpsbVo0RTZXMUZmall3?oc=5",
+      "source": "Wolters Kluwer",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T22:10:13+00:00"
+    },
+    {
+      "title": "How do California’s gubernatorial candidates stack up on AI & tech policy? - StateScoop",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBOOGtHdmRTQXNJSUxZZmdDTHAtOERETHYwbnJJQXVSN0l1VVIwbmZvTk5zM0NPMDJWMENmNTc1MTZtQVNPa0dRMEJPMllmSTRvWm1kMlR6amxHc2llWEd1Q0J5U1ZIOF9EamdCeHkwMmdfQ1hJNElxTWdyaVBsbE0?oc=5",
+      "source": "StateScoop",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T21:56:19+00:00"
+    },
+    {
+      "title": "Google Earth AI Fiasco Underscores Why Tech Firms Must Listen to Outside Experts - Tech Policy Press",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbFhKMERxYUhYbnA5VlNURDhYbGJXa1lhMzJMN2VMTi01UVI4TGwxYUR6SXNjWXhGV25sNXdxSzdRenpkYmtQMlM5aXZERlBUOEpPSVpLTjZ6MGgyQTh6UEcwTGdtMXNGM2gwN2NNN2NGOE9sZGVERGowSzk3ZE1GTXRaZlBfY3Q0T3hMdmQzOXhKR3kxWlg4UVFDVzRVYTlENmhEVUhsUm8?oc=5",
+      "source": "Tech Policy Press",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T22:08:19+00:00"
+    },
+    {
+      "title": "Notes from the Asia-Pacific region: China rolls out new AI governance, data protection measures - IAPP",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNYUVkdTEwWjJ4dTE4TWxJbXlUTDR5VmR1VEtHSGE1T3J3VnNCU0pjMUJjRUFnMFFGWTlLSmxEODdsRVNxVjVuUlVuVXg1WGFtX2RubXJSamNxMjRiV0Z5bEdwSzdWRnZiempBTk5paXliZVB6c0RUNTROalpyLTJCUDZEQ0VaeDFWeVpDR2NaUEZXaFNsQklHMllFWmw3MnNCNEZmay1CQzVsNXZiT1AxM01JdXgtSTMx?oc=5",
+      "source": "IAPP",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T17:41:26+00:00"
+    },
+    {
+      "title": "Here’s how a second major hacking incident is exposing the fragility of AI governance - VCU News",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcmJ2YXFoZW51V3FvdXNKZTR1ZERwcVVnVEJ3dHU5SmRuajdYNmRfZ1FDOTNGTVhTaXpzT1JBTnpNU2lkRWJWUThjb3ZWQkRnLXdCNF9Rbi12YzlnNjVKc3pxRi1odTR3dmJiemtJWHVrRFVqQThXR09QOGtPWV9tMU9teWd4QXpMLUxJVVdZUGdTUHZBSlFGbXgtUGx3LURjbjktc3JPY0duUQ?oc=5",
+      "source": "VCU News",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T20:37:10+00:00"
+    },
+    {
+      "title": "Most CFOs aren’t ‘very confident’ about their AI governance - CFO.com",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNdktvci1hOEhsdXVta3Q0T21oc2xlYXNwWVlCWTdOaEtVTzEtTjhaSjEyXzRrUFFTM1FDZVViNmc0cmRRaEtfQl9tR1ROd1ozVUxsZFZCSnpMaHNSWkR4bG5rblVVaGtJcjNRSHJnU28yaTN5WXBGS0NabWZscDB1anZ2dTNCZ2NqTHktaENkbEF0SFE?oc=5",
+      "source": "CFO.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T13:04:45+00:00"
+    },
+    {
+      "title": "AI governance is the missing security control - SC Media",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQU5YcDdPMUpHOTEyMzdPbTBOT0d6Vld6T3BLVHhMZm94ZTNHVk1KdlJmZXdwTG16WEJKY0NNdGVTQkpJMFpHQ0wwekZYd0hwaFQ2emVFZ05iN1phNDZpdGE4ZVJ1UWw5TjJMWUJGcEVEUFEzNGtGdnVWRlo0dEI1aE1neXdWZFVl?oc=5",
+      "source": "SC Media",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T18:38:26+00:00"
+    },
+    {
+      "title": "Akerman Taps Ex-Amazon Counsel for New AI Governance and Data Protection Role - Law.com",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPYVhlRXZUdXduMGtaT1RDMVN6ZndHTDZHNjhBMHRIeTd0NlBXcDhTMHNhQUEweFJJUUN2ZFJZd1FVdm5OTl9hLXRmMnJsSV9pazBnWlE3Zmk1VF85eHE0OUFxTkptZDNwQ3BKdFp4QnJoQTRaU09NcVd2b01KdE9NN3Q2RlBkd281SlBfMU9QanRXdzc5bXdfSWpmbmNJYnpidE15QmxpNzZKNE1Za2hBajlKcWhNVkRFMU9GUlVmcFNIUQ?oc=5",
+      "source": "Law.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T08:00:00+00:00"
+    },
+    {
+      "title": "When AI Escapes the Sandbox: The New Governance Imperative - IDC | Trusted Tech Intelligence",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOSEktOEoxNUF6b3dleUU2eGtNUXY1NWVfY3JONTNyQXNmbFljYkRESVVfMkwtVHp4dmVIck0tOXBPNlR0cnRwQWNBenR2eno4aHExdUdTcEZZZjdaOGZaMXBtR1NKMjgyekFvcGVPa2pYX2twNzlNQ3JOcXdqelM5Y3EtUkJKbTZ2eXZLalpRY3dGRXBjM2prcXYyTHVQZGVI?oc=5",
+      "source": "IDC | Trusted Tech Intelligence",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T01:50:30+00:00"
+    },
+    {
+      "title": "Google's AI Governance Plan Draws the Boundaries of What Counts as Harm - Tech Policy Press",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPblZENklIVWZQaTVpTmR1VzZHT1c5elpTTkZTSXlVcEhEYVFBd1dwVERid2FxMTg1WC1mUWk3cTJ3Q2FMemJwWjJGa2YxTEg3UVFtWWtDUHUzSWp5ZnpfUXBYcWdac1FXTEJuaU0xYW8wWi1JX1p6RzQ3MnNQQ1Z0ZEZMdFdaUE5RN0I3dTl4QWZHa2VxRDNOeWpTYw?oc=5",
+      "source": "Tech Policy Press",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T14:14:04+00:00"
+    },
+    {
+      "title": "August 6 Isn't The Finish Line. It's The Starting Line For AI Governance. - National Mortgage Professional",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOT2RZdEMxQWtJcTdOak5JNHZsM1ZXRVFaRC1CSHllby0zZWxHMG1Mc0NVOFg3NUpTRXFRVVNRVjA0WjF1VEZTa2Jmd3IzUEl6eWVta3JqZklBSm9XcjFQM1Q1TGRRc1ZlYko2a2dFeG9pQ1g5cE1BZ0FFVXJ3SVdvOFl6WHVHVVhBTW5CQWF5Qng0QmYza3BCZVZxSGxFRmN4ZW90SkpR?oc=5",
+      "source": "National Mortgage Professional",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T11:32:51+00:00"
+    },
+    {
+      "title": "July 2026 US Tech Policy Roundup - Tech Policy Press",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5DX1JGR1BLSHJTVlhSNjltS0ZxMTZlTDgxRFNROFNuaU5oZlhjbmdVcDhnaC1tdUZhTWk0dVhzVTNSVUtwaWNFYnlRbDNiTTFHanFWZWlEQkNRdDU0RlR1cHNxb09neDRpR1NWWkZDSQ?oc=5",
+      "source": "Tech Policy Press",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T12:54:45+00:00"
+    },
+    {
+      "title": "Austin leaders to get report on residents' priorities for AI governance - KEYE",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQR3ZGdVQ2Wk42Wk9ILTFjUjJ5dkF4VnJKem9sUzRmWi1XWDR5YVYyTkVXOURhSFZDNllJR1lqTW9pY1BYMmtmbkIwRWtTVlV3V1hWRmhaU0Q0Zno1cWFFUkVQM3N4Mi1uVFN3bFdWakJKcjZoeFJjdEhKV3c3NkVOOXJaYlpXTi1hY2drY3N2M0N3ODRzOE9FaVNyZTluTmRLeldndlln?oc=5",
+      "source": "KEYE",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T01:56:53+00:00"
+    },
+    {
+      "title": "MISMO to Launch FRAME Interactive Workshop, Put AI Governance Into Practice - MBA Newslink",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQc2tNQm5ZYlc3Z1BLbkhmWVNBY25ZeVdlOXdzMEhWTXQ3Z1cwOC14UXlwd0x1cDZSMk9Yb3NkSUViVS1JZXR6cTR0M2s2SlJCM3Z0eHpJQmlxYldPU0k0bWtuMnB3Uk9RTUlSMG1MVl81RVAtQlF1YVJIUHpXOXZqejg2dUtUc0ZRc3RTZ2tJamNPdUw4cnVseF9fNnJOVDNINFZZWi1sRzI5WmxUQ0F4anRjTGhjYWRkQlhPNXgtbTlJdw?oc=5",
+      "source": "MBA Newslink",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T06:39:30+00:00"
+    },
+    {
+      "title": "Client Alert- Illinois Raises the Bar for Frontier AI Governance - natlawreview.com",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOWjhEODdPUnlSUWE3bXg2UWlKQ294ZmdLQU55MjFheG9BS0hJZUxndmcyU3hMS3R0SUZFNnRZOWpPSnF0QS1Kd0dockdiZzRjM0dUT0FPcDJPcWhzR0NpeE9RN043bXZVdHN0X09rendwc2lJb3NwbnNSTEIzVEo3YlVvbVZyRlBuOGExRnltY1FsUdIBlwFBVV95cUxOTWRESnhoS0dLdXQwWnpoVkNyT3NqemlOZEp5dFRadi1iMjJhMXNlemRDNjR4YWJpMUQyWjBMSFA4RTlJT09qZHIwc3V3a2hwakp6VVhQanFGTFVocmVGcVhUallpQzJBalJDemRNY2pFamd4cWdjMXdoMVRMNnk2WUpNN09vWUs4TS1FVmZ6V2NNWERBYUJJ?oc=5",
+      "source": "natlawreview.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T05:35:15+00:00"
+    },
+    {
+      "title": "The AI Governance Best Practices Every Small Business Owner Needs to Know - entrepreneur.com",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOWjk4cHB4NTJkR2xZSXRNNkFnQlYxVmd3a2VWUDBHTW9takVNaDJtUHZyMU90R2x2ZlMyTXlvby1YYjFJZU9wVXNJVGszRTRyQ3kzT09wRHhrN1N1Mkkyb0hOZGE2VDlIYzd6TGdTc2puMlJpSnhpOGtwbGt1MFhxdVBQdWlOTGZUN1VTQnN3R1BrTGhTQVBNdXB0dGpqVEpETThqVUtRMlR1REtiTEpVMWprQjlwVV9BVVdsRlQzdw?oc=5",
+      "source": "entrepreneur.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T18:30:59+00:00"
+    },
+    {
+      "title": "Is AI Governance Finally Taking Center Stage in Enterprise Strategy? - The Futurum Group",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQYkl6ejEtUkd3WmZGNV9CRmo1eU1TNTUyRy1mWXNkRWJzVGlXTUNkcFZLd0YyTXZoaXo4SmhfclJxNHVyaG9MVDU1WHJLUVdwZUtpN280ZGFkNVhaLVlEaFF1aHdNNUd3SWMyOG9HbWZhclk1SEpzeFR0MUhkYklLTFlxbUJpVFVNcVVhTmVmR2VMNk1NOVJERlhPMjU3LXV3Z2hvOA?oc=5",
+      "source": "The Futurum Group",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:43:16+00:00"
+    },
+    {
+      "title": "Why AI Governance Is More Important Than Speed - forbes.com",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPelZVdzdZQlByNll5Zl9mSlF1aWRmWXhEbnVwZDFYU1BLQVBDRHdtc1ZnOC1zcHp4RWJHaHNjNlRzNkN4Z0o4bEdMeW5FSTc5WkRSZW80cGFjRHJxVzdUVUdGOXoxNkZCdmx1Y1NObzg2RF9uZTA4a2R3N1VyTUd3MnRrR25KYkdrb1dNZ1VDdi1UaGREYnc?oc=5",
+      "source": "forbes.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T16:00:19+00:00"
+    },
+    {
+      "title": "The AI governance audit your clients aren’t ready for - ChannelE2E",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQMjB4SnFBX3BIV3RYYVBYSi1SRlpJekQtZEZRR0c4TWl2NHRqcGN6RHFyTDJUUDhHazBKR2pXRUdsRXVuQ0R5VlZ2Ul9hSDFDcHZVSUdqcy1iOEFIYTRQb2U1RVRRemc1Q3Nuc2liT1I1elYyWWdqUE5lLW1uTXQyZUVWMkhzcGZBZE1rQXZGSl8zNzRWbHc?oc=5",
+      "source": "ChannelE2E",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T16:44:46+00:00"
+    },
+    {
+      "title": "Why AI governance is shaping insurance’s next phase - FinTech Global",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQdm1xeEg0c0V2emFHSmdyQ19FWEhOUVpxb3FHcjA1cUs2Rmgybkk5UEJocWF2Y2NYd1ZfRHhnNHhhSGRYU3dJR0d4ZjlITWNtSGNrOWkySkxPbWRyMFZzMThsVHpIenFqLWI2bk1YOXRmWWJxdDczcy1IZnpXeVZqUXNNTXg3LV9nSXk1TXpR?oc=5",
+      "source": "FinTech Global",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T10:04:40+00:00"
+    },
+    {
+      "title": "Austin leaders get report on residents' priorities for AI governance - KEYE",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNZmtSQWFYcWtYYVByUHBZcF8yeWFTeDRVLTYtXzFkM1BPTTNGX1F6eGNpWTk1aFpxekpCSnM2ZzNQNXI3RXUtR2RuVWN6U3ZlZWRIYVZFbmpuSmhfMG1KMkpQaVFvblhLempuaGVfOUJlVHpxbFJsNzBiTHo4VExYd3BmRG5xZFpRTFZoOGxyclh5eGpaaTBuRVdEV0lMOEhSeWxYTFk5V1NMcVN4dFE?oc=5",
+      "source": "KEYE",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T07:00:00+00:00"
+    },
+    {
+      "title": "Asia-Pacific central banks weigh AI governance to safeguard financial stability - Compliance Week",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQRTBPbnFQeXYzMHp2UlNXSl9ranVyeHpfNFdQSTZqbWU3R1pwQUNQcUIyMUVEUFp5WU9hR1owblNlNHlJWjQzbVZoSVI3QUF1aWwtTFJEcUZROFE2MjBOOUFVaHhzSERBWlJpS09rNXJMWFJSTExSbEc1U0NKS0hfbzJaRlRITWV2SW5xNURkYll6MEhzclVLRXV0ZDQzR0NQZjg4YVBJUzlPN3RxWjhFTWlWSkpEUGhaNnpSZmxodVA4U3FMT3VOZ04yUzlYVG10?oc=5",
+      "source": "Compliance Week",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T13:00:00+00:00"
+    },
+    {
+      "title": "Red Hat launches asago for automated AI governance - Techzine Global",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNbzZVV3NSOHp3SGhhS1NCWWNUQWhCZ0FncFBwa2Y1SXNXRnJ5THRIa2hlMVBzVUpJVE9XeTUxOElhcmJ1VDFtUzJCMVdTa19pWkdZeW9uOUdvRkdad0g0bVNZTHNmd292ejRGQmYwcVRnWldjRUNaOWl0QkJNbmo5eTh0R0ozdTVoUkxkZEZzdk0xVlVZZ09zXzlnTERNQQ?oc=5",
+      "source": "Techzine Global",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:00:00+00:00"
+    },
+    {
+      "title": "MSPs get a way to turn AI governance into recurring revenue - ChannelE2E",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOY0o5c1kwY2F6dzBiRld4cmNTT3UxcHE0SW1FME8wNEdZeXdhTFpiQUVsVV9iLUdEWFl2VWlQaHFodFYzSWJJZ2lVaUo4anpsc3NKXzV4SWt6MVZscjNST2Z5NWk3N0VXY1psMVNYM1ExVmpyX21NUUJUYjlJT3d4SjRWbWxhOHZ1dFZmVVAtbFdaR3hfUXc?oc=5",
+      "source": "ChannelE2E",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T20:17:30+00:00"
+    },
+    {
+      "title": "SAP (XTRA:SAP) Launches AI Agent Hub As AI Governance Reaches The Boardroom - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPOVRtNzhJOUxPODB4QnFYNWVQVTBxcGRacTVxUXFxWXBha2xUVms5cDRFOHpMMFJUWnJQUTJodF90Q05GNVJzMGF6TGpZMnprLXd3bXhMYTBkMDRIV3NQTUhpckNnTW1LSmFDUVFPaGFoSDdhV0lhU2NYbTVYMGlNMTA1eFV5QWxDYnNZTEI1WXBpZw?oc=5",
+      "source": "Yahoo Finance",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T12:14:16+00:00"
+    },
+    {
+      "title": "Fannie Mae AI governance deadline arrives, exposing gaps in industry preparedness - scotsmanguide.com",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPVlFaWU5Ec2lmVGg4WkphWEhfWjlNN1hWeGNOWkdiVW1DRDdQNEFMV2o5cUhTX1pfR09XYlJkRk00cDB2NjkxdE0yM2VpakZkVHUzbHRjR0FESHpRMmczVzNqZWJoUWNFekprcEx3MFc1V0VBdG9DVXFENXhKcEVLYUJJNzhnLUc1U2puRVpoN1cyUG1ZM2xMQm1Jc1JycGRlZ1UwRnIyMzN4Tk1zTFVhR3RBT2hRLVk?oc=5",
+      "source": "scotsmanguide.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T05:14:05+00:00"
+    },
+    {
+      "title": "CertiProf Accelerates Adoption of AI Governance and AI Security Amid Global Regulatory Demands - wboc.com",
+      "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxQbkd0V0lRalNPRHBZR0h5OUpabmFvUlNaNTdwU3I3R20ydmhDd3U5anJIS0paY0liYUZsVUQ1X1J6OVNlbkJRend5TDk0cjlVWTJLazNNcTJ5RWhSUWFOTTBkSUVLaTdTZ1c5alFkUHhRVmZvUV90dUh0aVg2TmJwNE9XelU1ODNDS3BlbldJY1V6dzhxM3h3UE82M0xUeThIRmtRRXNvQVpJTmFuOGNEVTJpQzlYbDZGN2VxSEd3UEp6amFoc0dSLW1JZ21KMjdGcUp0em1BaHdUeXl3UzlJeDlfSksxWk1VdFdiQW00VFNmczMyWWwzWkszWVc1Y2h2Wk1DdFVJRnNiWTlLcE03a2dXNlA2dGg2M3Zacm1lVFRtZw?oc=5",
+      "source": "wboc.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-01T15:49:41+00:00"
+    },
+    {
+      "title": "SentinelOne Expands Collaboration with AWS to Deliver Unified AI Governance - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOQ0dWMzhNbmVSVkwzbWlzYVM0TjhQcnlCOFlzOUJoeDVKVldVbmpKY1RtRUd1eWx2OGhGaHdnUnpqaXVZV19FdlVNRnRJRkdoN01CdGdYOXpWcldva1JxLUFIWE9uczZGY2dmX2MwMGZoVTJHZkdSLUx0MUxJZ1BtRFpxcVlnOFc5cDI1YTVRRmpXUktCWlU2dmdQVTNhR1BIOVF4TmFhT1dTSWdhU0E?oc=5",
+      "source": "Yahoo Finance",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:00:00+00:00"
+    },
+    {
+      "title": "SAS AI Navigator aims to make AI governance irresistible - Techzine Global",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQLTJZZi0wSm15clBBTDF6Zkk1Z3JiT3k5SWJRUVkzUTliLUg3aWlCVF9kSjFGQ0FfTDZzYThmSnRaN0MzTDZkVjE0WnE0NEl0ck9GX3JIWXdOSjZnc3ZQaE1lSU1pUXdDOGRMZEltYzcyQkRINXZqbWppMWktRlNuNDR6dWtrNzVWSkZpRjNUMzJ3c0JQQUtVU2wzMmEzQkhROHJCNFNRMA?oc=5",
+      "source": "Techzine Global",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T08:15:00+00:00"
+    },
+    {
+      "title": "Top 12 AI Governance Tools Compared - aimultiple.com",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE93elN3N1RRSVd6aGtqdVNUTG5Lbnh4SnZselBnM244MFBRV3VPNDl4NF96VFlmVDNaMDRGaW5OVV9rRDBfcy1jRUlWVGdJWVQxOWZQOQ?oc=5",
+      "source": "aimultiple.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T07:00:00+00:00"
+    },
+    {
+      "title": "eGain Points to AI KnowledgeOps as Key to AI Governance at Ai4 2026 - GlobeNewswire",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOeTdoUEZBU0NZSmxSWUZhWndicHdZVjh4cWlwekNObTZ2RHFOYlVxREJDSnY0ME5qQmtiUGVHa2dQMlVJLU5weU16bVhYdF9nY3UyV3BWZmIwMkE1dF9QYmptTTZVUzlQS0Z6dlZCQmN2OTJNN19vV09ObUJsQnR1bzZWUGtJN2dUaU9mV1I1QWgzOGdQcC1BR2VHZGk2S0dCTmE5TkZfSlotcVJDZWNZLUstQTBfSWRRdlFDb2stZWV2NFdwNXkwNVY0bVlIVDVFeXVheEdn?oc=5",
+      "source": "GlobeNewswire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T12:00:00+00:00"
+    },
+    {
+      "title": "Beyond IT: A Business Executive’s Playbook for Cyber Risk, Privacy Liability & AI Governance - nhbr.com",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1oY1pDUy1kUld1TWNaX2F1SENZR3NPSVZOMjU2LWVjYnJFUFZSd25iUG1Ja2JYWURUckhOSHNCSHhRbFQ3TldKaVlXX2FUX0NNWG04cW5LQ1plUlZzLTJDa0N3?oc=5",
+      "source": "nhbr.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T18:03:47+00:00"
+    },
+    {
+      "title": "Red Hat launches new open source project to drive AI governance - IT Pro",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOS1lKUkpxS3ctRG00cG9BWUJMbWpqbzdvd29meVBfNUUtR1M1SUlHNERfLWJqdW1rZEFMWUE0cWhtcVRnWHhvTGlaMHg0R0FUOVBRY1JJZzNVb0VJN212aXQ5QVcyWkpnWWJtdlRMUlVSd2ZkTHFBRjVtRnZTMnI5M0lYWmdFUXBYeHBUdnduT19yNTJ2a0ZtbUVnNEpSZ044RGVoRk90Qk1VQQ?oc=5",
+      "source": "IT Pro",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:00:00+00:00"
+    },
+    {
+      "title": "Red Hat leads open-source project to automate AI governance - SiliconANGLE",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOallCVjA0UFNLek41U2VWMmJsNnZiQzBwSjFjMENaejhPaU9ZUWFZVnhrTG11UzVYSTlwdFRpbWw0dWVfUFVNb2IwWm02TjhmTGhMSEF2TVpmS0E5cy1sX0ItS081eE50TzJIbU9pb3NVOHhHSVNtczFYOUZHQkdLUUctVlF4dXJVdjdkVXhWNnRrV29YQXBGeA?oc=5",
+      "source": "SiliconANGLE",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:00:59+00:00"
+    },
+    {
+      "title": "Onyx Security Raises $113M Series B to Expand Enterprise AI Governance - citybiz",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQcTBCTlhzNUxHbGdtTTZkUFNjeGZXQ2dKNkFVOGdMYnI5YnNZZ2ZQb0Y5RnFmQXVEckNHRjZZM1Vsb0o3aDRybGZXSVlORExTRUc3SWhNSnY3bGlMNzNrc096SENQVy1OX1UtWjdrd08ycFNfN3dDT0VQNldjSGVNWWZmNTRXUjVoYngxa1docms2OENfNmZhU2NwN05WaDR0M0w5RkNqcHdGMzl2?oc=5",
+      "source": "citybiz",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T09:50:21+00:00"
+    },
+    {
+      "title": "Akerman Hires Director Of AI Governance And Data Protection - Law360",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5WeFR0V09zTmd4MDdqTE1pUEdlVEt4VzkxcVduM29ULXotczBRWXlWb0xvMjdPUkI5XzQyR29hb3RrTWNXNlNHdkVZakg0b3FZQldDOENCczNuTXJ3eGfSAV5BVV95cUxOVnhUdFdPc05neDA3akxNaVBHZVRLeFc5MXFXbjNvVC16LXMwUVl5Vm9MbzI3T1JCOV80MkdvYW90a01jVzZTR3ZFWWpING9xWUJXQzhDQnMzbk1yd3hn?oc=5",
+      "source": "Law360",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T18:16:00+00:00"
+    },
+    {
+      "title": "China backs UN on AI governance - global.chinadaily.com.cn",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNQTdhY1drQzRJamdCQW9GTjZBZTZJWDk1OGlYN1otM1A0eTc0dnhZMjBwcXJwVXNVZzAtRHIzcThjUGlMUVgzMW9BR3l6cW9tOXdtY0xrNjFrakxnYnVWNWtZdVg2TEZQcmpINHNTUVpnWmhsZ1k4UzRDdm1WeEpTb09B?oc=5",
+      "source": "global.chinadaily.com.cn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T01:24:55+00:00"
+    },
+    {
+      "title": "How do humans shape the future of AI governance? - news.cgtn.com",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWFN1UWxLMk10TlI5MDBYTlVMaERuYjZseWVDQ3VjR1FRVGludkxZVzN5ejVLYlM2QUF2UFd0V2lPM2x4WEpOLWxsRl9PbTFOMUdub1RLcHQ4dVdaS0cwamtLc0ctQ1Uzc0VQTC1lQWpZcDYxVjNmUHV6VGY3dUV3VEdkd0oyeFdZbVFCZHJfTVNiTnBLMU5MRExIVTFvU05PZUZNNG55SEE?oc=5",
+      "source": "news.cgtn.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T10:55:53+00:00"
+    },
+    {
+      "title": "AI governance matters more than adoption speed in insurance - Insurance Business",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNTXU0Q1hFaXkyVUVRNU1vRnNuRHRoYS1kalpVV1Z2SU1QX2kyVWZEZGJpOElYdk9nck1DVmNiLUdxTUZVYVEwUUhSU1d5NjNwWDQ5NElaZlZ2eXVYX0tkeEFNY2pZWFFFMDlkemhhWnRndGo5SWI2QnRIaTVkTnpNdG42RjEya0xQSEtRYWtVeGliSTFNX0diYnNiMW03ZkZ5UExfYTR4cGt0V1lyN0lrdGFSZVk2UW43bFI5Sm5kQTFpTjNvLXc?oc=5",
+      "source": "Insurance Business",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T09:16:16+00:00"
+    },
+    {
+      "title": "AI Governance Makes Innovation Scalable in Trust: Insights from Muralidhar Vemulapalli - CDO Magazine",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQSlhDUUhnUlJscTdfcHdhV0ZOcmRtY3ZobWFSSXpxclplX2x2T0dxaUlGSmN5TGYySmpzLVJ0cmszWmVpWkNXLWJRS2tyU1NJSkp3b01wRmJIcWJ3eDk3XzlwTGdTcFYzTV9lLTBoel9IWktaRjlMX0FLUkxRVmp4M0ptOWM1T255amM0RmpMXzJkUHZDRnNpc0lfU2VQZk4wdTdyejhvQVBDcEZ1SVRKY3kxUGVkVGZmTzZjeWxWRkFEUHRWZnNz?oc=5",
+      "source": "CDO Magazine",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:04:00+00:00"
+    },
+    {
+      "title": "CertiProf Accelerates Adoption of AI Governance and AI Security Amid Global Regulatory Demands - EIN Presswire",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOcUdlbUtpM3czcm5mSTB6bk55TzNHX3dhVld3MklGWGJsN0djRTMtaExZcndqdElBUUxSek5KOVhzdjVGRWk3TDFXcGNTR1hYYVVjcnBRZW1wUG1oeGhDUVFSeGMwTDgzc0RzbnlnQ3pnZ09mYjdsc3JmcXNiQjFZZm0tYlpUYWZMajRTOXV1R25VaUtMNmJ3a3JTYVlWMlQ4MnRGbThvT2Z4X3JxVTg2amU4T0RoZEQ3NzlrSWNZNFRhSXJxaVp1U09TOG1QcmRCeU9JdFNfOFk?oc=5",
+      "source": "EIN Presswire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-01T15:49:00+00:00"
+    },
+    {
+      "title": "PubMatic adds AI governance solution - marketingreport.one",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZk91dnpNV1V3bUpOQW91M0ZkNGZ2ZmJEUnItRXBfbWNGSERwQzBITnM4ajBTMVZOekdBdlA5aUhBSTNMUEdVdjBCN29VRjB0QkJSbFZMZlg1TWdVZlpjWnFBcEVPVVVFU3lfbDhrTm9NZEh3ekJsc0lPc3hxWVFGaHYxWG1xam5QTjA0U0lFMA?oc=5",
+      "source": "marketingreport.one",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T10:46:53+00:00"
+    },
+    {
+      "title": "Telehealth & Telecare Aware - telecareaware.com",
+      "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxOWnlrU0R1Qy16NlZKb1J5OU1pd29xNUkzNHluNExtVjFYcVdIcXRwaW02OF9YMmVCSXNOXzh1dzd4NGRsbS16QnBEd1ZDS2lZekxLc3JsaVk2R3ZTRWJwaWVLWEZRTlh5QnU3bDROVjZBX1MtT3VLSHF0OVo2anNYUXQtb2ZiVlg4aE1QOGJDaFhLSWwwODNHSWNiLUpLdUZOWWdseTRVV0FwM09neVFnU0lic3lUVHcxajMzeVo1TG4tN0ZPcUVmWVRKNHl2Y0U4SGtRNTRPRGp2QWlnVkdqaHo0Q3BsZW5tV01JdlVIN2NmYXMyRjdydG5SMkNqNnRmVGRFN0wxNGFXVi15REJnQzRoVXpNcW5xaERRV3h2MkhSVVJGTnNFOG1NOHM5OXNZTG1MNHhsSFFLdw?oc=5",
+      "source": "telecareaware.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T21:32:12+00:00"
+    },
+    {
+      "title": "AI Governance Gap: 81% of CISOs Fear Agents They Can’t Fully See - Cybersecurity Insiders",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFA2VkZNLTBRZUlNc2t0LWxza0RHOUViS0tmTWM4S3RLQ3AwRk1ZQVVZUmFLTmpNZlpxekgtRnVyQTgwRkN5WDlOcU9jTzdDbFlBcFRpN3BvQTlOLU01YldvekFOS2VhWVVOdnNFNUdGSzJWNFpIbThNbmNPRktjdw?oc=5",
+      "source": "Cybersecurity Insiders",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T20:52:56+00:00"
+    },
+    {
+      "title": "Red Hat’s asago: Standardising AI Governance for Enterprises - Technology Magazine",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVE5BWVhhcnBrOEFUYUlVbl9hdE5pVDc0cC0tdXQwdEJyeGhIYTBYS3VUMmh5YXczZnBpMnh6Z2tmODM1R1hJR05tSzRHN0FybFpQbm9abkRaOFBpSmxtaVVXU3Q3SmxQVjlwY2JwTGNkdnd1d1RLYXNJREpiY3ljRUVDSmQxUWVNUGJVQlBLTDFBbmlXaC1wX0NR?oc=5",
+      "source": "Technology Magazine",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T15:00:32+00:00"
+    },
+    {
+      "title": "eGain Points to AI KnowledgeOps as Key to AI Governance at Ai4 2026 - markets.businessinsider.com",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNeG1yWE83MWFRU3pIaUxXV1RIdVc4NU5VV3JYeDJGNWdidV9GamkxMWZvTlN4UGNTVS1qYjhCWFFpTkhqYnlqc3l3cG5sbGI1LW5aNEVWa0pvSTA1amhsMF9lOVlQNFlzbG9LMjIwX0p0RzJOejhwdHc5VmU5bi1hWU9jTDhURTRRSTFBd2ZPZGJsalFhTTRxUW9tbFFhZDRFaUVLak9QU053X2ZyUEx3WF9uR19mUk8xZlNQd1JCdEZzbWpC?oc=5",
+      "source": "markets.businessinsider.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T14:26:44+00:00"
+    },
+    {
+      "title": "KPMG and Pathlock Are Targeting the Control Gaps Behind AI-Driven ERP Modernization - ERP Today",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBxekhteVpmdDRfS2dYb0VvbWotZHJsMzBBcGQ2SmJ5enU1T3RIS3hxRWV0NlZlaGNibVBaQTNTNFctbWZRZUVaLVptLUtCQ1RSOTQxZUVLV0Q2SzREdVN4a09XYXd3R3JN?oc=5",
+      "source": "ERP Today",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T02:07:49+00:00"
+    },
+    {
+      "title": "Veirano Advogados consolidates its performance in artificial intelligence and digital governance - Líder Legal",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNMUxMV0J0WTBaZ21IWlB6dkhyV2pkWjNSUEp5MHpRRXJqUFVuX05ZQk1jX1hxWW9OOTlSaFNVejZyR3lySFVtM3p1MVZZMnNTZW9KREhPWWdTTUtRZV9ReDNaQTlxS2FUelpPUEl5ZUktR2pRemNoV01zVktXM2o4emNMOGRtYThmNTAtZkNvUUJ1RzFIeERRc2ptQjlldF8tdlF6VE9mMUx6d1pPdGZNQm4tbk5oZUVFSWVDYW1RcFg?oc=5",
+      "source": "Líder Legal",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T10:22:24+00:00"
+    },
+    {
+      "title": "The OpenAI and Anthropic Incidents Mark a Turning Point for AI Governance - Security Boulevard",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQVkhoS1oya3V2RVU2Rk5NU2pWbVRTOThRaVduU3FQRHFNd1hUVFhvTDhXNzVvY05BWXhNLU9aTzh4NVRrd3l6aktqc2pkd2h6NnBrN3RWSVE0Qk5PLVhtNXFvZEgyLS1sTHpTblROZW1yZU5ENWVoNlctcVFJVUlYaDUxQlAtVXVNV1Q0dDV1NHdBdUFxRHdPYm9tTW0yalhodjZMY0JQVnAwUzJCdUNrT0t3?oc=5",
+      "source": "Security Boulevard",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T01:49:11+00:00"
+    },
+    {
+      "title": "Global AI governance: How the EU, US and Chinese approaches differ - news.cgtn.com",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQRmtxLUFpRzNqazNQWHBpNzNJc1h3RmJ5QTlOR2l5RXduSmt3ZVlUZnA3SEI1ZjRnQ01yYW5meFM2YXU4VC1mNkJHQ3RHV1d3bUtvZjB4TWVzYm54dTBMeHRUZmFDUE9OeDVLZ25ZT2VDLUY5aFllb1ZWdWhxdHpzSGZWWWxEazlMeXNqTUNNd3JlUU12b3BwTzM1ajFPU2J4RERrUnQtVGEwWXFZUkJJVlVqN2RFNUJ2SHEzZkhR?oc=5",
+      "source": "news.cgtn.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T03:31:15+00:00"
+    },
+    {
+      "title": "Kiteworks Report Reveals 80% of Organizations Experienced Security or AI Incidents as AI Governance Readiness Remains Critically Low - Cybersecurity Insiders",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQelR2YUhZbDlyWVhRRndJa3daRXpWc2VWNkd2VDRJcDJ4Snliaklib2hNLTVjejVPcU9uWDNFTFFBVTJ0TzZtejBNNnJ1X0ZySHk4YmhSblBFWVlsNVhEZy1RQkVHRjB4UjFHa2hOU2FyWlZNOGlUNWJqNi1UaTNUVXhvMS1XWlNhdU9lbWdJeE9kaE5sVWlRdlhEb2c3ZG1OSW5aSjVXU18xa3NsckpRY25oeG5MdTUxQ1o0Q3NnMWNSaDY3dy1oSUc0a2h2MTQwbTZwdlJkVkhFSGptQk84bk5NRms4a1RsWWxYZGhzQ0Fwc01TbGpmNTdBSVVGTzNs?oc=5",
+      "source": "Cybersecurity Insiders",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T10:20:45+00:00"
+    },
+    {
+      "title": "Rethinking Africa’s approach to the politics of AI governance and regulation - IFEX",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNMUJLc1hrTEFuMkp2b0pBdnlqcmJoZVhrLVloT0tSSUNVVmlUM1g2QzZBX2d0TzU2WlJoN3REODBiT25wbm5OYkpvTGtGTmVVYXBETDl3bnpCd0pxVnozbkpIMXdLRm9pc3YxSWpwNHNMZlBqQjF1N0tPRHVTMVowaDdYZlM0T0xsY3BPNzZiWHdxaVpKZUJraA?oc=5",
+      "source": "IFEX",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T19:15:10+00:00"
+    },
+    {
+      "title": "RegulatingAI to Attend Ai4 Las Vegas, Bringing Practical AI Governance to the Enterprise Stage - EIN Presswire",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPSzBYdGZnOUF3YWkwSjZqbTQwcWJGbnpfVV9XSkROUTRRcGZYSzJkRUg4YUVSU0lickx5bGs0X0NYaHZjZU04Wjc5MlJVTXFXQVRkMXhyX25WaXkyQmJpYnZwYUZyaGE0U2FJUHpsaE5VckNZeGkySGtWNHJxNk11X1Y2S2pfU1dzelZ5RHhlc1J1SXE5X1dGVEFCLUxablQ0a3JNUnJDaURELXNZS3VSOVNtVXlxb3BwWmwwMXhkMHBBUjVZU3lGanlFRm9oOHQ5UlJpM01YOA?oc=5",
+      "source": "EIN Presswire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T17:13:00+00:00"
+    },
+    {
+      "title": "Three-quarters of SMEs have no formal AI governance policy - UKTN",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOOGQ0ZXlsRmZSUnFSa2k0VS1mRGRNMm5tQjZ2dGZwc0RHbTkxbTB2RVpzd3hvOVVnUlZjcGZ3QndUV3d3SmQzcHVrd3NJdjNlWks2a1gtWkdfSnNIMGY0Zkx1Qm9XX09CcGRLM3l3bmV5TFRBLUxzbDR4Vk5sMGtwMlgyMk90blFxNDk0QzlmcGgwNzMtTlhsYWhB?oc=5",
+      "source": "UKTN",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:00:45+00:00"
+    },
+    {
+      "title": "CertiProf Strengthens International AI Governance Certification Portfolio Amid Accelerating Enterprise Adoption - EIN News",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQMzVCTkJ3TGdFeUM2Ti0tbVNXUVNzcC01VVNRc2RwRzN4VGxzS2tPMjhvaFMyNHFJLWhqNWltUm9DWFVYVDllLW5PMjdSUTBPaDlicF9uWU04SGZ3QmNHUk5VY01EUWNvQWxkalQ5c1JwUG1Pc2tfcGdRYzVlb25RaFJDbnV6OFFmZFJzVVBKY20yS2duNlJ0ZWJUekhhNXIyTXVSaVd3X1dDbHdrXzRMaC11Tk5UZENnTVpCV3Q0eDVxNjJCLVpTMUxMX1JBSWtnbTRwcVl2V0pKa195MEJLSTNTMFdFcktG?oc=5",
+      "source": "EIN News",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T16:18:00+00:00"
+    },
+    {
+      "title": "Red Hat Launches Open Source asago Project for AI Governance Automation - HPCwire",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZE5FQzFTSnZLYWpCdEJremhSNm5UYnNaOFlfQ25aMzZla3BIRzRCUEhaZHJYWE5lajE2aTlyVGJBcHJFLWFlOC1tMEtadE11a0xMcGZpRDMySWVXeTdqOFpRM29pLTRFUlBSM2V5dUdUOXZGTDhxZW9ZdERxZ1lsejI3aVVhOVZDWV9xc3RNeEtiU3pxcUpRUm5WX05WbWJlYVdvTEJQNVJsT3BmbnJnellMWlQ?oc=5",
+      "source": "HPCwire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T20:23:28+00:00"
+    },
+    {
+      "title": "ModelOp to Present “The AI Factory” with Manulife at Ai4 - GlobeNewswire",
+      "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxQWVpPM240RjE1Q3JwRVYzWXRwbk1sczBfeDctVUhwNkFrcko4a1I2LVJXVmdrMVFnMWxnRW9qUGVOUkIwVWNCdTRqVjNkYVBfdjZvbWZWRHg3dUp4VVdGOUxkRHpzazRxaW5UOU5rMy1UZkZIemlUbE5GMVZydVF3SV91WXJTSlpRQkNweFJIcGdPbTZ0T003SWJTcVQ4OEZldmRYeUhRbHBBSUF2WFU5XzZMSFlGWUx2R2N2ZG9TS2pJNWtnVVNPYUh2X2JfVlJkUk5CZGNBSTlZcmZtd3RBR2pTU3YtX25PU2xoaDBIdjZSZXBwMENPczBWX2Fib1RsMURBbHdJT2sxanNpeDNJOFZXQnFhekpJcEwzNXB3bw?oc=5",
+      "source": "GlobeNewswire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T13:05:00+00:00"
+    },
+    {
+      "title": "Red Hat launches asago open source AI governance project - Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNRUNYN0tiSDJmTXpEZ2RjWllnOE5qWGZ4MjJmUzJjZ2ZqNlpZRTJjVnlqeHV2alotdUoyMXYwU1haNzZjRGFKTWQ5ZXB0dVptbDMwOEhuSWtVSE1XR2pEVVk4WlAtTkY1bDBxOFR0X0FwZnRLVGswbHQ1d0Y2Zmx6ZmdjWDZKUU9SeDktb1VkeFo5TF95b1YyWnZlU3BJbEFqaUVFTmJFRE1XeFhGMjNIazQtbw?oc=5",
+      "source": "Investing.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T14:33:43+00:00"
+    },
+    {
+      "title": "Quisitive launches Spyglass Guardrail to strengthen Microsoft 365 security and AI governance - Technology Record",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNLXRVR2c1THgwTkJaaDJaaTdQZjFqWTZmdXJocmdSamlOckdOLTVxRzFSclBKT3NpVko1VTdQRzc0NFVyYXRmX2FpZmNuNV9qMV8tS0owM3cxanFKckZCUHhKTHVqYW03Y1F6MS0wbnZNS1lUZlVnUGk1cUZHZEVqVEpMQVBJVGxqSGM4LVc4NU4wUUUtSTlDWXBlOWZpQm0xbmh6YkIyM2c2MThPLUEtMndQNVkzcmViVDJ0TkNTOXhBUThVRXdDREQ5RnhHQQ?oc=5",
+      "source": "Technology Record",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T20:04:06+00:00"
+    },
+    {
+      "title": "OakTruss Group releases \"Governing a New Kind of Employee\": a whitepaper showing boards that responsible AI governance is built from structures they already have - PR Newswire",
+      "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPX2liMTFGT0hzaVdHRVdlbXI2NGVVcGdlYkFsUWIzdVhsRUFmRERRRy1UZVlKR0dVMzduTVhSMFROb2xSbzFWdzBINnhMd0JiZ3RjOF9qRE5TWUkwR2F6VFlaYUVtMFQxZjQ0N2RkcEU3c0JMOFhwTFR5SUhkZlFwNG5fc0lCaXplX3BDTlVXNkRxaDZ1MkxVQmdqUnNlSzNDR2FMdzNCVmhob2dVRmQzNTVjS0FyOC15TmNuV0JwZ2lmblV6QWZmUzhvVUtUVlk1ZFNlZEpaVk1TNEpLa0FHM1dtNjdsdDI2UjdrQTNmV1NkT2wyUzg5c2ZoR25DMDVZQ0RXUEhJN0phQ2RaaEJXOWNMME9PQ0xqUFFFZFhpRDdabWhXVTlwMHlRdFRTUWpKM1UxcFFfMFNPQQ?oc=5",
+      "source": "PR Newswire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:03:00+00:00"
+    },
+    {
+      "title": "The NOMAI Fellowship to Attend Ai4 Las Vegas, Bringing Its Global AI Governance Fellowship for Parliamentarians On-Site - EIN Presswire",
+      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNa3BtdzdjanVGVVN6M3VWQXAxRzdDU0NUV3VSMUh4bklEcUxwT1JNWjN0NGpMV3RBVExBTUZOdDJ2c0JTNE1ISmk2di1feGp5V1QteDlia2tkb0JzR0pDbXR5Ni0wOWZYUGF6MjdvbFdQSkltQjdHY0pqbzc1aWZoRkxPdW9LSEhqeFl6OFh1Zy16cHBqNVgtUTYxWURYblhFdldTamg0YzkwdnVNRk9qdmZnRUhtbFV1cFg3QVVlUHkyWnpOaU9MRjE1VXZMb2VSTnkzRmdRVXVueHlOZklhZEdvcVJJSkRyNkRZdHA5VXItQTRKSUlmOA?oc=5",
+      "source": "EIN Presswire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T17:00:00+00:00"
+    },
+    {
+      "title": "The Universal AI Awards, the Global Stage for AI Governance Leadership, to Attend Ai4 Las Vegas - EIN Presswire",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQQmZlSGprWlBZMXBUWTdnRGhhdWRoQjF3ZUF1cUdjM1phbS1OYWhZSi1oYmtqN2FIWWtlUWk3TlVoQWlLdHRTMW1YLTZ4akM4aWJSeTM3VHloQmphaTMyaEF4Rm1mRFNaUmhzWkQwLUNFMGlhbGdHcTFUNnhDTWVNdlpscnI0LXVYWUtJZ2Y5Sk9jcUFaRmRlSlRSU3JaMUVtaU9neGRVcU43bFZGRllkby1obmxrY2s5VHk1dmRPM05RaHJWZTM1WUQtd1hsYUgxTTFxdkdFdw?oc=5",
+      "source": "EIN Presswire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T15:47:00+00:00"
+    },
+    {
+      "title": "Hydrus Introduces Unified Audit-Evidence Platform for AI Governance and Sustainability Reporting - EIN Presswire",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxONUhURXhHUF9UamVkZVpvVlZFWTdlZ1hWZ3RRMTJSWnJjdlFKYlpkTEliU3N1WGFUTkJYampyUDktUkthVUpWVlJPclRXZUNublJvaElxYmFCY0Z3RHFwOEtxSlVHeFg1Z0VHdVdjSGF5VjVGSHpFbnZ1NjYwRHNvWnJ1b2ZxTFpvMTZkMjhOdnd4Qko0a2tJbzREQkQwdEJ6ampINERJWXhpbjJqdGpYZjlUNXlLYUNORWo4Y0JuN05YZkJNZDVzMktVcjF3ZVRTSGIxV0dXZXpOWGM?oc=5",
+      "source": "EIN Presswire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T13:07:00+00:00"
+    },
+    {
+      "title": "Tech policy experts call for stronger Google Search antitrust remedies in US appeal - MLex",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTkN2MDZuWE5BSEFBRkNBZ28tNjltV01KQ2l4UzhDUUpNMWZNaEtKcDZKUEM5T0x0TkRIcXIyVXJ0dVFfaVlNUXlxWDRrS0EwY0Jaa3VGWjA4Vi0tVlVzWmNJbUEzM09HeXJPYXA4ZjFoQXhFOVA0TlM2MHJuN2tjMENPZ1RzSm92c1hrR2oyMVNTZDRYR0ctOTFZMVRTQXhGMUk2emIyVXYwd2NaVmF3SU1LMVNibnI0ak5jcEVwOWtCeGRH0gFaQVVfeXFMTWxnTXF6MEgtSHBSUFIyeUgtd3FWb1JnY0hGSndMal92Q3k1SE1TejZILTZLemRzOWpQdF9PM2UzS0NzZDhLZjJRYU56RWRzZUp4Nkkta0FxMHRB?oc=5",
+      "source": "MLex",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T19:48:00+00:00"
+    },
+    {
+      "title": "Rimini Street launches AI governance service for firms - IT Brief UK",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVFk3X2ZoWnpXVTVtR0RqTG1QSi1XaGFzRDNRWk1zYlNPNmRzQThXV2dFaUd0MFJNS2FCczhNNDl3UThrT0x2bXYxWmVPSEZHdWxOclBLTDBYZVkxVTE3aGFWaU42TWM0YmRPUjZZWWdvb2EtbldOMFlpTUpnQVoxbjNZQ0pUMnpJU3dSSHJiQ2M1b0FoUDJPb0lDemYxOGZGTVQ1WGUzTEJzRGFuQzRPWEg4NFZaQTl1WUpZ?oc=5",
+      "source": "IT Brief UK",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T07:15:00+00:00"
+    },
+    {
+      "title": "As EU AI Act Milestones Arrive, Continuum GRC Urges Enterprises to Treat AI Governance as an Operating Discipline - The Courier-Journal",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxORlU2SmxrdEN5RlU3clhnMV92Y1VPSmlobk9PeF92ZThmSDRlMzJwUDRJd0NOYWZsLW1xOVZFZkRqUjQyX3F6Z1lHR0pvMmlOXzJIY1RzYUNWRlNfQ19VSzF3TWQyb25lclhVVE9ldmJEQXo3LU9nSVp5V2REVVdtdV95QVpEbWIwTHFfT19McmpTdm8tUUlwWTZuQUVpUEhYMDZDemlaMWNzV0hWWnhKb2E5ZEZnMnAtNkZPQ1FtcmNnUW5pUFlJb0xpdUpDYkMwSEFTZVdXaklEM1ltTmxnN1lvY2JnbVlwTU5ZSFBpemNSaWwwQkhHNlFHQ3dRQ3c0NXc?oc=5",
+      "source": "The Courier-Journal",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T10:16:36+00:00"
+    },
+    {
+      "title": "membrAIn Joins The Consortium to Bring Awareness about the Future of AI Governance and Assist in Unlocking the Latent Potential of Teams/Companies Utilizing AI - Industry Analysts, Inc.",
+      "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQcngySDJuMGFfMmh6M0hBQWNGVGhucXFjNUQxbkpSRGJaSUlTUkN1ZU9hSGRkRDU1YWZIWEJnQWpOR3lvWGMwUEViamNwUWdQSXhwcmtCUnludTZPODVsLWdsbXhCbVVaUXVBME5sVEw4ZEVhMnQ5emFmSHpoZTFCa3lzcElGY0pJallOcFZIREYyQ2lWRTFaUldmNm1oZmRXM1pfLWxkeGQzcThGdGc3SUhLczY0RXRoRENPcUxyN2dVT255eVdxQ0d1M0Z1RzRYWGU4MzNDVTcweW9mUDZ2c0tRMWltSnA5LS1WQjNFSkk3M3VpUERZV2tJaTlQWmg2c1VRRXR2cV8yeXZWS3FVSmEyMTYwLUJh?oc=5",
+      "source": "Industry Analysts, Inc.",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T14:23:44+00:00"
+    },
+    {
+      "title": "Data AI governance specialist Roel Willems departs Ahold Delhaize after decade long run at retailer - Retail Technology Innovation Hub",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOYzJDa1FyZ0stSEZKQ1VYalhPSC10YjI3X1FkMzRVUXJmRkJFanBMY0J1NkNCWmhGM3pzdkozcjFPU2FxVEJpODczWThZTFlrUjhXOVg4MU9jbFBaeHdsX21vOGlWLWlYVnJpYjlKOC1EWEJ2T015ZGtYNGhnbnhxblVaR3ZPS2R0c3h1ZUk4V25RVnQyMlBoVG1oT0t5c2xPZlZWam1RNlZMWVpzeHdxRENsQnRaVXVoUjhpSXBRbkY2M3pIMXJGYXZVNGtfSW9Yb3M1VUpMSEdOQzU2ZTlHdkdSRG01Zk5o?oc=5",
+      "source": "Retail Technology Innovation Hub",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T04:15:06+00:00"
+    },
+    {
+      "title": "China's Vision for Global AI Governance: A Path to a Brighter Future - Alwihda Info",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUTFQTENDM0pJZXVuaUpYQUpLT19XYzk4a3liWTFwUXpxLU1kak5lYlBpdW5jcXVjdEFPMVRBRW02ZW90YjNlVkdoYWdIUVZxQ0dfbGlRTEZKX3Y2a3NqSHdvZU5QU1VoZFFsZkxLV21Nb0pTZ3pFOWxYUVN3aTRDN0Y3b2tFcklFcmdWNG83OTBGY1pranV5WVdGOA?oc=5",
+      "source": "Alwihda Info",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T23:57:45+00:00"
+    },
+    {
+      "title": "Boomi Plans Lunar.dev Acquisition to Expand AI Governance and Connectivity - HPCwire",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMHB4c2tXV3BibkpJM2ZLWGpJNHpwNGhfaXFGS09JQjFHeHB2TFNvbnB1bDE1dHNKcGhYQXhrU3hVbmlfa1NRZFo5aVFnQjlPNmNNQ0FsREtUQUJNRWxCRXVTY3c0RlhaTkdQRkJtWEtOSnN6OHFEN1JUamhlSE9oV1JfNHlnckE2bU5vcjBueEh5TjlmUlBFR0hpdW9PX0FzeFJGZVNRNk1RbHVzOTRiU2IxNFhlTVZhMXB1RlYwU2prZw?oc=5",
+      "source": "HPCwire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T16:44:16+00:00"
+    },
+    {
+      "title": "AI governance failing to keep pace as global adoption surges, new index warns - Business News Nigeria",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWXYtNGhTUTBMdGRqT3hYVGVzUW9EQlVfMjJlWFhkeGR2UVNOUTlLZ2JtZjhQMVlZQmd5YjBYT3cxQy1zNWxKaHlKNmhIQWV1VlE3a0ZBY2s5UlFvOWRYUEU3Wnhzd3JrckVfN1R5eUhnREtGTDBJdmhxX2x3VDJ6ZHY0VU1qb2xOUDVOeEZWV2JPa3ZZSnJNTGxFWlBiMURRNlU3UmN4WTlsTlNmaW5jV19aWHVyOWZTYzhMQXFfYUc?oc=5",
+      "source": "Business News Nigeria",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T19:49:26+00:00"
+    },
+    {
+      "title": "The Semantic Model Behind Enterprise AI Governance | by Jagadeesh Dharmudu | Aug, 2026 - DataDrivenInvestor",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYlhGQk0wSnN2UjhJQTZlWHR0Wm1hNFJ4VEFaampINktnOGlEZGkzODFTRW1zQkN3WmVjTmo0TUZ6UXdYRVRZSUtEd2t4VXBoNy0wV3JhNkpxbWRTSVN2cnJJZTRxakdvMlJqRXdDZTRFSWdZX0VOXzlvOUtZWDNYN285aXZzZ3pCWnNyUTJ2MnVCS2MwWGdtWHExMUx3dUNSYVR3?oc=5",
+      "source": "DataDrivenInvestor",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T08:10:26+00:00"
+    },
+    {
+      "title": "Egypt elected to lead Arab AI Governance and Quantum Computing Working Groups - Tech Review Africa",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNUktuU1BSc0w1bGNUTnhsU0tJNzVsM0pBWUhvb2pvem45M3BUVXQtZ2Vjb0tRalI2NGU4TUtpVTZELUdfQ29zd2t5eU1jVk5ZVGZsaXFNWHVid240cGlSZnZHdkpSSGpYdXNaSnl6NWxiV3NIV2VTa1NSbDMzVFhIVnJ6dE85LXRQQXdIQzFRMHNHOXFPdFZPaHk4RlJ4NlFiTXRKNFVtRDZGVUVNMmJrQmh2WlIzUE0?oc=5",
+      "source": "Tech Review Africa",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T10:43:01+00:00"
+    },
+    {
+      "title": "Karnataka Chief Minister D K Shivakumar met Michael Sellitto, Head of International Policy at Anthropic, along with a senior global delegation from the company, including Irina Ghose, at Vidhana Soudha. Minister for IT and BT Priyank M Kharge, Financial Adv - LinkedIn",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRGRSZ2xhSmNmazFOSWI0TDZvYTZEc1dqUlIzR1oyTDB2ME15OTNlLUdQcmQ3ZVZoQklmMzUyU2Y2VGQ1aF9vdE1aTVJ5Sm85VTVWYmNsOS1zV09kTU1kRnNXVDZRS0owbVdXT0Z2cnF5R2E5aU9Da0VJcGc0d3ppSFFQWWJHVjNsWE1UN3V5aUtOUS1mYlpXRmpwSVVWVnRYMTNTdWYtUXJPSjQ0WTBWQ1F3?oc=5",
+      "source": "LinkedIn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T08:00:05+00:00"
+    },
+    {
+      "title": "Framework Simplifies AI Governance - Open Source For You",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBObDNMdVN3RXFWLVczd1ZUZlh3akJfSmpMdkxnME5qdDJuUlpoRllLT2xGZHVqMlZidmRZeS02TVFvSlREamp0ZDA1dlEwUWRtUnVVVU41NFAtY0REUC1OdTBodHVjbWVYSzc3SkZmQjU3b3NIZGxpOWR2ZlhQbVU?oc=5",
+      "source": "Open Source For You",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T05:43:53+00:00"
+    },
+    {
+      "title": "Red Hat launches asago open source AI governance project By Investing.com - Investing.com Nigeria",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQOTZmYXVLX3JmVU5HU3AxeUc1VC11SWFxdEpLeWdtMEdZbzl4SWlfNmFSQUlQLWFiTjNTUWg1bmpLTjJTa3RYUkg3ei12NkNjbXVzUnlwOU9MNE5TNDJfRWRRYU8tcWJjLUlfQW9qQl9xbl91TE1SVUdDbkdGamVRZExjbDlnRGkxbUE3czZuNW1wQTdMeHdURjZ6NmpFVHpXYi03cTBRMEdsSktvSF96cVJPOXNRc3FT?oc=5",
+      "source": "Investing.com Nigeria",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T14:01:12+00:00"
+    },
+    {
+      "title": "What are government’s plans for science, innovation and tech policy? Committee seeks explanation - UK Parliament",
+      "url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPZ19hSTktQ1gtZUdNOUo3bWZJWUxrQnVrM1Uwb2llaGdHUmpjTUJtaUc5Uk1iUm42cHZBNjU1REhWd283RlJ3OEhkTDBoWjZjZXFKSHJrN3ozSDF5Z3UybXFBN1Y2cEVFZW53MDY2ODROYmE5Vk5GWGdsR3RaRkM3MExHLWR5OVBVdTFLVG53UWNhTEhBMy1HM05USEhFMEY0VXN0RTktUDNDYTZQeTBUNGRmUzZ6cTE0aUtwSnRNQkMzSXlXSDBYdWFSVWdnekRVblpqS205OXI0TFNHeXd3eVhUVXMwRllFVUdEdlJzXzJySEQ0MHpyZm1CS3kyYUxSRGFDWldDMWowQzZmQXdUaDVkaHFWdlNmeVpvQ0tyWWFON3M?oc=5",
+      "source": "UK Parliament",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T03:56:15+00:00"
+    },
+    {
+      "title": "Senators demand crackdown on wildfire \"prediction market\" bets - Ars Technica",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSlJDeXIxTEp5TzNoVldUUm1OVkx5SUx3NzNjc28yQzB5MC15WE5sZEtOSGhhT0Vua3ZqUnFlSWVybzdZZXBPWWQ4S2hEUjBqX3JROG80bzQxX19RRFhvekJoZ0tRaEdCMm9EX0kxd25xdWEtN0prdWFtVzdRS1kyZkotVy0xbWFaZk5HMFRVZnA0dV9CaURLNEVlWG5nQ3llMjVz?oc=5",
+      "source": "Ars Technica",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T21:52:31+00:00"
+    },
+    {
+      "title": "China: UN a solid platform for AI cooperation - chinadailyhk",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9UMnhOTlQxZjF6dDF2azFJNlZYczUyYUpnSUZtbmprNnZlN296dGRFNE5kQXVwTTZ4MUFmWXJlbzVhajlMUUVDX2U4Q1N5eHU5VHRtSWhYY0FrUQ?oc=5",
+      "source": "chinadailyhk",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-01T17:32:00+00:00"
+    },
+    {
+      "title": "How do humans shape the future of AI governance? - Modern Ghana",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBUdlVNQ2lBZFl4eEZXU3NnSEhGY0VXNHpoMkxXNDNkYzc2dlQ1TG9BaHBWUXNiNUEwSWk3UVVYRGxSY2VyR2VfbHdzZV9WTThOSWVrdXR0LW5IQm5l0gFcQVVfeXFMUFR2VU1DaUFkWXh4RldTc2dISEZjRVc0emgyTFc0M2RjNzZ2VDVMb0FocFZRc2I1QTBJaTdRVVhEbFJjZXJHZV9sd3NlX1ZNOE5JZWt1dHQtbkhCbmU?oc=5",
+      "source": "Modern Ghana",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T14:00:00+00:00"
+    },
+    {
+      "title": "Reshaping global AI governance: Understanding the EU, US and China solutions - Modern Ghana",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBsNEJ2QkhWTVZNNFJLM2E3cWhqbTh2ekZlTURiOFIwMjRUVmktWnZtcWVKbWR4Z3dodWhkSkRUVUhFckJVZGdOR1JIVm5VclVTcUJWUk1oLU85VjJMUF9RbQ?oc=5",
+      "source": "Modern Ghana",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T05:22:44+00:00"
+    },
+    {
+      "title": "Charting an inclusive, open and secure path for global AI governance - Khmer Times",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbzE0UFZfMWRWeEZrelhwaXVaOEVsa0xNbXZyQTV3bEJyVUd1ZmVVM2haeXZERFhyODVtbnFZeWlsenE1ZWJOdlZNRGNpaklNY1JNWnFZWUlWamszWXliUVJnbTB2TFY4WmhwcTRoLUhvSGFvbEl4ekg2UU81UmI5Rk9FMDgtaDZYdHk1czlxV3JpLTlXT25lXzM1MDVNMDZ1dEVpc2s0ckhCb1U?oc=5",
+      "source": "Khmer Times",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T17:13:16+00:00"
+    },
+    {
+      "title": "Sentinelone Inc. Expands Collaboration with Amazon Web Services Inc. to Deliver Unified Ai Governance - marketscreener.com",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNZjlSaGJYeXZmazFkOWx1S2RINnJxVlBnelBlMW1aaTh4WWd3djdMUE9meVJmRFBZNEc3UzVSbmFRSzQ2ZlZLMU16V21DdmVRTnBicjZva0wyTXQxMlJSbk5tZTEtbUtnZTUxUGpuelJLOUJ2d0lpUXk1ZHRtLWRScHBQZG1JbEZ3Z2ZvQUJaWnBOV21aYlJQRkgwdEkxNGJMZzdyaTkwQmktVFJTRUp1NTVfY2p4QVhXdWJQR0VhUGNOQTZseWI1a0hVeWFDdS1UbG52MUpMRmljM2pfUk9md2tVdVVSQQ?oc=5",
+      "source": "marketscreener.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T18:35:57+00:00"
+    },
+    {
+      "title": "Pax Machina – A Vision for AI Governance - Brave New Coin",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBtdWY1YzdWY2lla3pXSFhXS3VTSWtHQm1MY0VYZmt2d3NaXzNySDJ5OVRGeExRN2NOOFdWOUZSQ1NfQ2g0QVdONkRsTW9la3VTeWh5RkRESmdrQ05pcmVVaUtwNlVMNWNFTU1LaHNFXzYyZEZJbE10clVDbTU?oc=5",
+      "source": "Brave New Coin",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T00:47:33+00:00"
+    },
+    {
+      "title": "Reshaping global AI governance: Understanding the EU, US and China solutions - Modern Ghana",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1ZbUFDejhrQURfZ1VQRGNoVTg5anVqOV9mc1NoNHJxQ2QwcUlvMXBOX0J4dXJNZmVKUUU1aWV2TnJ5TS1ZTnFqazBLYmR4X2RwMURjQlFVc05ra3E30gFcQVVfeXFMTVltQUN6OGtBRF9nVVBEY2hVODlqdWo5X2ZzU2g0cnFDZDBxSW8xcE5fQnh1ck1mZUpRRTVpZXZOcnlNLVlOcWprMEtiZHhfZHAxRGNCUVVzTmtrcTc?oc=5",
+      "source": "Modern Ghana",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T05:22:47+00:00"
+    },
+    {
+      "title": "How do humans shape the future of AI governance? - Modern Ghana",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4zYk9tY0xtWVdQRFhyRklxeWJqY3hTRXc0YXBjcE9ldnVkTWY1dzFHUjZLUXBqUVZ4YzBTVTdIekhiWDN6cV9PZDFJVndzLWRhdmFldmxCM2hISF9ZNUhPddIBXEFVX3lxTFBUdlVNQ2lBZFl4eEZXU3NnSEhGY0VXNHpoMkxXNDNkYzc2dlQ1TG9BaHBWUXNiNUEwSWk3UVVYRGxSY2VyR2VfbHdzZV9WTThOSWVrdXR0LW5IQm5l?oc=5",
+      "source": "Modern Ghana",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T15:25:27+00:00"
+    },
+    {
+      "title": "SentinelOne Expands Collaboration with AWS for AI Governance - Intellectia AI",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPZEE5VkF6MlhGY2xINWxHb2dseHJURjhrSU41YWRkYUpjcmEtZTliTnc0NUt5TndKcThkdkJESEtMTVh2TFlpejlQcGIyQ3E1NU9mQWpjMExnd2VLblRtRUFlclFGbkQySHo0eVRhdlhHRVFMcUFZM1ZDcFdCVV9kdmQ4dlUzdTViUTBHRmZfdU41NTczelA0N0VB?oc=5",
+      "source": "Intellectia AI",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T14:11:50+00:00"
+    },
+    {
+      "title": "China’s UN envoy stresses cooperation in global AI governance - bastillepost.com",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOT2R1SDBCVy1EX25WdUlPeVJYWnJ0TkNPR3ROVVB6MDJ5MjFQLWFRRTR3Z0pwc1prZE9DNXUybUZKbnNQQWc0Q00yaDQwRFRaMDNXWVBQMUwxaG1VdmtIRGktRTIzZnpSeENtN01fV2YzbWhfNDFkQ2djeTZUcTE0dzFZV1k5MlJFeXBrRUNvMFFYQ1UweGNZM082Um5BZkpjLW9wWkVnSllYOFRua0JvUEZn?oc=5",
+      "source": "bastillepost.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T08:47:00+00:00"
+    },
+    {
+      "title": "Red Hat Unveils 'Asago' Open-Source AI Governance Automation Tool; Nvidia, Microsoft Join Effort - finance.biggo.com",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE43NWhpMEt6NWRSTzhMWGhpUHJqclk4SDQ0RGZIRk9Cc19iTmRtUnV6UmwtVVY3RG1raG54bHA3LTE4WkJ3eElOTTRCRTd3NW1PTVJSdlVkOXI1OHI0YzdicXBxUFd3Y1ByWWwwX1Z2YzJfTmdIbVE?oc=5",
+      "source": "finance.biggo.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T08:55:00+00:00"
+    },
+    {
+      "title": "SentinelOne Expands Collaboration with AWS to Deliver Unified AI Governance - 01net",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPam5PSG1EbGVaWHZjRWFNTXJnMmZwV293a295dEN0NXdrSHB1Yy14VG5ZZ0l4cHItQzhTcWY3Sml0eDk3SzRFbFZLWWFVMFZNUEZlMFUyMG9qR3IzTGRaeEFSWkQyVTZlQk9jTEdQS2N2OUFxeUlJQjloQXlTSDFxS0FzMThxb2NlRExXVXpCUzZ2V0w1aGc4ZFBIY1NFQQ?oc=5",
+      "source": "01net",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T16:00:00+00:00"
+    },
+    {
+      "title": "CM Saini meets top World Bank officials, discuss AI & digital governance - The Times of India",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNUnppeVhHQ182S1JReTFvYXlnSnlQZHdack03QkZjTUliZnpSQmgtNHZsckpKbkthNUdlbUxfb1lqS2Z2cDI2ZHpxZ0xJY0xvcFF5bG1sS05wVmsxdjQzaE13Q0xzblU1Z0RKMllyTXFTeGQ3NDJQOWs1Z3ZIM2FuaUEwaVVZcG9XMXRIdmlHZXJpVi1aWkhNNEJtM09CRE1CNUhoV2FPUVJSQkxWdnVWZ0ZJZTZlbTNhazF0dG1KUF9Fbk51Y2xrQjRBbjVueS11VDFhSmtCTkx3anNzWE9oaNIB5gFBVV95cUxPUFE2aEhCdFUxeTVvU3l1UzB1NUpOUlQ2TXFBWklsaVMyQnE4QVFFWVZwUGpWNzZtLXdVSUVNNjVoUkkwbWdaekhFZ3EyQy01MmdycEZxUnRwZUtpNnVSQmpuU1h4SVpqRTBuMFVUdVMzMWZ5T0Z0UGx6N19IcnJlMkJIX2xsaU9OQ240VzNCTHJQSlZSVTRhR1hVZW1TcUtLN3c1RndPemdOaWgzaEpvaVZYVFBScUcwdVJmWV9RSjlMcXhNdXB1UE9VRUp5cTRJeFBmcEI5cl9tNi03RjdiLVM3Tk9FQQ?oc=5",
+      "source": "The Times of India",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T18:27:00+00:00"
+    },
+    {
+      "title": "Why AI Governance is an Adoption Strategy, Not Just a Risk Strategy? - Express Computer",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPV3VKNGplLUp4TnBNUm53SG95amRGY2ozajIzRWlWU3VWbkI0NFVEWEloaXV3NklPX3NaemtpYXR2MGJldHUxVEZpMnVoczcxMFpqczhFblNhS2M4MHZDMlhpZko0ekVUVWpZS2NzQmNGajZfSmhMbU90OXVBNmxrWmFXb0FFbGVNWHhRRV8zUE96dHp2MVU2N3RJckN4anhfVUkzVC1ZTFh5RWVOVUx3?oc=5",
+      "source": "Express Computer",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T11:46:40+00:00"
+    },
+    {
+      "title": "Gabon sets new priorities to accelerate digital transformation and strengthen digital governance - Tech Review Africa",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPeE1iRVJ3VEV6NTlsZktpbFVGTW9scExvWWpVbkJaWU8yTDh5LW9XT2M3UnhVc2lwNXRSNTJxSHZHY1lPazBFMkc5MGhpdl9uek9LTjdZVmc1am10YlM5d2NiYkFzeGRoekxJVGJfQkhiWEVoVkU5WE1GZHUzTVVfd0ZETDBZTHhCLVg2VldlS1cxU1hsVzBNMVFlanJ5a1Nnci1lUDNjOGpRakU2RUtLaTdIamNIWFJnQ2hPUnlMalpZeVhJWjZIUHp0ZV9BeVJf?oc=5",
+      "source": "Tech Review Africa",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T20:17:52+00:00"
+    },
+    {
+      "title": "What came into force with the EU’s AI Act this week – and what didn’t - Al Jazeera",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVHl4alozYkdOS3hobGhycktVYmVLSnpvTFE4Zmt4Szh2bUR3SXJqUTV6UWE2RDd1SnlNdURrZ0tVRE0yVEVMd2JCZXFjREVFa2pUNjZkWDZwNGF1VkpFZ2tybWgwdElTWnFMMFQxdEFiUTd3LWVDLVF2Yy1RRXJYSkVydlhIV3NvTXUzTEVmOERSMFNwc1BVT1lxR1NIR3oyVmZSYXRfT3bSAa4BQVVfeXFMUEZUTXJIN1RKMVljV25weVJDd28zajBOb1Y1cHhqcjNLTlVjbGJNQUVZcGlDUzcxMFJ3UmlkOWlpLTk3RHhycTVzOVRTRzZsYWtnaEtRMGlPb19CX1N4YUw0TDRoQUswbUkzQlFSeDVvcW91a3pYV3FocVBodlZVb3VrdjdROUl5WkM2OEhrenB3X0J3X3Y0d3ZzOHA3bHh5Q3dPN0t1ak50bS1ESi13?oc=5",
+      "source": "Al Jazeera",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T12:55:04+00:00"
+    },
+    {
+      "title": "What are government’s plans for science, innovation and tech policy? Committee seeks explanation - UK Parliament",
+      "url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPZ19hSTktQ1gtZUdNOUo3bWZJWUxrQnVrM1Uwb2llaGdHUmpjTUJtaUc5Uk1iUm42cHZBNjU1REhWd283RlJ3OEhkTDBoWjZjZXFKSHJrN3ozSDF5Z3UybXFBN1Y2cEVFZW53MDY2ODROYmE5Vk5GWGdsR3RaRkM3MExHLWR5OVBVdTFLVG53UWNhTEhBMy1HM05USEhFMEY0VXN0RTktUDNDYTZQeTBUNGRmUzZ6cTE0aUtwSnRNQkMzSXlXSDBYdWFSVWdnekRVblpqS205OXI0TFNHeXd3eVhUVXMwRllFVUdEdlJzXzJySEQ0MHpyZm1CS3kyYUxSRGFDWldDMWowQzZmQXdUaDVkaHFWdlNmeVpvQ0tyWWFON3M?oc=5",
+      "source": "UK Parliament",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T03:56:15+00:00"
+    },
+    {
+      "title": "Three-quarters of SMEs have no formal AI governance policy - UKTN",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOOGQ0ZXlsRmZSUnFSa2k0VS1mRGRNMm5tQjZ2dGZwc0RHbTkxbTB2RVpzd3hvOVVnUlZjcGZ3QndUV3d3SmQzcHVrd3NJdjNlWks2a1gtWkdfSnNIMGY0Zkx1Qm9XX09CcGRLM3l3bmV5TFRBLUxzbDR4Vk5sMGtwMlgyMk90blFxNDk0QzlmcGgwNzMtTlhsYWhB?oc=5",
+      "source": "UKTN",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:00:45+00:00"
+    },
+    {
+      "title": "Show me the AI: the EU AI Act's transparency obligations now apply - Macfarlanes",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVzFVRTd3M1ZDSXFpbHpfbzRGLXJ0MGVjME5zWEY1MjNjc1NfSEZDemliOUlRZWdRNUZvVFo2ME9fWVRPeExLLVlzZDN1OVd6RHNjXzNYVFNocUhkdks1UnpsRzZOaXNCakU2NGwtNWZpb0s1a1pkRkJtQThrNGlfX1JPSkkwYXJNd1dxc2kyMUE4eUlhUTFtYlRSSUxVVUtBUERydmdwRWt2bFhtOVE?oc=5",
+      "source": "Macfarlanes",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:48:33+00:00"
+    },
+    {
+      "title": "AI governance matters more than adoption speed in insurance - Insurance Business",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNTXU0Q1hFaXkyVUVRNU1vRnNuRHRoYS1kalpVV1Z2SU1QX2kyVWZEZGJpOElYdk9nck1DVmNiLUdxTUZVYVEwUUhSU1d5NjNwWDQ5NElaZlZ2eXVYX0tkeEFNY2pZWFFFMDlkemhhWnRndGo5SWI2QnRIaTVkTnpNdG42RjEya0xQSEtRYWtVeGliSTFNX0diYnNiMW03ZkZ5UExfYTR4cGt0V1lyN0lrdGFSZVk2UW43bFI5Sm5kQTFpTjNvLXc?oc=5",
+      "source": "Insurance Business",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T09:16:16+00:00"
+    },
+    {
+      "title": "EU AI Act transparency rules take effect for firms - IT Brief UK",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPVmJ5SmdTb21FUDNZeno3cTRGOEw3REpCdkdHM0c2UzQ5TUJFNVhvU2s4VGN5aTNISW5DMWJOWUFXOEwzRkdrUmwtYjUtU0dJY0c2TE80QmxxTldKQnowQnRSaU1GMXppSlgxZm5fRkQyMTJidV9saE9fS0c4ckp1X0I3cUE?oc=5",
+      "source": "IT Brief UK",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T08:15:00+00:00"
+    },
+    {
+      "title": "What Every Employer Should Know About AI Governance Before the EU AI Act Deadline - Seyfarth Shaw",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQLWo5Y19Fc1g2QTQtaXpKQlNIUnRidzlxZDRKUmhiUkhtemVsNk1pUmVhVl8zbHBNY2RoWjhFeFd5MS1GLWdfb1VLZEdwZDY4LU1BU1pXWEZ1QWtVYnpNOWtfTkgxZ2tVbEFlZVhaM0FkZVlIOHVLcXVDTlZPOUxOZ1Z5LUV4bGhQbFVkMjBYT1BJaE5xT2t4WVFaNmluNFNRVTJVRDIzZkFjdGVvSVFjWDdib0ZNWEJaSmlBcURKcUppY00?oc=5",
+      "source": "Seyfarth Shaw",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T04:07:07+00:00"
+    },
+    {
+      "title": "Why AI governance is shaping insurance’s next phase - FinTech Global",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQdm1xeEg0c0V2emFHSmdyQ19FWEhOUVpxb3FHcjA1cUs2Rmgybkk5UEJocWF2Y2NYd1ZfRHhnNHhhSGRYU3dJR0d4ZjlITWNtSGNrOWkySkxPbWRyMFZzMThsVHpIenFqLWI2bk1YOXRmWWJxdDczcy1IZnpXeVZqUXNNTXg3LV9nSXk1TXpR?oc=5",
+      "source": "FinTech Global",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T10:04:40+00:00"
+    },
+    {
+      "title": "EU AI Act enforcement reshapes Europe’s technology strategy - Biometric Update",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPVlU5LS1HbWlYT05BUEVueGc4QVZaQmhEempwMm9aSW4zRmxJNDJJY2lxcHRmX2M5RW5iVFFvUmJQOV9HUmFuTTBlM2ZaRVVrVl9sS1RPdDl4Vl9KeUluOEhNbUJUNmVteDZVNG9hdXMwSE5kUlcxWVhrM1BfTTB2Y21BVWotNzdNVHZlM3MzN2V5OWZXUmZUcEUyZzRKQQ?oc=5",
+      "source": "Biometric Update",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T16:46:00+00:00"
+    },
+    {
+      "title": "What the EU AI Act means for your organisation - information-age.com",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPemo3U0xJYW51M2xBaFpDN1JLY3JkRThMaHFpSlZxQm5SU19zYmtsMlBtNTFqYmljVlg2WFJMTl9KWTJ1R3NySU9WbXdaNHJ5VkZ6U3NpdUZKZ1djdDU2QWhvNFZ2MjdiSFdzdG9ISEo1VGpRVVQ1b3hYeTAwNHhmdWNRYmk3QTg4c0NyODdoOTMzT00?oc=5",
+      "source": "information-age.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T15:03:26+00:00"
+    },
+    {
+      "title": "UNESCO Supports Caribbean Parliamentarians in Advancing Responsible AI Governance - UNESCO",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNRU45SGZUenZsaExoRWpiTDFkbTViN3l0YWtXbHFHYm9RbEhIdWFLekJjU19DdnBYLUZ0YkZ5SXNYWjlqS2pyNXQzS0twT3JkRUZUb1pHV1g3dV8wTWpiOVZzWDdpbjluNzVvalczTzg5VFU5ZmFTTkZvRThwZ3dUSnZFeF81SEZZbWs2WjhqZ240QnB3QVJDdHNLU1Jya1dEaG15cmZkVno2cFI5NEF3d2h5WQ?oc=5",
+      "source": "UNESCO",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T21:35:43+00:00"
+    },
+    {
+      "title": "As EU AI Act enters into force, study warns chatbots blur voters’ own political views - EUobserver",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQdDlpMkR5YjBDZjJ1YW13NjlvT1Vaa190VHFTYVRWLTNWRlBZMlNGOGo0VUFMQzFRYmxlV3Z0ZnRIVFNERG1qWk9WallsdE43NXB4QS1QWHRTRjNRNVY1X1lGR1JXZzJnLWxKVDRjb3BoUmZJV05jNWlSSkJ5RkpEbUM2QjNTXzQ2Znh5aXBYblVCM3hpVEFWUjRPNnpVU1N5SUhEVmNXNFV2dGdselYxeXFKZw?oc=5",
+      "source": "EUobserver",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T16:34:40+00:00"
+    },
+    {
+      "title": "EU AI Act Transparency Rules Are Now In Effect. Was It A Missed Opportunity? - Tech Policy Press",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOU3Z0RU5HTGdmd2l0U09VWm94TENiV1ZEZlMyVTYxcUxJMm1ZLTRtNDgtUGV2SzA3czJ5bk5DX0N4LXlBVXVVcXRYaGxwVUlrdEp0WFJPZzNtUmVXSDhBNWdGS3hzem1CMkNqWUtvcHRKOU83RE1oN2NiaTR2ZTZsYXlCcm8xSEtBbHcwNVNRZFpRSlJHbTNMZEFxWDRXYWcz?oc=5",
+      "source": "Tech Policy Press",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T13:09:03+00:00"
+    },
+    {
+      "title": "EU AI Act transparency rules take effect for chatbots, deepfakes and AI content - EdTech Innovation Hub",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPdEVreG1USF9GSmYyLWdkNnpadFY3UHpXdDgtYi1yV2t2cWNrSVRsX01ZRE9HaFdkRkJjM2NjeHY2UnFSRHpISVhiSVZUcUFUZ3M4ZGdUeVF1UmN4cTFfczNGYVJhYkFNNFZtTEVqM2RYUW1JQ2ZtZmw0ODh2cS02cFJOYnZ5SUNaR25ZZm12aFQ1TVhlVjhrMXo0bGlQZTVGY3hVZUZaRlFSVVJiQWdKcXc4X25mT0toNDhn?oc=5",
+      "source": "EdTech Innovation Hub",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T08:47:03+00:00"
+    },
+    {
+      "title": "AI Agent Sprawl: Why AI Governance Is Now a Board-Level Issue - SAP News Center",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNSXl3aXlKdURBSDJHdE1TcEtNRDNteURPbnVaNmtKT0tHVkhLV2VPSGszeTFfaXdIVzl1R3ByUFJyVW9naGhzeDFGSzhsanBQUHNzYk8xOUhucjMzZ1V6OUdiX1oxd09CSVg3MUFUWVVqRGRPRE5wak5XYjNVNURDczJIc1lVSUtldjNBR3FR?oc=5",
+      "source": "SAP News Center",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T12:21:28+00:00"
+    },
+    {
+      "title": "Rewriting the rules of AI: Targeted EU AI Act amendments in the Digital Omnibus on AI - iapp.org",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeWswVWJHOGNyWTUycHFGdHYtbUN1MFhkLS0wdi1wMjBNOXpOS3cxeHlaTmtBTmFiajhzbmtWS3VmU1pFMGZ5LW56NjdkT3hWWGhmVWNncDM2TTBOcTdXYU5MdUNndHdsMGxqbGJ4SFNRZkR3Q0RGYXp5NWNLWGcxXzJNV3hLNThxR1hyMjFvbjgtVVRHR0dlcW5GUnlBV3pyVjgxamxHaW1VWThs?oc=5",
+      "source": "iapp.org",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:11:44+00:00"
+    },
+    {
+      "title": "The EU AI Act gets serious on August 2: What’s changing? - Techzine Global",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQdFJQcGhKQU5SWkpPY2RhYm1CUG00ajVBWUpzaDNoZFBtemlJWWVWdFpuS2xnYlBXRmlDbkZqOFZ6OGg3WVBMWjFxTDJ2SVlZbnRSR1B6MFpDX0JLOHpySTBtUFA2TGEyRFpPcUFjeEtjWVJVVmtCTmwtSXFtZGw3NTJXUFgyUDQxbl9aQ0xyRHZCU201Rlg0OXgtaU5tRUhvNWVpRlRlUWdxSm5YYWdZ?oc=5",
+      "source": "Techzine Global",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T10:11:55+00:00"
+    },
+    {
+      "title": "How To Give Everyday People A Say In AI Governance - Noema Magazine",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNb2RLb2xmbk10N0xIWDkyR0h4TWlHMkp5elNoeVhJSlVicDdOQXJ2STFkenNwdDM3Q1oyR0ttQ09NSTlhaVdtM1hUWFVjUHJiWTVDLXlpNlo0NUNKZ3kzWmowdjZGalNqV2I5anZLSm0xNE0xYzFVZnc2WVItQUtiVw?oc=5",
+      "source": "Noema Magazine",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:13:05+00:00"
+    },
+    {
+      "title": "The EU AI Act after the Digital Omnibus - iapp.org",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE05UVFudFJxamdiWmZwc0ttRFRvZVRyejJ6cFlqTW1RTE1adlRBZUFsQjktaEdjSnFXem1IRjNlMDVMT2NCODk3UlhaZExCTXJNeTJ4N3ZNZnFaeDFCRU9tTzJXTUNGamJOT2lZVDhEX2d5UkRs?oc=5",
+      "source": "iapp.org",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T20:18:33+00:00"
+    },
+    {
+      "title": "Key EU AI Act rules now being enforced – so how does that affect the music industry? - Music Ally",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQVmN4U1ZDa0JxZF90MjNobXNOdFZLeDlsYll2Zmo4SzJac3JDeXFNS3JSWUhzY0k2U085WDRVVzNmV3pHWTQ0QWFGYWNKX0U2S0lYUUZQQTJtcDhPbnNpV3NqSDJlc3B0SHF2N0lSbW9vYVpCUlIzV2lPOXFQZ0V5Z3VnaDZTd3AwTG9EWkFRdEJ6ZmlpTnhfVHpNR21HdG1zS2tMMXRoU1N3Si0ybTdXNks1RUphZw?oc=5",
+      "source": "Music Ally",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T11:30:00+00:00"
+    },
+    {
+      "title": "EU AI Act Article 50 transparency rules enter force - AI News",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPOFZOeGJCU21RckExQkVNY3h1M1VIOVdkTzVueFpnRkJ1dTI4b1RtNjFPOGlGUTBKc3FvbDNIRV9lTVMyQ0lTX3pPTGE3U2VTZmVjUlNVbGJFTFQ0Y3UtQ0poeFRBVk5GdUhPN3FLOHhQeUQxdXJyM0ZZOFhVazFVRXBUdVRHb2VYakZjX2laa0lRWEQ0cm9YY2Z0X3pSTUNqZGxN?oc=5",
+      "source": "AI News",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T16:12:06+00:00"
+    },
+    {
+      "title": "Most US companies lack mature AI governance frameworks - ESG Dive",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQeVdacFA1NTJoUDdwS3NSSFZTdzdEUVBFUWhHc2hYckFFVUowMlhtZDJ2eE1QanZfUnZjSTBnRV9rVWZiV1Awa0hOcnFKQ3FUTmZ1d0kwaVJNUnR6LWVBZFFsR200SHB6Q3ZhTUxuZk13WFctZ1VZTXZrVmlwbTZEWnc0bE8wZHJNYVE?oc=5",
+      "source": "ESG Dive",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T19:00:04+00:00"
+    },
+    {
+      "title": "Rimini Street launches AI governance service for firms - IT Brief UK",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVFk3X2ZoWnpXVTVtR0RqTG1QSi1XaGFzRDNRWk1zYlNPNmRzQThXV2dFaUd0MFJNS2FCczhNNDl3UThrT0x2bXYxWmVPSEZHdWxOclBLTDBYZVkxVTE3aGFWaU42TWM0YmRPUjZZWWdvb2EtbldOMFlpTUpnQVoxbjNZQ0pUMnpJU3dSSHJiQ2M1b0FoUDJPb0lDemYxOGZGTVQ1WGUzTEJzRGFuQzRPWEg4NFZaQTl1WUpZ?oc=5",
+      "source": "IT Brief UK",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T07:15:00+00:00"
+    },
+    {
+      "title": "Notes from the Asia-Pacific region: China rolls out new AI governance, data protection measures - iapp.org",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNYUVkdTEwWjJ4dTE4TWxJbXlUTDR5VmR1VEtHSGE1T3J3VnNCU0pjMUJjRUFnMFFGWTlLSmxEODdsRVNxVjVuUlVuVXg1WGFtX2RubXJSamNxMjRiV0Z5bEdwSzdWRnZiempBTk5paXliZVB6c0RUNTROalpyLTJCUDZEQ0VaeDFWeVpDR2NaUEZXaFNsQklHMllFWmw3MnNCNEZmay1CQzVsNXZiT1AxM01JdXgtSTMx?oc=5",
+      "source": "iapp.org",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T17:41:26+00:00"
+    },
+    {
+      "title": "The EU AI Act requires AI transparency. What does it mean for CX? - Customer Experience Dive",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPdWpOTy1ZbklJZnFsa0FZeTVHNEc1bU4yTTA2Y0NEYTdKM096b09Ld0Q4UDZHT2NqclVuQXZaUTZJZHd4ZlRQWnFnOFZrUlk2dTFkcU8tNlVWMmNZRjFGbV9SSGcteTFxUHNHdFFWYlZGOGE0UC1MMXplNjhGZV9HM25KSHdlcVpGcEJZX2JXX09xRkdiQTRyOW9Mbk8wMzFnRnlwVEFySDBwVlVMMjV2eWo1UXUtUQ?oc=5",
+      "source": "Customer Experience Dive",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T18:49:48+00:00"
+    },
+    {
+      "title": "Olares Brings Personal AI Cloud to IFA 2026 as EU AI Act Takes Effect - PR Newswire UK",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQWS1nYUNreVBpeHFUQjI0SGo3YjBGejAzb1pBQlhVdzJaaDgxS2E5TklxWS11cUVHNVJ4dlhseVVLZy1NZlJJZ0VIMGNLQVZPQjQ1U1p6dS1CZDhjOE1mVWs3NXdUc0hUc0F6OC1qU1c0LWhYUno0dG52UjN1T1lveEswc21CSVN1QTRubGRCYXpIRkVFMjNrTUtqdzlQaFdsekJJT2R1LWdCNU9FVDRtT2hnazhteEswdVd1LTAtbTllRVhEaVE?oc=5",
+      "source": "PR Newswire UK",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T07:00:00+00:00"
+    },
+    {
+      "title": "Three things you need to know about the new EU AI Act rules - IT Pro",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOVzlrWmhaMUlGM1BOOTZIbHc1bDJIQ3V6ZWpLN1NMNFFMTHl5VWlwX1p5R0g1YVJKdlVPV3JnVk1RWF8zdU1zbDJDb0RaS2J3OHYwUW11OHR6clFsTndkM3JaNF84d3NnaVZ0WmdnS0hNQXQ2aldOVzNNdkNMYndxNWNrYy1ISDJzdU0yWUxQRGp3NTYzU0M2S2w5RTN3NktfbmVwNG5XQVlUek9nRk1RdVZOcw?oc=5",
+      "source": "IT Pro",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T09:40:36+00:00"
+    },
+    {
+      "title": "EU AI Act: Transparency Obligations Take Effect 2 August 2026 - JD Supra",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPNlBHOXJJZ3BDdGsydkh2c0VDX3lTdkZfcGVtU09qSDdEc3hnVTdaSTI3ZG5sNDUzdEhnT055M1BjS2hjWHJtSG1hUWVxTGx0eVJnSHNmbWoyWl83RzJMV1M5b0QyWElUU1BNVkdYRm5QVzQxdEJMRlV0VVZrd09hWE1PRXVQQURfOVE?oc=5",
+      "source": "JD Supra",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T20:58:48+00:00"
+    },
+    {
+      "title": "The EU AI Act’s rules on AI content labeling and training are now law and enforceable. Here’s what they mean for the music business. - Music Business Worldwide",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNX2pDdHNMcjdSTDZiZDdrZmdUTWl3YVRRX0hTd3dBaHBtZFg5SW5NdC15VG1pMGh1YXVJQkRhZnJHTGxxYXdLdXA5ZWFKbGI1WW50WWpWMHFzSVhqdUNUSkxtZHJwR2RFclZTWW9HYWVBdzh6cHBLTW9JZGhCY0VqVU5CcDRtVzZrcXdkckZyelotZ3VkQVhiN0hjRnhpMG5ZMEZrbjlJWlpyajY5ckFHVkFnSDdhbnFoSlAtMmRhWktTM0RIZ1BVdWpUdG5WTk9tZGxoVHpvUFdZOU9lcjNnMVVYU09hUXM?oc=5",
+      "source": "Music Business Worldwide",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T17:14:21+00:00"
+    },
+    {
+      "title": "EU AI Act article 50 takes effect August 2: European Commission issues clear guidelines for enforcement - identityweek.net",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPT2ZaTU1VTUd4TG45NkVDUzlVTVFiT0VjZ3hMLVR2R3J2VUdVRVVWOGtZOTNkd1NkOXBEQlhHVUkwLWQ1TkpmVTl5cHFfVlhwTXZEQ3hrSjBXcGxfNVhOMnd4dEZuTXhrbUpBM2hnX2twUE1Pc3ZidTBGNzJhYU01Z0gwaWlZSHQ2TnlmREZNZGhTSzdvckNLVlRTRlIySHFuRVV2dFBwMkpyajk1OExqTHJhLTN5ZWdVNkF5M2pScU5BaWkxQ3lj?oc=5",
+      "source": "identityweek.net",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T14:39:40+00:00"
+    },
+    {
+      "title": "EU AI Act changes complicate compliance efforts - Solicitors Journal",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdW5ad2RzSkxSSTRqTjBZaWJLaUNQZjhXVVRsWnI1ZFJKRk5CRmo2QVJsRzhnajlsMTBRaWlsQWEzOEoxTXAtY3RzemRFWFdSQkFoc1BSTjdxT21pVUNZUmI3b243OFY2cXh4LW9aUzcyX1NQYl8yaGtIcGFUWndWWXBtbEN4dkFrZS1vM2Y3VkhxTXRsMkxHTTdnQjAtclQzcUxsYkZoMUg?oc=5",
+      "source": "Solicitors Journal",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T04:50:09+00:00"
+    },
+    {
+      "title": "The EU AI Act Is Finally Here: What Changes In 2026 And What Can Wait Until 2027? - TechRound",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNR1NWRzFoZFB5N2dmOXczdXdmOWlmREZ4Mm9fUGstcGFtMVM5eC05UDRpalV6WTA0WjFHNXE1TFRaTzd2ZTRsUFo0R3laVFNpTXVJdkFsZ0luLVBQT1JwRVZoVzdLTlozNFp2RVFib0Yzd1BlbHhtVVQ3VGoxU1dVZVNEbEJZa3NHakVJay1DVFlFTFBrVHZsSjlrYlR5Z3BhTnljaWpqb3hmbTlLVXc?oc=5",
+      "source": "TechRound",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T18:16:17+00:00"
+    },
+    {
+      "title": "Data AI governance specialist Roel Willems departs Ahold Delhaize after decade long run at retailer - Retail Technology Innovation Hub",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOYzJDa1FyZ0stSEZKQ1VYalhPSC10YjI3X1FkMzRVUXJmRkJFanBMY0J1NkNCWmhGM3pzdkozcjFPU2FxVEJpODczWThZTFlrUjhXOVg4MU9jbFBaeHdsX21vOGlWLWlYVnJpYjlKOC1EWEJ2T015ZGtYNGhnbnhxblVaR3ZPS2R0c3h1ZUk4V25RVnQyMlBoVG1oT0t5c2xPZlZWam1RNlZMWVpzeHdxRENsQnRaVXVoUjhpSXBRbkY2M3pIMXJGYXZVNGtfSW9Yb3M1VUpMSEdOQzU2ZTlHdkdSRG01Zk5o?oc=5",
+      "source": "Retail Technology Innovation Hub",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T04:15:06+00:00"
+    },
+    {
+      "title": "EU AI Act's Next Phase Puts Pressure on Big Tech—and Not Just in Europe - Law.com",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNR1poaGZyX0RSQVlLX3lOTEo5dzhZNDhka0VscTVGUG1xMzNsd2ItdjdHbk51RUdkNWcta0xFRzdDMVpXMURMXzk3QWw2MTUtaFdjZXdVQU92YXN6S1QtMjNBR3Z2RHdtMVR0VExhWVpVTGhONUdVTEZKZjgwWkhQMGItb09JYXlGNllCTjNfVWFPV2pBN3dIZ0NOMjVBTHl4bnNJdzBHb0EyVkp2M0M4WF9Cck1VdF91eWtDM2lwdTM?oc=5",
+      "source": "Law.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T10:35:00+00:00"
+    },
+    {
+      "title": "OpenAI aligns safety practices with EU AI Act’s GPAI Code - AI News",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQT09RNmYtREVKelhOdzdpenRwM1FUUGplOXQ0MGR6Ym5ua0xnTkRYOFlJV0ZmTi1JQUNzYndpb21VMUduci1JUVBIUkw2QWlZcl9RVU9raUNHbWotMzkyVnR6OUJxQ2dBandsczU1dlhDR08yQ2ZvSU1DNUdsWmJ4aU5wd3JhWjBwdWp2MFJFNE93a0pPdFdXSXdfS2x1eHdOWUJ6ZHdjbVQ?oc=5",
+      "source": "AI News",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T15:05:16+00:00"
+    },
+    {
+      "title": "EU AI Act: Transparency and Enforcement Rules Take Effect as High-Risk Regime Is Deferred - JD Supra",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUFNXSjJvT004NlRGVmFfb2ZCRExDY0RQNk94REJSOXZmcWNsMDNxajFfTmd3TzVnYU1CbmhVc1ROVDZISmQzYUxRN0YyU2k3SU1DVW5XM2NYajBlLUtmdEl0ZnFWMDhPelJxcFFLODJvY0ZuVUZTN1RUbUZNa3ZFX0t4Ni1HME9K?oc=5",
+      "source": "JD Supra",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T18:19:05+00:00"
+    },
+    {
+      "title": "EU AI Act Enforcement Phase Begins - Wilson Sonsini",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5TczVSWlJhQnJMWHBhXzROV1g2V1E5ZTRRcXdPQTNoTUlBbXotTmRvTklJWlYwTW5DUmFuWGR4UkJ4VzlfM2c4SmJNSm9LTXk0dXpHWGctbzFUY05TRVdzakdVU2FlRmdVY2ZzUnd3MUJOVktuMFVURE0xLXo?oc=5",
+      "source": "Wilson Sonsini",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T07:30:45+00:00"
+    },
+    {
+      "title": "Europe starts enforcing AI Act rules - Sifted",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBiU1VZdWpGX3RFT0pIWVI3b2ZsNGlnOUE4Y2xlZHA0Y3NTdWc3ekVZTnFCZ1lQV3ZOdE1JdHl0Mlpac0V3TUdUNWdNbjQ1TXFWeW5MZEItRV9vRzNjTkFBZ19aRnNmWk1wb1hN?oc=5",
+      "source": "Sifted",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T04:00:49+00:00"
+    },
+    {
+      "title": "Anthropic, OpenAI among firms facing new scrutiny under EU AI Act enforcement powers - CNBC",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZSjkyZXhrLU11dksxVTNxUFlkZEhKdUtQU2dDMUpNUExTNG9PdGFGZFAxY05UamxEWFNlcGYwSWJQOERRV3FwN2F2ZXRHc014bDkwUTh5SktKekgzVFlseWh0WXRfUlBMTkpEMnR6dlp1YWPSAXhBVV95cUxNMFJrbWFkYTFaNGxpVVpScmJ5dVdrZGhMZ0NmZFU4dmdNSnlLa0dVaU1scllBOThZcjFQUXBuazFmMEJNZi1laGVPQjBFZ2UzZ1E3QjQwSE1fa0M2WjM4bUx4N1RKQ2NGMi1RdklGMzh1bTBLR01Ba3Q?oc=5",
+      "source": "CNBC",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T10:59:18+00:00"
+    },
+    {
+      "title": "EU AI Act Transparency Rules Put Financial Institutions on Compliance Front Line - PYMNTS.com",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOVmhFOEtOMkoyTDhsdTY4MlBubkdJd1lta2xzbXRzX2N4NGZTWTlocVFlYVIwVTExWUZXa0RRQXp1VkxiRW5aYnhNSlpkU1Z0ZkFnMm95SDZtWU1Oal9WbndfTGx2SmJHNEFSdGhDWUNhVWxsX0Nsa3FNejNvQk1VTXhTYURxbnNmRzRpcUg0VUMtSWhzQnI1d2FMMFlWVnhjNzFwWGctV3J0cnpwSV9JMlBHc3QzS2lFQXdLODZ4U0Q4MDR3OVQ4VVRrNGRPdG10VEJoYw?oc=5",
+      "source": "PYMNTS.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T17:10:41+00:00"
+    },
+    {
+      "title": "How do humans shape the future of AI governance? - news.cgtn.com",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWFN1UWxLMk10TlI5MDBYTlVMaERuYjZseWVDQ3VjR1FRVGludkxZVzN5ejVLYlM2QUF2UFd0V2lPM2x4WEpOLWxsRl9PbTFOMUdub1RLcHQ4dVdaS0cwamtLc0ctQ1Uzc0VQTC1lQWpZcDYxVjNmUHV6VGY3dUV3VEdkd0oyeFdZbVFCZHJfTVNiTnBLMU5MRExIVTFvU05PZUZNNG55SEE?oc=5",
+      "source": "news.cgtn.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T10:55:53+00:00"
+    },
+    {
+      "title": "Advancing responsible AI across Europe - OpenAI",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE55UlFLV3cyX2JQVHFFMF9HUjhJcVFhSWFSXzNPdEJ1Y0NwTEs0QlBtN0VNQ3NJam43SzJrbG91T2xCR3hWaTZ0TkN1aUpTVmlGSzAyNmgxeFBlRFBlNTc3dzktNlpZNkNQeUFMZkZuVWlEQQ?oc=5",
+      "source": "OpenAI",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T08:12:24+00:00"
+    },
+    {
+      "title": "The EU AI Act is a threat to marketers who exaggerate, but that was never really B2B - The Drum",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUldqZ2VsUEZ3Z3VXZ29XakhVNjJ5SFBlMU0weXhJNkJrd0p5RXFaYjd5emhFSmhmYjFFY1F6ZGdzUlNWTUdhVEJhd1lUVmRNNXJzZEZPZ3YwcGIxaEpCRkdmcVAxZ01mVUk2SVZCa3k5MW9YU1hOMFNXYVlsUkVZOHA3bk1ZSkp6Yzl6a3J0M3pXOE5JZHJKVzZHaGloVjJkZEVGWEVhWlMtWjhJTGgxSQ?oc=5",
+      "source": "The Drum",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T15:50:18+00:00"
+    },
+    {
+      "title": "SAS AI Navigator aims to make AI governance irresistible - Techzine Global",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQLTJZZi0wSm15clBBTDF6Zkk1Z3JiT3k5SWJRUVkzUTliLUg3aWlCVF9kSjFGQ0FfTDZzYThmSnRaN0MzTDZkVjE0WnE0NEl0ck9GX3JIWXdOSjZnc3ZQaE1lSU1pUXdDOGRMZEltYzcyQkRINXZqbWppMWktRlNuNDR6dWtrNzVWSkZpRjNUMzJ3c0JQQUtVU2wzMmEzQkhROHJCNFNRMA?oc=5",
+      "source": "Techzine Global",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T08:15:00+00:00"
+    },
+    {
+      "title": "EU AI Act enforcement begins today with new transparency rules - eciks.org",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5DZUIyd3VxVGZkdHFQQVZDNjRuT2J5VThNLWkxTU9HZVVVS3duNjRuQnlFT09CY1Bob21EVVBMcTlHMXRORW5RY0EtdGZCSHljZ3dMYURIT2txMmRubUlGR09ZOElGY0NDaDVqajRB?oc=5",
+      "source": "eciks.org",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T10:46:09+00:00"
+    },
+    {
+      "title": "Why AI Governance Is More Important Than Speed - Forbes",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPelZVdzdZQlByNll5Zl9mSlF1aWRmWXhEbnVwZDFYU1BLQVBDRHdtc1ZnOC1zcHp4RWJHaHNjNlRzNkN4Z0o4bEdMeW5FSTc5WkRSZW80cGFjRHJxVzdUVUdGOXoxNkZCdmx1Y1NObzg2RF9uZTA4a2R3N1VyTUd3MnRrR25KYkdrb1dNZ1VDdi1UaGREYnc?oc=5",
+      "source": "Forbes",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T16:00:19+00:00"
+    },
+    {
+      "title": "New EU AI Act Has Global Impact on Audio Production - Mixonline",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQUmZXcU5zSlV0RUFhakQzc0VPX2JIYi1mNkp1bzlKdDg1VEY3UV93NHBKYmd2b240M044YUZzU2xIelRZaG5rLTNwZHF5eXFjNTd0RVVXbFA0cFhETU1JUjVtcWlEOUhBTloyb0ZyX1ozODdpOUJmcHFROElqdDdFRWlfSHYxZw?oc=5",
+      "source": "Mixonline",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T22:21:20+00:00"
+    },
+    {
+      "title": "Red Hat launches asago open source AI governance project By Investing.com - Investing.com UK",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQd2kxVjFIUjItUkNOMHVldjdjWkZMNHFhSW5sdkdYbnR2bzdoMkEzN1gtSTFJbnNtd3Z4MHBBQU4zak0xU1I0R0lCNUVxdjF2S3N0OFZXODFLYUkxY0w4UFhyRjRfT3BXY1B6SDIyMkoyMlRRY1VrTnFZNGRtRldRMmI3T3JNSV9Ba0RQV085THZiQnZyZWxZU2NMeHl4c0ZjUlFHT3lhNHdYTTNWTktYeTRpM29JYzRROEZyQ0tWMWo3VnhBT2thZg?oc=5",
+      "source": "Investing.com UK",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T15:59:00+00:00"
+    },
+    {
+      "title": "EU AI Act Enters Its Main Phase - The European Times",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9vVi1fWlRRSHpFNjZGYk5ERWZlUkFuaWxxdjh6WEJ6U0llZjNmQ3VaeHZtS2h1TjBXbVNSbWh5THEwRG5hNzhISVRBYWZkVTNFSnkyZGwza0lldWxlZ1RfU3BXRUZ5VDBNYkgzZTdDMWZWS19vcFE?oc=5",
+      "source": "The European Times",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-01T14:48:48+00:00"
+    },
+    {
+      "title": "Global AI governance: How the EU, US and Chinese approaches differ - news.cgtn.com",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQRmtxLUFpRzNqazNQWHBpNzNJc1h3RmJ5QTlOR2l5RXduSmt3ZVlUZnA3SEI1ZjRnQ01yYW5meFM2YXU4VC1mNkJHQ3RHV1d3bUtvZjB4TWVzYm54dTBMeHRUZmFDUE9OeDVLZ25ZT2VDLUY5aFllb1ZWdWhxdHpzSGZWWWxEazlMeXNqTUNNd3JlUU12b3BwTzM1ajFPU2J4RERrUnQtVGEwWXFZUkJJVlVqN2RFNUJ2SHEzZkhR?oc=5",
+      "source": "news.cgtn.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T03:31:15+00:00"
+    },
+    {
+      "title": "EU AI Act Enters Enforcement: What CCaaS Leaders Need To Know - UC Today",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQZEhIQ2wwSTN2NlhvaGdIRGUwMFNOSzNaN3A2cVctOTZscEtSXzU0Tnd3UjBFUDhxSXJJRjJ5UmcteWdnWm9oVnNUektibjlOaEViejViQXN1dWFpcGJ6SEpZaWRIRW5OTlliNzUyLTMzZEJwV0RoYTlJQTFLbjdMTlJ3ekxCRUdoOWc5ZU9tUEliTnFHSTB2Um9ITFVJSnpwNUptWi1xS3hsWDdWZHdr?oc=5",
+      "source": "UC Today",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T14:08:36+00:00"
+    },
+    {
+      "title": "Akerman names Michael Adler as director of AI governance - Solicitors Journal",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRVVISGFmejZRaFRILUFib2ZLSmdGamRZVWIwS1pCSGcxLWZwR1U1Zl9VdC03bTVaZmp5TVVzZmlYd19tekxfU2ZSaGRKZi1SZ2tDM1VCYV9GeUgyZlRDWlhvbHBMNEx6MURnRHlVYllGbWVSa3lhZF9UUG9SYmRTWHJhc0hpTlFUZUUzaDNXVVZ0RkFWMklMM0V3b2RpQkhncllKaU1vQUM2RmxFVmpLTlZxZy1BUQ?oc=5",
+      "source": "Solicitors Journal",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T16:46:23+00:00"
+    },
+    {
+      "title": "When AI Escapes the Sandbox: The New Governance Imperative - IDC | Trusted Tech Intelligence",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOSEktOEoxNUF6b3dleUU2eGtNUXY1NWVfY3JONTNyQXNmbFljYkRESVVfMkwtVHp4dmVIck0tOXBPNlR0cnRwQWNBenR2eno4aHExdUdTcEZZZjdaOGZaMXBtR1NKMjgyekFvcGVPa2pYX2twNzlNQ3JOcXdqelM5Y3EtUkJKbTZ2eXZLalpRY3dGRXBjM2prcXYyTHVQZGVI?oc=5",
+      "source": "IDC | Trusted Tech Intelligence",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T01:50:30+00:00"
+    },
+    {
+      "title": "Google Earth AI Fiasco Underscores Why Tech Firms Must Listen to Outside Experts - Tech Policy Press",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbFhKMERxYUhYbnA5VlNURDhYbGJXa1lhMzJMN2VMTi01UVI4TGwxYUR6SXNjWXhGV25sNXdxSzdRenpkYmtQMlM5aXZERlBUOEpPSVpLTjZ6MGgyQTh6UEcwTGdtMXNGM2gwN2NNN2NGOE9sZGVERGowSzk3ZE1GTXRaZlBfY3Q0T3hMdmQzOXhKR3kxWlg4UVFDVzRVYTlENmhEVUhsUm8?oc=5",
+      "source": "Tech Policy Press",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T22:08:19+00:00"
+    },
+    {
+      "title": "Veirano Advogados consolidates its performance in artificial intelligence and digital governance - Líder Legal",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNMUxMV0J0WTBaZ21IWlB6dkhyV2pkWjNSUEp5MHpRRXJqUFVuX05ZQk1jX1hxWW9OOTlSaFNVejZyR3lySFVtM3p1MVZZMnNTZW9KREhPWWdTTUtRZV9ReDNaQTlxS2FUelpPUEl5ZUktR2pRemNoV01zVktXM2o4emNMOGRtYThmNTAtZkNvUUJ1RzFIeERRc2ptQjlldF8tdlF6VE9mMUx6d1pPdGZNQm4tbk5oZUVFSWVDYW1RcFg?oc=5",
+      "source": "Líder Legal",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T10:22:24+00:00"
+    },
+    {
+      "title": "AI-Generated Content Under Regulatory Spotlight as EU AI Act Takes Effect - Hello Partner",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMmcwSWxyaENENGlWSmJVOG01dFRkRTNfeXQzLTBia2dzd3k0am9Eb004cTEtMDZJcEhxelhpam1HbTJhNkxGT0tGbkdkMnR0ZHI1VVJleGJjTklGMDRxMWhXQ3Y0WTFFQ3ZueGRPdHJkanV6OXU5VHJUdC1qc1NBYk9lazRReGI4LXZvNERMVG5ma2Q5Yk9BRlUwV0VuaVRG?oc=5",
+      "source": "Hello Partner",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:34:13+00:00"
+    },
+    {
+      "title": "Why the EU’s AI Act is about better marketing - The Drum",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOOW0ta01zMmhqbjltYlNJSFBDMXJTNFlYT3h3cW5kSnBPemliYkZwaWhIdVpKNmdGRHJxV2ctd0tiWjNvbUVDb3RrSi1iS0FTRGY1Tm5pRl9RYVI1N0VmRWRxOVZmTm5GYnd2QlY2ZVRGd2ZNYmZuclRuQjI0NnljbWlFLWwzUU9Xb1F0UUVOQQ?oc=5",
+      "source": "The Drum",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T07:12:58+00:00"
+    },
+    {
+      "title": "Akerman Taps Ex-Amazon Counsel for New AI Governance and Data Protection Role - Law.com",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPYVhlRXZUdXduMGtaT1RDMVN6ZndHTDZHNjhBMHRIeTd0NlBXcDhTMHNhQUEweFJJUUN2ZFJZd1FVdm5OTl9hLXRmMnJsSV9pazBnWlE3Zmk1VF85eHE0OUFxTkptZDNwQ3BKdFp4QnJoQTRaU09NcVd2b01KdE9NN3Q2RlBkd281SlBfMU9QanRXdzc5bXdfSWpmbmNJYnpidE15QmxpNzZKNE1Za2hBajlKcWhNVkRFMU9GUlVmcFNIUQ?oc=5",
+      "source": "Law.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T08:00:00+00:00"
+    },
+    {
+      "title": "Immigration as a Test Case for Executive AI Governance - Lawfare",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOU0FQQW1FeUg0VmNEQWp6S1EwbGJnSlI1WGlrenItaU9mTW1IRUlUUGJiQlRVZlZTbUNBNlBwczBqUV9hb2VoQWJTSmlralppTk5KWXlxcnpFVWNIdXFYZk9ZQm1MUWFfa3FJM1NtcFNUOFJrMWR2M2J4ckhUTXljTW5uM0JqUmtsVjgyNUxJaUJqRkR2OFE?oc=5",
+      "source": "Lawfare",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T19:10:44+00:00"
+    },
+    {
+      "title": "‘Won’t change much’: What does adland think of the EU AI Act? - Performance Marketing World",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbHRpVnBzTkc1QllveFhsYmwwVjZSVlUtdXRxLU5za1NQRFpJd3VQQlZnR1d5UVJiTlhYcmFxczZTZENnWmd3VUl1NkFhd2NLTWFRZS1JMm5LLWt5ZXBZM3ZrRzhaWVFEeVJXRmhYa3J0NU41RTBfMEpvdEZaSVYtZzZlSklwaWU3S1YxeDVMME81aHByUXFWODVuRldvMHdMQlRzTw?oc=5",
+      "source": "Performance Marketing World",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T09:31:14+00:00"
+    },
+    {
+      "title": "Heres what the EU AI Act means for producers, podcasters and audio pros - - Happy Mag",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5ZVlNUakE5ZE1MSHZIekdhdEdoM2gyaU5HWnVaN09OTWFuWHZ5WlIzSXVJeVliU0h4SUc3eDZNQmpacm9Yd1VkcklNNHFyZlZHSGJBQ2RtckJ3R0hsV1Z3eW9VRkhBZVFOS1NmemFybjlnQUlDeVE?oc=5",
+      "source": "Happy Mag",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T01:29:15+00:00"
+    },
+    {
+      "title": "First Take: EU AI Act Transparency Rules Demand Broader Actions Than Expected From GC - Gartner",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE82djlxWkVOM21JM2VNZjVkWGZSQ1plZWlPYlQ2dVc3TlVpZ28xNzhWUjJoTldjMFo0U2R6TmV4NGh6N1VvcG1BQ2taMmgza1ZwdGk0X24wOA?oc=5",
+      "source": "Gartner",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T08:48:49+00:00"
+    },
+    {
+      "title": "Hard rules and high stakes: What the EU AI Act means for global tech - Tech Funding News",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9SelBrVXNGSGhRVGdsQXBlQ3h5QXNhWTd2NTd4S19MNzdIakNyZnVPVkdKNXptMkMyTkRuR0VpVXJCZGx3UW5ZX0VIckphdC14X0wyZzk4S3gyVXpXRmdibk90OVhtajNuUi1NYWFCeEc0OUpyNTNNM01KX2dPdw?oc=5",
+      "source": "Tech Funding News",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T08:10:06+00:00"
+    },
+    {
+      "title": "EU AI Act Labels Start Aug 2. AI Transparency Rules Explained - Forbes",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdUZpOWQweFRKNy1iY0tvUVl5Y1FhbUxVLXF1bE96NmotVUxhME9zY2Q5SG5HZkJoV3VreG55dzlpVjcyV2JLOUFrVi1FRUEydGZid1VjOThFR18wUzdSUi04eDh2TWNIVV9MMUgwbHg2RHR0RlRGNlpmbVBoU3J0MUVSYk9VUDBXSVRuenNoVzEwTXRrQVRaaFpNOTRGcUo1LWlINkNvZUlDVklQUzFjTS1law?oc=5",
+      "source": "Forbes",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T10:48:17+00:00"
+    },
+    {
+      "title": "Iveda Leads the Way in EU AI Act Readiness for Europe’s $18B Video Intelligence Industry - Business Wire",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOaUFyZW43RnZfWHRIUkVLOGJXcC1ad012NUo5S0xnZDByY1ZCRWoyVnNSeHktMjRXV2xpa2FSbDF0eWxoemlMS1BYZFlHS25tMDdIeTNoOG0xTGFLMUNmTXY2T0hkYmxMbDdxc01ScGs1M1ZKelpNMW1oYmUzd2lYeERyRUo2b2cwM09QTVVYQVJVQnJ3NHMyRzU0R1oxYjJGZFV1dXphUDI2SUFQbUdjazRFV2pyNzFjNHhRZzRINUlmclktMjhHU1g0aWlfVXloSnpFa1hFQVVfNG1NSGhR?oc=5",
+      "source": "Business Wire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T12:30:00+00:00"
+    },
+    {
+      "title": "The AI governance audit your clients aren’t ready for - ChannelE2E",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQMjB4SnFBX3BIV3RYYVBYSi1SRlpJekQtZEZRR0c4TWl2NHRqcGN6RHFyTDJUUDhHazBKR2pXRUdsRXVuQ0R5VlZ2Ul9hSDFDcHZVSUdqcy1iOEFIYTRQb2U1RVRRemc1Q3Nuc2liT1I1elYyWWdqUE5lLW1uTXQyZUVWMkhzcGZBZE1rQXZGSl8zNzRWbHc?oc=5",
+      "source": "ChannelE2E",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T16:44:46+00:00"
+    },
+    {
+      "title": "Celebrating the AI Act delay? The EU AI Act’s chatbot and content rules apply this week - TechRadar",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcjA2cjBDdnJzSDc4bnh0OTlOWHdQVVJxZVFEb2taSVJQX0tNMkdLY0lmOVBONWtDeHZ0VHBUY0UxelBBNWRqejkzbURGNXlWT2VUblhtS25RUXNzbmd1cE9QUnJmYkE0TzhPQW1PUkEwWGVfdHptVU5kQ2pDSjJQSVJzRTFiS3JWdFBZRERKRWFPbEd6YTNFcksxZ05XblpDeFI3dmRySlZhQWlqN3NwVkFRbXNMZw?oc=5",
+      "source": "TechRadar",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T11:00:00+00:00"
+    },
+    {
+      "title": "THE EU AI ACT CROSSES A NEW OPERATIONAL BOUNDARY - AutomatedBuildings.com",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPdlJMcW1YaEpBMkJrbWVBd21Ic1pPWWV5YWRGUjB0Z213bW5ndHgtUzlsQXY0UlpOaUZSbEZXb29zejRGY1g2RVk4dkZvNXYtcDN4d3BJbWNoS2VNUmt5VUlqb3RJSUxUOTFmM0FEYmVrLUpCUzM5OW1Zd0haOHdVbmhuSzZQWFN5aGpKV0s1N2VqZnhrMlRV?oc=5",
+      "source": "AutomatedBuildings.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T13:02:55+00:00"
+    },
+    {
+      "title": "Google's AI Governance Plan Draws the Boundaries of What Counts as Harm - Tech Policy Press",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPblZENklIVWZQaTVpTmR1VzZHT1c5elpTTkZTSXlVcEhEYVFBd1dwVERid2FxMTg1WC1mUWk3cTJ3Q2FMemJwWjJGa2YxTEg3UVFtWWtDUHUzSWp5ZnpfUXBYcWdac1FXTEJuaU0xYW8wWi1JX1p6RzQ3MnNQQ1Z0ZEZMdFdaUE5RN0I3dTl4QWZHa2VxRDNOeWpTYw?oc=5",
+      "source": "Tech Policy Press",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T14:14:04+00:00"
+    },
+    {
+      "title": "China backs UN on AI governance - China Daily - Global Edition",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNQTdhY1drQzRJamdCQW9GTjZBZTZJWDk1OGlYN1otM1A0eTc0dnhZMjBwcXJwVXNVZzAtRHIzcThjUGlMUVgzMW9BR3l6cW9tOXdtY0xrNjFrakxnYnVWNWtZdVg2TEZQcmpINHNTUVpnWmhsZ1k4UzRDdm1WeEpTb09B?oc=5",
+      "source": "China Daily - Global Edition",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T01:24:55+00:00"
+    },
+    {
+      "title": "Red Hat launches asago for automated AI governance - Techzine Global",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNbzZVV3NSOHp3SGhhS1NCWWNUQWhCZ0FncFBwa2Y1SXNXRnJ5THRIa2hlMVBzVUpJVE9XeTUxOElhcmJ1VDFtUzJCMVdTa19pWkdZeW9uOUdvRkdad0g0bVNZTHNmd292ejRGQmYwcVRnWldjRUNaOWl0QkJNbmo5eTh0R0ozdTVoUkxkZEZzdk0xVlVZZ09zXzlnTERNQQ?oc=5",
+      "source": "Techzine Global",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:00:00+00:00"
+    },
+    {
+      "title": "Buyer's guide: AI governance – Navigating new regulations and mitigating risks - Wolters Kluwer",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxON0Rtb3Vqb3JtSFNZQnBQcXFYM2JkUFpPRUpnVGxJYy1qNzlTSWp1bV94THZjRGoxUGtUMm5aYUFvaFozcDJuNmxPZElsaU55R2pNSFBSUjJtdVFFSnZQdnNteGxXSDdTdFdqZjhKVzZ5VmZsaEZtVkFhOUYwNEwxMlVOSW9Kb29yMXZFVlJnbXpjVVNTaXBNMGZmMWZtbWJQM3hVNHpsbVo0RTZXMUZmall3?oc=5",
+      "source": "Wolters Kluwer",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T22:10:13+00:00"
+    },
+    {
+      "title": "E.U. activated new powers to fine or restrict AI models from Anthropic, OpenAI, and Google - qz.com",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1ydUctZ2ozd2U0WFU3N1BZY3NCZ0Z1Q1VHZVV3blRQZldKb0VxdTZ4bmlVTW5YUjBvaDlNdVhkaTNsNU5mZ1RNbG01dlNrQUdMM1NlckdadHhqanNGYXpOS3l2SVE3SzRkSjBqUGkySGJuX1UxOWg4VmtjRHgydw?oc=5",
+      "source": "qz.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T12:09:42+00:00"
+    },
+    {
+      "title": "The EU Artificial Intelligence Act becomes law - Podnews",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5Yd056bVVCNGFJaEpVV2JIcXFiNGtUV2NCSlFYd0ZqeFU5eGl6WVVFaW40aW56MDVhUFdjM2JPMWNrZjZVWXMxLVAwUV8?oc=5",
+      "source": "Podnews",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T11:00:00+00:00"
+    },
+    {
+      "title": "MSPs get a way to turn AI governance into recurring revenue - ChannelE2E",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOY0o5c1kwY2F6dzBiRld4cmNTT3UxcHE0SW1FME8wNEdZeXdhTFpiQUVsVV9iLUdEWFl2VWlQaHFodFYzSWJJZ2lVaUo4anpsc3NKXzV4SWt6MVZscjNST2Z5NWk3N0VXY1psMVNYM1ExVmpyX21NUUJUYjlJT3d4SjRWbWxhOHZ1dFZmVVAtbFdaR3hfUXc?oc=5",
+      "source": "ChannelE2E",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T20:17:30+00:00"
+    },
+    {
+      "title": "EU AI Act: creators get no grace period for labeling AI content - notebookcheck.net",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVFd5ejBsamMzN0dBRm5XLVRCLVVnZkdJdUNtbDgwYi1uWDUya2hneUg0eGhET1FuZE9CLUloRmhCZmhJNHBoZTFXdGJBQ2g3amxKeGtjQkhXMnZhUHRDVWdfaG1iSjYxNEE4VVoxUFEwdjNoQUZlejFNZXZMS1hJc2owRlNfVWtpWExsOUVEdDVPOVlmZXFnbmQyamNGSUdhcVpaLVFEMlNUSGM?oc=5",
+      "source": "notebookcheck.net",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T09:37:29+00:00"
+    },
+    {
+      "title": "UAE and Meta explore partnership to strengthen online safety and digital governance - Telecompaper",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdGc3RFFBSDM5RzhzRFRKVG1HSU1JdTA3WUY4SWFJZk5BSmZma3Z0emZ6akMyX01aSTFRcUJXMzJETjg2OWRQb2ZqQ3UxVk5RVjMxZ2xXS2VOY2dvQW1CdmNPUUN3WUpRdFk5ZmhVekctTEJsVVQ1RzRrLWtsclBSY0F6akZNQjJKdVhZbXFnQkE0MHpZZnZWODZfTjV4bUphNWVJdG1sOUVZT2hMQ3NrWjRGanNUWVhJRVM3MnRiWWQtc3Jv?oc=5",
+      "source": "Telecompaper",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:27:39+00:00"
+    },
+    {
+      "title": "Most CFOs aren’t ‘very confident’ about their AI governance - CFO.com",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNdktvci1hOEhsdXVta3Q0T21oc2xlYXNwWVlCWTdOaEtVTzEtTjhaSjEyXzRrUFFTM1FDZVViNmc0cmRRaEtfQl9tR1ROd1ozVUxsZFZCSnpMaHNSWkR4bG5rblVVaGtJcjNRSHJnU28yaTN5WXBGS0NabWZscDB1anZ2dTNCZ2NqTHktaENkbEF0SFE?oc=5",
+      "source": "CFO.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T13:04:45+00:00"
+    },
+    {
+      "title": "Rethinking Africa’s approach to the politics of AI governance and regulation - ifex.org",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNMUJLc1hrTEFuMkp2b0pBdnlqcmJoZVhrLVloT0tSSUNVVmlUM1g2QzZBX2d0TzU2WlJoN3REODBiT25wbm5OYkpvTGtGTmVVYXBETDl3bnpCd0pxVnozbkpIMXdLRm9pc3YxSWpwNHNMZlBqQjF1N0tPRHVTMVowaDdYZlM0T0xsY3BPNzZiWHdxaVpKZUJraA?oc=5",
+      "source": "ifex.org",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T19:15:10+00:00"
+    },
+    {
+      "title": "The EU AI Act's Transparency Rules Are Here. They're Important, But Only Solve Half the Problem - Mediate.com",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdC1fWUFISkFQWWVWR2E3ald2X011ckpOX0cxRDZ6UUtJUlBQWFkxYm0xaUxROWRWcS1aMjF4Ty1IVXpyRm5zeHlsb2FEbEJ4T2FTNEhuTFJMNTZKUW9PNEsydDc1ZzlETk9uRUZaZUpzaDdHNEZ5QktlY0R0cXplc1lwSEE2QWtFcHVPdG9ZbmxwZ2Q3bGFkSjN5WTg4NWEzekZneDRBOW8zWXVCVWx5Tkt4ZTE5ZW5G?oc=5",
+      "source": "Mediate.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T20:00:20+00:00"
+    },
+    {
+      "title": "AI Governance Gap: 81% of CISOs Fear Agents They Can’t Fully See - Cybersecurity Insiders",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFA2VkZNLTBRZUlNc2t0LWxza0RHOUViS0tmTWM4S3RLQ3AwRk1ZQVVZUmFLTmpNZlpxekgtRnVyQTgwRkN5WDlOcU9jTzdDbFlBcFRpN3BvQTlOLU01YldvekFOS2VhWVVOdnNFNUdGSzJWNFpIbThNbmNPRktjdw?oc=5",
+      "source": "Cybersecurity Insiders",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T20:52:56+00:00"
+    },
+    {
+      "title": "SentinelOne Expands Collaboration with AWS to Deliver Unified AI Governance - Business Wire",
+      "url": "https://news.google.com/rss/articles/CBMiowNBVV95cUxPNDROQjQ3aUI5OVRCNVV0R1dqVDJtRExfNFpXTlFnYWY3ZUkxUmlGMXg0cUVoYldEbzk0YTFOZEMtVll5QVlfMk0wNDA2Rkx6MEdDWHh5OWtkd1lzNGR5NnVxem9sYUN6Y2N3bFVCMWRjWGxEQjlQZkx4RV9hcWhwOEk5TGVUNHFaSFBlTXMtbWZQcjJ3VlhmdFRGcmdGeEZ5QnlubURIUlZIQzZhM3N3ZTM3RE5mZ2dQRW5jQjVOeWs3OEZQdkdEcGRjTmU5d09jRFJlTFNQVW1qSGZuTS1FeDVEUy11d0p4ZzMxeUdtUS1GdUw4SmtNYno3bDZTLVN3cGxZd01GM24tTFpyeEg4eWlwN1l0TlVRYmxhcDczR3MySjBSaElZZm1nRkVMOVYxN0lNTUUtMVhsTWk4RDlrRTRRcjJJN0cxeUlPM2x2RnZQYmhKM0xmelpYYlNveGlwYlZhN1FFN2huZ0JhLXpOTXlpRXJNQktSazJuM0NfU2NpUVo3LXR4a0t0YVBRWXZpUkdkZ0p3NmhGS3JlSHlNek9Tbw?oc=5",
+      "source": "Business Wire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:00:00+00:00"
+    },
+    {
+      "title": "EU AI Act Transparency Rules Take Effect: What Affiliates Need to Know - Affiverse",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5Yb1l3Y250SFlBdW9MeVBDcnBsTkd5VUtla3JOWnVpT2xRbzhpMTg0dGNSNmVJYXpPNU1HT0I2VGFncW5LVVdfVWxjWUdwUmwwMms1Q01CWDMzakstVjlRcXdabEFhVlhXSXlxWEZWYnlZanUwXzlaNFc4dw?oc=5",
+      "source": "Affiverse",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T12:41:34+00:00"
+    },
+    {
+      "title": "EU AI Act Chatbot Disclosure Reaches API Builders Sunday: Vendors Cannot Comply for You - Tech Times",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOOExkYVdUaFlPcVFsWVRrLU9qS2ZWaldxMWhiX0hTRllDdjJuZVVybWFMUVJvN2dqX2VZRGkyeEhHSWxlcFFycFRCOUlYYkdGOTFmLUlMRUxPc0Vjc3JZbURzT1Zyb3dCV3YtR3R1TWFkaUMybGNZdG5HcWsyNk54NnpCbTdvZ0NnWnJieWRYVEpoSHcteXdRcmdYM3AwVXlrbDEzNHZKQzcxaUx5Q0NvS05jSzFfR2pVQjRBYmFDYS1JRmg1LXdOYTRNYzE4NnZERExZ?oc=5",
+      "source": "Tech Times",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T21:11:05+00:00"
+    },
+    {
+      "title": "Red Hat launches new open source project to drive AI governance - IT Pro",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOS1lKUkpxS3ctRG00cG9BWUJMbWpqbzdvd29meVBfNUUtR1M1SUlHNERfLWJqdW1rZEFMWUE0cWhtcVRnWHhvTGlaMHg0R0FUOVBRY1JJZzNVb0VJN212aXQ5QVcyWkpnWWJtdlRMUlVSd2ZkTHFBRjVtRnZTMnI5M0lYWmdFUXBYeHBUdnduT19yNTJ2a0ZtbUVnNEpSZ044RGVoRk90Qk1VQQ?oc=5",
+      "source": "IT Pro",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:00:00+00:00"
+    },
+    {
+      "title": "Is AI Governance Finally Taking Center Stage in Enterprise Strategy? - The Futurum Group",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQYkl6ejEtUkd3WmZGNV9CRmo1eU1TNTUyRy1mWXNkRWJzVGlXTUNkcFZLd0YyTXZoaXo4SmhfclJxNHVyaG9MVDU1WHJLUVdwZUtpN280ZGFkNVhaLVlEaFF1aHdNNUd3SWMyOG9HbWZhclk1SEpzeFR0MUhkYklLTFlxbUJpVFVNcVVhTmVmR2VMNk1NOVJERlhPMjU3LXV3Z2hvOA?oc=5",
+      "source": "The Futurum Group",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:43:16+00:00"
+    },
+    {
+      "title": "eGain Points to AI KnowledgeOps as Key to AI Governance at Ai4 2026 - GlobeNewswire",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOeTdoUEZBU0NZSmxSWUZhWndicHdZVjh4cWlwekNObTZ2RHFOYlVxREJDSnY0ME5qQmtiUGVHa2dQMlVJLU5weU16bVhYdF9nY3UyV3BWZmIwMkE1dF9QYmptTTZVUzlQS0Z6dlZCQmN2OTJNN19vV09ObUJsQnR1bzZWUGtJN2dUaU9mV1I1QWgzOGdQcC1BR2VHZGk2S0dCTmE5TkZfSlotcVJDZWNZLUstQTBfSWRRdlFDb2stZWV2NFdwNXkwNVY0bVlIVDVFeXVheEdn?oc=5",
+      "source": "GlobeNewswire",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T12:00:00+00:00"
+    },
+    {
+      "title": "PubMatic adds AI governance solution - marketingreport.one",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZk91dnpNV1V3bUpOQW91M0ZkNGZ2ZmJEUnItRXBfbWNGSERwQzBITnM4ajBTMVZOekdBdlA5aUhBSTNMUEdVdjBCN29VRjB0QkJSbFZMZlg1TWdVZlpjWnFBcEVPVVVFU3lfbDhrTm9NZEh3ekJsc0lPc3hxWVFGaHYxWG1xam5QTjA0U0lFMA?oc=5",
+      "source": "marketingreport.one",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T10:46:53+00:00"
+    },
+    {
+      "title": "SAP (XTRA:SAP) Launches AI Agent Hub As AI Governance Reaches The Boardroom - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPOVRtNzhJOUxPODB4QnFYNWVQVTBxcGRacTVxUXFxWXBha2xUVms5cDRFOHpMMFJUWnJQUTJodF90Q05GNVJzMGF6TGpZMnprLXd3bXhMYTBkMDRIV3NQTUhpckNnTW1LSmFDUVFPaGFoSDdhV0lhU2NYbTVYMGlNMTA1eFV5QWxDYnNZTEI1WXBpZw?oc=5",
+      "source": "Yahoo Finance",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T12:14:16+00:00"
+    },
+    {
+      "title": "The AI Governance Best Practices Every Small Business Owner Needs to Know - entrepreneur.com",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOWjk4cHB4NTJkR2xZSXRNNkFnQlYxVmd3a2VWUDBHTW9takVNaDJtUHZyMU90R2x2ZlMyTXlvby1YYjFJZU9wVXNJVGszRTRyQ3kzT09wRHhrN1N1Mkkyb0hOZGE2VDlIYzd6TGdTc2puMlJpSnhpOGtwbGt1MFhxdVBQdWlOTGZUN1VTQnN3R1BrTGhTQVBNdXB0dGpqVEpETThqVUtRMlR1REtiTEpVMWprQjlwVV9BVVdsRlQzdw?oc=5",
+      "source": "entrepreneur.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T18:30:59+00:00"
+    },
+    {
+      "title": "eGain Points to AI KnowledgeOps as Key to AI Governance at Ai4 2026 - markets.businessinsider.com",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNeG1yWE83MWFRU3pIaUxXV1RIdVc4NU5VV3JYeDJGNWdidV9GamkxMWZvTlN4UGNTVS1qYjhCWFFpTkhqYnlqc3l3cG5sbGI1LW5aNEVWa0pvSTA1amhsMF9lOVlQNFlzbG9LMjIwX0p0RzJOejhwdHc5VmU5bi1hWU9jTDhURTRRSTFBd2ZPZGJsalFhTTRxUW9tbFFhZDRFaUVLak9QU053X2ZyUEx3WF9uR19mUk8xZlNQd1JCdEZzbWpC?oc=5",
+      "source": "markets.businessinsider.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T14:26:44+00:00"
+    },
+    {
+      "title": "The EU can now inspect AI models, block market access, and fine providers 3% of turnover. The grace period is over. - The Next Web",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQcVdjNkJ2MWxSa3hWUTdjMmJUV1dWNVBOVUtMRGl3YjV3MzNFQVRoQjBDd0NOa1hCWHFMOTBWTWpnMWFGUThLd2Ruc3VqM1hmWlQtRHlZNWRaWnhSaFFpOU15X2ExeUJTa2RwZ2wxS1l3X3paeFY0OWlxNWZlU1JRRUxR?oc=5",
+      "source": "The Next Web",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T20:34:29+00:00"
+    },
+    {
+      "title": "AI governance is the missing security control - SC Media",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQU5YcDdPMUpHOTEyMzdPbTBOT0d6Vld6T3BLVHhMZm94ZTNHVk1KdlJmZXdwTG16WEJKY0NNdGVTQkpJMFpHQ0wwekZYd0hwaFQ2emVFZ05iN1phNDZpdGE4ZVJ1UWw5TjJMWUJGcEVEUFEzNGtGdnVWRlo0dEI1aE1neXdWZFVl?oc=5",
+      "source": "SC Media",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T18:38:26+00:00"
+    },
+    {
+      "title": "Tech policy experts call for stronger Google Search antitrust remedies in US appeal - mlex.com",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOTnZ6LV9rdDdIS3hWUW1ETzdsRU51bFcyNXN4UnJDdGRxM3FsNy1iZGl2dkVvc0J5a0Y5bDhINWdYMXU4V3NaV1JGUmM4TkRoNjc4aDYxcHRoMHdlTEpNOG5Nd1BqVzg0MzFPOFlYQlBTZGdnQVNtYXRrcGljSlJzTGhyM21uNmpkdWR2bm8wRzJNUUJxekZGSVphUlhnbVFpczJUSTNCcUNDRG1iLVpOLUNXbzJUaDBTLW9tdXFsVC1icnJrOGNhVjVoN3lhOTRUTHh0clFCNkMxVy1YbXBsRGlFdEbSAVpBVV95cUxNbGdNcXowSC1IcFJQUjJ5SC13cVZvUmdjSEZKd0xqX3ZDeTVITVN6NkgtNkt6ZHM5alB0X08zZTNLQ3NkOEtmMlFhTnpFZHNlSng2SS1rQXEwdEE?oc=5",
+      "source": "mlex.com",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T19:48:00+00:00"
+    },
+    {
+      "title": "Red Hat leads open-source project to automate AI governance - SiliconANGLE",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOallCVjA0UFNLek41U2VWMmJsNnZiQzBwSjFjMENaejhPaU9ZUWFZVnhrTG11UzVYSTlwdFRpbWw0dWVfUFVNb2IwWm02TjhmTGhMSEF2TVpmS0E5cy1sX0ItS081eE50TzJIbU9pb3NVOHhHSVNtczFYOUZHQkdLUUctVlF4dXJVdjdkVXhWNnRrV29YQXBGeA?oc=5",
+      "source": "SiliconANGLE",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T13:00:59+00:00"
+    },
+    {
+      "title": "Red Hat’s asago: Standardising AI Governance for Enterprises - Technology Magazine",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVE5BWVhhcnBrOEFUYUlVbl9hdE5pVDc0cC0tdXQwdEJyeGhIYTBYS3VUMmh5YXczZnBpMnh6Z2tmODM1R1hJR05tSzRHN0FybFpQbm9abkRaOFBpSmxtaVVXU3Q3SmxQVjlwY2JwTGNkdnd1d1RLYXNJREpiY3ljRUVDSmQxUWVNUGJVQlBLTDFBbmlXaC1wX0NR?oc=5",
+      "source": "Technology Magazine",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T15:00:32+00:00"
+    },
+    {
+      "title": "Egypt elected to lead Arab AI Governance and Quantum Computing Working Groups - Tech Review Africa",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNUktuU1BSc0w1bGNUTnhsU0tJNzVsM0pBWUhvb2pvem45M3BUVXQtZ2Vjb0tRalI2NGU4TUtpVTZELUdfQ29zd2t5eU1jVk5ZVGZsaXFNWHVid240cGlSZnZHdkpSSGpYdXNaSnl6NWxiV3NIV2VTa1NSbDMzVFhIVnJ6dE85LXRQQXdIQzFRMHNHOXFPdFZPaHk4RlJ4NlFiTXRKNFVtRDZGVUVNMmJrQmh2WlIzUE0?oc=5",
+      "source": "Tech Review Africa",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T10:43:01+00:00"
+    },
+    {
+      "title": "EU draws the line on synthetic media: What the new AI Transparency Code means for marketers - Performance Marketing World",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQM053SjFnQnJlSXkwS3F3RmRxNmpFUEp6RVRDV1VFbTVodXVyeWROcHNQazdoR3VqMXpHT0lWYzFqNEtSaE5nR1NsZXpMOHVXeHU5MTJURVZFZ3VIN1RuOVlJbDVLTldYWW5RUUdIQTNlLU1jSUx4andaY3lvdGNJb0xBamZMcXR5ME1IbngtUkthTl8xQUJDSGNYa2dILWJDLUhRYmpZMVU5WHFBMHZXSVBtZDNxdms4cmFBcmhlLTh6WVZnc2xJ?oc=5",
+      "source": "Performance Marketing World",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T12:50:48+00:00"
+    },
+    {
+      "title": "Quisitive launches Spyglass Guardrail to strengthen Microsoft 365 security and AI governance - Technology Record",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNLXRVR2c1THgwTkJaaDJaaTdQZjFqWTZmdXJocmdSamlOckdOLTVxRzFSclBKT3NpVko1VTdQRzc0NFVyYXRmX2FpZmNuNV9qMV8tS0owM3cxanFKckZCUHhKTHVqYW03Y1F6MS0wbnZNS1lUZlVnUGk1cUZHZEVqVEpMQVBJVGxqSGM4LVc4NU4wUUUtSTlDWXBlOWZpQm0xbmh6YkIyM2c2MThPLUEtMndQNVkzcmViVDJ0TkNTOXhBUThVRXdDREQ5RnhHQQ?oc=5",
+      "source": "Technology Record",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T20:04:06+00:00"
+    },
+    {
+      "title": "Strategies for Cyber Resilience, AI Governance & Smarter Municipal Decision Making - National League of Cities",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNaVg1VXpfSVpqM2NIMUd2TFdDbHBGOUJOVWRqOXR4Nm90T0lnRDRIQ0VGWHpQcWt2WFVBSVRCRUp3b1dRSWpGOGFoejVQUGNQV2YxQ3duNndVQ1YzaGJRMUowZ2c0di13M0FSWWNXR0V2dHhvUWRBTGtaOWJjWWxsMWRtUVhPNHpETDRndXNHUW53ajV4Q0pFX2xjMzd1bW9sbUFKeS1Tb29EdVU?oc=5",
+      "source": "National League of Cities",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T04:40:28+00:00"
+    },
+    {
+      "title": "【一般社団法人日本ディープラーニング協会】AIガバナンス第三者認証制度を創設 「C認証（AI Governance Core Certification）」を8月4日から運用開始 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9YWGFKY2VFZ0gxVzFNaldGbDhZZy10ZDRqQjBPUHk2cEdYeTFpODNhX082emd0N3BERWJ2QWVqX0Vlc2ZJQWowUG5TYl9aR3FKa1RwZzZIdVA4X0JramRNX19ya0JKOHZCN0E?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T02:00:02+00:00"
+    },
+    {
+      "title": "AIガバナンス第三者認証制度を創設「C認証」を運用開始 - 株式会社インプレス",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5EY2RHdXdvZkxtM0Y2Si1NbU9ObHc1Z2RHUVlZZlJSZ1FjdU1TR3pPb3RYcEo2eUx4UlhRZXQ2VE5OQWlsMHBUM1dTQTFLM09LWFlUOUNndkoxNVpNVEdxZ1gyRQ?oc=5",
+      "source": "株式会社インプレス",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T09:00:23+00:00"
+    },
+    {
+      "title": "日本ディープラーニング協会、AIガバナンスの認証制度開始 - 日本経済新聞",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5Lb0RLRjFYQV9yT21HRDlTOEZPbzdCTTdIcUtyVjZBMEFPcmYxeWxfT0NtcWlRMmYxSmN1RFBJV0VydjNiWVFhVVRWYW9RVjBDWG1QRTVDYlcxRk9MaUMyME4yUjhXby1DdkduUg?oc=5",
+      "source": "日本経済新聞",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T01:14:29+00:00"
+    },
+    {
+      "title": "金融向けシステム開発が祖業のRGS、新たに「AIガバナンス／データ保護」の統合型製品を自社開発 - EnterpriseZine",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9zZzVabnpkWGxCMDNFdHlBc2RpOTBWZmZMcXR1eW1JNDJkZDNHRHZQTGlSd0NFTC1nRG8tN1ZfYmhWbmdYRDFZWmwxb0JPYjNud3pXTkJB?oc=5",
+      "source": "EnterpriseZine",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T09:11:46+00:00"
+    },
+    {
+      "title": "各方面と共に世界におけるAIガバナンスを推進=中国国連大使 - CGTN Japanese",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBrd2hOaGRWR2JOMVlQUHhUM2paWjBvbFhZVktvdWVWN1M3R2dSc1NYRGZzQzhMSzY5V05mY0VhYS1BVG1oaEE4WVFjZmEwRE1oUm1TX0h0MFEyTk9tVzhyWllSYXljZw?oc=5",
+      "source": "CGTN Japanese",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T10:05:24+00:00"
+    },
+    {
+      "title": "なぜ「マオリ・オールブラックス」が千葉・柏の葉に？ 柏の葉スマートシティで生まれる共創と国際交流の形とは - radiko news",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBuZ0pQNmxkQWZjMHBHOS12T0ZpWXlwYWcyUWNxODR2S2VMSHRSTEpSeExHZjYwUy1WNnpSV2paVENBNnpDa0NWUFR1bFJuYUQzd0JFWmlXR1hQMnlZSTNJ?oc=5",
+      "source": "radiko news",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T11:50:00+00:00"
+    },
+    {
+      "title": "日本PFI協会、都道府県主導の広域スマートシティで9月にセミナー - 建設通信新聞Digital",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xWEhxM0hINnJKeDJXOXZXMWRQME4yRHhHZ09ldzhlQzU4bnp1QUFjTjh5UVpNM1p5SC0yeVl4aWJ0dDZVM1hLUjFWQURfRlJjdFhRcGt3?oc=5",
+      "source": "建設通信新聞Digital",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T02:50:00+00:00"
+    },
+    {
+      "title": "他府県の数十倍…大阪府「80名体制」のスマートシティ部門はなぜ“自前のAI開発”にこだわるのか？ - ビジネス+IT",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE10eE53Ny1OSWE4VzNaaUpoTXdwT3dGYWZGdkRlRE0wazU4ZWJpWW5CQlhVMVgtdFl1MlloODZxaTB4cjV3c3pwMldTVlR2a3c?oc=5",
+      "source": "ビジネス+IT",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T22:00:00+00:00"
+    },
+    {
+      "title": "Red Hat、AIガバナンス自動化のOSS「Asago」公開…Nvidia、Microsoftも参加 - BigGo ファイナンス",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE50X2Nfa2FISjFRUXFiMHZpVURqMUlpLU1fSzZZMmM2T1lBOWVXZ2MtcEtPZ0FscjJIekwyaDdEeWZsd3EwWWdQVXZFQnJCV1B0WUVSMWFCSktpN1FaTktVdkl6QUxWTy1qT2dxa3l0UXB0WjBr?oc=5",
+      "source": "BigGo ファイナンス",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T08:55:00+00:00"
+    },
+    {
+      "title": "AIのリスク・コスト・証跡を、ひとつのプラットフォームで ヴェランシオス(Veranthios)、日本市場で AIガバナンスプラットフォームの提供を開始 - newscast.jp",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE55LXA0eHdQWTFocGNscEl1VU9UT3hFSTBNZUlFRTcyRnJMLTRQMEpsMV9lUHJSQl9BV0dCUnNKdkl0cC1GLVRicXZtZmdWaVU?oc=5",
+      "source": "newscast.jp",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T01:15:00+00:00"
+    },
+    {
+      "title": "なぜ「マオリ・オールブラックス」が千葉・柏の葉に？ 柏の葉スマートシティで生まれる共創と国際交流の形とは (TOKYO FM＋) - Yahoo!ニュース",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOdFhTQUNpSWh5NERVcjRnYnJmajU3NWhBQ2dTc1BVY0Uyd0Y2OGcwSUlFYmUxQUVtejRMVnp5RmNCOFlmY0hFVW9PdWQ2SHJRcXl6RG9vYkJlTTYyZ0pkaHV5VE1Ya2EzZkUwdTVXR2JLMnZNbkFMd05KVEtjd1pIWmRnSDNhT3FhV1Ayb2x3?oc=5",
+      "source": "Yahoo!ニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T12:50:44+00:00"
+    },
+    {
+      "title": "富士ソフト、日本ディープラーニング協会のAIガバナンス「C認証（AI Governance Core Certification）」の先行認証取得企業へ - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBpSE94Z1VmeUVZNHlHaWRyN0pxalA0c3p6c2oxODhScUN0MDNGem9XcEhFQlZDUXR3WjBCY0RieFNUYVotTzlVWnQ1OElaTXhMMlpFbWRlNUgyUjhfdUJWVmtYbWxrem1aaEE?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T05:05:07+00:00"
+    },
+    {
+      "title": "花王、AIガバナンス方針を策定 国内社員に教育を開始し順次グローバル展開へ - EnterpriseZine",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9MZU4zZXloWHRvSDZuVE5HTzhDR3h1QzVJXzU1SndiQTNlWkFvb3RJd1V5ZnpOZENtNk1sSmpMc3FlUHBNMEpTN3JjQ1Z0UHdrUWM5QS1R?oc=5",
+      "source": "EnterpriseZine",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T20:07:25+00:00"
+    },
+    {
+      "title": "JDLAがAIガバナンス認証「C認証」開始、ABEJAなど9社が先行取得 - BigGo ファイナンス",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9XQ0ZqdmYwcUNEZWQtNW54MTNRUGlpWUNXNEF4SjJrc2YxdC1xNFQ2NkxmYWJhYW5JUTlObWZGZ3dGcndQZjIyaklRM1JtYjlsM1pZNzc3N0ZsTGR0aTRYUlZFNTNjN2ZxYm1qUnEyM2lxMlpr?oc=5",
+      "source": "BigGo ファイナンス",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T10:25:00+00:00"
+    },
+    {
+      "title": "Elith、AIガバナンスの第三者認証制度「C認証」の取得支援コンサルティングを開始。生成AI時代に求められる、企業のAIガバナンス体制整備を支援 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5sd2ZKbE8tZk5XdmNYVkRJcjBud0NISllTQUFwVU5GbExjNjdIZlBYUk5PQUswNmNZTkJQaDl6RWJ2NnhQTmdNSzhkajNnVFJCcVpEYTQxRzRVNVloWWVnNVp4RElSeVhZenc?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T04:00:02+00:00"
+    },
+    {
+      "title": "【Algomatic】JDLAによるAIガバナンス第三者認証制度「C認証」を取得し、認定コンサルティング企業として支援開始 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE94Tzk5dGV6Umo3dU11X0E0STVlRmxIWlhJX3g2YkFSR2dpSlRXYmxldjVmbUxydlhaRS1iTE5odUt2TDVKMXpYbF91NTlvQXZHcFRyWTIwX1g2aElaZG5zcHpZcGFRQzYzaWc?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T04:00:02+00:00"
+    },
+    {
+      "title": "【株式会社ステッチ様】AIガバナンスの第三者認証制度「C認証」の先行取得インタビュー記事を公開 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0zeXlpcW5TX2FuMV9wTnhvZVFyQVM2Rnk3eWVnM0dqSGZVdHBFSVQweXU1TFJaaG1QeWxvUFhpbzNiYV9hVUdKVFJjV2VzT01QTDFoT3JwQzNqSGdwRllxNzRlcFZKbTg1UWc?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T04:00:02+00:00"
+    },
+    {
+      "title": "オプティマ・ソリューションズ、AIガバナンスの国際規格「ISO 42001」認証を取得 〜安全なAI活用に向けた管理体制を確立。審査機関ビューローベリタスより認証授与〜 | オプティマ・ソリューションズ株式会社のプレスリリース - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9XdWpCYUV4Z05CTnlIOG5QVzBLTGJDRjJHYjQ2azA5YXE0a0FEVXNHU1VtdHVfUEdNYzQ5RV9rR1UyRTJZOHNGa3F3TVFjWnh4UngzX3d4cFZVNEtYaXhzaGRiZ01lem5jaFE?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T03:00:01+00:00"
+    },
+    {
+      "title": "キカガク、JDLA「C認証」の取得企業に。企業の認証取得を支援する認定コンサルティング企業にも認定 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBCc0M4OGNWQm5td3kydjVQajhZWjBKZTUwcndyTldHMjZ2ZDZ5MWtDSGxLcVZTbWlIbFFKZW9UTXpIYlRiRXhITjlXSFY4MDc4V3dVS2ZpSVA2Szd2OGNuc19XUEhwZzBZRUE?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T04:00:02+00:00"
+    },
+    {
+      "title": "Naver、屋内・屋外ロボット統合プラットフォームでサウジアラビアのスマートシティ攻略へ - BigGo ファイナンス",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9UdWpJUGRyWkVySzVJdkNsUkdvSUk3U2NmcFhXWmh4Szc4d3ZjOVJ1OE1JaVBWTlBLX3h6NHpKTGw4OHNnUzZFQk95aFd4QmVOLTEzUktLY2NCa3BNYjR6cUZ0eGdNaGl4T1BGUTFibHVMbl9r?oc=5",
+      "source": "BigGo ファイナンス",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T01:25:00+00:00"
+    },
+    {
+      "title": "東京都庁第一本庁舎で運営中の「西新宿スマートシティラボ」において、空間体験プロダクト「360maps」を活用したARイベントと対話型AIサービス「AI Caster」の体験展示を開始 | 株式会社360Channelのプレスリリース - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBZbTdRbjFiWmNjRm1CSm9QcXFHV2c2R0VLOFVNaml4SnZ2ZG96bEF4THpBaXNSQWF2WnVxcjJRcEZMUFlzeXR2MFhpVEV6QW90QXZUQ2Rvd0ZtVWJodHBXbjlaSUJpRU9nMVE?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T02:10:01+00:00"
+    },
+    {
+      "title": "各方面と共に世界におけるAIガバナンスを推進―中国国連大使｜Infoseekニュース - Infoseek",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5jMjlnMF9lQWw3eVVzX045TUVOQkZybXJMVGExZmFMRW1DcUxaUS1VM094dXVhc01makdJZW5DNGxzdVd2VnI0Y0loV0NJaHM2QWJxNW5aSkpTRER1UFdqcFR4UWU4R28za2c?oc=5",
+      "source": "Infoseek",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T13:10:02+00:00"
+    },
+    {
+      "title": "企業の安全なAI活用を包括的に支える「全社的AIセキュリティ/AIガバナンス体制構築支援サービス」を刷新 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5iNUVJaUVlbHcyQUZsZm9nOVZhWUVjY0plMXZnbzdoMjNjNXNLLUp2STltalVrVkU1M1Q5aFVrSm1mRXpwMXdCQnA3Sk9WU0hRZEZXVVh0RjhBUkxSOUNPUTh2RWhLMUhqVlE?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T06:30:01+00:00"
+    },
+    {
+      "title": "加賀市から始まる次世代インフラDX 360度ドローンで“AIが理解できる”都市の3DGS化：スマートシティー - built.itmedia.co.jp",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFAxV3Y2dEZCbXhYV1hqOE1xT3JzaGhlVk5tQXdvQm5HbEFqY3ZJZzhtXzRWeklHR29WZEJMQ296V2M2WjBJY0ZGUmg1aTZNQTZ0Ulp3OTg2MkZoUGtOdmdUQTBxMDlHMm1iaFlOMw?oc=5",
+      "source": "built.itmedia.co.jp",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T01:00:00+00:00"
+    },
+    {
+      "title": "エクサポリシー、個人・専門職向け AI ガバナンスアプリ「Covenant Personal Edition」を Microsoft Store で提供開始 — 機密は手元で、ほかはクラウドへ - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5sTTBKQjNqTmRvOHYtcUpvS21KLXBucExHdzhhLWJlVDE2T3I4NzRqbGE0eWRQYy1NQVVObVlPWmtQNVhpMGVkeHdvRU1DVHJ4bDAyRXRJTllLMHJuX21HMmt0S3N2dkhBcHc?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T00:00:01+00:00"
+    },
+    {
+      "title": "【次世代AIとガバナンス実態調査】 把握しても防げない「シャドーAI」の実態―約7割が直面する従業員の無断利用リスクと“管理の限界” - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1aT0NOV19jQ0ozWkhNandVUnBxZUFlRFRLQmZIcjlBT0Y1UkNUWUtIY3VVb1dvSHM3TTZVOUtNWE5qdlZxWUkyN2hqMDM2SnhVSXpwLUNEbUxzeXBqODFMY3JWV2U1X2FUYWc?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T04:00:02+00:00"
+    },
+    {
+      "title": "なぜ「マオリ・オールブラックス」が千葉・柏の葉に？ 柏の葉スマートシティで生まれる共創と国際交流の形とは（TOKYO FM＋） - ｄメニューニュース",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNM19EXzhvSzJSVnEtWk1PcEJVMEFOei1rMFRGei00bTBYODJfVmdkazhBVDZJaHlZNGhhenN4YlJxMmhiNHlicFN6ZG92Q19JbkpRcXJGSUpmRGtqZlEzVTJoNHd3cUhYd0ltT2dkUkJWWGxKd3ZmQzFIWVFSRXhuMEJuVWpoY2kwMHRsOHhaVTQ?oc=5",
+      "source": "ｄメニューニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T11:50:00+00:00"
+    },
+    {
+      "title": "メディアにおけるAIガバナンス：国際的な経験とベトナムへの政策提言 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdUlTaWZRUXdzS0lfdkMySHQ4eEtKc2JLMl9kY1RjWmM2b1BfX1NCT1piSFltRmg5bDVTYXFhZFBWX1B6cURpSFgwX29qUnNQZ2NoUE1wZ1F6bTZEMEdiNnF4VG9QcWxiMW9TVWpGTUx2ZHQ0N1o1V09maTdSYXRfcTlEa2lsdGhYM25kZGZST2FJYXdfcUN2MTdiZkMxVDVUakhtbklLTlZmUmxsbFE?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T04:45:31+00:00"
+    },
+    {
+      "title": "レッドハットがAIガバナンス自動化基盤「アサゴ」発足 - CHOSUNBIZ - Chosunbiz",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBEaVdTaVhucGpiMkNhRWtBLXRqaDhuUXk3SC1XWldZYXNOeVRYWG1lUjJ1bDUxZW0wN1M5bEVfTklvcFNfeWgwY0ZGMFhBcXkzUWNwR0otZUJBTGJvYm0wbE1JdmpNQ0NpR0dRZExiTHdXdnl3ZVE0ajFn0gGOAUFVX3lxTE1wRm0xRUxZYXZ2VnVmdTBkZGhDamxqUkNEMUZvamNPNV9YV1liWnlOWTlfNFgxbnJnQXViNEc5SzE4RjFEY2V0RTdVemk3TWJzVzF4TnJ4ZjdMVWhtanZPWG0zVEdaaHk0RGJtdnRjbXVLWE1WU1BHWnhOYzdKaTRPWWpidlV4TUNFMVVUNVE?oc=5",
+      "source": "Chosunbiz",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T08:26:00+00:00"
+    },
+    {
+      "title": "【A株午間評論】科創50が半日で3.73%急落、原子力発電とスマートグリッドが逆行高 - BigGo ファイナンス",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9JWjFyTWNSa3V6MjdZWnU3QmdDWjJkRmpFallPcUs5Y2g1cHpmV3p5Sjl6SEI0dzhKZGFQdDQ0d3BTOVFtZTZ4RmRlM3o5LUEwbVkybENDM1lxRFpzdWxmTExxaUJ1cEZBR1FibnNVWURWNVhT?oc=5",
+      "source": "BigGo ファイナンス",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T04:25:00+00:00"
+    },
+    {
+      "title": "ベトナムが「追いつき、さらに追いつく」ためには、AIガバナンスの問題を解決する必要がある。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPblQ2ZllvNGlSYVNpUVNPUXFlVDZvV3hrcy02Wm5yM1ltbmMzTlQ3LV9CSGlhbXVzU0Y1WkVtUnJIbXRIYVpvc2tySTRSNUZ4SlJKTkIxZ253b2J4MWFBQ3lUSXZxb3JHcmNnM1hqTWVVazVaOFJ5ejg2dG1wMkxBaWY2X2NOZHBVY040MF93?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T12:09:39+00:00"
+    },
+    {
+      "title": "規制業種向けAIガバナンスプラットフォーム「Veranthios」が日本市場で提供開始 - South65",
+      "url": "https://news.google.com/rss/articles/CBMitwJBVV95cUxPYnpDMFl5RUVEaWpKZ1N1czlJb0Z0UlkyZ1VDQjJjYV9aSWZWOVFRemotVlg0MnNXaEdCbnFsOF9XQmJEcEdEdW9qSzZUQWthNXo2dUpocC1kU1ZuSFZKbFREbFZnclJEazBmMldvSW5HT3JReFNUWjVKYlJ3dFZ5S3A2YXNQVElQMVprNFhuRUVGX3V6cHBpTlJ5MUpKUW9QN0g5cmM3VUF6WmpJOHV6ZTdYR1RpdDNjTkJyd0JBeTVJajR4MlRmNDg0Nng0ajY4WjRjYVBVbUJRWFdaOUdGNURZUHV6YUV2ekJQWnEyN3FjTUZaX1FGdENGclFmNUJtUWFGVDBCZFd3NVNjNGZUdUZFeEctUDBkenBPNFlaUElsc3RnQk9SS0EwVmFMS1JPXzFQRkVoc9IBvAJBVV95cUxNQU1qcHo1Y1M3WFpycmJxUUhmcUJxekF0VDB1d0EzZ3ZUVWR4S0dPUk90MVR2VlgyTGRreXBkQWl2azJqQ0FLZ2w1VTVfZW8yLV9ndXFHb01uRVpISjNfRTdhYVQ2RWZOckxaNXZ5NWx5SU01ZzVMbFRjeUNLYkNLUlFwaTJUMExnM21nM3V1Yk15OFg2U0VGcUU0YnF2MjR4NUh6dWpYNEtFTDlpb2V0NlhobVlRcXBTQnlGZEdPRVRLNndldDRxUmNhNHNrdG4tZmJkQVpLcmhmWDZaTkN0eUdZRVptRHViSVF4dUszNkNkcHppaEhwN2NCbVk1cUwxbS1XUFlWYURiUHUyVHo4UEpNZHg5QUdFaVlZcVZoNEFNNDdxUl9Qb05xUFhSWlVobGVnYkZoMEFDek9W?oc=5",
+      "source": "South65",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T07:00:00+00:00"
+    },
+    {
+      "title": "ホーチミン市：グリーン成長とデジタル技術モデルに基づいたスマートシティの開発。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSnFuSlhWNWIwWUozSEpNNEwycmhiWkJoSWN3alJDNUFnZzBlZ3FUckhqV1hUdzR4U2YweDdCVEY0Y2FSUG1XQlFsYjJpcnM0RnRzTmhtalVRdnFpSUJaZjdRTnYweUxGM0E2RXJxaHl2RV9vOUZSQnFfRVNIbHZTd3Z0N0F2NEFzX0dCQXZqNFJEQjRMaHZLcVlYdVZYTURmR1JabFM0T0Y3bTlNbUlKeUx3?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T01:12:51+00:00"
+    },
+    {
+      "title": "「配電系統の課題とキラー技術DERMS」と題して、Ｎ研究所株式会社 代表取締役 元岐阜大学スマートグリッド共同研究講座 特任教授 蜷川 忠三氏によるセミナーを2026年9月8日(火)に開催!! - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9PN1lFWkZ1NlFuQXZJZ1lDMjM2endMWVFCNFJHZE1qVVZMUTQ3N2FiNFRPNUM2bzdrZG1SYi15dUpEa2lUa09fbWFUVjh5LUZfekJnRWhPM3RfQUxDc1EtNmY3UzZCRVNPWXc?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T01:00:02+00:00"
+    },
+    {
+      "title": "VINHOMES GREEN PARADISEは、国際規格37122に基づいたスマートシティ認証を取得しました。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNVFMtSVBBdHBoNlFiX1g4MXdQa0xlaTBSOF9pQnZocWtvYTVyZUZDWnkwSmVsUjFOSFZoajdsRXRpWHlUYlFzMjlwQXNBUUZsSzV4SDl2b3ZkYTRoSVRIV2RvZF9HdVoxSU1odHpRWE4xRlREbTNkNmZacTd3VDJhYWZsRC1fbFFIelR3WkktUS1mZXhFME16dmRnZGsyeGdOaUw5cmIxZFg0ZXhoTHRmZkVXWHNFUHlfV0NxUENpWXRva3pV?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T16:38:28+00:00"
+    },
+    {
+      "title": "ニンビン省は、科学技術に基づいたスマートシティの構築を目指している。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPZ01JR0JGdGJxRzlJZXQwWnVpbEx3OWg2MjAwVlJvRWp2dU84eENaUU9QdWg3NHNlU0dIRzhLZGpvLVNGeS13WWQ3UEZGajBlckpaTVBNSzVISXF6TTcwT05MSk1yS3hmalA0Umktb1FZdEROUmYtOWdUd08tOFlBbmRVSXpFSE5WRFRwQkFVaXhBUXdOdUNldnY1ZDFtZkFzNjJrTVZJak0?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T04:08:38+00:00"
+    },
+    {
+      "title": "国家的なデジタル変革のための統一的なデジタルガバナンスプラットフォームを構築する。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQbl9DUUE4LXExY0xXdzI4SVZPa3FWYzBKc0w1OE8wbnNvV1RjU29MMkZaNWVFX05ZOUVEdkltckZoR2RmZTRWNXZzdnlxMHhrbmFLYS05TnBCSVJBZjY0dVBBeVdIU3libDk5bkhtV3NZc1ZNVnFrcnVKZkpxQWhEWVdvcjZRSFNEM3RNSk5ENHAtUQ?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T07:00:00+00:00"
+    },
+    {
+      "title": "ロッテ・エコ・スマートシティ・トゥーティエム・プロジェクトの投資家は、17兆ベトナムドン以上を支払った。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQl8yQUlKUG1jV29QY0dLR1FSUUR1eC12TFYzRFRnOXQyTjc4cXkxSFA5NWFoNWl6YXFtX0JJSkF6VjRZZEpEakd2ZkV5QU9PRkJ6bFBLMmNnYUllalpoLW1iRmpxY0N3QkMySHIxamdSV045aXRwb2ZLSkk0UWF6UkxRVllRUzZfRXZ0R1NUQjM5Z2xQWmJXVktxWnU?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T12:26:04+00:00"
+    },
+    {
+      "title": "ヴィンホームズ・グリーンパラダイスがスマートシティ認証を取得。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNQ3RwN1pVeTRQOVVTQnE3RnFwTklFMWRpRHNxWXpGUjVmVm9oUXRvLWE3ODN1NGxlSWIxUVRjWXNCOUpnMXgtQWYtVTlWZlIzcFdsamVLZ3ZBdnpMNzlzSTNTemNNcnI3WHFEZEt2TlBwSWdqOGFLNnlURHVMNUtsZHdhRHZDMWNhOE9TNTFkU2QzTE1WalE?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T09:04:59+00:00"
+    },
+    {
+      "title": "デジタルバンキング：データ品質とAIガバナンス能力をめぐる競争。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUXR6dnVaUEcwckc1UTlKYzRHREFiM2x1ZVVpdTdNTXBrSUJ1aDl5RmgwZ1ZCelVSeWR4Um5fNE9PcXN4ZHQ3TzVuek9yUGcxNnBjV2Q0XzdmOHJ0WGZ4b3JYWFR5WGtoemF1TXVRN0NjaExnSW9HREVMeXZnZDV5aW15UTAyM04wLVNkRktnXzMtVGFIYTBGOQ?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T16:37:41+00:00"
+    },
+    {
+      "title": "AIのリスク・コスト・証跡を、ひとつのプラットフォームで ヴェランシオス(Veranthios)、日本市場でAIガバナンスプラットフォームの提供を開始｜Infoseekニュース - Infoseek",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5vNTJuMnJkRjVYM09iYVptYU5iNGZZajlsMm1qY25XYXhuWm8wb0QwUmhLNXc0VDhCRlgyMkhnQ09TNW9VSGZEUEp6dEk0NURqM2N1S0xUbWNsaW5IRHJPUg?oc=5",
+      "source": "Infoseek",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T01:15:00+00:00"
+    },
+    {
+      "title": "オプティマ・ソリューションズ、AIガバナンスの国際規格「ISO 42001」認証を取得 ～安全なAI活用に向けた管理体制を確立。審査機関ビューローベリタスより認証授与 - Excite エキサイト",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE4wYkt3bHczdkRSUUlHdGxaVnNwMjBGMmZGM1hHRzdCM3BOTXdPeUxSWmEyYkZuSldrcFhfOEw3ZWo1SjFTMjNyWUJ5WTVMeHlOM1laS1ZlM3FNektJU0l2dnNfNUFHQnVLTEp0Rk8ycThTczA?oc=5",
+      "source": "Excite エキサイト",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T04:15:00+00:00"
+    },
+    {
+      "title": "ホーチミン市は、スマートシティ開発の基盤としてデータとAIを活用している。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUkFTODBLQVF2S3NLTGxZUDV4c3JVbVhtSTc0OExYT0Q3S2s4MjM0UGhGTmJ0RXJfWU43TGJncTlHNXJsSEVIMVg4b2kwQXlMN3lrT0JSQXpkc2w1NFRCZExzaUJLMXRjZVNwQ3lEbmd3OGJLUWJueTFUM0U3b3R1NUQwbTVBVFViTWNQMmZzNTk1dXA2d3Zv?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T10:54:37+00:00"
+    },
+    {
+      "title": "ホーチミン市はスマートシティを目指している。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMVFVbGhiejdrQ24zODZUUGlSaFBZOWp1Q1R3S3ZycEozSTVReEQ1LUNCXzV0RUlrOWkzWll2UXdUTDQwdWdWOWJFUDBGeENRaXFIb2s5dHRkTDd3SW1wOE5aalppX1RrUklwZExwOFlkSHBaa3h1NFlBSHVKYUhjZU5kRTNkTWE1?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T10:12:27+00:00"
+    },
+    {
+      "title": "なぜ「マオリ・オールブラックス」が千葉・柏の葉に？ 柏の葉スマートシティで生まれる共創と国際交流の形とは - 千葉テレビ放送",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBTbXd5YkxzYUo5SUN0amFDTmpJbTZ5d3FrRlZTSXRxbGhZbWNWT0hpMkxETGFZMS0yaUNiY1k2TG5tanVsQWlwVXhBRFdEejBYaGVKYV9PU0dOUTJmSmdF?oc=5",
+      "source": "千葉テレビ放送",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T11:59:22+00:00"
+    },
+    {
+      "title": "プレスリリース PRTIMES記事詳細 | さんにちEye 山梨日日新聞デジタル - sannichi.co.jp",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB5cElRWC1lNWRHb1ZuLV9wZDd4T0dUTHFROHNOXzlENGY3ckZEUFJ6LTF1cDQ5Q0lTbGNCNWg5bGExR01LdnppRkdtc2pVb0JWcmsxUjh4STVXWDBrYVJvXzUxbw?oc=5",
+      "source": "sannichi.co.jp",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T06:55:21+00:00"
+    },
+    {
+      "title": "ロッテ・エコ・スマートシティ・トゥーティエム・プロジェクトは、17兆5000億ベトナムドンを超える土地使用料の支払いを完了しました。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQOTAxYlJBOGdndUNnRERDQ2J0MFdhT2hWY2xRVjZ5N3FhLU9hd1RUcmt2Z1RvSmlkckNqeDloekkxR1lhLWhzNDhGOFotRXY0NmM1NTJkY1lMUG0wWnFob1NSandaekVjcUg3NXg1THduVDJWdVVpeFotbEJoTWEwUEJPWlg0LVQybUVtcXowNlhKUHJ4dmdXWFpINlBCY1dWNGFnSllzV0Rfd1E4d0pnTw?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T11:07:11+00:00"
+    },
+    {
+      "title": "バクニン省は、世界のスマートシティ上位50都市に入ることを目指している。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNOVhLaldiV0hwV3VWRVg4X29wU2liZk1CZnd2TzZlUVUxaG1ybS03a2MxSkFiNkxEM2VybzNoSWN3bjlqczU4eTEycjNHUUZxX0hyVWJDOGN0WERnTUJxQ3JUcmYxOTREa1dLS2FpenUxdEZ3QUZTN0l4YWlyZm1HM1pDd3dXVU43UEo0NTl3?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-01T07:35:31+00:00"
+    },
+    {
+      "title": "ロッテ・エコ・スマートシティ・トゥーティエム・プロジェクトの投資家は、17兆ベトナムドン以上を支払った。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNmROSU1qYTdUS1EzLUJCVURrY1BOc2d4ajBTRC1LUXdRUzJkTVRKcmUtTlFfcUtZNk9WNnNIQ2M3M3ZNN2NFa0ZZb1QwNm5iZWhkLWZqZDNLVWZFeUNxVW1JVFp1V3Z3RkFUbXdzdmMxOGI4ejZXUXVsRW1Fa2tSbm5Vd0l5MUNIeWFwV2V3YXR6RW5BOXJQLWFUck1iMjBm?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T15:21:32+00:00"
+    },
+    {
+      "title": "プレスリリース PRTIMES記事詳細 | さんにちEye 山梨日日新聞デジタル - sannichi.co.jp",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9rNUZXVGQwT3RBc216SkwxUFEtQ1BCdm91RndJb3FTN1piLXc5X28ydTA0Z1NIWmtmbXg3aGdqNUxhQmdCdlRRakFSOG12RkpzRlVPVFBxS1ZVcmVTQVRVUEh2aw?oc=5",
+      "source": "sannichi.co.jp",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T12:59:14+00:00"
+    },
+    {
+      "title": "ヴィンホームズ・グリーンパラダイスは、国際規格ISO 37122に基づいたスマートシティ認証を取得しました。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOT1U0eHdKMW5iaXZlbllvTERfWUZoZ2JvZzFiYjVncngwdnc4akQwem84ZllWLXduV1NfYnVXTG9uaXExTG1JTVN6YXF5UlRHWTF4Q19NMVZmS0JtTlkwN0VPNmROZ0ZyVW4tVDBZempDYWpZbmZReDBIZ3ZXcmxBRTg0eVNzTFZLdE51RmJNWHdPUjBTUEp0Um1wWU1yUGJXV1B0MS1nZkw5S0lQZVNfUmNzdThRVlV2TVpUM0NkLWdPMlVDSks0X2F3?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T06:21:40+00:00"
+    },
+    {
+      "title": "企業の安全なAI活用を包括的に支える「全社的AIセキュリティ/AIガバナンス体制構築支援サービス」を刷新 - ニコニコニュース",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE8wRk5zYUhjM3QyREtYQVdLS3dXeGJqVnRwRzUxTXNtVFU4d0xwLUE4OFNoVklLejFBcXNfamgyQkZ4bFVCckhYUi1IT2tBQUVudGQxdHdBeGpqMy0yQTV3Y0tlMGRjOWUtU0ROUl8tdzl6ZnRObnU3dkVGWQ?oc=5",
+      "source": "ニコニコニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T19:18:14+00:00"
+    },
+    {
+      "title": "2026年から2030年までの期間を対象としたスマートシティ開発計画の承認（2045年までの展望を含む）。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQUG1rdU5KLXQ5cDljZlhqckxPUDh5YVRLN195MEN6b1RVWERKYVdBZzdUa0pvQWpFOGt4Nlpza0tQMGpnOHBGNS1JWm1sQmpYNnJueXVJWEFTVUt5cVhiV254QXlqcy16ODZjRGxMNk9yMW01cV9feHZzNmZDcUtvUGJEUXd3RjNrNGpNclRtcjgzLUpVVk1qRGgzdDJnOHE3U2Q2RVFFQ19NN3lMQklWMjdn?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T12:09:06+00:00"
+    },
+    {
+      "title": "富士ソフト、AIガバナンスC認証を先行取得し安心なAI導入を支援する体制整備 - ニュースメディアVOIX",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBOS3FBbWd1NmJkYWtyWDFtcjd0RDNBZVVtNHloeXBRdElVbFNlQ1ZuV0dTRm0tLWYxTHJrOEFwZWhDcUhOMlhfVl9xcjFqVktrSWptWUQwS0dsWXdLdzhoVlVuSWlYRVhPaGhoS3VKOVRIODdHaTZnNQ?oc=5",
+      "source": "ニュースメディアVOIX",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-04T07:44:29+00:00"
+    },
+    {
+      "title": "スマートシティポータルアプリ「EYE-Portal」が15歳未満の給付申請に対応 - J-CAST ニュース",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBlRXdNb2lucU5ua3JnTUtOT0xINllyVTRHOEZaWmJwNUJodUh6REI1aTVrbEM2RFZTZXE1YjFSQ211ZXpGaFluWjFha2F2VzlGbUEzUkFKY1Z0dkU0ZGtCcnpPeDNESmZJ?oc=5",
+      "source": "J-CAST ニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T02:00:00+00:00"
+    },
+    {
+      "title": "AIのリスク・コスト・証跡を、ひとつのプラットフォームで ヴェランシオス(Veranthios)、日本市場で - ニコニコニュース",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1BMWtQMTdVSU81M2FKMXliVkdDY1g4STlKeWhURURmZnNzeDlieFdNVWxTTGRtYjZYZ2pjZks5QVdoVXRBb1pvTXBVNEtlT050TUVXdA?oc=5",
+      "source": "ニコニコニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T01:21:26+00:00"
+    },
+    {
+      "title": "キカガク、JDLA「C認証」の取得企業に。企業の認証取得を支援する認定コンサルティング企業にも認定 - ニコニコニュース",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE16R1RSR1Vlb0Y5c1NNNllMSzM2bmFZWWZ5aDItQ1dwVU84bzktSmZWYlVROFBnbmUyRkt4aWlqMFFSNjg1dmYyX3dfQldZUnJYUUJyMw?oc=5",
+      "source": "ニコニコニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T13:15:35+00:00"
+    },
+    {
+      "title": "「メガ」プロジェクトであるロッテ・エコ・スマートシティ・トゥーティエムは、土地使用料として17兆5000億ベトナムドン以上を支払った。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOd0wxd19BOHJVQmd0UGxubzl1N0NjdEtySG5laE9Sb01hdEROR1BaZlVZYmtJLUgya2lIcURNRE96ZVhWZ1pHWkh1S3ZWeEJZVjVvUGVPVG96UU5najRESkVCc0ttNV9rT3ptTE5QdGI5cVVrNWlWTDlNUlVlYXBHMjRfS0ZkMzB5WWNpay1PeEYySjFLMGF3dktn?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-03T07:00:00+00:00"
+    },
+    {
+      "title": "東京都庁第一本庁舎で運営中の「西新宿スマートシティラボ」において、空間体験プロダクト「360maps」を活用したARイベントと対話型AIサービス「AI Caster」の体験展示を開始 - Excite エキサイト",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9acXAxWTBEc056cmozMkVKWWlPd3VycVdlRExRYXJIbmZNT2dWSmxHWTBxTUsyOFJEYWkwTlA0MVdsM21NVXJTSFMwcnZnWGlDcmVBTk12OVI1dlg3WXJzTXRrVFhzeU9rZDdSQzhTaVZuQ0ho?oc=5",
+      "source": "Excite エキサイト",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T20:10:00+00:00"
+    },
+    {
+      "title": "日本の地理情報システム（GIS）市場規模：スマートシティ、地理空間分析、AIマッピング、競争ベンチマーキングおよび市場 - ニコニコニュース",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9fV0dhdUN3aG9JN003cjk1WXVBdGRRc1lXZlVRQ0xLWVkxRlU3QVNxTTlnZ3VUYlRDSnRnNVJ5OWNBVVlQME1Rb3pQQTFudjNkQnZ1aw?oc=5",
+      "source": "ニコニコニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T07:00:35+00:00"
+    },
+    {
+      "title": "東京都庁第一本庁舎で運営中の「西新宿スマートシティラボ」において、空間体験プロダクト「360maps」を活用したARイ - ニコニコニュース",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFB1bjZhaERjWUF6aWJWU2RmX1BJZFhFdFE1c1I0RG5TcGJKelh3bnZQdF8zUlJHdVpjLXd6X3hvYUhFdy1YelpNWlA2ZV9LNHFGM3ZYYlg2WXRJWE9GZ01fZXlBTzFHS3luSFN0Y0VWdk9sU3lYd0Z2SGhSbw?oc=5",
+      "source": "ニコニコニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-06T09:48:32+00:00"
+    },
+    {
+      "title": "Vinhomes Green ParadiseがスマートシティISO 37122認証を取得 - Laodong.vn",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPT0Vfcm5zc0JjYk9kWnMwODd5QnRlTV9pWXpsX3loTEpfZGUyeVBhUmlPNVRJSHZRSjZac2xEdkFnVlNoaEViejRMVHdFQm1xb2pXUENOSE1oWjZmbGZkam81aDNjNm9qZVBmRFF1c2tiNkNZbEdQaGVDTVdSOF92N3F1c0Z1eWdCQmRTT0wyY1BDUDgtVW4xbUVmdVFNcGdKWEtlSk85RldxWWdGajFZSjZLTlE3aWkzaWRRd3FNbTh4RUVM?oc=5",
+      "source": "Laodong.vn",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-05T09:35:27+00:00"
+    },
+    {
+      "title": "各方面と共に世界におけるAIガバナンスを推進―中国国連大使 (2026年8月2日掲載) - ライブドアニュース",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9nRmdXUjhVU2tVTUwtejZEUERDVmE5Z2V2TXJobER4blVPaEV3RFdhQ3ZhenBWa0QtRVFiWGdQUjd2ODY2dzlTZWhCQTNYSWFEak84dG9QYzBPX0g1YWc?oc=5",
+      "source": "ライブドアニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T13:10:02+00:00"
+    },
+    {
+      "title": "各方面と共に世界におけるAIガバナンスを推進―中国国連大使 - ライブドアニュース",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE05dnRRTWpnTG12TjdwaUc2a1lGN1V5ckZjZjdBdGhNSUxhaXMtNGtoUWlzWVQ3QkVKTEhBeUlkUGRHYV9KNFZxNU04RHBPTlVFQ3ZMb05fY2VQYm1Lc3Y0?oc=5",
+      "source": "ライブドアニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T13:10:02+00:00"
+    },
+    {
+      "title": "なぜ「マオリ・オールブラックス」が千葉・柏の葉に？ 柏の葉スマートシティで生まれる共創と国際交流の形とは - ライブドアニュース",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBmNEcxZWt6cm4zSHRMb1RkNmo4dS1vSmJHTHZTTWIxMDZYTmZnZTYyc0pVVDY0dGN0cWNKXzlWelVGWmhFMmp2ZGNZcjdDb0FmNmh3amMtS1BVeU1GdTdF?oc=5",
+      "source": "ライブドアニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T11:50:00+00:00"
+    },
+    {
+      "title": "【画像】各方面と共に世界におけるAIガバナンスを推進―中国国連大使 - ライブドアニュース",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1DbWFRSUpoUy1UUi1YQVdOOG9wTjd1M1pBeUpPYTlLM1RXWlhqZWJ3R2owandUckdBVTJJaVE5MFVxWmVqcVdkZ2NEUWp2MFJ1X19WbE0wMXQyZDlGa1ZaVHUtVW1zU0ZCV09HXzEtdmdYaW9kVGZKLUNzQUo?oc=5",
+      "source": "ライブドアニュース",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-02T13:10:02+00:00"
+    },
+    {
+      "title": "なぜ「マオリ・オールブラックス」が千葉・柏の葉に？ 柏の葉スマートシティで生まれる共創と国際交流の形とは - Excite エキサイト",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9EZnQ5bTRwMnhDS1dSVFhKaVBhRzZmWVZSRUhFeWtCSmxHQ0ZPb2ZkeGRYU2RHY21BOXkyTTM5dmVNM0FORjFtZHpnYWJ4Rmc5NDdiSm5ockJTYnY1N3VlQUVVSnlaUm4zdXBzWU9YdDdyUQ?oc=5",
+      "source": "Excite エキサイト",
+      "category": "gov",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-07-31T11:50:00+00:00"
+    }
+  ]
+}

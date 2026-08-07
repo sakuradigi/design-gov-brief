@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>早晨簡報 · 2026-08-07</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-07</div>
+    <div class="headline">AI 重構創作工具與城市治理：從生成式介面到自主營運的智慧社會新紀元</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design is a tool to mediate between technology and human culture.</div>
+      <div class="quote-text-zh lang-zh-only">設計是介於技術與人類文化之間的調解工具。</div>
+      <div class="quote-author">— John Maeda</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">創意工具融入對話介面，未來設計更考驗美學決策與提問力。</li>
+        <li class="flash-item">歐盟 AI 法案逐步落地，安全與透明成為科技產品通行的基線。</li>
+        <li class="flash-item">公共治理轉向自主研發，大阪府組建八十人團隊親自做 AI。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/08/89303/" target="_blank" rel="noopener">精準數據驅動視覺：從直接行銷看設計如何掌握轉換密碼</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】ダイレクトマーケティングを主軸とした広告代理店の株式会社ラインが、グラフィックデザイナーを募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/07/6a3bb4745c396.jpg" alt="【求人情報】ダイレクトマーケティングを主軸とした広告代理店の株式会社ラインが、グラフィックデザイナーを募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">很多人以為設計只是做美觀的視覺，但這檔投遞行銷招募案展示了實體行銷背後的硬實力。在精準投放時代，區域行銷與分眾手法需要極高響應率的設計巧思。當代設計師不能再只待在象牙塔追求純粹視覺美感，更要懂數據反饋與行為心理學，將視覺轉化為可被驗證的實質商業轉換力。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Direct marketing agency Line is hiring graphic designers, highlighting a broader industry shift. Modern graphic design is no longer just about pure visual appeal; it requires understanding regional user segments and response metrics. Designers today must blend artistic sensitivity with data-driven audience behavioral insights to create impactful, high-converting printed and physical media. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/miyawakiayako-mujibooks/" target="_blank" rel="noopener">重拾日常物件的溫熱：無印良品特展看布貼畫的永續生活</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">MUJI BOOKS『人と物』特別展 宮脇綾子</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/07/unnamed1.jpg" alt="MUJI BOOKS『人と物』特別展 宮脇綾子" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">無印良品展出宮脇綾子的布貼畫作品，絕非單純的藝術回顧，而是對當代過度消費主義的溫柔提問。藝術家將日常剩餘布料轉化為富有生命力的作品，展現了人和物之間的深厚連結。這提醒我們，好設計不一定要用高昂的新材料，重新挖掘日常廢棄物的視覺美感，才是當代永續設計最核心的靈魂。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">MUJI BOOKS features artist Ayako Miyawaki&#x27;s textile collage work in their special exhibition &#x27;People and Things.&#x27; This showcase highlights the sustainable design philosophy of transforming everyday discarded fabrics into expressive art. It serves as a reminder for designers and consumers to find aesthetic value in mundane objects, fostering a deeper, more mindful connection with everyday materials. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/ai-design-introducing-adobe-chatgpt/" target="_blank" rel="noopener">專業工具進駐對話框：Adobe聯手ChatGPT重塑設計工作流</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Design: Introducing Adobe for ChatGPT</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_introducing-adobe-chatgpt-create-edit-get-work-deepti-pradeep.jpg" alt="AI Design: Introducing Adobe for ChatGPT" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Adobe 直接把 Photoshop 和 Firefly 等 70 多款專業工具搬進 ChatGPT，代表著設計工具介面的典範轉移。過去設計師得在無數軟體間跳轉，現在只要用自然語言溝通就能發動專業繪圖工具。這讓創意發想與執行之間的摩擦力降到最低，未來的設計核心將不再是工具操作熟練度，而是你提問的視角與美學判斷力。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Adobe has integrated over 70 professional tools from Photoshop and Firefly directly into ChatGPT, revolutionizing creative workflows. By bridging natural language processing with high-end graphic design capabilities, this integration minimizes technical barriers. Designers can now focus less on software navigation and more on strategic direction, concept generation, and refined visual aesthetics during creative brainstorming. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/08/06/garden-anomaly-a-tiny-webgpu-and-tsl-experiment/" target="_blank" rel="noopener">瀏覽器裡的感官實驗：WebGPU 賦予動態網頁互動生命力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Garden Anomaly: A Tiny WebGPU and TSL Experiment</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/07/gardenAnomaly-1.jpg?x48895" alt="Garden Anomaly: A Tiny WebGPU and TSL Experiment" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這個結合物理形變與程式生成音效的 WebGPU 實驗，展現了未來網頁互動視覺的無限可能。過往受限於效能的複雜動態，現在能在瀏覽器裡順暢呈現。這標誌著網頁設計已從靜態圖文排版全面邁向動態感官體驗，未來的數位品牌打造，必須把聲光互動與真實物理質感納入核心視覺語彙中。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">&#x27;Garden Anomaly&#x27; is an interactive WebGPU and TSL experiment blending physics deformations and procedural audio within a browser environment. It showcases the emerging trend of real-time GPU rendering on the web, elevating digital experience design. This transition allows creators to build highly immersive, organic, and responsive web spaces that merge visual poetry with advanced technical performance. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/bord-restaurant-visual-identity-and-web-branding/" target="_blank" rel="noopener">典雅襯線遇上電光藍：斯德哥爾摩餐廳品牌的當代視覺衝突美</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Bord Restaurant Visual Identity and Web Branding</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/bord_hero_mac_1to1_0.jpg" alt="Bord Restaurant Visual Identity and Web Branding" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">斯德哥爾摩設計工作室 Several 為 Bord 餐廳打造的視覺識別，巧妙地將古典襯線體與高飽和度的電光藍結合。這種傳統底蘊與前衛色彩的強烈對比，精準抓住了現代餐飲品牌渴望兼具質感與年輕活力的心理。它告訴我們，品牌識別不一定要走極簡或老派路線，衝撞出意想不到的視覺張力才是躍出螢幕的關鍵。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Several studio crafted a striking visual identity for Stockholm restaurant Bord, pairing traditional serif typography with vibrant electric blue. This design approach bridges classical elegance with energetic contemporary aesthetics. It demonstrates how modern spatial and hospitality branding can break away from conventional subdued tones to capture consumer attention through high-contrast, memorable visual storytelling across both digital and physical touchpoints. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxNR1NWRzFoZFB5N2dmOXczdXdmOWlmREZ4Mm9fUGstcGFtMVM5eC05UDRpalV6WTA0WjFHNXE1TFRaTzd2ZTRsUFo0R3laVFNpTXVJdkFsZ0luLVBQT1JwRVZoVzdLTlozNFp2RVFib0Yzd1BlbHhtVVQ3VGoxU1dVZVNEbEJZa3NHakVJay1DVFlFTFBrVHZsSjlrYlR5Z3BhTnljaWpqb3hmbTlLVXc?oc=5" target="_blank" rel="noopener">歐盟 AI 法案生效：從合規時程看全球人工智慧治理新秩序</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The EU AI Act Is Finally Here: What Changes In 2026 And What Can Wait Until 2027? - TechRound</div>
+            <div class="item-sentence lang-zh-only">隨著歐盟 AI 法案在 2026 年邁入實質執行期，全球科技企業正式告別 AI 野蠻生長時代。這套法案依風險等級劃分監管力道，要求高風險應用公開透明。這不只是法律規範，更是產業遊戲規則的重組；未來能脫穎而出的企業，必然是那些把負責任的 AI 與倫理思考直接融入產品開發底層的領跑者。 <span class="src">— TechRound</span></div>
+            <div class="item-sentence-en lang-en-only">As key provisions of the EU AI Act come into effect in 2026, tech companies face a redefined regulatory landscape. The risk-based framework mandates stricter transparency and safety standards for high-risk AI deployments. This enforcement signals a global shift toward accountable technological innovation, where ethical AI architecture becomes a mandatory baseline for market entry and long-term user trust. <span class="src">— TechRound</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOUTFQTENDM0pJZXVuaUpYQUpLT19XYzk4a3liWTFwUXpxLU1kak5lYlBpdW5jcXVjdEFPMVRBRW02ZW90YjNlVkdoYWdIUVZxQ0dfbGlRTEZKX3Y2a3NqSHdvZU5QU1VoZFFsZkxLV21Nb0pTZ3pFOWxYUVN3aTRDN0Y3b2tFcklFcmdWNG83OTBGY1pranV5WVdGOA?oc=5" target="_blank" rel="noopener">重塑全球技術話語權：中國提出 AI 跨國治理願景的背後布局</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">China&#x27;s Vision for Global AI Governance: A Path to a Brighter Future - Alwihda Info</div>
+            <div class="item-sentence lang-zh-only">中國近期積極宣揚其全球 AI 治理願景，展現了技術標準背後的在地主權與國際話語權競爭。在西方各國紛紛推動自家監管框架之際，全球 AI 治理正走向多極化。對管理者與數位政策制定者而言，這意味著未來的科技跨國合規將面臨更複雜的地緣政治考量，如何在不同價值體系間建立對話機制成為關鍵課題。 <span class="src">— Alwihda Info</span></div>
+            <div class="item-sentence-en lang-en-only">China&#x27;s proposal for global AI governance emphasizes multilateral cooperation and state sovereignty in technological development. As global AI regulatory standards fracture into competing regional frameworks, this vision underlines the geopolitical struggle for digital leadership. Navigating international tech policies will increasingly require understanding diverse governance paradigms and balancing global interoperability with local sovereign regulations. <span class="src">— Alwihda Info</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE10eE53Ny1OSWE4VzNaaUpoTXdwT3dGYWZGdkRlRE0wazU4ZWJpWW5CQlhVMVgtdFl1MlloODZxaTB4cjV3c3pwMldTVlR2a3c?oc=5" target="_blank" rel="noopener">擺脫外包依賴：大阪府組八十人團隊自研 AI 推動智慧城市</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">他府県の数十倍…大阪府「80名体制」のスマートシティ部門はなぜ“自前のAI開発”にこだわるのか？ - ビジネス+IT</div>
+            <div class="item-sentence lang-zh-only">大阪府打破傳統公務體系將 IT 外包的思維，組建高達 80 人的智慧城市團隊親自開發 AI。這項大膽舉措顯示出公共治理正在發生根本性轉變：政府不能再只當科技買方，必須具備自有的技術研發能量。唯有自己掌握數據與模型，才能針對在地行政痛點做出真正靈活、安全且貼近市民需求的智慧服務。 <span class="src">— ビジネス+IT</span></div>
+            <div class="item-sentence-en lang-en-only">Osaka Prefecture has established an 80-person dedicated team to develop proprietary AI solutions for its smart city initiatives. Moving away from traditional vendor outsourcing, this strategy highlights a growing trend in public administration: building in-house technical literacy. By controlling its AI tools and algorithms, the government can deliver more agile, responsive, and data-secure municipal services tailored to local needs. <span class="src">— ビジネス+IT</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiugJBVV95cUxOWnlrU0R1Qy16NlZKb1J5OU1pd29xNUkzNHluNExtVjFYcVdIcXRwaW02OF9YMmVCSXNOXzh1dzd4NGRsbS16QnBEd1ZDS2lZekxLc3JsaVk2R3ZTRWJwaWVLWEZRTlh5QnU3bDROVjZBX1MtT3VLSHF0OVo2anNYUXQtb2ZiVlg4aE1QOGJDaFhLSWwwODNHSWNiLUpLdUZOWWdseTRVV0FwM09neVFnU0lic3lUVHcxajMzeVo1TG4tN0ZPcUVmWVRKNHl2Y0U4SGtRNTRPRGp2QWlnVkdqaHo0Q3BsZW5tV01JdlVIN2NmYXMyRjdydG5SMkNqNnRmVGRFN0wxNGFXVi15REJnQzRoVXpNcW5xaERRV3h2MkhSVVJGTnNFOG1NOHM5OXNZTG1MNHhsSFFLdw?oc=5" target="_blank" rel="noopener">遠距醫療新日常：數位照護科技如何精準銜接超高齡社會需求</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Telehealth &amp; Telecare Aware - telecareaware.com</div>
+            <div class="item-sentence lang-zh-only">隨著全球高齡化加劇，遠距醫療與數位照護不再只是備用選項，而是醫療體系降本增效的剛性需求。當前的發展重點已從單純的線上看診延伸至基於感測器的居家持續性健康監測。這要求產品設計師與公共政策制定者跨界合作，打造出極致平易近人、無數位落差感的友善照護體驗。 <span class="src">— telecareaware.com</span></div>
+            <div class="item-sentence-en lang-en-only">Telehealth and telecare platforms are evolving from emergency measures into essential infrastructure for aging populations worldwide. Modern developments prioritize continuous home monitoring and integrated care networks rather than simple video consultations. Bridging the digital divide through intuitive user experience design and equitable public health policy remains vital to ensuring broad technology adoption among elderly citizens. <span class="src">— telecareaware.com</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE9acXAxWTBEc056cmozMkVKWWlPd3VycVdlRExRYXJIbmZNT2dWSmxHWTBxTUsyOFJEYWkwTlA0MVdsM21NVXJTSFMwcnZnWGlDcmVBTk12OVI1dlg3WXJzTXRrVFhzeU9rZDdSQzhTaVZuQ0ho?oc=5" target="_blank" rel="noopener">進入政務空間的科技體驗：東京都廳以 AR 與 AI 打造公民互動</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">東京都庁第一本庁舎で運営中の「西新宿スマートシティラボ」において、空間体験プロダクト「360maps」を活用したARイベントと対話型AIサービス「AI Caster」の体験展示を開始 - Excite エキサイト</div>
+            <div class="item-sentence lang-zh-only">東京都廳在西新宿智慧城市實驗室導入 AR 空間體驗與對話服務，讓抽象的都市計畫轉化為民眾可感知的沉浸式互動。這展示了智慧城市推動的新策略：不只在背後做數據運算，更在市民生活場域提供直覺的介面體驗。將公共空間遊戲化與人性化，是提升市民對城市治理認同感的重要關鍵。 <span class="src">— Excite エキサイト</span></div>
+            <div class="item-sentence-en lang-en-only">The Tokyo Metropolitan Government launched AR spatial experiences and conversational AI avatars at its Nishi-Shinjuku Smart City Lab. By turning city planning into an accessible, interactive spatial experience, Tokyo demonstrates how public sector innovation can engage citizens directly. Utilizing immersive technologies bridges the gap between complex municipal data and everyday civic awareness in public spaces. <span class="src">— Excite エキサイト</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-07 08:05:05 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
