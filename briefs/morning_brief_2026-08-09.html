@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>早晨簡報 · 2026-08-09</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-09</div>
+    <div class="headline">從空間設計拆解城市衝突，到企業 AI 治理的結構性骨骼重組</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Good design is a lot like clear thinking made visual.</div>
+      <div class="quote-text-zh lang-zh-only">好的設計，就像是把清晰的思維轉化為視覺。</div>
+      <div class="quote-author">— Edward Tufte</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">京都研究顯示，觀光衝突常源於空間瑕疵而非旅客素質。</li>
+        <li class="flash-item">歐盟 AI 法案落地，將合規轉化為產品競爭力成新主流。</li>
+        <li class="flash-item">企業 AI 治理非公關表態，需要組織架構的深層重組。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/08/719691.html" target="_blank" rel="noopener">觀光客脫軌非道德問題？京都用空間觀察拆解城市衝突</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">京都の観光地で“迷惑行動”を生む空間条件を分析。行動観察から見えた、まちと人のすれ違い</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/08/sub5.jpg" alt="京都の観光地で“迷惑行動”を生む空間条件を分析。行動観察から見えた、まちと人のすれ違い" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">很多時候我們習慣怪罪觀光客素質差，但京都這項研究揭開了真相：往往是空間設計「誘導」了行為衝突！當便利商店門口缺乏停留空間，人群自然溢出到隔壁住宅區。這告訴我們，解決城鄉觀光摩擦不能只靠告示牌與開罰，而要用「行為觀察」重新設計街區微循環，讓空間自己引導出合宜的行為。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">A Kyoto spatial study reveals that disruptive tourist behavior often stems from poorly designed urban spaces rather than sheer lack of etiquette. By observing real-world interactions around tourist hotspots, designers can reshape streetscapes and spatial flows, proving that spatial design is a far more effective tool for solving overtourism conflicts than simple policing or warnings. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/report/design-corporate-training-2/" target="_blank" rel="noopener">設計思考非美工專利！企業打造解決複雜問題的敏捷大腦</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">なぜ今、デザイン研修がビジネスの現場で選ばれるのか？―研修の主催企業6社に聞く　後編</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/22f9bedee802b9707d7e8be9a1370767.jpeg" alt="なぜ今、デザイン研修がビジネスの現場で選ばれるのか？―研修の主催企業6社に聞く　後編" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">設計培訓早就不是設計師的專利了！日本企業現在把它當成全員必修的商業思維，因為面臨市場不確定性，傳統的邏輯分析常卡關，反而需要設計師的「共情與快速迭代」能力。這篇文章給商業人的啟示是，導入設計不是為了把圖畫得更好看，而是要重塑全體員工解決複雜問題的敏捷大腦。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese corporations are increasingly adopting design training programs across non-creative departments. This shift reflects a growing realization that design methodologies—such as empathy, rapid prototyping, and lateral thinking—are essential strategic tools for business innovation and complex problem-solving in an unpredictable market. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/etereo-zine-m-martins-estudio-editorial-layout/" target="_blank" rel="noopener">網格系統的視覺詩意：從獨立小報看當代網格編排的魅力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Etéreo Zine M / Martins Estúdio Editorial Layout</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_etreo-zine-m-martins-estdio.jpg" alt="Etéreo Zine M / Martins Estúdio Editorial Layout" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在數位載體充斥的時代，這本獨立刊物展現了模組化網格的極致美學！它證明了看似嚴謹的幾何結構，只要搭配精妙的字體階層與留白，反而能創造出極具呼吸感與視覺衝擊的排版。對設計者來說，這是一份完美的示範：規則不是限制靈感的枷鎖，而是支撐創意優雅落地的骨架。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">The Etéreo Zine publication showcases how structured modular grids and refined typography can create an engaging editorial layout. By striking a balance between strict geometric alignment and expressive typographic hierarchy, this design demonstrates that layout constraints actually fuel creative freedom, offering a masterclass in modern visual communication. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/saddington-baynes-identity-and-3d-visual-system/" target="_blank" rel="noopener">平面標誌已死？運用光影與動態 3D 重塑品牌流動視覺</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Saddington Baynes Identity and 3D Visual System</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/saddington-baynes_0_clean_0.jpg" alt="Saddington Baynes Identity and 3D Visual System" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">品牌識別早就跨越了平面時代！倫敦團隊這次用真實光效、玻璃折射與動態循環，替品牌打造了一套會呼吸的 3D 視覺系統。這代表未來的品牌設計不再是畫一個好看的平面 Logo，而是要為數位介面與動態螢幕，打造一套包含材質、光影與流動感的身歷其境品牌體驗。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">London design studio Saddington Baynes revamped its identity using real-light 3D rendering, optical glass physics, and seamless motion loops. This project signals a shift from rigid 2D logos toward dynamic 3D visual languages that naturally thrive in interactive digital spaces and digital-first brand communications. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/08/08/designing-a-flexible-digital-archive-for-chems-studios-creative-practice/" target="_blank" rel="noopener">讓作品自己說話：用極簡彈性框架打造影像導向的數位展廳</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Designing a Flexible Digital Archive for Chems.Studio’s Creative Practice</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/08/chems.png?x57826" alt="Designing a Flexible Digital Archive for Chems.Studio’s Creative Practice" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">影音作品為主的網站最怕介面喧賓奪主！Chems Studio 用極度克制且靈活的數位檔案庫框架，把所有舞台光環留給多年的動態影像創作。這給數位設計者的啟示是：最好的 UI 往往是「隱形」的。透過優雅的結構與安靜的配色，反而能讓使用者專注於內容本身的藝術渲染力。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">Codrops features Chems Studio’s new film-led digital archive, which utilizes a minimalist, highly adaptable framework to showcase years of creative direction. By keeping interface distractions to a minimum, the platform allows dynamic video content to shine, highlighting how subtle web infrastructure elevates rich visual storytelling. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9VTkFLV2FYM0lITU4zbFk1RWR1V2V6OG9DRVJrR2pQRTg1MXR2VEM3dDR0UWp0MzlpVXZweWlxaWdFQ1A1Q09ERUZSeHZXMUNlYUxZMTU5RlpnUVZ1Zzg1dkZGWkFGVHM?oc=5" target="_blank" rel="noopener">告別野蠻生長！歐盟 AI 法案改寫全球科技治理的新規則</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">EU AI Act Explained - Diplomacy and Law</div>
+            <div class="item-sentence lang-zh-only">歐盟 AI 法案正式登場，這不只是歐洲的事，而是全球科技界遊戲規則的大洗牌！法案用風險分級來約束 AI 應用，強迫企業在追求技術突破時，必須把透明度與安全嵌入產品核心。對產業來說，未來能走得遠的科技公司，絕對不是衝得最快的那家，而是最懂得把合規轉化為優勢的企業。 <span class="src">— Diplomacy and Law</span></div>
+            <div class="item-sentence-en lang-en-only">The EU AI Act establishes a groundbreaking legal architecture for risk-based artificial intelligence regulation globally. Beyond regional borders, it sets a global compliance benchmark—known as the Brussels Effect—compelling tech developers worldwide to embed transparency, safety, and human oversight into AI systems from the ground up. <span class="src">— Diplomacy and Law</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxQdGpKd3F6YnltYURWWnpyc3VOdGppbThyMjV3LUlua0Nya0lHWWJ5SUttcmgzWXFzLTN1SXBMQ3JHN1RRZHhfVXRqOTJSZ09PTVZhajNIdTI5Wk5jVkZkX01mNDZzM0hHd2NXTHRiWTFmZnl5bDNZc0h4ZXVpZW8tNm05T1NKS3FYbGR1TG5TdWZUZkw0X1diNE5TTVdkNTNpVGRoRDFBclBDV09CZV9zMGdBNVo3eGYwV3U5QkVGdVdZbGxEN1N4NWVFM1lGRUxMWWVSTVZPRzY0NkpnWjFtR2V4TDcwS1F2V25qSUJsVHJiOG5vVExn?oc=5" target="_blank" rel="noopener">你的同事是 Agent？企業治理 AI 數位勞動力的防禦戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Alterlayer Introduces Enterprise AI Governance Platform to Help Organizations Manage a Growing Digital Workforce - USA Today</div>
+            <div class="item-sentence lang-zh-only">當企業裡的 AI Agent 數量快要超過真人員工，你要怎麼管？Alterlayer 推出的這個治理平台，直擊了企業現在最頭痛的難題。未來的企業治理不能只靠權限控管，而是要像管理「數位員工」一樣，監控 AI 的決策軌跡與風險。這意味著企業營運架構正面臨一次根本性的重塑！ <span class="src">— USA Today</span></div>
+            <div class="item-sentence-en lang-en-only">Alterlayer launched an enterprise AI governance platform aimed at managing the burgeoning autonomous digital workforce. As AI agents handle increasingly complex business operations, this platform provides organizations with centralized visibility and oversight, highlighting the emerging strategic necessity of managing non-human digital employees responsibly. <span class="src">— USA Today</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQWVR5aGpPXzNzcUduRGxZUnNzLUpSd2tiaGJFOG02c2JJb1QtNFhqZHFJMmlfYWxRMnFtUXllVThpZE9iYnlpN0l0ZWM4ZzdjVDctemxoYzJKelpwNVJhcG9MUWZlbEd2Y09yMy1LR05YMThscUpmdFVzTXNqMmo1UUR6Um9uOHk5eTlqT3l3?oc=5" target="_blank" rel="noopener">草根數位的逆襲！越南鄉鎮治理轉型打造貼心公共服務</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ドンタイ県におけるコミューンレベルのデジタルガバナンスモデルの初期有効性。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">數位治理可不是大城市的專利！越南東泰縣在基層鄉鎮推動的數位轉型初顯成效，讓偏鄉民眾也能順暢使用線上公務服務。這件事給我們的啟示是：政府數位轉型的終極價值不是搞酷炫的大數據儀表板，而是讓最貼近民眾生活的「最後一哩路」變得簡便、流暢且具備包容性。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">The successful implementation of commune-level digital governance in Vietnam&#x27;s Dong Tai district demonstrates the impact of grassroots technological adoption. By bringing streamlined digital public services to local communities, the project proves that effective e-government governance thrives on accessibility and local empowerment rather than top-down complexity. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOTDNzNkZPSHFFWE9oOEJjeXQxanEwTXBVZmpVeVdNUE1tdXp6anR0M190ZHBaUm1WZnBSWXo1QW9aZUhUMWM2Qmw1SDV4S3ZzY1JLVHNJcnNnVHQxel9mdnZReS1McmZlYlIyR29memFHWndXTzBQeGs0YUVpRXMxejZRT2FNZjhDbG4wZGFHcTJJMGYtRkdna09rNnhUeDZqUE1wLTF5aUEySXhmeEHSAbMBQVVfeXFMTlBteWlxa0F5TG96ZnlBYWNMdUtDSFhaNGdRSDlwdzIxY1IxU29wLTJySUN6WU95dW9mNzRPd3VtbDdqLUF3cmhXTTVEYzIzSGswTHJncjlCdGhNYlNkNWJ3a0J1c3RBR25rMUtIRkw0TnhfZVlxZTZzWXpyWFdHTTFIVGcxcnZKNWJJVkZET2gyMVJqaTd2NXV2LXhoLUg2T3g3cG53cjdsNU5ETlNKT25JMDA?oc=5" target="_blank" rel="noopener">黑箱作業惹眾怒！AI 治理框架缺乏透明度恐引發信任危機</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Closed-door AI framework blindsides tech policy community - The Hill</div>
+            <div class="item-sentence lang-zh-only">密室協商出來的政策，真的能讓人安心嗎？美國近期閉門研擬 AI 框架的做法，惹毛了一大票科技政策專家。這點出了當前 AI 治理最大的盲點：如果制定規則的過程不公開透明、缺乏多方參與，就算條文寫得再好，也難逃公信力破產的命運。真正的創新治理，絕不能把公眾排除在外。 <span class="src">— The Hill</span></div>
+            <div class="item-sentence-en lang-en-only">Recent closed-door negotiations regarding AI governance frameworks have sparked fierce pushback from tech policy experts and civil advocates. The controversy highlights a critical flaw in current policymaking: without transparent and inclusive public discourse, even well-intentioned regulatory frameworks risk losing democratic legitimacy and public trust. <span class="src">— The Hill</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxNSkMxdXVGVW92Q2hYUERfUC1HNEh4UzFVenEzZU01MzVyUjVCSHJ5RXhfSlNCaGpualZYUGJ6OXJLTlE0QzN0cnNxdEpWcWZuWVIzN016XzBTRlRGTjdvdjZWTTE2ZTJ1QjNwblExUFJUT0JYMDhIdGNIRU9palYzR3o0UlVUZnRkUUFaaC1PTDZyeXBQTXBGMlZQNXpSRUozU0Y0V3JfMDdsdlZSb3MwWl9QbjN2V2hqT1hwNG9lTXNkQWFtUFhQVXFJMU8wTExaY3VCcUtMcW1ESVFKeFVrOFNxZndtQ1BPS0hERE53?oc=5" target="_blank" rel="noopener">別再玩假治理！企業 AI 轉型需要深層骨架重组而非公關</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Enterprise AI governance is structural, not cosmetic, and most organizations haven&#x27;t made the shift yet - MarketScale</div>
+            <div class="item-sentence lang-zh-only">許多企業以為寫份 AI 倫理宣言就算完成了治理，但這篇報導講得很直白：這根本是敷衍！真正的 AI 治理是「骨骼級」的組織改造，從數據流、決策責任到風險控管都需要重新梳理。如果只做表面功夫，當 AI 產生系統性風險時，企業將面臨難以承受的營運災難。 <span class="src">— MarketScale</span></div>
+            <div class="item-sentence-en lang-en-only">MarketScale emphasizes that enterprise AI governance requires a deep structural overhaul rather than cosmetic PR statements or superficial compliance checklists. Most organizations lag behind because they treat governance as an administrative burden instead of a fundamental restructuring of data architecture, operational workflows, and organizational accountability. <span class="src">— MarketScale</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-09 08:04:02 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
