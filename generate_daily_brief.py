@@ -375,10 +375,32 @@ def verify_and_enrich_article(article):
 # 3. 文章篩選與排序
 # ──────────────────────────────────────────────
 
+def get_previously_used_urls(days=3):
+    """從最近幾天的日報 HTML 中萃取已使用的 URL，避免跨日重複"""
+    used_urls = set()
+    try:
+        tw_tz = timezone(timedelta(hours=8))
+        for d in range(1, days + 1):
+            date_str = (datetime.now(tw_tz) - timedelta(days=d)).strftime('%Y-%m-%d')
+            filepath = os.path.join(BRIEFS_DIR, f'morning_brief_{date_str}.html')
+            if os.path.exists(filepath):
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                    # 尋找 <div class="item-title"><a href="URL"...
+                    matches = re.findall(r'<div class="item-title">\s*<a href="([^"]+)"', content)
+                    used_urls.update(matches)
+    except Exception as e:
+        print(f"⚠ Error reading previous briefs for deduplication: {e}")
+    return used_urls
+
+
 def select_articles(all_articles):
     """從所有已驗證的文章中，選出最終要用的 5 設計 + 5 治理"""
-    design = [a for a in all_articles if a['category'] == 'design' and a['verified']]
-    gov = [a for a in all_articles if a['category'] == 'gov' and a['verified']]
+    # 取得過去幾天已經用過的 URL
+    past_urls = get_previously_used_urls(days=3)
+
+    design = [a for a in all_articles if a['category'] == 'design' and a['verified'] and a['url'] not in past_urls]
+    gov = [a for a in all_articles if a['category'] == 'gov' and a['verified'] and a['url'] not in past_urls]
 
     # 1. 垃圾文章過濾器 (Anti-Junk Filter)
     def is_junk(article):
@@ -446,11 +468,13 @@ def select_articles(all_articles):
 
 
 def dedupe_by_domain(articles, max_per_domain=2):
-    """同一個 domain 最多取 max_per_domain 篇"""
+    """同一個 domain (或真實來源) 最多取 max_per_domain 篇"""
     domain_count = {}
     result = []
     for a in articles:
         domain = urlparse(a['url']).netloc
+        if 'news.google.com' in domain:
+            domain = a.get('source', domain)
         domain_count[domain] = domain_count.get(domain, 0) + 1
         if domain_count[domain] <= max_per_domain:
             result.append(a)
@@ -502,7 +526,7 @@ def generate_summaries_with_gemini(design_articles, gov_articles, date_str):
 另外請產出：
 4. 一個今日大標題（繁中，20-35字，反映今天最具代表性的 2-3 個議題關鍵字）
 5. 三句「今日重點速覽」快訊（繁中，每句 15-25 字，用白話講今天最重要的三件事的「洞見」）
-6. 一句每日格言（英文原文 + 繁中翻譯 + 作者，主題跟設計趨勢或治理創新相關）
+6. 一句每日格言（英文原文 + 繁中翻譯 + 作者，主題跟設計趨勢或治理創新相關。請確保【極高多樣性】，絕對避免重複出現 Steve Jobs, John Maeda 等常見名言，請改從歷史學家、哲學家、當代設計師或社會學家中挑選較冷門但深刻的金句）
 
 【文體與洞見要求】
 - 洞見至上：不要告訴我「這篇文章說了什麼」，告訴我「這為什麼重要」、「它代表了什麼趨勢」。
@@ -804,6 +828,7 @@ def write_audit_log(design_articles, gov_articles, all_raw_articles, date_str):
                 'url': a['url'],
                 'source': a['source'],
                 'category': a['category'],
+                'region': a.get('region'),
                 'verified': a['verified'],
                 'has_og_image': bool(a.get('og_image')),
                 'pub_date': a.get('pub_date'),
