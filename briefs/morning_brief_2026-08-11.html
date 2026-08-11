@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從自主 AI 治理到感性品牌重塑：當科技硬實力撞上人性化設計新浪潮 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-11</div>
+    <div class="headline">從自主 AI 治理到感性品牌重塑：當科技硬實力撞上人性化設計新浪潮</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is not an external force acting on society, but a product of human choices, values, and institutions.</div>
+      <div class="quote-text-zh lang-zh-only">技術不是作用於社會的外在力量，而是人類選擇、價值觀與制度的產物。</div>
+      <div class="quote-author">— Sheila Jasanoff（哈佛大學科技與社會研究學者）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">AI 治理成為企業轉型基石，從合規成本翻轉為十億美金商機。</li>
+        <li class="flash-item">B2B 與創投轉向感性視覺，用萌系吉祥物與自然色重塑信任。</li>
+        <li class="flash-item">氣候變遷倒逼電網革命，固態變壓器轉型成為能源治理樞紐。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/yamahabikestyle-commuplaza/" target="_blank" rel="noopener">不賣規格賣生活！山葉機車用插畫將重機轉化為風格符號</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">イラストレーターが描くYAMAHAバイクのあるスタイル展</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/07/e4ed265d3b7c2346e0a56c7904e83e31.jpg" alt="イラストレーターが描くYAMAHAバイクのあるスタイル展" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">山葉機車（YAMAHA）不走傳統極限競速或硬核規格的宣傳老路，而是找來插畫家把「騎車的生活場景」化為展覽主軸。這反映出硬體品牌在面對新世代消費者時的關鍵轉型：比起冷冰冰的數據，人們更渴望看見產品如何融入自己的理想生活。當重機從單純的交通工具升級為個人風格與情緒價值的載體，用溫暖的圖像語言去勾勒日常質感，反而更能喚起情感共鳴並打造深刻的品牌文化底蘊。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Yamaha shifts its focus from raw technical specs to lifestyle storytelling by featuring illustrations that embed motorcycles into modern daily scenes. This highlights a broader design trend where complex hardware brands use warm visual arts to humanize products, appealing to consumers seeking emotional connection and personal identity over mere function. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/08/716786.html" target="_blank" rel="noopener">打破別碰的禁忌！KiMu兒童美術館讓實驗與失敗成為核心</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">アムステルダムに子どものための美術館「KiMu」がオープン。創造のプロセスを尊重するアトリエ型ミュージアム</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/07/117816-main_7860-1_117816_sc_v2com.jpg" alt="アムステルダムに子どものための美術館「KiMu」がオープン。創造のプロセスを尊重するアトリエ型ミュージアム" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">阿姆斯特丹這座全新開張的 KiMu 兒童美術館，直接翻轉了傳統博物館「只展示完美成品」與「請勿動手」的冰冷框架。它以工作坊為核心，把焦點放在孩子們試錯、破壞與重組的創作「過程」。這種空間與體驗設計的創新證明了：未來的教育型美學場域不該只是靜態展示品，而應該是激發主動探索的沙盒。容許失敗的設計體驗，才能真正培育出具備韌性與創造力的新世代。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Amsterdam’s new KiMu museum challenges traditional static art spaces by prioritizing experiential workshops where kids are encouraged to experiment, fail, and create. This represents a paradigm shift in spatial design for education, turning places of passive observation into active sandboxes that build creative confidence and resilience in children. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/kub-candle-brand-identity-branding-taisia-vystavkina/" target="_blank" rel="noopener">幾何結構點亮香氛！KUB品牌用建築感包裝翻玩視覺辨識度</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">KUB Candle Brand Identity Branding by Taisia Vystavkina</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/identity-for-the-kub-candle-brand_0_0.jpg" alt="KUB Candle Brand Identity Branding by Taisia Vystavkina" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">設計師 Taisia Vystavkina 為香氛品牌 KUB 打造的視覺識別，打破了療癒系香氛過去偏愛優雅柔和、植物插畫的定型公式。她直接把蠟燭的幾何實體結構抽象化，結合強烈的色彩區塊與幾何包裝盒。這背後的趨勢在於：香氛早已不僅是嗅覺產品，更是居家空間裡的雕塑藝術品。透過極具建築感與視覺張力的包裝設計，品牌能迅速在同質化嚴重的居家美學賽道中建立過目難忘的辨識度。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Designer Taisia Vystavkina reframes KUB candle branding using sharp geometric shapes and bold color blocks, breaking away from traditional organic, muted home-scent aesthetics. This reflects a trend where sensory products are redesigned as architectural decor objects, leveraging graphic impact to command attention in a crowded visual marketplace. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/mojo-pmm-saas-mascot-branding-unicorn-agency/" target="_blank" rel="noopener">B2B軟體不再冰冷！Mojo PMM用毛茸茸吉祥物翻轉形象</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Mojo PMM SaaS Mascot Branding by The Unicorn Agency</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/mojo-pmm-saas-mascot-branding_0_0.gif" alt="Mojo PMM SaaS Mascot Branding by The Unicorn Agency" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">The Unicorn Agency 為 B2B SaaS 產品 Mojo PMM 設計了極具親和力的毛茸茸吉祥物，這絕非單純的可愛噱頭，而是 B2B 品牌「消費品化」的重要訊號。過去企業級軟體總是充斥著無聊的藍色調與複雜圖表，但現在的決策者同樣渴望被情感打動。透過擬人化且討喜的角色設計，軟體品牌能有效降低複雜工具的入門心理門檻，在充滿競爭的科技賽道中建立獨特的人情味與用戶黏著度。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">The Unicorn Agency introduces a fluffy, relatable mascot for Mojo PMM, exemplifying the consumerization of B2B branding. By replacing cold, clinical enterprise aesthetics with playful character design, SaaS companies can lower adoption anxiety, differentiate their products, and build emotional affinity with users who are tired of rigid corporate software design. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/spero-ventures-branding-and-visual-identity/" target="_blank" rel="noopener">告別傳統金融深藍！創投Spero用深綠與天藍重塑品牌</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Spero Ventures Branding and Visual Identity</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/spero-ventures_0_clean_0.jpg" alt="Spero Ventures Branding and Visual Identity" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">創投機構 Spero Ventures 拋棄了傳統金融圈最愛用的西裝深藍與剛硬線條，轉而採用深綠與天藍的色調組合，打造出兼具質感與自然呼吸感的新視覺。這透露出創投產業的價值轉向：在氣候科技、社會創新成為焦點的時代，資金不再只是冷酷的資本符號，更是推動正面改變的夥伴。透過溫潤且具前瞻性的設計語言，創投品牌能更好傳達影響力投資的願景與包容力。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Jessica Strelioff’s design for Spero Ventures replaces rigid corporate blues with deep forest green and sky blue palette, signaling a systemic shift in venture capital branding. As impact investing and climate tech rise, VC firms are using warm, organic design systems to reflect sustainability, human-centered values, and modern partnership ethos. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxQbjBHWkJBaHozQ1JOY2FlcThDV0dvQURCdUNENFM3SGZTWjlsdV85a285ZHNoenpfMW5CNGpYYm5Xa3hzOHFENG83NW5xUEtEMHY0VC0xdkx4aDJHb2x3QlZ2QUJ6cTBvbGpLZmpKYmQwbnVjVng0c0NIVGtXYkpMXzlqNlY2Z05Dd2FrcTh2VWNJV045eHhhRENhZW95eXVrZzQxNWc1SXphUnFaNHc?oc=5" target="_blank" rel="noopener">數位轉型不只買硬體！加納結盟智庫打造國家數位治理框架</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Ghana Partners with Digital Policy Groups to Strengthen Digital Governance - DNE Africa</div>
+            <div class="item-sentence lang-zh-only">加納政府與國際數位政策機構展開深度合作，致力於強化國家級的數位治理體系。這標誌著全球南方國家在推動數位轉型時的典範轉移：大家終於意識到，單純採購硬體設備或架設系統只是治標，建立完善的法規、數據隱私與政策框架才是數位主權的根本。這種公私協同與跨國智庫合作的模式，正為新興市場如何建構安全、具包容性且可持續的數位信任機制樹立了關鍵標竿。 <span class="src">— DNE Africa</span></div>
+            <div class="item-sentence-en lang-en-only">Ghana&#x27;s collaboration with international policy groups to fortify its digital governance highlights a crucial shift in Global South technology strategy. Beyond deploying digital infrastructure, building robust policy, privacy, and regulatory frameworks is now recognized as the true foundation for sustainable digital sovereignty and public trust in emerging economies. <span class="src">— DNE Africa</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPekxZR3d4dGxWM2hZbG9maENzUDJlTldPNjVSTi1WQ1IwSU5hUjdVRWJSYXVibjFEeE5RdXU3YXBya0VOcjBXQVlhaHBoaU9fOXlISTQyZ3BZYW93cFRSNE0wb0o1WFZ3VHBmN1ByNjJuSkIwUXN0U3pOY1BkRnhIc2k2cXlQWklyclNkU3lFVlF5dTBsenFqcF9sMGFYV0xZVWtzY0NFcEYtSWs?oc=5" target="_blank" rel="noopener">合規成本變金雞母！AvePoint靠AI治理管線衝向十億營收</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AvePoint Eyes $1B ARR as AI Governance Pipeline Surges - MarketBeat</div>
+            <div class="item-sentence lang-zh-only">企業級軟體巨頭 AvePoint 預計年經常性收入（ARR）將突破 10 億美元，其爆發性成長的動力正是來自企業對 AI 治理需求的激增。這件事的背後意義非常重大：過去被視為防守型、燒錢且拖慢效率的「合規與數據治理」，在企業急於導入生成式 AI 的當下，變成了不可或缺的剛性需求。沒有健全的資安與治理管線，AI 就只是企業的資安未爆彈；AI 治理軟體已正式擠身企業級 SaaS 的核心兆元賽道。 <span class="src">— MarketBeat</span></div>
+            <div class="item-sentence-en lang-en-only">AvePoint’s surge toward $1B ARR driven by AI governance services signals a major market transformation. Enterprise governance has evolved from a slow compliance expense into a critical enabler for corporate AI adoption. As organizations race to deploy AI safely, governance infrastructure software is emerging as one of the fastest-growing enterprise SaaS verticals. <span class="src">— MarketBeat</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE5VTlY2aDhHcFRvNXVlaHItVmxNclg5WG9sZlFiQUZFei1GTFh5alpEamx1UDdYT29ET0xRYWJmWlNEZmttNGloOXh0bl9DZW5Gb0loampGWjF4eTNxS3J6QXJaek95aE8wXzJEYVRuSU5DczNqOXhZck5uNA?oc=5" target="_blank" rel="noopener">綠能升級的最強暗器！固態變壓器市場飆升揭示電網轉型</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ソリッドステート変圧器（SST）市場、2035年に7億1,700万米ドルへ拡大｜CAGR20.2％、スマートグリッド - ニコニコニュース</div>
+            <div class="item-sentence lang-zh-only">數據預測固態變壓器（SST）市場將在 2035 年前突破 7.17 億美元，年複合成長率超過 20%。這不僅是傳統電力設備的更換，而是綠色能源治理的核心轉型。太陽能與風力發電具有高度不穩定性，傳統變壓器根本無法應對，而具備軟體控制能力、能動態調節電力負載的 SST，正是智慧電網與電動車充電網路的關鍵心臟。這代表未來的基礎設施治理，必須將軟硬體高度整合，才能承受氣候變遷下的能源挑戰。 <span class="src">— ニコニコニュース</span></div>
+            <div class="item-sentence-en lang-en-only">The rapid expansion of the Solid State Transformer (SST) market underscores a fundamental hardware transformation within smart grids. As intermittent renewable energy and EV charging demand surge, SSTs provide software-defined power routing capabilities, proving that modern energy governance relies on intelligent, adaptable hardware infrastructure to ensure grid stability. <span class="src">— ニコニコニュース</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxONzc2SDNFOTVjYW1ydHZaMUF2QW1ldlYyMmxBNGg4NC1jMm9IWktWLWdwM1BmSWZhcmNJWWJTQ21JcTRkQWV6clNmOGhsNWtRVGE1Q2VMQnFpTU9ZRFloc1A0VUlXNVZUWU1kLTRGUmFKNkxOYUJJLUVrYTVIWXhidV9CSGhEZUhKMlBCVVItaUdSaWl2LTBQUHp3SWctNFZjYVRkX0VndXdLTE4ya0xCdjRsc0FrSTJ6X1NBUUVudzVtY3hp?oc=5" target="_blank" rel="noopener">放手讓AI自主幹活的前提！治理成為企業級Agentic底座</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI governance is becoming the foundation for enterprise-scale agentic AI - Express Computer</div>
+            <div class="item-sentence lang-zh-only">隨著 AI 從單純的對話問答升級為能自動執行複雜任務的「AI 代理（Agentic AI）」，治理機制正從附屬配件升格為企業系統的核心底座。這意味著企業如果想讓 AI 自主處理業務，就必須先打造出一套包含權限控管、行為審計與邊界約束的治理架構。如果沒有這層運作底座，自主 Agent 只會變成無法控制的營運風險。治理不再是限制創新的枷鎖，而是賦予 AI 高度自主權的合法授權書。 <span class="src">— Express Computer</span></div>
+            <div class="item-sentence-en lang-en-only">As enterprise AI transitions from simple chatbots to autonomous agentic systems capable of executing multi-step workflows, AI governance becomes the foundational architecture. Without strict operational guardrails, risk assessment, and identity management for AI agents, enterprises cannot safely deploy autonomous technology at scale. Governance is now the prerequisite for AI autonomy. <span class="src">— Express Computer</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxNcUYtdG9zMlNFRHljWUEzWFJmYV9JZ0g3dGRJbjhDbzFOSUc0bWxxYzNxbWRtU1A3b1JkZWw4OWM1VHllSnBmQm5wNzBnNm1sd3B1Qy02ZHhnaVB5WGdsTE5ZdlhPeG13aGxHSWlhRmx3YjBUckhaNkRSdURtTTNuNl91bTk?oc=5" target="_blank" rel="noopener">行銷人別砸冤枉錢！當AI治理與隱私規範直接決定廣告效益</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Media budgets, AI governance, ‘irrelevant’ marketing: 5 interesting stats to start your week - marketingweek.com</div>
+            <div class="item-sentence lang-zh-only">Marketing Week 最新數據指出，媒體預算調整、AI 治理無縫對接與消除無效行銷已成為當前行銷人的核心焦慮。這凸顯了行銷領域的典範轉移：過去行銷團隊只關注創意與觸及率，但在自動化生成式 AI 工具普及的今天，未經治理的數據運用不僅會導致訊息脫節，更可能引發品牌公關災難。將 AI 治理納入行銷策略，才能確保自動化內容兼具個人化效益與品牌信任，告別無效的行銷浪費。 <span class="src">— marketingweek.com</span></div>
+            <div class="item-sentence-en lang-en-only">Industry trends show that AI governance, media efficiency, and eliminating irrelevant targeting are top priorities for brand marketers. As AI automates ad generation and placement, marketing leaders must integrate AI governance into their core strategies to protect brand reputation, respect privacy, and ensure media budgets yield genuine consumer resonance rather than digital noise. <span class="src">— marketingweek.com</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-11 08:03:37 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
