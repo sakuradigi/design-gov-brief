@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從感官觸覺到動態監控：當代設計重塑體感體驗，AI與城市治理回歸以人為本 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-12</div>
+    <div class="headline">從感官觸覺到動態監控：當代設計重塑體感體驗，AI與城市治理回歸以人為本</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design, if it is to be ecologically responsible and socially responsive, must be revolutionary and radical in the truest sense.</div>
+      <div class="quote-text-zh lang-zh-only">設計若要對生態負責、對社會有所回應，就必須在最真實的意義上具備革命性與激進性。</div>
+      <div class="quote-author">— Victor Papanek</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">設計事務所跨界數位體驗，美學人才正從單一媒介走向跨域互動思維。</li>
+        <li class="flash-item">紐約街頭巨型真髮球證明：打破平庸的視覺奇觀，能為敏感議題帶來巨大聲量。</li>
+        <li class="flash-item">AI 治理進入「動態執行期」，企業防衛思維正從預先過濾轉向零信任行為監控。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/08/89305/" target="_blank" rel="noopener">平面設計巨擘跨界數位！日本色部研究所招募兼具螢幕與空間思維的新世代人才</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】日本デザインセンターの色部デザイン研究所が、デザイナーを募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/07/6050495aeed16.jpg" alt="【求人情報】日本デザインセンターの色部デザイン研究所が、デザイナーを募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">日本設計中心（NDC）色部設計研究所徵才這件事，反映出經典設計事務所正面臨轉型浪潮。過去以紙本與標示系統聞名的色部團隊，現在全面擁抱 Web、App 與動態 VI。這不只是單純擴編，而是宣告當代視覺設計師必須同時具備「實體空間感」與「數位互動思維」。跨媒介整合已從加分項變成生存基本功，未來的品牌視覺溝通絕對是立體的體驗設計。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Nippon Design Center&#x27;s Irobe Design Institute is recruiting designers to expand beyond traditional print mediums into Web, App, and dynamic visual identity design. This hiring wave signals a crucial shift in master-led design studios, emphasizing that modern designers must blend spatial physical awareness with digital interaction to create cohesive, multi-platform brand experiences. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/report/design-corporate-training-1/" target="_blank" rel="noopener">設計思考不再只是美工課：日本企業為何掀起非美學領域的設計研修熱潮？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">なぜ今、デザイン研修がビジネスの現場で選ばれるのか？―研修の主催企業6社に聞く　前編</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/e27fced8a5ef16a545d6cdae3dfb65b0.jpeg" alt="なぜ今、デザイン研修がビジネスの現場で選ばれるのか？―研修の主催企業6社に聞く　前編" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">企業為什麼紛紛花錢送非設計背景的員工去上設計課？因為當前商業問題太過複雜，傳統數據分析已無法解答未知。這篇採訪揭示了「設計研修」在日本大企業的定位轉變——它不再只是教你調顏色或做簡報，而是培養「在不確定中進行假說驗證」的敏捷思維。企業要的不是多幾個設計師，而是讓全公司具備像設計師一樣發掘問題、重構體驗的創新 DNA。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">A deep dive into six Japanese corporate training providers reveals why design education is rapidly penetrating non-creative business departments. Rather than teaching aesthetic skills, modern corporate design training equips employees with problem-framing, empathy, and iterative prototyping capabilities. This trend underscores how design thinking has evolved from a creative tool into a core strategic driver for business transformation. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/08/11/exploring-procedural-geometry-with-three-js-and-webgpu/" target="_blank" rel="noopener">網頁動態視覺的效能革命：WebGPU 與 Three.js 如何解放瀏覽器的 3D 運算潛力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Exploring Procedural Geometry with Three.js and WebGPU</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/08/wCsL2dRakO.jpg?x57826" alt="Exploring Procedural Geometry with Three.js and WebGPU" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">過去想在網頁上呈現複雜的程序化 3D 幾何，多半會卡在 GPU 效能瓶頸，但 WebGPU 的成熟正在改變遊戲規則。這篇文章展示了如何結合 Three.js 與 TSL（Three.js Shading Language），在瀏覽器裡流暢進行即時動態繪製與光影處理。這對前端美學是個重大轉折，代表網頁不再只是平面的資訊載體，而是能承載影視級互動體驗的數位畫布，將拉高未來數位視覺的門檻。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">This technical exploration demonstrates how combining Three.js, TSL, and WebGPU enables high-performance procedural geometry rendering directly within modern web browsers. By offloading complex mathematical computations and custom shaders to the GPU efficiently, WebGPU unlocks unprecedented real-time visual fidelity and interactive rendering potential, empowering front-end designers and developers to build immersive 3D web experiences without performance compromises. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://smashingmagazine.com/2026/08/building-tactile-ux-honoring-intentional-design-lottie/" target="_blank" rel="noopener">讓數位介面擁有真實手感！如何運用 Lottie 與物理微互動喚醒使用者的感官體驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Building Tactile UX: Honoring Intentional Design With Lottie</div>
+            <img class="item-image" src="https://files.smashing.media/articles/building-tactile-ux-honoring-intentional-design-lottie/building-tactile-ux-honoring-intentional-design-lottie.jpg" alt="Building Tactile UX: Honoring Intentional Design With Lottie" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">我們的手指每天在光滑的玻璃螢幕上滑動，最欠缺的就是「真實的觸感」。這篇談舒壓捏捏樂遊戲開發的文章，核心重點其實是「觸覺化 UX（Tactile UX）」。透過 Lottie 動畫搭配距離計算與事件驅動，讓數位組件呈現出彈性、阻力等物理特性。這提醒了我們，好的互動設計不只要讓畫面漂亮，更要喚醒使用者的身體直覺，讓冷冰冰的螢幕操作轉化為充滿溫度的感官樂趣。 <span class="src">— Smashing Magazine</span></div>
+            <div class="item-sentence-en lang-en-only">Through the development of a digital stress-relief squeeze toy, this article illustrates how to construct a tactile UX using Lottie animations and DOM-based physical logic. By simulating physical resistance and elasticity in visual interactions, the design bridges the sensory gap between glass screens and real-world touch, demonstrating how intentional micro-interactions can elevate user emotional engagement. <span class="src">— Smashing Magazine</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/a-10ft-ball-of-real-human-hair-is-rolling-through-new-york-and-its-all-part-of-the-plan/" target="_blank" rel="noopener">一顆滾過紐約街頭的巨型真髮球：超現實游擊行銷如何打破脫髮禁忌議題？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">A 10ft ball of real human hair is rolling through New York, and it&#x27;s all part of the plan</div>
+            <img class="item-image" src="https://www.creativeboom.com/upload/articles/04/04cf3340ccd02f03bd823d16fa5aeed2cb8d49a2_800.jpg" alt="A 10ft ball of real human hair is rolling through New York, and it&#x27;s all part of the plan" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">創意代理商 Uncommon 為品牌 K18 在紐約街頭推出一顆 10 呎高的真實頭髮球，引爆全城熱議。這種帶有一點超現實甚至微小不適感的游擊行銷，打破了傳統美妝廣告堆砌完美形象的套路。它告訴我們：想要引發大眾討論敏感或禁忌話題，有時最有效的視覺策略不是「精緻的美」，而是創造一種讓人在日常生活中無法無視的「奇觀與荒謬感」，從而精準擊中注意力經濟的痛點。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Creative agency Uncommon deployed a massive 10-foot ball of genuine human hair across New York City to stimulate public dialogue around hair loss for hair care brand K18. This bold street installation eschews conventional polished beauty advertising in favor of surreal, highly visceral guerilla tactics, proving that provoking mild disorientation can be a powerful aesthetic driver to disrupt audience apathy on sensitive health topics. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPM2dZbnRGVlZzS2ZZMTMxZWk0QlVobDRjck93Qkw4d0dhV0N4THdmbmlDVXpqejFoLV9DeDV4V0J5akRhR1E0U21yeXF3Y1VFc25uejRnZWhUSjh2c3FOWnJ4Z19VckZycG80YzFSZkhQZ21ZdDVPdTgxMnltZk9BTklFMGZXc05tb2dsaV9IVHdpS05fMWI3eFdOWF9vT01XaWhNZkZhMnRJWjY5Rmxn?oc=5" target="_blank" rel="noopener">全球 AI 治理大會登場：從倫理口號走向跨領域法律實務與風險控制的關鍵轉折</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance World Conference in Las Vegas Adds Experts and Tech Authors - The National Law Review</div>
+            <div class="item-sentence lang-zh-only">即將在拉斯維加斯舉辦的 AI 治理世界大會陸續加入重量級法律專家與科技作家，這傳遞出一個鮮明訊號：AI 治理的討論已正式過渡到落地執行階段。過去大家只會空談道德概念，但現在法規壓力逼近，企業急需能具體操作的合規架構、歸責機制與風險審計工具。跨領域專業的匯聚，標誌著科技治理不再是工程師的獨角戲，而是結合法律與社會學的全新組織治理課題。 <span class="src">— The National Law Review</span></div>
+            <div class="item-sentence-en lang-en-only">The AI Governance World Conference in Las Vegas expands its roster with prominent legal experts and technology authors, signaling an industry-wide pivot toward actionable compliance frameworks. As global regulatory standards tighten, the event highlights how AI governance is maturing from theoretical ethical guidelines into structured legal accountability, risk management, and cross-disciplinary organizational policies. <span class="src">— The National Law Review</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPM2dZbnRGVlZzS2ZZMTMxZWk0QlVobDRjck93Qkw4d0dhV0N4THdmbmlDVXpqejFoLV9DeDV4V0J5akRhR1E0U21yeXF3Y1VFc25uejRnZWhUSjh2c3FOWnJ4Z19VckZycG80YzFSZkhQZ21ZdDVPdTgxMnltZk9BTklFMGZXc05tb2dsaV9IVHdpS05fMWI3eFdOWF9vT01XaWhNZkZhMnRJWjY5Rmxn?oc=5" target="_blank" rel="noopener">科技論述轉化為政策規範：專家與思想領袖如何重塑全球 AI 治理的法律話語權</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance World Conference in Las Vegas Adds Experts and Tech Authors - The National Law Review</div>
+            <div class="item-sentence lang-zh-only">這場 AI 治理大會聚集科技作家與法學專家的背後，反映了「思想領袖」在科技政策制定中扮演的角色日趨關鍵。當技術進展快過立法速度，權威作者與研究者提出的理論框架往往成為法官與監管機構裁量的基礎。這意味著 AI 治理不僅僅是制定規則，更是透過公眾論述來定義「何謂安全的技術」。監管正在從事後懲罰，轉向由專家引領的預期性制度設計。 <span class="src">— The National Law Review</span></div>
+            <div class="item-sentence-en lang-en-only">Beyond regulatory updates, the inclusion of legal scholars and tech authors at the AI Governance World Conference highlights the influence of public discourse on technology policy. As regulatory bodies struggle to keep pace with rapid AI developments, interdisciplinary thought leaders are establishing the foundational terminology, ethical boundaries, and risk models that will shape future legal precedents globally. <span class="src">— The National Law Review</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNSXk5ZHZZd2NKSzNhSXVqQjRQZnhBX0l3dmdDd29CZFV1cGw5TUpSRUFsTUFlcUhDTEdDN1JkNmVSUmNReVRHXzBDblU5Z29RcmYxUXh5bG4zNUhPcENxYk9rQXIyUWJKel92ZE44Nk5jVW9ZWUtDY29lWnN3elA2ak5ISVB2cmtaOEhEamJmYUk2RFJ4eUZuUHU1MlY2QWpSTHc?oc=5" target="_blank" rel="noopener">告別炫技型智慧城市：越南國會的警訊提醒我們「以人為本」才是都市治理核心</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">国会議員タ・ヴァン・ハ氏：「スマートシティは、人々のニーズから出発しなければならない。」 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">越南國會議員 Ta Van Ha 點出了許多發展中國家在推動智慧城市時的集體盲點：太多計畫只著迷於鋪設高端感測器與展示儀表板，卻忽視了市民真實的生活痛點。真正的數位治理不該是技術廠商的炫技舞台，而是要從居民的居住、交通與公共服務需求出發。這提醒了城市規劃者，智慧城市的「智慧」不取決於使用了多先進的 AI，而取決於技術是否能無感且有效地提升人本生活的品質。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Vietnamese National Assembly MP Ta Van Ha emphasizes that smart city initiatives must prioritize actual citizen demands over superficial technology deployment. Addressing a common pitfall in modern urban planning, this perspective urges city administrators to focus on human-centric solutions for real-world municipal problems, reinforcing that true civic innovation is measured by public well-being rather than tech infrastructure density. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPSUxPTTdVOVBsOTBvOEQ0UFNXaFQ1bWI1TXpaTDJzMUNhYTdUWEI1N1h6YmNxb0Nlb1RZTHBjdXF1S1RSWmVIcXFGMjJmemhjZ3VOZWQ4eWlRa1RGWTlidzZUOURxczV6TEo3NS1xVEFramZZbGhIaGoxSVZoQVJ4NEdXSnJacnYxUWpWdEVR?oc=5" target="_blank" rel="noopener">當 AI 開始自主行動：為什麼靜態防禦失效，動態執行期治理（Runtime Governance）成為關鍵？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why AI Governance Must Control Agents at Runtime - BankInfoSecurity</div>
+            <div class="item-sentence lang-zh-only">隨著 AI 從單純的聊天問答演進為能幫你買機票、動用 API 的「自主代理（Agent）」，傳統的選前審查與提示詞防護牆宣告失效。這篇文章切中要害地指出：治理必須深入到 AI 運作的「動態執行期（Runtime）」。當 Agent 在即時環境中決定執行動作時，系統必須隨時進行權限攔截與行為監控。這是安全治理思維的根本轉變——從「阻止壞提示」升級為「為自主運作的 AI 裝上即時煞車系統」。 <span class="src">— BankInfoSecurity</span></div>
+            <div class="item-sentence-en lang-en-only">As autonomous AI agents gain the agency to execute API calls and transactions independently, security architecture must evolve beyond static pre-prompt filtering. This article argues that governance controls must operate continuously at runtime to monitor and restrict agent behaviors dynamically. Controlling AI execution in real-time represents a necessary paradigm shift for enterprise cybersecurity, mitigating risks associated with autonomous tool-use anomalies. <span class="src">— BankInfoSecurity</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMlh0VE9IS3FMWGx3YTN6QlVKR1FXU3BTTng0ajRCLVRWcWZnR3RkNTI2eTM5VkRGZXdEX1Fsb0ppVEdlZmF5bkgxcXExa3gzbHF3SmRDM3ByRXk5T0JXOGVEWFhMbkdVWWlDVFN2ejBuYjlJQlBmOEtNaExLRGxGLWZKaE1SRlhV?oc=5" target="_blank" rel="noopener">走出瀏覽器視窗的 AI 治理：當微軟 Copilot 深度整合系統，企業資安如何防範影子 AI？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance Must Extend Beyond the Browser - BankInfoSecurity</div>
+            <div class="item-sentence lang-zh-only">許多企業以為限制了網頁版 ChatGPT 的存取就做好了 AI 治理，這完全是掩耳盜鈴。這篇文章指出，AI 早就透過作業系統、IDE 外掛與在地端運行的模型滲透到企業的每一台設備上。真正的 AI 治理必須突破瀏覽器限制，延伸到端點裝置與背景進程的監控。這象徵著「零信任（Zero Trust）」哲學在 AI 時代的延伸——不管 AI 是在雲端還是在本地，其資料流向與執行權限都必須被全盤掌握。 <span class="src">— BankInfoSecurity</span></div>
+            <div class="item-sentence-en lang-en-only">Enterprise AI governance can no longer rely on simple browser-level web filtering, as AI capabilities become deeply embedded into operating systems, localized applications, and automated workflows. This article highlights the necessity of extending zero-trust security architecture directly to device endpoints and background processes, ensuring comprehensive visibility over local shadow AI tools and unmonitored data transfers across corporate systems. <span class="src">— BankInfoSecurity</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-12 08:03:23 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
