@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>創意產業迎復甦曙光，歐盟 AI 透明法規上路：從體驗設計到草根治理的新思維 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-13</div>
+    <div class="headline">創意產業迎復甦曙光，歐盟 AI 透明法規上路：從體驗設計到草根治理的新思維</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is not merely a tool; it embeds the values, biases, and political choices of the society that creates it.</div>
+      <div class="quote-text-zh lang-zh-only">技術不單純只是工具，它嵌入了創造它的社會所擁有的價值、偏見與政治抉擇。</div>
+      <div class="quote-author">— 希拉·賈薩諾夫（Sheila Jasanoff，當代科技與社會研究學者）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">創意市場重現招聘潮，高階設計價值正迎來全面回溫。</li>
+        <li class="flash-item">歐盟 AI 透明條款落地，生成式標示成為設計系統標配。</li>
+        <li class="flash-item">數位治理的核心在於草根公民培育，而非單純系統建設。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/wagashinokihon-toraya/" target="_blank" rel="noopener">和菓子的視覺美學：將四季感官轉換為當代體驗設計</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">和菓子のきほん</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/07/202606121142146a2b7206b40f4.jpg" alt="和菓子のきほん" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">你以為和菓子只是精緻甜點？其實它是日本傳統視覺美學與季節感的極致體現。Toraya 的特展不只是介紹飲食文化，而是展示如何把自然時序、觸覺與故事，縮影在一小塊甜點上。這給當代設計者的啟發是：最高級的體驗設計，往往來自於能否將深厚的文化底蘊轉化為極簡且充滿溫度的視覺與感官語言，讓使用者在一瞬間產生情感共鳴。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The &#x27;Wagashi no Kihon&#x27; exhibition at Toraya Gallery explores the fundamental aesthetics of Japanese traditional confectionery. Beyond culinary arts, it illustrates how subtle seasonal changes and storytelling are embedded into minimal physical forms. For contemporary designers, it highlights the power of translating cultural heritage into tactile, multisensory user experiences that resonate emotionally. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/innervoice-koendorigallery/" target="_blank" rel="noopener">當設計轉向內心探索：從自我照顧議題看藝術與社會療癒</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">心の声をきく　わたしを生きる術（すべ）</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/07/sub5.jpg" alt="心の声をきく　わたしを生きる術（すべ）" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在這個高壓且追求效率的時代，「自我照顧」不再只是個流行詞，而成了當代展覽與視覺藝術的核心。澀谷公園通り畫廊的這場展覽，展現了藝術如何成為人們梳理情緒與對話的介面。當設計師從關注「外部產品」轉向關注「內在心理健康」，便能透過跨界策展與視覺語彙，創造出具備社會影響力與療癒效果的溝通媒介。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The exhibition at Shibuya Park Street Gallery delves into self-care and inner voice exploration through contemporary art. As society copes with burnout, design and art are shifting focus from material aesthetics to mental well-being. This trend underscores a broader movement where visual communication serves as a therapeutic interface for emotional processing and social healing. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/08/12/creating-an-interactive-3d-cluster-with-three-js-tsl-and-three-start/" target="_blank" rel="noopener">突破網頁視覺極限：用 WebGPU 與 3D 互動打造感官體驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Creating an Interactive 3D Cluster with Three.js, TSL and Three Start</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/08/videoframe_8751.png?x57826" alt="Creating an Interactive 3D Cluster with Three.js, TSL and Three Start" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">網頁 3D 互動早已不稀奇，但 WebGPU 與 TSL 的結合讓網頁運算效能與視覺質感邁向了全新維度。這篇實用教學不只是技術筆記，更揭示了未來數位體驗的顯學：靜態介面將加速淘汰，能夠根據使用者行為即時運算、呈現流暢有機視覺的 3D 互動，正成為品牌建立數位臨場感與差異化溝通的核心武器。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">This tutorial demonstrates how to build dynamic 3D clusters using Three.js, WebGPU, and TSL. Beyond code snippets, it signals a significant shift in web design towards highly performant, real-time reactive visuals. Brands leveraging WebGPU can transcend static interfaces to deliver fluid, immersive interactive experiences that captured audience attention in a crowded digital landscape. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/booms-shakes-augusts-biggest-hires-launches-and-wins-from-across-the-industry/" target="_blank" rel="noopener">創意產業迎來復甦曙光：從高層人事與專案看市場回溫趨勢</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Booms &amp; Shakes: Why August&#x27;s hires and launches might suggest the worst is behind us</div>
+            <img class="item-image" src="https://www.creativeboom.com/upload/articles/4e/4ea24664b3bf2ece636e06bedc9b5913741b026c_800.jpg" alt="Booms &amp; Shakes: Why August&#x27;s hires and launches might suggest the worst is behind us" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">經歷了長時間的預算縮減與招聘凍結，8 月的創意產業數據終於傳來好消息！高層人事變動與新專案的發表頻率顯著上升，顯示市場正渡過最寒冷的蹲點期。這給所有創作者的訊號很明確：資本正重新擁抱高品質的設計與視覺溝通，產業的能量正從「防禦生存」全面轉向「積極佈局」，是準備展翅的好時機。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Creative Boom&#x27;s August roundup reveals an encouraging surge in major creative agency hires and high-profile project launches, signaling market recovery. Following a prolonged period of industry stagnation and budget cuts, capital is once again prioritizing design excellence and strategic branding. This shift indicates a transition from survival mode back to ambitious growth across the creative sector. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/tips/is-there-a-retirement-crisis-in-the-creative-industry/" target="_blank" rel="noopener">設計資深人才爆發提前退休潮：高壓與 AI 衝擊下的組織斷層</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Is there a retirement crisis in the creative industry?</div>
+            <img class="item-image" src="https://www.creativeboom.com/upload/articles/78/78f5bbdf443a96987a397dd9738528829eb04c24_800.jpeg" alt="Is there a retirement crisis in the creative industry?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">為什麼越來越多資深設計師選擇提前離開業界？這背後反映的是 AI 自動化衝擊、高壓工作節奏與價值認同斷裂的深層危機。當產業只追求快速產出，卻忽視了經驗傳承與高階策略思維，組織將面臨嚴重的美學與戰略斷層。這提醒我們，設計治理不只要管理專案，更要重新設計「人性化」的永續職涯生態。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">A growing number of senior creatives are opting for early retirement, triggering concern over a brain drain in the industry. Fueled by burnout, rapid AI integration, and shifting corporate values, this trend threatens to sever the transmission of institutional knowledge. The industry must rethink workplace governance to balance productivity with sustainable career longevity. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQUzQzZm04T2RFTzdNblR0cFVVT3h0U3RncDVTWTBjNDFzcEd5bUU4LWZEWDd4SWl2bzNqMkJtX3hjR0gxYWNCY21iaHZDQlFtWnU2dlUwUXlWdmtRaDItemhzR095LW9PVjZlejlxSndlcFdmcTI3UDktb1p4VkZ3ZmsyOG05T19MNjUzRzQ2UC1RQVJKeTNtNlVjbm1TQ3BVNzdmRllZV1VGSE5mTWlFUS1BRmdmQmMzSVpJR3pGT29JUWs?oc=5" target="_blank" rel="noopener">告別 AI 盲目競賽：北美如何轉向負責任與民主導向的 AI 治理</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Beyond the AI Race: Strategy, Accountability, and AI Governance in Canada and the United States - Evidence For Democracy</div>
+            <div class="item-sentence lang-zh-only">美加兩國最新的 AI 政策討論正從「誰跑得快」轉向「如何治理得好」。科技競爭不再只是算力與資本的死鬥，而是法規、透明度與公眾信任的考驗。這對治理創新的啟發是，企業與政府若缺乏可追溯的責任架構，再強大的 AI 技術也只會引發社會焦慮；唯有把民主監督納入研發核心，才能讓技術獲得永續的社會授權。 <span class="src">— Evidence For Democracy</span></div>
+            <div class="item-sentence-en lang-en-only">Evidence For Democracy analyzes the evolving AI governance landscape in Canada and the United States, advocating for strategic accountability over reckless innovation races. The report emphasizes that technological advancement must be matched with democratic oversight and ethical frameworks, urging policymakers to establish governance models that prioritize public interest and systemic trust. <span class="src">— Evidence For Democracy</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQUzQzZm04T2RFTzdNblR0cFVVT3h0U3RncDVTWTBjNDFzcEd5bUU4LWZEWDd4SWl2bzNqMkJtX3hjR0gxYWNCY21iaHZDQlFtWnU2dlUwUXlWdmtRaDItemhzR095LW9PVjZlejlxSndlcFdmcTI3UDktb1p4VkZ3ZmsyOG05T19MNjUzRzQ2UC1RQVJKeTNtNlVjbm1TQ3BVNzdmRllZV1VGSE5mTWlFUS1BRmdmQmMzSVpJR3pGT29JUWs?oc=5" target="_blank" rel="noopener">跨國 AI 治理戰略解析：將公共利益轉化為技術監管的硬指標</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Beyond the AI Race: Strategy, Accountability, and AI Governance in Canada and the United States - evidencefordemocracy.ca</div>
+            <div class="item-sentence lang-zh-only">這份研究深入探討了政策如何從理念走向落地執行。科技巨頭一味追求模型規模，卻常忽視演算法對公共領域與民主秩序的侵擾。北美在 AI 治理上的策略轉型告訴我們：未來的政策設計不能再是被動補破網，而是要在研發初期就建立跨領域審查機制，將「公共利益」從抽象口號變成可評估的設計規範與治理指標。 <span class="src">— evidencefordemocracy.ca</span></div>
+            <div class="item-sentence-en lang-en-only">This policy brief examines cross-border AI governance frameworks in North America, addressing the gap between rapid technological deployments and public policy readiness. It argues that effective governance requires proactive regulatory mechanisms rather than reactive fixes. Integrating civic values into technical standards ensures AI systems remain accountable, transparent, and aligned with societal welfare. <span class="src">— evidencefordemocracy.ca</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPel83V1hzdExad3loQVp3T09iMnVKaHBrS0tjMjRBZmo2ZzNkaGlQNHVjS0JCSEYyX1VjcGxwQ1kwWkZub2c4XzJlX0xHMjVVUXpYY2pjUUhPbm9VeWFlNExILWJ5UXJWczBwOHpvUTZhUnphd3JtWGdTaDA5Z1lCYUNJdC1HSWM5SGtMTUxZaURwZnB5RDdJOF9TQlliT3YyR3g5MEVYUU8zb0hkMGJSNFd4VQ?oc=5" target="_blank" rel="noopener">草根數位治理的終極關鍵：培養具備批判思考力的數位公民</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">草の根からのデジタルガバナンス ― 最終章：「デジタル市民」の育成 ― 持続可能な開発の原動力 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">數位轉型最怕「上熱下冷」，越南在推動草根治理時給出了明確解答：重點不在於蓋了多少系統，而是如何培養基層市民的數位素養。當民眾能真正參與線上公共決策，數位治理才具有永續發展的動力。這對社會創新的啟示是：技術只是載體，真正的翻轉來自於建立由下而上的參與機制與強韌的公民信任。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">The report from Vietnam outlines the final chapter of a study on grassroots digital governance, focusing on cultivating active &#x27;digital citizens.&#x27; Sustainable regional development relies less on infrastructure deployment and more on empowering local communities with digital literacy. This bottom-up approach establishes a foundation for inclusive decision-making and civic participation. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi8gFBVV95cUxOMGlXdHpLYV9SSXk3cmlzcmFYcHB0RzMtZlRERTBzaGF2QXBfVW9nWUJDdjUtQ1BtNUlqWGlhSlp5SHlXNEhKVUJTb1QzTkZlUHZCU2wwS3VLWE9LS2lsOVQtZlhOWVFWMzFWanVyOHpsMDhYaUlJSkNRVlFHd29SZXNyU1pEZ1JaTGxteVpJbmlneEd4SzNuMEVod0Z3b3JUVVJZbC1ZUzFTU1VVSlVNZjEwVEhrMVRYUHpPd2JYODBobWwxc0FyVkpGSmp5ZnN1aHhDdklzQUV1SnVVNnM1WG1IV0hpSEtLYnBaaTExNl8tdw?oc=5" target="_blank" rel="noopener">企業 AI 治理的認知斷層：高階主管的焦慮竟是基層的 1.6 倍</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Rapid7 Omdia Research Reveals AI Governance Gap as Executive Security Leaders Show 1.6x Greater Concern Than Practitioners - Rapid7</div>
+            <div class="item-sentence lang-zh-only">最新調查顯示，高階資安主管對 AI 帶來的倫理與安全風險，焦慮程度竟是第一線工程師的 1.6 倍！這種「認知斷層」暴露出許多組織只有戰略焦慮，卻缺乏具體的落地執行框架與內部溝通。要突破此困境，企業必須建立橫跨設計、法務與技術的共同語言，把法規風控轉化為產品競爭力與信任紅利。 <span class="src">— Rapid7</span></div>
+            <div class="item-sentence-en lang-en-only">Rapid7 and Omdia research highlights a significant AI governance gap, revealing executive security leaders are 1.6 times more concerned about AI risks than front-line practitioners. This perception discrepancy underscores a lack of aligned governance frameworks within enterprises. Bridging this gap requires interdisciplinary communication that aligns high-level risk management with practical technical execution. <span class="src">— Rapid7</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxPRHJUMzhTZTlCRnR0MGc4bFQtRTJqck1iT09WRWlnUHN4aTQxeHI3MWRLX3hFMUlNemRrbTR5NjhwT2F6X2xuVmY3ckF2dElveDhEc01uZTVHenQ1ZjQzRXZWdGlJa3hLOTRQYkxJQUhENmE0X0NpSUQwWVY3UnZfMC0tekNRYnhieUluVzZscVNkUGFIOXJpUTZzSWxmTU9vSEdSQTNSVVlzMjdWVWRWNTVLTUp5dFFmZzNucmRydDBQZUFSTUE?oc=5" target="_blank" rel="noopener">歐盟 AI 法案透明度條款生效：生成內容標記成為商業新剛需</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">EU AI Act’s Transparency Rules: What Went Into Effect on 2 August? - Morgan Lewis</div>
+            <div class="item-sentence lang-zh-only">歐盟 AI 法案的新透明度規則正式上路，強制要求標示 AI 生成內容與訓練數據來源。這不只是法規遵循，更是重塑數位產品視覺與信任體驗的起點！未來「標記 AI 生成」將成為產品設計系統的標配。懂合規又懂使用者心理的視覺設計師，能把被動的法律義務轉化為建立品牌誠信的最佳機會。 <span class="src">— Morgan Lewis</span></div>
+            <div class="item-sentence-en lang-en-only">Following the implementation of transparency requirements under the EU AI Act on August 2, organizations must disclose AI-generated content and training sources. This legal milestone forces a redesign of digital user interfaces, making transparency disclosure a standard design requirement. Forward-thinking companies can turn compliance into a strategic brand differentiator centered on trust. <span class="src">— Morgan Lewis</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-13 08:03:46 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
