@@ -33,8 +33,19 @@ HEADERS = {
     'Accept-Language': 'en-US,en;q=0.9,zh-TW;q=0.8',
 }
 
+try:
+    import requests
+    HAS_REQUESTS = True
+except ImportError:
+    HAS_REQUESTS = False
+
 # === RSS 來源設定 ===
 # 每個 feed 包含: url, category ('design' | 'gov'), source_name
+TW_GOV_QUERY = urllib.parse.quote('數位治理 OR AI治理 OR 智慧城市 -香港 -北都 -港府 when:7d')
+US_GOV_QUERY = urllib.parse.quote('"AI governance" OR "digital governance" OR "tech policy" when:7d')
+EU_GOV_QUERY = urllib.parse.quote('"AI governance" OR "digital governance" OR "tech policy" OR "EU AI Act" when:7d')
+JP_GOV_QUERY = urllib.parse.quote('デジタルガバナンス OR AIガバナンス OR スマートシティ when:7d')
+
 RSS_FEEDS = [
     # 🎨 設計類
     {
@@ -81,40 +92,40 @@ RSS_FEEDS = [
     },
     # 🏛️ 治理類
     {
-        'url': 'https://news.google.com/rss/search?q=%E6%95%B8%E4%BD%8D%E6%B2%BB%E7%90%86+OR+AI%E6%B2%BB%E7%90%86+OR+%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82+-香港+-北都+-港府+when:7d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant',
+        'url': f'https://news.google.com/rss/search?q={TW_GOV_QUERY}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant',
         'category': 'gov',
         'region': 'tw',
         'source_name': 'Google News (TW)',
     },
     {
-        'url': 'https://news.google.com/rss/search?q="AI+governance"+OR+"digital+governance"+OR+"tech+policy"+when:7d&hl=en-US&gl=US&ceid=US:en',
+        'url': f'https://news.google.com/rss/search?q={US_GOV_QUERY}&hl=en-US&gl=US&ceid=US:en',
         'category': 'gov',
         'region': 'us',
         'source_name': 'Google News (US)',
     },
     {
-        'url': 'https://news.google.com/rss/search?q="AI+governance"+OR+"digital+governance"+OR+"tech+policy"+OR+"EU+AI+Act"+when:7d&hl=en-GB&gl=GB&ceid=GB:en',
+        'url': f'https://news.google.com/rss/search?q={EU_GOV_QUERY}&hl=en-GB&gl=GB&ceid=GB:en',
         'category': 'gov',
         'region': 'eu',
         'source_name': 'Google News (EU)',
     },
     {
-        'url': 'https://news.google.com/rss/search?q=%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%AC%E3%83%90%E3%83%8A%E3%83%B3%E3%82%B9+OR+AI%E3%82%AC%E3%83%90%E3%83%8A%E3%83%B3%E3%82%B9+OR+%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B7%E3%83%86%E3%82%A3+when:7d&hl=ja&gl=JP&ceid=JP:ja',
+        'url': f'https://news.google.com/rss/search?q={JP_GOV_QUERY}&hl=ja&gl=JP&ceid=JP:ja',
         'category': 'gov',
         'region': 'jp',
         'source_name': 'Google News (JP)',
     },
     {
-        'url': 'https://www.govtech.com/rss',
+        'url': 'https://www.govtech.com/rss.rss',
         'category': 'gov',
         'region': 'insight',
         'source_name': 'GovTech',
     },
     {
-        'url': 'https://thegovlab.org/feed',
+        'url': 'https://statescoop.com/feed/',
         'category': 'gov',
         'region': 'insight',
-        'source_name': 'The GovLab',
+        'source_name': 'StateScoop',
     }
 ]
 
@@ -128,18 +139,35 @@ MAX_ARTICLE_AGE_DAYS = 7  # 只收最近 7 天的文章
 # 1. RSS 爬取模組
 # ──────────────────────────────────────────────
 
-def fetch_url(url, timeout=10):
-    """安全的 HTTP GET，回傳 (status_code, content_bytes) 或 (None, None)"""
-    try:
-        req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return resp.getcode(), resp.read()
-    except urllib.error.HTTPError as e:
-        print(f"  ⚠ HTTP {e.code} for {url}")
-        return e.code, None
-    except Exception as e:
-        print(f"  ⚠ Fetch error for {url}: {e}")
-        return None, None
+def fetch_url(url, timeout=12, retries=2):
+    """安全的 HTTP GET，優先使用 requests 並支援重試，回傳 (status_code, content_bytes) 或 (None, None)"""
+    for attempt in range(retries + 1):
+        if HAS_REQUESTS:
+            try:
+                resp = requests.get(url, headers=HEADERS, timeout=timeout, allow_redirects=True)
+                return resp.status_code, resp.content
+            except Exception as e:
+                if attempt == retries:
+                    print(f"  ⚠ Requests fetch error for {url}: {e}")
+        else:
+            try:
+                # 確保 URL 路徑與參數安全編碼
+                parsed = urlparse(url)
+                safe_path = urllib.parse.quote(parsed.path)
+                safe_query = urllib.parse.quote(parsed.query, safe='=&?+')
+                safe_url = urllib.parse.urlunparse((parsed.scheme, parsed.netloc, safe_path, parsed.params, safe_query, parsed.fragment))
+                
+                req = urllib.request.Request(safe_url, headers=HEADERS)
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
+                    return resp.getcode(), resp.read()
+            except urllib.error.HTTPError as e:
+                if attempt == retries:
+                    print(f"  ⚠ HTTP {e.code} for {url}")
+                    return e.code, None
+            except Exception as e:
+                if attempt == retries:
+                    print(f"  ⚠ Fetch error for {url}: {e}")
+                    return None, None
 
 
 def parse_rss_feed(feed_url, source_name, category, region):
@@ -463,6 +491,25 @@ def select_articles(all_articles):
     while len(selected_gov) < TARGET_GOV_ARTICLES and remaining:
         selected_gov.append(remaining.pop(0))
 
+    # 兜底保護機制：若經過跨日去重後文章不足，自動從所有已驗證文章中補足，確保版塊絕不空白
+    if len(selected_design) < TARGET_DESIGN_ARTICLES:
+        all_design_verified = [a for a in all_articles if a['category'] == 'design' and a['verified'] and not is_junk(a)]
+        all_design_verified.sort(key=sort_key, reverse=True)
+        for a in all_design_verified:
+            if len(selected_design) >= TARGET_DESIGN_ARTICLES:
+                break
+            if a['url'] not in {x['url'] for x in selected_design}:
+                selected_design.append(a)
+
+    if len(selected_gov) < TARGET_GOV_ARTICLES:
+        all_gov_verified = [a for a in all_articles if a['category'] == 'gov' and a['verified']]
+        all_gov_verified.sort(key=sort_key, reverse=True)
+        for a in all_gov_verified:
+            if len(selected_gov) >= TARGET_GOV_ARTICLES:
+                break
+            if a['url'] not in {x['url'] for x in selected_gov}:
+                selected_gov.append(a)
+
     print(f"\n📊 Final selection: {len(selected_design)} design + {len(selected_gov)} governance articles")
     return selected_design, selected_gov
 
@@ -486,7 +533,7 @@ def dedupe_by_domain(articles, max_per_domain=2):
 # ──────────────────────────────────────────────
 
 def generate_summaries_with_gemini(design_articles, gov_articles, date_str):
-    """使用 Gemini API 產出白話摘要、每日大標題與快訊"""
+    """使用 Gemini API 產出白話摘要、每日大標題與快訊（支援 3.7 Flash 與優雅回退）"""
     api_key = os.environ.get('GEMINI_API_KEY', '')
     if not api_key:
         print("⚠ GEMINI_API_KEY not set, using fallback (article descriptions only)")
@@ -495,7 +542,6 @@ def generate_summaries_with_gemini(design_articles, gov_articles, date_str):
     try:
         import google.generativeai as genai
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-3.6-flash')
     except ImportError:
         print("⚠ google-generativeai not installed, using fallback")
         return generate_fallback_summaries(design_articles, gov_articles, date_str)
@@ -551,22 +597,36 @@ def generate_summaries_with_gemini(design_articles, gov_articles, date_str):
 {articles_text}
 """
 
-    try:
-        response = model.generate_content(prompt)
-        response_text = response.text.strip()
-        # 移除可能的 markdown code block
-        response_text = re.sub(r'^```(?:json)?\s*', '', response_text)
-        response_text = re.sub(r'\s*```$', '', response_text)
-        result = json.loads(response_text)
-        print("✅ Gemini summaries generated successfully")
-        return result
-    except json.JSONDecodeError as e:
-        print(f"⚠ JSON parse error from Gemini: {e}")
-        print(f"  Response text: {response_text[:200]}...")
-        return generate_fallback_summaries(design_articles, gov_articles, date_str)
-    except Exception as e:
-        print(f"⚠ Gemini API error: {e}")
-        return generate_fallback_summaries(design_articles, gov_articles, date_str)
+    # 嘗試順序：Gemini 3.7 Flash -> Gemini 3.6 Flash -> Gemini 2.0 Flash
+    candidate_models = [
+        ('gemini-3.7-flash', 'Gemini 3.7 Flash'),
+        ('gemini-3.6-flash', 'Gemini 3.6 Flash'),
+        ('gemini-2.0-flash', 'Gemini 2.0 Flash'),
+    ]
+
+    for model_id, model_display_name in candidate_models:
+        try:
+            print(f"🤖 Trying LLM model: {model_display_name} ({model_id})...")
+            model = genai.GenerativeModel(model_id)
+            response = model.generate_content(prompt)
+            response_text = response.text.strip()
+            # 移除可能的 markdown code block
+            response_text = re.sub(r'^```(?:json)?\s*', '', response_text)
+            response_text = re.sub(r'\s*```$', '', response_text)
+            result = json.loads(response_text)
+            result['_model_display_name'] = model_display_name
+            print(f"✅ Gemini summaries generated successfully using {model_display_name}")
+            return result
+        except json.JSONDecodeError as e:
+            print(f"⚠ JSON parse error from {model_display_name}: {e}")
+            print(f"  Response text: {response_text[:200]}...")
+            continue
+        except Exception as e:
+            print(f"⚠ API error with {model_display_name}: {e}")
+            continue
+
+    print("⚠ All Gemini models failed, falling back to local description extraction")
+    return generate_fallback_summaries(design_articles, gov_articles, date_str)
 
 
 def generate_fallback_summaries(design_articles, gov_articles, date_str):
@@ -597,6 +657,7 @@ def generate_fallback_summaries(design_articles, gov_articles, date_str):
         'quote_zh': '「設計不只是外表和感覺，設計是讓東西好用。」',
         'quote_author': 'Steve Jobs',
         'articles': articles_summaries,
+        '_model_display_name': 'Fallback (No LLM)',
     }
 
 
@@ -615,13 +676,14 @@ def generate_brief_html(design_articles, gov_articles, summaries, date_str):
 
     # 基本欄位替換
     now = datetime.now(timezone(timedelta(hours=8)))
+    model_name = summaries.get('_model_display_name', 'Gemini 3.7 Flash')
     replacements = {
         '{{DATE_STRING}}': date_str,
         '{{HEADLINE}}': html.escape(summaries.get('headline', f'每日設計與治理簡報 · {date_str}')),
         '{{QUOTE_EN}}': html.escape(summaries.get('quote_en', '')),
         '{{QUOTE_ZH}}': html.escape(summaries.get('quote_zh', '')),
         '{{QUOTE_AUTHOR}}': html.escape(summaries.get('quote_author', '')),
-        '{{GENERATED_MODEL}}': 'RSS + Gemini 3.6 Flash',
+        '{{GENERATED_MODEL}}': f'RSS + {model_name}',
         '{{GENERATION_TIMESTAMP}}': now.strftime('%Y-%m-%d %H:%M:%S (UTC+8)'),
         '{{CALM_LINE}}': '以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。',
     }
