@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從硬體霸權走向制度輸出：AI 時代的治理典範轉移與設計本質反思 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-19</div>
+    <div class="headline">從硬體霸權走向制度輸出：AI 時代的治理典範轉移與設計本質反思</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is neither good nor bad; nor is it neutral.</div>
+      <div class="quote-text-zh lang-zh-only">科技無所謂好壞，但它也絕非中立。</div>
+      <div class="quote-author">— Melvin Kranzberg</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">台灣推動從硬體代工轉向全球 AI 治理與制度信任先鋒。</li>
+        <li class="flash-item">反思軟體與 AI 膨脹，設計圈重回系統透明度與真實價值。</li>
+        <li class="flash-item">高規監管與公私協力成形，智慧城市與醫療邁向務實落地。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/08/89315/" target="_blank" rel="noopener">美甲品牌招募全方位設計師：小眾美學走向全鏈路體驗整合</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】ネイル関連商品の企画・開発を行う株式会社my&amp;beeが、デザイナーを募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/693fc0f9ad51f.jpg" alt="【求人情報】ネイル関連商品の企画・開発を行う株式会社my&amp;beeが、デザイナーを募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">日本美甲品牌 my&amp;bee 招募設計師，不只是找美編，而是要從產品企劃、世界觀設定到拍攝視覺一手包辦。這反映出當代美學經濟的轉變：在極度內卷的美妝市場，光有產品不夠，你得販售一整套能引發專業職人共鳴的「氛圍感」與「敘事體系」。單點設計已死，全鏈路的世界觀建構才是小眾品牌突圍的底牌。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese nail brand my&amp;bee is hiring designers to manage everything from product development to brand worldview. This reflects a shift where niche aesthetic brands win by delivering a cohesive cultural narrative rather than just functional products. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/zenghibli-kyoceramuseum/" target="_blank" rel="noopener">京都開展《禪與吉卜力》：借古典哲思為現代焦慮尋找心靈出口</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">『禅とジブリ』京都展</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/07/03982ddad7207bf98e163dfaf0a4db0a.jpg" alt="『禅とジブリ』京都展" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">京瓷美術館推出《禪與吉卜力》展，把經典動畫中的自然觀與空靈感，直接對接日本傳統禪宗哲學。這不單是情懷展覽，更是在數位過載與 AI 焦慮的時代，文化策展人試圖用最熟悉的視覺語言，引導大眾重新找回沉靜與專注。當科技越跑越快，能讓人慢下來梳理內在的文化載體，價值反而越被放大。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The &#x27;Zen and Ghibli&#x27; exhibition in Kyoto bridges animation narratives with traditional Zen philosophy. It offers a reflective cultural sanctuary to help modern audiences rediscover stillness amidst relentless technological acceleration. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/what-the-matrix-got-right-about-ai-c741b38dca68?source=rss----138adf9c44c---4" target="_blank" rel="noopener">《駭客任務》25週年重思：真正的 AI 挑戰是看穿系統運作</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What The Matrix got right about AI</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fill:1200:632/g:fp:0.44:0.5/1*0Oq1k5xQnH5uULrX58MU3g.png" alt="What The Matrix got right about AI" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">重看 1999 年的《駭客任務》，你會發現它根本不是科幻預言，而是今天 AI 時代的產品藍圖。經典的紅藍藥丸抉擇，本質上不是逃避或面對現實，而是「你是否願意看見驅動這一切背後的演算系統架構」。當生成式 AI 把現實包裝得越來越逼真，設計師與使用者的真正修煉，在於保有拆解黑箱系統的清醒意識。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Revisiting The Matrix highlights that the true challenge in our AI era is not escaping illusion, but understanding the invisible algorithmic systems shaping our perceived reality. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/what-is-the-purpose-of-software-410e155567e3?source=rss----138adf9c44c---4" target="_blank" rel="noopener">軟體的終極目的何在：對抗 AI 時代產能過剩的哲學提問</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What is the purpose of software</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*nxU5qzkEe6qayvSfU6NN0Q.jpeg" alt="What is the purpose of software" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當大語言模型讓寫程式變得像呼吸一樣簡單，我們卻陷入了「產能過剩但意義貧乏」的泥淖。設計師重新拷問「軟體到底為了什麼存在」，提醒我們數位工具的核心永遠是為人類解決真實問題、擴展認知邊界，而不是製造更多數位垃圾。別再盲目追求產能倍增，專注於打造有靈魂、真正帶來改變的產品才是硬道理。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">As AI dramatically accelerates software production, creators must pause to reconsider the core purpose of tools: solving authentic human problems rather than merely multiplying digital noise. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/how-to-experiment-when-designing-in-a-regulated-field-like-healthcare-64fca3bb7655?source=rss----138adf9c44c---4" target="_blank" rel="noopener">在醫療強監管下做設計：告別隨興敏捷，用嚴謹框架激發真正創新</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How to experiment when designing in a regulated field like Healthcare</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*7jHOyZSPQj-eemyK6vDdBw.jpeg" alt="How to experiment when designing in a regulated field like Healthcare" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在醫療健康領域，你不可能靠著「隨興寫扣」或打破規則來快速迭代，因為任何踩線的資安與法規風險都是致命的。這篇文章給設計師的醍醐灌頂是：真正的專業不是在無拘無束的白紙上畫畫，而是在 HIPAA 等嚴苛法規的夾縫中，設計出安全合規卻極度友善的體驗。框架不是創意的牢籠，而是高階設計的試金石。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Designing in heavily regulated industries like healthcare proves that true innovation lies in crafting intuitive user experiences within strict compliance and security boundaries. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBmNDYzNm5ReDhlaExYOHZHb2ZXV3R6cVJ0TTBuUnJoVWlETFVZdWZrdUFabmw1R0xnQ2hFdF9JbUFwRkEzU2I2aFVwRUpPUlpXakdTQktFYVUxU3k3aC1jSDdENTJzTmhCZ3cw?oc=5" target="_blank" rel="noopener">台灣不只是硬體晶片島：蕭美琴倡議搶佔全球 AI 治理先行席次</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">不只是晶片島蕭美琴：台要成AI治理先發- 財經要聞- 工商時報 - 中時新聞網</div>
+            <div class="item-sentence lang-zh-only">台灣在半導體製造上是全球中樞，但副總統蕭美琴指出更關鍵的下一步：台灣要成為負責任的「AI 治理先發者」。這意味著從單純輸出運算力，升級為輸出制度信任、倫理規範與民主科技標準。這對產業與政策是個巨大轉折，唯有在技術底層與制度規範同時具備話語權，台灣才能在地緣政治風暴中站穩關鍵不可替代的地位。 <span class="src">— 中時新聞網</span></div>
+            <div class="item-sentence-en lang-en-only">Taiwan aims to move beyond its semiconductor dominance to become a pioneer in AI governance, establishing technological trust and ethical frameworks on the global stage. <span class="src">— 中時新聞網</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNbExDRXJKeUNhWFlvNVpoT25hREtSQXFsRFFPbUFiUkh4LUJxR0dvTzlBNlc0bVFvUmRycWx2VTNCWFltNmRrRmwxTUViSFFQZ1JYdE9pY2pjZnlpWFVFZ1I3NVRDazQ1MWwxVUo1MnU5NWhhNU91RVU4Zk1lb0RmQUtiWWc0WjhwSjBYUVlqVUVUbUZaT1hyUVRGQUZTVnl2bklWSERJajIySk1S?oc=5" target="_blank" rel="noopener">全球 AI 治理峰會前瞻：法律與科技跨界結盟成規管新常態</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Key AI Innovators Announced for AI Governance World Conference in Las Vegas - The National Law Review</div>
+            <div class="item-sentence lang-zh-only">拉斯維加斯即將召開的全球 AI 治理峰會公布重量級講者，象徵 AI 監管已正式從學院討論走進商業與法律實務主戰場。科技巨頭不再能關起門來自律，律師、政策制定者與架構師必須坐同張桌子訂定規則。未來的產品競爭力，不只比演算法多強，更比誰能最快符合跨國複雜的法規架構，治理能力已成企業的核心護城河。 <span class="src">— The National Law Review</span></div>
+            <div class="item-sentence-en lang-en-only">The upcoming AI Governance World Conference highlights the urgent convergence of law, tech, and policy, turning regulatory compliance into a vital competitive advantage for innovators. <span class="src">— The National Law Review</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNbExDRXJKeUNhWFlvNVpoT25hREtSQXFsRFFPbUFiUkh4LUJxR0dvTzlBNlc0bVFvUmRycWx2VTNCWFltNmRrRmwxTUViSFFQZ1JYdE9pY2pjZnlpWFVFZ1I3NVRDazQ1MWwxVUo1MnU5NWhhNU91RVU4Zk1lb0RmQUtiWWc0WjhwSjBYUVlqVUVUbUZaT1hyUVRGQUZTVnl2bklWSERJajIySk1S?oc=5" target="_blank" rel="noopener">AI 監管重塑全球商業版圖：合規能力成為下個十年的科技護城河</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Key AI Innovators Announced for AI Governance World Conference in Las Vegas - The National Law Review</div>
+            <div class="item-sentence lang-zh-only">隨著國際 AI 治理對話升溫，全球科技生態正在經歷一場「規則即戰力」的典範轉移。過去科技圈奉行「快速行動、打破常規」，如今在演算法透明度、隱私與版權的高壓下，懂得把治理原則直接編程進產品邏輯的團隊才能生存。治理不是創新的剎車皮，而是確保技術航向公眾信任的導航儀。 <span class="src">— The National Law Review</span></div>
+            <div class="item-sentence-en lang-en-only">Global discourse on AI regulation proves that compliance and governance are no longer friction points, but structural foundations for sustainable tech innovation. <span class="src">— The National Law Review</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTFBldlN5LVZyMmItd0ZsWDB1Mko5dEFWWWxzMHBZZHJiNFFUaF9iRDVlYVA0dEo4NnVMWWlSN2IzcnZhTy1JY0JQN2t6eU53YUtsTE80WjY2STk?oc=5" target="_blank" rel="noopener">跨區域智慧城市新典範：日本推動 PFI 公私協力突破地方治理邊界</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">広域スマートシティテーマにセミナー/PFI協会が9月8日 - 建設通信新聞Digital</div>
+            <div class="item-sentence lang-zh-only">日本 PFI 協會研討會聚焦「廣域智慧城市」，探討如何打破單一地方行政藩籬，透過民間資金與技術整合更大尺度的生活圈。這點出智慧城市建設已告別「各鄉鎮自建 App」的破碎化實驗，轉向區域連線與基礎設施共享。用公私協力模式解決偏鄉萎縮與資源重疊，是亞洲邁向超高齡社會極具價值的治理活路。 <span class="src">— 建設通信新聞Digital</span></div>
+            <div class="item-sentence-en lang-en-only">Japan&#x27;s PFI Association explores regional smart cities, demonstrating how public-private partnerships can transcend local administrative borders to create shared infrastructure. <span class="src">— 建設通信新聞Digital</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/policy/virginia-makes-technology-key-to-emergency-response" target="_blank" rel="noopener">維吉尼亞州行政命令：把數位現代化與資安直接打造成救災中樞</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Virginia Makes Technology Key to Emergency Response</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/18e0b9f/2147483647/strip/true/crop/940x457+0+57/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fed%2F1e%2F6b4772a20f230af1df77026f7ada%2Fshutterstock-94649587.jpg" alt="Virginia Makes Technology Key to Emergency Response" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">維吉尼亞州長發布行政命令，將資安防禦與數據共享全面內嵌進災害應變體系，讓科技升級不再只是後勤支援，而是第一線救災的核心器官。這項治理創新的核心在於「打通數據孤島」，讓情報在跨部門危機中零時差流動。政府數位轉型最迷人的地方，正是用最底層的資料串接，在危急關頭真正挽救民眾的生命安全。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Virginia&#x27;s executive order integrates technology modernization and data sharing into emergency preparedness, demonstrating how digital infrastructure directly enhances public resilience. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.7 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-19 08:04:19 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
