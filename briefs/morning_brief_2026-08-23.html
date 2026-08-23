@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>藻類生物發電開啟物聯網新局，AI深度整合與全天候公共治理迎向轉折 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-23</div>
+    <div class="headline">藻類生物發電開啟物聯網新局，AI深度整合與全天候公共治理迎向轉折</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is society made durable.</div>
+      <div class="quote-text-zh lang-zh-only">技術，就是讓社會結構與集體價值得以具象並長久延續的載體。</div>
+      <div class="quote-author">— Bruno Latour</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">劍橋研發藻類生物電池，實現免充電微電力供應新典範</li>
+        <li class="flash-item">企業深植AI引爆資安隱患，動態治理已成數位轉型核心</li>
+        <li class="flash-item">公共服務打破朝九晚五，對話式AI開創不打烊市政體驗</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/08/720518.html" target="_blank" rel="noopener">劍橋藻類生物發電：告別化學電池的綠色物聯網新解方</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ケンブリッジ大学が藻類による小型電源を開発。電池に代わって24時間発電するバイオセル技術</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/08/algae-biocell-lucia-giron-university-cambridge-design_dezeen_2364_col_2-852x579-1.jpg" alt="ケンブリッジ大学が藻類による小型電源を開発。電池に代わって24時間発電するバイオセル技術" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這項研究不僅是替代能源的小實驗，更預示了硬體永續設計的典範轉移。當微型設備能仰賴活體藻類的光合作用自給自足，未來的環境監測與智慧感測器將彻底擺脫定期更換鋰電池的維護死穴，實現真正低干擾、自循環的仿生硬體生態。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Cambridge researchers have developed a bio-cell that uses cyanobacteria to generate micro-electricity around the clock. This breakthrough hints at a sustainable future for IoT hardware, enabling maintenance-free, eco-friendly devices powered entirely by biological processes rather than traditional toxic batteries. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/08/719836.html" target="_blank" rel="noopener">在演算法洪流中，創作者的感性原點才是不可替代的設計護城河</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">クリエイターの原点と、未来のデザインを語る夜 ーAXIS Media Membership 2周年記念イベントレポートー</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/08/DSC6258.jpg" alt="クリエイターの原点と、未来のデザインを語る夜 ーAXIS Media Membership 2周年記念イベントレポートー" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當生成式工具能秒速產出精美視覺，創作者的價值反而回歸到最根本的生活感知與直覺。這場沙龍揭示了一個關鍵趨勢：卸下專業光環後的個人生命經驗與初心，才是未來設計師在高度同質化市場中建立獨特敘事與美學深度的唯一解法。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">AXIS Media celebrated its anniversary by hosting an intimate dialogue exploring creators&#x27; core origins. In an era dominated by AI efficiency, authentic personal perspectives and emotional intuition emerge as the ultimate differentiators, guiding designers to craft deeply resonant works that algorithms cannot replicate. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/08/22/sixty-frames-for-the-record-a-three-js-game-seven-fly-throughs-and-a-wall-of-crts/" target="_blank" rel="noopener">極限網頁3D實驗：音樂、復古CRT與60幀沉浸敘事的數位美學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Sixty Frames for the Record: A Three.js Game, Seven Fly-Throughs, and a Wall of CRTs</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/08/sixty-frames-main-1.jpg?x57826" alt="Sixty Frames for the Record: A Three.js Game, Seven Fly-Throughs, and a Wall of CRTs" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">網頁互動早已跨越單純的圖文排版，邁向重度 3D 沉浸敘事。這項專案示範了如何透過 WebGL 技術將個人音樂轉化為流暢的空間體驗，證明了前端工程師與數位藝術家的界線正在消融，復古科技美學在瀏覽器端擁有無限的表現潛力。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">A sophisticated Three.js experimental lab showcases how music and visual storytelling merge into a seamless 60fps web experience. Featuring CRT aesthetics and dynamic fly-throughs, the project demonstrates how modern browser rendering capabilities are blurring the lines between creative engineering and digital interactive art. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/tips/adobe-creative-collective-member-lindsay-adler-on-why-photographic-skills-will-matter-more-in-future-not-less/" target="_blank" rel="noopener">AI時代的美感逆襲：為何經典攝影視角比以往任何時候都更珍貴</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Lindsay Adler on why a photographer&#x27;s perspective will matter more in the future, not less</div>
+            <img class="item-image" src="https://www.creativeboom.com/upload/articles/6d/6d94ad89c8ed7f3643494363f682bea6b75a83b1_800.jpg" alt="Lindsay Adler on why a photographer&#x27;s perspective will matter more in the future, not less" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">AI 降低了製圖門檻，卻大幅墊高了「審美判斷」的門檻。懂得真實世界光影規律、構圖張力與色彩心理學的攝影眼，正是精準駕馭 Prompt 與過濾平庸產出的核心底氣。技術工具越普及，擁有紮實視覺語彙的人越具主導權。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Renowned photographer Lindsay Adler argues that core photographic fundamentals become even more vital as generative AI expands. Understanding physical light, composition, and visual nuance allows creatives to guide synthetic tools with precision, turning aesthetic discernment into the ultimate creative asset in an automated world. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/tips/six-pieces-of-advice-for-juniors-in-their-first-month-which-the-rest-of-us-might-need-to-hear-too/" target="_blank" rel="noopener">職場新人的防焦慮指南：設計職涯是認知馬拉松而非技能衝刺</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Six pieces of advice for juniors in their first month (which the rest of us might need to hear too)</div>
+            <img class="item-image" src="https://www.creativeboom.com/upload/articles/03/0323bcdc7c6dff52b0f39530abec47e0648b18fd_800.jpeg" alt="Six pieces of advice for juniors in their first month (which the rest of us might need to hear too)" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">給新人的建議往往也是資深設計師最容易遺忘的本質。在節奏緊湊的專案節奏中，懂得提問、管理預期並接納未知的脆弱，遠比急於證明技術更有價值。建立健康的心理韌性與跨領域對話能力，才是支撐長期專業創新的基石。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Essential advice for junior creatives highlights the importance of asking questions, embracing continuous learning, and managing expectations. Rather than racing to prove technical perfection, developing psychological resilience and strong communication skills forms the true foundation for a sustainable and rewarding creative career. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi3AJBVV95cUxPdWRLOXpSZVdjQ18xeVpwSVJqbnVQazctTmIyamQ3bzNkX1I5ZFVXZ2JaLXRxZWFOMndUSU9oNVhEQWMxVl9meVg2RTVHYzVwbVFtWUIyalNGYkhFaG5aRmhTaTBidDRQWWpVUUxKVXRMSVdmWWZaYi1JcEtUTmNJeXEtbUtpeHRlYVZFaTRxeVRNcEI4SHlOMWFOdng5c09DU2V6QnFqMlR2X1ZjN3ZHUWNyOV9xTFN0WjhqRWxfdTFzSjhaLWFPZ1dfb3VDYU5ULUJvZ1RWZG1qcVlSVEQ4ckI1MjUtZkhnemowNnh4WTUtYzUwcHRIMzZwSjQ0OEZ1Yld1Sm1rQ3N6aXVtSkExMlRSb2ZSYjc5ODFVVlJwNFVJc21YM0Y4Z296ZTY1WjlkeDl2LUlscXUyRW5EanNqazNzaEpHeE55bTBWbm1Lb0E1WDdjMUJGUlFRSFE?oc=5" target="_blank" rel="noopener">智慧城市企業發盈警：概念炒作退潮後的殘酷商業模式檢驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">港譽智慧城市服務發佈盈利警告 預期上半年溢利大跌最多轉虧200萬港元 - Minichart</div>
+            <div class="item-sentence lang-zh-only">這場財務預警敲響了智慧城市概念落地期的警鐘。單靠鋪設硬體或政府補貼的粗放模式已難以為繼，城市數位治理正進入嚴格考驗投資回報率（ROI）的深水區。唯有能切中公共運營痛點、具備持續造血能力的精準服務，才能在潮水退去後存活。 <span class="src">— Minichart</span></div>
+            <div class="item-sentence-en lang-en-only">A profit warning from a prominent smart city operator highlights the transition from conceptual hype to rigorous financial scrutiny. The sector is moving into a phase where technology deployment must deliver tangible operational ROI and sustainable revenue models rather than relying solely on subsidized infrastructure growth. <span class="src">— Minichart</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxQdWg3alJsTWcyaTMxUWxwUjBELWN5N2hyQjlzbW1Bekw2ampoSGQyTVJxNXhMOXBERWFWbE9oUnd4anhVNEZGbE1IbGhtTU9fQmpLbE1tM3MwcEN2U1Y1QkZFVTZybEpHWFprTTNwUkpBbGpRMWtpbF9ZWVlncnVFUnotTGFpX2ZQSmxld2d0Rl9DR25IdUF4M1d1OEF2Sk9NSXVqelpVQzBLVUhURjduR3d6MTg5a1BhVmhMNnJxbzI1aGdaOEhMY2ZCRHNqcXJlMFJEcg?oc=5" target="_blank" rel="noopener">AI治理落後於技術狂奔：深度系統整合引發的企業資安新風暴</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Bridging The AI Governance Gap: Why Deep Integration Is Driving A Surge In Cybersecurity Incidents - Scoop - New Zealand News</div>
+            <div class="item-sentence lang-zh-only">當企業為了效率將 AI 深度嵌入內部營運核心，防護架構卻常停留在舊時代。這種「治理脫節」讓自動化系統成為最脆弱的受攻擊面。如果沒有同步建立動態防護與透明審查體系，盲目追求智慧化只會帶來指數級放大的系統性風險。 <span class="src">— Scoop - New Zealand News</span></div>
+            <div class="item-sentence-en lang-en-only">As enterprises deeply integrate AI into daily operations, significant governance gaps are driving a surge in cybersecurity incidents. The lack of proactive oversight and dynamic defense mechanisms exposes critical operational vulnerabilities, making robust AI governance an urgent business imperative rather than just a compliance checkbox. <span class="src">— Scoop - New Zealand News</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxQdWg3alJsTWcyaTMxUWxwUjBELWN5N2hyQjlzbW1Bekw2ampoSGQyTVJxNXhMOXBERWFWbE9oUnd4anhVNEZGbE1IbGhtTU9fQmpLbE1tM3MwcEN2U1Y1QkZFVTZybEpHWFprTTNwUkpBbGpRMWtpbF9ZWVlncnVFUnotTGFpX2ZQSmxld2d0Rl9DR25IdUF4M1d1OEF2Sk9NSXVqelpVQzBLVUhURjduR3d6MTg5a1BhVmhMNnJxbzI1aGdaOEhMY2ZCRHNqcXJlMFJEcg?oc=5" target="_blank" rel="noopener">從防禦到主動治理：破解AI深度落地時的系統性脆弱與信任危機</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Bridging The AI Governance Gap: Why Deep Integration Is Driving A Surge In Cybersecurity Incidents - Scoop - New Zealand News</div>
+            <div class="item-sentence lang-zh-only">AI 安全不再只是資訊部門的技術課題，而是關乎組織生存的治理戰略。隨著自動化代理（Agents）介入決策鏈，資料投毒與越權執行的威脅倍增。唯有將責任機制、資料倫理與安全邊界內建於系統設計初期，才能建立值得信賴的數位體質。 <span class="src">— Scoop - New Zealand News</span></div>
+            <div class="item-sentence-en lang-en-only">Bridging the AI governance gap requires moving beyond traditional reactive security to holistic systemic oversight. As autonomous algorithms take over critical operational workflows, embedding strict ethical boundaries and verifiable safeguards becomes essential to maintaining institutional integrity and digital resilience. <span class="src">— Scoop - New Zealand News</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxOTWpDTGtRSnY5akVDcURILWM0VHAwZWIxdXJTcm1YbnZZejdmV0QtSzhKTzYxSFVpSmU3ekY5cVV0QU1LdVkyVkQxbGNGd3V1MkxQTDlScnBNWWZZRV9DZTlCdnpTRWEwTV81TlctdXRnbE1fZVRDU1o3OGRKUGRZVWtYSjF5UmJpcTVDMEpfTTVjTEFMX1ZLYV9Rb3RsNkNoX2dLQVl5VlBCUmE1Vnp4SE9uS2pldDBNcTAzWWVYXzFYc3lpejVz?oc=5" target="_blank" rel="noopener">從應用走向底層自研：越南晶片競賽折射東南亞智慧城市的硬核野心</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">第3回スマートシティ集積回路設計コンテストの予選には、ベトナム中部から23チームが参加した。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">智慧城市的競爭正在向底層硬體與晶片設計遷移。越南透過競賽培育在地 IC 設計人才，展現出從單純的智慧應用採購國，升級為自主技術硬體供應者的強烈企圖心。區域技術自主性正在重塑未來全球智慧硬體的供應鏈版圖。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">The IC design contest in Central Vietnam highlights the region&#x27;s growing ambition to develop domestic hardware talent for smart city infrastructures. By moving beyond software applications toward fundamental semiconductor design, Southeast Asia is actively building its technological sovereignty and supply chain capabilities. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/biz/granicus-boosts-ai-offerings-via-lab-and-new-channels" target="_blank" rel="noopener">公部門AI非上班時間使用激增：對話式介面重塑不打烊的市政體驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Granicus Boosts AI Offerings via ‘Lab’ and New Channels</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/84c867e/2147483647/strip/true/crop/946x460+0+85/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F0c%2F4b%2F4c36c8dbae1941c4523bdb658aa3%2Fshutterstock-767432920.jpg" alt="Granicus Boosts AI Offerings via ‘Lab’ and New Channels" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">市民在夜間與假日的活躍使用，印證了公共服務體驗的典範轉移。傳統臨櫃與朝九晚五的公務框架正在被對話式 AI 瓦解。以自然語言為核心的公眾科技，不僅填補了服務時段斷層，更讓政府治理轉型為隨時待命、主動同理的市民夥伴。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Granicus reports a marked rise in citizen engagement with government AI chatbots during off-hours, demonstrating evolving public expectations. Conversational AI tools are successfully transforming municipal services into accessible, 24/7 civic touchpoints that bridge the gap between bureaucratic schedules and community needs. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.7 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-23 08:03:56 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
