@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從極端氣候防線到AI實質控制權：當代設計與城市治理的重構思考 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-28</div>
+    <div class="headline">從極端氣候防線到AI實質控制權：當代設計與城市治理的重構思考</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is society made durable.</div>
+      <div class="quote-text-zh lang-zh-only">技術，不過是固化了的社會關係。</div>
+      <div class="quote-author">— Bruno Latour</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">經驗設計跨界升級：夜間教育邁向體驗與生成式AI結合。</li>
+        <li class="flash-item">務實AI治理新趨勢：企業領導者必須鎖定系統實質控制點。</li>
+        <li class="flash-item">氣候韌性公私協力：城市轉向跨領域合作應對極端天災挑戰。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/08/721565.html" target="_blank" rel="noopener">芬蘭經典北歐設計融入東京日常，特展詮釋生活與藝術邊界</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">CAFE AALTO TOKYOで「暮らしと、アートと、アアルト」展示。 アアルトベース90周年記念のAalto City Vaseも</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/08/579b8c5a3cfc104872e5f209de3c93a9.jpg" alt="CAFE AALTO TOKYOで「暮らしと、アートと、アアルト」展示。 アアルトベース90周年記念のAalto City Vaseも" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">北歐經典風格能歷久彌新，重點從不是博物館裡的雕像感，而是能不能真正鑽進生活細節裡。這次 Alvar Aalto 經典花瓶 90 週年的特展選在東京咖啡館落地，告訴我們設計早就擺脫了單向的展示，而是化為都市日常裡的流動儀式。對當代品牌來說，把文化遺產揉進當代生活場景，才是讓經典持續呼吸的關鍵秘訣。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The 1st anniversary of CAFE AALTO TOKYO features a special exhibition celebrating Alvar Aalto&#x27;s legacy alongside the 90th anniversary of the iconic Aalto City Vase. By integrating Finnish design heritage into an accessible commercial space, the event demonstrates how historical design can seamlessly become part of modern urban daily life rather than remaining confined to traditional museum settings. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/08/89663/" target="_blank" rel="noopener">桑澤設計學院推出夜間體驗設計專攻，迎戰AI跨領域浪潮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">桑沢デザイン研究所が、2027年4月に夜間部「エクスペリエンスデザイン専攻」を新設</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/kuwasawa.jpg" alt="桑沢デザイン研究所が、2027年4月に夜間部「エクスペリエンスデザイン専攻」を新設" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">桑澤開設夜間「體驗設計専攻」，這不只是多一門課，而是設計教育因應產業劇變的強烈訊號。當生成式 AI 讓繪圖與產出門檻歸零，未來的設計師不能只會畫圖，更要懂「體驗流程」與「跨界整合」。這種專為在職者設計的夜間變革，反映出業界對跨域人力的急迫需求——未來的設計戰場，在於如何串接人機之間的動態體驗。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Kuwasawa Design School is launching a new nighttime Experience Design major in April 2027 to address rapid shifts in the creative industry. Integrating generative AI workflows with cross-disciplinary learning, the program aims to equip working professionals with holistic experience design capabilities, shifting educational focus from technical execution to complex system interactions. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/what-blade-runner-got-wrong-about-ai-so-far-d01b579288c1?source=rss----138adf9c44c---4" target="_blank" rel="noopener">從銀翼殺手到現實對話框：我們想像的AI與真實落差在哪</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What Blade Runner got wrong about AI (so far)</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*h7xZiyDq-NQTLVSoATvPqw.png" alt="What Blade Runner got wrong about AI (so far)" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">電影曾預言 AI 時代會有降雨不斷的高樓與極具威脅的仿生人，但現實中 AI 卻只是一道極簡的白色輸入框。這種視覺想像與真實落差提醒我們：真正的技術革命往往以極度無形、甚至平淡的方式滲透生活。我們過度著迷於 AI 的科幻外貌，反而忽略了它在底層悄悄重塑資訊流與認知習慣的巨大影響力。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Examining how Blade Runner envisioned a future dominated by humanoid androids and rainy cyberpunk architecture, this article highlights the contrast with today&#x27;s generative AI reality. Real technological disruption happens not through dramatic physical hardware, but through simple interface transformations that quietly alter human cognition, information retrieval, and daily communication workflows. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/inspiration/matthew-blackburn-gives-ps1-controllers-and-froot-loops-the-old-master-treatment/" target="_blank" rel="noopener">將家用主機躍升古典靜物畫：當數位童年記憶變身經典藝術</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Matthew Blackburn&#x27;s art hands you the controller to your own childhood</div>
+            <img class="item-image" src="https://creative-boom-media.lon1.cdn.digitaloceanspaces.com/ba05abd7-0b3c-473c-b314-897c186daf9b/conversions/954ddd1f0b379404c9272812955d8bc26014321b-medium.webp" alt="Matthew Blackburn&#x27;s art hands you the controller to your own childhood" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">畫家將 PS1 手把與彩虹圈麥片用 17 世紀古典靜物畫的筆法描繪，看似幽默，實則精準打中數位世代的集體記憶。這意味著「流行文化廢棄物」已經成為我們這一代的文化圖騰。當代視覺藝術不再局限於傳統神話或高雅物件，而是勇敢地將我們童年臥室裡的遊戲搖桿升格為值得被凝視與典藏的經典符號。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Painter Matthew Blackburn renders 1990s pop culture objects, such as PlayStation controllers and sugary cereal boxes, using the light and technique of 17th-century Dutch still lifes. By elevating nostalgic consumer electronics to classical fine art, his work explores how digital memory tokens have become the modern equivalent of historical iconography in contemporary art. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/08/27/goodgrowth-boot-sequences-spinning-discs-and-the-art-of-the-portfolio/" target="_blank" rel="noopener">告別極簡版型模板！復古主機風格引領作品集網站設計革新</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Goodgrowth: Boot Sequences, Spinning Discs, and the Art of the Portfolio</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/08/goodgrowth_01.png?x57826" alt="Goodgrowth: Boot Sequences, Spinning Discs, and the Art of the Portfolio" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Goodgrowth 網站拋棄了公版模板的冰冷感，將開機畫面與 3D 唱片互動搬上網頁，展現極強的復古主機美學。這代表當代網頁視覺正經歷一場「感官復興」——在過度同質化的極簡設計浪潮後，能帶給使用者聽覺、觸覺聯想與沉浸式敘事的網站，才能在海量的數位資訊中搶下眼球並傳遞極致的品牌個性。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">The web portfolio Goodgrowth incorporates retro console-inspired boot sequences, interactive 3D spinning discs, motion design, and custom soundscapes. Moving away from sterile flat layouts, this craft-centric approach demonstrates a broader trend toward highly tactile and immersive digital experiences that engage user senses while establishing a clear, unforgettable visual identity. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE52dkFTQWYtRkR3SXJocWEtZWYtSEg4dEFJWXNKN04wVlN3TW8yZXR6cTdZcW1GcjF4VkpVUXYxeWJPNmxXaDBFTFpjc253ZDRiRlE?oc=5" target="_blank" rel="noopener">朝陽科大AI治理獲國際認可，展現教育機構數位韌性新典範</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">朝陽科大入選IFLA 數位韌性與AI治理成果登上國際 - 蕃新聞</div>
+            <div class="item-sentence lang-zh-only">朝陽科大入選國際圖書館協會（IFLA）案例，展現了高教機構在數位韌性與 AI 治理上的突破。這證明圖書館不再只是藏書空間，而是升級為推動 AI 素養與資料治理的前線陣地。這給全台治理者的啟示是：教育體系若能把數位轉型轉化為可落地的主動防禦機制，就能在國際外交與永續治理上佔據關鍵聲量。 <span class="src">— 蕃新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Chaoyang University of Technology achieved international recognition at IFLA for its framework on digital resilience and AI governance. This milestone highlights how university libraries are evolving from traditional book repositories into active frontline centers for AI literacy and systemic data governance, offering a compelling benchmark for institutional digital transformation. <span class="src">— 蕃新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQSkNNLWdtV0hPMkJ0MkM0NUJiSGtTYkRvUklCQWlXVC1tUmNySGVsZnFpMmctcmxLVkw4OUFBQWFxNmdWSWcwMzVTVkpEc3RTQU1XMmFWSm5QekoxZFV3aWtuY0NuNlB3NlVGWWVqNGg1UjBwRHRLUnFUN05XSnBSNHYzYmVwa0o3MV9VLU5td1VqWDhGaDcxRGhTb1pHWkJvUDRmNGNva2V2V2ZOOHNNNUc4a1pwSXZZU3c?oc=5" target="_blank" rel="noopener">別被框架自我麻痺！企業領導者需掌握AI實質控制權的真諦</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance Isn’t Enough: Leaders Must Know Where Control Lives - Forbes</div>
+            <div class="item-sentence lang-zh-only">光寫出一套 AI 治理政策根本無法防止風險，企業高層必須搞清楚「實質控制點到底在哪裡」。這篇文章一針見血揭露了許多組織的合規盲點：如果領導者不了解影子 AI 的流向與底層技術架構，政策不過是一紙空文。真正的治理必須從靜態的文書審查，轉向對系統運作流程的動態掌控。 <span class="src">— Forbes</span></div>
+            <div class="item-sentence-en lang-en-only">Forbes emphasizes that establishing written AI governance guidelines is insufficient if executive leaders do not understand where technical control actually resides. The commentary argues that modern leadership must move beyond superficial compliance checkboxes to conduct thorough audits of enterprise architecture, shadow AI deployment, and data pipelines to maintain true operational oversight. <span class="src">— Forbes</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQSkNNLWdtV0hPMkJ0MkM0NUJiSGtTYkRvUklCQWlXVC1tUmNySGVsZnFpMmctcmxLVkw4OUFBQWFxNmdWSWcwMzVTVkpEc3RTQU1XMmFWSm5QekoxZFV3aWtuY0NuNlB3NlVGWWVqNGg1UjBwRHRLUnFUN05XSnBSNHYzYmVwa0o3MV9VLU5td1VqWDhGaDcxRGhTb1pHWkJvUDRmNGNva2V2V2ZOOHNNNUc4a1pwSXZZU3c?oc=5" target="_blank" rel="noopener">從影子AI到系統架構：重新定義數位轉型中的組織治理責任</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance Isn’t Enough: Leaders Must Know Where Control Lives - Forbes</div>
+            <div class="item-sentence lang-zh-only">隨著生成式 AI 快速滲透企業內部，過去由 IT 部門單點把關的模式已然失效。治理不再只是法規團隊的責任，更是整個決策層對「技術決策透明度」的深刻體認。這意味著企業必須重構權責架構，確保每一個演算法決策點與資料傳輸鏈路都在可控範圍內，避免技術債演變成不可逆的企業危機。 <span class="src">— Forbes</span></div>
+            <div class="item-sentence-en lang-en-only">As generative AI tools proliferate across enterprise departments, traditional IT governance models face severe operational limitations. This analysis outlines why corporate governance must adapt by restructuring leadership responsibilities, ensuring full visibility over internal API integrations, vendor risks, and shadow software to prevent unseen technical debt from threatening business continuity. <span class="src">— Forbes</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxOZXE4c0pZUklSVFQ4RnhlQlZIdEZNck90TnNLejE3N3hucHFWXzlHUkNKZU9acl9tWTd1QWtCeEJSNDBJZFRJNk43QkNvOUFldERuWXJQMFpUb3ZVdFhnZUZTUGVQSnh2M2pObVVyd1o0NV9jZXhzbllPYTBuaWRjNnhHc3dJMUdQNW9Mek9xa210WXM?oc=5" target="_blank" rel="noopener">智慧城市名號不再保值？從越南新城看房產品質與永續價值</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ヴィンホームズ・スマートシティのアパートの価格変動（引き渡しから数年後）。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">越南 Vinhomes 智慧城市的交屋後房價走勢，為全球智慧城市熱潮提供了一劑清涼針。標榜科技噱頭的高樓大廈，在幾年後依然要面對物業管理、設施老化與生活機能的真實考驗。這代表智慧城市治理不能只看建商的宣傳口頭禪，最終決定空間價值的，永遠是長期的社區營運、韌性維護與真實的人本居住品質。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Tracking apartment price trends in Vietnam&#x27;s Vinhomes Smart City post-handover offers key insights into the actual long-term value of smart real estate developments. The analysis demonstrates that urban tech labels cannot substitute for sustained property management, infrastructure durability, and livability, which ultimately dictate real estate value over time. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/infrastructure/in-extreme-weather-cities-seek-solutions-to-be-resilient" target="_blank" rel="noopener">極端氣候逼出治理轉型：城市打破官僚隔閡推進公私合營韌性</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">In Extreme Weather, Cities Seek Solutions to Be Resilient</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/a157b00/2147483647/strip/true/crop/3464x1684+0+226/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F72%2F76%2F4a0b72554783840678da77d473fb%2Friverside-california.jpg" alt="In Extreme Weather, Cities Seek Solutions to Be Resilient" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">面對暴雨與高溫，預算吃緊的市政府單靠公家機關早已力不從心。這篇文章指出全球城市正轉向與企業、非營利組織共建抗災生態系。這標誌著城市治理的重大範式轉移——韌性防線不再只是政府的事，而是透過公私協力（PPP）彈性引進民間資金與創新技術，打造出反應更靈敏的氣候適應型社區。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">As climate change triggers severe weather events, municipalities with limited budgets are increasingly forced to collaborate with private corporations and non-profit organizations. This shift highlights a modern governance trend where public-private partnerships and community networks are vital for co-funding and deploying resilient urban infrastructure against growing environmental risks. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-28 08:03:38 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
