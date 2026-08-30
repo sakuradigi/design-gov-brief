@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>當數位治理全面落地：從歐盟AI法案動真格、東京丸之內毫米波實驗，到生成式美學的道德邊界 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-30</div>
+    <div class="headline">當數位治理全面落地：從歐盟AI法案動真格、東京丸之內毫米波實驗，到生成式美學的道德邊界</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is the answer, but what was the question?</div>
+      <div class="quote-text-zh lang-zh-only">技術是答案，但我們當初的問題究竟是什麼？</div>
+      <div class="quote-author">— Cedric Price（英國建築師與思想家）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">歐盟AI法案進入實質執法期，全球科技巨頭面臨合規考驗</li>
+        <li class="flash-item">桑澤設計研究所開辦夜間體驗設計，鎖定AI時代的跨域實戰人才</li>
+        <li class="flash-item">智慧城市治理走向數據精準化，桃府養工與菲國數位支付示範基層革新</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/08/721565.html" target="_blank" rel="noopener">北歐經典遇上東京日常：Aalto花瓶90週年展展現跨世代空間美學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">CAFE AALTO TOKYOで「暮らしと、アートと、アアルト」展示。 アアルトベース90周年記念のAalto City Vaseも</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/08/579b8c5a3cfc104872e5f209de3c93a9.jpg" alt="CAFE AALTO TOKYOで「暮らしと、アートと、アアルト」展示。 アアルトベース90周年記念のAalto City Vaseも" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">芬蘭設計巨匠Alvar Aalto的有機線條，在東京丸之內一週年的咖啡空間裡重新被定義。這不只是一場經典回顧，更揭示了當代商業空間如何透過具文化厚度的生活器物，營造抵抗都市快節奏的沉浸感。對空間與品牌設計師來說，經典的再詮釋並非復古，而是將自然哲學轉譯為現代生活情緒價值的最佳示範。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Celebrating the 90th anniversary of the iconic Savoy Vase, CAFE AALTO TOKYO showcases how timeless Nordic organic forms can enrich modern urban lifestyle spaces, offering designers valuable lessons in heritage storytelling. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/08/89663/" target="_blank" rel="noopener">打破傳統學制框架！桑澤開設夜間體驗設計專攻，迎戰AI跨域轉型潮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">桑沢デザイン研究所が、2027年4月に夜間部「エクスペリエンスデザイン専攻」を新設</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/kuwasawa.jpg" alt="桑沢デザイン研究所が、2027年4月に夜間部「エクスペリエンスデザイン専攻」を新設" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">日本頂尖設計學府桑澤研究所將在2027年推出夜間「體驗設計」專攻，直接瞄準在職人士與跨領域學習者。這反映出設計教育的重大轉向：單一技能已無法因應生成式AI浪潮，未來的核心競爭力在於整合AI工具、理解使用者脈絡與重塑體驗流程。對想轉型或進修的創作者而言，這是體驗設計邁向常態化專業的重要訊號。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Kuwasawa Design School is launching a night program in Experience Design in 2027, highlighting a strategic shift in creative education to equip working professionals with cross-disciplinary and AI-integrated problem-solving skills. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/what-gta-6s-trailers-tell-us-about-vice-city-lucia-and-the-biggest-creative-launch-of-the-decade/" target="_blank" rel="noopener">睽違十三年的女主角視角：《GTA 6》重塑開放世界敘事與流行文化語彙</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What GTA 6&#x27;s Extended Look tells us about Vice City, Lucia, and the biggest creative launch of the decade</div>
+            <img class="item-image" src="https://media.creativeboom.com/9c8bbd21-e76e-45d9-8ecd-ee3b3e701163/conversions/5caf2c947ea7618e45ba4a0c5acaf7cc705b81b1-medium.webp" alt="What GTA 6&#x27;s Extended Look tells us about Vice City, Lucia, and the biggest creative launch of the decade" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">《GTA 6》釋出的實機畫面引發轟動，背後最深刻的文化意義在於這座虛擬罪惡之城終於迎來女性主角視角。這不只是遊戲機制的升級，更是主流娛樂工業對性別代表性與複雜敘事的正面回應。對視覺創作者而言，它展現了世界觀構建、次文化符號與當代數位視覺技術如何天衣無縫地結合，樹立數位娛樂的新標竿。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">The extended preview of GTA 6 marks a major milestone in digital storytelling with its first playable female protagonist, demonstrating how AAA interactive media is evolving in narrative depth and cultural representation. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/inspiration/this-rebrand-of-voice-journaling-app-untold-shows-what-happens-when-ai-branding-doesnt-look-like-ai/" target="_blank" rel="noopener">當生成式AI碰上品牌識別：Untold語音筆記重塑設計倫理與溫度平衡</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">This rebrand of a voice-journalling app looks lovely, but is an &#x27;AI illustration system&#x27; the right call?</div>
+            <img class="item-image" src="https://media.creativeboom.com/1cf7df1d-aec0-444b-922f-b8eaee0d4f46/conversions/eb533a1331299a43b1406a0642a95c3066015e2c-medium.webp" alt="This rebrand of a voice-journalling app looks lovely, but is an &#x27;AI illustration system&#x27; the right call?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">The Working Assembly為語音筆記App Untold打造新識別，大膽採用AI插畫系統卻刻意抹去生硬的演算法痕跡。這場實驗直指當前設計界的痛點：在大家對AI圖像審美疲勞時，品牌如何利用技術卻保留手工與情感溫度？答案在於把AI當作延伸筆觸的工具，而非風格的最終主宰，這為人機協同品牌設計立下示範。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">The Untold app rebranding explores the delicate balance of using generative AI tools while consciously avoiding generic AI visual tropes, setting a thoughtful precedent for human-AI collaborative brand identity. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/inspiration/illustrator-fei-mengs-illustrations-bring-the-spirit-of-classical-portraiture-to-modern-editorial-work/" target="_blank" rel="noopener">古典肖像遇上數位插畫：Fei Meng用歷史筆觸重塑當代商業視覺記憶</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Fei Meng brings the spirit of classical portraiture to modern editorial and advertising illustration</div>
+            <img class="item-image" src="https://media.creativeboom.com/ba5652b9-ca7b-4319-ad19-6d74102ed150/conversions/70baabff50d2b3e198843ac1ae62b956e95ced41-medium.webp" alt="Fei Meng brings the spirit of classical portraiture to modern editorial and advertising illustration" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">插畫家Fei Meng將文藝復興與古典肖像的凝鍊感，揉入現代雜誌與廣告插畫之中。在視覺素材氾濫的速食時代，這種帶有歷史沉積感與手繪溫度的作品反而擁有極強的穿透力。這提醒了視覺創作者：跳脫當下流行的扁平或3D潮流，從歷史藝術語彙中借力，往往能創造出更具辨識度與故事張力的視覺語言。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Illustrator Fei Meng seamlessly merges classical portraiture aesthetics with contemporary editorial illustration, proving that historical depth and painterly nuance remain potent differentiators in modern digital media. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi4gNBVV95cUxPX3dGbzRBUWhpWmgxZ294c3J4SjJFR1loX1lXUmJNXzllS1IyQTNCWFBHSWhhaUg5ZGpfZlhBa2daQ3RFZlZ0V3U4ajVnSWtUZXJ0TmxPTlBBbUFJbFVLenotaXF6bXlTamFIbWsyLW1LYXVRMEh3Wi0tek5Cam1LQ05UX1BvZ1g5RElhNDF6WjVfSVgwREhBNHp5TUd0WW5MQTRHY2N6WVRtdGxjN0xvQl9Cd0pGWkZoSS1GTVRCbTBnS3ZtQzluMnRmQlNST0ZwN2J0d25sZW9Zb2tsUzhucEI4T3RZaDRjek1Na1BLclRGVTRYYUpfa1E1WXFZczFCY0JXV2xqcHI4Y29CbDlCR09ZQ2NqZHhwRXNEWXV4QW1ScDNaMUZqcDFQMXdfRkNTbDRPRjkzMDZlajE2N21xVVhoaGw1Y3dWcHM5dzJ3TUdNaktndmZvRllySFJ6NHJEelU3Y1hoVzRrMXRlYXo4eTdXSXZJUjF1THl2djBtcWR5eE14STl5LWFLS0VhV1FLRTA0ckVPYUFvTW9rcFJ3Z1VyQVJCQWxScS1aNkh6M21mdnBSdDh0MEFfSFJ5T0d3c3MxNHVCRnVlUDc0YnBvd0dXMnpsZXc2NU9DeHhlWTNoUQ?oc=5" target="_blank" rel="noopener">路平背後的治理智慧：桃園養工處以數據驅動奪冠，翻轉傳統公共工程思維</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">打造安全宜居智慧城市 桃府養工處榮獲114年度國土署考評全台第一「特優獎」 - 台灣好新聞</div>
+            <div class="item-sentence lang-zh-only">桃園養工處在中央考評拿下特優第一，關鍵在於將傳統被動的道路修補，升級為結合AI巡檢與全生命週期管理的智慧系統。這項成果打破了公部門「壞了再修」的僵化形象，展現了城市基盤治理如何透過數位工具達到預防性維護。對地方治理者而言，讓基礎建設從隱形工程變成民眾有感的宜居指標，才是智慧城市的真諦。 <span class="src">— 台灣好新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Taoyuan&#x27;s top-ranking road maintenance highlights how integrating AI diagnostics into municipal infrastructure shifts urban management from reactive repairs to predictive, data-driven governance. <span class="src">— 台灣好新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNamVsRjdzOFlRQURhYW9OS09aWC1HYnhaeUFmSmx0anZxOTdkY2RHeEJQc0dQMHJLTDRDMkVxbllPa0Z3UEhtei01aWlsTVFOM2NvLWxIaXhMc3FZNGU0d0lFWW91WEM5MC12Tk9UZHVNLUkxNmNCOFV3RDMtWVZ0NWdIQTR3TXBQbmxYeWlhc0lZUFRIbkl1ZDRnQXVDTUVkU3c?oc=5" target="_blank" rel="noopener">人工智慧野蠻生長終結！歐盟AI法案正式執法，全球合規設計風暴來襲</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">EU AI Act Moved Into Real Enforcement Phase: New Rules Are Already in Force - incrypted</div>
+            <div class="item-sentence lang-zh-only">歐盟AI法案正式邁入實質執法階段，所有高風險AI應用與透明度規定正式生效。這標誌著AI產業從無序試驗期進入制度化規範時代。對產品經理與體驗設計師來說，演算法的可解釋性、資料隱私與道德防護網不再是選配，而是核心產品架構的一部分；這股監管浪潮也將迅速重塑全球軟體開發的遊戲規則。 <span class="src">— incrypted</span></div>
+            <div class="item-sentence-en lang-en-only">The European Union&#x27;s AI Act enters its active enforcement phase, fundamentally altering the landscape for tech companies by making transparency, algorithmic ethics, and compliance mandatory product requirements. <span class="src">— incrypted</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxOZWpmVkt5LVp4cW9tbzdnUG1seXRmdmlzV0Y3aVJPeFBDcG9UM2lqRE94Z1gyLVNZNTcweVAzcFJxSDl5NEE0dllZdUhETGhaSUVMSDZQVVRmY2x2N214N0ZORXJOTFJDcHZIbUE1TVRRS1k4VndqRGFEMkVIOUh1UWl6U2ZNOGQxYml5dXVYc1UyaGpndFpGS3B4T3dWLW5HYXNVSnR3?oc=5" target="_blank" rel="noopener">金融科技下沉基層：菲律賓地方城鎮攜手GCash推動普惠數位治理</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">LU towns strengthen digital governance through GCash partnership - baguioheraldexpressonline.com</div>
+            <div class="item-sentence lang-zh-only">菲律賓拉烏尼翁省城鎮透過與電子錢包GCash合作，將公務繳費與基層治理全面數位化。這不是單純引進支付工具，而是針對無銀行帳戶族群實現「數位平權」的社會創新路徑。這項案例給開發中國家治理者的啟示是：藉由民間高度普及的既有平台切入公共服務，往往比耗巨資自建系統更能快速打通最後一哩路。 <span class="src">— baguioheraldexpressonline.com</span></div>
+            <div class="item-sentence-en lang-en-only">Philippine municipalities partner with mobile wallet GCash to digitize public services, demonstrating how leveraging popular fintech platforms can accelerate civic inclusion and local digital governance. <span class="src">— baguioheraldexpressonline.com</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMickFVX3lxTFBvenNKM0RPcHJpeXBBX0I4SHpaYzNZSDFDV2xKZG81OE5fa2dOTGh0MnJma2U5dGRLNTdZVF9XUDBmcEpOamhuWXRCWmpjMFdqN3RxeUtsdnNNbktydHNieEdERVh1N3hacXFFVXgwTm85UQ?oc=5" target="_blank" rel="noopener">東京丸之內5G毫米波實驗：NTT與三菱地所打造空間連動的未來城市大腦</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【AI・IoT・DX】NTTドコモ・三菱地所：丸の内で次世代スマートシティ構築、ミリ波5Gと都市インフラを融合 - みんなの広報宣伝部</div>
+            <div class="item-sentence lang-zh-only">NTT Docomo與三菱地所在東京核心商業區推進次世代智慧城市，結合5G毫米波與既有都市基建。這項實驗的野心在於將實體空間、人流動線與即時感測數據無縫融合成一個巨大的數位孿生體。這揭示了未來智慧城市的競爭不在硬體堆砌，而在於跨域數據如何轉化為提升都市韌性、商業活性與市民體驗的動態服務。 <span class="src">— みんなの広報宣伝部</span></div>
+            <div class="item-sentence-en lang-en-only">NTT DOCOMO and Mitsubishi Estate deploy mmWave 5G in Tokyo&#x27;s Marunouchi district, showcasing the fusion of cutting-edge telecommunications and urban infrastructure to build dynamic, data-driven smart cities. <span class="src">— みんなの広報宣伝部</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/biz/procurement-firm-cloverleaf-ai-reveals-8m-funding-round" target="_blank" rel="noopener">AI翻轉政府採購痛點：Cloverleaf獲800萬美元融資，重塑公共商業鏈結</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Procurement Firm Cloverleaf AI Reveals $8M Funding Round</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/c85829f/2147483647/strip/true/crop/770x374+0+69/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F23%2F88%2F8098fc1d21bdc045091b4af78f3f%2Fshutterstock-ai1.jpg" alt="Procurement Firm Cloverleaf AI Reveals $8M Funding Round" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">專注於預測公共採購需求的AI新創Cloverleaf完成800萬美元融資，解決了公私部門採購流程冗長且資訊不對稱的長年沉痾。透過AI分析公共預算與招標趨勢，民間企業能提早布局，政府也能獲得更優質的解決方案。這代表生成式AI正深入公共治理的核心營運環節，成為推動公私協同創新的催化劑。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">GovTech startup Cloverleaf AI raised $8 million to streamline public procurement using predictive intelligence, bridging the information gap between government agencies and enterprise vendors. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.7 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-30 08:04:54 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
