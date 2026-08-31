@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>打破常態框架的體驗重塑：從神經多樣性設計到即時AI治理與人性溫度 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-08-31</div>
+    <div class="headline">打破常態框架的體驗重塑：從神經多樣性設計到即時AI治理與人性溫度</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">There is a vitality, a life force, an energy, a quickening that is translated through you into action, and because there is only one of you in all time, this expression is unique. And if you block it, it will never exist through any other medium and it will be lost.</div>
+      <div class="quote-text-zh lang-zh-only">在你的體內存在著一種活力、生命力、能量與跳動，透過你轉化為行動。在所有時間裡只有一個你，這種表達是獨一無二的；如果你阻擋了它，它就永遠無法透過任何其他媒介存在，並將就此消逝。</div>
+      <div class="quote-author">— Martha Graham</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">設計師職業路徑正打破單一晉升天梯，轉向擁抱神經多樣性與反直線性成長</li>
+        <li class="flash-item">自動化效率難以取代款待溫度，AI時代的體驗核心重回人際情感連結</li>
+        <li class="flash-item">數位公共治理跨向落地應用，開放SDK與即時監管構築可信的智慧城市生態</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/08/89639/" target="_blank" rel="noopener">跳脫老派作坊體系：日本老牌設計事務所用多元徵才重構專業價值</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】さまざまな企業のグラフィックデザインを手がける株式会社ツープラトンが、グラフィックデザイナーなど3職種を募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/6a6b086a627cc.jpg" alt="【求人情報】さまざまな企業のグラフィックデザインを手がける株式会社ツープラトンが、グラフィックデザイナーなど3職種を募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">日本設計公司ツープラトン近期一口氣開出資深、新卒與後勤職缺，表面看似普通的求人公告，背後反映的是設計產業分工的深刻質變。在AI大幅壓縮純視覺產出門檻的當下，傳統設計事務所不再只倚賴「一人包辦」或封閉的學徒制，而是藉由跨世代的新血注入與專業後勤支援，將設計師從繁瑣行政中解放，專注於品牌策略與高維度敘事，唯有重組團隊骨幹才能在高度同質化的市場中維持競爭力。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese design firm Two Platon is expanding its team across senior, graduate, and administrative roles. This strategic recruitment highlights a broader industry shift toward structural optimization, liberating creative talents from administrative burdens to focus on high-value brand storytelling and strategic thinking in an automated era. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/nhksundaymuseum-nakkaart/" target="_blank" rel="noopener">半世紀的美育轉譯：NHK日曜美術館如何把精英藝術變成全民資產</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ＮＨＫ日曜美術館５０年展</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/7d6f0b1da73332e9783dd401e0234cf6.jpg" alt="ＮＨＫ日曜美術館５０年展" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">走過半個世紀的NHK《日曜美術館》將在大阪中之島美術館舉辦50週年特展。這不只是一次回顧展，更是一場關於「公共美學傳播」的經典示範。當代策展與文化傳播常陷入過度菁英化或極端通俗化的兩難，而日曜美術館五十年來展示了如何將深奧的藝術語彙轉化為大眾共鳴的視覺語言，對當今致力於文化治理與公眾對話的設計者而言，是一堂極具啟發的轉譯實踐課。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Celebrating five decades of cultural broadcasting, the NHK Sunday Museum 50th Anniversary Exhibition demonstrates how mass media can successfully bridge elite art curation and public engagement, offering valuable lessons for contemporary cultural governance and accessibility. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/neuroqueering-design-practice-9e2aaf4dd2e5?source=rss----138adf9c44c---4" target="_blank" rel="noopener">拒絕平庸的常態規範：用「神經多樣性」視角重塑包容性體驗設計</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Neuroqueering design practice</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*q5xKtSsrvPnjx143phYiRQ.jpeg" alt="Neuroqueering design practice" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這篇文章直球對決了體驗設計長期以來的「標準化陷阱」。過去我們習慣為所謂的「主流大眾」設計流暢路徑，卻忽視了神經多樣性（Neurodiversity）使用者的獨特感知世界。「神經酷兒（Neuroqueering）」並非只是在現有設計上疊加無障礙補丁，而是徹底顛覆設計師腦中狹隘的正常人假設。真正前衛的體驗不是消除所有摩擦，而是理解差異、創造多元共存的互動彈性。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Exploring design through the lens of neuroqueering challenges the conventional standard of &#x27;normalcy&#x27; in product development. By embracing cognitive diversity, designers can move beyond superficial accessibility checklists and build genuinely inclusive and resilient interaction models. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/rethinking-success-beyond-the-corporate-stairs-in-the-world-of-design-ae9d10521105?source=rss----138adf9c44c---4" target="_blank" rel="noopener">告別傳統升遷天梯：設計師在AI焦慮下如何開拓非線性職涯韌性</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Rethinking success beyond the corporate stairs in the world of design</div>
+            <img class="item-image" src="https://miro.medium.com/v2/da:true/resize:fit:678/0*xMQtxGi0AErwKy-G" alt="Rethinking success beyond the corporate stairs in the world of design" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在指標至上與生成式AI席捲的職場裡，設計師若還把升遷路徑想像成筆直向上的階梯，無疑是在承擔極高的職涯脆弱性。文章一針見血指出，當企業組織不斷扁平化與動態調整，盲目追求大廠職級只會帶來無止境的內耗。新一代設計工作者的核心韌性，來自於學會何時「跳出賽道」，將焦點從爬梯轉向建立個人可遷移的跨領域解決問題能力與不可替代性。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">As AI and corporate metrics reshape the workplace, clinging to a linear career ladder creates unprecedented anxiety. This critique urges designers to build true career resilience by stepping off predictable tracks and cultivating adaptable, multi-dimensional problem-solving skills. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/ai-has-a-hospitality-problem-money-cant-fix-e8fa34e91d62?source=rss----138adf9c44c---4" target="_blank" rel="noopener">效率換不來溫度：為什麼百萬AI演算法依然解不開款待服務的靈魂</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI has a hospitality problem money can’t fix</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*fLVFiV48q_7pvwepVB6ovg.png" alt="AI has a hospitality problem money can’t fix" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">各行各業都在砸大錢讓AI全面接管客戶互動，但高檔款待業（Hospitality）卻撞上了冰冷的「感受天花板」。自動化能精準預測喜好、縮短登記入住時間，卻無法給予顧客眼神交流中的共情與驚喜感。這提醒了體驗架構師：技術的極致是效率，而體驗的極致是連結。盲目追求全自動化只會稀釋品牌溢價，未來的頂級設計是把AI藏在幕後輔助，把前台高光時刻留給人性的溫暖。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Despite heavy investments in AI automation across the hospitality sector, technology alone cannot replicate genuine human empathy. Effective service design in the digital era requires balancing automated efficiency with the irreplaceable value of authentic personal touch. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE8xLVRqWUpkLUJ3MG1TR0dUMHU3eTZfckVaVzZSOG45OVNYcE83YWJZZUl4MUNlTF8xMkFwV3RMRWZEVjJGV3ROdNIBTEFVX3lxTE02dkZNaTFTdkVmOHRab1RzaHZqcDhlWkwzWFhCZGdvR213OXhlYmZrbW03a2dZeUhMZERGOWxETUxMR3ZydUNLLU9YcDU?oc=5" target="_blank" rel="noopener">釋放醫療數據紅利：台灣健康存摺SDK讓數位公衛走入個人日常</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">專屬個人健康顧問　健康存摺SDK榮獲智慧城市創新應用獎 - 三立新聞網SETN.com</div>
+            <div class="item-sentence lang-zh-only">健保署推動的「健康存摺SDK」獲獎，展現了台灣在公衛治理與開放數據應用上的領先思維。政府不再扮演封閉的數據守門人，而是化身為安全基礎設施的提供者，讓第三方健康創新服務能安全介接個人醫療歷程。這種架構賦予民眾真正的數據自主權，更催生出蓬勃的智慧健康生態系，是公私協力推動社會創新非常漂亮的標竿案例。 <span class="src">— 三立新聞網SETN.com</span></div>
+            <div class="item-sentence-en lang-en-only">Taiwan&#x27;s My Health Bank SDK wins the Smart City Innovative Application Award, showcasing how public health governance can empower citizens through secure data portability and foster a vibrant digital healthcare ecosystem via public-private partnerships. <span class="src">— 三立新聞網SETN.com</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxOZWpmVkt5LVp4cW9tbzdnUG1seXRmdmlzV0Y3aVJPeFBDcG9UM2lqRE94Z1gyLVNZNTcweVAzcFJxSDl5NEE0dllZdUhETGhaSUVMSDZQVVRmY2x2N214N0ZORXJOTFJDcHZIbUE1TVRRS1k4VndqRGFEMkVIOUh1UWl6U2ZNOGQxYml5dXVYc1UyaGpndFpGS3B4T3dWLW5HYXNVSnR3?oc=5" target="_blank" rel="noopener">跳脫都市中心的數位落差：菲律賓地方政府以電子錢包重塑基層治理</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">LU towns strengthen digital governance through GCash partnership - baguioheraldexpressonline.com</div>
+            <div class="item-sentence lang-zh-only">菲律賓拉烏尼翁省（La Union）多個鄉鎮與電子支付巨頭GCash攜手，將數位治理推展至基層鄉村。這項合作的深刻意義在於打破了「智慧治理只是大都會特權」的迷思。透過民眾早已熟悉的民生金融工具，政府能大幅降低公共服務的交易成本與貪腐空間，證明了數位治理的成敗不在於購買昂貴複雜的系統，而在於選對最貼近庶民生活的低門檻切入點。 <span class="src">— baguioheraldexpressonline.com</span></div>
+            <div class="item-sentence-en lang-en-only">Local government units in La Union, Philippines, partner with GCash to accelerate digital public administration. This initiative demonstrates that impactful smart governance relies on adopting familiar, accessible civic tech rather than building costly proprietary infrastructures. <span class="src">— baguioheraldexpressonline.com</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxOQnBJX2dQamFBOVUtdjBMOU9aYzQtNGstSzlUaHkyZmVrMGxBNHNBOXdDdWtmR1pGTlJOdnQyUlJCeXR6UVJSbXVxUlBqLU9XbmJiZmtRNzVicTFWWHdrdE1mRWhoR3FYc2pUMXNHRU9tQkNqZlNwYXpULThRZWFXNU9SVTc5djBkcDFHZFBHOWJaSVhlb1BySl9IazZwX2dYWVpKNHk2SmlybFJMM0lZbHVtbmJaelVXTWhGVkVMTQ?oc=5" target="_blank" rel="noopener">事後防堵早已過期：即時動態監管成為AI時代治理的生死防線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Award Recognition Highlights Polygraf AI’s Focus on Real-Time AI Governance - TipRanks</div>
+            <div class="item-sentence lang-zh-only">Polygraf AI因其即時AI治理技術獲得市場高度肯定，標誌著演算法治理典範的根本轉移。過去仰賴事後審查與靜態合規的模式，在生成式AI即時產出海量內容的環境下已全面失效。現代組織需要的不是厚重的治理手冊，而是能即時辨識偏見、數據洩漏與幻覺的動態防護網。唯有把治理內嵌進系統運行的毫秒之間，技術創新才具備可信度與永續性。 <span class="src">— TipRanks</span></div>
+            <div class="item-sentence-en lang-en-only">Polygraf AI&#x27;s recognition highlights the shift toward real-time AI governance. As generative models scale rapidly, static and retrospective compliance is no longer sufficient; organizations must embed continuous monitoring to mitigate risks in real time. <span class="src">— TipRanks</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMie0FVX3lxTFBvYnhfel84SVFRMmpZYmVoTFFfZU5OQ2ZXVnhiYW9mdFRrVlVqUHZybGJONEdPY2RVWGJvM3lyZkZxZHYxeVZGNEkzenVGVGluNFducF81dUdZbHJPVE5MTThJekg4dGJzVTBrbTBiU3RnY0lib2ZBdGNBRQ?oc=5" target="_blank" rel="noopener">跨越數據孤島的治理革新：越南智慧城市從單點建設走向跨域協同</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">スマートシティのガバナンス効率を向上させる。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">越南正積極推動智慧城市治理效率的系統性升級。過去許多新興市場在發展智慧城市時，往往陷入各自為政的硬體採購與單點示範專案，最終淪為數據孤島。越南當前聚焦於治理框架的橫向打通與標準化，強調將跨部門數據流轉化為即時的市政決策能力，這說明了智慧城市的核心競爭力不在於感測器數量，而在於制度協同的敏捷度。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Vietnam is advancing its smart city frameworks by focusing on integrated governance efficiency rather than isolated hardware deployments. The transition emphasizes breaking data silos and establishing unified standards for agile public administration. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/blogs/lohrmann-on-cybersecurity/nastd-2026-why-gov-tech-leaders-must-focus-on-culture" target="_blank" rel="noopener">科技轉型先轉人心：政府數位長在2026年最該投資的底層是組織文化</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">NASTD 2026: Why Gov Tech Leaders Must Focus on Culture</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/d7a4e1d/2147483647/strip/true/crop/5712x2777+0+1124/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fd3%2F0c%2Fd5d741b8436ebe9007d51fdd1a5b%2Fimg-3966.jpeg" alt="NASTD 2026: Why Gov Tech Leaders Must Focus on Culture" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在全美州技術總監協會（NASTD）年會上，頂尖數位官員達成的共識發人深省：政府數位轉型最艱鉅的瓶頸從來不是採購最新技術，而是深層的組織文化。公部門若缺乏容錯機制、心理安全感與跨部門協作思維，再先進的雲端架構也會淪為擺設。真正的治理創新，必須先在官僚體系內培育出開放實驗與以人為本的文化土壤，技術才能真正生根發芽。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">At the NASTD 2026 conference, public sector IT leaders emphasized that organizational culture, rather than technology procurement, is the ultimate determinant of digital transformation success, requiring psychological safety and cross-silo collaboration. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.7 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-08-31 08:12:05 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
