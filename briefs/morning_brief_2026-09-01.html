@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>人形AI走入公共日常、智慧城市重拾人情煙火：在技術狂飆中找回設計與治理的溫度 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-01</div>
+    <div class="headline">人形AI走入公共日常、智慧城市重拾人情煙火：在技術狂飆中找回設計與治理的溫度</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Cities need to be open systems, spaces where differences can touch and converse.</div>
+      <div class="quote-text-zh lang-zh-only">城市應當是一套開放系統，是讓差異彼此相遇、產生對話的場所。</div>
+      <div class="quote-author">— Richard Sennett（當代社會學家、《棲居》作者）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">大阪地鐵實測實體AI站員，智慧交通迎來具身互動新紀元。</li>
+        <li class="flash-item">日本智慧城市打造高架下酒場，以市井煙火平衡冰冷科技。</li>
+        <li class="flash-item">設計界呼籲統一AI代理介面標準，杜絕重複造輪子的耗損。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/shojomanga-nact/" target="_blank" rel="noopener">少女漫畫登國家美術館：大師展揭示敘事美學的典範轉移</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">少女漫画・インフィニティ　萩尾望都×山岸凉子×大和和紀 三人展</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/96f9ecce3537da438432f6c39c4c7485.jpg" alt="少女漫画・インフィニティ　萩尾望都×山岸凉子×大和和紀 三人展" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當少女漫畫巨擘進駐國立新美術館，這不只是一場懷舊特展，更象徵通俗次文化正式晉升殿堂級藝術。萩尾望都等人當年開創的心理描摹與分鏡美學，打破了傳統純藝術與商業漫畫的界線。這提醒我們，真正能撼動時代的設計與敘事，往往誕生於那些曾被主流輕視的邊緣實驗中。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The upcoming exhibition at the National Art Center Tokyo celebrates iconic shojo manga masters including Moto Hagio and Ryoko Yamagishi. This milestone marks the institutional recognition of shojo manga as a sophisticated narrative art form, showing how pioneering subcultures evolve into monumental cultural paradigms that redefine visual storytelling. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/08/722023.html" target="_blank" rel="noopener">大阪地鐵導入實體AI站員：公共交通在缺工時代的體驗重構</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Osaka Metroで「ヒューマノイド駅員」の実証実験を実施。Gemini搭載ヒューマノイドが駅構内や観光情報を案内</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/08/sub1-1-1.jpg" alt="Osaka Metroで「ヒューマノイド駅員」の実証実験を実施。Gemini搭載ヒューマノイドが駅構内や観光情報を案内" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">大阪地鐵測試搭載 Gemini 的人形站務機器人，宣告「實體人工智慧」正式走入城市動脈。在少子高齡化與觀光爆炸的雙重夾擊下，服務介面不再只是冰冷螢幕，而是具備眼神與姿態的立體互動。公共服務設計的下一個戰場，在於如何讓高科技機器人保有溫暖的待客氛圍。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Osaka Metro is testing Gemini-powered humanoid robots for station guidance and customer service. This initiative highlights the rise of embodied AI in public infrastructure, addressing severe labor shortages while exploring how physical, humanoid interactions can transform passenger experiences in smart urban transportation hubs. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/the-call-for-an-agentic-standard-we-need-to-stop-shipping-the-same-form-four-different-times-be5b9d40e370?source=rss----138adf9c44c---4" target="_blank" rel="noopener">別再重複造輪子：AI代理人介面亟需統一的設計標準</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The call for an agentic standard: We need to stop shipping the same form four different times</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*UqCs8JJOwBhWmepdUSg3-Q.png" alt="The call for an agentic standard: We need to stop shipping the same form four different times" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當每個 AI 語音或對話助理都在用自己的方式渲染表單，設計系統的維護成本便會瞬間失控。這篇文章敲響警鐘：UI 設計師不能再淪為不同 AI 模型的介面苦工，我們需要一套像網頁標準般的代理人介面協議。唯有建立共通規範，設計團隊才能從繁瑣的適配中解放，專注打造真正有意義的互動流程。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">With AI assistants proliferating, designers face the redundant burden of styling identical UI components across different agent renderers. The author advocates for an agentic UI standard, akin to MCP for protocols, urging the industry to unify how AI interfaces are rendered to prevent systemic fragmentation and empower cohesive user experiences. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/08/31/volatile-nexus-tinkering-with-glass-caustics-cubes-and-sound-in-three-js/" target="_blank" rel="noopener">光影流動與即時聲響：網頁3D實驗重新定義感官微互動</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Volatile Nexus: Tinkering with Glass, Caustics, Cubes and Sound in Three.js</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/08/volatileNexus.jpg?x57826" alt="Volatile Nexus: Tinkering with Glass, Caustics, Cubes and Sound in Three.js" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在 AI 批量產出平庸介面的時代，Codrops 這項結合玻璃焦散、光線折射與動態聲效的 Three.js 實驗顯得格外珍貴。它展示了頂級前端技術如何將瀏覽器化為沉浸式數位雕塑。對設計師而言，這種探索預示了未來網頁不再只是資訊載體，而是兼具觸覺質感與情緒共鳴的感官舞台。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">The Volatile Nexus project demonstrates advanced Three.js techniques, combining refractive glass shaders, caustics, dynamic cubes, and responsive sound. It underscores how cutting-edge creative coding can elevate web experiences from functional interfaces into evocative digital installations, setting a new benchmark for sensory-rich digital interactions. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/design-has-outgrown-the-traditional-designer-adbb657aa30a?source=rss----138adf9c44c---4" target="_blank" rel="noopener">設計早已超越視覺美工：傳統設計教育面臨的轉型大考</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Design has outgrown the traditional designer</div>
+            <img class="item-image" src="https://miro.medium.com/v2/da:true/resize:fit:1200/0*Udn2AQ_qbNM7VA08" alt="Design has outgrown the traditional designer" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">過去設計常被當作「有美感的人維持生計的妥協方案」，但如今這套邏輯已徹底失效。現代產品的複雜度要求設計師跨足商業策略、系統架構與演算法倫理，單純擅長排版與調色已不足以應對挑戰。這篇文章點破殘酷現實：若設計教育不徹底重構培養思維，設計師終將失去對複雜系統的發言權。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Traditional design education was built around visual craft, but contemporary challenges demand systemic, strategic, and computational thinking. The article argues that design has fundamentally outgrown its legacy boundaries, urging educational institutions to shift from teaching aesthetic outputs to nurturing strategic orchestrators capable of navigating complex sociotechnical systems. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiRkFVX3lxTE1Ob3FaRjJIWExPR2V6TlJleFNQNjF5Y3hySVBWREJBV1ZQUFpQempZMDYzdmZmVEJSS1N3akx2S01ubDJKekE?oc=5" target="_blank" rel="noopener">電信巨頭深耕街區：數位基建走入在地生活的治理新局</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AT&amp;T 全面啟動社區服務 深入社區、服務商家 推動智慧城市與數位新生活 - 美南新聞</div>
+            <div class="item-sentence lang-zh-only">當大型電信業者走入微型街區與在地店家，智慧城市終於不再只是高空演繹的科技口號，而是落實為有溫度的數位平權。這項舉措揭示了企業與社區協作的新模式：基礎建設供應商必須成為地方發展的共創夥伴。唯有解決在地日常的痛點，數位轉型才能轉化為真實的社會資本與韌性。 <span class="src">— 美南新聞</span></div>
+            <div class="item-sentence-en lang-en-only">AT&amp;T is expanding its hyper-local community services to support small businesses and advance smart city initiatives. This grassroots strategy illustrates how large infrastructure providers must evolve into civic partners, bridging the digital divide and embedding technology within local economic fabrics to foster tangible community resilience. <span class="src">— 美南新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxPR2xNNGt0d3FzU25lcWszYmc4NDFwamRNbDVmaVdJUnVjOVBFVXI3TnRoY2xaTU12aWg3czRWZWJOQmZGTGZpRnROSGl3MXlYVGVmVERVd3pPU3RSbDRudndfTjJGMEMwWER0YUVKOW1wVmNnUklsQlRZTmdBb04wRmxQMXUyQQ?oc=5" target="_blank" rel="noopener">AI治理缺位成隱形風暴：科技巨浪下被忽視的體制風險</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Lack of AI governance is a real threat | Quick Take - Yahoo</div>
+            <div class="item-sentence lang-zh-only">人工智慧發展正以指數級狂飆，但相應的治理機制卻嚴重落後，這正在為公共安全與社會信任埋下定時炸彈。當演算法決定了從就業審查到資源分配的關鍵環節，缺乏透明度與究責機制將放大不平等。這提醒政策制定者與企業領袖：治理不是創新的絆腳石，而是防止系統失控崩塌的安全氣囊。 <span class="src">— Yahoo</span></div>
+            <div class="item-sentence-en lang-en-only">The rapid adoption of AI without robust governance frameworks poses significant systemic threats to public trust and operational security. This analysis emphasizes that proactive AI governance is not a bureaucratic hurdle, but a necessary safeguard to prevent algorithmic bias, security vulnerabilities, and institutional failures across critical sectors. <span class="src">— Yahoo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxPR2xNNGt0d3FzU25lcWszYmc4NDFwamRNbDVmaVdJUnVjOVBFVXI3TnRoY2xaTU12aWg3czRWZWJOQmZGTGZpRnROSGl3MXlYVGVmVERVd3pPU3RSbDRudndfTjJGMEMwWER0YUVKOW1wVmNnUklsQlRZTmdBb04wRmxQMXUyQQ?oc=5" target="_blank" rel="noopener">從倫理空談到責任落地：組織應對AI失控的治理必修課</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Lack of AI governance is a real threat | Quick Take - Yahoo</div>
+            <div class="item-sentence lang-zh-only">許多企業仍把 AI 治理當成公關文宣或遙遠的哲學議題，但真實的威脅早已滲透進日常運營。從資料外洩、幻覺決策到智慧財產爭議，缺乏框架的 AI 應用正變成高風險賭局。真正的創新領導者必須將治理視為核心競爭力，在技術導入的第一天就建構起清晰的邊界與監控機制。 <span class="src">— Yahoo</span></div>
+            <div class="item-sentence-en lang-en-only">As generative AI permeates organizational workflows, the lack of enforceable governance introduces severe operational and legal hazards. The piece argues that modern leadership must transition from abstract ethical declarations to concrete compliance frameworks, ensuring accountability and risk mitigation are baked directly into AI deployments. <span class="src">— Yahoo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE9XUlN1Yzh6SDdySWRpakNnRjlSb0NKWUg3YUpmS3lFSEVWdk5wSXNkc3R4WmhrWkNObjhyYlM3WWR0UEVPdHdFX2RmX3ZYWWF4VmFoYXlmVXBsZzZaOWhBOExBSHR5Z2NMZG9INw?oc=5" target="_blank" rel="noopener">智慧城市裡的居酒屋紅燈籠：科技造鎮與市井煙火的完美共生</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">千葉・柏の葉、スマートシティーに赤ちょうちん街 高架下で交流生む - 日本経済新聞</div>
+            <div class="item-sentence lang-zh-only">千葉柏之葉智慧城市在高架橋下打造了充滿人情味的「紅燈籠居酒屋街」，為高度理性的現代科技園區注入了難得的市井煙火氣。這項規劃打破了智慧城市冰冷孤立的刻板印象，證明頂尖的都市治理不僅需要物聯網與綠能，更需要提供非正式交流的溫暖場所。真正的宜居城市，往往就藏在微醺夜色中的偶遇與對話裡。 <span class="src">— 日本経済新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Kashiwa-no-ha Smart City in Chiba has introduced a traditional red-lantern izakaya alley beneath elevated train tracks. This urban planning intervention demonstrates how smart cities can balance cutting-edge technology with vibrant, tactile human connection, proving that informal public gathering spaces are vital for fostering true community spirit. <span class="src">— 日本経済新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/gov-experience/modern-procurement-unites-orange-county-calif-departments" target="_blank" rel="noopener">採購數位化打破部門壁壘：地方政府重塑敏捷協作的隱形槓桿</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Modern Procurement Unites Orange County, Calif., Departments</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/bce9ba3/2147483647/strip/true/crop/4549x2211+0+344/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F64%2Ff5%2F025efb364d9a83d9e1acf15b4967%2Forange-county.jpg" alt="Modern Procurement Unites Orange County, Calif., Departments" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">加州橘郡透過現代化採購系統串聯 22 個政府部門，證明了看似枯燥的公部門採購流程，正是驅動行政革新的最強槓桿。告別各自為政的紙本孤島後，透明度與效率大幅提升，更為納稅人省下巨額成本。這告訴我們，公共治理的數位轉型不需要浮誇口號，把底層業務流程理順，就能釋放驚人的敏捷治理動能。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Orange County modernized its procurement system across 22 departments using cloud platforms, eliminating administrative silos and boosting transparency. This case study underscores that digital transformation in civic governance is most impactful when addressing foundational, back-office workflows, turning archaic purchasing processes into agile drivers of institutional efficiency. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.7 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-01 08:04:05 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
