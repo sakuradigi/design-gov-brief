@@ -533,7 +533,7 @@ def dedupe_by_domain(articles, max_per_domain=2):
 # ──────────────────────────────────────────────
 
 def generate_summaries_with_gemini(design_articles, gov_articles, date_str):
-    """使用 Gemini API 產出白話摘要、每日大標題與快訊（支援 3.7 Flash 與優雅回退）"""
+    """使用 Gemini API 產出白話摘要、每日大標題與快訊（支援 3.8 Flash 與優雅回退）"""
     api_key = os.environ.get('GEMINI_API_KEY', '')
     if not api_key:
         print("⚠ GEMINI_API_KEY not set, using fallback (article descriptions only)")
@@ -597,8 +597,9 @@ def generate_summaries_with_gemini(design_articles, gov_articles, date_str):
 {articles_text}
 """
 
-    # 嘗試順序：Gemini 3.7 Flash -> Gemini 3.6 Flash -> Gemini 2.0 Flash
+    # 嘗試順序：Gemini 3.8 Flash -> Gemini 3.7 Flash -> Gemini 3.6 Flash -> Gemini 2.0 Flash
     candidate_models = [
+        ('gemini-3.8-flash', 'Gemini 3.8 Flash'),
         ('gemini-3.7-flash', 'Gemini 3.7 Flash'),
         ('gemini-3.6-flash', 'Gemini 3.6 Flash'),
         ('gemini-2.0-flash', 'Gemini 2.0 Flash'),
@@ -676,7 +677,7 @@ def generate_brief_html(design_articles, gov_articles, summaries, date_str):
 
     # 基本欄位替換
     now = datetime.now(timezone(timedelta(hours=8)))
-    model_name = summaries.get('_model_display_name', 'Gemini 3.7 Flash')
+    model_name = summaries.get('_model_display_name', 'Gemini 3.8 Flash')
     replacements = {
         '{{DATE_STRING}}': date_str,
         '{{HEADLINE}}': html.escape(summaries.get('headline', f'每日設計與治理簡報 · {date_str}')),
