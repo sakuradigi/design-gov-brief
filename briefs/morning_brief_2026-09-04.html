@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從空間美學、著色器革命到跨國AI治理：在算力浪潮中重構人本設計與數位平權 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-04</div>
+    <div class="headline">從空間美學、著色器革命到跨國AI治理：在算力浪潮中重構人本設計與數位平權</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technologies are not merely aids to human activity, but also powerful forces acting to reshape that activity and its meaning.</div>
+      <div class="quote-text-zh lang-zh-only">科技不僅是人類活動的輔助工具，更是重構這些活動及其深層意義的強大力量。</div>
+      <div class="quote-author">— Langdon Winner（科技哲學家）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">告別科幻炫技盲點，AI產品設計正在轉向深層決策倫理與系統透明度。</li>
+        <li class="flash-item">WebGPU與著色器突破效能瓶頸，讓網頁極致光影不再犧牲加載體驗。</li>
+        <li class="flash-item">小國結盟抵抗算力殖民，數位寬頻與治理框架正式升級為基本人權戰場。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/09/89643/" target="_blank" rel="noopener">跳脫紙本框架：日本地方創生名家UDS招募視覺設計師，以設計活化社群場域</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】まちづくり企業のUDS株式会社が、グラフィックデザイナーを募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/6583f6eacb2a5.jpg" alt="【求人情報】まちづくり企業のUDS株式会社が、グラフィックデザイナーを募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當地方創生不再只是口號，視覺設計就成了串聯實體空間與人際互動的關鍵觸媒。UDS 長年專注於都市系統與場域營造，這次徵才正反映了當代設計師的角色轉變——你不再只是坐在螢幕前排版，而是要用視覺語言去定義一棟旅店、一條街區乃至整個社區的生活節奏。對設計師來說，能把平面美學落地為真實空間體驗，才是未來不可替代的核心競爭力。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">UDS is recruiting graphic designers to bridge visual identity with urban revitalization and hospitality spaces. This move reflects how modern graphic design is evolving beyond traditional 2D formats into spatial storytelling, where visual experiences actively cultivate community engagement, brand cohesion, and sustainable urban living environments. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/09/89772/" target="_blank" rel="noopener">氣候韌性與人文共生：京都工藝纖維大學闖入國際永續建築競賽世界十強</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">建築学生向け国際コンテスト「ASC 2026」で京都工芸繊維大学チームが世界トップ10に選出</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/asc.webp" alt="建築学生向け国際コンテスト「ASC 2026」で京都工芸繊維大学チームが世界トップ10に選出" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">建築競賽往往是未來城市面貌的風向球。京都工藝纖維大學團隊能在貝爾格勒舉辦的 ASC 2026 殺進全球前十，證明了當前國際評審看重的早已不是浮誇的造型奇觀，而是如何巧妙揉合在地文化脈絡與極致永續工法。這給所有空間創作者一個明確訊號：面對極端氣候，懂得將材料循環與社會包容度寫進設計DNA的人，才能拿到通往未來的門票。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">A student team from Kyoto Institute of Technology reached the top 10 in the Saint-Gobain Architecture Student Contest 2026 in Belgrade. Their success highlights a growing global design consensus: future architecture must prioritize bioclimatic adaptability, sustainable materials, and cultural context over purely aesthetic structural extravagance. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/what-minority-report-got-wrong-about-ai-so-far-9048573aa70f?source=rss----138adf9c44c---4" target="_blank" rel="noopener">別只抄酷炫手勢介面：《關鍵報告》給當代AI產品設計師的最痛警世課</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What Minority Report got wrong about AI (so far)</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*Od8x5k-43Z_nXRMTQXB6XA.png" alt="What Minority Report got wrong about AI (so far)" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">二十年來，設計界狂熱地把《關鍵報告》裡的手勢互動做成各種展示Demo，卻完全無視了電影真正想警告的事——預測演算法有多容易走火入魔。當我們今天忙著把生成式 AI 包裝得無比滑順時，最該反思的反而是系統黑箱與過度自動化對人類自主權的侵蝕。好的體驗設計不該只是讓機器看起來像魔法，而是要在關鍵決策時刻把知情權與控制權好好還給使用者。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">While designers have spent decades mimicking Minority Report&#x27;s flashy gesture interfaces, they overlooked the film&#x27;s core warning regarding algorithmic determinism and pre-crime surveillance. As autonomous AI systems integrate into everyday life, UX professionals must urgently shift focus from superficial interactions to systemic transparency, accountability, and safeguarding human agency. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/09/03/from-rays-to-meshes-building-vercels-prism-with-vgpu/" target="_blank" rel="noopener">兼顧絕美光影與極致效能：Vercel如何用WebGPU打造次世代網頁稜鏡特效</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">From Rays to Meshes: Building Vercel’s Prism with vgpu</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/09/vgpu_vercel.png?x57826" alt="From Rays to Meshes: Building Vercel’s Prism with vgpu" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">網頁3D特效過去常常是效能殺手，讓筆電風扇狂轉甚至網頁卡死。Vercel 這套 Prism 著色器技術的厲害之處，在於它利用自適應渲染與幾何優化，把繁複的玻璃折射算圖壓到極低負擔。這代表前端視覺美學正在跨越一個重要分水嶺：我們終於不需要在「電影級視覺盛宴」與「秒開的流暢體驗」之間痛苦二選一了，技術底層的突破正在解放數位產品的感官想像。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">Vercel&#x27;s vgpu demonstrates how custom shaders, geometric optimization, and adaptive rendering can deliver sophisticated glass and prism refraction effects in browsers without compromising web performance. This technical leap proves that modern web design no longer needs to sacrifice load speeds to achieve immersive, cinematic visual interactions. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/09/03/more-three-js-speakers-more-ideas-from-paris/" target="_blank" rel="noopener">瀏覽器即畫布：Three.js巴黎年會揭示空間運算如何全面重構網頁互動維度</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">More Three.js Speakers, More Ideas from Paris</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/07/speakers_threejs_conference.png?x57826" alt="More Three.js Speakers, More Ideas from Paris" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Three.js 早就脫離了少數極客玩票的階段，正式成為數位互動體驗的通用語言。從巴黎年會釋出的前沿探索可以看出，設計師與工程師的邊界正在徹底消融，大家都在思考如何在扁平的瀏覽器裡鋪陳出具備空間感的立體敘事。這股浪潮告訴我們，未來的網站不再只是一篇篇圖文網頁，而是一個個等待被探索的微型虛擬世界，互動設計師得趕快補修三維空間的敘事力了。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">The inaugural Three.js Conference in Paris showcases how 3D web technologies are redefining browser-based storytelling. As the boundaries between creative developers and visual designers blur, spatial computing and interactive 3D environments are rapidly transitioning from niche digital novelties into essential industry standards for digital experiences. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxNOHpxdVZVaUg1TGJwWDdCYWV1R3NFN3hBdDRQTVVCblg0bHRLVXRTQmQzRmhiN0xtdjZGVktSYm53QWE5bjh3NkFudzR3aVlvZUdycENQZ09naTVuakR3SGJuR1ltTDI4TzVYMFNiWDBsem01SWI0Q2ZjSjdGYXZ1RzlYVTZocFNpdi1TTVAtWTluUQ?oc=5" target="_blank" rel="noopener">從技術外包到主權韌性：安碁資訊營收雙增，揭示政府數位治理的資安剛需</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">安碁資訊8月營收轉雙增；深化布局政府市場 - 台視全球資訊網</div>
+            <div class="item-sentence lang-zh-only">資安服務商營收亮眼，背後折射出的是整個國家治理體系的深層焦慮。在地緣政治角力與新型態混合戰的威脅下，資訊防護早已不是單純的 IT 採購，而是支撐智慧政府與公眾信任的生存基石。當公部門把預算重兵壓在資安監控與威脅應變上，也提醒了所有數位服務架構師：缺乏韌性防護的美麗介面，在真正的數位威脅面前只是一推就倒的紙糊城堡。 <span class="src">— 台視全球資訊網</span></div>
+            <div class="item-sentence-en lang-en-only">Acer Cyber Security reported strong revenue growth driven by deep government market expansion. This momentum underscores that cyber resilience is no longer an auxiliary IT expense, but a fundamental pillar of national digital governance and civic infrastructure amidst escalating geopolitical tensions and sophisticated cross-border cyber threats. <span class="src">— 台視全球資訊網</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPR0x4VGJSV0c5TFVVZXpkcFdLdkdGWEViUExhVDdmaFctTUhHTnRLRVlibC1ZYzhCdWE5NmdOak8yQkhkeVdwNWFKQ092VmtxV01DY2dCMzdNd2d1N2F2T1VaM09YaG01NnctcEE3R2JUbWoxSk52OVVab3llYTI1bDNVdFFLdXNpLWNOOUJWb0dJekphUzBSVlQ5WDRPNkVtazNmeFo2eUdtaGRPWUhCNEw3TjVJWmZ4NGc?oc=5" target="_blank" rel="noopener">拒當演算法殖民地：牙買加力推加勒比共同體建立跨國統一AI治理框架</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">JAMAICA-Minister Wheatley calls for unified CARICOM approach to AI governance - The St Kitts Nevis Observer</div>
+            <div class="item-sentence lang-zh-only">面對少數科技巨頭主導的 AI 浪潮，資源有限的島國如果單打獨鬥，很容易淪為演算法霸權下的數位附庸。牙買加倡議跨國聯手制定標準，正是小國尋求集體話語權的經典範例。這件事的重要性在於，未來的科技治理不能只聽矽谷或布魯塞爾的聲音；唯有透過區域聯盟整合市場與法規，小國才能在文化多樣性、倫理防線與在地產業利益上守住防線。 <span class="src">— The St Kitts Nevis Observer</span></div>
+            <div class="item-sentence-en lang-en-only">Jamaica is urging CARICOM member states to adopt a unified AI governance framework. Small developing nations face disproportionate risks from global algorithmic monopolies; establishing regional regulatory consensus is crucial for defending digital sovereignty, safeguarding local cultural nuances, and ensuring equitable participation in the global AI-driven economic transition. <span class="src">— The St Kitts Nevis Observer</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPR0x4VGJSV0c5TFVVZXpkcFdLdkdGWEViUExhVDdmaFctTUhHTnRLRVlibC1ZYzhCdWE5NmdOak8yQkhkeVdwNWFKQ092VmtxV01DY2dCMzdNd2d1N2F2T1VaM09YaG01NnctcEE3R2JUbWoxSk52OVVab3llYTI1bDNVdFFLdXNpLWNOOUJWb0dJekphUzBSVlQ5WDRPNkVtazNmeFo2eUdtaGRPWUhCNEw3TjVJWmZ4NGc?oc=5" target="_blank" rel="noopener">集結小國話語權：CARICOM建構AI防線，展現區域多邊協作的數位主權實踐</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">JAMAICA-Minister Wheatley calls for unified CARICOM approach to AI governance - The St Kitts Nevis Observer</div>
+            <div class="item-sentence lang-zh-only">同一項倡議在區域內持續發酵，凸顯了新興經濟體對於生成式 AI 帶來的文化與經濟衝擊感到高度緊迫。建立統一規範不只是為了防弊，更是為了讓加勒比海地區在面對跨國算力掠奪時，能有一套符合自身社會發展節奏的防護罩。這對全球治理創新的啟示非常直接：面對無國界的技術衝擊，傳統單一國家的監管思維已經過時，彈性且自主的區域多邊協同才是解法。 <span class="src">— The St Kitts Nevis Observer</span></div>
+            <div class="item-sentence-en lang-en-only">The push for a unified Caribbean AI policy highlights the urgency of multilateral cooperation among emerging economies. By pooling institutional resources, regional bodies can craft agile regulatory guardrails that protect against cultural displacement and labor disruption while fostering indigenous technological capacity tailored to local socio-economic realities. <span class="src">— The St Kitts Nevis Observer</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE16aGxNWV9BUFAtRzNfS0Q2VTdQY19TUUx3VEQydlB5TjhtX3Fqcjd5S3dvOS1XRWJQaEN1MGt0V3pFZ3VwbXVLNlZsZGgxU3pDNnM3dWdxdUx4Zw?oc=5" target="_blank" rel="noopener">當AI代理人開始替人類下決定：企業在落地自主系統前必須理清的法律責任</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AIエージェントの過失は誰が責任を負うのか？弁護士に訊く、本格実装前に知るべきAIガバナンスの観点 - EnterpriseZine</div>
+            <div class="item-sentence lang-zh-only">當 AI 從「聽口令的助手」進化成「能自主採取行動的代理人」，一旦出錯究竟誰該負責？這篇法律觀點切中了企業數位轉型的最大盲區。很多人以為引進 Agent 是為了省事，卻沒意識到決策鏈條的法律風險正在成倍放大。在系統上線前搞清楚監督邊界與歸責機制，並不是保守阻礙創新，而是為了避免企業在享受自動化紅利時，冷不防踩進毀滅性的信任與法律地雷。 <span class="src">— EnterpriseZine</span></div>
+            <div class="item-sentence-en lang-en-only">As autonomous AI agents shift from passive tools to active decision-makers, clarifying legal liability and oversight mechanisms becomes imperative for corporate governance. Establishing rigorous human-in-the-loop protocols and verifiable audit trails prior to deployment is essential to mitigating systemic operational risks and preventing catastrophic institutional failures. <span class="src">— EnterpriseZine</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/network/whats-new-in-digital-equity-trailblazer-applications-open" target="_blank" rel="noopener">寬頻即人權：紐約將網路普及列為平權首務，數位包容正式納入公共治理核心</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What’s New in Digital Equity: Trailblazer Applications Open</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/36cc90c/2147483647/strip/true/crop/5952x2893+0+242/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F12%2Ff7%2F5c00f8a9403caebdf047a5369a0b%2Fadobestock-461429876.jpeg" alt="What’s New in Digital Equity: Trailblazer Applications Open" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">紐約市把「普及網路接取」列為種族平權的第一目標，宣告了寬頻建設不再只是冷冰冰的電信工程，而是現代公民爭取受教權、就業機會與階級流動的基本人權。數位落差本質上就是社會不平等的延伸。當公共治理者願意把基礎連線能力當成水電一樣的公共財來經營，才有可能在演算法加速前進的時代，不把弱勢群體遠遠拋在數位鴻溝的另一端。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">New York City&#x27;s prioritization of universal internet access in its Racial Equity Plan underscores that digital connectivity is a fundamental civil right. Bridging the digital divide is paramount for equitable education and economic mobility, proving that inclusive infrastructure must be treated as essential public infrastructure within modern governance. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.7 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-04 08:03:56 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
