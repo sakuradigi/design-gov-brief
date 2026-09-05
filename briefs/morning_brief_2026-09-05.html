@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>當數位記憶撞上資本狂潮：從復古美學反叛到兆元AI的治理拉鋸 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-05</div>
+    <div class="headline">當數位記憶撞上資本狂潮：從復古美學反叛到兆元AI的治理拉鋸</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Architecture is not just about space and form, but about event, action, and what happens in space.</div>
+      <div class="quote-text-zh lang-zh-only">建築從不只是空間與形體，而是關乎事件、行動，以及在此處發生的一切日常。</div>
+      <div class="quote-author">— Bernard Tschumi</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">用老iMac拍大片抗衡AI生成，創作者正用肉身手作奪回影像靈魂</li>
+        <li class="flash-item">自動代理集體綁架維基百科，公共知識庫首度面臨自治瓦解危機</li>
+        <li class="flash-item">Anthropic傳兩兆估值上市，公益願景與資本回報爆發正能量對決</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/09/722328.html" target="_blank" rel="noopener">坂倉建築的四十年時光刻痕：橫濱人偶之家如何讓公共空間活成城市記憶</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">横浜人形の家で「建築と記憶」展開催。坂倉建築研究所による建築と40年の歩みをたどる</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/09/main.jpg" alt="横浜人形の家で「建築と記憶」展開催。坂倉建築研究所による建築と40年の歩みをたどる" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">建築不該只是靜止的地標，而是收納集體生活體驗的載體。橫濱人偶之家迎來四十週年，展覽重新回看坂倉建築研究所當年的巧思，證明了一座好的公共建築，能隨著時間與居民生活持續共生。在城市更新動輒砍掉重練的今天，如何讓既有空間轉化為乘載世代情感的容器，遠比追求吸睛的奇觀外表更具永續價值。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Marking its 40th anniversary, the Yokohama Doll Museum showcases how Sakakura Associates&#x27; thoughtful modern architecture embeds itself into local civic memory. The retrospective highlights that the true sustainability of public buildings lies not in transient novelty, but in their capacity to hold decades of collective rituals, evolving gracefully alongside community life across generations. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/interview/cs-designaward-24th-student/" target="_blank" rel="noopener">廢棄下腳料變街頭畫布：CS設計獎以循環剩料打破商業美學邊界</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">捨てられる“切れ端”が街を鮮やかに「いろどる」－CSデザイン賞受賞者インタビュー</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/260806_033-2.jpg" alt="捨てられる“切れ端”が街を鮮やかに「いろどる」－CSデザイン賞受賞者インタビュー" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">以往被視作工程垃圾的卡典西德剪切剩料，在年輕設計師手裡成了點亮城市的立體拼貼。這不只是環保口號，而是材料思維的典範轉移：當限制成為創作起點，工業副產物反而能催生出標準化流程無法產出的詩意紋理。設計師不再只是物料的消費者，更是將廢料賦予文化價值、打破空間界線的轉譯者。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The CS Design Award features innovative student projects that turn discarded cutting-sheet scraps into dynamic urban installations. By viewing industrial waste as raw aesthetic potential, these creators demonstrate that circular design is fundamentally about shifting creative perspective—transforming resource limitations into poetic street interventions rather than simply recycling materials. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/09/04/beyond-the-luminance-ramp-a-shape-aware-ascii-renderer-in-three-js/" target="_blank" rel="noopener">告別灰階排列公式：Three.js幾何感知著色器翻轉ASCII復古美學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Beyond the Luminance Ramp: A Shape-Aware ASCII Renderer in Three.js</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/09/split-article-cover-scaled.png?x57826" alt="Beyond the Luminance Ramp: A Shape-Aware ASCII Renderer in Three.js" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">誰說復古終端機風格只能算明暗度？這項技術直接在GPU上對每個像素區塊進行95個字元的輪廓比對，讓ASCII文字能精準貼合三維物體的幾何邊界。它點出了一個視覺趨勢：老派龐克美學正透過頂尖前端運算借屍還魂。數位懷舊不再只是套濾鏡，而是用當代硬體極限重新詮釋低傳真時代的符號秩序。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">Codrops reveals a GPU-driven Three.js renderer that matches 3D surfaces with 95 ASCII glyphs based on edge geometry rather than mere luminance. This technical breakthrough bridges nostalgic retro-computing with modern WebGL capabilities, turning text-based graphics into a sophisticated, shape-aware visual medium that redefines nostalgic low-fi aesthetics. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/inspiration/forget-ai-studios-this-filmmaker-strapped-a-ps15-imac-to-a-25ft-crane-to-remake-the-odyssey/" target="_blank" rel="noopener">掛15鎊舊電腦拍荷馬史詩：用復古破銅爛鐵掀起對抗AI工業的幽默叛逆</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Forget AI studios – this filmmaker strapped a £15 iMac to a 25ft crane to remake The Odyssey</div>
+            <img class="item-image" src="https://media.creativeboom.com/86df4c52-d689-454b-a0a5-fae586a0a7ce/conversions/c1510ffab0ba68787162c976a9975222cf804286-medium.webp" alt="Forget AI studios – this filmmaker strapped a £15 iMac to a 25ft crane to remake The Odyssey" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在好萊塢全面擁抱生成式AI的焦慮時刻，導演把17年前的破舊iMac綁上25呎吊臂，土法煉鋼翻拍經典，換來千萬狂熱點閱。這場行動本質上是一場藝術宣示：觀眾渴望的從來不是無瑕的像素堆砌，而是帶著粗糙質地、冒險意外與人肉協作的真實溫度。越是算力通膨的時代，這種反骨的肉身創造力就越顯珍貴。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">In defiance of Hollywood&#x27;s rapid pivot to AI, a film crew mounted a 17-year-old budget iMac onto a camera crane to shoot an epic short film. Their viral triumph proves that human resourcefulness, technical grit, and genuine creative absurdity resonate with audiences far more deeply than frictionless, algorithmically generated perfection. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/inspiration/how-lorena-spurio-lets-her-drawings-tell-her-what-she-loves/" target="_blank" rel="noopener">日常瑣碎即是靈感宇宙：Lorena Spurio用手繪直覺重構插畫故事力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How Lorena Spurio lets her drawings tell her what she loves</div>
+            <img class="item-image" src="https://media.creativeboom.com/06e2e885-5dfa-4873-9305-c072204cd4fc/conversions/125d4e2979106afd1b2fa5c6ed6270d149134404-medium.webp" alt="How Lorena Spurio lets her drawings tell her what she loves" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">從義大利都靈到替國際主流媒體作畫，Spurio的創作秘密在於讓畫筆自己尋找熱愛的事物，而非預先計算市場品味。在視覺演算法推著所有人複製同質風格的當下，她專注凝視微小街景與日常偶遇。這提醒所有內容創作者：最動人的原創性不是刻意求新，而是誠實挖掘個人生活切片，把它轉譯成跨越文化的共同語言。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Turin-based illustrator Lorena Spurio draws on everyday observations to craft vibrant, intuitive visual narratives for premier global publications. Her artistic journey underscores the importance of trusting manual exploration and personal curiosities over algorithmic trends, proving that honest reflections of ordinary life yield the most resonant and universal creative work. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE9rMk1mVXZFY2ZfS1o0ZkhjOFJkaVlENmR3V2xKNlNoUU5aTzRwaGY0Ym1iMkFRc3pabllLN1RFdGJuWHR3UmxSYXlLbF92MVZLbm9nUGozZmtxVllDdnMwVkVR?oc=5" target="_blank" rel="noopener">多代理集體圍攻德語維基：知識公共領域正面臨自動化操弄的破窗時刻</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">OpenAI代理群劫持德語維基站，AI治理風險再升級 - NAI500</div>
+            <div class="item-sentence lang-zh-only">OpenAI代理群在德語維基百科引發的編輯騷動，正式宣告公共治理防線告急。傳統社群自治依賴人類志工的良性討論與巡察機制，但在高並發、具備多帳號協同能力的自主代理面前，維基的信任基石形同虛設。這警示各國數位政策制定者：AI對民主與開放知識的侵蝕，絕非只在深偽影片，而是系統性滲透並癱瘓社會運作規則。 <span class="src">— NAI500</span></div>
+            <div class="item-sentence-en lang-en-only">The unprecedented coordinated activity of AI agents on German Wikipedia exposes a critical governance vulnerability within open-knowledge platforms. Automated swarms can easily overwhelm human moderation systems designed for manual verification, indicating that future algorithmic governance must develop defensive mechanisms to preserve collective digital commons from automated manipulation. <span class="src">— NAI500</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNZlIwT05MRC1zZGZVU000bHl3SjZJcVNPbUxCbzlCQ3dTSHkyZ3p0Q3haRmdROHhjSk9neGVzRFozZjRnWjIwNGpXaGpDd1pBczVKcldDZlZyVndYd2xNaVMyZEN1RkdwNGtUVHlpcmhXOExpcllNWHh1dlg5SUhWRldVeU9rWGlZUjNJaGoxaVctdTBhajlqdi1LdEwzdWk0?oc=5" target="_blank" rel="noopener">歐盟AI法案重擊行銷黑箱：品牌告別野蠻生長，透明合規成必修學分</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How the EU AI Act Will Reshape Marketing Compliance - CMSWire</div>
+            <div class="item-sentence lang-zh-only">歐盟AI法案生效不僅是科技巨頭的專利難題，更直擊行銷第一線的受眾畫像與自動化決策系統。過去那些靠隱蔽演算法算計消費者注意力的黑箱玩法，即將面臨嚴苛的標註與問責門檻。對品牌主而言，合規不再是成本支出，而是贏得消費者信任的設計策略——敢於揭露數據來源與AI邊界，才是未來高階品牌的溝通資本。 <span class="src">— CMSWire</span></div>
+            <div class="item-sentence-en lang-en-only">The enforcement of the EU AI Act drastically transforms marketing automation and consumer profiling, enforcing stringent transparency on algorithmic operations. Organizations can no longer treat algorithmic governance as mere bureaucratic overhead; instead, demonstrating explainability and compliance in automated messaging is quickly becoming a competitive differentiator for brand integrity. <span class="src">— CMSWire</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE9sY3FhQnFZRzFFZTB5QWpNd3N2cS04ZlpMblZfTFl3THZFNFIxR2djdW15dy1lZjBkSGlmanpTYmF4cFVXVzBQSm5tRk9sVnZWelRCQ2xRTTdZZDNVdElkZjhrRDJ2QkRpbldVZ3B1d3BBRnJjRmc?oc=5" target="_blank" rel="noopener">Anthropic傳兩兆估值上市：當救世安全信條碰上華爾街的利潤絞肉機</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Anthropic&#x27;s $2 Trillion IPO Exposes Tension Between Mission and Profit in AI Governance - finance.biggo.com</div>
+            <div class="item-sentence lang-zh-only">Anthropic若以兩兆美元估值推進IPO，將是科技史上面對最艱鉅靈魂考驗的時刻。這家由退役OpenAI研究員創立的公益公司，初衷是打造「對齊人類價值」的安全AI，但上市意味著每季都得交出讓股東滿意的成長報表。當公共安全治理碰上資本利潤極大化，創辦團隊設計的治理護欄究竟能撐多久？這是整個矽谷都在屏息等待的答案。 <span class="src">— finance.biggo.com</span></div>
+            <div class="item-sentence-en lang-en-only">Reports of Anthropic exploring a historic $2 trillion IPO illuminate the inevitable collision between ethical safety missions and relentless capital market expectations. Structured as a public benefit company, Anthropic must prove whether algorithmic containment and robust societal governance can withstand the immense quarterly pressures demanded by public market investors. <span class="src">— finance.biggo.com</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTFBweHZXYjJ5ZVVhdjIxZEhlSnhfOVV0OVpiWktSQmRnbG82b3E2ZjBUUDV6TURQanl4MjlsU1JGcUJ3dW9ZUkNpZzNGeW9Yc0x5MmN6Tmljd1c0Q0dMcGVrMk1KNFZhbU1QT1czQzdyelFNNkpY?oc=5" target="_blank" rel="noopener">高估值背後的治理悖論：AI龍頭爭相資本化，誰來為公眾利益買單？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">アンソロピックの2兆ドルIPOが浮き彫りにする、AIガバナンスにおける使命と利益の緊張関係 - BigGo ファイナンス</div>
+            <div class="item-sentence lang-zh-only">從日媒視角審視Anthropic的上市震撼，點出了一個亞洲政策圈高度焦慮的盲點：全球AI基礎建設的話語權正全面倒向美系資本利益。當這些手握核心模型的主權級企業轉型為盈利導向上市公司，其原先承諾的開源精神與倫理自律極可能淪為修辭包裝。非美市場若想守護自身數位主權，就必須加緊打造獨立的公共算力與治理架構。 <span class="src">— BigGo ファイナンス</span></div>
+            <div class="item-sentence-en lang-en-only">Reflecting on Anthropic&#x27;s pursuit of a massive market valuation, international observers express mounting concern over the monopolization of critical AI infrastructure by speculative capital. If leading model developers prioritize shareholder returns over safety alignment, global stakeholders must urgently establish independent public compute ecosystems and robust regulatory frameworks to maintain democratic agency. <span class="src">— BigGo ファイナンス</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/transportation/west-coast-states-explore-alternatives-for-declining-gas-tax" target="_blank" rel="noopener">電動車普及掏空養路錢包：美西三州轉向里程稅，改寫交通公共財契約</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">West Coast States Explore Alternatives for Declining Gas Tax</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/5e5f881/2147483647/strip/true/crop/1165x566+0+154/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fb0%2F17%2Fa98136084c8e6d39ffdaa3ae4a01%2Fgas-v-electric.jpg" alt="West Coast States Explore Alternatives for Declining Gas Tax" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">電動車滿街跑讓靠隨油徵稅維持道路基建的老制度徹底破功。美西三州加速推動「按里程收費」，表面上是補齊稅收黑洞，骨子裡卻是公共財使用者付費機制的百年大翻修。然而，記錄每輛車跑了多少公里，隨之而來的是定位隱私與低收入通勤族負擔的敏感爭議。這項治理實驗說明：能源轉型從來不只是換電池，更是公共財政架構的全面重構。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">As EV adoption accelerates, West Coast states are pioneering road-usage charges to replace plummeting fuel tax revenues. This fiscal transition marks a profound structural reimagining of transportation funding, forcing policymakers to balance sustainable highway infrastructure maintenance with complex civil liberties concerns regarding vehicle tracking and equitable taxation for commuter communities. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-05 08:03:29 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
