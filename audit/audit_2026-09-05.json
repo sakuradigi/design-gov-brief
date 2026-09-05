@@ -1,12 +1,22 @@
 {
   "date": "2026-09-05",
-  "generated_at": "2026-09-05T00:03:29.760543+00:00",
-  "total_raw_articles": 335,
-  "total_verified": 335,
+  "generated_at": "2026-09-05T02:59:23.901309+00:00",
+  "total_raw_articles": 337,
+  "total_verified": 337,
   "total_failed": 0,
   "selected_design": 5,
   "selected_gov": 5,
   "articles": [
+    {
+      "title": "Reading and writing are interfaces. And AI can reduce their friction.",
+      "url": "https://uxdesign.cc/reading-and-writing-are-interfaces-and-ai-can-reduce-their-friction-13623dea34c0?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-05T00:21:17+00:00"
+    },
     {
       "title": "What Minority Report got wrong about AI (so far)",
       "url": "https://uxdesign.cc/what-minority-report-got-wrong-about-ai-so-far-9048573aa70f?source=rss----138adf9c44c---4",
@@ -96,16 +106,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-08-31T21:47:30+00:00"
-    },
-    {
-      "title": "Design has outgrown the traditional designer",
-      "url": "https://uxdesign.cc/design-has-outgrown-the-traditional-designer-adbb657aa30a?source=rss----138adf9c44c---4",
-      "source": "UX Collective",
-      "category": "design",
-      "region": "none",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-08-31T15:56:24+00:00"
     },
     {
       "title": "'It simply fills my life and saves me': Inside Varya Yakovleva’s sketchbooks",
@@ -539,7 +539,7 @@
     },
     {
       "title": "資策會集結本土AI供應商 共議AI治理、驗證制度與政府支持機制 - 環球生技月刊",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBac1k4cjVVVlFhMnAwT19WUEo5Z0xyN0xIel93UVA0d2EwTDZMLTdGWnBaOUx6WEJ1MlYzRmYwOEp2UVdTMm9rN0tOTDZ3U1pyd01RVTlBOE94YVdVNzV4MlNxemJMVE5idUJJNjZiVmVoTUpzZ2dB?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBqQ0EzWC1KMi1kbkZuYUU5akplbTVoNzBTSFJMTmYyM2QtbGI0VVZUcFlOLWNRM3lONEhlcU9mWDNvMWdTZGlkSUY2S2NLeWEtV0ZzY1AyRmhkdkozRzJCWUdfMjF0M2dKYjd6U1BOTWNuUQ?oc=5",
       "source": "環球生技月刊",
       "category": "gov",
       "region": "tw",
@@ -568,9 +568,9 @@
       "pub_date": "2026-09-04T02:55:04+00:00"
     },
     {
-      "title": "新北市EDP榮獲2026臺灣AI卓越獎智慧城市創新肯定 - 中華新聞雲／中華日報",
+      "title": "新北市EDP榮獲2026臺灣AI卓越獎智慧城市創新肯定 - cdns.com.tw",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8zWUNDM1Q3RkZfWWdGeVFtOGtEOTZFMjVXTHI3MU90U3ZOMkhHNmF0dUpGX0RidFEyV1NvRFphZF9HSmlhRElFR3NGN055Z3ppOWc?oc=5",
-      "source": "中華新聞雲／中華日報",
+      "source": "cdns.com.tw",
       "category": "gov",
       "region": "tw",
       "verified": true,
@@ -578,14 +578,24 @@
       "pub_date": "2026-09-02T01:46:44+00:00"
     },
     {
-      "title": "打造安全宜居智慧城市 桃府養工處榮獲114年度國土署考評全台第一「特優獎」 - taiwanhot.net",
+      "title": "打造安全宜居智慧城市 桃府養工處榮獲114年度國土署考評全台第一「特優獎」 - 台灣好新聞",
       "url": "https://news.google.com/rss/articles/CBMi4gNBVV95cUxPX3dGbzRBUWhpWmgxZ294c3J4SjJFR1loX1lXUmJNXzllS1IyQTNCWFBHSWhhaUg5ZGpfZlhBa2daQ3RFZlZ0V3U4ajVnSWtUZXJ0TmxPTlBBbUFJbFVLenotaXF6bXlTamFIbWsyLW1LYXVRMEh3Wi0tek5Cam1LQ05UX1BvZ1g5RElhNDF6WjVfSVgwREhBNHp5TUd0WW5MQTRHY2N6WVRtdGxjN0xvQl9Cd0pGWkZoSS1GTVRCbTBnS3ZtQzluMnRmQlNST0ZwN2J0d25sZW9Zb2tsUzhucEI4T3RZaDRjek1Na1BLclRGVTRYYUpfa1E1WXFZczFCY0JXV2xqcHI4Y29CbDlCR09ZQ2NqZHhwRXNEWXV4QW1ScDNaMUZqcDFQMXdfRkNTbDRPRjkzMDZlajE2N21xVVhoaGw1Y3dWcHM5dzJ3TUdNaktndmZvRllySFJ6NHJEelU3Y1hoVzRrMXRlYXo4eTdXSXZJUjF1THl2djBtcWR5eE14STl5LWFLS0VhV1FLRTA0ckVPYUFvTW9rcFJ3Z1VyQVJCQWxScS1aNkh6M21mdnBSdDh0MEFfSFJ5T0d3c3MxNHVCRnVlUDc0YnBvd0dXMnpsZXc2NU9DeHhlWTNoUQ?oc=5",
-      "source": "taiwanhot.net",
+      "source": "台灣好新聞",
       "category": "gov",
       "region": "tw",
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-08-29T07:38:13+00:00"
+    },
+    {
+      "title": "AT&T 全面啟動社區服務 深入社區、服務商家 推動智慧城市與數位新生活 - scdaily.com",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1Ob3FaRjJIWExPR2V6TlJleFNQNjF5Y3hySVBWREJBV1ZQUFpQempZMDYzdmZmVEJSS1N3akx2S01ubDJKekE?oc=5",
+      "source": "scdaily.com",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-31T18:54:01+00:00"
     },
     {
       "title": "鑫創電子與友達共拓智慧交通/工業HMI/智慧城市- 新聞 - MoneyDJ",
@@ -608,34 +618,14 @@
       "pub_date": "2026-09-03T12:31:59+00:00"
     },
     {
-      "title": "新北AI治理獲國際肯定 奪WITSA全球AI公共政策獎 - Yahoo新聞",
-      "url": "https://news.google.com/rss/articles/CBMirAJBVV95cUxNZmdMZWVza00zS1dFMHZiclMyNTN3Q2EtY1piazZNZ29xdkxPUkpSeDVldmtnb0pIZVJVQXQxMFROTFF4c0tnYkxpQUtqV0tXS0Z5VEFfVkh4Z0lZenZETGxlUGFUTDZFMk9ZeVVCVlNsWDdQMEJCX01zdVlsYWIwdk1mWmU3NjBWVUNQSkNsVUNWUjdPeXJBVXZrTWxVYi02MW9haHdnNG9waHdXdGJJM29vWkJCeEJyVk56RHRJWDc3emZaOTBOQjBsWDY5aGdRN0NySkpIc1dMNDkwdDFCdHBVdm12ckEtSTFfMEU0blliVXM4aVRCcDRnZU1HcjRnU1pDTDZiaFAtWDZ5TkpNNDdLTTFvWk8za3YxMWYxQTJ2YkQ5NG9TUXhubGU?oc=5",
-      "source": "Yahoo新聞",
+      "title": "新北市EDP榮獲2026臺灣AI卓越獎智慧城市創新肯定 - n.yam.com",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1aVDVmUUJYTmo3UFdEemtyLWRfMHo4dkJ1U2pLTzQtXy1ucWhHcEhiR1lSd0ZIVFlzUS1IQTlmV25ZVTV1WjlJWEt3MkdXRkFzZXc?oc=5",
+      "source": "n.yam.com",
       "category": "gov",
       "region": "tw",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-02T07:03:34+00:00"
-    },
-    {
-      "title": "張秀菊議員第8次定期智發會人事處工作報告 建立「桃園AI治理基本規範」 - 台灣新聞雲報",
-      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5IQTRReDl5TDRiSHRNNV9saGZqQ1o1UDFqMl80cmZDT1otclVlMFFhcFJaX0VOTEVFZXpUMjBUNUdpRVRqNWc?oc=5",
-      "source": "台灣新聞雲報",
-      "category": "gov",
-      "region": "tw",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T11:28:59+00:00"
-    },
-    {
-      "title": "26 家臺商組隊前進史瓦帝尼 智慧城市、生技與製造業尋求在地落地 - 樂聯網",
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBFQW1Hb201cUtSWkU0UUVLNzFnUzQ5VWtITUYxLWY1U2FhVnJVV2JvZUFZcUZkR091ZFZQRFQ3aVZmT2oyQTNBN0Vrdw?oc=5",
-      "source": "樂聯網",
-      "category": "gov",
-      "region": "tw",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-01T11:23:56+00:00"
+      "pub_date": "2026-09-02T02:03:00+00:00"
     },
     {
       "title": "讓城市更宜居，臺中以人口、永續與數位治理打造幸福日常- 未來城市＠天下 - 進步城市的新想像 - 未來城市＠天下",
@@ -658,16 +648,6 @@
       "pub_date": "2026-08-31T03:27:26+00:00"
     },
     {
-      "title": "《通網股》遠傳攜亞泥參展布局淨零與智慧城市- 上市櫃 - 旺得富理財網",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1UOENqMW51TFBSSWJxQ2o0dlpJdkN6cURhdVJ2MEViOGdyczJ1cnZncVlSekRMNXFRWFQ5THZucHkzTnhfYzZiYmphZ2lUb1R2V0lpUE5xTUdBQUsyenNqRExFMDZ3QzB5V1E?oc=5",
-      "source": "旺得富理財網",
-      "category": "gov",
-      "region": "tw",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-02T06:18:15+00:00"
-    },
-    {
       "title": "雙城交流...蔣萬安數位治理CiviClaw台北通等政策將與東京都交流互鑑| 大台北| 地方 - UDN",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5DWlRpTTNlQnQtbFlwUlZRTFBaVnA1bXJ2X3J3UDF5X2RxMmcwTGNmTU0wcDRpREtZU3N6UlZvMEVGOG9aWlZxajR6TWV4OHdhOUVTNmlIaTIteUthSElxWXRBbFA0b0xYRzk5bmRFcGFIUQ?oc=5",
       "source": "UDN",
@@ -678,6 +658,46 @@
       "pub_date": "2026-09-03T05:03:07+00:00"
     },
     {
+      "title": "新北AI治理獲國際肯定 奪WITSA全球AI公共政策獎 - Yahoo新聞",
+      "url": "https://news.google.com/rss/articles/CBMirAJBVV95cUxNZmdMZWVza00zS1dFMHZiclMyNTN3Q2EtY1piazZNZ29xdkxPUkpSeDVldmtnb0pIZVJVQXQxMFROTFF4c0tnYkxpQUtqV0tXS0Z5VEFfVkh4Z0lZenZETGxlUGFUTDZFMk9ZeVVCVlNsWDdQMEJCX01zdVlsYWIwdk1mWmU3NjBWVUNQSkNsVUNWUjdPeXJBVXZrTWxVYi02MW9haHdnNG9waHdXdGJJM29vWkJCeEJyVk56RHRJWDc3emZaOTBOQjBsWDY5aGdRN0NySkpIc1dMNDkwdDFCdHBVdm12ckEtSTFfMEU0blliVXM4aVRCcDRnZU1HcjRnU1pDTDZiaFAtWDZ5TkpNNDdLTTFvWk8za3YxMWYxQTJ2YkQ5NG9TUXhubGU?oc=5",
+      "source": "Yahoo新聞",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-02T07:03:34+00:00"
+    },
+    {
+      "title": "《通網股》遠傳攜亞泥參展布局淨零與智慧城市- 上市櫃 - 旺得富理財網",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1UOENqMW51TFBSSWJxQ2o0dlpJdkN6cURhdVJ2MEViOGdyczJ1cnZncVlSekRMNXFRWFQ5THZucHkzTnhfYzZiYmphZ2lUb1R2V0lpUE5xTUdBQUsyenNqRExFMDZ3QzB5V1E?oc=5",
+      "source": "旺得富理財網",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-02T06:18:15+00:00"
+    },
+    {
+      "title": "張秀菊議員第8次定期智發會人事處工作報告 建立「桃園AI治理基本規範」 - 台灣新聞雲報",
+      "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5IQTRReDl5TDRiSHRNNV9saGZqQ1o1UDFqMl80cmZDT1otclVlMFFhcFJaX0VOTEVFZXpUMjBUNUdpRVRqNWc?oc=5",
+      "source": "台灣新聞雲報",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-04T11:28:59+00:00"
+    },
+    {
+      "title": "26 家臺商組隊前進史瓦帝尼 智慧城市、生技與製造業尋求在地落地 - 樂聯網",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBFQW1Hb201cUtSWkU0UUVLNzFnUzQ5VWtITUYxLWY1U2FhVnJVV2JvZUFZcUZkR091ZFZQRFQ3aVZmT2oyQTNBN0Vrdw?oc=5",
+      "source": "樂聯網",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-01T11:23:56+00:00"
+    },
+    {
       "title": "內政部：全台智慧建築標章2450件　續推永續智慧城市 - 經濟日報",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOcDNkYm83SzQzbUd1c3BoOEwxaEg4Qm14cXhfV0k5ZHlvTmN5eUl0ZnUyVWl2M0c5cW9kclZkdjIxY3VzbHltanp6aEJsWnh1RHowbE1TQl9pek1kQ2pEMTZJUEdCSk9VdWwtbEttSURJZW51bllBTnpSVEdmUkdXSNIBX0FVX3lxTE1ZZ0J3WFR6MGNVNEFOdUZQa0FwUHNBbF9vdnZtVkN3dXNuVDVPVEtCSVl4YndpQnlCLTZwSlJsblNOeThBVHd6Tm5lRWpabW51Q1d3bnpETXkzR0NQRmxF?oc=5",
       "source": "經濟日報",
@@ -686,16 +706,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-04T05:36:56+00:00"
-    },
-    {
-      "title": "新北市EDP榮獲2026臺灣AI卓越獎智慧城市創新肯定 - 蕃新聞",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1aVDVmUUJYTmo3UFdEemtyLWRfMHo4dkJ1U2pLTzQtXy1ucWhHcEhiR1lSd0ZIVFlzUS1IQTlmV25ZVTV1WjlJWEt3MkdXRkFzZXc?oc=5",
-      "source": "蕃新聞",
-      "category": "gov",
-      "region": "tw",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-02T02:03:00+00:00"
     },
     {
       "title": "安碁資訊8月營收轉雙增；深化布局政府市場 - 台視全球資訊網",
@@ -718,9 +728,9 @@
       "pub_date": "2026-09-03T11:10:45+00:00"
     },
     {
-      "title": "新北AI治理躍上國際 勇奪WITSA全球AI公共政策獎 - 蕃新聞",
+      "title": "新北AI治理躍上國際 勇奪WITSA全球AI公共政策獎 - n.yam.com",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1BaHhoSnBONGNaNnd6cWpDOWQtenluSW0tc2NOOEhUUnJ3X092R29QckNtVEJncS1vbHNuNzJDaGEtMUJ3WmpyR3B5cU1MSURXUWc?oc=5",
-      "source": "蕃新聞",
+      "source": "n.yam.com",
       "category": "gov",
       "region": "tw",
       "verified": true,
@@ -748,9 +758,9 @@
       "pub_date": "2026-09-02T10:18:13+00:00"
     },
     {
-      "title": "2026智慧城市展新光保全不缺席！強打AI防詐、次世代系統建構韌性空間 - setn.com",
+      "title": "2026智慧城市展新光保全不缺席！強打AI防詐、次世代系統建構韌性空間 - 三立新聞",
       "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE05VEhPOWQwUjZVRXpRXzVKdnJxdHlZRS1XM3JHXzZhYi1Mc2dzejFfaTB0Y3lnVmNDbW92cUh6d001Nnp5WDc1LdIBTEFVX3lxTE5oU2xxYlpOTG9QbDZUQ0daR1liaWZ1NXJEUFBPUzVWcmEtTjU0bzNjRV9xQjk3QlRYaW5QQkxZSGd1MFFCaXFTS2I3ZU0?oc=5",
-      "source": "setn.com",
+      "source": "三立新聞",
       "category": "gov",
       "region": "tw",
       "verified": true,
@@ -768,9 +778,9 @@
       "pub_date": "2026-09-02T03:43:46+00:00"
     },
     {
-      "title": "林霈涵登記拚議員連任 提AI治理與婦幼長照政見 - nownews.com",
+      "title": "林霈涵登記拚議員連任 提AI治理與婦幼長照政見 - NOWnews今日新聞",
       "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5TaVV6NHQyR21VdHowYi02THlZbm5ac1dONk4tS2RWQzNkMGZxSE02U2ZTdk5sOF9PdUQxRFphTjUtcVRPYnBWNEJuV07SAVJBVV95cUxNQ21VREcyUmd1ZWZObkUySW1UQWU1enNyZ2tIaHZfU1VWNEV3T2F6dlRCRUNDcGRWRW56X0FWeW5ZU2VQU3VpY29RMDlMS3R4VXlB?oc=5",
-      "source": "nownews.com",
+      "source": "NOWnews今日新聞",
       "category": "gov",
       "region": "tw",
       "verified": true,
@@ -798,9 +808,9 @@
       "pub_date": "2026-09-04T12:07:01+00:00"
     },
     {
-      "title": "接連榮獲WITSA全球AI投資獎、臺灣AI卓越獎獎項 桃園AI治理獲國內外肯定 - 蕃新聞",
+      "title": "接連榮獲WITSA全球AI投資獎、臺灣AI卓越獎獎項 桃園AI治理獲國內外肯定 - n.yam.com",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1JVU1NLU8wUWpmR2RqR1pVTGFVTTZVLUgwY0FndUxNbGVRT0pvaW9qcGFORlFqcnQtcGRqb3B5NEpFdnZRaTM1RFMzMFhaYVU3UkE?oc=5",
-      "source": "蕃新聞",
+      "source": "n.yam.com",
       "category": "gov",
       "region": "tw",
       "verified": true,
@@ -838,16 +848,6 @@
       "pub_date": "2026-09-02T17:55:53+00:00"
     },
     {
-      "title": "State audit finds room for improvement in NYC’s AI governance - City & State New York",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOWHF4ZHpVY3l2bnh6WDdBQndyY2JoRDB3cGQyZVVrRFVxWGpyeEl0TERGLUtrY19CQnp1cTE3OHRScHdKZ2xHdW1yRFVIOGlaZEk0a0tZcWFPSW1uaDFiTU9BbHRLYTBlWW5wUkZFSDVTMU9USkRqS1ByNE1xWEF3UGlEeVB6aFJVeTQzcVpGekxTZ1p1U0hNUmxXT3hUelh4X2hxZHlUWXVFMm8?oc=5",
-      "source": "City & State New York",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-08-31T20:30:00+00:00"
-    },
-    {
       "title": "AI Governance Is Following the Same Path as Privacy Compliance. Smart Companies Are Taking Advantage. - JD Supra",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNdVFLRDA0OW4tbThZQWYzS0JGdEpBQ0UzNzBwMGFkQjM4V1dhU2Z1Z3FIWmNrQ2ZPei1nei0xZGZNZnBPZkMyUVoxRlJhSmJMNjkySVlvLVJBbVJLaWVwTElwVGh4bTBWLXVQYTRqRnFMV196Q01USGZBYjVDZTBkd2pEY1M?oc=5",
       "source": "JD Supra",
@@ -856,6 +856,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-02T01:18:10+00:00"
+    },
+    {
+      "title": "State audit finds room for improvement in NYC’s AI governance - City & State New York",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOWHF4ZHpVY3l2bnh6WDdBQndyY2JoRDB3cGQyZVVrRFVxWGpyeEl0TERGLUtrY19CQnp1cTE3OHRScHdKZ2xHdW1yRFVIOGlaZEk0a0tZcWFPSW1uaDFiTU9BbHRLYTBlWW5wUkZFSDVTMU9USkRqS1ByNE1xWEF3UGlEeVB6aFJVeTQzcVpGekxTZ1p1U0hNUmxXT3hUelh4X2hxZHlUWXVFMm8?oc=5",
+      "source": "City & State New York",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-31T20:30:00+00:00"
     },
     {
       "title": "The missing layer of AI governance is the human one - The World Economic Forum",
@@ -868,9 +878,9 @@
       "pub_date": "2026-09-01T09:55:54+00:00"
     },
     {
-      "title": "The Three Laws of AI Governance - American Alliance of Museums",
+      "title": "The Three Laws of AI Governance - aam-us.org",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB2bmJDM0hZRk1nbGt0QTJiZXR1eUpac2pYVGY3TFRSR3R2SHFnWENjaEpPek1qXzBWYVdoU1YySGx3b3JDQkpORUhCZjJrcUhsZEFrbVpuMHhLTzlTTHlzYmhrTnNPSU1WQXNKOU1pc1psaUw0?oc=5",
-      "source": "American Alliance of Museums",
+      "source": "aam-us.org",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -878,9 +888,9 @@
       "pub_date": "2026-08-31T14:26:03+00:00"
     },
     {
-      "title": "The CISO's new privacy mandate in enterprise AI governance - iapp.org",
+      "title": "The CISO's new privacy mandate in enterprise AI governance - IAPP",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNUFhWWEdfcmFtTTlJekZxdEdKazcxQ28xSnNDUVJBUVpsaVZ4eDJyTkdUdHZVcFIxeTZOYU9pYjcyVmFjbTZuMHUzdEl3MXkwbGNZTkRLeFlhaTVDMHpCU0thcXFPTmxaQmFEVkpkQ3NsWEFHejVxdUdyZTB5UE1IY09SWE91TGtnc0E?oc=5",
-      "source": "iapp.org",
+      "source": "IAPP",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -898,9 +908,9 @@
       "pub_date": "2026-09-01T20:58:27+00:00"
     },
     {
-      "title": "U.S. Signals More Cautious AI Governance - Arms Control Association",
+      "title": "U.S. Signals More Cautious AI Governance - armscontrol.org",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSU5LSjd3VDRmRFNOU09TejZkM3VMR2h6eUJhZWdzYWxlMl9yTjdpNFY3MFlDZ21aT3BvWW4wVVo4dTlNak9hRm82eFZCQmFmNHU5cnowckk1bXJteDJ3d3NZa1B5MWlaQWNtRFlrQktMR3RZSm81Y3hnaWRkM0RJYzZwYV9uQk81RVMw?oc=5",
-      "source": "Arms Control Association",
+      "source": "armscontrol.org",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -948,16 +958,6 @@
       "pub_date": "2026-09-01T16:53:31+00:00"
     },
     {
-      "title": "The quiet regionalisation of AI governance - Lowy Institute",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPVERKc0xoMjlIT25Uc3A0d0xOTUdRUEFpLWJRbkh1RmxMcF9NdXFmaWZtS2hoeVAxeTR6NDJHNGpsZEt1T3c0cVBWdEtHdGFlcHMzS2hfRVBkWHZDeDBqYXR1cnNMeGgzRHQ4MTczRURzTTVwdEhVdHg0T2VtWkNZcURjZ3ZFM0RTS0k2U2ljYXV3dw?oc=5",
-      "source": "Lowy Institute",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-03T04:02:52+00:00"
-    },
-    {
       "title": "How AI Governance Took Centre Stage at the Snowflake Summit - Cyber Magazine",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNVDBmbUlaTjg0TWtvdk9KTGxzeHJRZUlUakJpelFYYnJRNGlmbHY0QmVhRWt2eWFjV3JxRnl0VV9pd1YzcUQ1OXU3RlZOMTZQeGxJRG5RQnNIaHVUTUFrY0l3dWlsdXp4OFRkMngwOE1IU2p6YlFRQ0hCVmJwcVVlOFdRc044TlZRVlFxaVdvNHlUcHZi?oc=5",
       "source": "Cyber Magazine",
@@ -966,6 +966,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-01T08:08:45+00:00"
+    },
+    {
+      "title": "The quiet regionalisation of AI governance - Lowy Institute",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPVERKc0xoMjlIT25Uc3A0d0xOTUdRUEFpLWJRbkh1RmxMcF9NdXFmaWZtS2hoeVAxeTR6NDJHNGpsZEt1T3c0cVBWdEtHdGFlcHMzS2hfRVBkWHZDeDBqYXR1cnNMeGgzRHQ4MTczRURzTTVwdEhVdHg0T2VtWkNZcURjZ3ZFM0RTS0k2U2ljYXV3dw?oc=5",
+      "source": "Lowy Institute",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-03T04:02:52+00:00"
     },
     {
       "title": "A Policy Is Not Evidence: What AI Governance Has to Produce on Demand - corporatecomplianceinsights.com",
@@ -978,24 +988,14 @@
       "pub_date": "2026-08-31T11:02:16+00:00"
     },
     {
-      "title": "Youth Inform UN-led Efforts to Shape Global AI Governance - sdg.iisd.org",
+      "title": "Youth Inform UN-led Efforts to Shape Global AI Governance - SDG Knowledge Hub",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQRnRuMmtMOVBnY0NFZHZMd2NFdTZnWlB2WGZxQkZaMldoSnFLemtteFM2OHd3dVBjbVZheDN0cnBHa2FPdjVzeWFhTVBwRWNMVFZrZXdGcFB0VEl3SnMxQ2ZfYW1RSlZTSDJ0bEN3T3R4S285TmxTUUd2RjltTHgzanFwcE1ZUUE0UHNvTQ?oc=5",
-      "source": "sdg.iisd.org",
+      "source": "SDG Knowledge Hub",
       "category": "gov",
       "region": "us",
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-02T17:11:38+00:00"
-    },
-    {
-      "title": "AI Governance in Regulated Industries - Akamai",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQNWNrV2FZdHZVdDZySkpOT1JsOVhrSHF4eUVCalU4TW5nVDlLbXRNNXI2VmZSUEIzbTVNTm80N3FGcTlNSl9rUFN4dXRyWmNnUGtxbzJ2aUNXcFQxeHdQMnY0TmRnM0EtSmR3NG5iZUxJQ1otTklEeDRfdVYwQXItZTFB?oc=5",
-      "source": "Akamai",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-08-31T15:15:00+00:00"
     },
     {
       "title": "The Nation’s First Bulk Purchase Agreement for AI Governance - GovTech",
@@ -1018,6 +1018,16 @@
       "pub_date": "2026-08-31T17:51:42+00:00"
     },
     {
+      "title": "AI Governance Gaps Open a Channel Consulting Opportunity - The Futurum Group",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQV2ktTlZHQmxaR0g5QUtBVzdoWGU2UGxyQUpXcThabkZRajlud1ZMR19NUko2SDdJbmRjbHZiV004WlF3NXhVNC1qM1pPVDJKRFZWQ0lPRUJrQk92Smt2M3cxajZ4a29fblg3X1IwRlMxazZqdmhUcDEyN21HUWt0cXpDUl9xcmxPdVVlLVZ3NGtZbkpfOWc?oc=5",
+      "source": "The Futurum Group",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-03T13:18:40+00:00"
+    },
+    {
       "title": "August 2026 US Tech Policy Roundup - Tech Policy Press",
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5nTWRCRDNfX04yX2trZUJVT25fZmxybWUyYWZ3Rk9zeTJqQl9vY0ViVVV0VE1Cb3kzSkIwYUNQYWItSkgyWUQ5Ni1iYk9Xck5UUUItZ3Mwa3RoZVNYbnFTOU5TLXhwbHI5aURj?oc=5",
       "source": "Tech Policy Press",
@@ -1036,16 +1046,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-02T12:35:31+00:00"
-    },
-    {
-      "title": "AI Governance Gaps Open a Channel Consulting Opportunity - The Futurum Group",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQV2ktTlZHQmxaR0g5QUtBVzdoWGU2UGxyQUpXcThabkZRajlud1ZMR19NUko2SDdJbmRjbHZiV004WlF3NXhVNC1qM1pPVDJKRFZWQ0lPRUJrQk92Smt2M3cxajZ4a29fblg3X1IwRlMxazZqdmhUcDEyN21HUWt0cXpDUl9xcmxPdVVlLVZ3NGtZbkpfOWc?oc=5",
-      "source": "The Futurum Group",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-03T13:18:40+00:00"
     },
     {
       "title": "AIQA Global Introduces AIQ DNA to Measure How AI Governance Performs When Risk Becomes Real - Yahoo Finance",
@@ -1076,16 +1076,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-02T11:24:38+00:00"
-    },
-    {
-      "title": "Parents file suit against LMSD over new tech policy - Mainline Media News",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMTZucTVLNGdEVjFIX1NkS2x1eGQ4WTU5NThUdlFicTlDdFZkUjVSYVBEeTd0RHBqMjZBakVUQVRKakRiY0RjMnF0QlNJNDlSTV9OSzVEX0FsVXVWaUNGVDRvOV9rRnY3Q251NmxzLWcwYVZZR28wZDNEWWNkUkRCa0x0ZWxISUdqTk1BWEw3YU5iQlppaUpkdnhSQTJDQQ?oc=5",
-      "source": "Mainline Media News",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-08-29T11:06:44+00:00"
     },
     {
       "title": "The final quarter: the decisions that will shape global tech policy - Access Partnership",
@@ -1136,6 +1126,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-03T14:40:56+00:00"
+    },
+    {
+      "title": "Parents file suit against LMSD over new tech policy - Mainline Media News",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMTZucTVLNGdEVjFIX1NkS2x1eGQ4WTU5NThUdlFicTlDdFZkUjVSYVBEeTd0RHBqMjZBakVUQVRKakRiY0RjMnF0QlNJNDlSTV9OSzVEX0FsVXVWaUNGVDRvOV9rRnY3Q251NmxzLWcwYVZZR28wZDNEWWNkUkRCa0x0ZWxISUdqTk1BWEw3YU5iQlppaUpkdnhSQTJDQQ?oc=5",
+      "source": "Mainline Media News",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-29T11:06:44+00:00"
     },
     {
       "title": "AI governance in higher education: Five lessons for university leaders - QS Quacquarelli Symonds",
@@ -1198,9 +1198,9 @@
       "pub_date": "2026-09-01T14:00:00+00:00"
     },
     {
-      "title": "UK AI governance intelligence platform AI Score raises $5.4m in seed funding round - The Global Legal Post",
+      "title": "UK AI governance intelligence platform AI Score raises $5.4m in seed funding round - globallegalpost.com",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQY1J2dFlENHF4elhTWEd2bmR5ZVZGVnZKZFNWOFc2cjIxT1JTeGNjYUxsSjdJXzRORjVyUlpIcWdWeXBQUTVhVUkzZDRKZm1Hd2diTmdsMll4LUFpMDhua1ZhMzdqcjAzU0w0VlRrX21nMXlvbkZ4NkROR0s5bktLWmdkcHp0RlBJQ2Z6bm9SLVlmNUw4akJpUDVveWJVNjhSM0dxdy1TSXROcVlnUGhzQXNEZ2tZaWRHa3czUDlLVW5CZ3ZMMklr?oc=5",
-      "source": "The Global Legal Post",
+      "source": "globallegalpost.com",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -1216,6 +1216,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-02T13:01:00+00:00"
+    },
+    {
+      "title": "BGOV Hill Watch Live: Preparing for Energy & Tech Policy Shifts - Bloomberg Government News",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbU1FaGNnaUFUdnBGdVk5V0VWTVhFR0haRXJQMU91MEJpNzRXalFld2lHbHM1Z2RRdUdVbWlRWWs3c243enBDZW4zbTdHWUg0TUNFZ0EzRnJEa2plLVEtVXYzbDhxOEZReW4weUxTV0JsRHZJOHZaaVRYdmo3UGEyWXppTWlRaWp6ajFKSWd0cEpQdFhBOGMzbUtUY0pUbkxaTER1MTNFRDVnWk5r?oc=5",
+      "source": "Bloomberg Government News",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-01T18:08:00+00:00"
     },
     {
       "title": "CertiProf Expands AI Governance Certifications to Address Enterprise Risk and Bias - The National Law Review",
@@ -1258,6 +1268,16 @@
       "pub_date": "2026-09-02T22:50:36+00:00"
     },
     {
+      "title": "Three Incompatible AI Governance Models Now Have Multilateral Endorsement – and None Covers Agents - forkast.news",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZlJMM0NCMGN3WTY1dnJaVlUwcmFfS1VHSEpNZ1p5aDZmR25BMl8wbkpheWZYaGNNaEM1VnNDZEZ0Vk41RGEwX2hDeW00VTJMME1qTDJwU3FuRmVtQjhKU3RRYno4Y1VJYTRrMFFIQW5TSXU5aEtQY1NoMlljZEx6M2c1bmt0NHRUSXo4emlqbDc1cDlLYU1ueE9xSDVpc2FkendWc0l5YUt5ekNpeVBXT0dib0U0T0hjZXc?oc=5",
+      "source": "forkast.news",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-04T14:45:03+00:00"
+    },
+    {
       "title": "GRC Teams Scale AI Governance: Insights from the 2026 IT Risk and Compliance Benchmark - Security Boulevard",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPS3BucDBlMWpkZFpLMEVYZHVocncwVlpnLUlqdzlTY3lvU0E4V204ZjZyXzdMZGctbkU5UktFUDV0MVZicDEwZlNUOXJEblc2OE9zS3hhaTc4dnhRYXk2NTI2VkliaHdfM0tQZ2NVSkhoX0JPZFZKWUxwN0NtOXNxNGpMbExTLUMwZFhyWFlRTFA1aW1xR0N0dEI5dEFSU1MzcjdLc0w4ZWNRNWxxYXFVbDJJWHAzWHIwWUtDdjE5YWpZQQ?oc=5",
       "source": "Security Boulevard",
@@ -1268,24 +1288,14 @@
       "pub_date": "2026-08-31T19:28:18+00:00"
     },
     {
-      "title": "OpenAI executive urges US-China AI safety talks ahead of Trump-Xi summit - South China Morning Post",
+      "title": "OpenAI executive urges US-China AI safety talks ahead of Trump-Xi summit - scmp.com",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQNEYwOE51cEhtM0RWdjJ4Y2pZcHJxSzdWU1VUdktRcFltVWYwZGo0T1kwOHlTaFNZaERZcEI5N3FKV3pwd0NsLUNSbHVUQmVzYTRTTk82bTJyZmZDemNKekNoRzZieWFmSjFYR0RocVZadkVId0Z3aHBTV3lab1d0clFyeWRBZ1R0SzlNUWVBMlJRU2k4MGdUclRMbERLVHdPUnBPXzVhTnhBX0JVZ3VldzhoNFYzS0lvTnFz0gG7AUFVX3lxTE9TRUxqUmRhNGRLeHpCVjFxZmhIUE8xM2haQXotUEUwaFQtQUpXLV83ejlvdG83ZzYzVG5NVW1PTnpzSzdoV0N4NjJCd0tkWDR2NXVaTDZfbnUzdU5LQXVtM0tTTU12cnQzdDBvZ2Z3ME54YmZBaWhrODNveUNfLTRWeXdmYkdKMWlDWjB6RVY1UnlWVU1zdHB4S3haSGJQZUxjTTZkMmJsTlNGc1ZwYkFpN25pMmRZaURhbnM?oc=5",
-      "source": "South China Morning Post",
+      "source": "scmp.com",
       "category": "gov",
       "region": "us",
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-01T12:00:10+00:00"
-    },
-    {
-      "title": "Three Incompatible AI Governance Models Now Have Multilateral Endorsement – and None Covers Agents - forkast.news",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZlJMM0NCMGN3WTY1dnJaVlUwcmFfS1VHSEpNZ1p5aDZmR25BMl8wbkpheWZYaGNNaEM1VnNDZEZ0Vk41RGEwX2hDeW00VTJMME1qTDJwU3FuRmVtQjhKU3RRYno4Y1VJYTRrMFFIQW5TSXU5aEtQY1NoMlljZEx6M2c1bmt0NHRUSXo4emlqbDc1cDlLYU1ueE9xSDVpc2FkendWc0l5YUt5ekNpeVBXT0dib0U0T0hjZXc?oc=5",
-      "source": "forkast.news",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T14:45:03+00:00"
     },
     {
       "title": "Building an AI Governance Program That Satisfies Both DOJ and SEC Compliance Expectations - The National Law Review",
@@ -1378,9 +1388,9 @@
       "pub_date": "2026-09-04T15:44:38+00:00"
     },
     {
-      "title": "Why AI governance starts with data management - GovInsider",
+      "title": "Why AI governance starts with data management - govinsider.asia",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOLUdIRVNLbkxQUDB6dC1wcnRSMTZHc3VaM2JnLVk4S2V2MDcwVzBPbzNqczJNcHpvazMyRjU0cVozOUJVLXJvSk1zRERFYUwyY3dBM2JsdWFpczI0UjdHeXVBWXNia00zbzJQT0x5NVRBdUhDdGhic1pEQzVmQmhMVVc1LXp2QkNpQ0phZUpR?oc=5",
-      "source": "GovInsider",
+      "source": "govinsider.asia",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -1466,6 +1476,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-01T15:52:12+00:00"
+    },
+    {
+      "title": "Responsible AI governance requires a human touch – accountability lies with corporate leadership, not the algorithm - Vaasan yliopisto",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxORGNYeU1mS1pSSnV1aU45b3I1TjB0cUNIdjFYZURFVnZOLUVDbWtqN2JXRktLTUJjeUl0a0VRVkhHWVFsTTVieFdHTTQ1cGdnbHhmcWlMWmY0ZHBKVnNTRzdyaEl3ZmVGT0pMd2hPRFhwb2dHWW5qMEZwZ0s3c1NUNFFidmxjMjVCNE43R2NidC1OTVVKYXN5ZmxiTkg2bDV0X3c2N051aG85S1lqVHpnVHZ2d2pVQkhxa0QyRllhLWxWSkxTSGQ4?oc=5",
+      "source": "Vaasan yliopisto",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-31T05:25:44+00:00"
     },
     {
       "title": "AI Governance and Cybersecurity: Building Trustworthy Enterprise AI Systems - Nasscom",
@@ -1566,6 +1586,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-04T15:06:33+00:00"
+    },
+    {
+      "title": "Keralam ministers return to classroom, take lessons in AI, governance - The Indian Express",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNOFF6SGwyb01PdW13YVdndWVyY2lIcE1sekFRa2JqdkNnUHA0NlBxeVExdWx6UDVDaHF3UWEzVGZsUHRQT0VHUHp2VThzY2VNT3lkS0RlU1ExeFc3VVJUMC1fYzBJa1NKN3ZlcVBjOFNvT1ZMX1U5NjROTWxoUHo1eE5WOUpTN0VsVlJLd1RLYW0wQUt0ZXFkb1NRYlhja1RrS21DZk9fU0g2YU5udC1fcHBjU09qYnp6NEo2UmtUNVJkSW1uRVHSAcwBQVVfeXFMUHNwMDNHTGZBR2JQYWZHSUVJbzZROW9IVXlObFlVN1pFelBLRVhENDRWU3VpUDg2RGdfTTlhWTJsdm1ZMlZkNkJoNm9tRHVmYWFEWUk4UVJjT1BCUUhGRjZfSEJ3LVdKY1hvdFNoc2stZlAySjhscElOV2NUWVBnbmd1aTg5NUE4OHNQb2FEb2tXOWl6Sk1NMTdaZmZTTlE2ajM3dW8wRVp3TmEwdkcyREZmUjdFY1ZJR3dzcTJZT184WG0zU09JN1hNNnc3?oc=5",
+      "source": "The Indian Express",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-05T01:36:39+00:00"
     },
     {
       "title": "Trust but Quantify: On Measuring Verification Intensity in Arms Control and Lessons to Inform the Future of AI Governance – Alva Myrdal Centre – Uppsala University - Uppsala universitet",
@@ -1708,19 +1738,9 @@
       "pub_date": "2026-09-04T15:47:11+00:00"
     },
     {
-      "title": "From AI Governance to ‘Jal Utsav’ PM Modi Outlines Roadmap for Water Security - The Kashmir Horizon",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOEZYT2xiMjdUY3RyWFZaT1p6X1VxNlYtZWpBZk5ianhXR2NzZGVJdF93M3lKYmFsUFRBZXUzbU5CbVpZTDItbENTVnZibERNMF9aTl9rZldKdlJfUTVCY0VIZHhtX2RzTW84dHh6NVRDNzM0dVgwallWWHRLQUpsTHNHVDZnR3hoVmNGeEo0R0p1czNPRmIxSW5FQm51Y290NUhJWDZBVncxQzhVTU10aVlqWHRfT1FI?oc=5",
-      "source": "The Kashmir Horizon",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-03T03:44:13+00:00"
-    },
-    {
-      "title": "AI governance essential for responsible, secure adoption of technology: Saigol - app.com.pk",
+      "title": "AI governance essential for responsible, secure adoption of technology: Saigol - | Associated Press Of Pakistan",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTmRaaGlSRlRtUWwyVEd3eHhZWW9UY0VHQ3BqVTNwZmZFUHhGemFPY3hMSGEwMUs1U3dyWXZqLWF1REVmY2tBNFNkT2ViYnljenA3b0l2eWxtZUlTYkQ4RW1MRkYzX0lHTnJ0Y3B1RENGaGtXSThmZGZDeUxQQkhRVE1XLWpLWDdValk1ZjZUWnd0d2Q2eV85MmRsajlMaUhJa041VHgydWZhU1p4Mmc?oc=5",
-      "source": "app.com.pk",
+      "source": "| Associated Press Of Pakistan",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -1828,16 +1848,6 @@
       "pub_date": "2026-09-03T20:28:11+00:00"
     },
     {
-      "title": "Wallarm Highlights Focus on Enterprise AI Governance and Runtime Security - TipRanks",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPRllEdmQ3UTJQaVhYenJSLTlrQkZKVGZLZmhpdUVTQkZCR0YzdzNTZDdmTGkzUWhWaVc2emVsUVZhZHRwZzhISU0xdkl3T2FjQkR2MUJPLW5hTkFsdHVkR3FrVDUwanlWZF9RS2VLVEk5TWZSRHQ1RVZHLVRqZHVxdmZEaFFCUHZFS1NST0tQS1ltWVQyM1hEcmJPY3VRXzdCS2NwTXFkczVmVGNhT1NEVWRWX1A4ZktKQl9hekJR?oc=5",
-      "source": "TipRanks",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T00:41:15+00:00"
-    },
-    {
       "title": "AI governance in higher education: Five lessons for university leaders - QS Quacquarelli Symonds",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbmZRQWVSa09iRkNncWMyZ3M1T3VZWU1ONU1ha1BYQUd0aU9JWGZQYUN0bE9DYjZpYXNwNlp5bUpOVjRzczg5b2xFaGQ2eXNfandEbjBSMGg0SnFLVHFNMWtCUy14UEEwUXd5bFIzaXFVT0EzTWdEM3VIV1VwMzRKOUptSy1Uc0dMS1daVk16Q1JSeGRtanA0YzFsYlVRZw?oc=5",
       "source": "QS Quacquarelli Symonds",
@@ -1928,9 +1938,9 @@
       "pub_date": "2026-09-02T08:46:00+00:00"
     },
     {
-      "title": "The quiet regionalisation of AI governance - lowyinstitute.org",
+      "title": "The quiet regionalisation of AI governance - Lowy Institute",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPVERKc0xoMjlIT25Uc3A0d0xOTUdRUEFpLWJRbkh1RmxMcF9NdXFmaWZtS2hoeVAxeTR6NDJHNGpsZEt1T3c0cVBWdEtHdGFlcHMzS2hfRVBkWHZDeDBqYXR1cnNMeGgzRHQ4MTczRURzTTVwdEhVdHg0T2VtWkNZcURjZ3ZFM0RTS0k2U2ljYXV3dw?oc=5",
-      "source": "lowyinstitute.org",
+      "source": "Lowy Institute",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2058,16 +2068,6 @@
       "pub_date": "2026-09-02T17:17:21+00:00"
     },
     {
-      "title": "AI Governance in Regulated Industries - Akamai",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQNWNrV2FZdHZVdDZySkpOT1JsOVhrSHF4eUVCalU4TW5nVDlLbXRNNXI2VmZSUEIzbTVNTm80N3FGcTlNSl9rUFN4dXRyWmNnUGtxbzJ2aUNXcFQxeHdQMnY0TmRnM0EtSmR3NG5iZUxJQ1otTklEeDRfdVYwQXItZTFB?oc=5",
-      "source": "Akamai",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-08-31T15:15:00+00:00"
-    },
-    {
       "title": "Fellow Unveils Advanced AI Governance Controls for Enterprise Meeting Privacy - FF News",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOZlphbE1UX1FXZHd6QlRCN085ZHAwejZ5dnlxYTU1UEZGTGllMzZKMmhIX2htYUlzbDZnRU5Ud3JnNWI0Wk9MdENocE9QcWVackNSY1lwVnl3djhYY21LMXpUQnVYd2d4MWZrOE01Uy15c3pvRlJhWnVYSzhyVjhiNExEM3VfSENrSTRMbTRIZXhBNzZMZ2hLekZSQVk5cG9VWnRF?oc=5",
       "source": "FF News",
@@ -2148,6 +2148,16 @@
       "pub_date": "2026-09-01T08:08:45+00:00"
     },
     {
+      "title": "How the EU AI Act Will Reshape Marketing Compliance - CMSWire",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZlIwT05MRC1zZGZVU000bHl3SjZJcVNPbUxCbzlCQ3dTSHkyZ3p0Q3haRmdROHhjSk9neGVzRFozZjRnWjIwNGpXaGpDd1pBczVKcldDZlZyVndYd2xNaVMyZEN1RkdwNGtUVHlpcmhXOExpcllNWHh1dlg5SUhWRldVeU9rWGlZUjNJaGoxaVctdTBhajlqdi1LdEwzdWk0?oc=5",
+      "source": "CMSWire",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-04T20:17:26+00:00"
+    },
+    {
       "title": "ChatGPT, Roblox Face Tough EU Rules. Implementation Is the Hard Part - Tech Policy Press",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPaGloWE1MTFlaX0Z2OE81RXlkbXNWZjJrenJYNDhxWWN1MU9CMkQwSm5Ta0N2YmZyd0tZS3hMcFppNEpka0w5V1RuTl9KTjNlMXRpLTJSbU82MHZVSXdiZkNYcnJNdkItZU9qdW1wOHVwUmdjYWhSNEZCd2tKbjNwSmVLOHJZbTctNWVhTWFmOVljdDQyYVE?oc=5",
       "source": "Tech Policy Press",
@@ -2168,19 +2178,9 @@
       "pub_date": "2026-08-31T14:26:03+00:00"
     },
     {
-      "title": "How the EU AI Act Will Reshape Marketing Compliance - CMSWire",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZlIwT05MRC1zZGZVU000bHl3SjZJcVNPbUxCbzlCQ3dTSHkyZ3p0Q3haRmdROHhjSk9neGVzRFozZjRnWjIwNGpXaGpDd1pBczVKcldDZlZyVndYd2xNaVMyZEN1RkdwNGtUVHlpcmhXOExpcllNWHh1dlg5SUhWRldVeU9rWGlZUjNJaGoxaVctdTBhajlqdi1LdEwzdWk0?oc=5",
-      "source": "CMSWire",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T20:17:26+00:00"
-    },
-    {
-      "title": "Marketing AI Governance: Safe Integration in Enterprise [In-Depth Analysis, 2026] - Klover.ai",
+      "title": "Marketing AI Governance: Safe Integration in Enterprise [In-Depth Analysis, 2026] - klover.ai",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcllnRXJHYkRzbHdINnZ6dDBsY2FkN3dDWXQ0VUxGdTZ4YS1QcWE4THJMNVhPbENQMHljTVNVdzNCa3Y5TkEyNy1ZSWdVYmVyNW9uejJ3N2hrSWd0N1oyZy1EWmhrV1NMZUxJMmJGV2RfNGo5VW1fWVJuZjZfVWZLYkdNaHVUOU52Tkx4SDFoLTlIU3JXQUVacXFDcnBUclRv?oc=5",
-      "source": "Klover.ai",
+      "source": "klover.ai",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2238,9 +2238,9 @@
       "pub_date": "2026-09-03T12:07:00+00:00"
     },
     {
-      "title": "U.S. Signals More Cautious AI Governance - Arms Control Association",
+      "title": "U.S. Signals More Cautious AI Governance - armscontrol.org",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSU5LSjd3VDRmRFNOU09TejZkM3VMR2h6eUJhZWdzYWxlMl9yTjdpNFY3MFlDZ21aT3BvWW4wVVo4dTlNak9hRm82eFZCQmFmNHU5cnowckk1bXJteDJ3d3NZa1B5MWlaQWNtRFlrQktMR3RZSm81Y3hnaWRkM0RJYzZwYV9uQk81RVMw?oc=5",
-      "source": "Arms Control Association",
+      "source": "armscontrol.org",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2288,16 +2288,6 @@
       "pub_date": "2026-08-31T11:02:16+00:00"
     },
     {
-      "title": "State audit finds room for improvement in NYC’s AI governance - City & State New York",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOWHF4ZHpVY3l2bnh6WDdBQndyY2JoRDB3cGQyZVVrRFVxWGpyeEl0TERGLUtrY19CQnp1cTE3OHRScHdKZ2xHdW1yRFVIOGlaZEk0a0tZcWFPSW1uaDFiTU9BbHRLYTBlWW5wUkZFSDVTMU9USkRqS1ByNE1xWEF3UGlEeVB6aFJVeTQzcVpGekxTZ1p1U0hNUmxXT3hUelh4X2hxZHlUWXVFMm8?oc=5",
-      "source": "City & State New York",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-08-31T20:30:00+00:00"
-    },
-    {
       "title": "La Francophonie Convenes First Digital Governance Forum as Francophone Africa Builds a Fourth AI Rulebook - iAfrica.com",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNd0J0c1hPdGJnZ0pQbW5FYXpmV1BvSkhOOUFQNWRFSVpjWVIyN3BMY2hLYUh1eDY0TWY3UlhkNTcycUVpRTJnTEZZOE8xSmFkVlJQM255YlJQczNkSkkwNW5OU2Q5Mkl2YWx4STR5SFhncXNTMU5MdUJSU0Yya2phU2VzYWxBY0wzbENwSmFvZ0FKUUlCQ1RDbTVXakFVQ3RjN1RPRWlwZ2xrRjNHT2phMEIwdWFHTVhMM0ZfZkwzcXdUSDl3?oc=5",
       "source": "iAfrica.com",
@@ -2306,6 +2296,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-01T15:52:12+00:00"
+    },
+    {
+      "title": "State audit finds room for improvement in NYC’s AI governance - City & State New York",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOWHF4ZHpVY3l2bnh6WDdBQndyY2JoRDB3cGQyZVVrRFVxWGpyeEl0TERGLUtrY19CQnp1cTE3OHRScHdKZ2xHdW1yRFVIOGlaZEk0a0tZcWFPSW1uaDFiTU9BbHRLYTBlWW5wUkZFSDVTMU9USkRqS1ByNE1xWEF3UGlEeVB6aFJVeTQzcVpGekxTZ1p1U0hNUmxXT3hUelh4X2hxZHlUWXVFMm8?oc=5",
+      "source": "City & State New York",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-31T20:30:00+00:00"
     },
     {
       "title": "AI Governance Is Just Like Driving A Race Car - Pharmaceutical Online",
@@ -2328,9 +2328,9 @@
       "pub_date": "2026-09-01T14:00:00+00:00"
     },
     {
-      "title": "The Week in Talent: AI's Governance Gap, Shifting Labor Market - mexicobusiness.news",
+      "title": "The Week in Talent: AI's Governance Gap, Shifting Labor Market - Mexico Business News",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVHZBXzRTY3JGcVRKZGgxTEJJLXo5U2hDQ0EyX19uSS1IOWNvQ0FrOG1FWU9ZZ1NmQURZbTNlOXBMTFFTVW1VeEljZUEzMk9xb18zaGRTUzhjQjBkWnZtNElIS1pueDJXaVZwMVdKMnEwYXBTYVVvblNLXy16dExxOEp3NkxBVUNWVHVnMEp0cHB5UGZ5bXFN?oc=5",
-      "source": "mexicobusiness.news",
+      "source": "Mexico Business News",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2346,6 +2346,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-04T18:38:00+00:00"
+    },
+    {
+      "title": "Responsible AI governance requires a human touch – accountability lies with corporate leadership, not the algorithm - Vaasan yliopisto",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxORGNYeU1mS1pSSnV1aU45b3I1TjB0cUNIdjFYZURFVnZOLUVDbWtqN2JXRktLTUJjeUl0a0VRVkhHWVFsTTVieFdHTTQ1cGdnbHhmcWlMWmY0ZHBKVnNTRzdyaEl3ZmVGT0pMd2hPRFhwb2dHWW5qMEZwZ0s3c1NUNFFidmxjMjVCNE43R2NidC1OTVVKYXN5ZmxiTkg2bDV0X3c2N051aG85S1lqVHpnVHZ2d2pVQkhxa0QyRllhLWxWSkxTSGQ4?oc=5",
+      "source": "Vaasan yliopisto",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-31T05:25:44+00:00"
     },
     {
       "title": "How MSPs Can Build an AI Governance Service for SMB Clients - Channel Insider",
@@ -2378,16 +2388,6 @@
       "pub_date": "2026-09-03T11:09:37+00:00"
     },
     {
-      "title": "CertiProf Expands Enterprise AI Governance Pathways to Meet Growing International Compliance Demand - The National Law Review",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPMG4yRF9NbkwwWUxNV1U3Ym8wRWt1cVpDRVAyckdGblFWMlFVSTZlbzEyc0taeG1UaERhUDZ4eEdfSkhVbFFQaGdZNGwzcjN2cHBqRi1TYkRYVjFOUWtHc1RnX1lja0VsM1RhWmpFaC1SWEl5eF9WZnVERzlYTnJmOHF2M2FuaWNhZkxwckU3bWFfbzh6UWlYckkxUndINXFQSHdZejdLaw?oc=5",
-      "source": "The National Law Review",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-08-31T15:20:28+00:00"
-    },
-    {
       "title": "Three Incompatible AI Governance Models Now Have Multilateral Endorsement – and None Covers Agents - forkast.news",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZlJMM0NCMGN3WTY1dnJaVlUwcmFfS1VHSEpNZ1p5aDZmR25BMl8wbkpheWZYaGNNaEM1VnNDZEZ0Vk41RGEwX2hDeW00VTJMME1qTDJwU3FuRmVtQjhKU3RRYno4Y1VJYTRrMFFIQW5TSXU5aEtQY1NoMlljZEx6M2c1bmt0NHRUSXo4emlqbDc1cDlLYU1ueE9xSDVpc2FkendWc0l5YUt5ekNpeVBXT0dib0U0T0hjZXc?oc=5",
       "source": "forkast.news",
@@ -2396,6 +2396,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-04T14:45:03+00:00"
+    },
+    {
+      "title": "CertiProf Expands Enterprise AI Governance Pathways to Meet Growing International Compliance Demand - The National Law Review",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPMG4yRF9NbkwwWUxNV1U3Ym8wRWt1cVpDRVAyckdGblFWMlFVSTZlbzEyc0taeG1UaERhUDZ4eEdfSkhVbFFQaGdZNGwzcjN2cHBqRi1TYkRYVjFOUWtHc1RnX1lja0VsM1RhWmpFaC1SWEl5eF9WZnVERzlYTnJmOHF2M2FuaWNhZkxwckU3bWFfbzh6UWlYckkxUndINXFQSHdZejdLaw?oc=5",
+      "source": "The National Law Review",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-31T15:20:28+00:00"
     },
     {
       "title": "Firstup Extends AI Leadership With Award-Winning AI Search, Copilot and ChatGPT Integrations, and ISO/IEC 42001:2023 Certification for Responsible AI Governance - PR Newswire",
@@ -2408,9 +2418,9 @@
       "pub_date": "2026-09-02T13:01:00+00:00"
     },
     {
-      "title": "Closing the Gap Between AI Governance & Internal Controls - forvismazars.us",
+      "title": "Closing the Gap Between AI Governance & Internal Controls - Forvis Mazars US",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTVNjVjE5d1RYT1VOSE5GWFBYRnpCU0J2OEFRNWU0b3ctVm5RSmM3d21kaGdCTTRrbXJHcE5YdVRCWVVKRHZFdGhBUF8xZ1NzbEdJOFhWRFpsVzJ2RGlGR01mdFg5VVNIUUd5Z045SXBzVVkxTWdBUE5VNUM0d2VqX3BtcEs0czlucVZuelBSUVZDYVBkZC1wSURhdmNjWnRqY2lN?oc=5",
-      "source": "forvismazars.us",
+      "source": "Forvis Mazars US",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2418,19 +2428,9 @@
       "pub_date": "2026-08-31T18:59:07+00:00"
     },
     {
-      "title": "Lack of AI governance is a real threat - Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNOVhDbURQRE0xck1tdHpDZy1RalRJREJCZk5LREJpMG1SYnpHZ21HUFRpZi16ZkVSZ3B6b1pIQVo4WHoyMGM1alNoM0gtLVFmWVpwRFlFZVFqd2dGMlZ3YzlGeWI1dzh1M2ZXOVZsTXFZZ2xYUTVwT3RzdkF6RGhiM2xkaVdHX0l1UGxaNjRpS3VVblUw?oc=5",
-      "source": "Yahoo",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-08-31T19:44:02+00:00"
-    },
-    {
-      "title": "GRC Teams Scale AI Governance: Insights from the 2026 IT Risk and Compliance Benchmark - Security Boulevard",
+      "title": "GRC Teams Scale AI Governance: Insights from the 2026 IT Risk and Compliance Benchmark - securityboulevard.com",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPS3BucDBlMWpkZFpLMEVYZHVocncwVlpnLUlqdzlTY3lvU0E4V204ZjZyXzdMZGctbkU5UktFUDV0MVZicDEwZlNUOXJEblc2OE9zS3hhaTc4dnhRYXk2NTI2VkliaHdfM0tQZ2NVSkhoX0JPZFZKWUxwN0NtOXNxNGpMbExTLUMwZFhyWFlRTFA1aW1xR0N0dEI5dEFSU1MzcjdLc0w4ZWNRNWxxYXFVbDJJWHAzWHIwWUtDdjE5YWpZQQ?oc=5",
-      "source": "Security Boulevard",
+      "source": "securityboulevard.com",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2458,9 +2458,9 @@
       "pub_date": "2026-08-31T14:44:37+00:00"
     },
     {
-      "title": "Responsible AI adoption starts with governance - SourceSecurity.com",
+      "title": "Responsible AI adoption starts with governance - sourcesecurity.com",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNX1Y1bDhVc2dadDdTRUJudGh4QkJjSjdqOHVHZkZyZ2Y1dkxjUXgxajdsRFFsWUNtZ21zNWJkVGtTZjRFN3FIdDdITmZWOWw2YTUxZkltbnlMVnAtSkQ3UVcteWoybGh0ZHVJR3FBOHZ6ellNY0hsdHk3b0dMMVBkZEpSZXBLZkxnWENwbnhVTkJGcnJfbEFUSWpXU3N0Zl9SVFZ0VzhIWXZvelJl?oc=5",
-      "source": "SourceSecurity.com",
+      "source": "sourcesecurity.com",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2538,9 +2538,9 @@
       "pub_date": "2026-09-01T12:00:10+00:00"
     },
     {
-      "title": "Agents Without Guardrails: Why Agentic AI Governance Must Focus on Behavior, Not Just Identity - Security Boulevard",
+      "title": "Agents Without Guardrails: Why Agentic AI Governance Must Focus on Behavior, Not Just Identity - securityboulevard.com",
       "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQX1hKOGRzQUpra0pVWUZhRTRKd1lWN1E1SjhLV0tTSjROdDZwZVdzdWp2SU1ZQW1VN1UxY2hPLWtid3VrSUZ1WENhdUYxakdKWll6MkMxaU9sVkRVR3A2SlRxc1UtbmRnNlNSZXNTbjlLWnEyWlRKQVlBX0Q4cUMtNzhzbjNhdkJmaDMxR3ktd09ua2MzWGxfSjdxNkFHakNZWGVNNURIRHRCNHB3SnR6SU1uYnBreWRIUUhlazFZaW1vZEpQUUUzLW0xd2REUQ?oc=5",
-      "source": "Security Boulevard",
+      "source": "securityboulevard.com",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2568,6 +2568,16 @@
       "pub_date": "2026-09-02T00:36:37+00:00"
     },
     {
+      "title": "Lack of AI governance is a real threat | Ian Bremmer’s Quick Take - yahoo.com",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOZHRaQ2dHOUxPbHZ0WU9mRlFRRHMyR3E5ejUzOU1KbS1pRGNEVFliWlRXNzg2andrNUtjZ19Vdy1mbC12TWdGdWJLQ1VWTmFnNm5RV2pRWUdlWWw3RmVqVmVnTVFvbFJwdkRETnpvd3EwNVRZQnZMM0xUTndVajJUS3hVeXB1Zw?oc=5",
+      "source": "yahoo.com",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-31T20:27:02+00:00"
+    },
+    {
       "title": "Firstup Extends AI Leadership With Award-Winning AI Search, Copilot and ChatGPT Integrations, and ISO/IEC 42001:2023 Certification for Responsible AI Governance - Morningstar",
       "url": "https://news.google.com/rss/articles/CBMivgJBVV95cUxPVVlTUEM4WndiMlR2U1Azc3dkUzl5VUVtX25yT3daY0VNeG4xcjNZMHpjelFaY1dsT1JieDN3ZWd3dG5WZnEtYlU3R0JEUk9kQ2lJdFFTdy1UdVFXNEotU0VwalNGMUo4Uzg4MkxIUU5FZGRkNTA2SmFEZ0lyd2JsOWRJVkN0Q3FlVm1XeGVBeU9oSjFfNHk1RTVYc0duNmdUdWgxaXdqOF8waVViV1VpY0V1US0tMXBQM0Z6WmtSYUsxaTYzY2ZsS1V4dUpJR2llQXpHV0RNYXoxSXl1NUozU3U2NC16SUl2VlVjQUVGdXFSRjVRa0tPVk5FY3ZLaTdjYzJLOUFyVFczbi00dm9sOEpUQlIwVVJ5QVpKNzBLb0g1aHZiVFRuQ0lyZGFjamNhdWM0LWFHN25MQjhHOHc?oc=5",
       "source": "Morningstar",
@@ -2588,9 +2598,9 @@
       "pub_date": "2026-09-03T15:09:09+00:00"
     },
     {
-      "title": "Lack of AI governance is a real threat | Quick Take - Yahoo",
+      "title": "Lack of AI governance is a real threat | Quick Take - yahoo.com",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPR2xNNGt0d3FzU25lcWszYmc4NDFwamRNbDVmaVdJUnVjOVBFVXI3TnRoY2xaTU12aWg3czRWZWJOQmZGTGZpRnROSGl3MXlYVGVmVERVd3pPU3RSbDRudndfTjJGMEMwWER0YUVKOW1wVmNnUklsQlRZTmdBb04wRmxQMXUyQQ?oc=5",
-      "source": "Yahoo",
+      "source": "yahoo.com",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2658,9 +2668,9 @@
       "pub_date": "2026-09-03T15:47:48+00:00"
     },
     {
-      "title": "AI governance essential for responsible, secure adoption of technology: Saigol - app.com.pk",
+      "title": "AI governance essential for responsible, secure adoption of technology: Saigol - | Associated Press Of Pakistan",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTmRaaGlSRlRtUWwyVEd3eHhZWW9UY0VHQ3BqVTNwZmZFUHhGemFPY3hMSGEwMUs1U3dyWXZqLWF1REVmY2tBNFNkT2ViYnljenA3b0l2eWxtZUlTYkQ4RW1MRkYzX0lHTnJ0Y3B1RENGaGtXSThmZGZDeUxQQkhRVE1XLWpLWDdValk1ZjZUWnd0d2Q2eV85MmRsajlMaUhJa041VHgydWZhU1p4Mmc?oc=5",
-      "source": "app.com.pk",
+      "source": "| Associated Press Of Pakistan",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2748,16 +2758,6 @@
       "pub_date": "2026-09-03T15:09:09+00:00"
     },
     {
-      "title": "Parents file suit against LMSD over new tech policy - Mainline Media News",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMTZucTVLNGdEVjFIX1NkS2x1eGQ4WTU5NThUdlFicTlDdFZkUjVSYVBEeTd0RHBqMjZBakVUQVRKakRiY0RjMnF0QlNJNDlSTV9OSzVEX0FsVXVWaUNGVDRvOV9rRnY3Q251NmxzLWcwYVZZR28wZDNEWWNkUkRCa0x0ZWxISUdqTk1BWEw3YU5iQlppaUpkdnhSQTJDQQ?oc=5",
-      "source": "Mainline Media News",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-08-29T11:06:44+00:00"
-    },
-    {
       "title": "LASU Professor calls for stronger AI governance in Nigeria - The Guardian Nigeria News",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQU3dtUEZRUVJsbE93LWtZWHVuRTZzRVRSYWhLSFlBV1cxelhjZVNqankzcVJnZ0J0VXk5UDdoSFRvWVVkdms5WWs1c3l3SExpdnNpa1A3VjBPQ2diRTlMd0RxR3VKbmJHOVpPYTdsQUs0Rm04T0xDRDFRdU9ETFFGX1prOXFxYWFqTHRqRWRLUzlJTTJpc0Z0TGtZbVlzcmt3eWZ6Q0ZoTQ?oc=5",
       "source": "The Guardian Nigeria News",
@@ -2776,6 +2776,26 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-08-29T08:03:08+00:00"
+    },
+    {
+      "title": "Parents file suit against LMSD over new tech policy - Mainline Media News",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMTZucTVLNGdEVjFIX1NkS2x1eGQ4WTU5NThUdlFicTlDdFZkUjVSYVBEeTd0RHBqMjZBakVUQVRKakRiY0RjMnF0QlNJNDlSTV9OSzVEX0FsVXVWaUNGVDRvOV9rRnY3Q251NmxzLWcwYVZZR28wZDNEWWNkUkRCa0x0ZWxISUdqTk1BWEw3YU5iQlppaUpkdnhSQTJDQQ?oc=5",
+      "source": "Mainline Media News",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-08-29T11:06:44+00:00"
+    },
+    {
+      "title": "Keralam ministers return to classroom, take lessons in AI, governance - The Indian Express",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNOFF6SGwyb01PdW13YVdndWVyY2lIcE1sekFRa2JqdkNnUHA0NlBxeVExdWx6UDVDaHF3UWEzVGZsUHRQT0VHUHp2VThzY2VNT3lkS0RlU1ExeFc3VVJUMC1fYzBJa1NKN3ZlcVBjOFNvT1ZMX1U5NjROTWxoUHo1eE5WOUpTN0VsVlJLd1RLYW0wQUt0ZXFkb1NRYlhja1RrS21DZk9fU0g2YU5udC1fcHBjU09qYnp6NEo2UmtUNVJkSW1uRVHSAcwBQVVfeXFMUHNwMDNHTGZBR2JQYWZHSUVJbzZROW9IVXlObFlVN1pFelBLRVhENDRWU3VpUDg2RGdfTTlhWTJsdm1ZMlZkNkJoNm9tRHVmYWFEWUk4UVJjT1BCUUhGRjZfSEJ3LVdKY1hvdFNoc2stZlAySjhscElOV2NUWVBnbmd1aTg5NUE4OHNQb2FEb2tXOWl6Sk1NMTdaZmZTTlE2ajM3dW8wRVp3TmEwdkcyREZmUjdFY1ZJR3dzcTJZT184WG0zU09JN1hNNnc3?oc=5",
+      "source": "The Indian Express",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-05T01:36:39+00:00"
     },
     {
       "title": "Anwar says AI Governance Bill to complement cybersecurity, data laws - NST Online",
@@ -2828,16 +2848,6 @@
       "pub_date": "2026-08-29T17:00:57+00:00"
     },
     {
-      "title": "From AI Governance to ‘Jal Utsav’ PM Modi Outlines Roadmap for Water Security - The Kashmir Horizon",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOEZYT2xiMjdUY3RyWFZaT1p6X1VxNlYtZWpBZk5ianhXR2NzZGVJdF93M3lKYmFsUFRBZXUzbU5CbVpZTDItbENTVnZibERNMF9aTl9rZldKdlJfUTVCY0VIZHhtX2RzTW84dHh6NVRDNzM0dVgwallWWHRLQUpsTHNHVDZnR3hoVmNGeEo0R0p1czNPRmIxSW5FQm51Y290NUhJWDZBVncxQzhVTU10aVlqWHRfT1FI?oc=5",
-      "source": "The Kashmir Horizon",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-03T03:44:13+00:00"
-    },
-    {
       "title": "電通総研、AIガバナンス構築支援および「ISO/IEC 42001」認証取得支援コンサルティングサービスを提供開始 - PR TIMES",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBoQzBBMGt3RUtZZU1UZm92VjNFOV9PTENwbjVjRC1ZTDAtMHJ0M1U3Q0tQTHJuQWNiRHJzV3ZENTRXUXgxWm0zWlE3M0pxNElLMEh0bTh3dXAxa3lxbE1WcjY1UFpwUG5wUFE?oc=5",
       "source": "PR TIMES",
@@ -2868,9 +2878,9 @@
       "pub_date": "2026-09-04T01:00:00+00:00"
     },
     {
-      "title": "スマートシティ - NTTドコモビジネス",
+      "title": "スマートシティ - ntt.com",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOd3AxWl9PcFRDMGtQZWtFR0gtcnJ1a0Y2Y2V3RVRpTDVKMXAydUN4cFJTeUZIenNOcDZfYnJVZGZQcmM4TFdtWFVTN3Bpb1JYTDVMV3RRNEZyRFpVN3JmejlLaTZ2dTl4TXI1M0xhekg4SFN6Q3ZUM3J1ZkJsa1ppOHVyWEZaYTdYbmh2UGFpY242R21JZExRd3NybFZZSktsQmlxVQ?oc=5",
-      "source": "NTTドコモビジネス",
+      "source": "ntt.com",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -2968,9 +2978,9 @@
       "pub_date": "2026-08-31T06:18:00+00:00"
     },
     {
-      "title": "【2026年】AIガバナンス・AI倫理の仕事とは？年収と目指し方 - PlusWeb3",
+      "title": "【2026年】AIガバナンス・AI倫理の仕事とは？年収と目指し方 - plus-web3.com",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1zbEJuSUN5QU93Y3k5QUpWZm9lOXRmbVFuS3hBZXlMNGdacWY0MUpqS3k0RlEtWEQxX0FjaUE2TmxlQkFyZnN6Y2FaZXNiY2hnNW9JZQ?oc=5",
-      "source": "PlusWeb3",
+      "source": "plus-web3.com",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -3048,9 +3058,9 @@
       "pub_date": "2026-09-03T02:01:00+00:00"
     },
     {
-      "title": "米国はAIガバナンスに関する新たなアプローチを推進している。 - Vietnam.vn",
+      "title": "米国はAIガバナンスに関する新たなアプローチを推進している。 - vietnam.vn",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBpajdNNDFlS2JiXzRVVGpiQTNDdExmZ0taSUZHNk1aa2lPQjFjZ0ExTXh5WG1KRjM5M0J4bF9yYl95R0xhMkl0QVdaeThzRGxwTVhPVS13c0ZmVXFucnRnRzViLVoxSGN3WTVRNUE1VVRYNmpIMVl6RGFOa08?oc=5",
-      "source": "Vietnam.vn",
+      "source": "vietnam.vn",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -3068,9 +3078,9 @@
       "pub_date": "2026-09-03T04:07:11+00:00"
     },
     {
-      "title": "ドンナイ省におけるスマートシティ開発のための情報通信技術アーキテクチャの策定について。 - Vietnam.vn",
+      "title": "ドンナイ省におけるスマートシティ開発のための情報通信技術アーキテクチャの策定について。 - vietnam.vn",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPV0VqbC1TdlI5R1RMOE00UV9OMUJpdjU4ZVl2T1ZTSmJndVhOVzRjZFJNS24zemtmeVZ2SGdDampKdnV6ZHFKWG8tQy16LTRBT05Qc2s3ZkRJazZ5WXZIVEhWbEd1MHphMExad0RCWWUwSjVMVHJra1RqN3FlVzkwYW53c1RueWtSQWFkUUhfTld6SnJSNG56cU9rWGM0WnNwRlcweFh1SnkyVGVLeDlMb2xLWWdmb3oteDZNZ0hjenlWRnNrNG0w?oc=5",
-      "source": "Vietnam.vn",
+      "source": "vietnam.vn",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -3078,9 +3088,9 @@
       "pub_date": "2026-08-31T11:47:24+00:00"
     },
     {
-      "title": "パワー大学：スマートグリッド開発におけるAIの研究と応用を推進する。 - Vietnam.vn",
+      "title": "パワー大学：スマートグリッド開発におけるAIの研究と応用を推進する。 - vietnam.vn",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSTdzZFR2QzdGczJEd2NTOFVZeDFkT0JlanpxWVFocTFpY0xxTWtsQUZsdUJVZXByT0ZfQmRwQmc1WFpkeHNIbFJzS2x6eWVWRWhZZmxsVjZfNzNWRFl6UGpNU1FSVTRFTmlzZUN4a2h4NTN2aXdaODlqY2NWeHRNc2ZrR1d2OUlJN25zMV9RUDJEbVdBd1JSWjI1OERJWVI1MGhEMDJISm5UTFRIczNmX1lybUh5TEJnbzhB?oc=5",
-      "source": "Vietnam.vn",
+      "source": "vietnam.vn",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -3098,9 +3108,9 @@
       "pub_date": "2026-09-03T08:43:39+00:00"
     },
     {
-      "title": "スマートシティのガバナンス効率を向上させる。 - Vietnam.vn",
+      "title": "スマートシティのガバナンス効率を向上させる。 - vietnam.vn",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBvYnhfel84SVFRMmpZYmVoTFFfZU5OQ2ZXVnhiYW9mdFRrVlVqUHZybGJONEdPY2RVWGJvM3lyZkZxZHYxeVZGNEkzenVGVGluNFducF81dUdZbHJPVE5MTThJekg4dGJzVTBrbTBiU3RnY0lib2ZBdGNBRQ?oc=5",
-      "source": "Vietnam.vn",
+      "source": "vietnam.vn",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -3138,6 +3148,16 @@
       "pub_date": "2026-08-31T04:24:13+00:00"
     },
     {
+      "title": "ベトナムと韓国間の建設、インフラ、スマートシティ分野におけるビジネス協力の機会。 - vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZ1ZlUjRuVHlYS09kQmhVTXA4YU5Rb19LTjVDMWhXRVVXNnRnekY0R1ZPbFlIN0NWd2hwM3VwUnhEVjNlRHRQeW9IZ3loRHhwYW01S3E1WkJWcS1hQ2g4NVZsQ3JoXzlGVjhBYVhyN09idVRnTWRMZ1A0VzduMm9PVVZSVVZlTVpyWjRzWEFjbkFScU1RSzMtYXU1d1hEVkNNck5uQW1BenN6U2hqSzRlOTdUQnBjeFdfSFJRTg?oc=5",
+      "source": "vietnam.vn",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-05T00:04:31+00:00"
+    },
+    {
       "title": "サウジアラビア配線器具市場、2032年に24億ドル規模へ――スマートシティと建設投資が電気インフラ需要を加速 - ニコニコニュース",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE8wTG80SzkzQUFBQmJzRDVVTVJ6cEI3LVVMTWFiWEdHdi02TDJaRWxRSG9lS0VCZG1qWGpxdzFtaU9fNllIWVJGTnlyZFMtTU04bTVvMzJnUGdDbmlINUUtS2NlNHpxRlZCTmFrTFd3YWE2bVRxSUhjalE3RQ?oc=5",
       "source": "ニコニコニュース",
@@ -3148,9 +3168,9 @@
       "pub_date": "2026-08-31T06:03:22+00:00"
     },
     {
-      "title": "企業のAI利用に潜む課題を専門家が調査・評価。安全なAI活用に向けた改善計画を提示する『AIガバナンスアセスメントサービス』を提供開始 - Excite エキサイト",
+      "title": "企業のAI利用に潜む課題を専門家が調査・評価。安全なAI活用に向けた改善計画を提示する『AIガバナンスアセスメントサービス』を提供開始 - excite.co.jp",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBTNmEzX3lyRUxrajQ3X2xCLWZ2eE5pNDdjSzloWEJ1RnVNZFpGeW4yUGZZSmZuUDZRTzdVUnNfUTlmdXlWd3FSS2pSS3hIRzJELTJLQVVLbnUwdnlmRzIwLWw5YW1ELTZmUnpOZzRRZ3RKaE43WTlSZnJjY0pCQXc?oc=5",
-      "source": "Excite エキサイト",
+      "source": "excite.co.jp",
       "category": "gov",
       "region": "jp",
       "verified": true,
