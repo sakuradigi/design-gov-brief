@@ -11,6 +11,7 @@ import glob
 import json
 import html
 import hashlib
+import time
 import argparse
 import traceback
 import urllib.request
@@ -606,25 +607,34 @@ def generate_summaries_with_gemini(design_articles, gov_articles, date_str):
     ]
 
     for model_id, model_display_name in candidate_models:
-        try:
-            print(f"🤖 Trying LLM model: {model_display_name} ({model_id})...")
-            model = genai.GenerativeModel(model_id)
-            response = model.generate_content(prompt)
-            response_text = response.text.strip()
-            # 移除可能的 markdown code block
-            response_text = re.sub(r'^```(?:json)?\s*', '', response_text)
-            response_text = re.sub(r'\s*```$', '', response_text)
-            result = json.loads(response_text)
-            result['_model_display_name'] = model_display_name
-            print(f"✅ Gemini summaries generated successfully using {model_display_name}")
-            return result
-        except json.JSONDecodeError as e:
-            print(f"⚠ JSON parse error from {model_display_name}: {e}")
-            print(f"  Response text: {response_text[:200]}...")
-            continue
-        except Exception as e:
-            print(f"⚠ API error with {model_display_name}: {e}")
-            continue
+        for attempt in range(3):
+            try:
+                print(f"🤖 Trying LLM model: {model_display_name} ({model_id}) [嘗試 {attempt + 1}/3]...")
+                model = genai.GenerativeModel(model_id)
+                response = model.generate_content(prompt)
+                response_text = response.text.strip()
+                # 移除可能的 markdown code block
+                response_text = re.sub(r'^```(?:json)?\s*', '', response_text)
+                response_text = re.sub(r'\s*```$', '', response_text)
+                # 提取最外層完整 JSON 物件，避免前綴或後綴多餘字符
+                json_match = re.search(r'(\{[\s\S]*\})', response_text)
+                if json_match:
+                    response_text = json_match.group(1)
+                result = json.loads(response_text)
+                result['_model_display_name'] = model_display_name
+                print(f"✅ Gemini summaries generated successfully using {model_display_name}")
+                return result
+            except json.JSONDecodeError as e:
+                print(f"⚠ JSON parse error from {model_display_name} (嘗試 {attempt + 1}): {e}")
+                print(f"  Response text: {response_text[:200]}...")
+                if attempt < 2:
+                    time.sleep(2)
+                    continue
+            except Exception as e:
+                print(f"⚠ API error with {model_display_name} (嘗試 {attempt + 1}): {e}")
+                if attempt < 2:
+                    time.sleep(3 * (attempt + 1))
+                    continue
 
     print("⚠ All Gemini models failed, falling back to local description extraction")
     return generate_fallback_summaries(design_articles, gov_articles, date_str)
