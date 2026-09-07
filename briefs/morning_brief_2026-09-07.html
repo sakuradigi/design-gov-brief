@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI協作重塑工作流、機密運算下沉硬體：直面數位信任的治理變革 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-07</div>
+    <div class="headline">AI協作重塑工作流、機密運算下沉硬體：直面數位信任的治理變革</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design is not the cosmetic treatment of reality, but the structuring of human experience.</div>
+      <div class="quote-text-zh lang-zh-only">設計不單是對現實外觀的修飾，而是對人類經驗的架構。</div>
+      <div class="quote-author">— Gui Bonsiepe (設計理論家 / 烏爾姆學派先驅)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">產品設計邁入代理人時代，介面正由按鈕轉向意圖對話。</li>
+        <li class="flash-item">企業AI告別盲目試水，晶片級機密運算成治理新基石。</li>
+        <li class="flash-item">地方創生跳脫硬體本體，伊東豊雄展覽示範長效造血機制。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/09/89645/" target="_blank" rel="noopener">動漫視覺到商業KV：頂級設計團隊招募展現的美學護城河</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】グラフィックデザインを中心に手がける有限会社BALCOLONY.が、グラフィックデザイナーなど2職種を募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/6a79a43b7a1c6.jpg" alt="【求人情報】グラフィックデザインを中心に手がける有限会社BALCOLONY.が、グラフィックデザイナーなど2職種を募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當生成式工具充斥市場，像 BALCOLONY 這種擅長動漫次文化與潮流語彙的視覺團隊反而更具不可替代性。這波招募反映出市場對「具有強烈敘事魅力與風格化KV」的剛性需求未減反增。對設計師來說，能將特定次文化精神提煉為成熟的商業美學，正是抵抗 AI 產出同質化的關鍵護城河。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese creative studio BALCOLONY. is actively hiring graphic designers to meet surging demand for distinct pop-culture key visuals. As generative imagery proliferates, studios possessing deeply nuanced visual storytelling are commanding greater leverage. For designers, transforming specialized subcultural narratives into refined commercial identities remains a crucial defense against automated aesthetic homogenization. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/omishima-timaimabari/" target="_blank" rel="noopener">不只蓋建築更要造生態：伊東豊雄十年實驗重燃大三島生機</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">再び、大三島を元気にしよう！</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/07/ea014b7f9075708dca724a819be4e2de.jpg" alt="再び、大三島を元気にしよう！" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">地方創生從來不是蓋一棟地標建築就能了事。伊東豊雄建築博物館這場長期展覽，梳理了建築大師深耕高齡少子化島嶼的實踐軌跡。它給地方治理者的深刻啟發在於：設計的真正價值不在於空間硬體本身，而在於如何透過空間搭建人際信任、轉動在地產業，讓凋零的社區重新找回自我造血的韌性。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The Toyo Ito Museum of Architecture in Omishima hosts an exhibition analyzing long-term rural revitalization. The initiative demonstrates that sustainable community revival requires far more than physical landmarks; it demands persistent social infrastructure capable of rebuilding communal trust and local economic resilience in aging, depopulated regions. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/ai-canvas-synthetic-self-the-prompt-is-the-product-801f0da7bea6?source=rss----138adf9c44c---4" target="_blank" rel="noopener">告別微觀操作：當Prompt成產品，設計師變身意圖指揮官</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI canvas, Synthetic self, The prompt is the product</div>
+            <img class="item-image" src="https://cdn-images-1.medium.com/max/1024/0*EjNueOq1ewkkMptH.png" alt="AI canvas, Synthetic self, The prompt is the product" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">UX 介面正迎來本質轉移，使用者不再需要手動點選繁複按鈕，而是透過提示詞與 AI 代理人溝通「想要的成果」。這意味著設計師的角色從「排版與元件繪製者」，進化為「意圖架構與互動邊界定義者」。未來衡量產品體驗的標準，不再是操作步驟有多順，而是意圖能否被精準理解與安全執行。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Interaction design is pivoting toward agentic models where users specify desired outcomes rather than navigating traditional UI controls. Designers must evolve from screen-level stylings to orchestrating intent architectures and cognitive boundaries. Future UX excellence will be measured by how seamlessly and responsibly autonomous agents interpret human intent. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/ai-in-product-teams-in-2026-the-growing-impact-on-collaboration-8ea9f6024dca?source=rss----138adf9c44c---4" target="_blank" rel="noopener">告別工具焦慮：2026年產品團隊走向系統化AI協作新常態</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI in Product teams: In 2026, the growing impact on collaboration</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*PZBimY3u6oqDrffnKL8pSw.jpeg" alt="AI in Product teams: In 2026, the growing impact on collaboration" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">產品團隊對 AI 的狂熱已從過去「到處試用單點工具」降溫為「深度的組織流程重構」。設計、工程與產品經理的協作界面正在被重新洗牌，能將 AI 內嵌到日常決策與驗證流程的團隊正拉開效率差距。這提醒我們，數位轉型的真正勝負手從來不是工具數量，而是團隊敏捷協同的文化適應力。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">In 2026, product development teams are transitioning from chaotic tool experimentation to holistic workflow restructuring. AI integration is reshaping the intersections of design, engineering, and product management. Organizational agility and cross-functional alignment, rather than individual software adoption, have become the decisive factors in sustaining product velocity. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/09/06/building-a-real-time-3d-face-mask-with-mediapipe-threlte-and-three-js/" target="_blank" rel="noopener">瀏覽器即時運算突圍：輕量3D追蹤為沉浸互動大幅降門檻</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Building a Real-Time 3D Face Mask with MediaPipe, Threlte and Three.js</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/09/3dfacemask.png?x57826" alt="Building a Real-Time 3D Face Mask with MediaPipe, Threlte and Three.js" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">結合 MediaPipe 臉部特徵點與 Three.js 渲染技術，讓免下載 App 的網頁端 3D 濾鏡變得極致流暢。這項技術演進告訴我們：空間運算與沉浸式體驗不必依賴昂貴頭顯或笨重應用。掌握輕量化 Web 端 3D 互動能力，將是品牌在數位行銷與線上零售中打造低摩擦、高黏著感官體驗的即戰力。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">Integrating MediaPipe landmark tracking with Three.js demonstrates that complex real-time 3D web experiences no longer require heavy native applications. This lightweight spatial computing pattern lowers access friction, offering digital creators and brands an accessible pathway to build highly engaging, browser-native sensory interactions. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE94U0lya3lRZkhFaFhpOUg1Njh4MWFmMkE3V1kxOUM0d0htX3A2R25WeVhNVjJpR19IX05LUTlHTkI5cGg3MzhDR1hKOA?oc=5" target="_blank" rel="noopener">企業AI告別展示期：從技術探索轉向營運治理與持續防禦</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">企業 AI 正從技術議題走向營運管理 樂雲 AI 治理論壇探討治理、安全與持續防禦 - iThome</div>
+            <div class="item-sentence lang-zh-only">當企業內部 AI 應用從概念驗證走向核心業務，治理焦點必然轉向資安防禦與營運風險控管。論壇點出的核心在於：AI 不能只看產出效率，更要建構防範幻覺、數據外洩與模型偏誤的持續防護網。這提醒決策者，沒有穩健防禦機制的創新就像踩著油門卻沒裝煞車，治理才是規模化落地的支柱。 <span class="src">— iThome</span></div>
+            <div class="item-sentence-en lang-en-only">Enterprise AI is shifting rapidly from experimental pilots to mission-critical operational governance. Industry leaders increasingly recognize that efficiency gains are unsustainable without continuous defense against data leaks, hallucinations, and algorithmic bias. Establishing robust guardrails and active monitoring is now the ultimate prerequisite for scaled deployment. <span class="src">— iThome</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi4wFBVV95cUxPZjlPVEhYSVN5MUVQWVRjanlIaFZ0Wmt0S09qRzlfTGdwRWNtM1dqVEFod3phVFVoLWFHOTRuYmFGWk40Ql9lOHc2bHBTZ0twdUtIWC1qaVZaTEt0NjVucVhsS1hKU2NDRlljYklSSUVhZngxbnpYVlNFVGxiUVVOS0lIR3NnNjdMeTl2LTlTNGtZNTBaUU9nX0pKWVVYZ3RaUEhGYWk3YkJwUUF2a1lPakpRUS1jX195VncxMTIzLW1UNjAxWXR3NnlxMEM5MldLbDNkQU5Bb0lHQ2ZIbUxuWkg3ONIB4wFBVV95cUxPZjlPVEhYSVN5MUVQWVRjanlIaFZ0Wmt0S09qRzlfTGdwRWNtM1dqVEFod3phVFVoLWFHOTRuYmFGWk40Ql9lOHc2bHBTZ0twdUtIWC1qaVZaTEt0NjVucVhsS1hKU2NDRlljYklSSUVhZngxbnpYVlNFVGxiUVVOS0lIR3NnNjdMeTl2LTlTNGtZNTBaUU9nX0pKWVVYZ3RaUEhGYWk3YkJwUUF2a1lPakpRUS1jX195VncxMTIzLW1UNjAxWXR3NnlxMEM5MldLbDNkQU5Bb0lHQ2ZIbUxuWkg3OA?oc=5" target="_blank" rel="noopener">硬體層築起信任防線：AMD押注機密運算卡位AI治理商機</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why Is Advanced Micro Devices (AMD) Pushing AI Governance And Confidential Computing? - simplywall.st</div>
+            <div class="item-sentence lang-zh-only">AMD 大力推動機密運算（Confidential Computing），顯示 AI 治理戰場已一路殺到晶片底層。當敏感企業數據與模型在運算中面臨被窺探的風險，純軟體防護已顯得力不從心。這股趨勢告訴我們，硬體級隔離與數據加密正成為企業部署生成式 AI 的信任基石，也是晶片大廠下一階段的兵家必爭之地。 <span class="src">— simplywall.st</span></div>
+            <div class="item-sentence-en lang-en-only">AMD’s focus on confidential computing highlights how AI governance is descending directly into hardware architecture. With proprietary training data and enterprise inference vulnerable during active processing, hardware-level isolation has evolved from an optional security feature into the fundamental baseline for trustworthy enterprise AI. <span class="src">— simplywall.st</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi4wFBVV95cUxPZjlPVEhYSVN5MUVQWVRjanlIaFZ0Wmt0S09qRzlfTGdwRWNtM1dqVEFod3phVFVoLWFHOTRuYmFGWk40Ql9lOHc2bHBTZ0twdUtIWC1qaVZaTEt0NjVucVhsS1hKU2NDRlljYklSSUVhZngxbnpYVlNFVGxiUVVOS0lIR3NnNjdMeTl2LTlTNGtZNTBaUU9nX0pKWVVYZ3RaUEhGYWk3YkJwUUF2a1lPakpRUS1jX195VncxMTIzLW1UNjAxWXR3NnlxMEM5MldLbDNkQU5Bb0lHQ2ZIbUxuWkg3ONIB4wFBVV95cUxPZjlPVEhYSVN5MUVQWVRjanlIaFZ0Wmt0S09qRzlfTGdwRWNtM1dqVEFod3phVFVoLWFHOTRuYmFGWk40Ql9lOHc2bHBTZ0twdUtIWC1qaVZaTEt0NjVucVhsS1hKU2NDRlljYklSSUVhZngxbnpYVlNFVGxiUVVOS0lIR3NnNjdMeTl2LTlTNGtZNTBaUU9nX0pKWVVYZ3RaUEhGYWk3YkJwUUF2a1lPakpRUS1jX195VncxMTIzLW1UNjAxWXR3NnlxMEM5MldLbDNkQU5Bb0lHQ2ZIbUxuWkg3OA?oc=5" target="_blank" rel="noopener">晶片架構化身護城河：從機密運算看多租戶雲端的合規突圍</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why Is Advanced Micro Devices (AMD) Pushing AI Governance And Confidential Computing? - simplywall.st</div>
+            <div class="item-sentence lang-zh-only">在跨國合規與多租戶雲端環境下，企業對算力基礎設施的「可信度」要求日益嚴苛。AMD 透過晶片層級強化記憶體加密與環境隔離，本質上是在替受高度監管的金融與醫療客戶打消疑慮。這項舉動的啟發在於：未來的算力競爭不再單純比拼運算速度，誰能提供最低風險的信任架構，誰就能贏得市場。 <span class="src">— simplywall.st</span></div>
+            <div class="item-sentence-en lang-en-only">In complex multi-tenant cloud environments, hardware-enforced privacy serves as a crucial market differentiator. By providing silicon-level memory encryption, chipmakers help regulated industries such as healthcare and finance meet stringent compliance mandates, pivoting the infrastructure race from raw speed to verifiable architectural trust. <span class="src">— simplywall.st</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxNbTVUSUQxZEdPLWh5aFJvdm1KbDViWWUzZEZibjF6UTJ1Vm9KbUpDZlRHb3ZJWndoanlRNVdiWERBcC1pd1QxdzhsM0tEZDBEZmlsQXZGQ2N2cV9VRG12UTJZQVE0V2NCb01HVld5OHhST3pNelQ4ZE5zS3R5VVd6QXpUb0nSAZgBQVVfeXFMUFdPQlJtaXhQMzRhY3lCRTYzWjcyV2k5S1FFSDk4Y2FNSWd6S2VkSmV0Z28yNXNYUEJacVc3TVJmbWdXaVpGNzdjRFkyc2ZOUURacHN2V2NKNkdfdjY3R3ppTkUyeW9nVWZvRzBvc2NLdjZrdTB1d0Q5cU9tY2tTalgyd3VGNUx6TFctRVdCS2taNFU2ZlVYSGk?oc=5" target="_blank" rel="noopener">智慧城市輸出新模式：韓國跨國公私協同打通海外治理市場</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">KINDがWSCE参加 K-City連携を拡大 - CHOSUNBIZ - Chosunbiz</div>
+            <div class="item-sentence lang-zh-only">韓國 KIND 透過世界智慧城市博覽會擴大「K-City」國際合作，展現出將智慧城市從單點技術轉變為整體治理方案輸出的野心。這給城市治理者的啟發是：智慧治理的成功關鍵不在於個別硬體感測器，而在於能否建立標準化的跨部門協作架構與公私合營機制，將本土經驗轉化為可複製的國際資產。 <span class="src">— Chosunbiz</span></div>
+            <div class="item-sentence-en lang-en-only">South Korea&#x27;s KIND is expanding international K-City partnerships at the World Smart City Expo, packaging municipal innovation into an exportable governance model. This approach demonstrates that smart city success relies not on isolated IoT hardware, but on structured public-private collaboration frameworks that turn local operational knowledge into global assets. <span class="src">— Chosunbiz</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/blogs/lohrmann-on-cybersecurity/the-identity-paradox-digital-state-ids-now-riskier-more-urgent" target="_blank" rel="noopener">億級駕照外洩的警鐘：數位身分在便捷與隱私浩劫中的拔河</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The Identity Paradox: Digital State IDs Now Riskier, More Urgent</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/26732ef/2147483647/strip/true/crop/939x456+0+0/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fcd%2Ffa%2Ff1e33484bb40e28ed39ece10356b%2Fmycolorado-digital-id.JPG" alt="The Identity Paradox: Digital State IDs Now Riskier, More Urgent" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">上億筆駕照資料外洩事件，殘酷揭露了推動數位身分證時的致命盲點。傳統中心化資料庫一旦失守就是毀滅性災難，但現代社會又極度依賴高效率的線上身分驗證。這項悖論警示我們：數位身分治理必須加速走向分散式架構與零知識證明，否則盲目追求數位化只會將公民推向更深層的信任危機。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">A massive breach exposing over 150 million driver’s licenses highlights the perilous identity paradox facing digital governments. While digital ID systems are essential for modern public services, centralized databases present systemic security risks, underscoring the urgent necessity of adopting decentralized architectures and zero-knowledge proofs. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.7 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-07 08:04:01 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
