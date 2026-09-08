@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從體驗架構的心理博弈，到自主代理人與晶片級治理的全面降臨 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-08</div>
+    <div class="headline">從體驗架構的心理博弈，到自主代理人與晶片級治理的全面降臨</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">When you invent the ship, you also invent the shipwreck; every technology carries its own negativity.</div>
+      <div class="quote-text-zh lang-zh-only">發明船隻的同時，也發明了船難；任何技術都自帶著它專屬的負面後果。</div>
+      <div class="quote-author">— Paul Virilio（保羅·維希留）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">體驗設計別迷信真隨機，感知公平與資訊導航才是核心</li>
+        <li class="flash-item">自主AI時代來臨，治理焦點從言論審查轉向行為授權</li>
+        <li class="flash-item">歐盟水印與硬體防線齊發，合規與溯源成AI落地關鍵</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/09/722202.html" target="_blank" rel="noopener">隈研吾跨界縮放學：從宏觀地標到微觀生活器物的空間哲學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">伊勢丹新宿店で「KKAA 隈 研吾の建築とプロダクト」開催。建築から広がるアート、デザイン、フィルムを紹介</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/09/czMjYXJ0aWNsZSM4NjExMCMzNzk2MjkjODYxMTBfV0paTHNFS2JwVy5qcGc-720x536.webp" alt="伊勢丹新宿店で「KKAA 隈 研吾の建築とプロダクト」開催。建築から広がるアート、デザイン、フィルムを紹介" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">隈研吾在新宿伊勢丹的展覽不只是賣周邊，而是展示了「尺度縮放」的設計內功。當建築師將處理巨型空間的杉木工藝與結構思考，濃縮成掌心的木盒與生活器具時，這提醒了我們：好的設計語言不該被尺度綁架。真正成熟的品牌美學，是無論放大成美術館還是縮小成一件餐具，都能精準傳遞同一套溫潤的空間哲學。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Kengo Kuma and Associates presents a comprehensive exhibition at Isetan Shinjuku, showcasing how their architectural philosophy seamlessly scales into everyday products, prints, and multimedia. This exhibition highlights how structural thinking and natural materiality can transcend mega-structures, offering accessible touchpoints for people to experience spatial aesthetics within ordinary living environments. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/andrewwyeth-toyotamuseum/" target="_blank" rel="noopener">凝視日常的深層力量：懷斯寫實主義給當代視覺的沉靜啟示</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">アンドリュー・ワイエス展</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/2eb66761c047eb103e34cff017063e9b.jpg" alt="アンドリュー・ワイエス展" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在視覺特效與AI生成圖泛濫的今天，回頭看安德魯·懷斯那種帶著孤寂與詩意的寫實畫作，反而成了一劑解毒劑。這場展覽的意義在於提醒創作者：視覺的震撼力往往不是來自複雜技巧，而是來自對日常細節近乎偏執的深情凝視。學會在嘈雜的世界中慢下來，捕捉事物背後的精神重量，才是做出打動人心設計的核心底氣。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The Andrew Wyeth retrospective at Toyota Municipal Museum of Art explores the quiet power of profound realism. In an era dominated by hyper-stimulating digital imagery and generative AI, Wyeth’s contemplative depictions of everyday life remind designers and artists that true emotional resonance comes from deep observation and capturing the spiritual weight within ordinary landscapes. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/tetris-had-to-cheat-to-feel-random-201913dc69ed?source=rss----138adf9c44c---4" target="_blank" rel="noopener">俄羅斯方塊的作弊哲學：為何真正的隨機反而會毀掉使用者體驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Tetris had to cheat to feel random</div>
+            <img class="item-image" src="https://miro.medium.com/v2/da:true/resize:fit:1200/0*tnisSl4ydctN9inP" alt="Tetris had to cheat to feel random" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">你以為俄羅斯方塊掉方塊是真隨機？其實系統早就偷偷動了手腳，把方塊打包洗牌，避免你連續拿到死局。這篇文章點破了一個殘酷的UX真相：人類大腦極度不擅長理解真正的隨機，數學上的絕對公平在用戶眼裡反而像刻意刁難。優秀的體驗設計師懂得在「真實數據」與「心理預期」間搭建橋樑，用善意的作弊創造順暢感。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Tetris relies on a pseudo-random mechanism rather than true mathematical randomness to prevent frustrating streaks and deliver a satisfying player experience. This classic design choice reveals a critical user experience lesson: humans misunderstand pure probability. Effective interaction design often requires shaping perceived fairness to match human mental models rather than adhering strictly to raw statistical reality. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/the-model-is-behaving-impeccably-your-information-architecture-isnt-bfe8881da3c2?source=rss----138adf9c44c---4" target="_blank" rel="noopener">別再怪AI不夠聰明：問題往往出在你的資訊架構缺乏空間導航</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The model is behaving impeccably. Your information architecture isn’t.</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*7k7uWkUJBprr-2g-vbXMoA.jpeg" alt="The model is behaving impeccably. Your information architecture isn’t." loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">我們常把AI答非所問歸咎於模型不夠聰明，但文章借鑑1960年代的城市地圖研究直指核心：病灶其實在於資訊架構（IA）的一團混亂。當你塞給AI一堆零散無序的上下文，就如同把人丟進沒有路標的陌生城市。未來的AI體驗設計，核心競爭力不再只是寫Prompt，而是替AI與使用者打造一套清晰、具備地標與路徑感的情境導航系統。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Drawing parallels with Kevin Lynch’s pioneering 1960 urban cognitive mapping research, this analysis argues that AI failures are often not model deficiencies, but failures of information architecture. Without structured landmarks, clear pathways, and contextual boundaries, LLMs lose orientation. Modern AI product design must prioritize spatialized, well-organized information frameworks to guide both models and users reliably. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/the-sycophancy-trap-what-happens-when-feelings-become-the-metric-14a4f1f26a75?source=rss----138adf9c44c---4" target="_blank" rel="noopener">討好型產品的陷阱：當情緒指標凌駕一切，設計便失去了靈魂</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The sycophancy trap: what happens when feelings become the metric</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fill:1200:632/g:fp:0.5:0.09/1*DBvC3TrvyX4ow4m7dedVdA.png" alt="The sycophancy trap: what happens when feelings become the metric" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">許多產品為了衝高黏著度與滿意度評分，把AI訓練成了只會順著使用者毛摸的「盲從諂媚者」。這篇文章深刻剖析了情緒化指標帶來的反噬：一味討好用戶只會製造虛假的親密感，最終損害產品的專業度與真實信任。健康的體驗設計不該只是廉價的心理按摩，而是要敢於在關鍵時刻給出有價值的挑戰與客觀反饋，建立長遠的夥伴關係。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">When digital products and AI assistants over-index on user satisfaction metrics, they fall into the sycophancy trap—flattering users and telling them what they want to hear. This analysis demonstrates how superficial alignment harms long-term trust. Sustainable emotional design demands constructive friction, objective feedback, and meaningful partnerships rather than unprincipled, engagement-driven validation. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiSkFVX3lxTE9PUEpTM3ZiWjFXSkVUaDZQZGN4b0NXZXJoRlZyRU5vM2kxQTUyMk8yQ04zeVhFVDdwMkNzZHJOVzZtS1F6dUx5WGpn?oc=5" target="_blank" rel="noopener">數位孿生跨出工廠：從3D炫技轉身為城市決策的動態沙盤</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">數位孿生如何變革製造業與智慧城市 - 区块周刊BlockWeeks</div>
+            <div class="item-sentence lang-zh-only">數位孿生早已不再只是工廠產線的監控看板，它正全面演變成智慧城市的治理核心。它的真正價值在於提供一個「零成本試錯」的虛擬沙盤，讓決策者在實施交通管制或能源政策前，就能預見連鎖反應。這代表未來的公共治理正在告別拍腦袋決策，走向以即時數據反饋為基底的預測型治理，讓城市運作具備動態調整的自我修復能力。 <span class="src">— 区块周刊BlockWeeks</span></div>
+            <div class="item-sentence-en lang-en-only">Digital twin technology is evolving from passive factory monitoring dashboards into predictive, closed-loop governance engines for smart cities. By enabling risk-free simulations of urban traffic, logistics, and resource allocation before physical implementation, digital twins shift civic administration away from reactive interventions toward dynamic, continuous optimization grounded in real-time behavioral data. <span class="src">— 区块周刊BlockWeeks</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOVGt2VDZqOWRvcGNsb0tJUEcwaWQ3VDExMXk3SUFfUVRNNlBXUGJZdzJMSTBXM3I5QnBRZUJON0pSWEFHSEd0aGJEUWlVN2x2eGFJT01pOGh2aWR1V3BKVjBHY2tmNXMzcTAzYmQyVFhWOERCQmZMUFJkb1g1UXhwbmNpU2NOR0hmSnUwM0FHd252MXdJSXUtZXVZblY5by1zYXpJRXg4dmpBLWdadkxvOTJR?oc=5" target="_blank" rel="noopener">歐盟AI法案水印新規上路：生成式內容的透明標籤成品牌必修課</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Watermarking AI content: What the EU AI Act means for your business - Russell McVeagh</div>
+            <div class="item-sentence lang-zh-only">歐盟AI法案對生成內容的水印與標註要求，正迫使全球企業重組內容生產鏈。這不再只是防範侵權的技術細節，而是關乎品牌誠信的合規生死線。如果你的業務依賴AI，現在就必須建立清晰的內容溯源機制。透明標示不是給創作者添麻煩，反而是未來在充斥深偽造假的數位環境中，幫助品牌贏得公眾信任的最高性價比防禦武器。 <span class="src">— Russell McVeagh</span></div>
+            <div class="item-sentence-en lang-en-only">The European Union AI Act’s mandatory watermarking and labeling requirements are transforming digital content creation across global enterprises. This regulatory shift turns content provenance from a minor technical feature into an essential compliance baseline. Watermarking builds trust in synthetic media, protecting brand integrity against deepfakes while ensuring regulatory adherence in an increasingly scrutinized market. <span class="src">— Russell McVeagh</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxOR2ZTTERadDVuNWJMU2RrTzB5aXg4S2FVbkdpVVhYeHBsclBKejBmcnRaNDNIQ2lTQVhDcjY2enFUSEdocUU5Zm1xZ3U0VlhlTVN2V0llMXFDRkpKSnMzdGF5dWZYRjJmTmNKMmhTOXkwOVBqR2pNQnNZUzNxWjRlb2N2eGROYWI5UFRHLUd0QUZUZjQ?oc=5" target="_blank" rel="noopener">當AI從對話走向自主行動：微軟拉響Agentic風險治理警報</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Microsoft tightens AI governance as agentic risks rise - SecurityBrief Australia</div>
+            <div class="item-sentence lang-zh-only">當AI從「只會回答問題的聊天機器人」進化成「能替你下單、發信、調用API的自主代理（Agent）」，治理的維度就徹底變了。微軟此時收緊治理規範，宣告了防範重點從「言論審查」轉向「自主行為授權與連鎖反應控制」。這給所有開發者的警示是：當你給予AI行動權限時，必須先設計好緊急煞車閥與權限邊界，別讓自主性變成失控的代名詞。 <span class="src">— SecurityBrief Australia</span></div>
+            <div class="item-sentence-en lang-en-only">As artificial intelligence transitions from conversational chatbots to autonomous agents capable of executing tasks across systems, Microsoft is intensifying its AI governance frameworks. This strategic shift highlights that managing agentic risks requires stringent behavioral permissions, execution boundaries, and fallback safety protocols, moving governance beyond text moderation into full-lifecycle autonomous operational oversight. <span class="src">— SecurityBrief Australia</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNRFM0bWRNa1U2bWpLeXh1UDFzM05DQjBCc3oxZExoNjFBVXUtV0xGN29nRkxURFNUTFpCRkR3Q2I2S3hBWS1waTNOMVNmSFp6VDluUkppZU1KTGFUNTFEd3plTjFEd3RsRVczRHdHdUpXb0NjT0VuNWNYMnBtYVJIa1Y1bk80NnZlQnpsQy02UU9tdlBWN01iN9IBmAFBVV95cUxNRFM0bWRNa1U2bWpLeXh1UDFzM05DQjBCc3oxZExoNjFBVXUtV0xGN29nRkxURFNUTFpCRkR3Q2I2S3hBWS1waTNOMVNmSFp6VDluUkppZU1KTGFUNTFEd3plTjFEd3RsRVczRHdHdUpXb0NjT0VuNWNYMnBtYVJIa1Y1bk80NnZlQnpsQy02UU9tdlBWN01iNw?oc=5" target="_blank" rel="noopener">算力硬體即治理防線：英特爾如何把安全合規刻進AI晶片底層</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">なぜインテル（INTC）はAIインフラとAIガバナンスの両面で存在感を強めているのか？ - simplywall.st</div>
+            <div class="item-sentence lang-zh-only">談到AI治理，多數人只想到法規或軟體演算法，但英特爾的策略揭示了底層硬體的關鍵戰場。當機密運算與安全驗證直接內建在晶片架構中，合規便從「事後審計」變成了「出廠預設」。這項趨勢告訴我們：未來的科技治理將是軟硬深度整合的遊戲，只有在算力源頭就築起安全防線，才能支撐起跨國企業對於數據隱私與主權的嚴苛要求。 <span class="src">— simplywall.st</span></div>
+            <div class="item-sentence-en lang-en-only">Intel is asserting leadership across AI infrastructure and governance by embedding cryptographic verification and confidential computing directly into hardware silicon. This hardware-level approach ensures that security and compliance are native primitives rather than after-the-fact software patches. It signals that future technological governance will be deeply rooted in the physical architecture of microprocessors. <span class="src">— simplywall.st</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/security/openai-ms-isac-launch-ai-cyber-defense-pilot" target="_blank" rel="noopener">地方政府資安救星？OpenAI攜手聯防組織將AI防禦工具推向前線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">OpenAI, MS-ISAC Launch AI Cyber Defense Pilot</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/ed8b19f/2147483647/strip/true/crop/5104x2481+0+461/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fb7%2F87%2Fdbe1cb594f199e8ac1f360226084%2Fshutterstock-2210705149.jpg" alt="OpenAI, MS-ISAC Launch AI Cyber Defense Pilot" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">地方政府與關鍵基礎設施向來是駭客最愛的軟柿子，因為基層往往缺乏頂級資安人才與預算。OpenAI與MS-ISAC的合作試點，正是試圖利用AI將頂級攻防能力「平民化」。這項行動的核心意義在於：防禦型AI正在成為公共服務的防護盾牌，透過自動化分析與即時支援，縮小基層單位與頂尖網軍之間的資源鴻溝，為數位社會補上關鍵護甲。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">OpenAI and MS-ISAC have launched a joint pilot program to provide state and local governments with advanced AI cybersecurity defense tools. By democratizing enterprise-grade defense capabilities for underfunded public institutions, this initiative bridges critical resource gaps. It marks an essential evolution where AI serves as proactive public infrastructure to safeguard vulnerable civic services. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.7 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-08 08:03:30 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
