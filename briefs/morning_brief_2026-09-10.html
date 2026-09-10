@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>當古老美學遇上科技治理：從生成式藝術、勞資協商 AI 到數據驅動的公眾信任 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-10</div>
+    <div class="headline">當古老美學遇上科技治理：從生成式藝術、勞資協商 AI 到數據驅動的公眾信任</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technologies are not merely aids to human activity, but powerful forces acting to reshape that activity and its meaning.</div>
+      <div class="quote-text-zh lang-zh-only">技術不僅僅是人類活動的輔助工具，更是重塑活動本身及其深層意涵的強大力量。</div>
+      <div class="quote-author">— Langdon Winner</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">軟體與 AI 的設計本質在於承載人性，技術語言必須轉化為社會通行的信任機制。</li>
+        <li class="flash-item">教育與治理的 AI 轉型，唯有納入第一線工作者的參與才能達成真正的責任共識。</li>
+        <li class="flash-item">智慧城市不只是裝設科技設備，而是透過數據化管理落實日常生活的安全感。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/09/89647/" target="_blank" rel="noopener">腳下美學的微觀革命：從地毯設計看公共空間的無聲體驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】「足元のデザイン」を手がける山本産業株式会社が、プロダクトデザイナーを募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/08/681d3b3443a36.jpg" alt="【求人情報】「足元のデザイン」を手がける山本産業株式会社が、プロダクトデザイナーを募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">我們常聚焦於空間的眼界所及，卻忽略了「雙腳觸及」的微觀質感。日本山本產業招募地毯設計師這件事，反映出商業與公共空間已從純粹的視覺包裝，走向全感官的體驗設計。從飯店、辦公室到航空器，地毯不只是鋪設材料，更是控管場域聲學、視覺情緒與品牌質感的無形介面。對設計者來說，未來的產品設計不再只是製造物件，而是打造人與環境互動的隱形地景。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Yamamoto Sangyo&#x27;s recruitment for carpet designers highlights a broader shift toward holistic spatial experience design. In commercial and public environments like hotels and transit, flooring is no longer just a functional material; it serves as a tactile, aesthetic, and acoustic interface that quietly shapes user emotions and brand identity. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/ericcarle-shinagawaaquarium/" target="_blank" rel="noopener">當繪本遇上海洋生物：艾瑞·卡爾繪本風格的跨界色彩學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">エリック・カールといのちの色 ―同じ世界で、ちがう色―</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/6618625e26df30f62ef1574441424d59.jpg" alt="エリック・カールといのちの色 ―同じ世界で、ちがう色―" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">品川水族館將艾瑞·卡爾經典繪本的色塊與真實海洋生物對照，展現了極具啟發性的策展思維。這不只是給小孩看的趣味展覽，更是一種跨領域的視覺解構——將藝術家的色彩語彙轉化為理解自然生態的載體。當繪本的剪紙拼貼與水族箱內的生命體同框，設計不再只是美化，而成了連結生物多樣性與大眾美感教育的強烈橋樑，提供科普場館翻轉展覽體驗的新典範。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Shinagawa Aquarium&#x27;s exhibition pairs Eric Carle&#x27;s iconic picture book art with living marine organisms, creating an inspiring cross-disciplinary experience. By bridging visual storytelling with biodiversity, the event transforms aesthetic education into an engaging medium for public science communication, demonstrating how traditional cultural venues can reimagine visitor engagement through innovative visual curation. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/what-shakespeare-got-right-about-ai-4369fc16ab2b?source=rss----138adf9c44c---4" target="_blank" rel="noopener">莎士比亞早已預言 AI：從大師劇作看語言迷幻與人機信任危機</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What Shakespeare got right about AI</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*wjtgIvHBrrn_4Huori6M7Q.jpeg" alt="What Shakespeare got right about AI" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">莎士比亞在四百年前對「似是而非之言（Equivocation）」與女巫預言的刻畫，竟精準預言了今日大語言模型的迷幻現象。AI 能夠生成無比流暢卻不具真實性的文本，這正好考驗著人類對資訊的判讀能力。這篇文章提醒我們，設計 AI 產品時，關鍵不只是讓互動更流暢，而是如何設計「誠實的介面」，避免使用者被看似睿智的演算法文字所誤導，重新構建數位時代的認知防線。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Shakespeare&#x27;s exploration of equivocation four centuries ago remarkably mirrors today&#x27;s AI hallucination challenges. The fundamental hurdle in AI product design is not merely crafting smooth user interactions, but engineering honest interfaces that help users discern plausible algorithmic rhetoric from verifiable truth, ultimately rebuilding cognitive trust in human-computer collaboration. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/the-origins-the-birth-lonely-childhood-and-adoption-of-software-59e3013c3c23?source=rss----138adf9c44c---4" target="_blank" rel="noopener">從冷酷代碼到社會共識：軟體演進史背後的「人性化接納」契機</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The origins — the birth, lonely childhood, and adoption of software</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fill:1200:632/g:fp:0.5:0/1*tK7I0aqCexN7fqGL3RoCzQ.png" alt="The origins — the birth, lonely childhood, and adoption of software" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">軟體的發展歷史就像是一個從孤獨抽象符號走到全民接納的成長故事。過去軟體只追求邏輯運算與硬體效能，但如今決定一項技術存亡的，卻是它能否融入人類的社會情境與情感脈絡。從商業角度來看，當今軟體創新的重點已經從「演算法多厲害」轉向「使用者情境有多自然」。了解軟體的這段演進，能幫助產品設計者在 AI 時代擺脫技術崇拜，回歸人性化的社會設計。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">The historical evolution of software illustrates how abstract code gradually gains social adoption and emotional resonance. Today, software success relies less on algorithmic superiority and more on intuitive integration into human contexts, urging product designers to move past pure technology worship and focus on human-centered social experience in the AI era. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://tympanus.net/codrops/2026/09/09/still-from-akira-to-ink-wash-building-a-generative-garden-in-webgpu/" target="_blank" rel="noopener">塞博龐克遇上水墨山水：運用 WebGPU 打造動態數位禪意花園</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Still: From Akira to Ink Wash, Building a Generative Garden in WebGPU</div>
+            <img class="item-image" src="https://codrops-1f606.kxcdn.com/codrops/wp-content/uploads/2026/09/MJ_Still.png?x57826" alt="Still: From Akira to Ink Wash, Building a Generative Garden in WebGPU" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">前端技術專案《Still》將《阿基拉》的科幻動態感與傳統日式水墨相結合，並透過 WebGPU 在瀏覽器中實現即時生成的數位花園。這項嘗試突破了過往網頁視覺的限制，證明演算法也能蘊含極高的詩意與東方禪意。當極致的繪圖算力遇上寫意美學，未來的網頁設計將不再只是靜態資訊的載體，而是能夠即時回應、具備生命力的數位藝術場域，為數位品牌體驗開闢全新思維。 <span class="src">— Codrops</span></div>
+            <div class="item-sentence-en lang-en-only">The generative web project Still utilizes WebGPU to blend cyberpunk intensity with traditional Japanese ink wash aesthetics inside a real-time browser environment. It proves that advanced real-time rendering can convey profound poetic expressiveness, turning web interfaces into living, responsive artistic landscapes that expand the possibilities of future digital brand experiences. <span class="src">— Codrops</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMizANBVV95cUxPbzJUSU1lblliNlhnRFhkYWVxamIxbXBJNU1STmRQZUZROUJyMzVsbmlLdW15YlU0RDM2bF9lemtkUHhQMkVVR0N5dlBQY1ZqQmNra0V4dG9yQ1FMem9rYU5uQzBINzNxUl9GWmZQSjhsa1R3emF0U19Sb1BxZ0Q0MVJqUVJGRUlVQmFFZElSMHUtQUdtMDlVbHl1cGRJWUNqMWJBVXRacS1yb3Ewbnl3RVZablc0QURkZTY2MVJJd0FEaWpXdmtKV0V4RkpGaXh0dkV1c0kxV04zc2dISW44RkR2NkJIdUJRSGtFQlYwUkJWa09fS2NLMTdkWDJ2eFZQUWFXeHFpSmUtLVVfNWRUblRVVW1UR3RfSTM0S2lVb0pHQ3hCZ0IwNmVadzhoaU03OEY1M0NJOHY2QmYtOGRwNXkzYU1lOXNOZXp2NW9OMkotTTFia1UyMlNtUmpEVm5CVkYtS1FlV3JXYXZxaHV0aUdRSXBCcjctU1VaT2w0QXczMVJ2QW9uUWdjZEdFTkVOcTNIaXdWTm1Ea1QzOWFlRVhvMkJGR1RkWldSdF9YREtDYzFBOXotQS1HYTdUMTRxLUpGTnBNSGViZ25R?oc=5" target="_blank" rel="noopener">智慧食品安全防線：南投縣如何用數據科技打造主動式城市信任</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">南投衛生局「關鍵食安管理計畫」榮獲智慧城市大調查「安心城市」食安專案獎 - Yahoo新聞</div>
+            <div class="item-sentence lang-zh-only">南投縣衛生局獲獎的關鍵在於將傳統被動的食安抽檢，轉化為數據驅動的主動預警機制。智慧城市的治理核心並非鋪張的科技硬體，而是能否解決民眾對日用食膳的最基本焦慮。透過整合數位稽查與風險預測，地方政府成功建立起讓市民安心的運作流程。這顯示出公共創新的價值，不在於噱頭十足的技術展示，而是在於把數據變成公眾看得見、感受得到的透明信任感。 <span class="src">— Yahoo新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Nantou County&#x27;s award-winning food safety initiative transforms traditional reactive physical inspections into a proactive, data-driven early warning system. It demonstrates that smart city governance achieves its highest value when technology directly addresses everyday citizen anxieties, converting transparent digital inspection workflows into tangible public trust and safety. <span class="src">— Yahoo新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPS0NLdE1vZ09KZDVzalRJenZfLUdmSGs1NW9WZVRqR2JVQkhOSWZobjhFX0F1UmhaTlhGUEJ1bUJvSEt6LXVtdHM4SUZ3SGxpMWI5YnVZRGkycl9GVW5GUlRNbDRFaWN6c3lMcUtlaTBHVzFLMVRqZTFVSXI5c1N0ZjNCQ043QTh1T05CbTdvN2dBclVwcjNlVGpoTlhqQQ?oc=5" target="_blank" rel="noopener">勞工參與寫下 AI 治理新頁：微軟與教師工會攜手制定教育規範</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Microsoft, AFT, UFT Set Precedent for District AI Governance - GovTech</div>
+            <div class="item-sentence lang-zh-only">微軟與美國教師聯盟（AFT）等工會組織合作，共同制定學區 AI 的治理架構，這創造了科技巨頭與一線工作者共治的重要先例。AI 入侵公共教育領域時，最大的風險往往是忽視了教師與學生的實際需求。透過工會參與談判，確保技術導入時能保護工作權與教學自主，而非單純的成本精簡。這代表企業與公共部門在導入 AI 時，必須將「勞動者權益」視為核心治理框架。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Microsoft&#x27;s landmark agreement with major education unions to establish public school AI governance frameworks sets a vital precedent. By inviting frontline educators to the negotiating table, this model ensures that artificial intelligence deployment respects teacher autonomy and labor rights rather than treating public education strictly as a target for automated cost reduction. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPS0NLdE1vZ09KZDVzalRJenZfLUdmSGs1NW9WZVRqR2JVQkhOSWZobjhFX0F1UmhaTlhGUEJ1bUJvSEt6LXVtdHM4SUZ3SGxpMWI5YnVZRGkycl9GVW5GUlRNbDRFaWN6c3lMcUtlaTBHVzFLMVRqZTFVSXI5c1N0ZjNCQ043QTh1T05CbTdvN2dBclVwcjNlVGpoTlhqQQ?oc=5" target="_blank" rel="noopener">重構公共教育的科技邊界：從美國經驗看 AI 落地政策的權力衡平</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Microsoft, AFT, UFT Set Precedent for District AI Governance - GovTech</div>
+            <div class="item-sentence lang-zh-only">延續微軟與教育工會的合作框架，這項轉折凸顯了公共治理在科技變革中的權力重新分配。過去新技術多由企業強勢推動、學校被迫接受，如今則建立了由教育者共同決策的雙向防線。對於關注政策創新的讀者而言，這證明了公私合力（PPP）治理不應只是商業簽約，更需要包含公民與基層組織的參與，才能在演算法時代建立兼具創新與倫理健全的公共服務體系。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Building on the Microsoft and AFT collaboration, this shift underscores a crucial redistribution of power in public technology policy. Moving away from top-down corporate tech deployment, this model proves that effective public-private governance requires genuine participation from frontline workers and civil society to balance innovative efficiency with public ethics. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE5mUmEwLXZuWG5sTjRHU3hLVlVTeHlLV3ZBbWF5REI0aVpRYzZacVdvckJtYXFHQmJpOU1mTWgxSVZCcDBFdmlfaVE0U0tLMjc0amNab09NS1EzVl8wZnRGclowcnZDZ0tqWTNyTFZsaGRQOVJLUWc?oc=5" target="_blank" rel="noopener">數據驅動政策新紀元：EBPM 與 AI 如何徹底重塑行政決策循環</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">EBPM ×AIで行政にデータを活かし政策サイクルを変える【第48回】 - デジタルクロス</div>
+            <div class="item-sentence lang-zh-only">日本推動的 EBPM（循證政策制定）結合 AI 應用，正從根本改變公務體系的決策模式。傳統行政決策常仰賴慣例或政治直覺，而 AI 則能快速精準分析龐大的社會數據，實現「動態調整」的政策循環。這種轉型讓政府治理得以更加敏捷，大幅縮短政策評估與修正的滯後期。對社會創新者而言，這意味著未來的公共政策將像軟體產品一樣，能夠實時迭代並精準回應民眾需求。 <span class="src">— デジタルクロス</span></div>
+            <div class="item-sentence-en lang-en-only">Japan&#x27;s integration of Evidence-Based Policy Making with AI technologies is fundamentally reformulating public administration models. By analyzing vast social data streams in real time, governments can transition from static intuition to agile decision-making cycles, allowing public services and policies to iterate dynamically much like modern software products. <span class="src">— デジタルクロス</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/security/report-states-tackling-local-gaps-in-infrastructure-cybersecurity" target="_blank" rel="noopener">強化區域數位韌性：州政府如何協助地方填補基礎設施資安漏洞</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Report: States Tackling Local Gaps in Infrastructure Cybersecurity</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/5c4cbd6/2147483647/strip/true/crop/1100x535+0+47/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F7c%2F8c%2Fa4f08f83a6afc7373e45c5fd85ab%2Fshutterstock-618995387.jpg" alt="Report: States Tackling Local Gaps in Infrastructure Cybersecurity" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">最新報告指出，美國各州政府正主動跨出層級，協助資源匱乏的在地社區強化水電等關鍵基礎設施的資安防護。這揭示了數位時代公共治理的核心挑戰：安全網絡的強度取決於最脆弱的一環。當地方機關缺乏預算與技術人才時，上級機關必須重新定位為資源整合者與技術後盾。這種聯防機制的建立，是建構一個能抵抗外部威脅、深具韌性之現代智慧社會的重要一步。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">A new report highlights how state governments are actively stepping in to assist resource-constrained local municipalities with critical infrastructure cybersecurity. This initiative proves that digital security across public systems is only as resilient as its weakest link, requiring higher-level public authorities to serve as proactive resource integrators and cyber defenders. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-10 08:20:21 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
