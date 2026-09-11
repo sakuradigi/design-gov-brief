@@ -1,8 +1,8 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T00:04:29.141041+00:00",
-  "total_raw_articles": 359,
-  "total_verified": 359,
+  "generated_at": "2026-09-11T03:28:37.585014+00:00",
+  "total_raw_articles": 362,
+  "total_verified": 362,
   "total_failed": 0,
   "selected_design": 5,
   "selected_gov": 5,
@@ -14,7 +14,7 @@
       "category": "design",
       "region": "none",
       "verified": true,
-      "has_og_image": true,
+      "has_og_image": false,
       "pub_date": "2026-09-10T22:40:55+00:00"
     },
     {
@@ -24,7 +24,7 @@
       "category": "design",
       "region": "none",
       "verified": true,
-      "has_og_image": true,
+      "has_og_image": false,
       "pub_date": "2026-09-10T22:39:57+00:00"
     },
     {
@@ -44,7 +44,7 @@
       "category": "design",
       "region": "none",
       "verified": true,
-      "has_og_image": false,
+      "has_og_image": true,
       "pub_date": "2026-09-10T22:38:12+00:00"
     },
     {
@@ -64,7 +64,7 @@
       "category": "design",
       "region": "none",
       "verified": true,
-      "has_og_image": true,
+      "has_og_image": false,
       "pub_date": "2026-09-10T15:57:17+00:00"
     },
     {
@@ -84,7 +84,7 @@
       "category": "design",
       "region": "none",
       "verified": true,
-      "has_og_image": false,
+      "has_og_image": true,
       "pub_date": "2026-09-09T23:04:27+00:00"
     },
     {
@@ -94,7 +94,7 @@
       "category": "design",
       "region": "none",
       "verified": true,
-      "has_og_image": true,
+      "has_og_image": false,
       "pub_date": "2026-09-08T20:37:28+00:00"
     },
     {
@@ -104,7 +104,7 @@
       "category": "design",
       "region": "none",
       "verified": true,
-      "has_og_image": true,
+      "has_og_image": false,
       "pub_date": "2026-09-08T20:34:18+00:00"
     },
     {
@@ -318,6 +318,36 @@
       "pub_date": "2026-09-09T10:00:00+00:00"
     },
     {
+      "title": "在ることの再演",
+      "url": "https://www.japandesign.ne.jp/event/projectvol9-tokas/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-11T02:00:46+00:00"
+    },
+    {
+      "title": "椅子作家展　TAKAYAMA CHAIRMAKERS EXHIBITION",
+      "url": "https://www.japandesign.ne.jp/event/chairmakers-kusakabemingeikan/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-11T01:00:11+00:00"
+    },
+    {
+      "title": "Brilliant Color",
+      "url": "https://www.japandesign.ne.jp/event/brilliantcolor-toyamaglassartmuse/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-11T00:05:27+00:00"
+    },
+    {
       "title": "【求人情報】グッズ製作会社の株式会社サンワが、造形デザインなど2職種を募集",
       "url": "https://www.japandesign.ne.jp/news/2026/09/89649/",
       "source": "JDN (Japan Design Net)",
@@ -438,34 +468,14 @@
       "pub_date": "2026-09-09T00:45:18+00:00"
     },
     {
-      "title": "吉田璋也のデザイン",
-      "url": "https://www.japandesign.ne.jp/event/yoshidashoya-panasonicmuseum/",
-      "source": "JDN (Japan Design Net)",
+      "title": "Satyressがケンタウロス型ロボット「Threehalves（スリーハルヴス）」を公開。危険な作業環境での遠隔操作ロボット",
+      "url": "https://www.axismag.jp/posts/2026/09/722185.html",
+      "source": "AXIS Web",
       "category": "design",
       "region": "jp",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-09T00:40:16+00:00"
-    },
-    {
-      "title": "Suicaの新キャラクターデザイン投票がスタート。若手クリエイターが手がけた3つの原案候補から決定",
-      "url": "https://www.japandesign.ne.jp/news/2026/09/89880/",
-      "source": "JDN (Japan Design Net)",
-      "category": "design",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T00:05:31+00:00"
-    },
-    {
-      "title": "カルビーやキヤノン、トヨタ自動車らが登壇、「design surf seminar 2026」が11月6日に開催",
-      "url": "https://www.japandesign.ne.jp/news/2026/09/89763/",
-      "source": "JDN (Japan Design Net)",
-      "category": "design",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-08T03:05:24+00:00"
+      "pub_date": "2026-09-11T02:48:00+00:00"
     },
     {
       "title": "ゼンリンミュージアムで「魅せる地図」展。古地図の装飾と印刷技術から、地図の表現を読み解く",
@@ -548,19 +558,9 @@
       "pub_date": "2026-09-07T02:15:19+00:00"
     },
     {
-      "title": "横浜人形の家で「建築と記憶」展開催。坂倉建築研究所による建築と40年の歩みをたどる",
-      "url": "https://www.axismag.jp/posts/2026/09/722328.html",
-      "source": "AXIS Web",
-      "category": "design",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T01:08:53+00:00"
-    },
-    {
-      "title": "企業 AI 正從技術議題走向營運管理 樂雲 AI 治理論壇探討治理、安全與持續防禦 - iThome",
+      "title": "企業 AI 正從技術議題走向營運管理 樂雲 AI 治理論壇探討治理、安全與持續防禦 - ithome.com.tw",
       "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE94U0lya3lRZkhFaFhpOUg1Njh4MWFmMkE3V1kxOUM0d0htX3A2R25WeVhNVjJpR19IX05LUTlHTkI5cGg3MzhDR1hKOA?oc=5",
-      "source": "iThome",
+      "source": "ithome.com.tw",
       "category": "gov",
       "region": "tw",
       "verified": true,
@@ -598,24 +598,24 @@
       "pub_date": "2026-09-07T08:25:00+00:00"
     },
     {
-      "title": "自由開講》美中AI治理戰 台灣不能只做晶片 - 自由評論網",
+      "title": "周處長拜會聖露西港市 深化智慧城市及經貿交流 - roc-taiwan.org",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9jSVhiNDJ2MGlKN1lXSU1CZjVocEtBRHZqVW5ibl9WRkcwd3RzMGpFWHFkcE01UWlSb3QyWnFXQlVQQWMtUFdJamZJQ0dZd0pxc2RYZ3BiSjRTU1A2?oc=5",
+      "source": "roc-taiwan.org",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T07:00:00+00:00"
+    },
+    {
+      "title": "自由開講》美中AI治理戰 台灣不能只做晶片 - talk.ltn.com.tw",
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE4zWGJNV3BEWlVvU0JGUEpJeHlnNlhHbFM2Vnh3YUhwSUcydVR5TEtueUxXUzlWTndpZkgydjMtdmsxM3E3SVJXZ291akFUZnd2U1Zid0FRWmszelE2X1h4aHN30gFnQVVfeXFMTmlubjJtWk5nQjBySnBwbU9VNDNTZEFtQnhBak5jMC01Z0djM2hwUzZZNEQtM3NseGhuMEYtUjBlaURUWHB1dWp0WmRxZkxQVS1nUkdUZmdrSGJ4a0ZnczJQZWRxSDRlTQ?oc=5",
-      "source": "自由評論網",
+      "source": "talk.ltn.com.tw",
       "category": "gov",
       "region": "tw",
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-06T12:00:00+00:00"
-    },
-    {
-      "title": "《電週邊》和碩攜手勤業眾信共築AI治理與數位雙生一站式解決方案- 證券 - 工商時報",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9QSGswWGM5TGptMzBBNFV6S2ZmdFhYcEJkdF9IZXRoNFZLdE80SEh3QzRzM1owaU1CNTVzLTVPdlhjazBFZWxnRzl6bFRYT1psSWFVQ2dKbGM3c0w2cUJF?oc=5",
-      "source": "工商時報",
-      "category": "gov",
-      "region": "tw",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T02:42:00+00:00"
     },
     {
       "title": "竹市攜手LINE WORKS 智慧城市治理再進階 - 新頭條",
@@ -626,16 +626,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-08T09:50:25+00:00"
-    },
-    {
-      "title": "內政部：全台智慧建築標章2450件　續推永續智慧城市 - 經濟日報",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5lcWhfc3VuRTNjRzJyT3NqSmxnZGtVR1BKZVUxQ29SRFVYV1g2dXdXOTh4ZGlET1RGZEZjb0lrM2JJcmlfNHUwenhmcUVhV05iZzd1M3JEd2lHd9IBX0FVX3lxTE1ZZ0J3WFR6MGNVNEFOdUZQa0FwUHNBbF9vdnZtVkN3dXNuVDVPVEtCSVl4YndpQnlCLTZwSlJsblNOeThBVHd6Tm5lRWpabW51Q1d3bnpETXkzR0NQRmxF?oc=5",
-      "source": "經濟日報",
-      "category": "gov",
-      "region": "tw",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T05:36:56+00:00"
     },
     {
       "title": "「AI 模型能力早就足夠」MaiAgent 創辦人張介騰揭企業最大破口：AI 治理跟不上，企業如何補上？ - 未來商務",
@@ -658,6 +648,16 @@
       "pub_date": "2026-09-08T06:02:35+00:00"
     },
     {
+      "title": "內政部：全台智慧建築標章2450件　續推永續智慧城市 - money.udn.com",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5lcWhfc3VuRTNjRzJyT3NqSmxnZGtVR1BKZVUxQ29SRFVYV1g2dXdXOTh4ZGlET1RGZEZjb0lrM2JJcmlfNHUwenhmcUVhV05iZzd1M3JEd2lHd9IBX0FVX3lxTE1ZZ0J3WFR6MGNVNEFOdUZQa0FwUHNBbF9vdnZtVkN3dXNuVDVPVEtCSVl4YndpQnlCLTZwSlJsblNOeThBVHd6Tm5lRWpabW51Q1d3bnpETXkzR0NQRmxF?oc=5",
+      "source": "money.udn.com",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-04T05:36:56+00:00"
+    },
+    {
       "title": "張秀菊議員第8次定期智發會人事處工作報告 建立「桃園AI治理基本規範」 - 台灣新聞雲報",
       "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5IQTRReDl5TDRiSHRNNV9saGZqQ1o1UDFqMl80cmZDT1otclVlMFFhcFJaX0VOTEVFZXpUMjBUNUdpRVRqNWc?oc=5",
       "source": "台灣新聞雲報",
@@ -666,16 +666,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-04T11:28:59+00:00"
-    },
-    {
-      "title": "資策會科法所揭AI藥品監管新局！全球加速建制度 臺灣整體AI治理仍待成形 - 環球生技月刊",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1yM3lKRUNjZmtVZ3FuUEotc3BKMHppbHFObmozZ1lsbjFlSU1jWlgzZ3RoQlZHSml0YmJOb0dNQmVEOUJXTExPel94WjhpNmVHSTdYRGtUVnR3c0JqbUZRZ09hYThqeVc5?oc=5",
-      "source": "環球生技月刊",
-      "category": "gov",
-      "region": "tw",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T01:58:01+00:00"
     },
     {
       "title": "南投縣衛生局「關鍵食安管理計畫」榮獲2026智慧城市大調查「安心城市」食品安全專案獎 - 墨新聞-MORE News",
@@ -688,7 +678,7 @@
       "pub_date": "2026-09-09T09:11:46+00:00"
     },
     {
-      "title": "安碁資訊8月營收轉雙增；深化布局政府市場 | MoneyDJ理財網 - LINE TODAY",
+      "title": "安碁資訊8月營收轉雙增；深化布局政府市場| MoneyDJ理財網 - LINE TODAY",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1YMWlOR3c1b01pTkI3S2gwQWctSldZSks4LWMzbGd3bm96WkZaVXhzWWZ5d3JDUklVSk1qM21KNGFGcWpaYlJKck1DdnkwZi1wRG1scnlB?oc=5",
       "source": "LINE TODAY",
       "category": "gov",
@@ -798,9 +788,9 @@
       "pub_date": "2026-09-04T05:15:00+00:00"
     },
     {
-      "title": "雲林縣府勇奪「臺灣AI卓越獎」雙項肯定成績是非六都第一 張麗善率隊扎實推動AI轉型 - 蕃新聞",
+      "title": "雲林縣府勇奪「臺灣AI卓越獎」雙項肯定成績是非六都第一 張麗善率隊扎實推動AI轉型 - n.yam.com",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5aQUh0SllyU1A0Tml6M2RuaU04ZWN3R0dhS0F3R1gxOEV0UVBzMTNXN2FCbEJEdFMtZU1DWWdTbzBQZ3RJYTlrUFA4QnBqczVsSXc?oc=5",
-      "source": "蕃新聞",
+      "source": "n.yam.com",
       "category": "gov",
       "region": "tw",
       "verified": true,
@@ -818,14 +808,24 @@
       "pub_date": "2026-09-09T05:09:46+00:00"
     },
     {
-      "title": "臺北東京視訊會議深化合作 互稱「數位夥伴」明年實體展接力 - 蕃新聞",
+      "title": "臺北東京視訊會議深化合作 互稱「數位夥伴」明年實體展接力 - n.yam.com",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5DVXVCbkdNSnVVMTFITlEwMnRwN1dwN2Zxam41QmlGcjJuSEhSVEpYaTlnb1VWeW1ENWp0TVRRVE0yaE42Y1VoUllBcE1PWFdaZUE?oc=5",
-      "source": "蕃新聞",
+      "source": "n.yam.com",
       "category": "gov",
       "region": "tw",
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-04T14:48:29+00:00"
+    },
+    {
+      "title": "臺灣AI前瞻技術進軍印尼 中正大學攜手慈育大學開創合作新局 - 生活新聞 - PChome Online 新聞 - PChome Online 新聞",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQcTFaZUsxc3poVDQzYjY2MUF3eU1URU9OOXdoUGVIbU0zV0JHQk5NNmdSTXJ1ODY5cndTOVR2ZDFnNE9scVFvNmdWNHl2Sy12SWp0RWNHVUF0YVZwRHB4c2U4bmZ0NXRxdkk2ZWNqNDFRZUhSLXJIZ3I2bzJEcmRUVGhnWUUzd2Q0?oc=5",
+      "source": "PChome Online 新聞",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T00:03:25+00:00"
     },
     {
       "title": "台中推動城市智慧樞紐規劃 攜業界交流智慧杆落地應用與營運方向 - Life 生活網",
@@ -928,16 +928,6 @@
       "pub_date": "2026-09-10T21:55:26+00:00"
     },
     {
-      "title": "Webinar Recap: Trump-Xi Summit: A New Opening on Frontier AI Governance? - Asia Society",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOc2VBc216Vm1qZE5VQ0ZzVjZUd2tVaWZtS0dNakJaMENZVDlMY2VWY2lnQXRydFgwc3U0NWFxMzNkc2JULTdsMm9saExEdEJuYTE1YnkwdHY4bUFmc3A0cWNrMWxNVVZ3cHdWN1R2WTVlRUVIS3RFNjV3VmllaGdyUVgydzVYNldyLTdDUEl3WXZxVTJ6T21DTmVENWhvVURRb0U4bWFwT0w?oc=5",
-      "source": "Asia Society",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T22:07:33+00:00"
-    },
-    {
       "title": "Chinese Consul General in Willemstad Zhang Kaibin Publishes Article Titled People-Centered, AI for the Positive and for Good: Working Together to Build a Just and Equitable Global AI Governance System_Ministry of Foreign Affairs of the People's Republic - fmprc.gov.cn",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE55UnpFRGNsdG45enFXbXNEMlNPeTZzUkJOdy13T1Y2TVlKcGhGZ25PNDQ2NlBEbTREQmpuTC1WeFA5XzE0TXlpRGZST2VabkdQMWtNVEhSTDFkU1pNQTE0aXEzaVhGQ3dQbFg1MkRuR1BYWmM1TnVLWG1yVQ?oc=5",
       "source": "fmprc.gov.cn",
@@ -948,9 +938,9 @@
       "pub_date": "2026-09-07T15:47:00+00:00"
     },
     {
-      "title": "America’s Two Largest School Districts Impose AI Moratoriums - Tech Policy Press",
+      "title": "America’s Two Largest School Districts Impose AI Moratoriums - techpolicy.press",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPdV9ibVZxdTNMSVQ1bHBCWkJjYWtfaE9DWEJvMUg0VS0tLVBVYS1heGFLZC14ZFlQMzJJbEV5b1J4U1JZNnVYRC1DamdTUUFkM1k4dTF3RlFXOGlrMzR1MEUwaWY3MUFRNzBxNGozZmNCRUhsNXp6NzI2cDI4aDlrdWNwZjlteF93UUtwLQ?oc=5",
-      "source": "Tech Policy Press",
+      "source": "techpolicy.press",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -998,6 +988,16 @@
       "pub_date": "2026-09-04T16:04:00+00:00"
     },
     {
+      "title": "Uber’s US$966 million fine puts agentic AI governance in focus - Intelligent CIO",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPdWR6cFNkTkN2TkZQWGZPN3BubFV5bms1OXdPbFZWQ3lTZmE1UlZrYjg2Y29xYXNzUVl1Xy1TY1ZqQzc5LUNBX3JfTlEzMkRfeWl1Y0ViMkVjUDlMelhLa3pIQjBaMjBzTWF3MThkMERQQXcwUm8tQ1RxQ2d1aTJzdlZwdzlpRDRmQWFpX1QtSFBrS3BmN1FudkhRZWRZenRiVlZCTklZWDNGdw?oc=5",
+      "source": "Intelligent CIO",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-07T10:06:39+00:00"
+    },
+    {
       "title": "New tech policy takes shape at Lamoille South - Vermont Community Newspaper Group",
       "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQS1p1MkJyRlY3RmJ3U3RDc3FWOEdBd20yX0JsMzRRU1otcUJhMEhocTR4dllWd0xFTkU3ck5oUVE1a21tS2JTeXdfckNETHhxX3paTzYteHdyY2lXbzRCcUJQOXhyWmpLVnU4VlByeUhMQTdYeUEtYVI4blpadHZSQUQxUG50bC1pb21RTENZZ0xxYXNwZFc4b1Q5QnJNc3p2c1RzZ2h4UXpnb1piNGVGN2Juck5TbDcyX1dkRjlYOW9FVHYteGc4UnltX3VEbnJDb3o5QVZLY1dUOExRSGpoanBNdjM?oc=5",
       "source": "Vermont Community Newspaper Group",
@@ -1018,9 +1018,9 @@
       "pub_date": "2026-09-10T16:22:03+00:00"
     },
     {
-      "title": "This Labor Day, Consider AI's Impact on Hiring - Tech Policy Press",
+      "title": "This Labor Day, Consider AI's Impact on Hiring - techpolicy.press",
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5XRGNQOVMxRHN0TC1KRElVaFM3Yml1Um4zZ1U5SUNETGFTMTZ5SUtHdVkxbEllSWdpRVZaMWEyZXVuOFVYeklpTGt6UFpiYWtGbjBnTWVqMEY4VGtHQ0Y2djNOMzIwM1k?oc=5",
-      "source": "Tech Policy Press",
+      "source": "techpolicy.press",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -1028,14 +1028,14 @@
       "pub_date": "2026-09-06T07:00:00+00:00"
     },
     {
-      "title": "Blog / From Legal Adviser to AI Governance Leader: Five Lessons for General Counsel - Lexology",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNYjFhM1BHbDliSXBjcld2WmtWTWw4WklhRTFlZGJkNm5EY3h2cEpCQlloYzlkV0RiUWM1RWNvQWRyeWd6UGRzUjlyZXF3V3h5TnJNQUx1OVdKd2VjSF9CN0ctc1ROdFZpX3BkMkpTbkRxeGVhSDM4RjFDbm50VTFCUnBMNjVUSEU?oc=5",
-      "source": "Lexology",
+      "title": "AI governance for Malaysian organizations - NTT, Inc.",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQRXNEbkxmclRwbnhGTC12dWtERHFJMkdMaDdLTzd1RjNHWVE0V2dmMmEyTFltNTQxcjZMT1F4M1dXenVScjBsczRxNW9pZVZYa2l0WDZrTXNrd29OUjdzQUtCWTBQSUVPbjRLSVlHNjhMWXhRcFZDcklCVWVuNHc0SlhIWXpFSFJ1azFfVHhwYVFQYlc3LWlFRTZiRmxKZEpPQmNIeVFJODk2QXR4dkZ1UmMwMTF6SkpDVE4zZm1Bek9PTGZB?oc=5",
+      "source": "NTT, Inc.",
       "category": "gov",
       "region": "us",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-10T14:10:02+00:00"
+      "pub_date": "2026-09-08T15:25:24+00:00"
     },
     {
       "title": "UNESCO launches global consultation on AI governance in education - Digital Watch Observatory",
@@ -1058,9 +1058,9 @@
       "pub_date": "2026-09-10T22:06:49+00:00"
     },
     {
-      "title": "Beth Hiatt on Building AI Governance: Infrastructure, Process and Meaning - CDO Magazine",
+      "title": "Beth Hiatt on Building AI Governance: Infrastructure, Process and Meaning - cdomagazine.tech",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNemlHY3BKVVhEUkpaZ3RhT1JYQ3VHYUI5dmNJVlA5ZjhyTDZMd0dvVzZDRkgydk10UkN3REhHcWxxdHZpeHIxZUJmeG0wWWJwbUlJU2hZZ1BSdjNrMmlQM1MzRUY0ZUlvVFBpMDRnZy1Za0dISTVwcFlCenpQNG1WRy1XUjlqV1YtQkFpeU9zbFl0S3poX2hPZHNOWkF1WjM1WFpMZ3pic29vcHlpMzZacEZlUDY?oc=5",
-      "source": "CDO Magazine",
+      "source": "cdomagazine.tech",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -1068,9 +1068,9 @@
       "pub_date": "2026-09-08T11:00:00+00:00"
     },
     {
-      "title": "Canadian Hydronyms, Builders, and Other Adventures in Middle Power Tech Policy - Tech Policy Press",
+      "title": "Canadian Hydronyms, Builders, and Other Adventures in Middle Power Tech Policy - techpolicy.press",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZWo3cUlfLW5rcDIwNDJtQWM1Q2NWU0Z4emtwY1hfTnlvNW5HSFlna3hkNGRIckt3SjdsZmo3dmJqczRpaVFrOWpTaVppNW1VNUZNQTZpQk93V1VSa2NwUVdTSXViWFJ0WlBXRDEwaHZYazNvU0kwcjhnZ0QtSk5zLUFGUWNqRW9wenBOVHA0dkdqNmRRM0FPUUkwdll4TWtwTU82c2lmMl8wZw?oc=5",
-      "source": "Tech Policy Press",
+      "source": "techpolicy.press",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -1168,26 +1168,6 @@
       "pub_date": "2026-09-09T19:07:26+00:00"
     },
     {
-      "title": "Low-Code AI Governance: 8 Questions IT Should Ask Before Business Teams Build - RESIDENT™ | A Luxury Lifestyle Magazine",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPaVhGS1RjMkZuOFB3Skh1cXF4cVJuZFp5VUY3aUdYUWtTN3hZQmF4MGVUZnRCR3c1TFBZek1jU3ZfUWE1M1pFMXBTMFkxelpvaW9zczZtVElzNHp4VFF0UjN3MGk2dVQ1RG1sa2pIODFWUmJTeUVyaVcybEh4MU1OM3BqZG9EcGVkWHlmYkpVX2Y0X3ZYX3Y0SjFfbWg3X0xxdGMzUnhyX3lyZy1WbTExMk1tZmxXaklsR2dRQm9udHBmZUhVbkhET0d2VkF6WTlZMnJlMEVRbjg?oc=5",
-      "source": "RESIDENT™ | A Luxury Lifestyle Magazine",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-10T10:57:04+00:00"
-    },
-    {
-      "title": "Middle East boards leading UK, US on AI governance plans - Arab News",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQmRpd0FWVGJ0NEZBdDY5SnVEdk9FT2dGcXJLTk02b1dvbFpwSlFZa2NBMWdJZU83SUxvUWt3WEhuOGZkbmxKb3UtNGNobDhHZnBtal8zTm1pRzdadlFBN0ZEZXdYc20zMkVUVWd5ck5HekVCWTlNT09FSE8tWXd6czBlSVgyNUloeDE4WElORXRJVWYxeHN2T1J2UXdtdw?oc=5",
-      "source": "Arab News",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-05T13:17:47+00:00"
-    },
-    {
       "title": "When Tech Idealism Becomes Overreach: The AI Governance Challenge - AnewZ",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNaVl1bVY2Z3ZGOWdoQzJjQlBiWHFZVVpsZHAxQW9zZHZrcjZLeGNhcGkyV3QxMko0ME4wTU9KUmpqdGE5ZTA1U3dOTTVxMjVJeVVsZ3RuVDl2Wlhtb1UzbE1NVWtWb3FaWXc2V2VZRGNVMklyN2tldTNkNnVhU0duQWpsenU5ZURrS200eUFKN1A2N0hNN3M2Ym5URWRFOGRYZkFXYW9KTzk?oc=5",
       "source": "AnewZ",
@@ -1198,9 +1178,9 @@
       "pub_date": "2026-09-07T08:20:00+00:00"
     },
     {
-      "title": "AI governance and orchestration - Capgemini",
+      "title": "AI governance and orchestration - capgemini.com",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxORzVaR2JYTkFvR3hXUlBpRXpkTnBaMG5NaHJ4enVYYkVSVElkYzFPeHJQenhwbXc1LWNBLTJDOGR2NHdUTHIwdV8zOFdkZlJjUzk2MlRQRUloQmEtVl8zWWw1WlZLUF9FdTNPVk5qVkpydm5saDVnb0M4enZVOVY2ZElVSDdsekdBSkhNMHhSaUZDbERB?oc=5",
-      "source": "Capgemini",
+      "source": "capgemini.com",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -1208,9 +1188,9 @@
       "pub_date": "2026-09-08T09:39:06+00:00"
     },
     {
-      "title": "Anthropic IPO set to put AI governance under public-market scrutiny - digitimes.com",
+      "title": "Anthropic IPO set to put AI governance under public-market scrutiny - digitimes",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcUxvR1BTemcwampreEZQNERlQTRrcnBzWmdOQ3ljUDAwVDBwQXZvbjZtNjZWR2xpSjVfT0EtR2I3QmIxR3lvWHAzQnVsUU9tdG1wX3F6OFJMckJtOU96ZGxULWxzbUgzMVFoNVVxZDdRVHlQdnhYdFpiSWNkWVc1dzVFRHN0aGxXWnRqQW1HUm5PWEZ5NjZZ?oc=5",
-      "source": "digitimes.com",
+      "source": "digitimes",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -1228,6 +1208,26 @@
       "pub_date": "2026-09-10T07:02:54+00:00"
     },
     {
+      "title": "Digital minister says Malaysia’s draft AI Governance Bill complete, hopes to table it by Q1 2027 - malaysia.news.yahoo.com",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOVGprTmVfUzZmQW5aXzVaQTNTekVrVkFpRnJ5dUN4UU10ZGlvYk0zX0VXWmt0blBoVk5telVhZUZnUXNaZUpwazZtVUJyZ1M5aGcyWDR5ZGhYVzVPM0E4cDFFS0hvVWctb1ZuQ19tdEFBYWFGLUgyeDF1VS1QalRFaGVZc2pMNE43TkU4?oc=5",
+      "source": "malaysia.news.yahoo.com",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-10T03:49:00+00:00"
+    },
+    {
+      "title": "Three Incompatible AI Governance Models Now Have Multilateral Endorsement – and None Covers Agents - CryptoRank",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPb3hKdTJuQkREXzVqaERYV3pUS3BLajZ4elVhM2FvVll1M2lNbTNnSGtDR2pqakJYYjliOTQ5MEp5T2d6dk84SDF1QVA4QVRtb0o1ZDFJUmZ3aWt4Y1JfZEhMMkM0YkRudmJFcW5EajdOS20wUmlLcFptUmowdUJBdFVOeFBvT0JEdjE3MWpvLVBxWVhIN1RoQTV4Yk9xV2ZiUl83VG03Vk4zUXBfbmEyY01WWV9DNkVnS2hzX2JaSGI4cWEzbFlhUkM0S05pdDA?oc=5",
+      "source": "CryptoRank",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-04T16:10:52+00:00"
+    },
+    {
       "title": "Bloomberg Industry Group seeks a tech policy reporter - Talking Biz News",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOaC1Od2FJeXN0VkdER0EwWDlOaGdhQ2pzbVQ5RXVyR0pRMlpnY1FURWp0TVJfYTlRMVl6SC1JWS1YTEJDc2dXcWhMempma3NfOXlYY3JEakNyNmQyR2ExUXp4S0dFcGlYYWdHMzVJbHRYcTZvenU1c0RaVmY5emxvZUFiN1NsNFdiY3N1clVBNktIZFVOS2J2R2txTG5rNlFOOU5XNg?oc=5",
       "source": "Talking Biz News",
@@ -1236,16 +1236,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-10T17:39:34+00:00"
-    },
-    {
-      "title": "AvePoint at Citi’s 2026 Global TMT Conference: ai governance push - Investing.com",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZDVaZVZpTU1DQUp0TWpaQWJqNG93SnFkWWJEUHFlMXNydzR3Qi1RY1Nrb0FDamZMQTZlOHNQRGItc0I5Vl9OMnpuaXdRNkZWUGpKS0p3RDdrZlhqTjV3ZzNkZUxnbjdQaGdtdlpGbDJqUkg5RHhFUDJ4NE4wYkZYMTVUNWRCc2lsQmtSVVN1Vm5tRlhVY1JERzZ2YmFnb2dCR2paZ2tSQzduTnJlc0ZYWmxPZkI4MHptTzRz?oc=5",
-      "source": "Investing.com",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-08T18:15:04+00:00"
     },
     {
       "title": "Chicago CIOs and CISOs to Examine AI Governance, Cybersecurity Resilience, Enterprise Transformation and the Rise of the 'CEO of Technology' at HMG Strategy’s September 22 Summit - The Manila Times",
@@ -1268,26 +1258,6 @@
       "pub_date": "2026-09-08T01:29:43+00:00"
     },
     {
-      "title": "Three Incompatible AI Governance Models Now Have Multilateral Endorsement – and None Covers Agents - CryptoRank",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPb3hKdTJuQkREXzVqaERYV3pUS3BLajZ4elVhM2FvVll1M2lNbTNnSGtDR2pqakJYYjliOTQ5MEp5T2d6dk84SDF1QVA4QVRtb0o1ZDFJUmZ3aWt4Y1JfZEhMMkM0YkRudmJFcW5EajdOS20wUmlLcFptUmowdUJBdFVOeFBvT0JEdjE3MWpvLVBxWVhIN1RoQTV4Yk9xV2ZiUl83VG03Vk4zUXBfbmEyY01WWV9DNkVnS2hzX2JaSGI4cWEzbFlhUkM0S05pdDA?oc=5",
-      "source": "CryptoRank",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T16:10:52+00:00"
-    },
-    {
-      "title": "Generative errors and professional liability: the Deloitte-Australia case and the new frontier of AI governance - ecija.com",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPYVlCeWR6V09GX0g4a1U2Y0RuS0FMeU9za0lkZ05WYjF2VXhRR3RwNy1yU3dCa1l1ZEdjRkNBZHBBd3c0LXh6MzIzcTN2ejAzNFdYdm5vb3BrOXlHTmI4T3pnNXNFbEtvNVc4U2ktaEQwR21hVjFkZmJMd0FVYjY4Sm10cEMtSGN1S0l3YURwZWFuWnV3UmN4R3BzNGxpLVJXeWVRcTJORVlQV21PakVlUElBQmUxTVpwTnhYVm1UNkkwQm56dVhEMDAySlRvaGt0WW05LXBwdFVJVDBNeFp6U0RsZVRXMzdGY2c?oc=5",
-      "source": "ecija.com",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-08T11:02:11+00:00"
-    },
-    {
       "title": "Ahead of Forum Kickoff, UNESCO Chief Says AI Governance Requires Combined Global Efforts - Fana News -",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPekNMZXN0Q09vZTFrRW92YjlqN2xBSmp2TVJrQ2x3bi1VeUJab2dGNkdNeVozdURybWJjUFRzQXlSRHN0MTRHbl9XUWdSeGEwcktxTEZ6eU5WeU83RENhLV9WZ3h5VWUta1EzX2xJRkc3SmdZUjZ6LTYwdXZFR19DS2FlUm4wLVNYcTBOeUdTSW1NNTZ6WUhHeEtZM3BnRTE2eGVoX3hac3hWNVBBWkVNei1JalU2R0p2OS1mazBxSDFXWFk?oc=5",
       "source": "Fana News -",
@@ -1296,16 +1266,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-08T20:36:53+00:00"
-    },
-    {
-      "title": "Amid Global Concerns Over Superintelligence, Riyadh to Host UNESCO Forum Advancing Ethical AI Governance - Greatreporter",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxORGx2bkN1MGdnRzdXMVM0eWJrNUQ0TEUzb0RjcXJLSldTQURpMVhfeGp4VGk5MGdobFlOVEN0LWxRWUdjc2hxdVUtc2JZSm5pNm5IYU5vSVJyc29IeF9nWFc2NF9WNlNsandMenpuZzV0T0s3TkU2Z2xuX0VjOFpTOTd4alF1SkRsNEs1WFhDdFNpOEtpYjg3Q3o1c00takF2MENEMFlxUG8yNE9YM1ZaMVczLThRbFJ3RVU1R0JRLXhsSFNTY21leWhENzQ2Z3lBZVY0LXp4Y07SAdgBQVVfeXFMTkRsdm5DdTBnZ0c3VzFTNHliazVENExFM29EY3FyS0pXU0FEaTFYX3hqeFRpOTBnaGxZTlRDdC1sUVlHY3NocXVVLXNiWUpuaTZuSGFOb0lScnNvSHhfZ1hXNjRfVjZTbGp3THp6bmc1dE9LN05FNmdsbl9FYzhaUzk3eGpRdUpEbDRLNVhYQ3RTaThLaWI4N0N6NXNNLWpBdjBDRDBZcVBvMjRPWDNWWjFXMy04UWxSd0VVNUdCUS14bEhTU2NtZXloRDc0Nmd5QWVWNC16eGNO?oc=5",
-      "source": "Greatreporter",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T19:07:54+00:00"
     },
     {
       "title": "AI governance framework coming - Inquirer.net",
@@ -1328,9 +1288,9 @@
       "pub_date": "2026-09-09T13:23:48+00:00"
     },
     {
-      "title": "OneAccord Releases Volume II of The Field Guide to the New Economy: Leadership & Oversight for AI Governance - EIN Presswire",
+      "title": "OneAccord Releases Volume II of The Field Guide to the New Economy: Leadership & Oversight for AI Governance - einpresswire.com",
       "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQTmgxRVd6NlROSDAzVzAzTXlzMWMtMnRmVlF3RXpGSl9aRm10UURXeURGeGx3X1hpS1FFOENmRWY4VUc1dmJRcXBIVmRLeThvSGotOG10ZjNVeHU3NU5VUVlmaUE1dzg5Si1aRU4xSVBGdVFGOXM3bmFtOGdVWnEtbmpibFZjWDc1Zms2RU82U05VX0IxTjk3d2FuYTdnR0dYa2k2Rm8tcXRPVXR0Nnc3RGFxLW1GbG91TUs3QUJjdUNuWE1ZdmQ5Mi1kLUlNOTgySE4za2tmeEJKdnU1MzVQMG5TazFBaXM?oc=5",
-      "source": "EIN Presswire",
+      "source": "einpresswire.com",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -1348,9 +1308,9 @@
       "pub_date": "2026-09-08T14:13:39+00:00"
     },
     {
-      "title": "Kier Promotes Suzy Lovell to Group Deputy General Counsel | Legal & AI Governance - News and Statistics - IndexBox",
+      "title": "Kier Promotes Suzy Lovell to Group Deputy General Counsel | Legal & AI Governance - News and Statistics - indexbox.io",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOOTFLZG1PWEF5Und2cUwxNGFpNmFhNXNvUWxtV2FSUmhoRWJZZjk0UldpZ0taS243bTd1c0ZCVTFZbzYzbnBTOVBVaUszbG50MU1nRS1BQVF6XzVJMk1ickctdlowVW5zLV80ZDRvRjd0ZGJhTUJkb1ZNc0oxY1cxcXJXaFZYNUJyMlV6UXFCbWI?oc=5",
-      "source": "IndexBox",
+      "source": "indexbox.io",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -1358,14 +1318,14 @@
       "pub_date": "2026-09-08T17:21:15+00:00"
     },
     {
-      "title": "AI governance and orchestration - Capgemini",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQaUdLYmpsVnJtcFdneWZVNVBrLWZkU2ViR2d4ZEdEVGkxdVRuTUpTUjVySUJ3S3pWVkdCYlRkSTU5UWkwX2trbUdTdlNGR3dRR2VOay1yVHlYMG1ZcTJtblNwMmpoYmR5R1RadVhPU3dBMGtIVm9XVGprOTJmdG1SaEc0OHJzTDhoTFkxSnd5VGtQc2lw?oc=5",
-      "source": "Capgemini",
+      "title": "Amid Global Concerns Over Superintelligence, Riyadh to Host UNESCO Forum Advancing Ethical AI Governance - Greatreporter",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxORGx2bkN1MGdnRzdXMVM0eWJrNUQ0TEUzb0RjcXJLSldTQURpMVhfeGp4VGk5MGdobFlOVEN0LWxRWUdjc2hxdVUtc2JZSm5pNm5IYU5vSVJyc29IeF9nWFc2NF9WNlNsandMenpuZzV0T0s3TkU2Z2xuX0VjOFpTOTd4alF1SkRsNEs1WFhDdFNpOEtpYjg3Q3o1c00takF2MENEMFlxUG8yNE9YM1ZaMVczLThRbFJ3RVU1R0JRLXhsSFNTY21leWhENzQ2Z3lBZVY0LXp4Y07SAdgBQVVfeXFMTkRsdm5DdTBnZ0c3VzFTNHliazVENExFM29EY3FyS0pXU0FEaTFYX3hqeFRpOTBnaGxZTlRDdC1sUVlHY3NocXVVLXNiWUpuaTZuSGFOb0lScnNvSHhfZ1hXNjRfVjZTbGp3THp6bmc1dE9LN05FNmdsbl9FYzhaUzk3eGpRdUpEbDRLNVhYQ3RTaThLaWI4N0N6NXNNLWpBdjBDRDBZcVBvMjRPWDNWWjFXMy04UWxSd0VVNUdCUS14bEhTU2NtZXloRDc0Nmd5QWVWNC16eGNO?oc=5",
+      "source": "Greatreporter",
       "category": "gov",
       "region": "us",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-09T10:47:29+00:00"
+      "pub_date": "2026-09-09T19:07:54+00:00"
     },
     {
       "title": "UK startup AI Score raises $5.4M to scale its enterprise AI governance platform - Tech.eu",
@@ -1388,24 +1348,14 @@
       "pub_date": "2026-09-08T06:03:00+00:00"
     },
     {
-      "title": "Skillcast Report Highlights AI Governance Gap and Accuracy Risks in UK Banking - FF News",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNU2VEMGs2TzRjNFF0Z2VfQmUxSkl1dU5Gd2dNcXMzcnpTX0V4b0lQYTRVUTFYZVZBSGllM09MemJKZzZRcDF1TmQ2bTZMcmJZSWtSRmVOb2VsdzZJTEhERHEwQktvTGlTSTdsQ3IxS2dCdnN1M0Q2NnliMl9jbnNTaFZHWmZfZ2V3UGlzV0lqZDVqbU1zUERSMnA3bHJTbnNrTjVRUTFYaDhwVFg2d1JudVQ0VQ?oc=5",
-      "source": "FF News",
+      "title": "Trump admin fights ABC lawsuit as watchdogs worry Disney will settle with FCC - Ars Technica",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPbTNzZUM5X0ZMOUhwcDQ0YTJ3cTNrU1RWanBBNkZjS2xKem9tYWtLREtGbDVjQVVPSng2XzZ0RC01RnVGU2pibUlOQy0yOXFYLTIyMDRqXzNiTkE4RWd4QUhNc1EzNVQwdURDVHdLcjl5Nkg0WUVfeW1mMU1ORzEyVmpTMXdYQ0VKNk10NkZPdHFMcFlKVUlhUGdRMGpfS0UwUThFaG0xQ1ZIaXd4aGRJZHRrQlRfMnhRNVE2N216bw?oc=5",
+      "source": "Ars Technica",
       "category": "gov",
       "region": "us",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-04T17:47:57+00:00"
-    },
-    {
-      "title": "Anthropic's $2 Trillion IPO Exposes Tension Between Mission and Profit in AI Governance - finance.biggo.com",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9sY3FhQnFZRzFFZTB5QWpNd3N2cS04ZlpMblZfTFl3THZFNFIxR2djdW15dy1lZjBkSGlmanpTYmF4cFVXVzBQSm5tRk9sVnZWelRCQ2xRTTdZZDNVdElkZjhrRDJ2QkRpbldVZ3B1d3BBRnJjRmc?oc=5",
-      "source": "finance.biggo.com",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T18:38:00+00:00"
+      "pub_date": "2026-09-04T19:46:34+00:00"
     },
     {
       "title": "Microsoft tightens AI governance as agentic risks rise - SecurityBrief Australia",
@@ -1428,24 +1378,34 @@
       "pub_date": "2026-09-08T13:37:07+00:00"
     },
     {
-      "title": "Trump admin fights ABC lawsuit as watchdogs worry Disney will settle with FCC - Ars Technica",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPbTNzZUM5X0ZMOUhwcDQ0YTJ3cTNrU1RWanBBNkZjS2xKem9tYWtLREtGbDVjQVVPSng2XzZ0RC01RnVGU2pibUlOQy0yOXFYLTIyMDRqXzNiTkE4RWd4QUhNc1EzNVQwdURDVHdLcjl5Nkg0WUVfeW1mMU1ORzEyVmpTMXdYQ0VKNk10NkZPdHFMcFlKVUlhUGdRMGpfS0UwUThFaG0xQ1ZIaXd4aGRJZHRrQlRfMnhRNVE2N216bw?oc=5",
-      "source": "Ars Technica",
+      "title": "Anthropic's $2 Trillion IPO Exposes Tension Between Mission and Profit in AI Governance - finance.biggo.com",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9sY3FhQnFZRzFFZTB5QWpNd3N2cS04ZlpMblZfTFl3THZFNFIxR2djdW15dy1lZjBkSGlmanpTYmF4cFVXVzBQSm5tRk9sVnZWelRCQ2xRTTdZZDNVdElkZjhrRDJ2QkRpbldVZ3B1d3BBRnJjRmc?oc=5",
+      "source": "finance.biggo.com",
       "category": "gov",
       "region": "us",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-04T19:46:34+00:00"
+      "pub_date": "2026-09-04T18:38:00+00:00"
     },
     {
-      "title": "AI Governance Stocks Gaining Attention After GPT 6 Astra Launch - simplywall.st",
-      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQV2NLLVhUVVdfYmxFcUxsS2JCbU9DT1YycE9KN1Zwai0ySG8zcVk1R3RsN1R3ajR4MEk3VWl5OEhhYW5hZHJxRFBPWlNBUjNLTHYwYXdWRkJfU0xjYldBVFdwOHdlWi0yVGdzZ05WRUlVOHhsejRGSlJFTWNxZ3A3VmlGYXhLVF9Mb2pFVDZLWG4tcGloUFZiMHh0MTE4dmxHYVBmVl8zR1JTakd4N3V4d2hfbDhRSWNDVG8tY2V0V3FuSnc5dVF6OHhEQm9hM21RZnNZdm9BLURxVDdQVmhhaTF3SELSAeoBQVVfeXFMTVN2bkZqdGRtRDVxblhXOGRlU1c5LVI1ZDc0dVZONEFDM3FQOUVBRzBXVWcxWWg4Yy1VcGtXWGgxZTJzbS1ZNjNwN1lJZVdCdHFuQ2xQdTh5TFpoZFpLYUhHUThnbDlqZU1FdlE5b1h1WlVPY2IyVk1vV2RnNW00MFg5djZ4cnJtNlVpYUlwUWFlSHBYWUs4ZDBRTDBUMHJYZFdSYjlJSlRIWUJjM2pvRHhvcUxObUpiZm9tSGJEeDJkS1N4cWJ5TENYWDZxVHk4eGFLdTdvdmZuSHkxRjh3MTRDWnB5UUtjQy13?oc=5",
-      "source": "simplywall.st",
+      "title": "Skillcast Report Highlights AI Governance Gap and Accuracy Risks in UK Banking - FF News",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNU2VEMGs2TzRjNFF0Z2VfQmUxSkl1dU5Gd2dNcXMzcnpTX0V4b0lQYTRVUTFYZVZBSGllM09MemJKZzZRcDF1TmQ2bTZMcmJZSWtSRmVOb2VsdzZJTEhERHEwQktvTGlTSTdsQ3IxS2dCdnN1M0Q2NnliMl9jbnNTaFZHWmZfZ2V3UGlzV0lqZDVqbU1zUERSMnA3bHJTbnNrTjVRUTFYaDhwVFg2d1JudVQ0VQ?oc=5",
+      "source": "FF News",
       "category": "gov",
       "region": "us",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-04T04:20:53+00:00"
+      "pub_date": "2026-09-04T17:47:57+00:00"
+    },
+    {
+      "title": "Montra Electric’s Karthik Narayanadoss highlights AI, governance and compliance at JSA Boardroom Connect - ETLegalWorld.com",
+      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNdC1iYUQxOFVzNk8zTVhLcTFKck51aGJVeVpvb3FwaUNNWWl2WXNPeUhZM2J6d2FXWnNkOUtFcDM4YnNrbzhZWlNMaFB4ZEE2dmZrS3hsNTBEUjRhMTZtekMxRkFJQ2oxaUdtWm5PTjNHcWJVUUVhbjVnR3l5T095Qi1vTDh3MmhWTTVjQVBQcE1JbmxON01MYzc4MUFTN24ta2thZ21tRzVlU2NBclJNNkZrTjh3cGZnMEt2Ni1wTTNhTWoybmNLWXNGZjB0VVpCbnA0ZGU2RGljN1pTaVYwek9NYmh6U1NBZ1pZZE1lU25WX2c4NmNUN1p4N3Vrc21qTzZ30gGDAkFVX3lxTE10LWJhRDE4VXM2TzNNWEtxMUpyTnVoYlV5Wm9vcXBpQ01ZaXZZc095SFkzYnp3YVdac2Q5S0VwMzhic2tvOFlaU0xoUHhkQTZ2ZmtLeGw1MERSNGExNm16QzFGQUlDajFpR21abk9OM0dxYlVRRWFuNWdHeXlPT3lCLW9MOHcyaFZNNWNBUFBwTUlubE43TUxjNzgxQVM3bi1ra2FnbW1HNWVTY0FyUk02RmtOOHdwZmcwS3Y2LXBNM2FNajJuY0tZc0ZmMHRVWkJucDRkZTZEaWM3WlNpVjB6T01iaHpTU0FnWllkTWVTblZfZzg2Y1Q3Wng3dWtzbWpPNnc?oc=5",
+      "source": "ETLegalWorld.com",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-07T13:48:11+00:00"
     },
     {
       "title": "TCS Wins ₹12.26 Billion Odisha AI Governance Deal - Electronics For You BUSINESS",
@@ -1458,9 +1418,19 @@
       "pub_date": "2026-09-08T10:10:44+00:00"
     },
     {
-      "title": "Saudi Arabia joins global AI governance dialogue - Arab News",
+      "title": "AI Governance Stocks Gaining Attention After GPT 6 Astra Launch - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQV2NLLVhUVVdfYmxFcUxsS2JCbU9DT1YycE9KN1Zwai0ySG8zcVk1R3RsN1R3ajR4MEk3VWl5OEhhYW5hZHJxRFBPWlNBUjNLTHYwYXdWRkJfU0xjYldBVFdwOHdlWi0yVGdzZ05WRUlVOHhsejRGSlJFTWNxZ3A3VmlGYXhLVF9Mb2pFVDZLWG4tcGloUFZiMHh0MTE4dmxHYVBmVl8zR1JTakd4N3V4d2hfbDhRSWNDVG8tY2V0V3FuSnc5dVF6OHhEQm9hM21RZnNZdm9BLURxVDdQVmhhaTF3SELSAeoBQVVfeXFMTVN2bkZqdGRtRDVxblhXOGRlU1c5LVI1ZDc0dVZONEFDM3FQOUVBRzBXVWcxWWg4Yy1VcGtXWGgxZTJzbS1ZNjNwN1lJZVdCdHFuQ2xQdTh5TFpoZFpLYUhHUThnbDlqZU1FdlE5b1h1WlVPY2IyVk1vV2RnNW00MFg5djZ4cnJtNlVpYUlwUWFlSHBYWUs4ZDBRTDBUMHJYZFdSYjlJSlRIWUJjM2pvRHhvcUxObUpiZm9tSGJEeDJkS1N4cWJ5TENYWDZxVHk4eGFLdTdvdmZuSHkxRjh3MTRDWnB5UUtjQy13?oc=5",
+      "source": "simplywall.st",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-04T04:20:53+00:00"
+    },
+    {
+      "title": "Saudi Arabia joins global AI governance dialogue - arabnews.com",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVTkzd2gzcnZFM21hTHR5NnJjanhBRlJrRk05Qzg2R3JmTElKaFRyM3FTVllJWXFjbjdGTWZYajkzQzVEdDkxeUNkckhTLW4xLTlYYktaMGdpdldqSlNJTXYwQmgzMlN3NEdUQkJ3alRjSVB4OV8wLTVQZjlGeWtTTFRSb3FQMmpzWVpIam5hRng5dXM4T0RtcDJ3?oc=5",
-      "source": "Arab News",
+      "source": "arabnews.com",
       "category": "gov",
       "region": "us",
       "verified": true,
@@ -1476,16 +1446,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-07T14:39:56+00:00"
-    },
-    {
-      "title": "Cummings has the blueprint for AI governance - Trinidad Guardian",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOd3pTR1MtODJwSWkwVGRxcnpWRHA2dmEyd0hKM1VIODdHRU9XVDhDU2hvTkltTU5Tb0pYc1BVaWIzd1M4WGw1VE11SmNPMDc2TFdOcGZxRDNnbzF4X2k5TzVqRkdxcmtnWjh1YlJqQi1talM0VWd0dHY5WFl0RkN3MU9SN0ZJNVlxTXE0andhc3d0SjBaX2pRZDVwcFRMNmQxTWhQTg?oc=5",
-      "source": "Trinidad Guardian",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T21:13:44+00:00"
     },
     {
       "title": "Albo set for UN tech policy pitch despite US warnings - The Nightly",
@@ -1528,26 +1488,6 @@
       "pub_date": "2026-09-08T06:57:30+00:00"
     },
     {
-      "title": "Montra Electric’s Karthik Narayanadoss highlights AI, governance and compliance at JSA Boardroom Connect - ETLegalWorld.com",
-      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQc3VXUEYyZkxtTHBlS0tEczRRVHdxTWFlMDMwcWFkOEpHUFAtQ3N2MFBBdzBVNnlkakR6QjFKWFdoTlZERk5sUEp3dWJjZ19zMHV4X1pmSHAyN012Y3FKeUlVSWYzV3lBd2ZRZDdHWGhudVNHSTc0RzZZdEFyREtjaUtoblFsTVZMZEJaWHRhTERxSG9RcTlLWktJeTN4TlRSdERhdW94dEw0WlJlNy1jc1Q5MmloNENFZXl5b1hicGY0S3pYOFRkSno2UGI1SzVCREZmVHA3TVRNLVZYUFAtdTZISjB4dzUwamEtMVA5dE0wUGdUWjgwNEhEQ0Z5QdIBgwJBVV95cUxNdC1iYUQxOFVzNk8zTVhLcTFKck51aGJVeVpvb3FwaUNNWWl2WXNPeUhZM2J6d2FXWnNkOUtFcDM4YnNrbzhZWlNMaFB4ZEE2dmZrS3hsNTBEUjRhMTZtekMxRkFJQ2oxaUdtWm5PTjNHcWJVUUVhbjVnR3l5T095Qi1vTDh3MmhWTTVjQVBQcE1JbmxON01MYzc4MUFTN24ta2thZ21tRzVlU2NBclJNNkZrTjh3cGZnMEt2Ni1wTTNhTWoybmNLWXNGZjB0VVpCbnA0ZGU2RGljN1pTaVYwek9NYmh6U1NBZ1pZZE1lU25WX2c4NmNUN1p4N3Vrc21qTzZ3?oc=5",
-      "source": "ETLegalWorld.com",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-07T13:48:11+00:00"
-    },
-    {
-      "title": "Digital minister says Malaysia’s draft AI Governance Bill complete, hopes to table it by Q1 2027 - Malay Mail",
-      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPOTl4bEdHVVNXYmI5bjV2NkxQclNORlhXNWhQYkZQV3Y2dk1TdGt3SHYtbXZpQkx3Qlg4a3RmaUNaZ1NNdzBsLW56cjdfRHRVaVZhYnAzQ0VWRGNyTzRINmhMVFFSZUdtOVNiVVo0QWF5NzdKT3l1U2FSVHBWOTBxZHB6SHJkWmJtZlladldlMlBneTBHM2NlaVd4dlNVZnE3RjNwTHFQX1VZUlc2OG1teGw1czRFbTZrUE0yQzl0eUllQjM0NjZQYkw5M3NGcXVBNE1SRFYya19vNDVUYkVDYTBkVjZxMWQydG84ZtIB7AFBVV95cUxPOTl4bEdHVVNXYmI5bjV2NkxQclNORlhXNWhQYkZQV3Y2dk1TdGt3SHYtbXZpQkx3Qlg4a3RmaUNaZ1NNdzBsLW56cjdfRHRVaVZhYnAzQ0VWRGNyTzRINmhMVFFSZUdtOVNiVVo0QWF5NzdKT3l1U2FSVHBWOTBxZHB6SHJkWmJtZlladldlMlBneTBHM2NlaVd4dlNVZnE3RjNwTHFQX1VZUlc2OG1teGw1czRFbTZrUE0yQzl0eUllQjM0NjZQYkw5M3NGcXVBNE1SRFYya19vNDVUYkVDYTBkVjZxMWQydG84Zg?oc=5",
-      "source": "Malay Mail",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-10T03:54:00+00:00"
-    },
-    {
       "title": "Keralam ministers return to classroom, take lessons in AI, governance - The Indian Express",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNOFF6SGwyb01PdW13YVdndWVyY2lIcE1sekFRa2JqdkNnUHA0NlBxeVExdWx6UDVDaHF3UWEzVGZsUHRQT0VHUHp2VThzY2VNT3lkS0RlU1ExeFc3VVJUMC1fYzBJa1NKN3ZlcVBjOFNvT1ZMX1U5NjROTWxoUHo1eE5WOUpTN0VsVlJLd1RLYW0wQUt0ZXFkb1NRYlhja1RrS21DZk9fU0g2YU5udC1fcHBjU09qYnp6NEo2UmtUNVJkSW1uRVHSAcwBQVVfeXFMUHNwMDNHTGZBR2JQYWZHSUVJbzZROW9IVXlObFlVN1pFelBLRVhENDRWU3VpUDg2RGdfTTlhWTJsdm1ZMlZkNkJoNm9tRHVmYWFEWUk4UVJjT1BCUUhGRjZfSEJ3LVdKY1hvdFNoc2stZlAySjhscElOV2NUWVBnbmd1aTg5NUE4OHNQb2FEb2tXOWl6Sk1NMTdaZmZTTlE2ajM3dW8wRVp3TmEwdkcyREZmUjdFY1ZJR3dzcTJZT184WG0zU09JN1hNNnc3?oc=5",
       "source": "The Indian Express",
@@ -1555,7 +1495,7 @@
       "region": "us",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-08T11:53:00+00:00"
+      "pub_date": "2026-09-05T01:36:39+00:00"
     },
     {
       "title": "TCS Wins ₹122.6 Crore Odisha AI Governance Deal to Build OSWAS 3.0 for 50,000 Users - InfotechLead",
@@ -1608,14 +1548,24 @@
       "pub_date": "2026-09-09T15:07:21+00:00"
     },
     {
-      "title": "Saudi delegation explores global best practices in AI governance - Arab News",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNaXRtcHpUV1dNT1Y3UFl5V2pxdkJPUzN1N19RNm9nRFh0cnhVVnZGYU1ibTI1OGFJNEplYXN3WUluNHp4T2VkZVhST25lX01PZnFBSk5yTWR3VGpMVGtZYUZlYkpiaEV0ajJDaW9XVFFMY3NWSU9MckZUVS1HTWZ5OUhWOEFNa1BlN3ZXdGdMaGc5NVlJRTh0YWZZQmxQcmxXY20yeXBKVmxibDZMMGRB?oc=5",
-      "source": "Arab News",
+      "title": "Digital minister says Malaysia’s draft AI Governance Bill complete, hopes to table it by Q1 2027 - Malay Mail",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOd1JNRG9MTDlIRlRaVEFXTnJiZ2tjM25RQnU4MzNyZnVxWThqZnNqYzdVVkhWODZ5YzkzeXZlb3JHc1JDeE5WVjhLSWd6cGpiMm9aNW5HYmdZa1VFMFdpaHdEekt4TWpPTzhhOHdvcC1jMnJKeTRsbDB3NFVMdF9MWnJtZ0RqRl82Rl9McXVzaTVoakNMZzRDNmV3ZUtxOFNNdmNhWlgzQkpSRVlhSkhOQ0ptck0wWHRlQmpqdmxocHl0ZDl4RU5wODBtcUctSGZMT1Vpdy0wRUtTbkdwV3BfTGZiRmN1aWfSAewBQVVfeXFMTzk5eGxHR1VTV2JiOW41djZMUHJTTkZYVzVoUGJGUFd2NnZNU3Rrd0h2LW12aUJMd0JYOGt0ZmlDWmdTTXcwbC1uenI3X0R0VWlWYWJwM0NFVkRjck80SDZoTFRRUmVHbTlTYlVaNEFheTc3Sk95dVNhUlRwVjkwcWRwekhyZFpibWZZWnZXZTJQZ3kwRzNjZWlXeHZTVWZxN0YzcExxUF9VWVJXNjhtbXhsNXM0RW02a1BNMkM5dHlJZUIzNDY2UGJMOTNzRnF1QTRNUkRWMmtfbzQ1VGJFQ2EwZFY2cTFkMnRvOGY?oc=5",
+      "source": "Malay Mail",
       "category": "gov",
       "region": "us",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-05T13:33:02+00:00"
+      "pub_date": "2026-09-10T03:54:01+00:00"
+    },
+    {
+      "title": "AvePoint at Citi’s 2026 Global TMT Conference: ai governance push By Investing.com - Investing.com India",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPSFNjNlZHNU9qcExreXFwci1tcEJVNWpJLXl0eDdYWjl1Ync3Sl9uQ1B0YllOVTdXNks5djRWVUFRckFmYUpoWENFNkRrRWQybGhwVllrOFJ0R2xISl8xNWgtNk1VRGF4dWxHM3NhWmI4ZXlmNW5vaU5UaXJ6TTFiRzlpa05MaGdLTEFBdk5IY0w0MjNnN0o3ZG9OejEzZmZpVkY4UWU5NmpwdUNoaVprRWVLU1hRTVVoc1U1YUZGUGRBdw?oc=5",
+      "source": "Investing.com India",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-08T18:12:51+00:00"
     },
     {
       "title": "Only 22% Indian firms have AI governance despite 119% investment surge - ET CIO",
@@ -1688,16 +1638,6 @@
       "pub_date": "2026-09-04T03:25:00+00:00"
     },
     {
-      "title": "Justice Minister leads delegation to South Korea’s Digital Governance Centre - 1TV.GE",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQb3hGQm9IR0duMWlkOHZsbjVfS2lYRnlkUHR6UnlnTDNnMEJwdmxxbTVjS3JHYUYxY2V5YjdtU3cwbVNNYTNUbDFDVnRhRjdQaG1sLXpuc19fMmc4TDZjSXpqVjlJRF9HMmRfWWRHUk1MYm91T2hTMXFSYWtrbUFFYzlWb0VqdjNkUkxHRHVMZHNFeU8wZTQ1U3U4YjFtVTF1LU0wQkY5WQ?oc=5",
-      "source": "1TV.GE",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T16:08:00+00:00"
-    },
-    {
       "title": "TCS bags ₹123 crore contract to build AI-enabled digital governance platform for Odisha - ET Enterprise AI",
       "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPUlJGTXZmSndHUUktbTFXSWNMcy1xWWRsbkRVN3VmYVEwdWc1UnNTVUhaZmpuWVVxTnJQTFdJRFBLd0pxd2hVQ2J2Zm9GMTRQTlJsY3BaYTcxWjhTdlBfM2xVdUp1c3FVUV9GMkc3bExwT2pvd1VQSGpZSU9ReWxUeDd4dzlhU2NiZnJaZDNYdzRhZzRCdzg5bHhmREhmUTZPRlQ0aDRvSlgxMi1sc2QwUFFjc0RQNzcxSm8wdkpxZzlSSHpJeDVqODhvMTB5YVBlNm8wamkzdThqVHRQVmlfaXVOeDFFVDVLLWxBTXRQa2IxZ9IB9wFBVV95cUxNSDJ4ZGNpZDVMV3pNNzRUS05TbXZzM21XLUxweHllemhJY2x6Q0pCTEhVRjdpalB2ZndZa1NhR0ZuYW5EVU9RdkY0N01tbGJ6NUxIZGdXRDRCXzdnN21LMHFyM2FoaVNJOHo4T2YxS0tTUHlVb0hkOWtROTBtcWpDcHFfb2FXeFJ3LVRfN1FWSWowNzBRUTlMVlM1RXFlWmpyLXE1R2VtNzRkTGlkNVNNMzJDYnA4bzZHRm8yNkJRYTh3djE0RnJxTzROQk9nV0dmOVRGSmFxbTBvdzhRZ3dLcmdvc291QnZOZk1sYXR3NC12SmZFalZv?oc=5",
       "source": "ET Enterprise AI",
@@ -1716,6 +1656,26 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-07T02:48:33+00:00"
+    },
+    {
+      "title": "Anwar says AI Governance Bill to complement cybersecurity, data laws - nst.com.my",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcDhYV0Z5LUxnTm5LUENIUnhjUExYX1E3M1NqY2VLY196VGJ4OHlwc1VVZVQzUFBTdmxRcmxBYnM3N0NWeE9IdjVCUGxJSjJhUENEaHB5WS0teUhib2hXcUFKSE5Va2dtY3NfeHNUVjVBWTQ0R0syZ09DcWJzZmlWZFZpTW1jcy00YTJIUXdVVnFqUER6VUdvYW9aNDAtODVpVnk1SlVtR0ZiR211OUJJZXZxazlvZw?oc=5",
+      "source": "nst.com.my",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-07T03:11:50+00:00"
+    },
+    {
+      "title": "Justice Minister leads delegation to South Korea’s Digital Governance Centre - 1TV.GE",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQb3hGQm9IR0duMWlkOHZsbjVfS2lYRnlkUHR6UnlnTDNnMEJwdmxxbTVjS3JHYUYxY2V5YjdtU3cwbVNNYTNUbDFDVnRhRjdQaG1sLXpuc19fMmc4TDZjSXpqVjlJRF9HMmRfWWRHUk1MYm91T2hTMXFSYWtrbUFFYzlWb0VqdjNkUkxHRHVMZHNFeU8wZTQ1U3U4YjFtVTF1LU0wQkY5WQ?oc=5",
+      "source": "1TV.GE",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T16:08:00+00:00"
     },
     {
       "title": "Aiyedatiwa Ushers in New Era of Digital Governance with Ondo Pay - THISDAYLIVE",
@@ -1748,6 +1708,16 @@
       "pub_date": "2026-09-08T11:27:00+00:00"
     },
     {
+      "title": "PRIBIT AI unveils strategy to shift from security to AI governance and risk control - 디지털투데이",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSVBHYVI5dDl2bjlmVGpuSEJfal9LNDU0ZG5HbUFyUlNJd0VEQktXaWE5b0RxWkdfcEVkSVVWZGQ4b1lTUjJHNnBqV01nRVdfaDFkR1FYNkdBR1NkOTA0b2JKeG45Tlh6V1ByYWtHaU12VHJ1YUtCYlRTODg5VUtfVzk1LTlJZHIzemU1VkFDbU0tYnZkMmtDbWswRHBXUjF6Qk92cW9fY2ttS2pnbGxKWkgzd1Z0Xzkwb0ZxVm55MTRaQUdGWVU1Wg?oc=5",
+      "source": "디지털투데이",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-07T05:23:16+00:00"
+    },
+    {
       "title": "TCS wins Rs 122.6-crore Odisha AI governance platform contract - Daily Pioneer",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcTJ5OFFvUFFfRjVpQU9Ocjl3Y0tveWtyTWxRb3lzSmNGVjlaNkdteEtobkJMSnl2UUxUZUZlbUt6SzVYdzJPSWZ3aHZYLTBnSE5sWUVma0o5bGwtd2xSUGdiaDZ6U3J1TURxMzRNS3J4RkNGck8wSGhLSDExZDVPN0wweGthQkVhLW5TUnJ3UUlZMDhTSGdF?oc=5",
       "source": "Daily Pioneer",
@@ -1756,6 +1726,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-08T10:35:39+00:00"
+    },
+    {
+      "title": "AJK delegation briefed on Punjab govt’s IT, digital governance initiatives - The News Pakistan",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQdHFfc040a0RERDl0U04wN0tQTGRtc083aVhVSS1Kb2hLUlRNNkRBZDZmZ3g3M1F2V3JWOGpCS3BpRDNHQWdoaGVhX083UUtkYWctd0ltcGdBUE5QZ3Ewb295b3JNVDFGbEh3SnB1S0ZJenJRNDgtTE52MDhUTFd4YlVfZVZZS1JZWEVPUkIwQWNXMmNCNWcxMW8zVEtsVjZhcE9XeUtBZFJ1YVQyNTVj?oc=5",
+      "source": "The News Pakistan",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-10T19:00:00+00:00"
     },
     {
       "title": "TCS wins Rs 122 cr bid for Odisha digital governance platform - The Times of India",
@@ -1776,16 +1756,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-08T11:35:00+00:00"
-    },
-    {
-      "title": "PRIBIT AI unveils strategy to shift from security to AI governance and risk control - 디지털투데이",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSVBHYVI5dDl2bjlmVGpuSEJfal9LNDU0ZG5HbUFyUlNJd0VEQktXaWE5b0RxWkdfcEVkSVVWZGQ4b1lTUjJHNnBqV01nRVdfaDFkR1FYNkdBR1NkOTA0b2JKeG45Tlh6V1ByYWtHaU12VHJ1YUtCYlRTODg5VUtfVzk1LTlJZHIzemU1VkFDbU0tYnZkMmtDbWswRHBXUjF6Qk92cW9fY2ttS2pnbGxKWkgzd1Z0Xzkwb0ZxVm55MTRaQUdGWVU1Wg?oc=5",
-      "source": "디지털투데이",
-      "category": "gov",
-      "region": "us",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-07T05:23:16+00:00"
     },
     {
       "title": "AI Governance Must Enable Innovation, Build Trust And Support Scale: Industry Leaders - BW Businessworld",
@@ -1818,14 +1788,24 @@
       "pub_date": "2026-09-07T14:31:25+00:00"
     },
     {
-      "title": "TCS Wins ₹122 Crore Odisha Government Contract For AI-Based Digital Governance System - sahi.com",
+      "title": "TCS Wins ₹122 Crore Odisha Government Contract For AI-Based Digital Governance System - Sahi",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPcGhlcnlmdElwbkpUMzJqTS14WklSRFF5bWQyNWlRS3RrUGQxbmFKdHFlTE1UdlU5bVlWUVdqV0VETFlLT3E4THEwWkJLaXBXaEhjWVpRWmJvWW5KWmxsX2g1bFNTUHoxRC1RWk5oUExRVkIyMHVOV19KdU82QUZ4T2JMY3FWeTRWanNJOFpWMWM3bXQ4MlFXM1FKZ3ZvOElXSXFMc0VxYXFLS2Y1Qng4UExHSmlpT0pQYi1VU0wwQjM?oc=5",
-      "source": "sahi.com",
+      "source": "Sahi",
       "category": "gov",
       "region": "us",
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-08T06:26:58+00:00"
+    },
+    {
+      "title": "AI Governance Bill expected by early 2027, says Gobind - The Star",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQOHdsaTBheDRJUFQydW5ncl8tZ0pVZW1aMW9HMG1wbnJsU3NQb19KS0JobVBaejRsS2NmTU85eVBEQ000Rll2Rm8zZkNidGx4N1JFRWk4QkZSa3BicjNpMjlnWHVpY2hoampxUk5neEgwS0NacVh3TENSbVdlc1QxWEx3N1NydTdhYnBMZjVoSmFPbkVSM2ZZQ2hKbUR0SEJYeDYxbDN3?oc=5",
+      "source": "The Star",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-10T23:34:08+00:00"
     },
     {
       "title": "Stakeholders urge ratification of Malabo Convention for effective digital governance in Kenya - Citizen Digital",
@@ -1838,14 +1818,34 @@
       "pub_date": "2026-09-08T13:14:44+00:00"
     },
     {
-      "title": "Mizoram strengthens digital governance with Smart ATI app and learning lab - digitallearning.eletsonline.com",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNTJUTXdZWWpCck5acDRoUXNQT2dRSnBuVUlodFNBU3Q4TFoxTDhaaENtdTBWZklmR2lVWEZCQjJ0VU9zNUQtbDM0d2t1eVFyMFJiYVd1ZDZRT3F3b2JGSHpnTDQyS3g1TmJQOGFURlJuTFJuR2N0Q3BkZDlUb0U3c19PaFlhbkEtbFV2SnNCRVVBVmVRQnBRU2dKbGpqOWFxTUVFTW9mNmNUSWxNd1NnUVBvTXFLb21mNkhKMklLWUk?oc=5",
-      "source": "digitallearning.eletsonline.com",
+      "title": "AvePoint launches Kinetic Classification to scale AI governance - scanx.trade",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTTkzdlBNdVJEMldGZ2kxYmw0aWxFbUhYNDQtTFRjY1RnRVpVSUpzT045SzBqQ2NXMlpVTzNrZGZ5VXVxd05ZcVJvRmhsY0lTS1VfMy1SU29RaWtKUk5la3ViXzZ0QUoyRzlmRE9jcG5vVUxyM3FzclRYbUI1Sy1YVFhBWjZnZnljRlVMOEhCYVp1VUNFYnViU1QzcFlfeGxBaTB1Mm04NC1mangtRWZBODFxVDdhRHdmOUtYQ0p3?oc=5",
+      "source": "scanx.trade",
       "category": "gov",
       "region": "us",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-08T07:04:43+00:00"
+      "pub_date": "2026-09-04T15:47:11+00:00"
+    },
+    {
+      "title": "Digital Governance - Manila Standard",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNcVdibHlZNFVUNU9QQ3RHaFplQnpWdHEzYlpxZEpXaU5ES2N5SzlqYWdaNVRMUDZGbFZXamRHcmRiaGFid21nRzNGRHg5OVctaHR2ek1VOFZnV2NDN29ENkFYdGkwSjhndnhNeFZvaGhfM2g2YkVPVDZ0VWJVUTllUkdFSGFGM1QyM0pN?oc=5",
+      "source": "Manila Standard",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-10T14:07:30+00:00"
+    },
+    {
+      "title": "TCS wins Rs 122.6 crore bid for AI-enabled Odisha digital governance platform - Moneycontrol.com",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQeUpKYXhQaWtGbElRVlFUazhxTm5FUHhRVmRsZUxCeGQxOWY1b2EwN2F1TjYwYy1zNzdTSjBIWFRlSWdHY1I0Y3RGdWE2bHBFb3JNS1pSVUlENC05X1dDdWF6VTBDSU9rX1lDZzFRMHFrUC1kNUJtU0NsNHQ0SnNtZWV3WWMtQ3VkVnFXREFDaW1qal9yVG8xV09KQWx2a3NtSS0wWndTUFJMTVE4UHZQbzh5Sy15QlFKUzJ0UlpmMVhJX2tabDlHemhJN3kwdTAyQURsUE5xZjZkbWlTMEhmVTdrRG1VYVHSAewBQVVfeXFMTjhnbjRTV3AzSHlpSHJnb3QzRTZsQnRVeG9PQTYtSHNyNXdHbUllWkJDN1ZnNHFiVlZpSTJheVBzeUw4X0pYOW5udURLUnpZQklXSWJnY0pHTWxkVk1Cb3F1UmxJMV9XcURJckNYY2o3SjBHWmhuQnZRQnlRMXp5Qzk5RUhDWkZCanJlVVBkSTZRSHhleUttdWdyaXpIaEZqaWcxV0Vhb1JPMEhKYW9EQUFwd1ptNWNvby1WeG1MR2tQNjJkVjA3ZkFUN0txa25PQTI5SWhjb2djMG94Xzl6NUYzUV9mNDZHcE9zY3Q?oc=5",
+      "source": "Moneycontrol.com",
+      "category": "gov",
+      "region": "us",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-08T08:27:30+00:00"
     },
     {
       "title": "UK AI governance intelligence platform AI Score raises $5.4m in seed funding round - The Global Legal Post",
@@ -1858,9 +1858,19 @@
       "pub_date": "2026-09-04T16:04:00+00:00"
     },
     {
-      "title": "Experts call for a new approach to Neuro-AI governance - Open Access Government",
+      "title": "How HR Can Prepare for the EU AI Act and Emerging Regulations Globally - aon.com",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxObndKUW4yMnV1Q29TVG9SemxGWkZ6MEdXeGxJMHV4RWp6WEpDOHh5S2xuMFNwNGpYSHRjUGxjcWI5MVdVTEJ5ajVhUWV1SmVQYl9taUVZSHN4eElleURTSWZVZ3A0STdFLVNfS21lWmhuLUdhLWp5VXNwUVZmT2Q0M2NGOU5PYXhBV1dTcHBVT0pjQnVlZF9sbmhaOFZKd0I5UjZ3eHJLZGd0T3FCV3gwNA?oc=5",
+      "source": "aon.com",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T17:43:05+00:00"
+    },
+    {
+      "title": "Experts call for a new approach to Neuro-AI governance - openaccessgovernment.org",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQclFpWEpUdTA4NlhDVFBoZzc2TFFSRk5DOHJubGE3MVlHbzdyLU1fa2p4MUZlejEtVFFfclJsVlNzTnNzcE5HZUxTR0Q2d2NHY08xUmIwTmlmX0pPd1F4anFNZUtPTnZsSkJNSzRCYlZxX2R1SE1XUThEdjJGQXVvVmFtZDdZZXpISms4ajZ1bEgwb254WFlEOVprTlBlWVNK?oc=5",
-      "source": "Open Access Government",
+      "source": "openaccessgovernment.org",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -1878,19 +1888,9 @@
       "pub_date": "2026-09-08T09:47:20+00:00"
     },
     {
-      "title": "AI governance and orchestration - Capgemini",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxORzVaR2JYTkFvR3hXUlBpRXpkTnBaMG5NaHJ4enVYYkVSVElkYzFPeHJQenhwbXc1LWNBLTJDOGR2NHdUTHIwdV8zOFdkZlJjUzk2MlRQRUloQmEtVl8zWWw1WlZLUF9FdTNPVk5qVkpydm5saDVnb0M4enZVOVY2ZElVSDdsekdBSkhNMHhSaUZDbERB?oc=5",
-      "source": "Capgemini",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-08T09:39:06+00:00"
-    },
-    {
-      "title": "Agentic AI governance: A Computer Weekly Downtime Upload podcast - Computer Weekly",
+      "title": "Agentic AI governance: A Computer Weekly Downtime Upload podcast - computerweekly.com",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNVnRab1F2SFZpUmY0T1EtblJpTXlvWlI4aS12T3I3Rk5VLW9qdWhRX0tfRkc5d1JhX2tfVlQ2Tmt4OGpxWGJUQmV0bEpNLTFBYWw2WnluTlBMbUlfdGJXenlLZElxM0FRZzRWNzEwQVZldFVMaFpGbjBNRy1PV0pNN2ZzSS0wdDd5QkFLZUxMYTJubVp2QWJZMnpydlQ1X3dPVG1YYQ?oc=5",
-      "source": "Computer Weekly",
+      "source": "computerweekly.com",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -1908,14 +1908,14 @@
       "pub_date": "2026-09-04T10:46:37+00:00"
     },
     {
-      "title": "Skillcast Report Highlights AI Governance Gap and Accuracy Risks in UK Banking - FF News",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNU2VEMGs2TzRjNFF0Z2VfQmUxSkl1dU5Gd2dNcXMzcnpTX0V4b0lQYTRVUTFYZVZBSGllM09MemJKZzZRcDF1TmQ2bTZMcmJZSWtSRmVOb2VsdzZJTEhERHEwQktvTGlTSTdsQ3IxS2dCdnN1M0Q2NnliMl9jbnNTaFZHWmZfZ2V3UGlzV0lqZDVqbU1zUERSMnA3bHJTbnNrTjVRUTFYaDhwVFg2d1JudVQ0VQ?oc=5",
-      "source": "FF News",
+      "title": "AI governance and orchestration - Capgemini",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxORzVaR2JYTkFvR3hXUlBpRXpkTnBaMG5NaHJ4enVYYkVSVElkYzFPeHJQenhwbXc1LWNBLTJDOGR2NHdUTHIwdV8zOFdkZlJjUzk2MlRQRUloQmEtVl8zWWw1WlZLUF9FdTNPVk5qVkpydm5saDVnb0M4enZVOVY2ZElVSDdsekdBSkhNMHhSaUZDbERB?oc=5",
+      "source": "Capgemini",
       "category": "gov",
       "region": "eu",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-04T17:47:57+00:00"
+      "pub_date": "2026-09-08T09:39:06+00:00"
     },
     {
       "title": "AI governance gap opens new service opportunity for MSPs, 8x8 finds - IT Europa",
@@ -1928,9 +1928,19 @@
       "pub_date": "2026-09-08T08:50:29+00:00"
     },
     {
-      "title": "Healthcare organizations tackle AI governance in fragmented regulatory environment - iapp.org",
+      "title": "Uber’s US$966 million fine puts agentic AI governance in focus - Intelligent CIO",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPdWR6cFNkTkN2TkZQWGZPN3BubFV5bms1OXdPbFZWQ3lTZmE1UlZrYjg2Y29xYXNzUVl1Xy1TY1ZqQzc5LUNBX3JfTlEzMkRfeWl1Y0ViMkVjUDlMelhLa3pIQjBaMjBzTWF3MThkMERQQXcwUm8tQ1RxQ2d1aTJzdlZwdzlpRDRmQWFpX1QtSFBrS3BmN1FudkhRZWRZenRiVlZCTklZWDNGdw?oc=5",
+      "source": "Intelligent CIO",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-07T10:06:39+00:00"
+    },
+    {
+      "title": "Healthcare organizations tackle AI governance in fragmented regulatory environment - IAPP",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTGR3cC12Ynd0TFd0UE13djA0Zk5qcW80VDlwMHhxRjV0TnAtSklqNzVaMkRTSGFFVzVJRk5PS2RvTWZnUU9Fd3MySWxwSUo4WVpFaHpmRTA5RjhCM2hOZllLdnE4SFZTd3NJbzJIMzZmUVhicWhuQm4wTld1M0V6NDlFV1pWcV9mZ01paVNUVGxRMFFLa1JsSXBYdkNvRWxYUGJvOVg0Q1dVQQ?oc=5",
-      "source": "iapp.org",
+      "source": "IAPP",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -1938,14 +1948,14 @@
       "pub_date": "2026-09-09T16:22:09+00:00"
     },
     {
-      "title": "Blog / From Legal Adviser to AI Governance Leader: Five Lessons for General Counsel - Lexology",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNYjFhM1BHbDliSXBjcld2WmtWTWw4WklhRTFlZGJkNm5EY3h2cEpCQlloYzlkV0RiUWM1RWNvQWRyeWd6UGRzUjlyZXF3V3h5TnJNQUx1OVdKd2VjSF9CN0ctc1ROdFZpX3BkMkpTbkRxeGVhSDM4RjFDbm50VTFCUnBMNjVUSEU?oc=5",
-      "source": "Lexology",
+      "title": "Skillcast Report Highlights AI Governance Gap and Accuracy Risks in UK Banking - FF News",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNU2VEMGs2TzRjNFF0Z2VfQmUxSkl1dU5Gd2dNcXMzcnpTX0V4b0lQYTRVUTFYZVZBSGllM09MemJKZzZRcDF1TmQ2bTZMcmJZSWtSRmVOb2VsdzZJTEhERHEwQktvTGlTSTdsQ3IxS2dCdnN1M0Q2NnliMl9jbnNTaFZHWmZfZ2V3UGlzV0lqZDVqbU1zUERSMnA3bHJTbnNrTjVRUTFYaDhwVFg2d1JudVQ0VQ?oc=5",
+      "source": "FF News",
       "category": "gov",
       "region": "eu",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-10T14:10:02+00:00"
+      "pub_date": "2026-09-04T17:47:57+00:00"
     },
     {
       "title": "Why AI Governance is Now a Board-Level Business Priority - Cyber Magazine",
@@ -1966,6 +1976,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-07T23:45:56+00:00"
+    },
+    {
+      "title": "EU AI Act Article 26: What Third-Party Risk Management Programs Miss About AI Vendors - JD Supra",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOSFplcm8zQTlFejdtZHJDNWNOVUJoYV94TEhoZ1R4RUltcEN6YVR2bko5eVlyNUMybjFUM2FLVmtXUk9pVTg4RjRJblpYT3VEYk9tZVNrMkhLTUh2cjdOS1hPdjVLNW1RZy1DaXJmMEF2T1FpS2RPUVl3Q2dIRHM1VU0zTjlZcjQ?oc=5",
+      "source": "JD Supra",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-11T00:22:43+00:00"
     },
     {
       "title": "Experts call for a new approach to Neuro-AI governance - EU Reporter",
@@ -1998,16 +2018,6 @@
       "pub_date": "2026-09-09T20:19:03+00:00"
     },
     {
-      "title": "Middle East boards leading UK, US on AI governance plans - Arab News",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQmRpd0FWVGJ0NEZBdDY5SnVEdk9FT2dGcXJLTk02b1dvbFpwSlFZa2NBMWdJZU83SUxvUWt3WEhuOGZkbmxKb3UtNGNobDhHZnBtal8zTm1pRzdadlFBN0ZEZXdYc20zMkVUVWd5ck5HekVCWTlNT09FSE8tWXd6czBlSVgyNUloeDE4WElORXRJVWYxeHN2T1J2UXdtdw?oc=5",
-      "source": "Arab News",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-05T13:17:47+00:00"
-    },
-    {
       "title": "The EU AI Act just gave you a breach notification clock you didn’t know about - cio.com",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPeTFYSmJaOVVYbGNvRkg0WDVTWWNxbWRTTlpkMEZZZ2VlNmRaT2UzeDZ1d19LN21ZVU1NN3RITm9velNCd25SVXE2NEMyR25DMUFKbEVHRU1IVi1EeHc4Q2VWSFFoXzBQNkY2RzFxd2Z5bTkyT3NIUEZGdFhIOWNob1FLUTFscHZpQ2wxaXdCRkxlVGpSdmFtMERQSW1ETXdTOS1TbU5xU3dvd21mTnV3RTNZNDFYUFhS?oc=5",
       "source": "cio.com",
@@ -2028,19 +2038,9 @@
       "pub_date": "2026-09-04T20:17:26+00:00"
     },
     {
-      "title": "Webinar Recap: Trump-Xi Summit: A New Opening on Frontier AI Governance? - Asia Society",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOc2VBc216Vm1qZE5VQ0ZzVjZUd2tVaWZtS0dNakJaMENZVDlMY2VWY2lnQXRydFgwc3U0NWFxMzNkc2JULTdsMm9saExEdEJuYTE1YnkwdHY4bUFmc3A0cWNrMWxNVVZ3cHdWN1R2WTVlRUVIS3RFNjV3VmllaGdyUVgydzVYNldyLTdDUEl3WXZxVTJ6T21DTmVENWhvVURRb0U4bWFwT0w?oc=5",
-      "source": "Asia Society",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T22:07:33+00:00"
-    },
-    {
-      "title": "Notes from the Asia-Pacific region: AI ambitions, DPDPA compliance and new digital governance frameworks - iapp.org",
+      "title": "Notes from the Asia-Pacific region: AI ambitions, DPDPA compliance and new digital governance frameworks - IAPP",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOMWk1R3Z6RG5QcWdjemxfejgyYW5Pb3paR04zb3lQNW1fZXcyZG1rQmFGRWRRQTI1Tl9sR24ydFZmM2M3MUc1T1hWdmx0Z3NORU1QVnBkemw1ejFCZVNoWG1PT1laZEh4b2l5QkhUM3EtaTJuUHlBc0lsX1VmdnZpX2p3dzU4WE8zcmF1eUpQc1NRWm5uYTkyTHFfSjFDbFI4YUFzdWVOOUFwSnFvTHFQcmhDLVFtZW5mczFYVE9nNklkbml0?oc=5",
-      "source": "iapp.org",
+      "source": "IAPP",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2068,9 +2068,9 @@
       "pub_date": "2026-09-09T17:37:11+00:00"
     },
     {
-      "title": "AI governance starts before the first token - Data Center Dynamics",
+      "title": "AI governance starts before the first token - datacenterdynamics.com",
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPbVhpSE5IRV9HRm9GRVltMGRoc1hqOF95Zm0tNjBLT0pmZko2VjNVdVJCY3N6VmowQXI2eVRaWThJcFRCUHZoNEl3LTdfVVUzaWhPUnN6UmowV0N2bi1kY04tTXRBZ2RSXzJwaXRSaTNPVEVaZTRvV1dRa3FXTGxFNS10WDJnX1JZV1JFaEpiU3h6ZHU0amp2WThn?oc=5",
-      "source": "Data Center Dynamics",
+      "source": "datacenterdynamics.com",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2078,9 +2078,9 @@
       "pub_date": "2026-09-10T07:04:29+00:00"
     },
     {
-      "title": "UNESCO launches global consultation on AI governance in education - dig.watch",
+      "title": "UNESCO launches global consultation on AI governance in education - Digital Watch Observatory",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBhSmpJS2h3ZExSNk1uWkVyQXNDbmV6MXhqMmV5a0JIU0xBNmJKMzVOaloyR0pxRUhFZHNsM0RQaXhrcndlbEY3ZjJZVFZvWFlQOVdhdUxiUHY0WnNWQWtvQm9kN18tOU5YdzROSXctNnNXbGVOT1NKOUhFelg?oc=5",
-      "source": "dig.watch",
+      "source": "Digital Watch Observatory",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2088,9 +2088,9 @@
       "pub_date": "2026-09-08T19:55:44+00:00"
     },
     {
-      "title": "Viewpoint: What U.S. Insurers Should Learn From the EU AI Act - carriermanagement.com",
+      "title": "Viewpoint: What U.S. Insurers Should Learn From the EU AI Act - Carrier Management",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5aVkhtdUpHNzhEOTgtY3lCc3N5SmExVTB3ZWhWMlFScUxqalFId3c4QURwR0J6eFZjMXNQQnZ6dUJwRDE1RU9DYk9NSHFfZTluTnRueE9wVDVmTTBTdU41OTk4czhNZnBQR3NFaWZFWElnUQ?oc=5",
-      "source": "carriermanagement.com",
+      "source": "Carrier Management",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2108,19 +2108,9 @@
       "pub_date": "2026-09-08T20:36:53+00:00"
     },
     {
-      "title": "Generative errors and professional liability: the Deloitte-Australia case and the new frontier of AI governance - ecija.com",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPYVlCeWR6V09GX0g4a1U2Y0RuS0FMeU9za0lkZ05WYjF2VXhRR3RwNy1yU3dCa1l1ZEdjRkNBZHBBd3c0LXh6MzIzcTN2ejAzNFdYdm5vb3BrOXlHTmI4T3pnNXNFbEtvNVc4U2ktaEQwR21hVjFkZmJMd0FVYjY4Sm10cEMtSGN1S0l3YURwZWFuWnV3UmN4R3BzNGxpLVJXeWVRcTJORVlQV21PakVlUElBQmUxTVpwTnhYVm1UNkkwQm56dVhEMDAySlRvaGt0WW05LXBwdFVJVDBNeFp6U0RsZVRXMzdGY2c?oc=5",
-      "source": "ecija.com",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-08T11:02:11+00:00"
-    },
-    {
-      "title": "United Nations High Commissioner for Human Rights calls for ‘cast iron’ AI governance - dig.watch",
+      "title": "United Nations High Commissioner for Human Rights calls for ‘cast iron’ AI governance - Digital Watch Observatory",
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE4xdTZLdWpWdjdWdlF0dFdaaVN0TmR1RmJ5OHU5MUhpUlUxSk9jTVVjeVRRX0E5c1VlX3RDOEZVRkRwTWlBOXJtV2ZCSHpXR0lQNm9ncFdPdS1KdDhvcVFDTGtn?oc=5",
-      "source": "dig.watch",
+      "source": "Digital Watch Observatory",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2128,9 +2118,9 @@
       "pub_date": "2026-09-08T10:02:20+00:00"
     },
     {
-      "title": "Education ministers adopt joint statement on AI governance - dig.watch",
+      "title": "Education ministers adopt joint statement on AI governance - Digital Watch Observatory",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkZBMDVGRlZMM0psbWs5QXo2SHNBUFVLd1ZDM1BnRXpnS0p1Yy0xelVjdjl3aGE2VXRPTUZkUmJxY3VaeWswN2RkNWVHNzhOR2FPX3pzc0hoaFlObnkwbjhfWDcwTnpDaUhjUUxCSGpLbXFUSWxWVWJiSkdhM0VXZw?oc=5",
-      "source": "dig.watch",
+      "source": "Digital Watch Observatory",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2146,6 +2136,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-08T01:29:43+00:00"
+    },
+    {
+      "title": "AI governance for Malaysian organizations - NTT, Inc.",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQRXNEbkxmclRwbnhGTC12dWtERHFJMkdMaDdLTzd1RjNHWVE0V2dmMmEyTFltNTQxcjZMT1F4M1dXenVScjBsczRxNW9pZVZYa2l0WDZrTXNrd29OUjdzQUtCWTBQSUVPbjRLSVlHNjhMWXhRcFZDcklCVWVuNHc0SlhIWXpFSFJ1azFfVHhwYVFQYlc3LWlFRTZiRmxKZEpPQmNIeVFJODk2QXR4dkZ1UmMwMTF6SkpDVE4zZm1Bek9PTGZB?oc=5",
+      "source": "NTT, Inc.",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-08T15:25:24+00:00"
     },
     {
       "title": "Beth Hiatt on Building AI Governance: Infrastructure, Process and Meaning - CDO Magazine",
@@ -2168,16 +2168,6 @@
       "pub_date": "2026-09-07T08:20:00+00:00"
     },
     {
-      "title": "Amid Global Concerns Over Superintelligence, Riyadh to Host UNESCO Forum Advancing Ethical AI Governance - greatreporter.com",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxORGx2bkN1MGdnRzdXMVM0eWJrNUQ0TEUzb0RjcXJLSldTQURpMVhfeGp4VGk5MGdobFlOVEN0LWxRWUdjc2hxdVUtc2JZSm5pNm5IYU5vSVJyc29IeF9nWFc2NF9WNlNsandMenpuZzV0T0s3TkU2Z2xuX0VjOFpTOTd4alF1SkRsNEs1WFhDdFNpOEtpYjg3Q3o1c00takF2MENEMFlxUG8yNE9YM1ZaMVczLThRbFJ3RVU1R0JRLXhsSFNTY21leWhENzQ2Z3lBZVY0LXp4Y07SAdgBQVVfeXFMTkRsdm5DdTBnZ0c3VzFTNHliazVENExFM29EY3FyS0pXU0FEaTFYX3hqeFRpOTBnaGxZTlRDdC1sUVlHY3NocXVVLXNiWUpuaTZuSGFOb0lScnNvSHhfZ1hXNjRfVjZTbGp3THp6bmc1dE9LN05FNmdsbl9FYzhaUzk3eGpRdUpEbDRLNVhYQ3RTaThLaWI4N0N6NXNNLWpBdjBDRDBZcVBvMjRPWDNWWjFXMy04UWxSd0VVNUdCUS14bEhTU2NtZXloRDc0Nmd5QWVWNC16eGNO?oc=5",
-      "source": "greatreporter.com",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T19:07:54+00:00"
-    },
-    {
       "title": "Deloitte: 49% of Organizations have a CISO - Cybersecurity Insiders",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBKM29IenM0VUNpUGpnZ0RtZE9DNkY5WVB4UDNzMGdxaWxwWlJlSTY2OWg1Xy0zcWN4dV8tN3pGWDI3c3B5bnA5RU8yT083MEo0TU0zZE9sVGJXYVg1MzB2SU1jWVJMQ2p1VTRaWGtZOWJlbmMwZnh6VE1nNHM?oc=5",
       "source": "Cybersecurity Insiders",
@@ -2196,6 +2186,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-07T07:00:00+00:00"
+    },
+    {
+      "title": "Amid Global Concerns Over Superintelligence, Riyadh to Host UNESCO Forum Advancing Ethical AI Governance - Greatreporter",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxORGx2bkN1MGdnRzdXMVM0eWJrNUQ0TEUzb0RjcXJLSldTQURpMVhfeGp4VGk5MGdobFlOVEN0LWxRWUdjc2hxdVUtc2JZSm5pNm5IYU5vSVJyc29IeF9nWFc2NF9WNlNsandMenpuZzV0T0s3TkU2Z2xuX0VjOFpTOTd4alF1SkRsNEs1WFhDdFNpOEtpYjg3Q3o1c00takF2MENEMFlxUG8yNE9YM1ZaMVczLThRbFJ3RVU1R0JRLXhsSFNTY21leWhENzQ2Z3lBZVY0LXp4Y07SAdgBQVVfeXFMTkRsdm5DdTBnZ0c3VzFTNHliazVENExFM29EY3FyS0pXU0FEaTFYX3hqeFRpOTBnaGxZTlRDdC1sUVlHY3NocXVVLXNiWUpuaTZuSGFOb0lScnNvSHhfZ1hXNjRfVjZTbGp3THp6bmc1dE9LN05FNmdsbl9FYzhaUzk3eGpRdUpEbDRLNVhYQ3RTaThLaWI4N0N6NXNNLWpBdjBDRDBZcVBvMjRPWDNWWjFXMy04UWxSd0VVNUdCUS14bEhTU2NtZXloRDc0Nmd5QWVWNC16eGNO?oc=5",
+      "source": "Greatreporter",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T19:07:54+00:00"
     },
     {
       "title": "NITDA Calls for Trust, Transparency and Accountability in Nigeria’s Digital Governance - TechAfrica News",
@@ -2218,16 +2218,6 @@
       "pub_date": "2026-09-08T13:37:07+00:00"
     },
     {
-      "title": "Anthropic's $2 Trillion IPO Exposes Tension Between Mission and Profit in AI Governance - finance.biggo.com",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9sY3FhQnFZRzFFZTB5QWpNd3N2cS04ZlpMblZfTFl3THZFNFIxR2djdW15dy1lZjBkSGlmanpTYmF4cFVXVzBQSm5tRk9sVnZWelRCQ2xRTTdZZDNVdElkZjhrRDJ2QkRpbldVZ3B1d3BBRnJjRmc?oc=5",
-      "source": "finance.biggo.com",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T18:38:00+00:00"
-    },
-    {
       "title": "What Transactive Energy Already Knows About AI Governance - American Enterprise Institute - AEI",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQUmxxMVVEVFpEZlpHbzhSSjFYQVFaM2ZBLVozY2t5bmRoYV9PVVZvMUpucXdJSzNRbF84RUhadGJ4TGJYQlBtcjUwSjhnVk9PSHJOU1hzTTFBckk3WHhrc2lFOTJDU05BdS1VcmtUSnhPeFB4bnR1bGJXRUpJdmdINWI0ckt5Q29TUlVQQ01DTl9sbjQ?oc=5",
       "source": "American Enterprise Institute - AEI",
@@ -2246,6 +2236,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-07T01:57:53+00:00"
+    },
+    {
+      "title": "Digital minister says Malaysia’s draft AI Governance Bill complete, hopes to table it by Q1 2027 - Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOVGprTmVfUzZmQW5aXzVaQTNTekVrVkFpRnJ5dUN4UU10ZGlvYk0zX0VXWmt0blBoVk5telVhZUZnUXNaZUpwazZtVUJyZ1M5aGcyWDR5ZGhYVzVPM0E4cDFFS0hvVWctb1ZuQ19tdEFBYWFGLUgyeDF1VS1QalRFaGVZc2pMNE43TkU4?oc=5",
+      "source": "Yahoo",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-10T03:49:00+00:00"
     },
     {
       "title": "Your AI governance strategy may be stuck in the desktop era - Fast Company",
@@ -2268,6 +2268,16 @@
       "pub_date": "2026-09-07T23:15:00+00:00"
     },
     {
+      "title": "Anthropic's $2 Trillion IPO Exposes Tension Between Mission and Profit in AI Governance - finance.biggo.com",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9sY3FhQnFZRzFFZTB5QWpNd3N2cS04ZlpMblZfTFl3THZFNFIxR2djdW15dy1lZjBkSGlmanpTYmF4cFVXVzBQSm5tRk9sVnZWelRCQ2xRTTdZZDNVdElkZjhrRDJ2QkRpbldVZ3B1d3BBRnJjRmc?oc=5",
+      "source": "finance.biggo.com",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-04T18:38:00+00:00"
+    },
+    {
       "title": "AI guardrails: the fastest way to move fast - TechCentral",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSnV3cHlPbktOWjZNUlFhZHltVzlTZU4zN2RuMWJzU29rQU5WMWk4bmJyNVJ3LThnRjVhc3VtVmU3aThnX3VzSVlJTkREbFphRTZlWVFnajZNZEU5WEllZ3F6V0RjOW9XalRFRWVJdWhPVEZCREVWRVlveF9rZVg5Xy1MNENMdw?oc=5",
       "source": "TechCentral",
@@ -2288,16 +2298,6 @@
       "pub_date": "2026-09-06T10:33:10+00:00"
     },
     {
-      "title": "Opinion | The false dichotomy in America’s science and tech policy on China - South China Morning Post",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdHhNQTBtRkc5MW1MalFnMWtGNk5mWHJTQS1IWFRDWWloY2VoaFlYMHA5ajJfbkcwelQ1M3IzeWt5RGdnLWhQSWdEX2lYUGJmaG5QZDExMklWYUxsWHc0V0FCVUE1bVlvUjN2NmxQaWZqWHgwTGZQd3RHTTk5c1pmVDZkeWszMWVRLUExTkVmcG81alpMdE5Va0pFMWxoRGZQNG9XRm5hN0Q4MFIwaEdYRUN6NkZSeHNfVjZfSDJFRFXSAcABQVVfeXFMUDJOMDEyemFESTJ6M3pLMVRqZkkyOXlPUUdhNHZJRXd5bkxWWl9SWXdsV1ZXMHBVdldTLXFGdEJqaDcyd2lGWnljX1lfVkQ1SEs0bUhNZ2NPYy1lTFhSckh5cW5QU25sdXZZdEZLQTJsdURSZjktMk1yUEdMOVBFZnRHcXlfUnRzREdfeWNVbTR3ck1PdXF1dzFUUTdxYlNTeW83QXFSVU5ISzZoaFVXX255OFY0b25OWnNQNG9haFZa?oc=5",
-      "source": "South China Morning Post",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-08T12:30:07+00:00"
-    },
-    {
       "title": "CISA’s ChatGPT Incident Exposes a Bigger AI Governance Problem - TechRepublic",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNWUdHLWlMRms3YW8xS2ZSeWRId25MejBOUlRqV1o4ODVBa1hTQ3I5RUdUc1d3RVVSQ3FSRnduaHZLNWlRUWFqVWlfbDdRN3RzNkRQbnN0U2htbEpjVzBtOHVNcDVLb1pzYVc1WW1mUnEyZi1TVnZ2WV9FTjhKT0d4bVhfYUFtOS1qeUMtMU5DZG5KNWN4?oc=5",
       "source": "TechRepublic",
@@ -2308,14 +2308,14 @@
       "pub_date": "2026-09-10T19:27:05+00:00"
     },
     {
-      "title": "Microsoft, AFT, UFT Set Precedent for District AI Governance - GovTech",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPS0NLdE1vZ09KZDVzalRJenZfLUdmSGs1NW9WZVRqR2JVQkhOSWZobjhFX0F1UmhaTlhGUEJ1bUJvSEt6LXVtdHM4SUZ3SGxpMWI5YnVZRGkycl9GVW5GUlRNbDRFaWN6c3lMcUtlaTBHVzFLMVRqZTFVSXI5c1N0ZjNCQ043QTh1T05CbTdvN2dBclVwcjNlVGpoTlhqQQ?oc=5",
-      "source": "GovTech",
+      "title": "Opinion | The false dichotomy in America’s science and tech policy on China - South China Morning Post",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdHhNQTBtRkc5MW1MalFnMWtGNk5mWHJTQS1IWFRDWWloY2VoaFlYMHA5ajJfbkcwelQ1M3IzeWt5RGdnLWhQSWdEX2lYUGJmaG5QZDExMklWYUxsWHc0V0FCVUE1bVlvUjN2NmxQaWZqWHgwTGZQd3RHTTk5c1pmVDZkeWszMWVRLUExTkVmcG81alpMdE5Va0pFMWxoRGZQNG9XRm5hN0Q4MFIwaEdYRUN6NkZSeHNfVjZfSDJFRFXSAcABQVVfeXFMUDJOMDEyemFESTJ6M3pLMVRqZkkyOXlPUUdhNHZJRXd5bkxWWl9SWXdsV1ZXMHBVdldTLXFGdEJqaDcyd2lGWnljX1lfVkQ1SEs0bUhNZ2NPYy1lTFhSckh5cW5QU25sdXZZdEZLQTJsdURSZjktMk1yUEdMOVBFZnRHcXlfUnRzREdfeWNVbTR3ck1PdXF1dzFUUTdxYlNTeW83QXFSVU5ISzZoaFVXX255OFY0b25OWnNQNG9haFZa?oc=5",
+      "source": "South China Morning Post",
       "category": "gov",
       "region": "eu",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-09T23:40:15+00:00"
+      "pub_date": "2026-09-08T12:30:07+00:00"
     },
     {
       "title": "AI governance fuels boardroom tension - itweb.co.za",
@@ -2326,6 +2326,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-10T10:59:08+00:00"
+    },
+    {
+      "title": "Microsoft, AFT, UFT Set Precedent for District AI Governance - GovTech",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPS0NLdE1vZ09KZDVzalRJenZfLUdmSGs1NW9WZVRqR2JVQkhOSWZobjhFX0F1UmhaTlhGUEJ1bUJvSEt6LXVtdHM4SUZ3SGxpMWI5YnVZRGkycl9GVW5GUlRNbDRFaWN6c3lMcUtlaTBHVzFLMVRqZTFVSXI5c1N0ZjNCQ043QTh1T05CbTdvN2dBclVwcjNlVGpoTlhqQQ?oc=5",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T23:40:15+00:00"
     },
     {
       "title": "Webinar Recording | AI Governance Under King V From Principles To Practice (Video) - Mondaq",
@@ -2358,14 +2368,14 @@
       "pub_date": "2026-09-08T06:57:30+00:00"
     },
     {
-      "title": "Three Incompatible AI Governance Models Now Have Multilateral Endorsement – and None Covers Agents - CryptoRank",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPb3hKdTJuQkREXzVqaERYV3pUS3BLajZ4elVhM2FvVll1M2lNbTNnSGtDR2pqakJYYjliOTQ5MEp5T2d6dk84SDF1QVA4QVRtb0o1ZDFJUmZ3aWt4Y1JfZEhMMkM0YkRudmJFcW5EajdOS20wUmlLcFptUmowdUJBdFVOeFBvT0JEdjE3MWpvLVBxWVhIN1RoQTV4Yk9xV2ZiUl83VG03Vk4zUXBfbmEyY01WWV9DNkVnS2hzX2JaSGI4cWEzbFlhUkM0S05pdDA?oc=5",
-      "source": "CryptoRank",
+      "title": "AvePoint at Citi’s 2026 Global TMT Conference: ai governance push - Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZDVaZVZpTU1DQUp0TWpaQWJqNG93SnFkWWJEUHFlMXNydzR3Qi1RY1Nrb0FDamZMQTZlOHNQRGItc0I5Vl9OMnpuaXdRNkZWUGpKS0p3RDdrZlhqTjV3ZzNkZUxnbjdQaGdtdlpGbDJqUkg5RHhFUDJ4NE4wYkZYMTVUNWRCc2lsQmtSVVN1Vm5tRlhVY1JERzZ2YmFnb2dCR2paZ2tSQzduTnJlc0ZYWmxPZkI4MHptTzRz?oc=5",
+      "source": "Investing.com",
       "category": "gov",
       "region": "eu",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-04T16:10:52+00:00"
+      "pub_date": "2026-09-08T18:15:04+00:00"
     },
     {
       "title": "Digital Governance Works Against Corruption, But Not the Same Way Everywhere - Devdiscourse",
@@ -2376,6 +2386,16 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-07T06:54:27+00:00"
+    },
+    {
+      "title": "Three Incompatible AI Governance Models Now Have Multilateral Endorsement – and None Covers Agents - CryptoRank",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPb3hKdTJuQkREXzVqaERYV3pUS3BLajZ4elVhM2FvVll1M2lNbTNnSGtDR2pqakJYYjliOTQ5MEp5T2d6dk84SDF1QVA4QVRtb0o1ZDFJUmZ3aWt4Y1JfZEhMMkM0YkRudmJFcW5EajdOS20wUmlLcFptUmowdUJBdFVOeFBvT0JEdjE3MWpvLVBxWVhIN1RoQTV4Yk9xV2ZiUl83VG03Vk4zUXBfbmEyY01WWV9DNkVnS2hzX2JaSGI4cWEzbFlhUkM0S05pdDA?oc=5",
+      "source": "CryptoRank",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-04T16:10:52+00:00"
     },
     {
       "title": "Only 22% Indian firms have AI governance despite 119% investment surge - ET CIO",
@@ -2518,14 +2538,14 @@
       "pub_date": "2026-09-10T21:55:26+00:00"
     },
     {
-      "title": "Low-Code AI Governance: 8 Questions IT Should Ask Before Business Teams Build - RESIDENT™ | A Luxury Lifestyle Magazine",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPaVhGS1RjMkZuOFB3Skh1cXF4cVJuZFp5VUY3aUdYUWtTN3hZQmF4MGVUZnRCR3c1TFBZek1jU3ZfUWE1M1pFMXBTMFkxelpvaW9zczZtVElzNHp4VFF0UjN3MGk2dVQ1RG1sa2pIODFWUmJTeUVyaVcybEh4MU1OM3BqZG9EcGVkWHlmYkpVX2Y0X3ZYX3Y0SjFfbWg3X0xxdGMzUnhyX3lyZy1WbTExMk1tZmxXaklsR2dRQm9udHBmZUhVbkhET0d2VkF6WTlZMnJlMEVRbjg?oc=5",
-      "source": "RESIDENT™ | A Luxury Lifestyle Magazine",
+      "title": "Indian firms score low on AI governance despite 119% investment surge: Report - ET Enterprise AI",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQNFJ3RGV6S1BEbUJSTjc5SGdVVTV2dGp4cVVLbnZzdHBKTHJhMDhFTS1WaGpFbUJENlVoTEdTbWdMaUdkQWZScS12X3d1S3E5Z3ZPeDMwVzh5a0xIMTgxS3NlTHFiV2FiY3JtX1dqNkdzbUdwLS04UTdnR3VOT0pMWUU2d2VCUkFfZkxUbkdpaXN4MzBCaGpCTXVNR1pUOTFGYlg2YWItNkxoQ1QxdlVzOFplMkJQMDk1ZVRYemgzek4wNHRwVlp4alVjV1JCbXlxR0djeE40UTVjdWtJQ3R0aEpSc9IB6AFBVV95cUxNT0FpWjFBM0N5RWNPdFNTN244SlU2bWFiRTZxT0RyMEN1Vmo3OTBuVkU1cmo1NzVfUi1tSVRkNEV4VmZ6dDRsZDdWdE0xa2hMdlBSUFNPLTdCZjZfUGZ1WnV5YTlTT1J4YkFwSHlmWXpIV2xuQ3J1YW5CQm1QS3MwYl92dEMxYlZOQzFnM1lTRFVZTU90ZEZwNklRVXB4RFBCeUdDdmdzdmRPRWEwbDZLdmMwaUVQZXpxc0g2RHR6cTdxbVgxSEctdHNBVXh1a3BfZU9xamVXS3hscVFlTTJuMm11cmZ5Y0NB?oc=5",
+      "source": "ET Enterprise AI",
       "category": "gov",
       "region": "eu",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-10T10:57:04+00:00"
+      "pub_date": "2026-09-09T15:07:21+00:00"
     },
     {
       "title": "AI Governance Stocks Gaining Attention After GPT 6 Astra Launch - simplywall.st",
@@ -2536,26 +2556,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-04T04:20:53+00:00"
-    },
-    {
-      "title": "Indian firms score low on AI governance despite 119% investment surge: Report - enterpriseai.economictimes.indiatimes.com",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQNFJ3RGV6S1BEbUJSTjc5SGdVVTV2dGp4cVVLbnZzdHBKTHJhMDhFTS1WaGpFbUJENlVoTEdTbWdMaUdkQWZScS12X3d1S3E5Z3ZPeDMwVzh5a0xIMTgxS3NlTHFiV2FiY3JtX1dqNkdzbUdwLS04UTdnR3VOT0pMWUU2d2VCUkFfZkxUbkdpaXN4MzBCaGpCTXVNR1pUOTFGYlg2YWItNkxoQ1QxdlVzOFplMkJQMDk1ZVRYemgzek4wNHRwVlp4alVjV1JCbXlxR0djeE40UTVjdWtJQ3R0aEpSc9IB6AFBVV95cUxNT0FpWjFBM0N5RWNPdFNTN244SlU2bWFiRTZxT0RyMEN1Vmo3OTBuVkU1cmo1NzVfUi1tSVRkNEV4VmZ6dDRsZDdWdE0xa2hMdlBSUFNPLTdCZjZfUGZ1WnV5YTlTT1J4YkFwSHlmWXpIV2xuQ3J1YW5CQm1QS3MwYl92dEMxYlZOQzFnM1lTRFVZTU90ZEZwNklRVXB4RFBCeUdDdmdzdmRPRWEwbDZLdmMwaUVQZXpxc0g2RHR6cTdxbVgxSEctdHNBVXh1a3BfZU9xamVXS3hscVFlTTJuMm11cmZ5Y0NB?oc=5",
-      "source": "enterpriseai.economictimes.indiatimes.com",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T15:07:21+00:00"
-    },
-    {
-      "title": "Saudi delegation explores global best practices in AI governance - Arab News",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNaXRtcHpUV1dNT1Y3UFl5V2pxdkJPUzN1N19RNm9nRFh0cnhVVnZGYU1ibTI1OGFJNEplYXN3WUluNHp4T2VkZVhST25lX01PZnFBSk5yTWR3VGpMVGtZYUZlYkpiaEV0ajJDaW9XVFFMY3NWSU9MckZUVS1HTWZ5OUhWOEFNa1BlN3ZXdGdMaGc5NVlJRTh0YWZZQmxQcmxXY20yeXBKVmxibDZMMGRB?oc=5",
-      "source": "Arab News",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-05T13:33:02+00:00"
     },
     {
       "title": "BOSA manifesto: Maimane pledged free transport, AI governance, ‘accountability revolution’ - news24.com",
@@ -2588,6 +2588,26 @@
       "pub_date": "2026-09-07T18:07:00+00:00"
     },
     {
+      "title": "AJK delegation briefed on Punjab govt’s IT, digital governance initiatives - The News Pakistan",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQdHFfc040a0RERDl0U04wN0tQTGRtc083aVhVSS1Kb2hLUlRNNkRBZDZmZ3g3M1F2V3JWOGpCS3BpRDNHQWdoaGVhX083UUtkYWctd0ltcGdBUE5QZ3Ewb295b3JNVDFGbEh3SnB1S0ZJenJRNDgtTE52MDhUTFd4YlVfZVZZS1JZWEVPUkIwQWNXMmNCNWcxMW8zVEtsVjZhcE9XeUtBZFJ1YVQyNTVj?oc=5",
+      "source": "The News Pakistan",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-10T19:00:00+00:00"
+    },
+    {
+      "title": "Justice Minister leads delegation to South Korea’s Digital Governance Centre - 1TV.GE",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQb3hGQm9IR0duMWlkOHZsbjVfS2lYRnlkUHR6UnlnTDNnMEJwdmxxbTVjS3JHYUYxY2V5YjdtU3cwbVNNYTNUbDFDVnRhRjdQaG1sLXpuc19fMmc4TDZjSXpqVjlJRF9HMmRfWWRHUk1MYm91T2hTMXFSYWtrbUFFYzlWb0VqdjNkUkxHRHVMZHNFeU8wZTQ1U3U4YjFtVTF1LU0wQkY5WQ?oc=5",
+      "source": "1TV.GE",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T16:08:00+00:00"
+    },
+    {
       "title": "BPP Describes NYSC As A Model For Digital Governance, Commends Scheme On Operational Efficiency And Corps Members’ Welfare - Federal Ministry of Information and National Orientation",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOaEs2aGF4WTFtSHI4WkpfM3BXTGlIS2hpR2pPUnZfN1JNWUliY0g4b000M0FCaVJHOEFVYTRMUmpXZGIzeDNzLURseWxNbGVVd2hPSTRVaTFzazVOOGtta0kzbTRLb3lqbTdkR2NxeXJyclhWNnU5UlZwZllLRURweTRxTUd3aHI3eFlCemhraHMyQ3FLaHBDYnhWek8yV1hOSm1QODFKZWg3Q19ITnZ4OGVxNW1KOHBfeFBacUpOUVFmQmczOHR3Vi1kb3I1M0hoT1h6V25VQTFwdw?oc=5",
       "source": "Federal Ministry of Information and National Orientation",
@@ -2608,34 +2628,14 @@
       "pub_date": "2026-09-08T11:27:00+00:00"
     },
     {
-      "title": "Justice Minister leads delegation to South Korea’s Digital Governance Centre - 1TV.GE",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQb3hGQm9IR0duMWlkOHZsbjVfS2lYRnlkUHR6UnlnTDNnMEJwdmxxbTVjS3JHYUYxY2V5YjdtU3cwbVNNYTNUbDFDVnRhRjdQaG1sLXpuc19fMmc4TDZjSXpqVjlJRF9HMmRfWWRHUk1MYm91T2hTMXFSYWtrbUFFYzlWb0VqdjNkUkxHRHVMZHNFeU8wZTQ1U3U4YjFtVTF1LU0wQkY5WQ?oc=5",
-      "source": "1TV.GE",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T16:08:00+00:00"
-    },
-    {
-      "title": "TCS bags ₹123 crore contract to build AI-enabled digital governance platform for Odisha - enterpriseai.economictimes.indiatimes.com",
+      "title": "TCS bags ₹123 crore contract to build AI-enabled digital governance platform for Odisha - ET Enterprise AI",
       "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPUlJGTXZmSndHUUktbTFXSWNMcy1xWWRsbkRVN3VmYVEwdWc1UnNTVUhaZmpuWVVxTnJQTFdJRFBLd0pxd2hVQ2J2Zm9GMTRQTlJsY3BaYTcxWjhTdlBfM2xVdUp1c3FVUV9GMkc3bExwT2pvd1VQSGpZSU9ReWxUeDd4dzlhU2NiZnJaZDNYdzRhZzRCdzg5bHhmREhmUTZPRlQ0aDRvSlgxMi1sc2QwUFFjc0RQNzcxSm8wdkpxZzlSSHpJeDVqODhvMTB5YVBlNm8wamkzdThqVHRQVmlfaXVOeDFFVDVLLWxBTXRQa2IxZ9IB9wFBVV95cUxNSDJ4ZGNpZDVMV3pNNzRUS05TbXZzM21XLUxweHllemhJY2x6Q0pCTEhVRjdpalB2ZndZa1NhR0ZuYW5EVU9RdkY0N01tbGJ6NUxIZGdXRDRCXzdnN21LMHFyM2FoaVNJOHo4T2YxS0tTUHlVb0hkOWtROTBtcWpDcHFfb2FXeFJ3LVRfN1FWSWowNzBRUTlMVlM1RXFlWmpyLXE1R2VtNzRkTGlkNVNNMzJDYnA4bzZHRm8yNkJRYTh3djE0RnJxTzROQk9nV0dmOVRGSmFxbTBvdzhRZ3dLcmdvc291QnZOZk1sYXR3NC12SmZFalZv?oc=5",
-      "source": "enterpriseai.economictimes.indiatimes.com",
+      "source": "ET Enterprise AI",
       "category": "gov",
       "region": "eu",
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-08T11:01:58+00:00"
-    },
-    {
-      "title": "Cummings has the blueprint for AI governance - Trinidad Guardian",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOd3pTR1MtODJwSWkwVGRxcnpWRHA2dmEyd0hKM1VIODdHRU9XVDhDU2hvTkltTU5Tb0pYc1BVaWIzd1M4WGw1VE11SmNPMDc2TFdOcGZxRDNnbzF4X2k5TzVqRkdxcmtnWjh1YlJqQi1talM0VWd0dHY5WFl0RkN3MU9SN0ZJNVlxTXE0andhc3d0SjBaX2pRZDVwcFRMNmQxTWhQTg?oc=5",
-      "source": "Trinidad Guardian",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T21:13:44+00:00"
     },
     {
       "title": "Aiyedatiwa Ushers in New Era of Digital Governance with Ondo Pay - THISDAYLIVE",
@@ -2658,9 +2658,9 @@
       "pub_date": "2026-09-05T13:32:02+00:00"
     },
     {
-      "title": "Senate introduces mobile app to boost digital governance - mettisglobal.news",
+      "title": "Senate introduces mobile app to boost digital governance - Mettis Global",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQS01jdnpkNHVRTVNYN3VIMzlFbUhMTk80ZHJJdWtBMExfblVqOVhWbThXZHZOZEVqMjRWMHd2N0EyYTVRX0RzNTJGdEZ5ZU10eDMtWUJWMkFDazRkdEU0UTFCaElNWlZGU3h2cVJlcHItcVpkSWliLTZzRms4OThqUUdpMF9zY3pBVzFnWFg3NTNrQQ?oc=5",
-      "source": "mettisglobal.news",
+      "source": "Mettis Global",
       "category": "gov",
       "region": "eu",
       "verified": true,
@@ -2678,6 +2678,16 @@
       "pub_date": "2026-09-10T11:34:41+00:00"
     },
     {
+      "title": "Montra Electric’s Karthik Narayanadoss highlights AI, governance and compliance at JSA Boardroom Connect - ETLegalWorld.com",
+      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNdC1iYUQxOFVzNk8zTVhLcTFKck51aGJVeVpvb3FwaUNNWWl2WXNPeUhZM2J6d2FXWnNkOUtFcDM4YnNrbzhZWlNMaFB4ZEE2dmZrS3hsNTBEUjRhMTZtekMxRkFJQ2oxaUdtWm5PTjNHcWJVUUVhbjVnR3l5T095Qi1vTDh3MmhWTTVjQVBQcE1JbmxON01MYzc4MUFTN24ta2thZ21tRzVlU2NBclJNNkZrTjh3cGZnMEt2Ni1wTTNhTWoybmNLWXNGZjB0VVpCbnA0ZGU2RGljN1pTaVYwek9NYmh6U1NBZ1pZZE1lU25WX2c4NmNUN1p4N3Vrc21qTzZ30gGDAkFVX3lxTE10LWJhRDE4VXM2TzNNWEtxMUpyTnVoYlV5Wm9vcXBpQ01ZaXZZc095SFkzYnp3YVdac2Q5S0VwMzhic2tvOFlaU0xoUHhkQTZ2ZmtLeGw1MERSNGExNm16QzFGQUlDajFpR21abk9OM0dxYlVRRWFuNWdHeXlPT3lCLW9MOHcyaFZNNWNBUFBwTUlubE43TUxjNzgxQVM3bi1ra2FnbW1HNWVTY0FyUk02RmtOOHdwZmcwS3Y2LXBNM2FNajJuY0tZc0ZmMHRVWkJucDRkZTZEaWM3WlNpVjB6T01iaHpTU0FnWllkTWVTblZfZzg2Y1Q3Wng3dWtzbWpPNnc?oc=5",
+      "source": "ETLegalWorld.com",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-07T13:48:11+00:00"
+    },
+    {
       "title": "Keralam ministers return to classroom, take lessons in AI, governance - The Indian Express",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNOFF6SGwyb01PdW13YVdndWVyY2lIcE1sekFRa2JqdkNnUHA0NlBxeVExdWx6UDVDaHF3UWEzVGZsUHRQT0VHUHp2VThzY2VNT3lkS0RlU1ExeFc3VVJUMC1fYzBJa1NKN3ZlcVBjOFNvT1ZMX1U5NjROTWxoUHo1eE5WOUpTN0VsVlJLd1RLYW0wQUt0ZXFkb1NRYlhja1RrS21DZk9fU0g2YU5udC1fcHBjU09qYnp6NEo2UmtUNVJkSW1uRVHSAcwBQVVfeXFMUHNwMDNHTGZBR2JQYWZHSUVJbzZROW9IVXlObFlVN1pFelBLRVhENDRWU3VpUDg2RGdfTTlhWTJsdm1ZMlZkNkJoNm9tRHVmYWFEWUk4UVJjT1BCUUhGRjZfSEJ3LVdKY1hvdFNoc2stZlAySjhscElOV2NUWVBnbmd1aTg5NUE4OHNQb2FEb2tXOWl6Sk1NMTdaZmZTTlE2ajM3dW8wRVp3TmEwdkcyREZmUjdFY1ZJR3dzcTJZT184WG0zU09JN1hNNnc3?oc=5",
       "source": "The Indian Express",
@@ -2685,17 +2695,7 @@
       "region": "eu",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-08T11:53:00+00:00"
-    },
-    {
-      "title": "Montra Electric’s Karthik Narayanadoss highlights AI, governance and compliance at JSA Boardroom Connect - ETLegalWorld.com",
-      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQc3VXUEYyZkxtTHBlS0tEczRRVHdxTWFlMDMwcWFkOEpHUFAtQ3N2MFBBdzBVNnlkakR6QjFKWFdoTlZERk5sUEp3dWJjZ19zMHV4X1pmSHAyN012Y3FKeUlVSWYzV3lBd2ZRZDdHWGhudVNHSTc0RzZZdEFyREtjaUtoblFsTVZMZEJaWHRhTERxSG9RcTlLWktJeTN4TlRSdERhdW94dEw0WlJlNy1jc1Q5MmloNENFZXl5b1hicGY0S3pYOFRkSno2UGI1SzVCREZmVHA3TVRNLVZYUFAtdTZISjB4dzUwamEtMVA5dE0wUGdUWjgwNEhEQ0Z5QdIBgwJBVV95cUxNdC1iYUQxOFVzNk8zTVhLcTFKck51aGJVeVpvb3FwaUNNWWl2WXNPeUhZM2J6d2FXWnNkOUtFcDM4YnNrbzhZWlNMaFB4ZEE2dmZrS3hsNTBEUjRhMTZtekMxRkFJQ2oxaUdtWm5PTjNHcWJVUUVhbjVnR3l5T095Qi1vTDh3MmhWTTVjQVBQcE1JbmxON01MYzc4MUFTN24ta2thZ21tRzVlU2NBclJNNkZrTjh3cGZnMEt2Ni1wTTNhTWoybmNLWXNGZjB0VVpCbnA0ZGU2RGljN1pTaVYwek9NYmh6U1NBZ1pZZE1lU25WX2c4NmNUN1p4N3Vrc21qTzZ3?oc=5",
-      "source": "ETLegalWorld.com",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-07T13:48:11+00:00"
+      "pub_date": "2026-09-05T01:36:39+00:00"
     },
     {
       "title": "The People Standing Between AI Ambition and AI Failure - TechBullion",
@@ -2708,24 +2708,14 @@
       "pub_date": "2026-09-07T14:29:17+00:00"
     },
     {
-      "title": "AvePoint at Citi’s 2026 Global TMT Conference: ai governance push By Investing.com - in.investing.com",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPSFNjNlZHNU9qcExreXFwci1tcEJVNWpJLXl0eDdYWjl1Ync3Sl9uQ1B0YllOVTdXNks5djRWVUFRckFmYUpoWENFNkRrRWQybGhwVllrOFJ0R2xISl8xNWgtNk1VRGF4dWxHM3NhWmI4ZXlmNW5vaU5UaXJ6TTFiRzlpa05MaGdLTEFBdk5IY0w0MjNnN0o3ZG9OejEzZmZpVkY4UWU5NmpwdUNoaVprRWVLU1hRTVVoc1U1YUZGUGRBdw?oc=5",
-      "source": "in.investing.com",
+      "title": "AI Governance Bill Expected To Be Tabled In Parliament By Q1 2027 At The Latest - Gobind - Bernama",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5MT0R1TWJ5bTVPWVhwZV9IcWRwN0w0TjJzUXpGRlRtZndPQW9YeEo4cEcyTk9KeFR4bElkXzJuVEFOUzNDdFR3TzRnY1RKcFc3NHNyd1hPM3JleHNSU3BxSmNSbmM?oc=5",
+      "source": "Bernama",
       "category": "gov",
       "region": "eu",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-08T18:12:51+00:00"
-    },
-    {
-      "title": "New face of public administration celebrated at Digital Governance Awards - Μακεδονικό Πρακτορείο Ειδήσεων",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPLXRhRThLdlVOYzVFUHlFS2c5YUNDSGZZTE55UkFxc0U2a2dpelh2am5McFdhVDk3WWRtbUl0LVE2cjlsOVoyeUNVOEc3NExZbWNnWWpCOWRCUlhHbHEwbThVZHZ4bGRlYlhIQVZHZjFZOGNaRmZMbnlhRVh1N0o0dVhMRXpVbmZETURBWnJucDJBU215NWJkQWI3dDVoYnlLZGxRTURRM1diLWVMSnNCUmRn?oc=5",
-      "source": "Μακεδονικό Πρακτορείο Ειδήσεων",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-08T10:35:36+00:00"
+      "pub_date": "2026-09-10T06:19:55+00:00"
     },
     {
       "title": "Chicago CIOs and CISOs to Examine AI Governance, Cybersecurity Resilience, Enterprise Transformation and the Rise of the 'CEO of Technology' at HMG Strategy’s September 22 Summit - The Manila Times",
@@ -2768,6 +2758,16 @@
       "pub_date": "2026-09-10T10:00:00+00:00"
     },
     {
+      "title": "Anwar says AI Governance Bill to complement cybersecurity, data laws - NST Online",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcDhYV0Z5LUxnTm5LUENIUnhjUExYX1E3M1NqY2VLY196VGJ4OHlwc1VVZVQzUFBTdmxRcmxBYnM3N0NWeE9IdjVCUGxJSjJhUENEaHB5WS0teUhib2hXcUFKSE5Va2dtY3NfeHNUVjVBWTQ0R0syZ09DcWJzZmlWZFZpTW1jcy00YTJIUXdVVnFqUER6VUdvYW9aNDAtODVpVnk1SlVtR0ZiR211OUJJZXZxazlvZw?oc=5",
+      "source": "NST Online",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-07T03:11:50+00:00"
+    },
+    {
       "title": "TCS Wins ₹122.6 Crore Odisha AI Governance Deal to Build OSWAS 3.0 for 50,000 Users - InfotechLead",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNcE45R0lPTlQ0ZEdRS0h5TVp6eWYxeE43Q2ZFaEVHbENoUExyUEJNdHd1cXVXQVJRRzFyZ05rcTRjejhlOE9qNzBJaURacmNaLVFTUl96Vkx1dDk1OW5NXzVvQmJUQzB5aE9rSWd5NHlFbkF0bTBiTmZrYVNOd00yT1gxMFNNdmVtd0t2TmNnMWFzYjlPREhFQkptbUNXTC1SMzlUdjZDak4xZmJYcDAxRzI3MDRsNFZmMkhRZkZmbjFXM3V6OHdodEdB0gHSAUFVX3lxTFBab0xBNXE4a0k1b3lwQm1YelpJYUJjMVJDSHRfTFhyZW0zcXo1cElqRFBqTWgtM1VkSjlWT2QzVWIxM2Y5QVJBalUxNmMxVWF5aEdtTEVvTENUVWZoUTFOQzd2dTlCUkVHd2E3LXk2WkZfMXZUWFNjbnlic2ZaTHdhMGltbmRqSVg3U0hwdE9JcHdRR3NFMnMwTWVlWFhIWmtKVVFYbWpfblF6SW9zYnBDdzJHdU9jYWcwSWdmNUozM0FfTE9zb3NyUjlCVWc1c0V1QQ?oc=5",
       "source": "InfotechLead",
@@ -2798,16 +2798,6 @@
       "pub_date": "2026-09-08T10:10:44+00:00"
     },
     {
-      "title": "AI Governance Bill expected to be tabled in Parliament by Q1 2027 at the latest - NST Online",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbHZFQ3g3LUNnVS1CQ25IakRLZmVtbTcxbGRPa3ZKOXRWZi1lb3Q4QXM5R3hyV2xHRnpxd25HNTZGM3VHT3FWQmk2NDlXVHYxVWRfamROVm4tV2ozRHRkTERZQTl0c3dJaXVlRjJiSzNyX3NnVGlqVmVJZVFwTDNvZVRVVEU4ZVQtdlNPNF9fTkJPZ1VkTHFLZ1FSVEs5eERHODh6em11S3VyOEoyZW5KbGNTekE?oc=5",
-      "source": "NST Online",
-      "category": "gov",
-      "region": "eu",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-10T08:46:36+00:00"
-    },
-    {
       "title": "TCS wins Rs 122 cr bid for Odisha digital governance platform - The Times of India",
       "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOMndRT0JJTmVyLXFvUHNXRWJpRUpWUWpCRkZHN3c3b29RMmsxTVJGR2pJd3V3Y2ZVTURzMEdWbVpaVDNuLVBFY2YwRkNTZXlTaWlBSW1tYWdIdnFxZE54VzdrR1ZFS0VLM0FrRVE2WjY2dDBYbFdIZV95WGIwczVQQjA1WkJYNm9wZ0pVUW9DRU90NlpSQ3VPYkRkNXo0ZnhNclFPY3VDMllMUUdsOV9LQ2NRNU16QzcxMXNmQTlKdFVWNlRRM1ZFNTQwNVpwU3N1WDdENzFuWmk5TkFmSW5acdIB5gFBVV95cUxPTW95cU9aOG5Sa0FUZDMwSkRLMWJTYWZHNGdORDdxbXdaWHRDM0NJcWFJcExkcVhHcG16NWsxeUh2ek5UVEpBdHYxTHZ3dHVoekpkb2R6VV9aUU9BbG1wOXB1d0VyOHhFaloyWUhfeG5sSXhFZGlzdGd1ZzZ3WHo0QXRoWWJRODlYTHRCb0ZTR05rZVEtVEUyb1VqT0k1T0htZkV0NW9OU0NNdjdveHpHczNrazFnWWpCcHRiOTVrX1lURVlfR3JuN3V1S09KbF9qV0hWR0Zqa3hCNWZJeW1LVlNUVHN0dw?oc=5",
       "source": "The Times of India",
@@ -2828,6 +2818,16 @@
       "pub_date": "2026-09-08T10:35:39+00:00"
     },
     {
+      "title": "PRIBIT AI unveils strategy to shift from security to AI governance and risk control - digitaltoday.co.kr",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSVBHYVI5dDl2bjlmVGpuSEJfal9LNDU0ZG5HbUFyUlNJd0VEQktXaWE5b0RxWkdfcEVkSVVWZGQ4b1lTUjJHNnBqV01nRVdfaDFkR1FYNkdBR1NkOTA0b2JKeG45Tlh6V1ByYWtHaU12VHJ1YUtCYlRTODg5VUtfVzk1LTlJZHIzemU1VkFDbU0tYnZkMmtDbWswRHBXUjF6Qk92cW9fY2ttS2pnbGxKWkgzd1Z0Xzkwb0ZxVm55MTRaQUdGWVU1Wg?oc=5",
+      "source": "digitaltoday.co.kr",
+      "category": "gov",
+      "region": "eu",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-07T05:23:16+00:00"
+    },
+    {
       "title": "Events - საქართველოს იუსტიციის სამინისტრო",
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE44YkF5QkFrSWFoQlJiN2c3ZFBITkRVSzloU194RFJuMWRLR2R1SnBrRTBKYzlra0ZyYmFUMnBjM3lOZmpuRGNacHF3T2IwRE1UNzh1bTk0bkxqLThCWWpwdXEwM0dyUQ?oc=5",
       "source": "საქართველოს იუსტიციის სამინისტრო",
@@ -2838,14 +2838,24 @@
       "pub_date": "2026-09-08T14:11:04+00:00"
     },
     {
-      "title": "Justice Minister leads delegation on official visit to South Korea to deepen digital governance ties - 1TV.GE",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMWx2d3hpeXdDdzB0c3FmN2lYeUhRazl6SEdfc21JODBMdktvNWR3MnAwX2RFVjMzeFFjS0lJY0NHS0gzNW40RDhNVlNuekRWUC1yTmYtQ3pId1JGRldHQmx5eEQ1SUxwR3NFVWJ4a2haR1hMSFdGV2NJLVBlNXVNRFNlQTFEZUpOX1EyV05OSFozdDlJQzdGVTV5VTFLUHYwS3Q4bXV2d1hIM1QwTnRzRjgtWW56ODZSSld2eEpLTU15RlJDNUJCcw?oc=5",
-      "source": "1TV.GE",
+      "title": "AI Governance Must Enable Innovation, Build Trust And Support Scale: Industry Leaders - BW Businessworld",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZXZVbzQxN1FzSFFKT3dsUDljNXJtUTk4NVRxeUtNOXJCVUFIbS1RaWRIU1BZWkZGMUs5cFV1VC1qZ0xOUDVGd2N1NjdqWjNFZW5ielJJSElRM0UzR1g0MFhWeEZJX1lBVlcwQVZ5Y3BlY1I2MUNYMlpiZTg4UlMtVlJQUTY0NlpXcW9xMmFyb0lTV2F2MVkwNzl3dE5SajIwaW5GMVpuZjhZMmZabURTSVE3Zm9mWHFIek03bzZrbHdjUmhRWkE?oc=5",
+      "source": "BW Businessworld",
       "category": "gov",
       "region": "eu",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-07T11:33:00+00:00"
+      "pub_date": "2026-09-09T15:16:54+00:00"
+    },
+    {
+      "title": "京都スマートシティエキスポ2026 - kouiki-kansai.jp",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZlYycGxDYzhiWGlidlhjU296MEgwNDl3bHdsaUxHaEhCaEZpc3BsNlBVX0pXMjUwSWVCLVFwMk53VWVQSkN1RTFfUDBTSXphdktHV3pBMzJRMDJtNUtiWEdpXy02SlZuU0k3QXlPV1gyVEkwVVpPWmJXWlJUV25kMjJYb25qMnYwTGZHeXBEOER6N3JSd0FLY2JTMUQ?oc=5",
+      "source": "kouiki-kansai.jp",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-10T10:40:20+00:00"
     },
     {
       "title": "スマートシティを支えるデータ利活用・流通を推進するプロジェクトを3件採択|9月 - metro.tokyo.lg.jp",
@@ -2878,16 +2888,6 @@
       "pub_date": "2026-09-08T05:00:00+00:00"
     },
     {
-      "title": "AIガバナンスプラットフォーム市場、2035年75億米ドルへ、CAGR 33.1％で拡大するAIリスク・規制対応基盤 - Newscast.jp",
-      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1HRXJvS2pDc1lldVVZa2pQR2VobmhRR3FSRmFzenA5enp6ekhmeGtpekxMX3ZZaktQVXlhQkxQUG5VbWNGOW1j?oc=5",
-      "source": "Newscast.jp",
-      "category": "gov",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T01:00:00+00:00"
-    },
-    {
       "title": "AIガバナンス市場―2026年～2032年の世界市場予測 - アットプレス",
       "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE03RFI3UWdBRDJPSjQ3QVNybnRGcVhQZ1hDcWM5RFUwTHJoNVlfNkljZGk1T1dkb2VzVnlBN1NmeVdvenFMN2FxbDJSR0FhaUU?oc=5",
       "source": "アットプレス",
@@ -2898,9 +2898,9 @@
       "pub_date": "2026-09-07T07:04:00+00:00"
     },
     {
-      "title": "「京都スマートシティエキスポ2026」10月8日、9日に開催 来場者申込受付中！ - prtimes.jp",
+      "title": "「京都スマートシティエキスポ2026」10月8日、9日に開催 来場者申込受付中！ - PR TIMES",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9QaXB4RVpxY291U3EwRXJUZWRFV25hUS1zUGxYSzYtT0VRSk5mNTBhOFp4QU9jVWR2RmllZHlnSVNScUZ2LTd4ZUdjYW82MlgxblF1Z2dvNUVKejdhMlRseXB6YVA4c0pjRWc?oc=5",
-      "source": "prtimes.jp",
+      "source": "PR TIMES",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -2908,9 +2908,9 @@
       "pub_date": "2026-09-09T07:15:50+00:00"
     },
     {
-      "title": "独Berlin TXL、スマートシティのエネルギー運用に向けビルの空調をデジタルツインで最適化する実証を開始 - dcross.impress.co.jp",
+      "title": "独Berlin TXL、スマートシティのエネルギー運用に向けビルの空調をデジタルツインで最適化する実証を開始 - デジタルクロス",
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5kN3BabzNWOFIyM1k1RTJiU3ZfSmNjTTZ4MXRTWEZLU19WM0lpd3NDTWN3QlhSZFJFXzhlTllJeHBIU3h3THp3VnlOaWJGblA0eDdpaTJKczVDYWU5b0hmcUM4UQ?oc=5",
-      "source": "dcross.impress.co.jp",
+      "source": "デジタルクロス",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -2918,9 +2918,9 @@
       "pub_date": "2026-09-06T21:00:00+00:00"
     },
     {
-      "title": "ITR、国内のAIガバナンス・リスク管理市場規模推移および予測を発表 - 日本経済新聞",
+      "title": "ITR、国内のAIガバナンス・リスク管理市場規模推移および予測を発表 - nikkei.com",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9DbnpBeDZ4bW1ONnVEOG12eUZHQXBONzhvTU94QXY2eUZRc3pJTU9VTUV2V0lCUlRFZU5zSkVwbTZrbnNQY21zOXMxN0J2SWNLQUxILWd6TVV2aGlJWjFqSlJHWGdnRFVQSzBNRw?oc=5",
-      "source": "日本経済新聞",
+      "source": "nikkei.com",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -2928,9 +2928,19 @@
       "pub_date": "2026-09-08T05:00:48+00:00"
     },
     {
-      "title": "AIガバナンスだけでは不十分：リーダーは「コントロールの所在」を知るべきだ - Forbes JAPAN",
+      "title": "インフォメーション・ディベロプメント、「AIガバナンスコンサルティング」、「ISO/IEC 42001認証取得支援」サービスの提供を開始 - 山陽新聞",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBoTkVPNVRXSUNFSUg0cnlTRkNwMWI0TktPQ0FqUWxObUJzTHZpSmotSkJfcDBlOHk3d0xmRmpNN2psQUt6N3lxUXhySzBRSmlfakE?oc=5",
+      "source": "山陽新聞",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T19:03:23+00:00"
+    },
+    {
+      "title": "AIガバナンスだけでは不十分：リーダーは「コントロールの所在」を知るべきだ - forbesjapan.com",
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4yVTNmUFVOc2pkRG1qYWJTdUNWNWNvRVo3ODc2dGVQVjYtRFVucHMwNDFzMHBiTy1YMlktenlXOExLS1ZmOE5KZEF1NGljVDJRMVpSRTZ5QTYzZw?oc=5",
-      "source": "Forbes JAPAN",
+      "source": "forbesjapan.com",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -2948,9 +2958,9 @@
       "pub_date": "2026-09-09T19:16:56+00:00"
     },
     {
-      "title": "「スマートシティ・エキスポ2026」、真のインパクトをもたらす都市ソリューションに向けて加速 - kyodonewsprwire.jp",
+      "title": "「スマートシティ・エキスポ2026」、真のインパクトをもたらす都市ソリューションに向けて加速 - 共同通信PRワイヤー",
       "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9KVVptOXJpTExscEFlRHZmVlhPaEcwYnNReFJMNEdDWUVzQzVsRE9LSEdzLUtkVVVEWW9qSkxLRmljZmp4UGdObGhVVXRSc0JheXF4Z0Nvc2J3NmM?oc=5",
-      "source": "kyodonewsprwire.jp",
+      "source": "共同通信PRワイヤー",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -2978,46 +2988,6 @@
       "pub_date": "2026-09-07T19:41:42+00:00"
     },
     {
-      "title": "「２０２６ワールド・スマートシティ・エキスポ」開幕 - Korea.net",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE4tQUd6MzhrQ3NRb0FaZU92bWlrRG9xYmJrdHNsbklOY19FcUtlZjl6M1NCWEgzcEhZUnRnQjNHYnN3aldSM0h1V3FDX1BRU1lGUHVBZDB5cHAzUHRUcUlBUmdhczdXeDdkNnFqekxXY05ndmxJVGdFX0FaaENYOEU?oc=5",
-      "source": "Korea.net",
-      "category": "gov",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T08:03:45+00:00"
-    },
-    {
-      "title": "NTTデータグループ、パロアルトネットワークスと協業 AIガバナンスなど6領域でソリューション展開へ - EnterpriseZine",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5RYTVxY1ladG5oUXhONDVsVjgxMmJXZTBoZXhUbnhnc2lDb25pcmtnYjZlMjBta0hMdlpfOHk2dHpySDlUT2ZxZjFwS3RNOWl5ajh3THBR?oc=5",
-      "source": "EnterpriseZine",
-      "category": "gov",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T04:58:18+00:00"
-    },
-    {
-      "title": "荒木法律事務所、企業とともにAIガバナンスのベストプラクティスをつくる「AIガバナンス・プラットフォーム」を始動 - prtimes.jp",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5WSnFnZkVJVzFpNjc4aHNwWG8wMjlmM2xvMXRWN1VrWDNsclhJRkZfdVd2TEc4ZTV2VE42T1V0U005MUw4WHJQOW5VXy0zLWJva0pKMmx5LWx3M2hZMHNqX2tZTE56S0hyOFE?oc=5",
-      "source": "prtimes.jp",
-      "category": "gov",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-08T03:30:02+00:00"
-    },
-    {
-      "title": "EBPM ×AIで行政にデータを活かし政策サイクルを変える【第48回】 - dcross.impress.co.jp",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5mUmEwLXZuWG5sTjRHU3hLVlVTeHlLV3ZBbWF5REI0aVpRYzZacVdvckJtYXFHQmJpOU1mTWgxSVZCcDBFdmlfaVE0U0tLMjc0amNab09NS1EzVl8wZnRGclowcnZDZ0tqWTNyTFZsaGRQOVJLUWc?oc=5",
-      "source": "dcross.impress.co.jp",
-      "category": "gov",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-09T21:00:00+00:00"
-    },
-    {
       "title": "荒木法律事務所、「AIガバナンス・プラットフォーム」始動 参加企業・専門家が知見や課題を共有 - EnterpriseZine",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBFNjlyTlg1c2RFeGlFYXRuTmRkRVU4d1FwY2ttWHB1WjBkRVlhOFBUa1BGZmhaLXVQU3R0V2ItVkFOTzQ0eVJBb05rcm9WdTRNTGc1MlJn?oc=5",
       "source": "EnterpriseZine",
@@ -3028,14 +2998,54 @@
       "pub_date": "2026-09-08T05:15:35+00:00"
     },
     {
-      "title": "ランディット、さいたま市スマートシティ推進コンソーシアムに入会 - prtimes.jp",
+      "title": "荒木法律事務所、企業とともにAIガバナンスのベストプラクティスをつくる「AIガバナンス・プラットフォーム」を始動 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5WSnFnZkVJVzFpNjc4aHNwWG8wMjlmM2xvMXRWN1VrWDNsclhJRkZfdVd2TEc4ZTV2VE42T1V0U005MUw4WHJQOW5VXy0zLWJva0pKMmx5LWx3M2hZMHNqX2tZTE56S0hyOFE?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-08T03:30:02+00:00"
+    },
+    {
+      "title": "EBPM ×AIで行政にデータを活かし政策サイクルを変える【第48回】 - デジタルクロス",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5mUmEwLXZuWG5sTjRHU3hLVlVTeHlLV3ZBbWF5REI0aVpRYzZacVdvckJtYXFHQmJpOU1mTWgxSVZCcDBFdmlfaVE0U0tLMjc0amNab09NS1EzVl8wZnRGclowcnZDZ0tqWTNyTFZsaGRQOVJLUWc?oc=5",
+      "source": "デジタルクロス",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T21:00:00+00:00"
+    },
+    {
+      "title": "ランディット、さいたま市スマートシティ推進コンソーシアムに入会 - PR TIMES",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9uWldBbmhuX1Vhb1AzYUhaNW91N1lMblBERXZmMDlFZUdPcjRib1NEZ3VGek55cVBENVp4b0Vvc3NtX2JoeEMtOGtGeHlwM2s1N1ZTQkthdUxYMEpOeWlUSnQ3VWVPVTE3VlE?oc=5",
-      "source": "prtimes.jp",
+      "source": "PR TIMES",
       "category": "gov",
       "region": "jp",
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-07T02:00:02+00:00"
+    },
+    {
+      "title": "EBPM ×AIで行政にデータを活かし政策サイクルを変える【第48回】 - デジタルクロス",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFA3LUEySUtwWmtnLV90cmxUQUNVU3B0NkpiV25uR1N5dnhjREJnSm9ZVC1yMl9mM3k3UXFVbnVxbWtCSUx3S1lya1VONmJBUE8wRmtfWFVkSl9JYmZDcGZRcml4VmxmcjlydElULVJiTHFLN0Q2UDk0bA?oc=5",
+      "source": "デジタルクロス",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T21:00:00+00:00"
+    },
+    {
+      "title": "「２０２６ワールド・スマートシティ・エキスポ」開幕 - Korea.net",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE4tQUd6MzhrQ3NRb0FaZU92bWlrRG9xYmJrdHNsbklOY19FcUtlZjl6M1NCWEgzcEhZUnRnQjNHYnN3aldSM0h1V3FDX1BRU1lGUHVBZDB5cHAzUHRUcUlBUmdhczdXeDdkNnFqekxXY05ndmxJVGdFX0FaaENYOEU?oc=5",
+      "source": "Korea.net",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T08:03:45+00:00"
     },
     {
       "title": "「デジタル化がもたらす行政の未来」：スマートシティ太田に向けて - 選挙ドットコム",
@@ -3045,27 +3055,17 @@
       "region": "jp",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-10T20:17:14+00:00"
+      "pub_date": "2026-09-10T20:41:25+00:00"
     },
     {
-      "title": "LRM、AI活用を安全に推進するためのAIガバナンスサービス「マモルオ」を提供開始。初年度で1,000社導入を目指す - 朝日新聞",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE43eUw0ZjZjc2tkVjlWQ0h1aE91MTFKcjhXLVVod1ROQUpweFlQcWFCOThLNUt1RkNzTXY2TEViamlXOHlMSURicUluQ1JyNm9jbTBwb0QwTHZNbW8?oc=5",
-      "source": "朝日新聞",
+      "title": "なぜAdvanced Micro Devices（AMD）はAIガバナンスと機密AIで注目されるのか？ - simplywall.st",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPaWwyTG9qTF9pckxiQ3lSZk1CX25YUXV6QXM5dWNVNXR5UUN3OVlfUFFkQ0t3a09Nb19wZGpYRjlSNFhpc3RkaFRFNE1hQUtMM1ZsNFM4aFcyZjQxbmtuenZvLUVWMGFjZTJOMk9wb0tPa1R6TkhWc1ZqRFdteGJneE9GVk83bVlJSlg1eUl6Z1BPU00yckZlRzgzUkl3clNZYl9DZ0VmR2VNRW56cXfSAa4BQVVfeXFMT2lsMkxvakxfaXJMYkN5UmZNQl9uWFF1ekFzOXVjVTV0eVFDdzlZX1BRZENLd2tPTW9fcGRqWEY5UjRYaXN0ZGhURTRNYUFLTDNWbDRTOGhXMmY0MW5rbnp2by1FVjBhY2UyTjJPcG9LT2tUek5IVnNWakRXbXhiZ3hPRlZPN21ZSUpYNXlJemdQT1NNMnJGZUc4M1JJd3JTWWJfQ2dFZkdlTUVuenF3?oc=5",
+      "source": "simplywall.st",
       "category": "gov",
       "region": "jp",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-07T08:44:38+00:00"
-    },
-    {
-      "title": "企業のAIガバナンス、重要性の認識と実装に大きなギャップ データ保管先の管理を回答者の約8割が重視する一方、重要視層でも国・地域まで把握・指定できるのは12.5% - 時事ドットコム",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9yUTFtOC14a3VIb2o3NUZPSzVFUV85TEJjRERjSjZNc1BFWVpQWl9wSnplSkU5bzdET2JQV3ViVlBQY3ptZ3dpV1RZdEVuYnY0c0plM2RpQVAzMzFTSmpnZjBveEI5eVlFZmlJ?oc=5",
-      "source": "時事ドットコム",
-      "category": "gov",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-08T06:46:00+00:00"
+      "pub_date": "2026-09-09T21:12:05+00:00"
     },
     {
       "title": "たった1年で10倍に急拡大 “一見地味”なAIガバナンス・リスク管理市場がなぜ？：IT調査ピックアップ - ITmedia",
@@ -3078,6 +3078,26 @@
       "pub_date": "2026-09-10T23:00:00+00:00"
     },
     {
+      "title": "米国はAIガバナンスに関する新たなアプローチを推進している。 - vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBpajdNNDFlS2JiXzRVVGpiQTNDdExmZ0taSUZHNk1aa2lPQjFjZ0ExTXh5WG1KRjM5M0J4bF9yYl95R0xhMkl0QVdaeThzRGxwTVhPVS13c0ZmVXFucnRnRzViLVoxSGN3WTVRNUE1VVRYNmpIMVl6RGFOa08?oc=5",
+      "source": "vietnam.vn",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-04T03:11:28+00:00"
+    },
+    {
+      "title": "企業のAIガバナンス、重要性の認識と実装に大きなギャップ データ保管先の管理を回答者の約8割が重視する一方、重要視層でも国・地域まで把握・指定できるのは12.5% - 時事ドットコム",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9yUTFtOC14a3VIb2o3NUZPSzVFUV85TEJjRERjSjZNc1BFWVpQWl9wSnplSkU5bzdET2JQV3ViVlBQY3ptZ3dpV1RZdEVuYnY0c0plM2RpQVAzMzFTSmpnZjBveEI5eVlFZmlJ?oc=5",
+      "source": "時事ドットコム",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-08T06:46:00+00:00"
+    },
+    {
       "title": "AvePointがシティの2026年グローバルTMT会議でAIガバナンス戦略を発表 執筆 - Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBTTm82dzI4aFNZV3V3ZHhoa2xmeUxxZXRfOXdzNlJEYzhQOUdpejlqVTNZMzhQYTNLZmZ3YkMwQzR3eUxoQ1QwaFozYW1zRGZTWmplUzlINGJ2WjI1R1ZveEVLb2Fuc3NNWG5BYmlJTQ?oc=5",
       "source": "Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
@@ -3088,14 +3108,14 @@
       "pub_date": "2026-09-08T18:08:00+00:00"
     },
     {
-      "title": "テスラの家庭用蓄電池「Powerwall 3」、スマートグリッドEXPO秋2026に出展…EV用充電器も展示 1枚目の写真・画像 - レスポンス（Response.jp）",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1JRXp0eWNuRHd2SnAzRXZwS1NWaFRTZGNmQmhnTmFNWUl4OVVWQjI5MVRCb01KaTBjbExmZGZTd1FxZVBBd2dMT3dKMl9McFhheTFKNUVMOU1wTTlfQ21TWjBHeDlsNU9OYjMzVw?oc=5",
-      "source": "レスポンス（Response.jp）",
+      "title": "テスラの家庭用蓄電池「Powerwall 3」、スマートグリッドEXPO秋2026に出展…EV用充電器も展示 (レスポンス) - Yahoo!ニュース",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQdF9uaXRqdnZUQzBodXVxdUJIMjNRTlc4VU9HYzVSLUpybEJXc1QxZjVTcVl5QV9PYVptMFRtdEVveUxXcVN5VVZVcjdKNzVZSWRIZUtrWDN4eXJyT2Y0a3hDZG1vRXhiVGpjczFYbzRueUJWcHlTdGFuQ1o1c29Oemo3QkRMQXFTSlN2WGFB?oc=5",
+      "source": "Yahoo!ニュース",
       "category": "gov",
       "region": "jp",
       "verified": true,
       "has_og_image": true,
-      "pub_date": "2026-09-09T18:29:11+00:00"
+      "pub_date": "2026-09-09T07:41:31+00:00"
     },
     {
       "title": "朴官烈光州市長「京畿道に3万戸スマートシティ・国家産業団地支援要請」 - jp.ajunews.com",
@@ -3116,16 +3136,6 @@
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-09T01:30:03+00:00"
-    },
-    {
-      "title": "米国はAIガバナンスに関する新たなアプローチを推進している。 - Vietnam.vn",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBpajdNNDFlS2JiXzRVVGpiQTNDdExmZ0taSUZHNk1aa2lPQjFjZ0ExTXh5WG1KRjM5M0J4bF9yYl95R0xhMkl0QVdaeThzRGxwTVhPVS13c0ZmVXFucnRnRzViLVoxSGN3WTVRNUE1VVRYNmpIMVl6RGFOa08?oc=5",
-      "source": "Vietnam.vn",
-      "category": "gov",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-04T03:11:28+00:00"
     },
     {
       "title": "生成AIへの情報漏えいを止める。AI Librarium、AIガバナンス・セキュリティ統合オファリング「AIL Governance X」を提供開始 - RBB TODAY",
@@ -3168,9 +3178,9 @@
       "pub_date": "2026-09-08T02:47:31+00:00"
     },
     {
-      "title": "スマートシティ実現へ！東京都がデータ活用プロジェクト3件を採択 - socialbusiness.aishas.co.jp",
+      "title": "スマートシティ実現へ！東京都がデータ活用プロジェクト3件を採択 - 全国ソーシャルビジネス事業者データベース",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRGl5SGxmMWFtRExJRkw2S2NSazgyS0wwaHhneDlnUWVyd1hEMWlkUV92SXZTWmRJMW4wb093R2V1VzdtVndfZk02WEwyOGgwOWsxQWRXZUNDUkxYU2tmNHlmc1pHcXR1dFBtdXZMa19peWpEWWZ5Z1M0WHE4bjNPWU5Jb1JVaE5zZ1paQzVpRVI?oc=5",
-      "source": "socialbusiness.aishas.co.jp",
+      "source": "全国ソーシャルビジネス事業者データベース",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -3188,9 +3198,19 @@
       "pub_date": "2026-09-09T01:30:03+00:00"
     },
     {
-      "title": "2026年から2030年までのスマートシティ開発に関するガイドライン案についての意見 - Vietnam.vn",
+      "title": "テスラの家庭用蓄電池「Powerwall 3」、スマートグリッドEXPO秋2026に出展…EV用充電器も展示 1枚目の写真・画像 - レスポンス（Response.jp）",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMzl4dDFPZE05Y2E1VkIzeGZzRC14MllMV3JXLWRDcUpyaDZOR3p3ZXlYX1g3WlZLUUp5NzdkVk94TEpBYXhHUUJablhLUlMyT0hDNFJydm93ck15bDlYSDdRVUNNdDNuRnFDODZFLWVVX3pVOFNfUU53WTBrTGY4OTFGTlBNLVVWT3pGQnZ5dw?oc=5",
+      "source": "レスポンス（Response.jp）",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T01:30:03+00:00"
+    },
+    {
+      "title": "2026年から2030年までのスマートシティ開発に関するガイドライン案についての意見 - vietnam.vn",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQY0U1MGRNV1hYdVIxeVJiekxjUUZoQVhXY0w0azRrc3NrcnlqUXphcnFWYktIZHNhNmdpZzRYc0xGUV9fZTZuR1oycjlKb3VSTXVBZXlnelU1U0UxODE3aGVyTTc0THJOWU1rbVpWQWJPb2JsNmhSSzJTcUtNTURmS2hJLWprQTR3MDJBX096X3dLMnc0Q1VCNURfbHRTR0xs?oc=5",
-      "source": "Vietnam.vn",
+      "source": "vietnam.vn",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -3218,6 +3238,16 @@
       "pub_date": "2026-09-06T02:05:56+00:00"
     },
     {
+      "title": "土地区画識別、デジタルガバナンスプラットフォーム。 - vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE81bjc2WmNSRDN4OVdrbnAxZXpTOWNralRyemdGVG5sMFp2cDc5TVFKYXFIYlpaem5HRzVkWXBvVFkweDczX3VsOEZBcXNYa19yMG5UYmM5RW5FMzR0ZUhveTJQa0NSVE9nb0hHRXNnSmdjRTA?oc=5",
+      "source": "vietnam.vn",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-09T23:42:43+00:00"
+    },
+    {
       "title": "「京都スマートシティエキスポ2026」10月8日、9日に開催 来場者申込受付中！ - Excite エキサイト",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9EcFpPZUNHbFl1azVpN053aGlhcG5sWC1nZFg2YXFPMjlrQlVXYy1yNHBCREFUUmRTWXk1SW01M29VN21lSXdZSENVaGpiMkVNV0w3T2xrbXRwZTRONUh3d1ZncEFkMG96SnVUMHB5bWs2Wl9p?oc=5",
       "source": "Excite エキサイト",
@@ -3228,9 +3258,9 @@
       "pub_date": "2026-09-09T08:15:00+00:00"
     },
     {
-      "title": "ハロン湾におけるスマートシティの開発。 - Vietnam.vn",
+      "title": "ハロン湾におけるスマートシティの開発。 - vietnam.vn",
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFAtNzJIdExtZDhZTS1USmZmRktWZlhmVkgyNW9PNzIyTmlZeXdLZEdVNnpTMzNiRlJDTUhxR1JOcno3cFFYTk43b2UxTG41ekhpX2lhYmtzMHFHVGxSdUtCc1pHVFJfU2tOLUh2bEFlUQ?oc=5",
-      "source": "Vietnam.vn",
+      "source": "vietnam.vn",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -3238,14 +3268,24 @@
       "pub_date": "2026-09-10T10:01:06+00:00"
     },
     {
-      "title": "人々のために役立つスマートシティを創造する。 - Vietnam.vn",
+      "title": "人々のために役立つスマートシティを創造する。 - vietnam.vn",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9JRTlrM1AtTUE1NEFadXRRSlJRUWloM3hnZzZPTERsRWMtcDN0dTYwdzdUS1UtUWg4Z3lOYmZhSXFjbnBSTWVVNlhsa3pXY1lSb3dpd1JKQ3VXMDA2ejhqaFNBeGlDbG9uTFdsSUJOdzhYVEVUWTNxQm9NUW9sUQ?oc=5",
-      "source": "Vietnam.vn",
+      "source": "vietnam.vn",
       "category": "gov",
       "region": "jp",
       "verified": true,
       "has_og_image": true,
       "pub_date": "2026-09-07T02:25:57+00:00"
+    },
+    {
+      "title": "PRIBIT AI、AIガバナンス支援へ事業転換戦略を発表 - 디지털투데이",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZDRqcXNxdzNJalNuX1MxYWFneFB6T3c4QWgtZHlPLW1tWE5ZaXU1NFFHcnBlaXhVOGpsbDZGZlY1bTR5bGhyODZzQzIzVF9RMWdFSzRXUHltbS1FLWJCQVhxaTJJSjNVck92WmlsbS1vczZ3M19rS19fWEYxZXVUNWtpQlZiYkxBdldhZVV0OFgxVjA5N1VPZkZVVjZzazVqQ0JnY1NlTWd2d1R1cG9LSmtmc1NPTlNrdEtHeEJrQ3lNRFFqLVZDZg?oc=5",
+      "source": "디지털투데이",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-07T05:23:16+00:00"
     },
     {
       "title": "「スマートシティ・エキスポ2026」、真のインパクトをもたらす都市ソリューションに向けて加速 - 千葉テレビ放送株式会社",
@@ -3258,19 +3298,9 @@
       "pub_date": "2026-09-09T02:06:22+00:00"
     },
     {
-      "title": "PRIBIT AI、AIガバナンス支援へ事業転換戦略を発表 - digitaltoday.co.kr",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZDRqcXNxdzNJalNuX1MxYWFneFB6T3c4QWgtZHlPLW1tWE5ZaXU1NFFHcnBlaXhVOGpsbDZGZlY1bTR5bGhyODZzQzIzVF9RMWdFSzRXUHltbS1FLWJCQVhxaTJJSjNVck92WmlsbS1vczZ3M19rS19fWEYxZXVUNWtpQlZiYkxBdldhZVV0OFgxVjA5N1VPZkZVVjZzazVqQ0JnY1NlTWd2d1R1cG9LSmtmc1NPTlNrdEtHeEJrQ3lNRFFqLVZDZg?oc=5",
-      "source": "digitaltoday.co.kr",
-      "category": "gov",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-07T05:23:16+00:00"
-    },
-    {
-      "title": "ロッテ・エコ・スマートシティ・トゥーティエム・プロジェクトには、数千億ドンもの資金が投入された。 - Vietnam.vn",
+      "title": "ロッテ・エコ・スマートシティ・トゥーティエム・プロジェクトには、数千億ドンもの資金が投入された。 - vietnam.vn",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQMzFaOFhacDZBaFoxNzNINy1iblpQQk5oNnNhWEZmZjRvdU5XNy1La01rdmZIRWhWMG9vMGQ0WkpNcjZlVTNmdTdNNld3ZDQ3QnFyaHhUZE44MW5nWmtKTHVCVEp6c0lhUTRBREJRN05GOHl0ODdjMGdycC1RU241VGh3cEdQcG00bTQwVk5yVU9nUQ?oc=5",
-      "source": "Vietnam.vn",
+      "source": "vietnam.vn",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -3298,9 +3328,9 @@
       "pub_date": "2026-09-07T03:15:00+00:00"
     },
     {
-      "title": "セキュリティ各社、AIガバナンスとコスト管理へ事業拡大 - digitaltoday.co.kr",
+      "title": "セキュリティ各社、AIガバナンスとコスト管理へ事業拡大 - 디지털투데이",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNX0tOeUdGZVNBNlZHNjhWTDlDSHlDS3NLYU9tLUF3WC04bW5aejJibEVkUEphUWprai0wdGJWME43bmhTZUFCNkxyRW1lVF8xR1hrX1otX3doY0VEbDdJYS1pRF9YSVB2Rkh1TWpIa0xFUG9qWUgwTm9LNnBaMmd5ZldMYjdiYVlwZEtlYXFoc213UTBZQjk1ZVZSNkFPZ1g2QXhTR1ZyOXlrVG8?oc=5",
-      "source": "digitaltoday.co.kr",
+      "source": "디지털투데이",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -3318,6 +3348,16 @@
       "pub_date": "2026-09-09T08:32:16+00:00"
     },
     {
+      "title": "ベトナムと韓国間の建設、インフラ、スマートシティ分野におけるビジネス協力の機会。 - vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZ1ZlUjRuVHlYS09kQmhVTXA4YU5Rb19LTjVDMWhXRVVXNnRnekY0R1ZPbFlIN0NWd2hwM3VwUnhEVjNlRHRQeW9IZ3loRHhwYW01S3E1WkJWcS1hQ2g4NVZsQ3JoXzlGVjhBYVhyN09idVRnTWRMZ1A0VzduMm9PVVZSVVZlTVpyWjRzWEFjbkFScU1RSzMtYXU1d1hEVkNNck5uQW1BenN6U2hqSzRlOTdUQnBjeFdfSFJRTg?oc=5",
+      "source": "vietnam.vn",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-05T00:04:31+00:00"
+    },
+    {
       "title": "ランディット、さいたま市スマートシティ推進コンソーシアムに新たに参画 - ニュースメディアVOIX",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFB5aklSV0V1X1VUT3lKRGIzWGJuYUgtVEdPY1lualhxVndKOXJrMFQxRk9LaC1JaGQ3eHQtM1V4N3kzdmFTcXFhamN4SFBXUkNmLTFWclAwQWdVbjZaV0dVX09VZWhwS3dKSFc2aGZB?oc=5",
       "source": "ニュースメディアVOIX",
@@ -3328,19 +3368,9 @@
       "pub_date": "2026-09-07T05:02:56+00:00"
     },
     {
-      "title": "ベトナムと韓国間の建設、インフラ、スマートシティ分野におけるビジネス協力の機会。 - Vietnam.vn",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZ1ZlUjRuVHlYS09kQmhVTXA4YU5Rb19LTjVDMWhXRVVXNnRnekY0R1ZPbFlIN0NWd2hwM3VwUnhEVjNlRHRQeW9IZ3loRHhwYW01S3E1WkJWcS1hQ2g4NVZsQ3JoXzlGVjhBYVhyN09idVRnTWRMZ1A0VzduMm9PVVZSVVZlTVpyWjRzWEFjbkFScU1RSzMtYXU1d1hEVkNNck5uQW1BenN6U2hqSzRlOTdUQnBjeFdfSFJRTg?oc=5",
-      "source": "Vietnam.vn",
-      "category": "gov",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-05T00:04:31+00:00"
-    },
-    {
-      "title": "ナムキム・スチールは、トゥーティエム・エコスマートシティ・プロジェクトに「参加」している。 - Vietnam.vn",
+      "title": "ナムキム・スチールは、トゥーティエム・エコスマートシティ・プロジェクトに「参加」している。 - vietnam.vn",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPSUk1WkU0QzlOLU9RS2ZCQU5OOGJIVGVxVEJheDJndVV6Skc4WlZEaUtGR05RTC1YV3J1Z1IwMWRyeFc1OFphaS1IV0p2T21UWXpaQ3RPSHdtNU13UE1temJXeE1ITDhicjAxaVZPUVdCbHVYVlRTUlJhWUlxdWRxZVd4SGxfdjF6?oc=5",
-      "source": "Vietnam.vn",
+      "source": "vietnam.vn",
       "category": "gov",
       "region": "jp",
       "verified": true,
@@ -3358,6 +3388,16 @@
       "pub_date": "2026-09-08T14:22:04+00:00"
     },
     {
+      "title": "ソンプンソレッドが大韓民国安全産業博覧会とワールドスマートシティエキスポに相次いで参加し、歩行者の安全な通行を助ける交通安全製品を披露したと10日、明らかにした。ソンプンソレドは2010年に設立された.. - 매일경제",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBnZUU2VDZEbUlZTTlXSkotYzhyRXh2ZVFMUDM3MVVrM05Gb2xER2w4OUlsLXhRNndLbS1jUE5wcEowWm9lSGo1Y1BOYXJiZw?oc=5",
+      "source": "매일경제",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-10T08:43:05+00:00"
+    },
+    {
       "title": "デジタルから「ウェルビーイング」へ。メガシティ東京の未来図を描く『東京計画2030 - ニコニコニュース",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFA4TTBlamd6UGxBeUw5R3l1aXdUZVhkel9YNlRJYXJmdzNPZjJPeW1zVkh3cnhOVVVfSFBiM3FpTTlab3ZyTzY4M0sxS0MyUmMwMzdCWA?oc=5",
       "source": "ニコニコニュース",
@@ -3368,19 +3408,9 @@
       "pub_date": "2026-09-08T04:45:12+00:00"
     },
     {
-      "title": "KINDがWSCE参加 K-City連携を拡大 - CHOSUNBIZ - biz.chosun.com",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNbTVUSUQxZEdPLWh5aFJvdm1KbDViWWUzZEZibjF6UTJ1Vm9KbUpDZlRHb3ZJWndoanlRNVdiWERBcC1pd1QxdzhsM0tEZDBEZmlsQXZGQ2N2cV9VRG12UTJZQVE0V2NCb01HVld5OHhST3pNelQ4ZE5zS3R5VVd6QXpUb0nSAZgBQVVfeXFMUFdPQlJtaXhQMzRhY3lCRTYzWjcyV2k5S1FFSDk4Y2FNSWd6S2VkSmV0Z28yNXNYUEJacVc3TVJmbWdXaVpGNzdjRFkyc2ZOUURacHN2V2NKNkdfdjY3R3ppTkUyeW9nVWZvRzBvc2NLdjZrdTB1d0Q5cU9tY2tTalgyd3VGNUx6TFctRVdCS2taNFU2ZlVYSGk?oc=5",
-      "source": "biz.chosun.com",
-      "category": "gov",
-      "region": "jp",
-      "verified": true,
-      "has_og_image": true,
-      "pub_date": "2026-09-06T23:31:00+00:00"
-    },
-    {
-      "title": "Naver Cloud、LINE WORKSが台湾・新竹市の公式ツールに採用 - digitaltoday.co.kr",
+      "title": "Naver Cloud、LINE WORKSが台湾・新竹市の公式ツールに採用 - 디지털투데이",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNOUsyd0RvMmFqdnBTU0toQ3JuRmVGUWlJNXBtWG1wSXdwRDJ0cDVDSGh2LU9mOUVTSkJjZVdkTGhaMm9zNm9XX3Bxb1dFU0h4c2JrSGxkUEN0amRQVUJwY2JjZmRJU3hnb1BPbkN5ajNUcEIzYkFEYjRHdTNBQWxYc0JxeGVxaXNNbE1UUUN0TjdmOXVLSlYtM1FHWlBPVTJxdGxLdVRiQzFBSlpsanpaU3AzVGxiLVFDeU13?oc=5",
-      "source": "digitaltoday.co.kr",
+      "source": "디지털투데이",
       "category": "gov",
       "region": "jp",
       "verified": true,
