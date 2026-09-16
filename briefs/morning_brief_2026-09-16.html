@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>當 AI 治理成為資本剛需與文化鏡像：從工具生態整併到城市移動重構的設計新秩序 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-16</div>
+    <div class="headline">當 AI 治理成為資本剛需與文化鏡像：從工具生態整併到城市移動重構的設計新秩序</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">We shape our tools and thereafter our tools shape us.</div>
+      <div class="quote-text-zh lang-zh-only">我們塑造了工具，此後工具又塑造了我們。</div>
+      <div class="quote-author">— John Culkin</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">Canva 推出 ProSuite 整併頂尖工具，正式向專業創意工作流發起生態級挑戰</li>
+        <li class="flash-item">AI 治理不再只是合規口號，那斯達克等資本正大舉湧入打造金融級防護網</li>
+        <li class="flash-item">微移動工具搭乘量破百萬，全球大都會交通基礎設施面臨典範轉移</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/09/89848/" target="_blank" rel="noopener">空間氛圍即核心體驗：日本光環境設計掀起公共空間的情緒重構</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】建築の照明デザインを専門とするDAISUKI LIGHT inc.が、照明デザイナーを募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/6a925cd24f62a.jpg" alt="【求人情報】建築の照明デザインを専門とするDAISUKI LIGHT inc.が、照明デザイナーを募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">建築照明不再只是天黑後的補光工程，而是決定人與空間互動質感的隱形介面。日本事務所 DAISUKI LIGHT 擴大招募背後，反映出當代醫療、旅宿與公共設施對『情緒感知設計』的強烈渴望。優秀的光環境設計能無形中撫平焦慮、引導動線，甚至替冰冷的鋼筋水泥注入生命力。當實體空間必須跟虛擬元宇宙競爭眼球時，這種無法被數位複製的沉浸式感官營造，正是未來空間設計師最難被取代的核心競爭力。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese architectural lighting studio DAISUKI LIGHT is expanding its team, highlighting a growing industry trend where light is treated as an active spatial medium rather than passive illumination. As physical spaces compete with virtual worlds, ambient lighting design in healthcare and hospitality has become essential to creating empathetic, immersive human experiences that digital interfaces cannot replicate. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/09/722748.html" target="_blank" rel="noopener">深空探索的美學逆襲：次世代太空服展現極限機能與頂級工藝的融合</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">大阪市立科学館「月から火星へ 宇宙探査におけるイタリア」展。アルテミス計画で使用予定の次世代宇宙服レプリカを日本初公開</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/09/a-2.png" alt="大阪市立科学館「月から火星へ 宇宙探査におけるイタリア」展。アルテミス計画で使用予定の次世代宇宙服レプリカを日本初公開" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">大阪市立科學館展出阿提米絲計畫的次世代太空服複製品，背後最迷人的亮點其實是義大利工藝與航太工程的跨界火花。過去我們習慣將太空裝視為臃腫的維生硬體，但隨著深空探索與太空商業化成真，人因工程、輕量化材料與服裝美學的整合已成顯學。這不只是科學迷的狂歡，更向所有設計師證明：哪怕是在最嚴苛的真空宇宙裡，人類對尊嚴、靈活性與美感造型的追求也從未妥協。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The Osaka Science Museum is showcasing a replica of the next-generation Artemis spacesuit, spotlighting the seamless convergence of Italian design elegance and aerospace engineering. As deep space exploration advances, spacesuits are evolving beyond bulky life-support shells into highly ergonomic, aesthetic, and functional garments that ensure human mobility and dignity in extreme cosmic environments. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/ai-culture-ux-design-36c7d410cd1f?source=rss----138adf9c44c---4" target="_blank" rel="noopener">演算法背後的文化霸權：打破 AI 預設值的多元包容介面戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The hidden culture layer in AI</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fill:1200:632/g:fp:0.5:0.68/1*YsoO1glOlAn8SFiqMCsHYg.png" alt="The hidden culture layer in AI" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當你要求 AI 生成一個『幸福家庭』或『成功商人』，跳出來的往往是歐美中產階級的刻板樣貌。這篇文章精準戳破了 AI 的隱性文化層：演算法從來不是中立的，它默認了優勢文化的價值觀。對體驗設計師來說，未來的挑戰不再只是排版或流暢度，而是如何在 Prompt 和介面底層植入文化反思，主動打破演算法的單一審美，避免全球數位產品淪為同質化的文化迴音室。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Exploring the hidden cultural layers within generative AI, this piece underscores how algorithms default to dominant Western perspectives. For UX designers, the emerging priority is to intentionally dismantle algorithmic biases and create culturally inclusive interfaces, preventing global digital experiences from devolving into homogenized, monocultural echo chambers. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/the-users-were-confident-but-wrong-heres-how-to-design-for-that-4b1546dc5864?source=rss----138adf9c44c---4" target="_blank" rel="noopener">當使用者自信卻用錯概念：體驗設計如何優雅化解認知落差</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The users were confident, but wrong. Here’s how to design for that.</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*Gt0J2HNO_8hg5rgx_pnIjw.jpeg" alt="The users were confident, but wrong. Here’s how to design for that." loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">很多時候，使用者遇到專業術語不是卡住，而是帶著滿滿的自信『完全理解錯了』，這往往導致嚴重的操作災難。UX 設計師常犯的錯誤是跳出來用長篇大論教育用戶，結果只換來挫折與防禦心。聰明的解法是透過『行動反饋』與情境化微互動，讓使用者在操作當下自然發現落差並自行校正。好的設計不是證明用戶無知，而是讓他們在不知不覺中把事情做對。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Designing for users who are confident yet fundamentally mistaken requires nuanced UX strategies rather than pedantic explanations. Designers must implement subtle contextual feedback and intuitive micro-interactions that gently guide users to self-correct, preserving user dignity while ensuring accurate task completion and system safety. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/canva-launches-prosuite-bringing-affinity-cavalry-flourish-and-leonardo-together-with-more-than-new-100-features/" target="_blank" rel="noopener">Canva ProSuite 震撼集結：向 Adobe 壟斷發起總攻的創意平民化革命</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Canva launches ProSuite bringing Affinity, Cavalry, Flourish and Leonardo together with more than new 100 features</div>
+            <img class="item-image" src="https://media.creativeboom.com/aa959a20-0901-43fb-8541-0dd86ed6890d/conversions/c2fbc848935751bb4d74f78b8a2a1a6cb50ad50b-medium.webp" alt="Canva launches ProSuite bringing Affinity, Cavalry, Flourish and Leonardo together with more than new 100 features" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Canva 一口氣整合 Affinity、Cavalry 與 Leonardo 等收購武器推出 ProSuite，這絕對是近年數位創意工具界的最大地震！長期以來，專業設計師忍受著肥大封閉的訂閱生態系，而 Canva 正從原本的『小編拼圖工具』蛻變成全功能生產力怪獸。當向量、動態圖像與生成式 AI 在同一個平台被打破壁壘且維持親民門檻，整個設計行業的協同效率與創作主權將迎來徹底洗牌。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Canva has launched ProSuite, unifying acquired powerhouses Affinity, Cavalry, Flourish, and Leonardo into a comprehensive platform. This strategic move directly challenges Adobe&#x27;s long-standing industry dominance by bridging the gap between non-designers and creative professionals, signaling a massive democratization and consolidation in contemporary design workflows. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE1reEcxazA1bERNQ2FVbmlCZjVubjgtT29WenpmbVJ0RlktTUhnWXdVdXJwd2JneldPS3FhbmJWLWY1c0Jzb2NuMWJHeXNMOHRKXzlPMjlLRUp2Zw?oc=5" target="_blank" rel="noopener">智慧城市落地實證：2026 台灣設計展以桃園為實驗場的治理變革</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">2026台灣設計展 來桃園體驗屬「智慧城市」 | 時尚生活 | 商情 - money.udn.com</div>
+            <div class="item-sentence lang-zh-only">過去很多智慧城市展覽常淪為廠商展示酷炫螢幕的科技秀，但 2026 台灣設計展落腳桃園，宣告了一種由『設計思維』主導的公共治理新範式。從移工文化包容、航空城物流系統到在地微氣候因應，設計的角色不再是替政策擦脂抹粉，而是成為梳理複雜利害關係的黏著劑。把整座城市當成展場與原型測試場，正是公部門邁向敏捷治理最接地氣的示範。 <span class="src">— money.udn.com</span></div>
+            <div class="item-sentence-en lang-en-only">The 2026 Taiwan Design Expo in Taoyuan redefines smart city initiatives by integrating design thinking directly into public administration. Moving away from superficial tech showcases, the event treats the city as an active testing ground to address complex urban challenges, from logistics infrastructure to civic inclusion, proving design&#x27;s strategic role in modern municipal governance. <span class="src">— money.udn.com</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxORTZLNkhJVzR6SVpBanFmMEdrd0pGNnhoVnp2UEZZWUVMQXlLRUd6aGFXYXBDQldlM3FtOFJ5ZDVpUzJnQXFGcExzak9oNWJrbFpJZkFmdE9yMnNpak1JSFRFc3oyLU1sSVduWXpYMHpPTnlXLUIwRXVwWnZScDFCSHczMUlGQ29FOEhqQW8xY29mSGxrX2FmSjJ0bVNlbGdCRVBYY2J5TjRwbFZOZ2NRZjhmZHpVVG5QOC10M2p2VzhYRjNCblBNYU1LTVJSRVhK0gHWAUFVX3lxTE9va2hVdi0yZ1NQdUF6ek1MeDhvNnhLMGtPcVVLTkEtTGdIU0xYWTdLZ2doQXlsdDc0TE4xV3JhbTlSc3g4am5aZVhLc2FDQjhYZkJMSUZRRU1wRGFmWlgyR3FkT3o1andhLUpzS0F6bE5ZbGpkcHM0dGRCZW1EcEN0Z1djb0tHRDNEZjZsLUF5V3ZXRTg4N2h0T3NjdDlQXzFMWXliMHBjMWEwNzJqXzA2NWFONThESHdIRHI2VnBhNi1rMjJKZFpNSjN1SGwxeUhxOXotTHc?oc=5" target="_blank" rel="noopener">合規即利潤：散戶與資本市場為何開始重押 AI 治理概念股</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">3 AI Governance Stocks Retail Investors Are Watching Right Now - simplywall.st</div>
+            <div class="item-sentence lang-zh-only">當市場對大語言模型的驚嘆期過去，隨之而來的是版權侵權、數據隱私與演算法幻覺的巨額罰款風險。資本市場的嗅覺最敏銳，散戶與機構投資人熱議 AI 治理板塊，標誌著技術發展已從『野蠻生長』跨入『制度防護』階段。能提供自動化稽核、倫理驗證與資料透明度的治理型工具，不再是企業可有可無的公關支出，而是攸關商業存續的護城河資產。 <span class="src">— simplywall.st</span></div>
+            <div class="item-sentence-en lang-en-only">Retail and institutional investors are increasingly eyeing AI governance stocks, signaling that artificial intelligence has entered a mature phase where regulatory compliance is paramount. Tools facilitating algorithmic auditing, copyright tracking, and privacy verification have transitioned from corporate cost centers to critical infrastructural assets for business sustainability. <span class="src">— simplywall.st</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxORTZLNkhJVzR6SVpBanFmMEdrd0pGNnhoVnp2UEZZWUVMQXlLRUd6aGFXYXBDQldlM3FtOFJ5ZDVpUzJnQXFGcExzak9oNWJrbFpJZkFmdE9yMnNpak1JSFRFc3oyLU1sSVduWXpYMHpPTnlXLUIwRXVwWnZScDFCSHczMUlGQ29FOEhqQW8xY29mSGxrX2FmSjJ0bVNlbGdCRVBYY2J5TjRwbFZOZ2NRZjhmZHpVVG5QOC10M2p2VzhYRjNCblBNYU1LTVJSRVhK0gHWAUFVX3lxTE9va2hVdi0yZ1NQdUF6ek1MeDhvNnhLMGtPcVVLTkEtTGdIU0xYWTdLZ2doQXlsdDc0TE4xV3JhbTlSc3g4am5aZVhLc2FDQjhYZkJMSUZRRU1wRGFmWlgyR3FkT3o1andhLUpzS0F6bE5ZbGpkcHM0dGRCZW1EcEN0Z1djb0tHRDNEZjZsLUF5V3ZXRTg4N2h0T3NjdDlQXzFMWXliMHBjMWEwNzJqXzA2NWFONThESHdIRHI2VnBhNi1rMjJKZFpNSjN1SGwxeUhxOXotTHc?oc=5" target="_blank" rel="noopener">逃避治理的代價：從投機熱潮看企業在 AI 監管風暴中的生存之道</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">3 AI Governance Stocks Retail Investors Are Watching Right Now - simplywall.st</div>
+            <div class="item-sentence lang-zh-only">投資人對 AI 治理概念股的追捧，本質上是對黑盒子科技失控的焦慮避險。歐盟 AI 法案與各國監管落地，宣告了『先上線再說』的矽谷式狂飆已經走入歷史。對身處第一線的科技管理者來說，這意味著架構設計必須在第一天就納入治理維度：可解釋性、倫理審查與責任追蹤將成為系統必備模組。忽視治理的企業，未來可能面臨極高昂的清算成本。 <span class="src">— simplywall.st</span></div>
+            <div class="item-sentence-en lang-en-only">The financial sector&#x27;s surging focus on AI compliance underscores the urgent shift from reckless technological deployment to systematic risk mitigation. With global regulations tightening, tech leaders must bake auditability, transparency, and ethical guardrails into their architectures from day one, or risk crippling liabilities and reputational damage down the road. <span class="src">— simplywall.st</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE9HNmR3RzZwU2ZGUDd4dFRaZTZ2eTRnU0FnWHZNSFFXNkV3VEFKcmZnM2w3TGgtdGl1UFVkRVRZc0ZqeWFCM3VhYmp1TFAzcGFWdjNxdGtWYW1GU2NfdjBPNEgtRVA5bWR1a2FzSkhSUEs?oc=5" target="_blank" rel="noopener">華爾街的自衛本能：那斯達克投資 Transient.AI 築起金融風控新邊界</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ナスダック・ベンチャーズ、AIガバナンス企業Transient.AIに戦略的出資 執筆 - Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース</div>
+            <div class="item-sentence lang-zh-only">那斯達克創投戰略投資 AI 治理新創 Transient.AI，這一步走得極具象徵意義。金融市場每毫秒都在流動天文數字，一旦金融機構採用的生成式模型出現偏差或資料洩漏，後果不堪設想。那斯達克的出手證明，AI 治理絕非學院派的道德清談，而是關乎金融系統韌性的底層基礎設施。誰能為高度複雜的演算法套上精準韁繩，誰就掌握了下一代數位金融的遊戲規則。 <span class="src">— Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース</span></div>
+            <div class="item-sentence-en lang-en-only">Nasdaq Ventures&#x27; strategic investment in AI governance startup Transient.AI illustrates that algorithmic risk management is now a top-tier security priority for global financial markets. By backing automated governance solutions, institutional players are building robust safeguards to mitigate algorithmic hallucinations and ensure systemic integrity across mission-critical financial applications. <span class="src">— Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/transportation/e-bikes-e-scooters-reshape-major-cities-mobility-landscape" target="_blank" rel="noopener">微移動不是玩具而是骨幹：電輔車與滑板車如何瓦解舊交通階層</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">E-Bikes, E-Scooters Reshape Major Cities’ Mobility Landscape</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/d5bf6ab/2147483647/strip/true/crop/5760x2800+0+452/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F51%2F7f%2Fb2154fee4aa1b8a84092c7e376af%2Fadobestock-333764912.jpeg" alt="E-Bikes, E-Scooters Reshape Major Cities’ Mobility Landscape" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">芝加哥、紐約等大都會的共享電輔車與電動滑板車年騎行量突破數百萬，這代表微移動已正式脫離『休閒玩物』定位，晉升為與地鐵、公車平起平坐的交通骨幹。這個轉變對都市治理帶來巨大衝擊：道路平權必須被重新定義，汽車優先的柏油路必須讓位給低速輕量載具。城市若不及時重構慢行道與充電網絡，將徹底錯失建立低碳、高流動性韌性城市的契機。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Micromobility platforms in major cities are logging millions of annual trips, rivaling traditional public transit in daily urban connectivity. This paradigm shift demands an urgent overhaul of urban street design and regulatory frameworks, pushing city planners to prioritize protected lanes and charging hubs over car-centric infrastructure to foster truly sustainable cities. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-16 08:03:51 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
