@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從摺疊螢幕的空間語彙到AI時代的智財與算力鴻溝：當代設計與治理的新邊界 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-18</div>
+    <div class="headline">從摺疊螢幕的空間語彙到AI時代的智財與算力鴻溝：當代設計與治理的新邊界</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">The role of the designer is that of a good, thoughtful host anticipating the needs of his guests.</div>
+      <div class="quote-text-zh lang-zh-only">設計師的角色，就像一位體貼而周到的主人，隨時預先察覺賓客的需求。</div>
+      <div class="quote-author">— Charles Eames</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">別再拉伸介面：摺疊螢幕要求設計師回歸多工與空間動態思維</li>
+        <li class="flash-item">微軟高層反思數據爬取爭議，直指AI訓練面臨史上最大勞動產權挑戰</li>
+        <li class="flash-item">數位平權邁入新階段，「Token鴻溝」成為公部門不可忽視的資源差距</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/09/89939/" target="_blank" rel="noopener">日本設計中心擴編：傳統平面美學向跨媒介數位體驗的典範轉移</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】日本デザインセンターの色部デザイン研究所が、デザイナーを募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/6050495aeed16.jpg" alt="【求人情報】日本デザインセンターの色部デザイン研究所が、デザイナーを募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">日本設計中心色部研究所近期釋出招募需求，這不僅是一則求才訊息，更反映出頂尖視覺識別團隊如何因應介面演變。傳統以紙本與實體空間為主的視覺系統，如今必須深度整合 Web、App 與動態數位媒介。這意味著當代設計師不能再把品牌識別當作靜態符號，而要具備將平面哲學轉譯為數位互動體驗的系統性架構能力。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Nippon Design Center&#x27;s Irobe Design Institute is recruiting talent, signaling a continuous shift where classic graphic design integrates seamlessly into digital applications and interactive branding environments. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/stereotype-30th/" target="_blank" rel="noopener">回顧三十年視覺軌跡：在商業浪潮中淬煉獨立設計語彙的長跑示範</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ステロタイプ30周年記念展</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/1399265.jpg" alt="ステロタイプ30周年記念展" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Stereotype 於 Kaikai Kiki Gallery 舉辦三十週年回顧展，梳理了從千禧年前夕至今的創作脈絡。在講求快速迭代與演算法主導的現代視覺環境裡，一個設計團隊能夠維持三十年的鮮明性格實屬不易。這場展覽提醒我們，真正的品牌力不是盲目追逐短暫的視覺流行，而是如何在漫長的商業合作中持續深化獨特的設計哲學與實驗精神。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Marking its 30th anniversary, the Stereotype retrospective showcases three decades of distinctive design evolution, illustrating the enduring power of consistent visual identity amidst fast-changing commercial trends. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/please-dont-stretch-your-app-for-foldables-a62f1f8230ac?source=rss----138adf9c44c---4" target="_blank" rel="noopener">告別粗暴縮放：摺疊螢幕迫使介面設計回歸空間與多任務本質</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Please don’t stretch your app for foldables</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*y-EauoO3Mkb6_2Id5AYWCQ.png" alt="Please don’t stretch your app for foldables" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">摺疊螢幕早已不再是邊緣硬體，但多數開發者仍習慣性地將手機介面單純「拉大」來應付，浪費了寶貴的顯示空間。這篇文章點出核心問題：當螢幕邊界不再固定，設計師必須轉變思維，從單一任務流轉向多視窗協同與動態佈局。如何讓介面在展開時提供深度的生產力功能，而不是一片空曠的空白，是硬體創新給體驗設計出的新考題。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Treating foldable displays as simply enlarged smartphone screens is a missed opportunity. Designers must rethink layout adaptability and multi-tasking workflows to fully leverage dynamic screen constraints. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/rethinking-writing-in-the-world-of-design-and-ai-1c70188b3998?source=rss----138adf9c44c---4" target="_blank" rel="noopener">在生成式AI暗影下寫作：找回思考摩擦力作為設計核心價值的反思</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Rethinking writing in the world of design and AI</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*li8g5MZb9pcndU9o26lqQw.png" alt="Rethinking writing in the world of design and AI" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">作者透過撰寫百篇設計專文的歷程，深刻反思 AI 時代下思考與輸出的關係。當自動化工具能輕易產出看似完美的行話時，人類設計師最珍貴的資產反而是那些帶著疑惑、推敲與試錯的「思考摩擦力」。文章提醒我們，寫作與設計都是建構思維的過程；若我們將思考過程全盤外包給模型，最終失去的將是原創洞察與批判性判斷力。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Reflecting on writing 100 design essays, the author argues that the intellectual friction of writing is indispensable for critical design thinking, especially in an era dominated by generative AI. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/the-evidence-at-work-7407503330e8?source=rss----138adf9c44c---4" target="_blank" rel="noopener">辦公空間與彈性政策的真相：當數據成為檢驗組織設計的照妖鏡</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The evidence at work</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*mCKPQffYa4_8HCToIm93qg.jpeg" alt="The evidence at work" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">企業規劃辦公動線與混合工作政策時，往往帶著美好的主觀預設，但真實行為數據往往帶來殘酷的檢驗。這篇文章探討如何用實證數據檢視工作場域的設計成效。這對組織領導者的啟示在於，空間與制度本身都是一種「體驗設計」，如果管理層只憑直覺或過時權威來推行政策，忽視使用者的實際反饋，再昂貴的辦公室改造也換不來真正的協作效能。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Evaluating hybrid policies and workspace floor plans requires hard behavioral evidence, showing that workplace architecture and organizational rules are user experience challenges requiring empirical validation. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE0ybHlnNUFoY0w2RnZTejQyMjV0U3dVWlJiekYwVHRlUm9zRGEzUFdFMDBMNUVHeEtPN3BCanRvUTFFVWxfcDdXcmhCb29ZNWN2WENCUldoUGxpQ09sQ1JodjJmVXc?oc=5" target="_blank" rel="noopener">台灣智慧路口方案進駐矽谷：軟硬整合落地實證的城市治理轉型</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">討論牆 | 光林智能鏈結矽谷智慧城市生態系 Interlux進駐Curiosity Lab驗證AI智慧路口 - LINE TODAY</div>
+            <div class="item-sentence lang-zh-only">光林智能攜手矽谷 Curiosity Lab 驗證 AI 智慧路口系統，展現台灣在智慧城市基礎建設上的出海實力。城市交通治理正從傳統的被動信號控制，進化為即時感知、動態調度的邊緣運算網絡。這項合作的價值在於將實驗室技術置入真實高階驗證場域，為跨國智慧治理提供了標準化的數據與安全範本，是公私協力推動都市升級的具體實踐。 <span class="src">— LINE TODAY</span></div>
+            <div class="item-sentence-en lang-en-only">Interlux&#x27;s deployment at Silicon Valley&#x27;s Curiosity Lab highlights the role of AI-driven intersection management in modern smart cities, bridging hardware sensing with intelligent traffic governance. <span class="src">— LINE TODAY</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNQ3U5UnNFeDdiblhwcjVQelZRQkRoQkZYdjJoOTMyeTVrbTJ2cV8td193U3RmQ1RUUFRhSG1WV210dkgzdHpFX2o0eUVsM24zSkl1SHoxazBRbWpMMHFkNWFuV2NvblBTTC1VSjJ3WlJSdXVqQndUZk1YY29HOXNXdUx0WU9mQ2syeGhQVUZ0WnpjeW5ENzJvZ1lsMHV5VWFEMmpSY3pIaWhsbFZtNThBVllmS3Zid3F4bnkyVDBEaw?oc=5" target="_blank" rel="noopener">AI抓取被指為歷史最大勞動掠奪：科技巨頭內部的著作權與倫理風暴</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Microsoft exec called AI scraping the “largest theft of labor in human history” - Ars Technica</div>
+            <div class="item-sentence lang-zh-only">微軟內部主管對無償抓取網路數據訓練 AI 的尖銳發言，撕開了科技巨頭在版權爭議上的內部矛盾。當大規模生成模型依賴全人類創作者的智慧成果，卻未給予合理補償或授權時，這不再只是法律攻防，而是嚴重的數位勞動正義危機。對於內容產業與治理機構而言，建立可持續的算力分潤與數據溯源機制，已是迫在眉睫的全球制度課題。 <span class="src">— Ars Technica</span></div>
+            <div class="item-sentence-en lang-en-only">An internal critique labeling AI data scraping as massive labor theft underscores growing ethical and legal tensions around intellectual property, compensation, and foundational AI training practices. <span class="src">— Ars Technica</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9ialVJOS12QlBEOVdRc2V0R3ViWkVFZ3luc0NpYnNObHNSZUlMSDRIWVkxcnY1MVdBLTRMZm8yblVTZmF6TnR0UlV0WWY1TnR2ZkoxWmh3aFpNeFpKYThJXzFMcVVfMnJuNnNaOUxReHdOMUpXTENoY0lvQlA0aFU?oc=5" target="_blank" rel="noopener">董事會AI治理進入2.0：從技術狂熱轉向風險管控與長期價值校準</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Priorities for Boards of Directors – Version 2.0 - Doug Levin | Substack</div>
+            <div class="item-sentence lang-zh-only">面對 AI 浪潮，企業董事會的關注焦點正在迅速轉變，不再停留於「我們有沒有用 AI」的盲目焦慮，而是升級到治理架構、合規性與商業回報的深水區。董事會 2.0 優先事項強調的是建立明確的問責機制、數據安全防線與倫理指引。這顯示出 AI 已正式脫離純技術試驗期，成為考驗高階決策者治理成熟度與風險承受力的核心命題。 <span class="src">— Doug Levin | Substack</span></div>
+            <div class="item-sentence-en lang-en-only">Corporate board priorities for AI are shifting from speculative experimentation toward robust oversight, risk mitigation, and strategic alignment in what is now AI Governance 2.0. <span class="src">— Doug Levin | Substack</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMickFVX3lxTE45ZkRIZXJuOUtyNHc5eUZ3ZklxUFp0dXhfV3NEUTEyQ3gzTU96OGlEYzRxLVBoQzQzM0pieUZ6bmRyUTVfUUJIb2FhLWhxVHZuQ25COXh4RGEtN0Q2eGhyY1hZWXpnWktnc0JaVHlLeXNPUQ?oc=5" target="_blank" rel="noopener">閒置空地數據化賦能都市交通：日本埼玉縣的精準空間治理實驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【AI・IoT・DX】ランディット：さいたま市スマートシティ推進組織に参画、駐車場・遊休地データを都市交通に活用 - みんなの広報宣伝部</div>
+            <div class="item-sentence lang-zh-only">日本新創 Landit 加入埼玉市智慧城市推動組織，利用停車場與閒置土地數據活化都市交通動線。都市治理的痛點往往不在於空間不足，而在於資訊破碎導致的資源閒置。這項專案證明了透過物聯網與空間數據整合，城市可以低成本地釋放潛在容量、舒緩交通壅塞，為人口密集區的空間重構提供了兼具經濟與社會效益的創新解法。 <span class="src">— みんなの広報宣伝部</span></div>
+            <div class="item-sentence-en lang-en-only">Startup Landit joins Saitama City&#x27;s smart city initiative to utilize parking and underused land data, optimizing urban mobility and showcasing efficient digital resource allocation for urban planning. <span class="src">— みんなの広報宣伝部</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/network/whats-new-in-digital-equity-understanding-the-token-divide" target="_blank" rel="noopener">從頻寬落差到Token鴻溝：數位平權在生成式AI時代的新挑戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What’s New in Digital Equity: Understanding the Token Divide</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/9d9f011/2147483647/strip/true/crop/5657x2750+0+625/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F56%2F09%2F4cdaf2164e8aaaf956ac659a18a2%2Fshutterstock-691180075.jpg" alt="What’s New in Digital Equity: Understanding the Token Divide" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">美國數位平權討論正延伸至「Token 鴻溝」，指出弱勢社群不僅缺乏網路硬體，更可能因為算力成本而被排除在先進 AI 工具之外。過去的平權著眼於連線能力，未來的平權則取決於運算資源與智慧助理的普及程度。公部門政策若無法及時涵蓋算力與 AI 資源的公平分配，數位階級分化將在智慧化社會中進一步被放大。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Discussions on digital equity are expanding beyond connectivity to address the &#x27;Token Divide,&#x27; warning that unequal access to AI computing power may deepen socioeconomic disparities. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.7 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-18 08:05:13 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
