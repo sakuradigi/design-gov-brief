@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從生活織品微觀到 AI 代理人治理：當代視覺美學與能源責任的交會浪潮 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-20</div>
+    <div class="headline">從生活織品微觀到 AI 代理人治理：當代視覺美學與能源責任的交會浪潮</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is society made durable.</div>
+      <div class="quote-text-zh lang-zh-only">技術，就是被物質化而得以持久的社會關係。</div>
+      <div class="quote-author">— Bruno Latour</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">當代美學轉向日常溫情，永續設計真正融入生活儀式。</li>
+        <li class="flash-item">AI 算力撞上能源瓶頸，實體空間成為警示數位風險陣地。</li>
+        <li class="flash-item">智慧城市擺脫技術堆疊，公私黑客松重塑地方治理活力。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/09/718793.html" target="_blank" rel="noopener">北歐織品展揭示當代美學轉型：從極簡工業回歸日常溫潤儀式</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">世田谷美術館で「スウェーデン・テキスタイル」展開催。暮らしと自然に息づく北欧デザイン</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/07/E722-9537.jpg" alt="世田谷美術館で「スウェーデン・テキスタイル」展開催。暮らしと自然に息づく北欧デザイン" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這場展覽可不只是展示漂亮的織品而已！它背後代表的是當代設計思維的大轉向：我們不再盲目追求冷冰冰的工業極致，而是重新把自然脈動與生活質感織回日常空間。對讀者來說，這給了一個很棒的啟示——真正的永續與好設計，從來不是高不可攀的藝術品，而是能無縫融入你我每天起居的暖心儀式。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The Swedish textile exhibition at the Setagaya Art Museum reveals how contemporary design is shifting away from cold industrialism and moving back toward warm, domestic living rituals. By weaving nature directly into everyday home fabrics, it reminds us that true sustainable aesthetics reside in accessible, daily living spaces rather than high-minded abstract gallery concepts. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/products/2026/09/89960/" target="_blank" rel="noopener">品牌美學轉向：從焦慮的抗老宣傳改走和諧共處的精神平靜</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">モノとコト | hisn（ヒスン）</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/01_hisn_main_C1_0239_rgb.jpg" alt="モノとコト | hisn（ヒスン）" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">看這品牌的翻新方式特別有意思！過去美妝市場總是用『抗衰老』的恐懼行銷來威脅消費者，但「hisn」卻選擇重新設計包裝與語境，走一種優雅平穩的心靈美學。這代表當代品牌設計正走向『情緒價值』與『視覺減壓』的新紀元，讀者能看到未來好品牌不再賣焦慮，而是透過極簡與包容的視覺，給予大眾安定感的精神陪伴。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">OSAJI&#x27;s sensitive skin rebranding into &#x27;hisn&#x27; highlights a broader market transition from fear-based anti-aging messaging toward holistic emotional calmness. The updated visual aesthetics reflect how modern branding prioritizes mental rest, subtle identity resonance, and daily visual relief over urgent, anxiety-driven youth-preservation narratives. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/sequins-in-sitting-rooms-why-photographer-debby-besford-is-placing-roller-skating-champions-in-domestic-settings/" target="_blank" rel="noopener">將溜冰冠軍置於日常客廳：攝影藝術翻轉英雄敘事重構真實感</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Sequins in sitting rooms: why photographer Debby Besford puts skating champions in domestic settings</div>
+            <img class="item-image" src="https://media.creativeboom.com/0336c7cd-9293-42c1-a383-4b81cbb79042/conversions/78bac3c8fde1d42294b26f495c4d3b37e2f5259c-medium.webp" alt="Sequins in sitting rooms: why photographer Debby Besford puts skating champions in domestic settings" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">把穿著閃亮賽服的溜冰冠軍放在平凡無奇的家庭客廳裡，這種視覺碰撞真的太精采了！它打破了運動攝影總是強調衝刺、輝煌的高調套路，反而讓我們看到英雄光環下的真實生活氣息。這種創作手法告訴我們：當前視覺美學的趨勢正從『造神』走向『接地氣』，最能打動人的創作，往往來自將非凡事物放回平淡日常的深刻對比。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">By capturing young British roller-skating champions inside mundane residential living rooms, photographer Debby Besford cleverly subverts conventional athletic hero imagery. This visual contrast demonstrates how contemporary photography is shifting focus away from staged podium triumphs to highlight raw, relatable human reality embedded within everyday domestic life. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/a-billboard-of-signed-school-leavers-shirts-has-appeared-in-london-and-the-messages-arent-what-youd-expect/" target="_blank" rel="noopener">倫敦看板上的校服告白：用實體校服揭露 AI 數位風險的新倡議</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">A billboard of signed school leavers&#x27; shirts has appeared in London, and the messages aren&#x27;t what you&#x27;d expect</div>
+            <img class="item-image" src="https://media.creativeboom.com/cc94b11e-f6b1-408d-8ac0-94212335335d/conversions/aabdb5c2c4863ffde4749fa32d64795ec1c910f4-medium.webp" alt="A billboard of signed school leavers&#x27; shirts has appeared in London, and the messages aren&#x27;t what you&#x27;d expect" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這絕對是近年最具衝擊力的社會設計行動！把畢業生親筆寫的校服釘上街頭大看板，用最實體的童年記憶，去血淋淋地揭露 AI 生成式數位性傷害。這件事的重大趨勢在於：面對虛擬且抽象的 AI 科技風險，單靠線上討論已被邊緣化，唯有將數位威脅『實體化』並拋入公共空間，才能震撼人心並推動真正有力的政策防線。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">This impactful London billboard campaign uses real signed school shirts to visually communicate AI-enabled sexual harm against young people. It demonstrates that effectively confronting abstract digital threats requires visceral physical activism in public spaces, transforming hidden online discussions into unavoidable social governance debates that demand immediate regulatory action. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/clara-biel-paints-laundromats-pool-halls-and-supermarkets-to-remind-us-to-slow-down/" target="_blank" rel="noopener">洗衣店與撞球館的色彩革命：插畫藝術成為城市減速的療癒解藥</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Clara Biel turns laundromats, pool halls and supermarkets into reminders to slow down</div>
+            <img class="item-image" src="https://media.creativeboom.com/2e3379dd-606d-44d7-9c38-40bc9f9223ed/conversions/75ae1a408b7258e04c3850cfd5b72147579bb3b3-medium.webp" alt="Clara Biel turns laundromats, pool halls and supermarkets into reminders to slow down" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">法國插畫家 Clara Biel 把洗衣店、撞球館這些隨處可見的平民空間，繪製成色彩斑斕的畫作，這不只是美化環境，更是一場對抗快節奏生活的視覺革命！在大家都焦慮追趕效率的時代，這種創作提醒我們：視覺美學可以作為都市生活的調節劑，透過重新賦予日常空間溫度與藝術感，引導人們在平凡瑣事中找回慢下來的勇氣。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">French illustrator Clara Biel transforms mundane everyday locations like laundromats and pool halls into vivid, reassuring artistic canvases that encourage urban dwellers to slow down. Her creative approach illustrates how visual design serves as a vital antidote to fast-paced modern burnout by re-enchanting routine environments. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE9IMjhraG10Zjd5Um16MWYySkx1ekI2VkwxRXA2c2NMV0puVXBOQWRIVTczTDRWRUQ2X3lZdU9QMEZVMDc3SzVPR0NWSXFvMVIybVE?oc=5" target="_blank" rel="noopener">梅竹黑客松跨界協作：從技術展示轉向地方共治智慧城市實驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">2026「新竹X梅竹黑客松」登場 產官學聯手打造竹市智慧城市新解方 - 蕃新聞</div>
+            <div class="item-sentence lang-zh-only">黑客松已經不再只是工程師狂歡的寫程式比賽了！新竹這場跨界合作代表著智慧城市治理的典範轉移——從政府單向發包，轉變為開放市民與學界共同提案的『公私協力實驗室』。讀者可以觀察到，未來的城市治理趨勢絕不是空談高深 AI 技術，而是如何建立好跨界協作的平台，讓民間創意能快速驗證並解決具體的生活痛點。 <span class="src">— 蕃新聞</span></div>
+            <div class="item-sentence-en lang-en-only">The 2026 Hsinchu X Meichu Hackathon showcases an evolving model of smart city governance, shifting from top-down technological implementation to open civic experimentation. It underscores how effective local governance relies on cross-sector problem-solving platforms that rapidly convert grassroots ideas and academic innovation into practical urban solutions. <span class="src">— 蕃新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOaDVmVnpLOEQydks0SnZGVHZuV3RyeTlMN2VCanE4LTJkWE5CajVnYUprdWo4eERTdDJST0Y5YjN4R2poeE8tb1VSWFJGbmZTaTBKc0pjeWR1Q1c0Z2FnZk9IMlRQa21wQUVDbWd4d1AtZzZBU294UnpEYkRIUlRqag?oc=5" target="_blank" rel="noopener">香港五年計劃納入 AI 治理：從被動監管走向前瞻戰略新格局</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Hong Kong outlines AI governance approach in first Five‑Year Plan and 2026 Policy Address - Digital Watch Observatory</div>
+            <div class="item-sentence lang-zh-only">香港把 AI 治理框架直接寫進五年計劃與施政報告，這訊號非常明確：AI 監管不再只是法務部門的後續補救，而是升格為區域競爭力的核心戰略！這給我們的啟示是，當前全球 Governance 的大趨勢是『前瞻性制度設計』，企業與政府若能在技術爆發前夕就先釐清安全與創新的邊界，反而能為產業發展提供最穩固的信任基石。 <span class="src">— Digital Watch Observatory</span></div>
+            <div class="item-sentence-en lang-en-only">Hong Kong&#x27;s integration of AI governance into its first Five-Year Plan and 2026 Policy Address marks a clear transition from reactive policing to strategic institutional design. It shows that establishing clear, trustworthy regulatory frameworks is becoming a primary competitive advantage for global technological hubs seeking long-term stability. <span class="src">— Digital Watch Observatory</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOaDVmVnpLOEQydks0SnZGVHZuV3RyeTlMN2VCanE4LTJkWE5CajVnYUprdWo4eERTdDJST0Y5YjN4R2poeE8tb1VSWFJGbmZTaTBKc0pjeWR1Q1c0Z2FnZk9IMlRQa21wQUVDbWd4d1AtZzZBU294UnpEYkRIUlRqag?oc=5" target="_blank" rel="noopener">透明制度與創新平衡：科技樞紐在全球 AI 監管賽局的關鍵決策</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Hong Kong outlines AI governance approach in first Five‑Year Plan and 2026 Policy Address - Digital Watch Observatory</div>
+            <div class="item-sentence lang-zh-only">這篇政策方向進一步揭示了當代治理的兩難：如何在嚴格的 AI 安全規範與維持市場創新活力之間取得平衡？對於關注治理創新的讀者來說，這是一個很好的觀察視角——優秀的制度不是靠鐵板一塊的嚴刑峻法，而是靠動態微調的透明機制。唯有讓投資人與開發者感到法規可預測，才能在監管浪潮中繼續吸引國際頂尖資源。 <span class="src">— Digital Watch Observatory</span></div>
+            <div class="item-sentence-en lang-en-only">Analyzing Hong Kong&#x27;s AI governance strategy emphasizes the crucial balance between mitigating technology risks and encouraging market agility. Flexible, predictable regulatory frameworks are becoming essential for regional technology centers aiming to attract international talent and enterprise investment while ensuring safe and responsible algorithmic deployment. <span class="src">— Digital Watch Observatory</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE16aGxNWV9BUFAtRzNfS0Q2VTdQY19TUUx3VEQydlB5TjhtX3Fqcjd5S3dvOS1XRWJQaEN1MGt0V3pFZ3VwbXVLNlZsZGgxU3pDNnM3dWdxdUx4Zw?oc=5" target="_blank" rel="noopener">當 AI 代理人自主犯錯：企業從自動化走向責任歸屬治理挑戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AIエージェントの過失は誰が責任を負うのか？弁護士に訊く、本格実装前に知るべきAIガバナンスの観点 - EnterpriseZine</div>
+            <div class="item-sentence lang-zh-only">當 AI 不再只是給建議，而是能獨立執行任務的『AI Agent』時，過失責任到底歸屬開發者、使用者還是企業主管？日本律師的這場研討直指核心痛點。這提醒所有組織：AI 落地最大的瓶頸往往不是技術不夠強，而是『責任架構不清晰』。企業在享受 AI 帶來的高效率時，必須同步建立內部審查與風險承擔機制，否則便利隨時可能變成災難。 <span class="src">— EnterpriseZine</span></div>
+            <div class="item-sentence-en lang-en-only">As autonomous AI agents assume complex operational tasks, legal negligence frameworks must evolve from simple software tool accountability to comprehensive managerial oversight. This insight underscores that successful corporate AI adoption hinges on establishing clear liability protocols alongside technology deployment to prevent organizational crises. <span class="src">— EnterpriseZine</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/artificial-intelligence/virginia-takes-aim-at-data-center-development-energy-use" target="_blank" rel="noopener">算力風暴撞上資源底線：美維州立法重塑資料中心能源與水治理</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Virginia Takes Aim at Data Center Development, Energy Use</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/9629c17/2147483647/strip/true/crop/4500x2188+0+167/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Ff2%2F90%2F2740811e466c96393f4ffc718781%2Fdata-center-concept.jpg" alt="Virginia Takes Aim at Data Center Development, Energy Use" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">AI 發展的底牌，終究是物理世界的資源！維吉尼亞州作為全球資料中心重鎮，開始祭出法規框架限制其能耗與用水，並給予在地社群否決權。這代表一個極為關鍵的趨勢：AI 治理已經從線上的演算法公平，擴展到線下的『永續能源與在地權益』。沒有潔淨能源與在地社群支持，再強大的 AI 算力都只是空中樓閣。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Virginia&#x27;s proposed accountability framework for data center energy and water consumption highlights the undeniable physical limits confronting the global AI boom. It signals that AI governance is rapidly expanding beyond algorithmic ethics to encompass environmental sustainability, power grid stability, and local community veto rights. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.6 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-20 08:05:23 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
