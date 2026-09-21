@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'briefs/**'
+      - 'audit/**'
+      - 'index.html'
+      - 'README.md'
   schedule:
     - cron: '0 0 * * *'  # 每天 UTC 0:00 (台北 08:00) 執行
   repository_dispatch:

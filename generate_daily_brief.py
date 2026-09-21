@@ -884,12 +884,13 @@ def update_index_archive():
 # 7. 審計紀錄模組
 # ──────────────────────────────────────────────
 
-def write_audit_log(design_articles, gov_articles, all_raw_articles, date_str):
+def write_audit_log(design_articles, gov_articles, all_raw_articles, date_str, model_name=None):
     """產出 audit JSON，記錄爬取與驗證結果"""
     os.makedirs(AUDIT_DIR, exist_ok=True)
     audit = {
         'date': date_str,
         'generated_at': datetime.now(timezone.utc).isoformat(),
+        'model_used': model_name,
         'total_raw_articles': len(all_raw_articles),
         'total_verified': sum(1 for a in all_raw_articles if a['verified']),
         'total_failed': sum(1 for a in all_raw_articles if not a['verified']),
@@ -927,6 +928,8 @@ def main():
                         help="指定日期 (YYYY-MM-DD)，預設為今天")
     parser.add_argument('--skip-gemini', action='store_true',
                         help="跳過 Gemini 摘要，使用文章自帶描述")
+    parser.add_argument('--force', action='store_true',
+                        help="若今日日報已存在，仍強制重新生成")
     args = parser.parse_args()
 
     if args.update_index_only:
@@ -939,6 +942,15 @@ def main():
         date_str = args.date
     else:
         date_str = datetime.now(tw_tz).strftime('%Y-%m-%d')
+
+    # 冪等性防重複檢查：若今日日報已存在且未指定 --force，跳過生成避免覆寫較佳的模型版本或消耗 API 配額
+    brief_path = os.path.join(BRIEFS_DIR, f'morning_brief_{date_str}.html')
+    if os.path.exists(brief_path) and not args.force:
+        print(f"ℹ️ 今日日報已存在 ({brief_path})，跳過重複生成。")
+        print("🔄 正在同步更新 index.html 歸檔卡片...")
+        update_index_archive()
+        print("✅ 日報歸檔同步完成！")
+        return
 
     print(f"\n{'='*60}")
     print(f"  設計與治理日報 · {date_str}")
@@ -1009,7 +1021,8 @@ def main():
     print("\n" + "=" * 40)
     print("STEP 7: 審計紀錄")
     print("=" * 40)
-    write_audit_log(design_articles, gov_articles, all_articles, date_str)
+    model_used = summaries.get('_model_display_name', 'Unknown')
+    write_audit_log(design_articles, gov_articles, all_articles, date_str, model_used)
 
     # 最終摘要
     print(f"\n{'='*60}")
