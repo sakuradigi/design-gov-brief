@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從幽默機能設計到破除AI套娃怪圈：微觀日常自省與宏觀系統治理的交鋒 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-24</div>
+    <div class="headline">從幽默機能設計到破除AI套娃怪圈：微觀日常自省與宏觀系統治理的交鋒</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design must become an innovative, highly creative, cross-disciplinary tool responsive to the true needs of men.</div>
+      <div class="quote-text-zh lang-zh-only">設計必須成為一種具備創新活力、高度原創且跨領域的工具，切實回應人類真正的需求。</div>
+      <div class="quote-author">— Victor Papanek</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">機能外套秒變提袋：用幽默日常化解消費者的減塑健忘</li>
+        <li class="flash-item">用演算法治理AI成套娃困局：倫理監管終究不能少掉人</li>
+        <li class="flash-item">東岸大港砸重金補貼：重型物流脫碳從試驗邁向規模化</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/09/718793.html" target="_blank" rel="noopener">北歐織品展重探生活本質：把自然與人情織進日常哲學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">世田谷美術館で「スウェーデン・テキスタイル」展開催。暮らしと自然に息づく北欧デザイン</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/07/E722-9537.jpg" alt="世田谷美術館で「スウェーデン・テキスタイル」展開催。暮らしと自然に息づく北欧デザイン" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這場展覽提醒我們，北歐設計從來不是為了擺拍或炫耀高級感，而是將漫長冬季對陽光與自然的渴望，轉化為有溫度的手工藝。當代社會充斥著千篇一律的工業量產塑料，織品以其質樸觸感，重新替居住空間找回溫暖人情味。這不只是一場復古回顧，更是一堂如何用生活設計抵禦冰冷科技焦慮的美學實踐課。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The Setagaya Art Museum&#x27;s Swedish textile exhibition explores how Nordic design weaves nature, everyday comfort, and post-war welfare values into domestic fabrics. Beyond trendy aesthetic minimalism, the showcase demonstrates how tactile crafts provide emotional warmth and enduring resilience in living spaces, offering a timely contrast to modern mass-produced plastic homeware and digital coldness. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/products/2026/09/89960/" target="_blank" rel="noopener">擺脫抗老焦慮：日本護膚換裝演繹與時光溫柔共存的包裝哲學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">モノとコト | hisn（ヒスン）</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/01_hisn_main_C1_0239_rgb.jpg" alt="モノとコト | hisn（ヒスン）" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">長期以來，抗老保養品包裝總是充斥著醫學符號、高冷金屬色，彷彿變老是一場非打贏不可的戰役。OSAJI新系列hisn的設計轉向，恰恰揭示了一種更健康的生活美學：不再恐嚇消費者，而是用溫潤有機的瓶身曲線與觸感，讓每日護膚變成平靜接納自我的儀式。美妝設計的成熟，正體現在從製造焦慮轉向提供心靈餘裕的同理心。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese sensitive skincare brand OSAJI has rebranded its anti-aging line into &#x27;hisn,&#x27; updating both formulations and aesthetic presentation. By discarding clinical intimidation and aggressive anti-aging imagery, the new design uses soothing tactile curves to embrace the natural aging process gracefully, reflecting a broader cultural shift toward self-acceptance and mindful daily wellness. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/no-bag-no-problem-aldi-unveils-jacket-that-transforms-into-a-shopping-bag/" target="_blank" rel="noopener">忘了帶環保袋？超市外套秒變提袋，用幽默機能瓦解減塑惰性</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">No bag? No problem: Aldi unveils a new jacket that transforms into a shopping bag</div>
+            <img class="item-image" src="https://media.creativeboom.com/ed2ed019-1f13-41ec-b5a7-582d09857661/conversions/939fd795a344ec2a865c7ba821455d5c0f12ad5f-medium.webp" alt="No bag? No problem: Aldi unveils a new jacket that transforms into a shopping bag" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">永續生活推不動，往往不是大家沒公德心，而是敗在出門老是忘記帶購物袋。Aldi這件把風衣直接折疊成手提袋的鬼才設計，最聰明的地方在於它不說教，而是把環保變成一種帶點街頭自嘲的實用幽默。當永續行動不再是道德綁架，而是讓消費者覺得好玩、順手又帥氣的日常物件時，行為改變才會真正自然發生。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Discount supermarket chain Aldi has introduced a transformable jacket that effortlessly turns into a reusable shopping bag, playfully tackling the pervasive UK habit of forgetting bags at home. Instead of guilt-tripping shoppers about plastic reduction, this clever piece of functional streetwear turns environmental action into a witty, spontaneous, and fashion-forward lifestyle solution. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/being-with-myself-wu-xinlin-illustrated-series-provides-a-compellingly-original-take-on-solitude/" target="_blank" rel="noopener">獨處不等於孤獨：插畫家以溫潤視覺重構與自己獨處的精神綠洲</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Wu Xinlin&#x27;s editorial illustrations show solitude in a whole new light</div>
+            <img class="item-image" src="https://media.creativeboom.com/b9add27a-adc8-4f6b-9216-d0a834539700/conversions/881fee6b5fd67ae0b82a2156b29a2a2cad969250-medium.webp" alt="Wu Xinlin&#x27;s editorial illustrations show solitude in a whole new light" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在社群媒體強迫所有人隨時在線、隨時連結的時代，「落單」往往被貼上寂寞的負面標籤。吳欣林的插畫系列卻把鏡頭拉進個人的私密角落，用柔和光影與疏朗構圖，展現獨處時那種飽滿又輕盈的自由。這給現代創作者一記溫柔提醒：留白不是缺席，而是讓靈魂能深呼吸、重新拼湊自我的必要設計空間。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Chinese illustrator Wu Xinlin redefines the emotional landscape of solitude in her latest visual series, moving away from societal stereotypes that equate being alone with depressing loneliness. Through soft textures and spacious compositions, her work celebrates self-dialogue, quiet independence, and mental breathing room in an otherwise hyper-connected and overstimulated modern society. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/why-merijn-straathof-turned-a-landmark-techno-album-into-a-playable-web-based-instrument/" target="_blank" rel="noopener">傳奇黑膠變網頁互動樂器：數位典藏就該讓大眾動手拆解重混</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why designer Merijn Straathof turned a landmark techno album into a playable web-based instrument</div>
+            <img class="item-image" src="https://media.creativeboom.com/1d9719ee-6993-48e0-a315-4a9b32aae557/conversions/ed5e93a78a6ba678892fc671e697151b76daa595-medium.webp" alt="Why designer Merijn Straathof turned a landmark techno album into a playable web-based instrument" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">以往的文化遺產數位化，多半只是把老唱片壓成MP3掛在網頁上供人朝聖，形式呆板又被動。荷蘭設計師這項實驗最震撼的地方，是直接把音樂大師的經典專輯解構為開放的瀏覽器樂器，讓每個人都能動手重混。這代表數位保存的思維躍遷：最好的致敬不是立碑膜拜，而是賦予經典新生，邀請下一代在玩樂中共同創作。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Dutch designer Merijn Straathof reimagined Richie Hawtin&#x27;s iconic techno album DE9 as an interactive web-based instrument for its 25th anniversary. Instead of treating cultural masterworks as static museum artifacts, this playful interface invites audiences to deconstruct sound stems and remix them directly within the browser, demonstrating how dynamic interaction breathes fresh creative life into digital heritage. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE1Pc3VBN0lBa0dtSGhEMm1DYmMwV1VKNzlvcE96NEdWZnpRNEhYYmR1TDhNX2tPTUpVT01nSm5fMFJFUzUzTjBSTk0yeVBGNjZQNEdF?oc=5" target="_blank" rel="noopener">用演算法監督AI的套娃怪圈：治理盲區終究無法迴避人的涉入</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">李英明／怪圈：用AI治理AI - UDN</div>
+            <div class="item-sentence lang-zh-only">當AI的黑盒子深不見底，產學界開始流行「用更強大的AI去抓AI違規」，卻悄悄陷入了危險的鏡像套娃。要是審查的機器本身就自帶偏見與幻覺，誰又能來審判這位監工？這篇文章切中了治理盲點：技術工具可以輔助過濾，但價值的邊界、正義的權衡與最終承擔後果的勇氣，永遠不可能完全外包給冷冰冰的代碼。 <span class="src">— UDN</span></div>
+            <div class="item-sentence-en lang-en-only">Commentator Li Ying-ming highlights the emerging paradox of using artificial intelligence to govern other AI systems. This circular logic risks creating an uncheckable loop of automated bias and algorithmic blind spots. The analysis warns that technical self-monitoring cannot substitute for genuine social ethics, meaning human discernment and accountability must remain firmly at the center of technological oversight. <span class="src">— UDN</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE9XajRzdWdLbzVnVEJIRFhDVWt6RVV1WnJiSWF5ZEoyazYtUnpSM0VmYmtzOE5Fc3hBLVdRZ0luNTFqTnpFUVI5Ni16eTgyNFloSHFvZmhYbmt1RGpLb3VGckR3dmNSenVlTzVhWEw2T3lMZ0VMWDNMcnFiNjU?oc=5" target="_blank" rel="noopener">大學AI治理告別防弊思維：校園需建構主動平等的學習與倫理基盤</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Report calls for better AI governance at SUNY campuses - Spectrum News</div>
+            <div class="item-sentence lang-zh-only">許多大學面對生成式AI，第一反應往往是買偵測軟體防作弊，這完全搞錯了教育的核心。紐約州立大學的最新報告指出，校園需要的不是築起數位高牆，而是從課堂應用、隱私保護到平權取得，全盤重塑高教制度。當AI已經是學生未來的生存技能，把力氣花在被動圍堵，不如及早設計出能讓人機協作健康生長的校園土壤。 <span class="src">— Spectrum News</span></div>
+            <div class="item-sentence-en lang-en-only">A new policy report urges the State University of New York (SUNY) system to establish comprehensive AI governance frameworks across its campuses. Moving past reactive classroom bans and anti-cheating paranoia, the recommendations emphasize establishing institutional guidelines, equitable student access, privacy protocols, and digital literacy that equip students to engage responsibly with emerging technologies. <span class="src">— Spectrum News</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOOE1KZTd5dFprWS1jajA1UHlVTjhEbmRJeWMwUkZ5ZzhpOTFoV05BRXVWT3hFVVp2ajY4WHpmUXJfOGEwMFJPTkZBV29kYTlmQmxiMHhzX3dQQWpXcmpKcjN0WTVvYnp2bVVacnRXaUpVdUJWR2ZzX0ZvNEJJWVY2dg?oc=5" target="_blank" rel="noopener">公立高教系統的AI陣痛：化解校區數位落差需更透明的治理指引</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Report calls for better AI governance at SUNY campuses - Spectrum News</div>
+            <div class="item-sentence lang-zh-only">同樣在一個大學系統內，資源豐沛的旗艦校區能快速部署先進AI工具，偏遠分校卻連基本培訓都跟不上。SUNY這份報告直指分權公立體系最棘手的痛點：如果缺乏明確一致的治理政策，新技術非但不能弭平差距，反而會加劇校區間的教育不平等。建立清楚透明的指引，是為了保障每位學子不會因為學校位置而淪為數位次等公民。 <span class="src">— Spectrum News</span></div>
+            <div class="item-sentence-en lang-en-only">Addressing the administrative challenges across SUNY campuses, this report underscores the urgent need to close the digital divide between well-funded universities and smaller community colleges. Without unified institutional guidance, uneven AI adoption threatens academic equity, highlighting why clear governance policies are essential to ensure all students and faculty benefit equally from modern technological resources. <span class="src">— Spectrum News</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTFA0N3dMaHJIdi1YRC11NjBrUWo1LXl6SVBDNHIxQlluZ3U1R3UxNDFZZ2lnZC0tT2pZRmNUaG1pWFVmM3NLOURrQWgwdVFQSUVnYUJYUXJBSktWSTZpUDhFY0lXVjhBa2x6M2o2Q1NrUWh1ZnJEd3NidnJpcDlRRFU?oc=5" target="_blank" rel="noopener">跨越中央框架的城市外交：河內與西澳聯手布局能源與教育新支柱</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ハノイは西オーストラリアとの協力関係において、4つの柱を提案している。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">國際地緣政治日益僵化，但河內與西澳之間的次國家級合作卻走出了一條靈活新路。雙方繞開宏大敘事，聚焦在能源轉型、關鍵礦產與技職教育等具體痛點，展現出高度務實的區域互補性。這種由地方城市與州政府直接對接的敏捷治理模式，正在成為全球綠色轉型浪潮中，跨國供應鏈精準對接的關鍵敲門磚。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Hanoi has proposed four strategic pillars of cooperation with Western Australia, focusing on education, green energy transition, critical mineral supply chains, and cultural exchange. This pragmatic, subnational partnership bypasses traditional bureaucratic bottlenecks, illustrating how city-to-state alliances can directly build agile industrial ties and accelerate local economic resilience within the Asia-Pacific region. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/transportation/electric-truck-incentives-market-reach-across-the-nation" target="_blank" rel="noopener">綠色物流跨出西岸：紐約紐澤西港補貼電動卡車加速物流脫碳</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Electric Truck Incentives, Market Reach Across the Nation</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/1ee5ae8/2147483647/strip/true/crop/5472x2660+0+860/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fed%2F72%2F05597b1b4859a0dbeda490a0dd2c%2Fport.jpeg" alt="Electric Truck Incentives, Market Reach Across the Nation" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">過去卡車電動化多半被視為加州的環保專屬秀，但紐約與紐澤西港祭出實質補貼，標誌著這場脫碳浪潮正式席捲美國最繁忙的東岸門戶。重型卡車是港區周邊空氣污染與碳排的大戶，單靠環保口號無法說服司機換車。透過政策補貼直接撬動運輸業的經濟誘因，才是讓永續轉型真正落地、改善鄰近社區居住正義的硬道理。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">The Port Authority of New York and New Jersey has launched targeted incentives to accelerate the transition from diesel to electric drayage trucks. Signifying that commercial zero-emission freight is expanding beyond California, this initiative aligns public financial support with supply chain economics, providing a practical model for port decarbonization and improving air quality in nearby communities. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-24 08:03:02 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
