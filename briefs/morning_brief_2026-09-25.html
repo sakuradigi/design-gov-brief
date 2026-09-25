@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從算力代價反思到感官實體復興：在技術狂飆年代，重構人本設計與制度邊界 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-25</div>
+    <div class="headline">從算力代價反思到感官實體復興：在技術狂飆年代，重構人本設計與制度邊界</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design does not simply bring things into the world; it is an active force that decides what futures are possible.</div>
+      <div class="quote-text-zh lang-zh-only">設計絕不僅是把造物帶入世界，它更是一股決定哪些未來得以成立的實踐力量。</div>
+      <div class="quote-author">— Tony Fry</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">影響力品牌告別贖罪包袱，用大膽美學宣告做好事也能大方獲利。</li>
+        <li class="flash-item">反思螢幕過載時代，老字號製造業以五感實體工藝創造極致體驗。</li>
+        <li class="flash-item">AI算力的能耗衝擊浮出水面，地方政府開始收緊租稅補貼設下防線。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/09/89941/" target="_blank" rel="noopener">跳脫美工執行思維：品牌設計代理商的組織擴編背後，反映了顧問角色的戰略升級</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】デザイン＆ブランディングエージェンシーの株式会社ConcePioneが、デザインアシスタント・ジュニアデザイナーなど3職種を募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/6a93f246d278a.jpg" alt="【求人情報】デザイン＆ブランディングエージェンシーの株式会社ConcePioneが、デザインアシスタント・ジュニアデザイナーなど3職種を募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">看到日本品牌事務所大舉招募各階層設計師，可別以為這只是一般的人力流動。這反映出當前品牌顧問不再只是交付 Logo 或包裝，而是深度介入企業的商業模式重塑與組織文化培育。客戶要的不再只是漂漂亮亮的視覺排版，而是具備商業同理心、能把永續與經營願景轉化為落地行動的跨領域團隊，設計師的戰略價值正被徹底重定義。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Tokyo-based branding agency ConcePione is actively expanding its creative team across various seniority levels. This move highlights an evolving industry shift: branding firms are transitioning from traditional visual suppliers to strategic business partners. Agencies now require versatile creatives who can bridge aesthetic execution with organizational vision, reflecting the growing demand for deep strategic design consulting in competitive corporate landscapes. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/09/723264.html" target="_blank" rel="noopener">老鋪顏料遇上當代筆觸：京都百年品牌如何用「不易流行」給文化資產開創新局</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">京都・上羽絵惣の「不易流行展」。日本画絵具と現代の日本画家が示す伝統と未来</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/09/sub6.jpg" alt="京都・上羽絵惣の「不易流行展」。日本画絵具と現代の日本画家が示す伝統と未来" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">京都近三百年歷史的上羽繪惣辦展，妙就妙在把芭蕉的「不易流行」玩得十分通透。老品牌守護礦物顏料的古老本質叫「不易」，攜手當代藝術家探索前衛畫風則是「流行」。這給所有文化經營者一個極佳啟發：傳統工藝千萬別把自己鎖在玻璃櫃裡孤芳自賞，唯有大膽成為當代創作者的靈感實驗室，歷史厚度才能轉化為不可取代的文化資本。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Kyoto&#x27;s oldest Japanese painting pigment maker, Ueba Esou, is hosting the &#x27;Fuekiryuko Exhibition&#x27;, exploring timeless tradition alongside contemporary innovation. By inviting modern Nihonga artists to experiment with ancestral pigments, the historic purveyor demonstrates that true heritage preservation is not about nostalgic stagnation. Instead, it thrives on becoming an active, provocative laboratory for today&#x27;s living artistic dialogues. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/moksi-gives-gifttrees-the-confidence-to-be-both-good-and-profitable/" target="_blank" rel="noopener">別再靠罪惡感募款！綠色企業換上自信視覺，宣告「做好事也能堂堂正正賺錢」</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">MOKSi gives GiftTrees the confidence to be both good and profitable</div>
+            <img class="item-image" src="https://media.creativeboom.com/58c86235-79d6-43aa-b42a-8e164f0089c9/conversions/f3c2e0e8b16f07782b1235c8fcdca396fdd89ee6-medium.webp" alt="MOKSi gives GiftTrees the confidence to be both good and profitable" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">社會創新企業往往有種「贖罪式行銷」的通病，好像談賺錢就很俗氣。MOKSi 替 Manchester 植樹平台 GiftTrees 做的品牌重塑，直接打破這種道德枷鎖。大膽、明亮且充滿活力的視覺語彙，直截了當地告訴大眾：對地球好與商業獲利完全可以兼得。當永續品牌不再賣弄同情心，而是展現專業與雄心，反而能喚起更廣泛的消費信任。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Design studio MOKSi has rebranded GiftTrees, empowering the tree-planting enterprise to embrace its dual identity: doing good while running a proud, profitable business. Shedding the guilt-driven aesthetic typical of environmental charities, the bold visual identity demonstrates that sustainability should be confident and commercially viable, establishing a refreshed standard for how modern mission-driven companies communicate impact to global audiences. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/design-bridge-and-partners-turns-leones-turin-sweet-factory-into-a-willy-wonka-world/" target="_blank" rel="noopener">螢幕退場、感官掛帥：義大利百年糖果廠如何把生產線打造成真實版旺卡仙境</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Design Bridge and Partners turns Leone&#x27;s Turin sweet factory into a Willy Wonka world</div>
+            <img class="item-image" src="https://media.creativeboom.com/e5a4bf73-4a80-4758-952f-94acf11f77c9/conversions/7c74383ee675c565a50a5bca3686d8344ec2bb36-medium.webp" alt="Design Bridge and Partners turns Leone&#x27;s Turin sweet factory into a Willy Wonka world" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在滿街都是沉浸式投影的數位疲勞期，義大利百年糖果牌 Leone 卻反其道而行。他們把都靈工廠直接改造成透明感官樂園，重點是「幾乎沒有任何螢幕」。糖香、機械運轉聲、砂糖的顆粒觸感，這些真實的物質性成了最強大的行銷武器。這提醒我們：在虛擬科技氾濫的今天，純粹、未經數位過濾的五感體驗，反而是品牌最稀缺的奢侈品。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Italian confectioner Leone transformed its historic factory into an immersive visitor experience designed by Design Bridge and Partners. Notably steering clear of ubiquitous digital touchscreens, the tour spotlights the tactile drama of mechanical production, sweet aromas, and physical materiality. It serves as a compelling reminder that unmediated, physical sensory encounters often cultivate deeper emotional resonance than digital spectacles. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/rosa-snijders/" target="_blank" rel="noopener">用溫柔筆觸包裝沉重命題：以輕盈插畫轉譯創傷與債務的視覺共情力量</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Illustrator Rosa Snijders finds the softness in grief, debt and all of life&#x27;s heavy subjects</div>
+            <img class="item-image" src="https://media.creativeboom.com/2a870dd1-0a0c-4818-825c-adb900d2cbb6/conversions/c531298dac1c0f0d7a827aef3dad31f5db897520-medium.webp" alt="Illustrator Rosa Snijders finds the softness in grief, debt and all of life&#x27;s heavy subjects" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">面對悲傷、貧窮或債務等沉重社會議題，很多報導配圖往往過度說教或壓抑。插畫家 Rosa Snijders 卻示範了何謂「舉重若輕」。她用溫暖柔軟的色彩與幾何構圖，在短短數小時內將複雜人性困境提煉成耐人尋味的畫面。這種視覺策略不僅減輕了讀者的心理防禦，更讓嚴肅的公眾議題得以在溫柔凝視中發酵，是極具力量的同理心設計示範。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Editorial illustrator Rosa Snijders tackles emotionally heavy themes—such as grief, financial debt, and mental isolation—using unexpectedly soft palettes and nuanced geometric forms. By translating challenging societal topics into poetic, non-threatening imagery under tight deadlines, her practice proves that empathetic visual design can lower reader defenses and invite thoughtful contemplation around complex human conditions without trivializing their gravity. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiTkFVX3lxTFBIaXJNSFp4YjZ5X2VRcjFlTTV3b0doc2ZfR0s5N0NLVzd0WlV0ZEJxSE9uSG9JQ0NIVm94Qk9DQjlONWwwenZlUWtNeVpyUQ?oc=5" target="_blank" rel="noopener">告別閉門造車：新北青年黑客松把真實局處痛點當沙盒，啟發公私協力新路徑</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">新北智慧城市!青年組隊玩AI黑客松 齊解5局處市政難題 | 鄧亦涵 | 地方新聞 - 風傳媒</div>
+            <div class="item-sentence lang-zh-only">市政數位轉型最怕公務員自己想破頭卻不接地氣。新北市這場青年黑客松的亮點，在於直接端出交通、社會福利等真實局處難題，把市民年輕一代當作政策共創者。這讓公共治理從單向的「官方給解方」，轉變為公私協同的「實驗性沙盒」。青年用 AI 玩出的點子或許青澀，但打破官僚慣性、注入外部視角的敏捷思維，才是智慧城市的核心價值。 <span class="src">— 風傳媒</span></div>
+            <div class="item-sentence-en lang-en-only">New Taipei City hosted a youth AI hackathon targeting real-world administrative challenges sourced directly from five municipal bureaus. By treating public service pain points as open sandboxes for collaborative experimentation, the initiative shifts civic tech from top-down directives to participatory co-creation. It proves that empowering young digital natives with real civic problems accelerates innovation while revitalizing public governance. <span class="src">— 風傳媒</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPdmtqNW5OZDZXNndGbVBlaUJVaFRHdXZwdWxWb1NtcEFzMXlCak1oVW5xNnkycXlMM1R5N09hTExWa3FGN2dSeEJhLS1IX2o3R1FwREpqQ21pSmNyaTA3NU5UY3JBOVRlUGp5cXI4TE14MXdfdGNEUDl5cjFwUXpOYmxIMTlQVUVObUY1WS0xWnFmMzBpZ1JPdGEzaw?oc=5" target="_blank" rel="noopener">跨越算力焦慮：新興經濟體在AI治理臨界點上，必須權衡的基礎設施與主權代價</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance, Infrastructure Face a Critical Moment - Mexico Business News</div>
+            <div class="item-sentence lang-zh-only">墨西哥面臨的 AI 治理十字路口，其實是整個「全球南方」的共同縮影。當科技巨頭競相兜售生成式 AI，發展中國家往往在缺電、缺算力與缺法規的夾縫中焦慮追趕。然而，盲目引進技術只會加深數位依附；唯有同步建立基礎設施韌性、在地數據自主權與倫理邊界，新興市場才不會在未來的演算法競賽中淪為被動的數據殖民地。 <span class="src">— Mexico Business News</span></div>
+            <div class="item-sentence-en lang-en-only">Mexico&#x27;s technology sector faces a defining moment balancing rapid AI adoption with infrastructural and regulatory limitations. As emerging economies chase digital acceleration, they confront dual vulnerabilities: strained electrical grids and absent governance frameworks. Navigating this critical threshold requires strategic investments in domestic digital infrastructure alongside proactive policies to protect digital sovereignty and prevent technological dependency on external powers. <span class="src">— Mexico Business News</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPdmtqNW5OZDZXNndGbVBlaUJVaFRHdXZwdWxWb1NtcEFzMXlCak1oVW5xNnkycXlMM1R5N09hTExWa3FGN2dSeEJhLS1IX2o3R1FwREpqQ21pSmNyaTA3NU5UY3JBOVRlUGp5cXI4TE14MXdfdGNEUDl5cjFwUXpOYmxIMTlQVUVObUY1WS0xWnFmMzBpZ1JPdGEzaw?oc=5" target="_blank" rel="noopener">法規真空期的生存法則：企業如何把AI風險管理轉化為贏得公眾信任的品牌資產</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance, Infrastructure Face a Critical Moment - Mexico Business News</div>
+            <div class="item-sentence lang-zh-only">在政府監管框架尚未完全定錨的過渡期，企業如果只被動等待法令，往往會摔得最重。這篇產業洞察揭示了一個重要轉變：前瞻組織正主動建立內部 AI 倫理審查機制，將偏見防範與數據隱私納入公司治理常態。這不再只是律師團的合規避險工作，而是攸關品牌信譽的戰略資產；當大眾對演算法疑慮漸深，透明與自律就是最好的商業護城河。 <span class="src">— Mexico Business News</span></div>
+            <div class="item-sentence-en lang-en-only">As comprehensive AI governance policies slowly take shape across regional markets, forward-thinking enterprises are moving ahead of legislative mandates. Proactively addressing algorithm bias, data provenance, and employee displacement transforms ethical risk management into competitive advantage. In an era marked by public skepticism toward automated decision-making, transparent self-governance serves as a vital pillar for securing long-term stakeholder trust. <span class="src">— Mexico Business News</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE9wMWEzWFVJaF9XbWJlSnNMWm16WktmZTBNalhnUU9GS0JRQWVzQXNVeWxsOGJWZVlvWnNTNWtkQ0JweW1wQXdhVEFpNVI2bWFLWEt4cTB5RUdaUm8?oc=5" target="_blank" rel="noopener">AI治理升級董事會議程：日本經產省修訂準則，非財務揭露與演算法風險成估值關鍵</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">経産省、次期デジタルガバナンス・コードでAIリスク管理を明記 データ管理も経営課題に - ESG Journal</div>
+            <div class="item-sentence lang-zh-only">日本經產省將 AI 風險明文列入次期「數位治理守則」，釋放了一個極其明確的訊號：技術倫理不再只是資訊長的事，而是董事會必須親自扛起的經營治理課題。未來企業的資產管理與演算法透明度，將直接與 ESG 評級及投資人決策掛鉤。這標誌著數位技術正式告別野蠻生長時代，進入以嚴謹風控為基底的成熟資本市場考核期。 <span class="src">— ESG Journal</span></div>
+            <div class="item-sentence-en lang-en-only">Japan&#x27;s Ministry of Economy, Trade and Industry (METI) plans to integrate AI risk oversight and rigorous data management into its updated Digital Governance Code. By elevating algorithmic accountability to board-level fiduciary responsibility, the policy shift signals that technology governance is now fundamentally tied to ESG evaluations and corporate valuation, demanding robust board oversight rather than localized IT-level troubleshooting. <span class="src">— ESG Journal</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/policy/maryland-governor-draws-new-boundaries-for-data-centers" target="_blank" rel="noopener">算力不能免費吃乾抹淨！馬里蘭州限縮租稅優惠，揭開資料中心能耗與環境正義代價</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Maryland Governor Draws New Boundaries for Data Centers</div>
+            <div class="item-sentence lang-zh-only">馬里蘭州州長簽署行政命令、嚴審超大型資料中心並研擬取消關鍵稅賦減免，堪稱地方治理的一記警鐘。過去各地為了招商引資，對耗電巨獸大開綠燈；如今居民水電費飆升、電網不堪負荷，真實代價浮出水面。這告訴我們：算力不是憑空存在的雲端神話，它踩在實體土地上。地方政府開始拿回主導權，要求科技巨頭扛起相應的環境與公眾責任。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Maryland&#x27;s governor issued an executive order establishing strict review protocols for massive data centers and signaling an end to key tax exemptions. As communities face surging power grid strain and local resource depletion, the regulatory shift highlights nationwide scrutiny over hyperscalers. It represents a critical policy pivot: municipalities are no longer offering blank checks for cloud expansion without enforcing environmental accountability. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-25 08:02:42 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
