@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>空間體驗的情感回歸與 AI 監管的全球暗湧：在混亂時代重新定義價值與秩序 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-26</div>
+    <div class="headline">空間體驗的情感回歸與 AI 監管的全球暗湧：在混亂時代重新定義價值與秩序</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design, if it is to be ecologically responsible and socially responsive, must be revolutionary and radical in the truest sense.</div>
+      <div class="quote-text-zh lang-zh-only">設計若要對生態負責且對社會有所回應，就必須在最純粹的意義上展現革命與顛覆。</div>
+      <div class="quote-author">— Victor Papanek（社會設計先驅）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">零售空間正從規格硬銷轉向情感待客，體驗勝過商品規格。</li>
+        <li class="flash-item">Uncommon 撕破品牌行銷黑話，證明真誠與犀利才是創意王道。</li>
+        <li class="flash-item">美中與地方政府競相劃界，AI 治理正陷入多極碎片化挑戰。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/09/720799.html" target="_blank" rel="noopener">走進 Lisa Larson 的溫柔陶藝：在冰冷量產時代找回日常手作溫度</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">松屋銀座で「リサ・ラーソン 追悼展」開催。アーティスト・デザイナーとしての姿と、インスピレーションの源をたどる</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/08/df9e71892001814a30114e377ba93be8.jpg" alt="松屋銀座で「リサ・ラーソン 追悼展」開催。アーティスト・デザイナーとしての姿と、インスピレーションの源をたどる" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">我們身處在一個被演算法和塑膠製品淹沒的世界，而 Lisa Larson 那些線條質樸、甚至有點傻氣的陶藝動物，恰恰戳中了現代人最匱乏的感官神經。這場追悼展不單是懷舊回顧，更是對工業化冰冷邏輯的一場溫柔抵抗。它提醒設計創作者：真正能穿越世代留在人們客廳裡的，從來不是多炫技的造型，而是物件背後那份不造作的人性與生活氣息。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The Lisa Larson memorial exhibition at Matsuya Ginza showcases the enduring warmth of the late Swedish ceramicist&#x27;s work. In an era dominated by mass manufacturing and digital noise, her tactile, character-rich clay figures demonstrate how authentic craft and emotional intimacy can outlive fleeting design trends, offering a comforting antidote to modern alienation. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/09/90311/" target="_blank" rel="noopener">城鄉融合風潮進駐清澄白河：現代陶藝與老件家具勾勒全新生活樣貌</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">現代陶芸やヴィンテージ家具をキュレーションする「Rurbanism Tokyo Store」が清澄白河にオープン</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/190162-1-ba2d460dac228879321a966164a82c7b-1052x1557-1.jpg" alt="現代陶芸やヴィンテージ家具をキュレーションする「Rurbanism Tokyo Store」が清澄白河にオープン" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">清澄白河開了這家結合陶藝、老件與植栽的複合店，背後透露的是「逆都市化」美學已正式打進都市核心。都市人不再盲目崇拜閃亮無瑕的極簡精品，反而渴望帶有泥土氣息與歲月痕跡的手感物件。這代表實體選品店的任務變了，它不再只是單純賣東西，而是化身為都市居民逃離數位焦慮、重新建立土地連結的微型精神綠洲。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Rurbanism Tokyo Store has opened in Kiyosumi-Shirakawa, curating contemporary ceramics, vintage furniture, and textiles under the banner of blending rural soul with urban living. The concept mirrors a broader cultural shift among city dwellers seeking grounded authenticity, turning physical retail into a tranquil refuge from fast-paced, screen-saturated modern lifestyles. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/beauty-brands-were-writing-ai-slop-before-ai-heres-how-uncommon-won-a-dad-black-pencil-for-calling-it-out/" target="_blank" rel="noopener">刺破美妝行銷話術泡沫：Uncommon 用諷刺元素表奪得黑鉛筆的真誠反思</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Beauty brands were writing slop before AI: here&#x27;s how Uncommon won a D&amp;AD Black Pencil for calling it out</div>
+            <img class="item-image" src="https://media.creativeboom.com/71b8fe8a-2e18-40cd-b3f9-5dc844a3c5f3/conversions/654f1ea4f092f45e68df06091dbe040ccbc02a14-medium.webp" alt="Beauty brands were writing slop before AI: here&#x27;s how Uncommon won a D&amp;AD Black Pencil for calling it out" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">早在生成式 AI 製造廢話之前，美妝品牌就已經是空洞術語的製造高手了。創意代理商 Uncommon 把那些聽起來高大上卻毫無意義的行銷名詞排成化學元素表，一舉拿下設計界最高殿堂 D&amp;AD 黑鉛筆獎。這件事之所以大快人心，是因為它狠狠踢爆了品牌長久以來的資訊煙幕彈，也告誡所有行銷人：消費者已經清醒，幽默與真誠才是穿透資訊疲勞的唯一解藥。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Agency Uncommon claimed a prestigious D&amp;AD Black Pencil by satirizing the beauty industry&#x27;s pseudoscientific buzzwords into a mock periodic table. The campaign underscores how cosmetic marketing relied on meaningless jargon long before AI arrived, proving that sharp, honest cultural critique and craft-driven parody resonate far more powerfully with disillusioned modern consumers. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/bentley-and-futurebrand-rethink-the-car-showroom-as-a-place-youd-actually-want-to-linger/" target="_blank" rel="noopener">告別硬銷式汽車展廳：賓利如何把實體門市打造成讓人流連忘返的精品沙龍</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Bentley and FutureBrand rethink the car showroom as a place you&#x27;d actually want to linger</div>
+            <img class="item-image" src="https://media.creativeboom.com/ec06217f-1ea9-48c3-9655-30622d462a0c/conversions/4a82628d59545e40586640fe7810ec27ff69e688-medium.webp" alt="Bentley and FutureBrand rethink the car showroom as a place you&#x27;d actually want to linger" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">想像一下走進車行不再被業務緊迫盯人，而是像走進頂級私人俱樂部，有專屬選材工坊和劇院級交車體驗。賓利聯手 FutureBrand 徹底改造了倫敦旗艦店，這不只是裝潢升級，更是實體零售邏輯的根本翻轉。當規格比價都能在網路上搞定，線下空間的唯一任務就是創造讓人想賴著不走的沉浸式奢華感，把單純買車昇華為專屬的儀式感。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Bentley and FutureBrand have overhauled the historic Jack Barclay showroom in London, replacing aggressive sales floors with hospitable lounges, craft ateliers, and cinematic handover rooms. The initiative illustrates how luxury automotive retail must pivot from transactional sales to high-touch sensory hospitality, offering customers immersive and memorable physical experiences that digital channels cannot replicate. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/books/jessica-hische-turns-her-beautiful-hand-made-lettering-into-emotional-first-aid-for-kids/" target="_blank" rel="noopener">手繪字體也能成為情緒急救包：頂尖字體家為孩子打造的心靈治癒童書</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Jessica Hische turns her hand-made lettering into emotional first aid for kids</div>
+            <img class="item-image" src="https://media.creativeboom.com/76c5cb91-80b3-4052-a544-c8e233a4687e/conversions/189fb0aed700c6c1dc0e70cf82ade995ca6c0ead-medium.webp" alt="Jessica Hische turns her hand-made lettering into emotional first aid for kids" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">誰說字體排印學只是大人的專業遊戲？知名字體藝術家 Jessica Hische 把她深厚的手繪字功力注入童書，把複雜難懂的情緒轉化成溫柔可感知的視覺語言。這件事的啟發在於，視覺設計本質上是一種同理心工具。當設計師願意放低身段為孩子設計，優雅的筆觸就能成為情緒急救包，從小培養下一代面對脆弱與焦慮的內在韌性。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Renowned lettering artist Jessica Hische has authored a new children&#x27;s book that leverages expressive typography to help kids navigate complex feelings. By transforming abstract emotional turmoil into visually comforting, hand-crafted letterforms, Hische demonstrates that graphic design can function as an accessible therapeutic tool, nurturing emotional literacy and resilience from an early age. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFAtSklOTWVzYTVZWWh2bFh4OWlVNk9vOWlxUzhxS1FmeXFNYWQtaXIyVzNXLW1Hd0N3ajFYNmhXemhWcGJPVjBjTnN0cVJkc0E1d0U2VDNJZ2FjLWo1eVNF?oc=5" target="_blank" rel="noopener">大國博弈新戰場：從貿易摩擦到 AI 治理成為全球地緣政治的核心籌碼</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">習川會五大重點一次看 從貿易戰到AI治理 川普爆料習近平喜歡「它」 - 工商時報</div>
+            <div class="item-sentence lang-zh-only">習川會的焦點悄悄從關稅數字轉移到了人工智慧治理，這向全世界釋放了一個極其明確的信號：算力與演算法規則已經升格為國家戰略安全的最核心防線。當美中大國開始把技術框架端上談判桌，意味著未來的科技發展不可能與地緣政治脫鉤。企業不能再抱持技術中立的幻想，如何在大國博弈的夾縫中適應雙軌標準，已成當務之急。 <span class="src">— 工商時報</span></div>
+            <div class="item-sentence-en lang-en-only">The recent high-stakes dialogue between Washington and Beijing highlights how AI governance and export curbs have joined trade tariffs at the center of superpower diplomacy. As algorithmic sovereignty and computing power become vital national security assets, tech enterprises must navigate an increasingly bifurcated geopolitical landscape where technological neutrality is no longer viable. <span class="src">— 工商時報</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNdHhTbWcxaGNTYjY4eExwU01manRyMkg4MmJFa1IzbEtGMkhtSXl4WXpXUFF0NVZuamc0Q2xQMXBpaXZJMEhKV3VoN25WdFNFbkhVYy1heWE0LVBYZkJyMXMxMmIxTFlsVXdITGxBdUFyMDJ3X3lRUUJZTUVTYUxGOFJXN0hUOWFBbWRaY0p6QklhdDZMYnRXcUF0dWNsX1I3MEZtUnNGRlhQV1RNVHN0YzVVMThMVzlESVJKcURpbw?oc=5" target="_blank" rel="noopener">全球 AI 治理大一統是空想？在意識形態分歧下尋找多極監管的新平衡</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Is the world moving toward a global agreement on AI governance? - GZERO Media</div>
+            <div class="item-sentence lang-zh-only">大家都在敲碗期盼全球能像管制核武一樣簽訂一份 AI 統一協定，但現實往往殘酷得多。歐盟在意隱私人權、美國力保企業創新競爭力，而威權國家則聚焦於資訊維穩。在意識形態根本對立的前提下，強求全球大一統的法規框架只是不切實際的空想。與其等待完美的國際條約，產業更該做好準備面對多套治理標準並存的碎片化現實。 <span class="src">— GZERO Media</span></div>
+            <div class="item-sentence-en lang-en-only">Discussions surrounding a comprehensive global treaty on artificial intelligence face severe headwinds due to stark geopolitical rivalries and divergent regulatory priorities across Washington, Brussels, and Beijing. Rather than an all-encompassing international framework, the immediate future of AI oversight will likely be fragmented, requiring organizations to navigate overlapping regional compacts. <span class="src">— GZERO Media</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNdHhTbWcxaGNTYjY4eExwU01manRyMkg4MmJFa1IzbEtGMkhtSXl4WXpXUFF0NVZuamc0Q2xQMXBpaXZJMEhKV3VoN25WdFNFbkhVYy1heWE0LVBYZkJyMXMxMmIxTFlsVXdITGxBdUFyMDJ3X3lRUUJZTUVTYUxGOFJXN0hUOWFBbWRaY0p6QklhdDZMYnRXcUF0dWNsX1I3MEZtUnNGRlhQV1RNVHN0YzVVMThMVzlESVJKcURpbw?oc=5" target="_blank" rel="noopener">超越傳統條約框架：科技巨頭與民間社群如何重寫跨國 AI 監管規則</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Is the world moving toward a global agreement on AI governance? - gzeromedia.com</div>
+            <div class="item-sentence lang-zh-only">傳統外交官圍坐談判桌擬定跨國公約的速度，根本跟不上開源模型與生成技術的迭代腳步。現在真正主導全球 AI 實務標準的，反而是少數握有龐大算力的科技巨頭與熱血的開源社群。這徹底顛覆了我們對公共治理的認知。未來的規則制定者不再只是政府官員，具備倫理自覺的工程師與設計師，手中握有的實質影響力可能比法規條文更為關鍵。 <span class="src">— gzeromedia.com</span></div>
+            <div class="item-sentence-en lang-en-only">Traditional diplomatic treaties are struggling to match the exponential velocity of AI development, shifting the de facto governance burden onto tech platforms and open-source developer communities. As non-state actors define safety benchmarks and operational protocols, global tech policy is being radically decentralized, empowering engineers and civil society to shape the digital public square. <span class="src">— gzeromedia.com</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNcXNYa2hYRV9aMHcwRmV0SXItUGQ2Z3MtNE5fRUtPTTcxQjM5QW5XV3hoakVfOXU2QmhSWmlOTVJSZTM2Q2lReGJOT2VycFg0Vk1MU2hYS0tESnVESVRoRGpVWFJBUnM4eTZnUlFndW4yRmN0VlMxRmdab1p3aDczbFl3MktnSkx4TkVhODIteTZsd0d3cTFIT3ltbEgxWl9FMmc?oc=5" target="_blank" rel="noopener">告別低價競爭思維：越南林同省如何用 ESG 與數位治理拿到全球通行證</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ESGとデジタルガバナンス：ラムドン省の企業がグローバル市場に進出するための「パスポート」。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">越南林同省的地方企業開始卯足全力補修 ESG 與數位治理這門課，背後傳遞出全球供應鏈的殘酷生存法則：廉價勞動力和充沛產能已經不再是護身符。歐美市場正築起嚴格的永續與數據合規高牆，缺乏透明治理紀錄的企業連參賽資格都沒有。這是一記給所有新興市場的警鐘：數位透明度與環境責任，才是打開全球市場大門的真正硬通貨。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Enterprises in Vietnam&#x27;s Lam Dong province are embracing ESG frameworks and digital governance to secure access to global markets. This transformation highlights how emerging-market manufacturers can no longer rely solely on cheap labor; verifiable carbon accounting, digital traceability, and transparent corporate governance have become non-negotiable prerequisites for participating in international supply chains. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/artificial-intelligence/oregon-is-latest-state-to-move-on-frontier-ai-regulation" target="_blank" rel="noopener">地方包圍中央的監管焦慮：奧勒岡州頒布前沿 AI 安全令帶來的法規警示</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Oregon Is Latest State to Move on Frontier AI Regulation</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/9988ca8/2147483647/strip/true/crop/7000x3403+0+432/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Faa%2F8b%2Ffb71ef124447a9acee9050496afa%2Fadobestock-299562309.jpeg" alt="Oregon Is Latest State to Move on Frontier AI Regulation" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">眼看美國聯邦政府立法腳步慢半拍，奧勒岡州直接自己開了第一槍，簽署行政命令要求針對前沿 AI 模型制定安全標準。這種「地方包圍中央」的現象，赤裸裸展現了地方官員面對黑盒子科技失控時的深層焦慮。對科技圈來說，這敲響了合規成本飆升的警鐘：當各州各自為政劃定紅線，企業未來將不得不面對令人頭痛的法規拼布遊戲。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Oregon Governor Tina Kotek&#x27;s executive order on frontier AI safety underscores a growing trend of US states enacting local regulations amid federal legislative gridlock. This proactive subnational push highlights deep anxieties regarding algorithmic risks, warning tech developers that they will soon navigate a complex, fragmented patchwork of jurisdictional compliance standards across the country. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-26 08:03:04 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
