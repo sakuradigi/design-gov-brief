@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>走過空泛科技口號：從硬體手感、笨拙美學到即時 AI 治理的韌性時代 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-27</div>
+    <div class="headline">走過空泛科技口號：從硬體手感、笨拙美學到即時 AI 治理的韌性時代</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technologies are not merely aids to human activity, but also powerful forces acting to reshape that activity and its meaning.</div>
+      <div class="quote-text-zh lang-zh-only">科技不僅僅是人類活動的輔助工具，更是一股持續重塑人類行動本質與其存在意義的強大力量。</div>
+      <div class="quote-author">— Langdon Winner</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">AI 治理典範大轉向，監管前哨站全面移往模型執行前一毫秒</li>
+        <li class="flash-item">告別演算法精緻皮囊，設計圈掀起聚焦笨拙日常與手工回歸潮</li>
+        <li class="flash-item">智慧基建非設備競賽，跨越數據孤島與回歸基本防護才是關鍵</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/09/724346.html" target="_blank" rel="noopener">硬體設計回歸個人手感：從電路到外觀的微小日常感動</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">使う人の日常に小さな感動を届ける、インダストリアルデザイナー 岩井優典</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/09/a8ba1c799937e26c9b3a6df0b9532b7d.jpg" alt="使う人の日常に小さな感動を届ける、インダストリアルデザイナー 岩井優典" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當大家都在狂追無實體的 AI 介面時，工業設計師岩井優典自己焊電路板、做手作原型的做法給了我們一記當頭棒喝。大工廠分工往往磨平了產品的靈魂，但回歸「一人兼具軟硬體與外觀」的工匠精神，反而能精準捕捉使用者每天開關燈、按按鍵時那一瞬間的怦然心動。這提醒我們：越是數位化的時代，實體物件傳遞的情感溫度越是無可取代。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Industrial designer Yusuke Iwai bridges internal electronic engineering with poetic physical forms through self-made prototypes. In an era dominated by dematerialized digital interfaces, his hands-on approach reminds us that authentic consumer delight often stems from tangible micro-interactions and holistic craftsmanship, proving that physical warmth remains indispensable in our increasingly screen-centric everyday lives. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/09/724208.html" target="_blank" rel="noopener">用鏡頭解放商業空間：攝影視角重構公共與私密邊界</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">SEMBA　空間の解放展 写真家6人の視点</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/09/a25df714574086f2c4babdabefa4fa39.png" alt="SEMBA　空間の解放展 写真家6人の視点" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">多數商場只把空間當成坪效競賽的容器，但這場攝影展卻試圖「解放空間」，用藝術視角重新審視建築。當我們不再把人定義為單純的「消費者」，而是公共場域中的漫遊者，空間設計就能從拘謹的動線規劃，轉變為激發互動與自由呼吸的容器。這對未來公共治理或商業地產來說，都是跳脫功能主義、回歸人文體驗的絕佳啟發。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The &#x27;Liberation of Space&#x27; exhibition in Omotesando challenges conventional retail architecture through the lenses of six distinct photographers. By stripping away commercial efficiency metrics and functional constraints, the project reframes built environments as fluid public arenas for contemplation, offering urban planners and spatial designers a fresh perspective on human-centered spatial experiences. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/mclaren-evolves-its-identity-with-a-wordmark-inspired-by-bruce-mclarens-family-garage/" target="_blank" rel="noopener">麥拉倫重塑字標：在極速超跑中召喚修車廠的真實靈魂</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">McLaren evolves its identity with a wordmark inspired by Bruce McLaren&#x27;s family garage</div>
+            <img class="item-image" src="https://media.creativeboom.com/86f68a76-8259-44c5-a9dc-a6979b8aec54/conversions/ef2e80312955fa4a6fc7ffa538c2d57709305990-medium.webp" alt="McLaren evolves its identity with a wordmark inspired by Bruce McLaren&#x27;s family garage" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">麥拉倫這次不玩常見的未來科幻風，反而翻出創辦人在紐西蘭奧克蘭老家的小修車廠招牌作為新字標靈感。這展現了當代品牌重塑的關鍵趨勢：在演算法讓所有極簡 Logo 變得千篇一律時，真實的「出身記憶」才是最難被抄襲的品牌護城河。豪華不是遙不可及的高冷，而是把手上的機油味昇華成一種有溫度的競速信仰。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">McLaren has refreshed its brand identity with a custom wordmark inspired by founder Bruce McLaren’s family garage in Auckland. At a time when luxury automotive branding leans heavily into generic digital minimalism, this heritage-grounded redesign demonstrates that unvarnished historical roots provide a far more compelling narrative shield and emotional authenticity than sanitized corporate futurism. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/from-ywca-to-hotel-willo-how-rethink-solved-a-branding-problem/" target="_blank" rel="noopener">擺脫公益旅宿刻板標籤：以在地樹木重塑尊嚴與品牌美學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">From YWCA to Hotel Willo: how Rethink solved one of branding&#x27;s trickiest problems</div>
+            <img class="item-image" src="https://media.creativeboom.com/b91c4da7-ad0b-400a-a8c8-52eb1334ee4b/conversions/5bdaae78807ec62f443946858c5f18cbcfe5745e-medium.webp" alt="From YWCA to Hotel Willo: how Rethink solved one of branding&#x27;s trickiest problems" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">非營利組織常陷入一種兩難：頂著公益招牌，往往讓消費者預期低廉或過時的服務。Rethink 為溫哥華 YWCA 飯店更名為「Hotel Willo」，以本土柳樹意象重新出發，正是最高明的品牌平反。它告訴社會創新者，做善事不必靠道德綁架或同情牌，用一流的視覺美學與市場標準正面對決，反而能為公益使命創造更長遠的營運尊嚴。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Creative agency Rethink rebranded Vancouver&#x27;s YWCA social-enterprise accommodation into Hotel Willo, drawing inspiration from resilient native willow trees. This strategic move highlights how mission-driven organizations can transcend outdated public preconceptions; by embracing contemporary hospitality aesthetics rather than relying on philanthropic sympathy, social enterprises can compete effectively while preserving their core societal missions. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/jenna-arts-on-why-the-stumbling-silly-ordinary-human-is-the-only-one-worth-drawing/" target="_blank" rel="noopener">拒絕被演算法精緻化：插畫家筆下笨拙日常的真實力量</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Jenna Arts on why the stumbling, silly, ordinary human is the only one worth drawing</div>
+            <img class="item-image" src="https://media.creativeboom.com/b3691037-fcda-4b61-bdab-7c02da4ad0ad/conversions/2e81fcc56a2a77c4cfc8d74757002c36371fe967-medium.webp" alt="Jenna Arts on why the stumbling, silly, ordinary human is the only one worth drawing" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在 AI 生成圖像隨手可得、個個光鮮亮麗的今天，比利時插畫家 Jenna Arts 卻專挑跌倒、笨拙、不完美的普通人來畫。這背後其實是當代視覺文化的一場無聲叛逆：觀眾早就對無瑕的精緻皮囊感到審美疲勞，唯有那些真實的人性尷尬與脆弱，才能擊中人心。創作者不必追求成為精準的作圖機器，你的不完美才是最強大的個人標籤。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Antwerp-based illustrator Jenna Arts deliberately focuses on the clumsy, vulnerable, and unglamorous moments of everyday human existence. Her ethos serves as a powerful antidote to today&#x27;s hyper-polished, AI-saturated aesthetic landscape, reminding creators that relatable vulnerability and idiosyncratic imperfections are precisely what form genuine emotional bonds between artworks and modern audiences. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi8AJBVV95cUxQRVp5QnpGc0UtemVfcVBjenlUbzhCNXUzRXJaUk5POWNaalhmcTdHSnMxOEVZY3lSNFdxekVDNlhqLVVfU2FqbTJOUl9MOUt4dWxGRVBhcVAxZmRWX05qTmcydm4wTTZqR0JqSFRTWTdRc1FheHhFOFduWE1lS29jR3V6R1kyVU1mRnFCMjJ4ZWxMRTdMY1BHVVlWcUlxQnFBbDlIbnVlU29QMlQyaFFocW5iNHdsRDF3c3BOMDFJdi1FUkNiV2dzNmFLZl9mN0NEUHg0bHVYVldxQXFuT1E1V0E2a3ZUWUlZUVBxeUt1a2pjYTFGcGlIcElkZm5aWU5vQzc1X1RidUxTQWpHanhVNEtPQWt2SFIzd1U0Qnl5aXpTOWxac19jaGNoajVibTBGdXN5aTh2TjVPM2lVbEJzOFQtUzE3eE0yN3Z0SHV6WllsenBxbmJwV01uQ3V2czJHVWdqaG5jblVKLVRTLVJ1ZQ?oc=5" target="_blank" rel="noopener">破解智慧城市數據孤島：跨部門協議比高科技硬體更關鍵</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">東南亞智慧城市數據整合遇瓶頸 台灣發展可借鏡 - 商傳媒</div>
+            <div class="item-sentence lang-zh-only">東南亞智慧城市推不動，很多時候不是缺經費或物聯網感測器，而是各部門死守自己的數據資產，形成難以跨越的行政孤島。這對台灣數位治理是一記警鐘：真正的智慧化從來不是買了多少高檔伺服器，而是政府有沒有勇氣打通部門壁壘、建立公開透明的跨部門數據協議。技術永遠最簡單，梳理權責與利益分配才是真正的政治智慧。 <span class="src">— 商傳媒</span></div>
+            <div class="item-sentence-en lang-en-only">Southeast Asia&#x27;s recent hurdles in smart city implementations underline a critical governance lesson: technological hardware is useless without integrated institutional architecture. As cities grapple with fragmented data silos across municipal departments, successful digital governance depends far less on deploying IoT sensors than on establishing robust inter-agency data interoperability protocols. <span class="src">— 商傳媒</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxONFRnTkIwdnlQanJWVlpETjZTUHFOdHRlSFJXbkZNSmNja2N0bk1nVjZ0VFJfeVJfQXM1YmtpYmcwb1lQUmFGN21YeW5GY1NabFNoMzlUV1I5TlRlc3FfdEVuaUx5cDM1OUJDTmxjenByV1B0WFMwRThQYWF1TEpFM212N2JhT3ZlZ25LMHoyODhGckk3TkhldWkyZXNucUU?oc=5" target="_blank" rel="noopener">從事後咎責到即時攔截：AI 治理正轉向「執行前哨站」</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why AI Governance Is Moving to the Moment Before Execution - Cybersecurity Insiders</div>
+            <div class="item-sentence lang-zh-only">以往我們談 AI 治理，都在討論出事後的法律咎責或模型倫理審查，但這篇文章點出了一個極其關鍵的轉變：防線必須前移到「執行的那一毫秒前」。隨著自主系統越來越普及，事後補救根本來不及，未來的治理核心是建立即時的守門員機制，在模型即將做出危險決策的瞬間直接攔截，這是科技監管與工程落地的重大範式轉移。 <span class="src">— Cybersecurity Insiders</span></div>
+            <div class="item-sentence-en lang-en-only">AI governance is undergoing a structural paradigm shift, moving away from post-hoc audits and compliance checklists toward real-time, pre-execution enforcement. As autonomous algorithms interact directly with critical infrastructure and financial systems, organizations must establish deterministic runtime guardrails capable of intercepting hallucinated or malicious commands milliseconds before actions materialize in the real world. <span class="src">— Cybersecurity Insiders</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxONFRnTkIwdnlQanJWVlpETjZTUHFOdHRlSFJXbkZNSmNja2N0bk1nVjZ0VFJfeVJfQXM1YmtpYmcwb1lQUmFGN21YeW5GY1NabFNoMzlUV1I5TlRlc3FfdEVuaUx5cDM1OUJDTmxjenByV1B0WFMwRThQYWF1TEpFM212N2JhT3ZlZ25LMHoyODhGckk3TkhldWkyZXNucUU?oc=5" target="_blank" rel="noopener">自主 Agent 時代：在模型執行瞬間築起動態安全防線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why AI Governance Is Moving to the Moment Before Execution - Cybersecurity Insiders</div>
+            <div class="item-sentence lang-zh-only">當企業內部開始大量引入自主 Agent 來處理財務、人資甚至系統維運，傳統的靜態合規清單已經徹底失效。將治理焦點放在「執行前一刻」，本質上是在給不受控的生成式 AI 裝上動態煞車皮。這代表資安長與產品團隊不需要為了防禦而全面扼殺創新，而是透過微秒級的語義審查，讓 AI 在安全受控的邊界內大膽發揮潛力。 <span class="src">— Cybersecurity Insiders</span></div>
+            <div class="item-sentence-en lang-en-only">With the rapid rise of enterprise agentic workflows, static security policies can no longer keep pace with non-deterministic model behaviors. Implementing dynamic policy gates right before code execution allows modern security teams to foster rapid internal experimentation while maintaining absolute runtime boundaries, preventing irreversible operational disasters without unnecessarily throttling innovation. <span class="src">— Cybersecurity Insiders</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE1wMFc5cVkzSEdZeDBNSmllM3RKakpZWFB0YVhWM2N1MW1pRFI2RnE2NTFtZS0xYmVhWEdxRXAtdnVmLW4yRlVCa3pFT2E5VG01eUlvRTNIN2pjTHZpWWpUQjBnNHVWSkJtYU12N21CbEhxdk9PYU9fTExBTUxmZw?oc=5" target="_blank" rel="noopener">智慧電網全球爆發：能源治理正從中心壟斷轉向分散韌性</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">グローバルスマートグリッドネットワーク市場:将来の成長と需要 - Spherical Insights</div>
+            <div class="item-sentence lang-zh-only">智慧電網市場的爆發式成長，表面上看是綠能轉型的商機，深層來看卻是一場能源治理的典範轉移。未來的電網不再是國營電廠單向輸電的巨獸，而是千家萬戶儲能設備與微電網動態互聯的神經系統。這意味著能源管理必須從過往的中心化壟斷，走向去中心化、具備自我修復與抗災韌性的社會協作網絡，對城市安全至關重要。 <span class="src">— Spherical Insights</span></div>
+            <div class="item-sentence-en lang-en-only">The surging global smart grid market signals a fundamental transformation in civic infrastructure resilience. Rather than relying on traditional top-down generation, modern grids are evolving into distributed, self-healing networks capable of dynamic bi-directional load balancing, turning municipal energy governance into a collaborative, decentralized ecosystem fit for extreme climate uncertainties. <span class="src">— Spherical Insights</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/security/expert-urges-water-utilities-to-focus-on-cybersecurity-basics" target="_blank" rel="noopener">水利關鍵設施防護告急：回歸資安基本功勝過盲追高端技術</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Expert Urges Water Utilities to Focus on Cybersecurity Basics</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/6274f43/2147483647/strip/true/crop/1036x504+0+63/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F8f%2Ffe%2F4a51929ea5bd9df2950c3dc87b98%2Fshutterstock-294978146.jpg" alt="Expert Urges Water Utilities to Focus on Cybersecurity Basics" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">自來水廠等民生基建設施近年頻頻成為黑客攻擊的目標，但資安專家給出的藥方卻非常「不性感」：先把雙重驗證、密碼管理等基本功做好，別老想著買高大上的 AI 資安黑科技。這給所有公共基礎設施治理者上了一課：安全沒有捷徑，當最底層的門窗都沒鎖好時，買再貴的防護警報器都只是自欺欺人的表面工夫。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Amid escalating cyber threats against critical water utilities, cybersecurity leaders are urging public operators to abandon technological silver bullets and recommit to basic operational hygiene. Simple measures like multi-factor authentication, network segmentation, and credential audits yield far higher defensive dividends than premature investments in glamorous yet unproven artificial intelligence defenses. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-27 08:03:31 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
