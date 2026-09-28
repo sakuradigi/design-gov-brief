@@ -1,0 +1,822 @@
+{
+  "date": "2026-09-28",
+  "generated_at": "2026-09-28T00:02:00.186964+00:00",
+  "model_used": "Gemini 3.8 Flash",
+  "total_raw_articles": 81,
+  "total_verified": 47,
+  "total_failed": 34,
+  "selected_design": 5,
+  "selected_gov": 5,
+  "articles": [
+    {
+      "title": "How we save entry-level UX work that teaches craft in the time of AI. Our field depends on this.",
+      "url": "https://uxdesign.cc/how-we-save-entry-level-ux-work-that-teaches-craft-in-the-time-of-ai-our-field-depends-on-this-e1684a0d67eb?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-27T19:38:02+00:00"
+    },
+    {
+      "title": "Is this the line for burgers?",
+      "url": "https://uxdesign.cc/is-this-the-line-for-burgers-9730dd45999d?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-25T21:51:14+00:00"
+    },
+    {
+      "title": "What the Bible got right about AI",
+      "url": "https://uxdesign.cc/what-the-bible-got-right-about-ai-340d32b82b5c?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-24T22:03:16+00:00"
+    },
+    {
+      "title": "Why the best resume may be the wrong resume for a design team",
+      "url": "https://uxdesign.cc/why-the-best-resume-may-be-the-wrong-resume-for-a-design-team-c019b8568662?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-23T04:06:17+00:00"
+    },
+    {
+      "title": "The origins, side B — birth of the un-cool",
+      "url": "https://uxdesign.cc/the-origins-side-b-birth-of-the-un-cool-d1baf83948c8?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-23T04:04:28+00:00"
+    },
+    {
+      "title": "In the age of AI, the UX field survives on leaders who cultivate juniors",
+      "url": "https://uxdesign.cc/in-the-age-of-ai-the-ux-field-survives-on-leaders-who-cultivate-juniors-595c548f1d70?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-22T21:27:21+00:00"
+    },
+    {
+      "title": "Designers lost their unit of measurement. That’s why we’re struggling.",
+      "url": "https://uxdesign.cc/designers-lost-their-unit-of-measurement-thats-why-we-re-struggling-b3c6beeea74f?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-22T11:23:11+00:00"
+    },
+    {
+      "title": "The variance problem in AI products",
+      "url": "https://uxdesign.cc/the-variance-problem-in-ai-products-62a58272564c?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-22T11:22:49+00:00"
+    },
+    {
+      "title": "What is a screen made of?",
+      "url": "https://uxdesign.cc/what-is-a-screen-made-of-f2b1318778d4?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-22T11:22:00+00:00"
+    },
+    {
+      "title": "Where does your work go when the tool shuts down?",
+      "url": "https://uxdesign.cc/where-does-your-work-go-when-the-tool-shuts-down-d3b74c2a74d8?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-22T11:21:28+00:00"
+    },
+    {
+      "title": "Beauty brands were writing slop before AI: here's how Uncommon won a D&AD Black Pencil for calling it out",
+      "url": "https://www.creativeboom.com/insight/beauty-brands-were-writing-ai-slop-before-ai-heres-how-uncommon-won-a-dad-black-pencil-for-calling-it-out/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T08:30:00+00:00"
+    },
+    {
+      "title": "Bentley and FutureBrand rethink the car showroom as a place you'd actually want to linger",
+      "url": "https://www.creativeboom.com/news/bentley-and-futurebrand-rethink-the-car-showroom-as-a-place-youd-actually-want-to-linger/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T07:00:00+00:00"
+    },
+    {
+      "title": "Jessica Hische turns her hand-made lettering into emotional first aid for kids",
+      "url": "https://www.creativeboom.com/books/jessica-hische-turns-her-beautiful-hand-made-lettering-into-emotional-first-aid-for-kids/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T06:00:00+00:00"
+    },
+    {
+      "title": "MOKSi gives GiftTrees the confidence to be both good and profitable",
+      "url": "https://www.creativeboom.com/work/moksi-gives-gifttrees-the-confidence-to-be-both-good-and-profitable/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-24T12:00:00+00:00"
+    },
+    {
+      "title": "Design Bridge and Partners turns Leone's Turin sweet factory into a Willy Wonka world",
+      "url": "https://www.creativeboom.com/work/design-bridge-and-partners-turns-leones-turin-sweet-factory-into-a-willy-wonka-world/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-24T08:00:00+00:00"
+    },
+    {
+      "title": "Illustrator Rosa Snijders finds the softness in grief, debt and all of life's heavy subjects",
+      "url": "https://www.creativeboom.com/work/rosa-snijders/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-24T08:00:00+00:00"
+    },
+    {
+      "title": "McLaren evolves its identity with a wordmark inspired by Bruce McLaren's family garage",
+      "url": "https://www.creativeboom.com/news/mclaren-evolves-its-identity-with-a-wordmark-inspired-by-bruce-mclarens-family-garage/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-24T07:00:00+00:00"
+    },
+    {
+      "title": "No bag? No problem: Aldi unveils a new jacket that transforms into a shopping bag",
+      "url": "https://www.creativeboom.com/news/no-bag-no-problem-aldi-unveils-jacket-that-transforms-into-a-shopping-bag/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-23T07:30:00+00:00"
+    },
+    {
+      "title": "Wu Xinlin's editorial illustrations show solitude in a whole new light",
+      "url": "https://www.creativeboom.com/work/being-with-myself-wu-xinlin-illustrated-series-provides-a-compellingly-original-take-on-solitude/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-23T07:00:00+00:00"
+    },
+    {
+      "title": "Why designer Merijn Straathof turned a landmark techno album into a playable web-based instrument",
+      "url": "https://www.creativeboom.com/work/why-merijn-straathof-turned-a-landmark-techno-album-into-a-playable-web-based-instrument/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-23T06:45:00+00:00"
+    },
+    {
+      "title": "From YWCA to Hotel Willo: how Rethink solved one of branding's trickiest problems",
+      "url": "https://www.creativeboom.com/work/from-ywca-to-hotel-willo-how-rethink-solved-a-branding-problem/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-23T06:30:00+00:00"
+    },
+    {
+      "title": "Jenna Arts on why the stumbling, silly, ordinary human is the only one worth drawing",
+      "url": "https://www.creativeboom.com/work/jenna-arts-on-why-the-stumbling-silly-ordinary-human-is-the-only-one-worth-drawing/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-22T08:00:00+00:00"
+    },
+    {
+      "title": "Studio Blackburn gives Sunderland a new 'living room' with its identity for Culture House",
+      "url": "https://www.creativeboom.com/work/studio-blackburn-gives-sunderland-a-new-living-room-with-its-identity-for-culture-house/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-22T07:00:00+00:00"
+    },
+    {
+      "title": "Booms & Shakes: September's biggest hires, bold bets on AI, and design overtakes retail",
+      "url": "https://www.creativeboom.com/booms-shakes/booms-shakes-september/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-22T06:00:00+00:00"
+    },
+    {
+      "title": "Decision paralysis, lost conviction and no juniors: what brand creative leaders say AI is exposing",
+      "url": "https://www.creativeboom.com/state-of-play/decision-paralysis-lost-conviction-and-no-juniors-what-brand-creative-leaders-say-ai-is-exposing/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-21T08:00:00+00:00"
+    },
+    {
+      "title": "Ester Pazur on being a 'pessimist', the power of stop-motion and why handmade art still matters",
+      "url": "https://www.creativeboom.com/work/ester-pazur-on-being-a-pessimist-the-power-of-stop-motion-and-why-handmade-art-still-matters/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-21T06:15:00+00:00"
+    },
+    {
+      "title": "Inside the acid baths and aquatint plates of Chien Yu Lin's diaristic prints",
+      "url": "https://www.creativeboom.com/work/inside-the-acid-baths-and-aquatint-plates-of-chien-yu-lins-diaristic-prints/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-21T06:00:00+00:00"
+    },
+    {
+      "title": "Charlotte Fox on painting the space between 'desire, repulsion, connection and fantasy'",
+      "url": "https://www.creativeboom.com/work/charlotte-fox-on-painting-the-space-between-desire-repulsion-connection-and-fantasy/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-21T05:45:00+00:00"
+    },
+    {
+      "title": "Best of the Week: Structural Packaging and Swiss Grids",
+      "url": "https://abduzeedo.com/best-week-structural-packaging-and-swiss-grids/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-27T13:08:48+00:00"
+    },
+    {
+      "title": "Editorial Design: Adam Pendleton Monograph by SAVVY STUDIO",
+      "url": "https://abduzeedo.com/editorial-design-adam-pendleton-monograph-savvy-studio/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-26T22:05:03+00:00"
+    },
+    {
+      "title": "Inside Cuberto’s Mobile App Design for Sleepiest",
+      "url": "https://abduzeedo.com/inside-cubertos-mobile-app-design-sleepiest/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-26T15:39:59+00:00"
+    },
+    {
+      "title": "Spatial Design: NVM Association Clubhouse by Silo",
+      "url": "https://abduzeedo.com/spatial-design-nvm-association-clubhouse-silo/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-26T13:10:33+00:00"
+    },
+    {
+      "title": "Spatial Design: Eurojust Privacy Manifestations by Silo",
+      "url": "https://abduzeedo.com/spatial-design-eurojust-privacy-manifestations-silo/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-25T22:07:24+00:00"
+    },
+    {
+      "title": "Branding Design: FORMA Material Culture by Luciano Quintana",
+      "url": "https://abduzeedo.com/branding-design-forma-material-culture-luciano-quintana/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-25T13:07:04+00:00"
+    },
+    {
+      "title": "Brand Identity & UI/UX Design: dose by Sungsik Kim",
+      "url": "https://abduzeedo.com/brand-identity-uiux-design-dose-sungsik-kim/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-24T22:04:56+00:00"
+    },
+    {
+      "title": "Packaging Design: KanKan Sustainable Care by Two Times Elliott",
+      "url": "https://abduzeedo.com/packaging-design-kankan-sustainable-care-two-times-elliott/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-24T19:22:08+00:00"
+    },
+    {
+      "title": "Typography: Formula Condensed Typeface by Pangram Pangram",
+      "url": "https://abduzeedo.com/typography-formula-condensed-typeface-pangram-pangram/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-24T13:19:45+00:00"
+    },
+    {
+      "title": "Brand Identity: (RE)DOMMA by Gabriel Maciel",
+      "url": "https://abduzeedo.com/brand-identity-redomma-gabriel-maciel/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-24T05:26:36+00:00"
+    },
+    {
+      "title": "Brand Identity: Butequim Cocktail Bar by Estúdio Lippi",
+      "url": "https://abduzeedo.com/brand-identity-butequim-cocktail-bar-estudio-lippi/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-23T22:05:26+00:00"
+    },
+    {
+      "title": "Editorial Design: ØTHERS Publication by Two Times Elliott",
+      "url": "https://abduzeedo.com/editorial-design-others-publication-two-times-elliott/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-23T19:04:58+00:00"
+    },
+    {
+      "title": "Packaging Design: Quarter Past Noon by SAVVY STUDIO",
+      "url": "https://abduzeedo.com/packaging-design-quarter-past-noon-savvy-studio/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-23T13:08:43+00:00"
+    },
+    {
+      "title": "Packaging Design: Chaos Cola by Up-Brands",
+      "url": "https://abduzeedo.com/packaging-design-chaos-cola-brands/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-23T05:18:45+00:00"
+    },
+    {
+      "title": "Packaging Design for MI! Vietnamese Street Food",
+      "url": "https://abduzeedo.com/packaging-design-mi-vietnamese-street-food/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-23T05:01:19+00:00"
+    },
+    {
+      "title": "Branding Design: North of Normal by Molnár Péter",
+      "url": "https://abduzeedo.com/branding-design-north-normal-molnar-peter/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-22T19:07:50+00:00"
+    },
+    {
+      "title": "Editorial Design: Compagnie 3B Presskit by Florian Cornut",
+      "url": "https://abduzeedo.com/editorial-design-compagnie-3b-presskit-florian-cornut/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-22T13:06:56+00:00"
+    },
+    {
+      "title": "Editorial Design: Xe Vero Catalogue by Suerte Studio",
+      "url": "https://abduzeedo.com/editorial-design-xe-vero-catalogue-suerte-studio/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-22T03:45:10+00:00"
+    },
+    {
+      "title": "POVA Brand Identity Redesign by StudioDraft",
+      "url": "https://abduzeedo.com/pova-brand-identity-redesign-studiodraft/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-22T03:42:36+00:00"
+    },
+    {
+      "title": "Packaging Design: Stereoscope Coffee by OlssønBarbieri",
+      "url": "https://abduzeedo.com/packaging-design-stereoscope-coffee-olssonbarbieri/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-21T22:03:07+00:00"
+    },
+    {
+      "title": "Typography Design: Rocket Type System by TypeType Foundry",
+      "url": "https://abduzeedo.com/typography-design-rocket-type-system-typetype-foundry/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-21T19:06:10+00:00"
+    },
+    {
+      "title": "Matchacha Japanese Tea Studio Visual System and Branding",
+      "url": "https://abduzeedo.com/matchacha-japanese-tea-studio-visual-system-and-branding/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-21T18:05:58+00:00"
+    },
+    {
+      "title": "Boldtype Management Visual Identity and Typography Branding",
+      "url": "https://abduzeedo.com/boldtype-management-visual-identity-and-typography-branding/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-21T17:28:07+00:00"
+    },
+    {
+      "title": "Brand Identity: Node Visual System by Brand Brothers",
+      "url": "https://abduzeedo.com/brand-identity-node-visual-system-brand-brothers/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-09-21T13:06:39+00:00"
+    },
+    {
+      "title": "【求人情報】Webサイト制作を主軸とするファンタスティックラボ株式会社が、Webデザイナーを募集",
+      "url": "https://www.japandesign.ne.jp/news/2026/09/90225/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-28T00:00:21+00:00"
+    },
+    {
+      "title": "現代陶芸やヴィンテージ家具をキュレーションする「Rurbanism Tokyo Store」が清澄白河にオープン",
+      "url": "https://www.japandesign.ne.jp/news/2026/09/90311/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T03:00:35+00:00"
+    },
+    {
+      "title": "【求人情報】デザイン＆ブランディングエージェンシーの株式会社ConcePioneが、デザインアシスタント・ジュニアデザイナーなど3職種を募集",
+      "url": "https://www.japandesign.ne.jp/news/2026/09/89941/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T00:00:22+00:00"
+    },
+    {
+      "title": "松屋銀座で「リサ・ラーソン 追悼展」開催。アーティスト・デザイナーとしての姿と、インスピレーションの源をたどる",
+      "url": "https://www.axismag.jp/posts/2026/09/720799.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T06:33:43+00:00"
+    },
+    {
+      "title": "使う人の日常に小さな感動を届ける、インダストリアルデザイナー 岩井優典",
+      "url": "https://www.axismag.jp/posts/2026/09/724346.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T01:23:36+00:00"
+    },
+    {
+      "title": "SEMBA　空間の解放展 写真家6人の視点",
+      "url": "https://www.axismag.jp/posts/2026/09/724208.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T01:19:53+00:00"
+    },
+    {
+      "title": "京都・上羽絵惣の「不易流行展」。日本画絵具と現代の日本画家が示す伝統と未来",
+      "url": "https://www.axismag.jp/posts/2026/09/723264.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-24T06:36:40+00:00"
+    },
+    {
+      "title": "大阪発のデザインイベント「OSAKA DESIGN WEEK 2026」。ものづくりとデザインが交わる、都市型デザインプラットフォーム",
+      "url": "https://www.axismag.jp/posts/2026/09/721578.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-24T01:34:36+00:00"
+    },
+    {
+      "title": "デザインの祭典「Featured Projects 2026」開催。「ものがうまれる、その『間』」をテーマに制作のプロセスをひらく",
+      "url": "https://www.axismag.jp/posts/2026/09/723814.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-21T02:17:08+00:00"
+    },
+    {
+      "title": "Think You'd Never Fall for a Scam Text? Think Again",
+      "url": "https://www.govtech.com/blogs/lohrmann-on-cybersecurity/think-youd-never-fall-for-a-scam-text-think-again",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-27T09:02:00+00:00"
+    },
+    {
+      "title": "Oregon Is Latest State to Move on Frontier AI Regulation",
+      "url": "https://www.govtech.com/artificial-intelligence/oregon-is-latest-state-to-move-on-frontier-ai-regulation",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T22:52:41+00:00"
+    },
+    {
+      "title": "Expert Urges Water Utilities to Focus on Cybersecurity Basics",
+      "url": "https://www.govtech.com/security/expert-urges-water-utilities-to-focus-on-cybersecurity-basics",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T21:52:45+00:00"
+    },
+    {
+      "title": "We Asked State CIOs: What IT Roles Are Most Likely to Change?",
+      "url": "https://www.govtech.com/workforce/we-asked-state-cios-what-it-roles-are-most-likely-to-change",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T20:18:00+00:00"
+    },
+    {
+      "title": "Maryland Governor Draws New Boundaries for Data Centers",
+      "url": "https://www.govtech.com/policy/maryland-governor-draws-new-boundaries-for-data-centers",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": false,
+      "pub_date": "2026-09-24T22:04:38+00:00"
+    },
+    {
+      "title": "Best Practices for Defending Against — and Using — Frontier AI",
+      "url": "https://www.govtech.com/security/best-practices-for-defending-against-and-using-frontier-ai",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-24T18:05:00+00:00"
+    },
+    {
+      "title": "Louisiana Launches Modernized Driver Services Platform",
+      "url": "https://www.govtech.com/transportation/louisiana-launches-modernized-driver-services-platform",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-24T16:22:52+00:00"
+    },
+    {
+      "title": "Digital States 2026: AI Moves From Experiment to Infrastructure",
+      "url": "https://www.govtech.com/digitalstates2026",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": false,
+      "pub_date": "2026-09-23T23:26:31+00:00"
+    },
+    {
+      "title": "Electric Truck Incentives, Market Reach Across the Nation",
+      "url": "https://www.govtech.com/transportation/electric-truck-incentives-market-reach-across-the-nation",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-23T22:49:57+00:00"
+    },
+    {
+      "title": "Prince William County, Va., Taps a New Technology Director",
+      "url": "https://www.govtech.com/workforce/prince-william-county-va-taps-a-new-technology-director",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-23T21:28:30+00:00"
+    },
+    {
+      "title": "Federal privacy law highly unlikely in 2026, leaving states to continue setting their own rules",
+      "url": "https://statescoop.com/federal-privacy-law-highly-unlikely-in-2026-leaving-states-to-continue-setting-their-own-rules/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T19:16:15+00:00"
+    },
+    {
+      "title": "NYC tests electric construction equipment at city worksites",
+      "url": "https://statescoop.com/nyc-tests-electric-construction-equipment-at-city-worksites/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-25T17:54:06+00:00"
+    },
+    {
+      "title": "States look to lidar, machine learning and satellites to map landslide risks",
+      "url": "https://statescoop.com/states-look-to-lidar-machine-learning-and-satellites-to-map-landslide-risks/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": false,
+      "pub_date": "2026-09-24T17:38:18+00:00"
+    },
+    {
+      "title": "Beyond the card: Why identity assurance is a required layer for payment security and government trust",
+      "url": "https://statescoop.com/identity-assurance-government-payment-security/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": false,
+      "pub_date": "2026-09-23T18:30:00+00:00"
+    },
+    {
+      "title": "Colorado rescinds over $100M in BEAD awards after investigation into whistleblower complaints",
+      "url": "https://statescoop.com/colorado-rescinds-over-100m-in-bead-awards-after-investigation-into-whistleblower-complaints/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-22T21:23:54+00:00"
+    },
+    {
+      "title": "Virginia Gov. Spanberger urges Congress to establish federal AI guardrails",
+      "url": "https://statescoop.com/virginia-gov-spanberger-urges-congress-to-establish-federal-ai-guardrails/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-22T18:24:18+00:00"
+    },
+    {
+      "title": "New York state CIO Dru Rai is out",
+      "url": "https://statescoop.com/new-york-state-cio-dru-rai-is-out/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-22T17:23:39+00:00"
+    },
+    {
+      "title": "Maryland turns to civic tech to prepare for Medicaid changes",
+      "url": "https://statescoop.com/maryland-turns-to-civic-tech-to-prepare-for-medicaid-changes/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-22T13:01:00+00:00"
+    },
+    {
+      "title": "Code for America gets Google funding to expand AI tax assistance",
+      "url": "https://statescoop.com/code-for-america-gets-google-funding-to-expand-ai-tax-assistance/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-21T22:14:29+00:00"
+    },
+    {
+      "title": "Washington state names private sector tech leader as new chief information security officer",
+      "url": "https://statescoop.com/washington-state-names-private-sector-tech-leader-as-new-chief-information-security-officer/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-09-21T16:03:45+00:00"
+    }
+  ]
+}

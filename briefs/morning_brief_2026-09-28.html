@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從後萬博的城市策展到前沿AI攻防：在碎片化治理與日常創意中重構生活體驗 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-28</div>
+    <div class="headline">從後萬博的城市策展到前沿AI攻防：在碎片化治理與日常創意中重構生活體驗</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">The ultimate hidden truth of the world is that it is something that we make, and could just as easily make differently.</div>
+      <div class="quote-text-zh lang-zh-only">這世界最深層的隱藏真相在於：它是由我們親手創造的，因此我們也能毫不費力地創造出另一種可能。</div>
+      <div class="quote-author">— David Graeber (人類學家與思想家)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">大阪藉後萬博能量串連在地製造與設計，打造都市級創新實驗場</li>
+        <li class="flash-item">美聯邦隱私法再度卡關，地方政府被迫成為數位人權第一線防線</li>
+        <li class="flash-item">前沿AI重塑公部門資安攻防，被動防禦已被主動演算法威脅全面顛覆</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/09/90225/" target="_blank" rel="noopener">動漫IP熱潮下的沉浸式網頁設計：從小眾迷因邁向主流美學的數位轉型</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】Webサイト制作を主軸とするファンタスティックラボ株式会社が、Webデザイナーを募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/6aa419379d07f.jpg" alt="【求人情報】Webサイト制作を主軸とするファンタスティックラボ株式会社が、Webデザイナーを募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">日本設計公司擴大招募專攻二次元與展覽特設網站的設計師，這不只是單純的徵人啟事，而是揭示了數位體驗的核心已從「資訊傳遞」轉為「情緒共鳴」。在文化IP爆發的時代，官方網站不再只是靜態布告欄，而是粉絲踏入作品世界的入口。當動漫美學從次文化登上主流殿堂，具備跨媒介敘事與互動微動畫能力的設計師，正成為推動數位文化經濟的關鍵操偶師。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">A Japanese digital agency is hiring web designers specializing in manga and anime IP platforms. This hiring push underscores how digital presence has shifted from purely functional information delivery to immersive narrative experiences, turning specialized pop-culture web design into a highly valued sector of contemporary digital aesthetics. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/09/721578.html" target="_blank" rel="noopener">萬博之後的城市新生：大阪如何把在地深厚製造力轉化為日常創新平台</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">大阪発のデザインイベント「OSAKA DESIGN WEEK 2026」。ものづくりとデザインが交わる、都市型デザインプラットフォーム</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/08/main-9.jpg" alt="大阪発のデザインイベント「OSAKA DESIGN WEEK 2026」。ものづくりとデザインが交わる、都市型デザインプラットフォーム" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">大阪設計週在後萬博時代登場，象徵著這座關西大城正積極擺脫「活動放煙火」的短期思維，轉向長期的城市品牌經營。它最值得借鏡之處，在於將關西引以為傲的中小企業製造硬實力，與現代服務設計無縫嵌合。城市策展不再只是擺幾件光鮮亮麗的裝置，而是讓在地工坊與市民日常生活接軌，打造一個具有造血能力的都市型設計生態圈。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">OSAKA DESIGN WEEK 2026 builds on the momentum of the Osaka-Kansai Expo to bridge local manufacturing craftsmanship with forward-looking urban design. By turning the city into a collaborative platform, Osaka illustrates how regional legacy industries can be revitalized through human-centered design to ensure long-term urban vitality well beyond mega-events. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/no-bag-no-problem-aldi-unveils-jacket-that-transforms-into-a-shopping-bag/" target="_blank" rel="noopener">穿在身上的幽默環保：超市外套變身購物袋背後的行為設計哲學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">No bag? No problem: Aldi unveils a new jacket that transforms into a shopping bag</div>
+            <img class="item-image" src="https://media.creativeboom.com/ed2ed019-1f13-41ec-b5a7-582d09857661/conversions/939fd795a344ec2a865c7ba821455d5c0f12ad5f-medium.webp" alt="No bag? No problem: Aldi unveils a new jacket that transforms into a shopping bag" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">連鎖超市推出能一秒變身環保袋的連帽夾克，看似荒謬搞笑的行銷噱頭，其實精準打中了現代人的痛點：出門永遠忘記帶袋子。這展示了優秀行為設計的魅力——與其說教式地要求大眾守規矩，不如把環保意識包裝成充滿自嘲與實用性的隨身潮流。當解決生活瑣事的方案變得好玩，綠色生活才能真正擺脫道德綁架，成為大眾欣然接納的日常風格。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Aldi has designed a transformable jacket that folds into a reusable grocery bag, targeting the persistent habit of consumers forgetting shopping bags. The playful intervention demonstrates how humor and clever behavioral design can nudge sustainable habits far more effectively than lecturing consumers, turning everyday friction into a delightful lifestyle moment. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/being-with-myself-wu-xinlin-illustrated-series-provides-a-compellingly-original-take-on-solitude/" target="_blank" rel="noopener">重新定義獨處的溫度：插畫藝術如何解構現代人的孤獨焦慮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Wu Xinlin&#x27;s editorial illustrations show solitude in a whole new light</div>
+            <img class="item-image" src="https://media.creativeboom.com/b9add27a-adc8-4f6b-9216-d0a834539700/conversions/881fee6b5fd67ae0b82a2156b29a2a2cad969250-medium.webp" alt="Wu Xinlin&#x27;s editorial illustrations show solitude in a whole new light" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">插畫家吳欣霖以溫潤細膩的筆觸描繪單身日常，打破了社會長期將「孤獨」與「悲涼淒慘」劃上等號的刻板印象。在高度連結卻讓人備感疏離的後疫情時代，學會安放自己的靈魂成了當代必修課。這系列創作的價值在於給予讀者一種溫柔的治癒感：一個人吃早餐、散步看雲，並非社交失敗，而是一種自我整頓與享受生命自主權的從容美學。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Illustrator Wu Xinlin explores solitude through evocative editorial pieces, challenging the conventional association between being alone and emotional emptiness. Her series captures the rich internal textures of solo moments, reminding audiences in an hyper-connected world that intentional solitude can be an empowering form of personal sovereignty and creative rejuvenation. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/why-merijn-straathof-turned-a-landmark-techno-album-into-a-playable-web-based-instrument/" target="_blank" rel="noopener">把經典電音拆解成瀏覽器玩具：數位互動設計如何重燃文化檔案生命</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why designer Merijn Straathof turned a landmark techno album into a playable web-based instrument</div>
+            <img class="item-image" src="https://media.creativeboom.com/1d9719ee-6993-48e0-a315-4a9b32aae557/conversions/ed5e93a78a6ba678892fc671e697151b76daa595-medium.webp" alt="Why designer Merijn Straathof turned a landmark techno album into a playable web-based instrument" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">荷蘭設計師將25年前的前衛電音專輯做成瀏覽器即可玩的互動樂器，打破了數位典藏只是「供在博物館」的沉悶印象。這件事給文化治理與體驗設計者的最大啟發是：最好的保存就是「讓使用者動手玩」。透過現代網頁音訊技術，原本被封存的聲音記憶變成了每個人都能即興混音的數位玩具，證明了優秀的互動設計能讓文化資產重獲新生。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Dutch designer Merijn Straathof recreated Richie Hawtin’s iconic techno album DE9 into a browser-based, playable interactive instrument. This project offers a compelling case for cultural archiving: instead of keeping historical artifacts static behind glass, innovative web technologies can turn legacy media into participatory playgrounds for new generations. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/blogs/lohrmann-on-cybersecurity/think-youd-never-fall-for-a-scam-text-think-again" target="_blank" rel="noopener">好心回覆反而中計：簡訊詐騙利用人性格局翻新的心理攻防戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Think You&#x27;d Never Fall for a Scam Text? Think Again</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/09e7271/2147483647/strip/true/crop/1119x544+0+43/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F32%2F6f%2Fb5b00e337954f7a57c7f02fb3f32%2Fshutterstock-558343378.jpg" alt="Think You&#x27;d Never Fall for a Scam Text? Think Again" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">收到可疑問候時，隨手回覆一句「你傳錯了」，竟成了駭客驗證活躍門號並啟動社交工程的最佳跳板。資安早已不是工程師後端的防火牆較量，而是一場赤裸裸的人性弱點狙擊戰。現代治理與公眾倡導最需要更新的認知是：防詐不再只是「別點可疑連結」，連一般人的禮貌與社交直覺都已被惡意利用，數位防禦的底線正在不斷重構。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Cybersecurity experts warn that even a polite &#x27;wrong number&#x27; reply to unknown texts confirms phone activity to scammers, initiating sophisticated social engineering traps. This trend illustrates that modern threats target psychological reflexes rather than technical loopholes, demanding that public awareness campaigns evolve beyond basic cyber hygiene toward nuanced behavioral vigilance. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/workforce/we-asked-state-cios-what-it-roles-are-most-likely-to-change" target="_blank" rel="noopener">從修電腦到駕馭演算法：政府科技長眼中公務資訊人力的典範轉移</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">We Asked State CIOs: What IT Roles Are Most Likely to Change?</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/9b004b2/2147483647/strip/true/crop/4635x2253+1980+0/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F67%2F8d%2F6e2182864e1887eb29a7d4764261%2Fadobestock-437361333.jpeg" alt="We Asked State CIOs: What IT Roles Are Most Likely to Change?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">多州政府科技首長不約而同指出，傳統以維護基礎硬體為主的公職角色正在加速淘汰，取而代之的是需要懂跨域整合、AI倫理與資料治理的複合型人才。這對所有組織的啟示非常明確：數位轉型的瓶頸永遠在於組織結構與人才思維，而非購買了多少伺服器。公部門若無法打破官僚藩籬、重塑科技職能，再宏大的數位治理願景都只會淪為空談。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">State CIOs highlight that public sector IT roles are shifting drastically from conventional hardware maintenance toward data governance, AI adoption, and cross-departmental integration. The transformation proves that the true hurdle of government modernization lies in organizational agility and talent upskilling, rather than simply investing in newer enterprise software suites. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://statescoop.com/federal-privacy-law-highly-unlikely-in-2026-leaving-states-to-continue-setting-their-own-rules/" target="_blank" rel="noopener">聯邦隱私立法停擺成定局：地方各吹各的調逼出數位治理破碎化危機</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Federal privacy law highly unlikely in 2026, leaving states to continue setting their own rules</div>
+            <img class="item-image" src="https://statescoop.com/wp-content/uploads/sites/6/2020/09/GettyImages-1161652280.jpg" alt="Federal privacy law highly unlikely in 2026, leaving states to continue setting their own rules" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">美國聯邦資料隱私法案在2026年再度確定無望通過，迫使各州自行立起隱私高牆。這表面上是地方分權的勝利，實質上卻造成了法規破碎化的混亂災難，大幅推高了新創企業的遵循成本。當各州對個人資料、生物辨識的標準四分五裂，數位人權的保障就成了昂貴的抽籤遊戲。這也給全球數位治理敲響警鐘：缺乏頂層共識的法治，只會拖累整體創新腳步。 <span class="src">— StateScoop</span></div>
+            <div class="item-sentence-en lang-en-only">With federal privacy legislation stalled for 2026, individual states must craft their own regulatory frameworks. While state-level agility addresses immediate privacy gaps, it creates a fragmented compliance patchwork that penalizes smaller innovators, showing the urgent global need for coherent macro-level legal standards in data sovereignty. <span class="src">— StateScoop</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://statescoop.com/nyc-tests-electric-construction-equipment-at-city-worksites/" target="_blank" rel="noopener">靜音又零碳的未來工地：紐約電動工程機具實驗啟動城市減碳新章</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">NYC tests electric construction equipment at city worksites</div>
+            <img class="item-image" src="https://statescoop.com/wp-content/uploads/sites/6/2019/02/Fiber-road-work-Getty.jpg" alt="NYC tests electric construction equipment at city worksites" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">紐約市展開全電動重型施工機具的先導測試，瞄準了傳統工地那種震耳欲聾又黑煙狂竄的環境污染。這項舉措的深層意義，在於城市氣候治理終於跳出了單純更換公車或鼓勵市民騎單車的框架，開始向高碳排、高噪音的營建心臟動刀。乾淨安靜的施工現場不僅守護了工人和鄰里健康，更是現代宜居城市實踐淨零承諾時最接地氣的展示。 <span class="src">— StateScoop</span></div>
+            <div class="item-sentence-en lang-en-only">New York City is piloting zero-emission electric construction machinery across multiple public worksites to reduce diesel fumes and noise pollution. The initiative reflects a maturation of municipal climate action, moving past standard public transit electrification to tackle the stubborn emissions of heavy construction, setting a cleaner standard for dense urban development. <span class="src">— StateScoop</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/security/best-practices-for-defending-against-and-using-frontier-ai" target="_blank" rel="noopener">在演算法軍備競賽中求生：政府面對前沿AI不可避免的主動防禦課題</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Best Practices for Defending Against — and Using — Frontier AI</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/42c2670/2147483647/strip/true/crop/840x408+0+15/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F4c%2Ffe%2Fa246f4d54ae2ad61709377466d61%2Fchang-ai-laws-adobe.jpeg" alt="Best Practices for Defending Against — and Using — Frontier AI" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當新型前沿AI模型不僅能生成內容，還能自主挖掘未知系統漏洞時，公部門若仍沿用「打補丁」的被動資安策略無異於坐以待斃。這篇文章道出殘酷的現實：對抗惡意AI的唯一解方，就是用更強大的AI來主動防禦。各級政府必須學會將智慧工具嵌入日常治理，這不僅是一場技術升級，更是公共體制在演算法威脅面前守護公民信任的生死之戰。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">As frontier AI models become capable of discovering zero-day vulnerabilities autonomously, state and local agencies must abandon conventional reactive defense in favor of AI-powered proactive operations. Mitigating advanced AI threats requires embedding automated defenses across public architectures, making intelligent cyber capabilities an indispensable pillar of modern digital democracy. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-28 08:02:00 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
