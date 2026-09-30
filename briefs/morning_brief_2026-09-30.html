@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>微型漫遊重塑街區節奏，自主代理引爆 AI 動態治理新賽局 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-09-30</div>
+    <div class="headline">微型漫遊重塑街區節奏，自主代理引爆 AI 動態治理新賽局</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technologies are not just aids to human activity, but also powerful forces acting to reshape that activity and its meaning.</div>
+      <div class="quote-text-zh lang-zh-only">技術不僅是人類活動的輔助工具，更是重塑該活動及其本質意義的強大力量。</div>
+      <div class="quote-author">— Langdon Winner</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">時速六公里的慢速載具，讓城市最後一哩路兼具無障礙與生活感。</li>
+        <li class="flash-item">永續設計不用說教，借力既有心理習慣才能引發真正行為改變。</li>
+        <li class="flash-item">自主 AI 代理人大舉入局，企業治理焦點轉向動態行為即時監控。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/09/90227/" target="_blank" rel="noopener">打破平面與空間界線，全體驗整合已成設計工作室標配</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】幅広い領域をシームレスにデザインする株式会社モーメントが、グラフィックデザイナーなど3職種を募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/6aa37985aff8f.jpg" alt="【求人情報】幅広い領域をシームレスにデザインする株式会社モーメントが、グラフィックデザイナーなど3職種を募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">日本設計公司株式會社 Moment 正在招募橫跨平面、室內與 CG 的跨領域團隊。這背後揭示了一個不可逆的趨勢：單純守在平面或立體單一專業的時代已經結束了。現在的品牌體驗是全面立體化的，從實體店面空間的動線，到牆面視覺、再到線上 3D 視覺渲染，必須一氣呵成。設計師如果只懂自己的領域，很難在未來的整合型專案中掌握主導權。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Moment, a multidisciplinary Japanese design studio, is expanding its team across graphic, interior, and 3D visualization domains. This reflects an industry shift toward fully integrated experience design, where static branding and physical architecture merge seamlessly into cohesive narrative spaces. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/09/723849.html" target="_blank" rel="noopener">時速六公里的街道革命，慢速微移動顛覆城市步行想像</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">横浜で移動用小型車「スロモビ」のシェアサービス開始。ラストワンマイルを歩行する時速6kmの小型モビリティ</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/09/sub1-5.jpg" alt="横浜で移動用小型車「スロモビ」のシェアサービス開始。ラストワンマイルを歩行する時速6kmの小型モビリティ" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">橫濱市即將試營運時速僅六公里的慢速微移動車「Slow Mobi」。大家過去總以為移動工具越快越好，但這款介於步行與自行車之間的小車，剛好填補了高齡長者與短距漫遊的需求真空。它提醒了都市規劃者，智慧城市的終極目標不是盲目追求速度與效率，而是替各個年齡層找回在街道上悠閒穿梭的尊嚴與生活感。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Yokohama is launching a shareable mobility service featuring &#x27;Slow Mobi&#x27; vehicles capped at 6 km/h. By filling the gap between walking and cycling, the initiative challenges the speed-obsessed transit paradigm and reimagines inclusive, pedestrian-friendly urban mobility for an aging society. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/louise-french-quit-london-cycled-the-andes-and-came-home-an-illustrator/" target="_blank" rel="noopener">出走安地斯山脈的治癒之旅，創作撞牆往往源於生活盲區</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Louise French quit London, cycled the Andes, and came home an illustrator who gets things done</div>
+            <img class="item-image" src="https://media.creativeboom.com/3c7bd365-b7ce-42f8-bfa2-e3f978ac25fd/conversions/d122d7fdb7284c016d37bff4dfbe689fc067de9d-medium.webp" alt="Louise French quit London, cycled the Andes, and came home an illustrator who gets things done" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">插畫家 Louise French 在面臨職涯懷疑時，選擇離開倫敦騎單車橫越安地斯山脈，在面對極端環境後徹底治癒了自我懷疑。很多創作者陷在產出焦慮時，常以為是技巧不夠好，但其實是生活經驗被固化了。把自己丟進不確定性的冒險中，反而能洗刷掉冒牌者症候群，找到作品裡無可替代的個人精神與爆發力。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Illustrator Louise French revitalized her creative career after a transformative cycling trek across the Andes. Her journey demonstrates that breakthrough moments in design often demand disrupting one&#x27;s routine and embracing real-world uncertainty to overcome self-doubt. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/listen-to-jordic-the-unlikely-voice-of-a-heart-health-warning-for-men/" target="_blank" rel="noopener">用幽默維京人打破男性隱疾迷思，公共衛生的創意新解法</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Listen to Jordic: The unlikely heart warning men need to hear</div>
+            <img class="item-image" src="https://media.creativeboom.com/267e666f-1181-401f-81b1-56fca501bfbd/conversions/3196d535583ba858a2806f5bb55368124636a1d6-medium.webp" alt="Listen to Jordic: The unlikely heart warning men need to hear" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Havas Lynx 創造了極具喜感的維京人角色 Jordic，透過幽默音樂劇的方式提醒男性：勃起功能障礙其實是心血管疾病的早期警訊。面對傳統上讓人難堪、想逃避的健康議題，嚴肅說教通常只會讓人關上心門。這支廣告示範了如何用自嘲與幽默感卸下大眾心防，將難以啟齒的隱疾包裝成真正能救命的行為設計。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Havas Lynx UK introduced a humorous Viking character to educate men that erectile dysfunction can be an early indicator of heart disease. By replacing clinical scolding with witty storytelling, the campaign effectively disarms medical stigma to drive life-saving public health awareness. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/why-a-laundry-brand-made-t-shirts-youre-not-supposed-to-wash/" target="_blank" rel="noopener">叫你別洗衣服的洗衣精廣告，借力生活迷信推動永續行為</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why a laundry brand made four T-shirts you&#x27;re not supposed to wash</div>
+            <img class="item-image" src="https://media.creativeboom.com/1bd1baf0-f950-4e5d-b29d-6ed2f128414d/conversions/c402d86d195bfac1ac7bc065cada733cb7ea51d8-medium.webp" alt="Why a laundry brand made four T-shirts you&#x27;re not supposed to wash" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">洗衣精品牌 Ecover 與 Uncommon 合作推出了四款號稱「不必洗」的幸運 T 恤，藉此宣導少洗衣服以延長衣物壽命的永續理念。推動環保最忌諱站在道德高地訓話，這檔行銷巧妙借用了人們常有的「幸運物別洗掉好運」的心理迷信，把少洗衣服轉化為一種充滿個人儀式感的酷酷行為，這才是行為改變的高級玩法。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Laundry brand Ecover launched &#x27;unwashable&#x27; lucky charm T-shirts to promote carbon reduction by encouraging consumers to wash clothes less frequently. By harnessing superstition rather than moral preaching, the campaign delivers an engaging masterclass in driving sustainable behavior change. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE1vaTdHM0JuQndqVlo1YTR3RmN4ZjQ5enhraFVEU2FEay1IRmxkQVdSS0wwYUFHVHptT1UyQXhWNDNJQnVjYkRHNUkyV2pEVF9wRzA1WDFCM0ZKQQ?oc=5" target="_blank" rel="noopener">AI 治理告別空泛道德呼籲，硬核資安標準 ISO 27090 接棒</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">TCIC推動AI資安國際標準ISO 27090 強化 AI 治理 | ICT趨勢 | 商情 - 經濟日報</div>
+            <div class="item-sentence lang-zh-only">TCIC 正在台灣全力推動針對 AI 資安的國際標準 ISO 27090，協助企業落實 AI 治理架構。過去大家談 AI 倫理多停留在紙上談兵的原則宣示，但隨著模型落地成為日常營運核心，資安攻防與合規驗證已經變成生存底線。未來的企業若拿不出客觀可量化的 AI 安全治理機制，很可能連跨國供應鏈的門檻都進不去。 <span class="src">— 經濟日報</span></div>
+            <div class="item-sentence-en lang-en-only">TCIC is driving the adoption of the ISO 27090 standard to institutionalize AI cybersecurity governance in Taiwan. As AI models become core infrastructure, responsible AI is evolving from vague ethical manifestos into rigorous, verifiable compliance benchmarks required for global market access. <span class="src">— 經濟日報</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxPM2EwUEQtWFBDS25ZODdJNjVzTjdWRUJDQll1QjVKM0NCM29kWnFNbFBQYWgyUjdSZXMzNWhTeUh3STZ6aDY2S0lkZERvZV9TOXBER1VpSlR5WDZyTkpSRC1yQU1vS3pacUJhT3B6Ukd4OEpkMUoyNElxYzNqR1o3dno1YkNCRXUxendoRjJndGdJNHZZNUE?oc=5" target="_blank" rel="noopener">AI Agent 自主行動時代來臨，金融風控重兵布局動態監控</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Reco Lands $55M to Extend AI Governance Into Agents - BankInfoSecurity</div>
+            <div class="item-sentence lang-zh-only">資安平台 Reco 獲得 5500 萬美元融資，主打將治理範圍拓展至具備自主決策能力的 AI Agent。這筆資金傳遞出明確信號：靜態的模型審查已經不夠用了。當未來的 AI 開始能自己串接 API、替人類做交易決策時，治理架構必須能即時捕捉自主代理人的行為軌跡與意圖偏離，這將是企業風控的下一個生死戰場。 <span class="src">— BankInfoSecurity</span></div>
+            <div class="item-sentence-en lang-en-only">Cybersecurity firm Reco raised $55 million to expand governance capabilities over autonomous AI agents. The investment highlights an urgent enterprise need: as autonomous agents begin executing tasks independently, governance must evolve from static code analysis to real-time behavioral monitoring. <span class="src">— BankInfoSecurity</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxOeTlDYzV6dXFKekpyQVFsRVpjZ19aQ1BvaWN6YU9mNDU0TG5yYkdoby1SWkdUZFNwOUhpWHhiRUhOWURBNi11TU1yeF95YlRHVkZCNWVZdjY2d25XbENXQ3AxZm9XdV9ZcDM2bjFBT0FIbkRQWVNjYThqd2VRaEtTMWZlTzh0SnMxYm56ekhVVnBqUzB5?oc=5" target="_blank" rel="noopener">自主代理人進駐公共行政，政府資安問責機制面臨全面洗牌</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Reco Lands $55M to Extend AI Governance Into Agents - GovInfoSecurity</div>
+            <div class="item-sentence lang-zh-only">同樣聚焦於 Reco 的 5500 萬美元融資，但從公共治理的角度來看，AI 代理人的崛起正在挑戰現有的行政透明度。如果政府機關引進 Agent 自動化審批公共服務或分配資源，出錯時責任算誰的？公共部門的資安治理不能再只看資料保護，更要確保每個自主代理人行動背後的決策鏈條完全公開透明、經得起檢驗。 <span class="src">— GovInfoSecurity</span></div>
+            <div class="item-sentence-en lang-en-only">Reco&#x27;s $55M funding round underscores critical implications for government and public sector IT governance. As autonomous AI agents enter administrative workflows, public sector oversight must establish auditable accountability trails to prevent invisible algorithmic failures in civic services. <span class="src">— GovInfoSecurity</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE5pTFNhbF8wT0s5dVlrWVY0d1hGZEh6MmhDdW54dEpkR2FaOWlpeFZ0amw5aVhVX29FYldiTGo5RDhrdW5xRW45R05YdF8xeWtRY1E?oc=5" target="_blank" rel="noopener">演算法倫理就是新型 ESG，保險巨頭用 AI 治理守護社會信任</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">特別対談：明治安田生命保険相互会社 生田目執行役専務 「AIガバナンスとサステナビリティ経営（後編）」 - ESG Journal</div>
+            <div class="item-sentence lang-zh-only">明治安田生命在專訪中深入探討了 AI 治理如何與可持續經營（ESG）無縫銜接。在保險與金融這種高度依賴社會契約的行業裡，一旦核保演算法產生偏差或黑箱作業，損害的將是整個社會的信任基礎。這篇文章點出了一個關鍵思維：負責任的演算法不只是技術問題，它本身就是企業永續社會資本的最核心指標。 <span class="src">— ESG Journal</span></div>
+            <div class="item-sentence-en lang-en-only">Meiji Yasuda Life&#x27;s leadership explored the intersection of AI governance and ESG sustainability, emphasizing that algorithmic fairness in underwriting is essential to social trust. For life insurers, responsible AI deployment represents a core institutional obligation rather than a mere technical feature. <span class="src">— ESG Journal</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/workforce/get-to-know-idaho-cio-jake-reynolds" target="_blank" rel="noopener">拒絕盲目追逐新潮技術，務實扎根才是公共數位治理的真功夫</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Get to Know Idaho CIO Jake Reynolds</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/59f40c2/2147483647/strip/true/crop/1500x729+0+0/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F0f%2F7d%2Fd62eccfb48218a2a65e285a5f70b%2Fidaho-cio-jake-reynolds.jpg" alt="Get to Know Idaho CIO Jake Reynolds" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">愛達荷州資訊長 Jake Reynolds 在專訪中分享了他的公共 IT 治理心法。在科技名詞滿天飛的當下，地方政府最容易犯的錯誤就是為了創新而創新。Jake 強調打好底層基建、穩住人才團隊才是政務數位化的真理。公共治理的本質不是炫技，而是確保每一個數位系統在面對真實世界挑戰時，都能平穩運作且不拋下任何一位民眾。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Idaho CIO Jake Reynolds outlined his grounded approach to state digital transformation at NASCIO. Reynolds stresses foundational infrastructure resilience and workforce continuity over hype-driven trends, demonstrating that effective civic tech governance prioritizes stable, reliable public service delivery. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-09-30 08:02:41 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
