@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從反過度旅遊的內向策展到演算法計價：當設計擁抱感性漏洞，治理走入董事會與算力算盤 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-02</div>
+    <div class="headline">從反過度旅遊的內向策展到演算法計價：當設計擁抱感性漏洞，治理走入董事會與算力算盤</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design is not the decoration of a surface, but the creation of an ecology.</div>
+      <div class="quote-text-zh lang-zh-only">設計從來不是表面的裝飾，而是一套生態系統的創造。</div>
+      <div class="quote-author">— Gui Bonsiepe</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">瑞典用「內向者旅行社」神操作翻轉過度旅遊，反向行銷才是當代心靈解方。</li>
+        <li class="flash-item">AI治理不再只是工程師的事，創投與董事會正式將倫理風險納入商業生死存亡線。</li>
+        <li class="flash-item">政府編列預算碰上AI「算力計費」，傳統採購機制面臨代幣經濟學的全面顛覆。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/10/90229/" target="_blank" rel="noopener">硬體與介面整合大浪潮：老牌工業設計公司找尋跨界協作的製程通才</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】インダストリアルデザイン開発に携わる株式会社デプロ・インターナショナル・アソシエイツが、デザインプロデューサー（営業職）など3職種を募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/6aa23e2d14ecb.jpg" alt="【求人情報】インダストリアルデザイン開発に携わる株式会社デプロ・インターナショナル・アソシエイツが、デザインプロデューサー（営業職）など3職種を募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這份日本老牌工業設計公司的招募啟事，表面上只是開出設計製作人與UI職缺，底層卻揭示了當代產品開發的劇變：純外觀造型早已失去獨立競爭力，如今任何實體裝置都必須與數位介面、商務策略同步誕生。具有串聯跨領域能力的『設計製作人』成為熱門樞紐，反映出品牌不再單買造型設計，而是在買能夠打通軟硬體整合與商業落地的系統解決能力。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">A Tokyo-based industrial design consultancy is hiring design producers and UI designers, highlighting an industry shift where pure hardware styling is no longer enough. The market now demands systemic problem-solvers who can seamlessly bridge tangible industrial manufacturing, digital user interfaces, and business viability. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/report/october-event-2026/" target="_blank" rel="noopener">秋季設計祭典開跑：從視覺展演轉向地方創生與社群參與的實踐場</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">2026年10月に行きたい、おすすめのデザイン＆アートイベント6選</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/event-202610.jpg" alt="2026年10月に行きたい、おすすめのデザイン＆アートイベント6選" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">十月份的日本設計藝術展覽清單，早已跳脫純粹在白盒子美術館掛作品的傳統形式。這股秋季展覽浪潮反映了設計策展正在全面向外蔓延，深度結合地域振興、材質循環研究與在地工藝對話。當代公眾參與設計活動，買的不再只是門票和打卡景點，而是渴望在公共空間裡體驗文化創新的日常實驗，設計展因而成為實踐社會創新的重要發動機。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">October’s curated design and art events in Japan reveal a major evolution from traditional gallery showcases to community-driven, socially engaged platforms. Exhibitions are increasingly embedded within local neighborhoods, emphasizing material circularity and craft revival, transforming casual visitors into active participants in cultural innovation. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/ellie-campbell-turns-club-nights-into-hand-painted-gloriously-wonky-animations/" target="_blank" rel="noopener">告別完美演算法：逐格手繪動畫用不完美筆觸找回夜生活的生猛肉身感</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Ellie Campbell turns club nights into hand-painted, gloriously wonky animations</div>
+            <img class="item-image" src="https://media.creativeboom.com/82faee8c-3354-4139-8e70-0dc28830caf7/conversions/ee6fa095197c1c9c8b33e624f1c218dd0f05fc77-medium.webp" alt="Ellie Campbell turns club nights into hand-painted, gloriously wonky animations" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在AI生成影像秒速產出平滑畫面的年代，Ellie Campbell 用極端耗時的轉描逐格手繪，把夜店的狂歡、汗水與晃動定格成歪斜卻生動的動畫。這種看似『低效』的創作路徑，恰恰點破了數位時代的集體渴望——我們早已厭倦了無瑕的數位濾鏡，正是那些帶有手感缺陷、甚至有點拙劣的形體流動，才能精準召喚人類最深層的感官記憶與社交溫度。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Artist Ellie Campbell uses painstakingly hand-painted rotoscoping to capture the raw, kinetic energy of nightlife. In an age saturated with polished AI-generated imagery, this embrace of wonky lines and handcrafted imperfection resonates deeply, reaffirming the irreplaceable visceral authenticity of human experience and physical community. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/rui-pu-makes-graphic-illustrations-that-are-direct-a-little-weird-and-sure-to-bring-a-grin-to-your-face/" target="_blank" rel="noopener">荒誕迷因成普普藝術新語言：用不講理的幽默解構當代焦慮日常</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Rui Pu makes graphic illustrations that are direct, a little weird and sure to bring a grin to your face</div>
+            <img class="item-image" src="https://media.creativeboom.com/27bd6cc4-0374-4d71-8deb-04b67cb9b7f2/conversions/b316c6cf27d8113240173da9b4fdf332bf4581f4-medium.webp" alt="Rui Pu makes graphic illustrations that are direct, a little weird and sure to bring a grin to your face" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">插畫家芮璞將網路迷因、荒誕政治觀察與日常拼貼揉合成色彩明豔的怪誕插畫，看似無厘頭，卻是極其精準的時代切片。面對高壓且荒謬的現實世界，新一代創作者不再迷信宏大敘事，而是轉向網路文化的解構式幽默。這種『認真地開玩笑』的視覺語法，為觀者在沈重的生活夾縫中鑿開一口深呼吸的氧氣孔，展現了當代諷刺藝術的療癒本質。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Illustrator Rui Pu transforms internet memes and everyday absurdity into delightfully eccentric visual collages. By subverting seriousness through playful irreverence, this emerging graphic aesthetic offers a potent cultural antidote to modern burnout, demonstrating how humor and visual irony become essential mechanisms for collective resilience. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/sweden-launches-the-introvert-travel-agency-as-an-alternative-to-overtourism/" target="_blank" rel="noopener">反擊過度旅遊的神級行銷：瑞典在倫敦開『內向者旅行社』賣獨處留白</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Visit Sweden opens a travel agency for introverts in London</div>
+            <img class="item-image" src="https://media.creativeboom.com/8b892301-5260-4890-9e30-328a47d919fe/conversions/db788cfbd80bc6679eecc69b91b3d9a3d56a13a7-medium.webp" alt="Visit Sweden opens a travel agency for introverts in London" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">面對全球觀光過載引發的公憤，瑞典旅遊局沒有隨波逐流打卡宣傳，反而在倫敦鬧區開了一間『內向者專屬旅行社』，主打『拜託別理我』的孤獨漫遊路線。這場精采的社會溝通顛覆了傳統觀光經濟學：它不賣熱門景點，而是將北歐的廣袤自然包裝成專屬現代人的情緒庇護所，既巧妙舒緩過度觀光壓力，又精準擊中數位倦怠族群的深層隱痛。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Visit Sweden&#x27;s pop-up &#x27;Introvert Travel Agency&#x27; in London cleverly addresses overtourism by positioning Sweden&#x27;s vast wilderness as a sanctuary for solitude. By subverting conventional tourism campaigns that promote crowded hotspots, the initiative champions restorative, quiet travel while offering a fresh, empathetic antidote to urban sensory overload. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBmOHV2ejV3V3lSLVhSMXpPNDBWUXNKVW9tZkJMbnBKVjdkZndWQkVGNWZqN25Hb2V3NENTdS1SbnNxdEcyTXNlWTJCSzQyWGxaeUlDaVN0X3Fnd04yMGxGYURlWjAzWGZNblZN?oc=5" target="_blank" rel="noopener">AI早已不是工程師家務事：董事會面臨未落實技術監督的信託責任追究</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">法律觀點－AI治理：就是和董事會有關係- 產業特刊- 工商時報 - 中時新聞網</div>
+            <div class="item-sentence lang-zh-only">這篇法學剖析敲響了企業治理的警鐘：AI決策失誤已不再是『技術Bug』，而是直接牽動董事會未盡忠實義務的法律地雷。過去高層總把演算法當成外包黑盒子，但隨著各國監管法規陸續生效，若董事會無法建立透明的風險審查機制，未來演算法歧視、資料外洩或商業幻覺帶來的損失，董事們將得承擔直接的法律責任，治理思維必須徹底翻新。 <span class="src">— 中時新聞網</span></div>
+            <div class="item-sentence-en lang-en-only">A critical legal analysis underscores that AI risk management has graduated from the IT basement directly into the boardroom. Corporate directors face unprecedented fiduciary liabilities if algorithms inflict societal bias, breach privacy, or distort material reporting, demanding that executive governance actively supervise computational ethics. <span class="src">— 中時新聞網</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNQVhyQ21tYjZSTlNkOHFDUTI0eENsa0xFVm1JU29ESGNHTkNiMnFRNE95eG9qd1pwWnBIbGs1dTV6RURoRVZSYlpvU0xST1B3aGstdnMyU0c3SmotMElKRW9Sd2UxbGlEYnhpdWU4X1RoU0tLZ0RIVFNLN2dBbzdSRg?oc=5" target="_blank" rel="noopener">創投界終於停止盲目下注：全球風投資本正串聯建立統一AI治理紅線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">VCs need to ‘move as one’ on AI governance - New Private Markets</div>
+            <div class="item-sentence lang-zh-only">過去創投圈總是抱持『先衝破規則、被罰再說』的矽谷思維，但面對生成式AI的巨大倫理與法規反噬，VC巨頭們正開始呼籲『共同行動』。這意味著資本評估新創的維度發生質變：若AI新創僅有技術跑分而欠缺合規防護網，將被視為高爆風險資產。統一的治理框架不是給創新戴銬，而是保護資本不致在下一輪監管海嘯中血本無歸的救生圈。 <span class="src">— New Private Markets</span></div>
+            <div class="item-sentence-en lang-en-only">Global venture capital firms are mobilizing to standardize AI governance across portfolios, moving past the Silicon Valley mindset of &#x27;move fast and break things.&#x27; Investors increasingly recognize that unaligned artificial intelligence poses catastrophic systemic and legal risks, making sound ethical guardrails a prerequisite for sustainable enterprise valuation. <span class="src">— New Private Markets</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi_AFBVV95cUxNV1ZxeVlxbl9hbUtXVU0yODVobnVWOEFWN3dxWkhfRzRxSkdKMWE5ZV80dnhHRHJOanBTaU1CVDRkNEU0T1VlcGg2RFlIQ2hVbERvTDdrWEZKRzc1bTlnNkxoekI1MzU2VGZ2R1F4VFIzbDhDTFdOdWhRX3hGLUtlVzh4TDlKVmZYYlRwX1BYRGFoVXRKbWRvaDVBNFVOdEQ0bEZELWJwaWpscHFhdkJ2eDl3cU5fQWVaNFpJOElVQzBrRlQzWkFaUnFEMXdiT3d2VnNOSUVMNUlLMG5FSTFSeE9SRDdBYWxxZ1pqNHpsMTlfMlQ4ZkxBUEJfTk8?oc=5" target="_blank" rel="noopener">當全球AI法規支離破碎：EC-Council推免費對照架構弭平監管鴻溝</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">EC-Council Releases ADG 2.0 and Offers Its AI Governance Crosswalks Free to Every Government, Regulator and Standards Body as Nations Split on AI Rules - Times West Virginian</div>
+            <div class="item-sentence lang-zh-only">各國AI監管標準多頭馬車，常讓跨國企業無所適從，EC-Council免費釋出ADG 2.0框架正是及時雨。這項舉措的關鍵在於推動『監管互認』的可能，防止世界分裂為封閉的技術孤島。當公共組織願意提供開源治理工具，中小企業與監管機關便能踩在同一個標準基準面上對話，讓負責任的AI發展不再淪為少數跨國巨頭才能負擔的合規特權。 <span class="src">— Times West Virginian</span></div>
+            <div class="item-sentence-en lang-en-only">As national AI legislations fragment globally, EC-Council’s release of its open-access ADG 2.0 framework provides a vital crosswalk for international compliance. By bridging regulatory divides, this initiative helps prevent computational balkanization, ensuring that robust, trustworthy AI practices remain accessible to emerging enterprises and public institutions alike. <span class="src">— Times West Virginian</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiSkFVX3lxTE5zMFpmSmUweXQ2c24xWHlSUFEtRnR1YzhuOWRPZGJHUEN1YlpBelY5d2xlTHVqSW5BN2IwSjJuMWlPMVFhRnF2Skhn?oc=5" target="_blank" rel="noopener">日本輸出智慧城市技術到印尼：從軟體外包升級為國家級數位基盤合作</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">日本のインドネシアのスマートシティ市場の最新動向 - pando.life</div>
+            <div class="item-sentence lang-zh-only">日本企業大舉進軍印尼智慧城市生態圈，背後折射的是亞洲跨國治理模式的質變。印尼面臨遷都與大都會基建升級的壓力，而日本則帶來了在防災、交通疏導及智慧能源上的嚴謹經驗。這不是傳統的硬體設備採購，而是一場關於未來都市作業系統（Urban OS）的深度共構，也成了已開發國家與新興經濟體共同探索永續治理典範的實驗場。 <span class="src">— pando.life</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese tech consortiums are deepening their footprint in Indonesia’s emerging smart city landscape, moving beyond mere equipment export toward co-architecting urban operating systems. This cross-border collaboration showcases how technological governance can be shared to tackle climate resilience, demographic pressure, and sustainable civic infrastructure. <span class="src">— pando.life</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/spotlight/what-is-tokenomics-government-budgets-grapple-with-the-ai-era" target="_blank" rel="noopener">代幣經濟學衝擊公部門：AI按用量計費如何重塑政府IT採購與預算制度</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What Is Tokenomics? Government Budgets Grapple With the AI Era</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/6b87209/2147483647/strip/true/crop/949x461+0+84/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F86%2Fdf%2Fff14cc544bab02afb00b130ea1ec%2Fshutterstock-money-stacks-on-stacks.jpg" alt="What Is Tokenomics? Government Budgets Grapple With the AI Era" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">政府習慣了多年期、固定金額的套裝軟體採購合約，但AI時代的API呼叫與Token用量計費，正在讓公務預算體系徹底當機。這篇文章精闢點出了公共治理的新難題：政府該如何為『按字計價、浮動不可測』的智慧算力編列預算？這不僅僅是會計記帳的技術調整，更是催生公共部門採購機制從防弊型框架轉向靈活敏捷資源調度模式的催化劑。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">The transition to consumption-based, tokenomic pricing models in enterprise AI is destabilizing traditional fixed-cost government procurement. Public administrators must overhaul rigid budgetary cycles to accommodate dynamic cloud compute billing, sparking an urgent modernization of fiscal stewardship in the age of algorithmic public services. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-02 08:03:14 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
