@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從卡車茶室的叛逆美學到前沿AI安全防線：跨界碰撞下的文化重構與治理覺醒 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-05</div>
+    <div class="headline">從卡車茶室的叛逆美學到前沿AI安全防線：跨界碰撞下的文化重構與治理覺醒</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">The function of ornament is to make the familiar strange, and the strange familiar.</div>
+      <div class="quote-text-zh lang-zh-only">裝飾的作用，在於讓熟悉的事物變得新奇，讓陌生的一切重拾親切。</div>
+      <div class="quote-author">— David Brett (設計歷史學家)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">日本藝術家把電子卡車改裝成移動茶室，打破次文化與傳統美學界線。</li>
+        <li class="flash-item">律師事務所迎來AI信任考驗，合規缺口正倒逼專業服務重塑內控。</li>
+        <li class="flash-item">前沿模型安全意外頻發，倒逼公私部門將AI治理升級為國防級防線。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/takimotomikiya-smma/" target="_blank" rel="noopener">當光影遇上建築遺產：瀧本幹也用鏡頭重塑現代美術館的空間詩意</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">SEZON MUSEUM OF MODERN ART　Photographs by Mikiya Takimoto</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/47b50d03acbf5faa65c7af2e7368ab16.jpg" alt="SEZON MUSEUM OF MODERN ART　Photographs by Mikiya Takimoto" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">美術館往往只被當成裝載藝術品的容器，但名攝影師瀧本幹也這次把鏡頭轉向了賽ゾン現代美術館本身。透過精準的光影調度，他把冷冽的建築結構拍出了極具呼吸感的生命力。這件事給策展人的啟發是：線下文化空間不再只是死板的展覽背景，空間本身就是極具敘事力量的媒介；懂得用視覺語言轉譯空間特質，才是讓實體藝文體驗在數位時代不可替代的秘密武器。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Renowned Japanese photographer Mikiya Takimoto captures the architectural essence and delicate ambient light of the Sezon Museum of Modern Art in a new exhibition. By highlighting the interplay between spatial materiality and seasonal atmosphere, the work demonstrates how architectural photography can transform physical exhibition spaces into compelling artistic narratives that resonate deeply with modern design audiences. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/723992.html" target="_blank" rel="noopener">暴走卡車裡開茶席：高橋理子用衝突美學擊碎日本文化的高低階級</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">高橋理子が新作《DAZZLES（装光庵 第八理子丸）》を発表。デコトラと茶室を組み合わせた「移動する思考空間」</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/09/40de2510e9fb2e88f7f951066d49f1a8.png" alt="高橋理子が新作《DAZZLES（装光庵 第八理子丸）》を発表。デコトラと茶室を組み合わせた「移動する思考空間」" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">誰說茶道的極致只能是幽靜枯山水？藝術家高橋理子竟然把俗艷暴力的日本電子裝飾卡車（デコトラ）與靜謐極簡的茶室焊在了一起。這不只是搞怪，而是極高明的文化挑釁——它強迫我們思考，為什麼草根卡車文化常被視為低俗，而茶道卻被奉上神壇？這件作品告訴我們，最有張力的創新往往來自八竿子打不著的極端碰撞，包容異質才能激發真正的文化活力。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Artist Takahashi Rikoko merges flashy Japanese decotora trucks with traditional tea ceremony pavilions in her new mobile installation DAZZLES. By juxtaposing street subculture with highbrow spiritual rituals, the project dismantles cultural hierarchies and offers an inspiring model for urban innovators seeking fresh spatial experiences through unconventional contrasts. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://smashingmagazine.com/2026/09/desktop-wallpaper-calendars-october-2026/" target="_blank" rel="noopener">不只是桌布換季：開源社群共創如何把日常螢幕變成微型設計展</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Under Autumn’s Spell (October 2026 Wallpapers Edition)</div>
+            <img class="item-image" src="https://archive.smashing.media/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/0fdda8cd-7c63-4b61-86f6-f3188d312aaf/oct-20-magical-october-preview-opt.png" alt="Under Autumn’s Spell (October 2026 Wallpapers Edition)" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Smashing Magazine 堅持多年的社群桌布企劃，看似只是每月的換季小品，背後卻藏著數位時代最稀缺的「微日常儀式感」。來自全球各地的獨立設計師在這個小框框裡揮灑秋日靈感，它不追求高大上的商業回報，而是證明了由下而上的自發社群共創，能在最平凡的工作介面上點燃集體創意。對數位產品經營者來說，這種輕量又溫暖的社群連結，黏著度遠勝死板的行銷推播。 <span class="src">— Smashing Magazine</span></div>
+            <div class="item-sentence-en lang-en-only">Smashing Magazine releases its community-crafted October 2026 wallpaper collection, turning digital desktops into canvases for global creative expression. The monthly tradition showcases how low-barrier, community-driven design initiatives foster everyday emotional resonance and sustain vibrant creative ecosystems outside traditional commercial pipelines. <span class="src">— Smashing Magazine</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/why-publishing-firm-studio-playground-asked-a-kidswear-brand-to-design-its-team-uniform/" target="_blank" rel="noopener">找童裝品牌做成人制服：這家出版社用未泯童心踢館死板的職場穿搭</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why Studio Playground asked a kidswear brand to design its team uniform</div>
+            <img class="item-image" src="https://media.creativeboom.com/158070a5-bc5b-4131-b250-c81c070f393c/conversions/3cc6d695e65b8c3b0a312089ac566a75d5b7c0f5-medium.webp" alt="Why Studio Playground asked a kidswear brand to design its team uniform" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">歐洲出版社 Studio Playground 找來童裝品牌聯手打造團隊工作服，這招看似荒謬，卻精準擊中了當代知識工作者對制式「職業感」的厭倦。大人世界往往充滿無謂的權威符號與穿搭壓力，但把童裝的自由剪裁、跳躍配色與無拘束感融入工作制服，反而重新定義了企業識別。這提醒了品牌管理者：真正的專業不再需要拘謹偽裝，展現赤子之心與舒適自由，才是吸引頂尖人才的新共識。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">European publisher Studio Playground partnered with kidswear label Oxox Club to design playful corporate uniforms. Challenging the traditional corporate dress code, this cross-industry collaboration demonstrates how infusing childlike spontaneity and functional comfort into professional wear can revolutionize employer branding and foster authentic workplace freedom. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/derekerics-identity-for-an-olive-oil-brand-swaps-tuscan-cliches-for-attitude-and-colour/" target="_blank" rel="noopener">撕掉托斯卡尼舊標籤：橄欖油品牌用活潑幾何顛覆傳統精緻的刻板印象</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Derek&amp;Eric&#x27;s olive oil identity swaps Tuscan cliches for attitude and colour</div>
+            <img class="item-image" src="https://media.creativeboom.com/33bacbfd-bb2a-4a5a-bb2d-923120bca5f0/conversions/fbdf41e6243f9315fd8be7f772d0263880160037-medium.webp" alt="Derek&amp;Eric&#x27;s olive oil identity swaps Tuscan cliches for attitude and colour" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">走進超市，橄欖油包裝清一色是文青手繪、歐式莊園或沉重的墨綠瓶身，早就讓人審美疲勞。Derek&amp;Eric 操刀的「Drzzl」橄欖油卻反其道而行，換上波浪字體與明亮撞色，活像潮流汽水。這代表大眾消費品的品牌邏輯正在劇變：消費者受夠了假模假樣的歷史神話，與其裝成古老貴族，不如用大膽的現代幽默感坦率對話，把廚房調味變成一件好玩又自信的日常體驗。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Design agency Derek&amp;Eric crafted a vibrant visual identity for olive oil brand Drzzl, abandoning Tuscan countryside clichés in favor of punchy hues and a kinetic wordmark. The bold redesign highlights an emerging FMCG branding trend: replacing traditional heritage tropes with playful honesty to captivate younger consumers. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNd2FweXpmQkNWMmJzSDRTcFBILTktb2ZPOEdYaDI1REgzalhOakFYUVdSU3Jwd0lDWWdyZE1TSWltd1lRTWdkeXVmT0N1a2dHNzJWZVZoMkd2eWZIcmU5WmlyTC1IREllQW1vN20zSE1ZQ1dlWDcySXYwOGg3SHRMdG5XbkR5S2ZvNzNLeXhnVmpUZU5kZkhWbVl2bHFGRDNfLUd3bw?oc=5" target="_blank" rel="noopener">當生成式AI全面進入產業深水區：為什麼落地風險成了高層必修課？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">2026可信任AI治理高峰會10/23登場 產官學研共探AI落地風險 - DIGITIMES</div>
+            <div class="item-sentence lang-zh-only">AI 話題早已從狂熱的「它能做什麼」轉變為殘酷的「出事了誰負責」。即將登場的可信任 AI 治理高峰會，正反映出台灣產官學界面對技術落地的集體焦慮——從版權爭議、幻覺漏洞到企業資料外洩，合規不再是踩煞車的法務雜事，而是決定系統能不能規模化的安全氣囊。對決策者而言，沒有防護機制的 AI 部署就像開著沒剎車的跑車狂飆，及早構建內部治理框架才是真正的競爭壁壘。 <span class="src">— DIGITIMES</span></div>
+            <div class="item-sentence-en lang-en-only">The upcoming 2026 Trustworthy AI Governance Summit in Taiwan convenes leaders across sectors to confront operational risks as generative AI integrates deeper into industries. Moving past superficial hype, the conference underscores that establishing robust risk mitigation and ethical guardrails is now a core requirement for enterprise scalability. <span class="src">— DIGITIMES</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNbl93dzFrRkZ0Z29OYUN2LXpkSHhxaTUtbko2OWFJdkgyVzdkUnlZZUVQQ0tEa19ZRHhHUUY1ejk4emhuQnRWSXl4cU90dlNEc3BFR3FKczVMLWQ1MVdfM2xBejlhcDVZQmdUMW42OWcyaGVjYkFqQVVMQ2xYMmo3V25iR2lPOTN4bTdSVUhRXzFuZGdoYTFhaw?oc=5" target="_blank" rel="noopener">律師事務所的AI治理斷層：連最懂法規的人也正面臨內控空窗考驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The AI governance gap in law firms and why it matters now - Legal Futures</div>
+            <div class="item-sentence lang-zh-only">這篇分析點出了一個絕妙的諷刺：天天幫客戶把關合規的頂尖律所，自家在引進生成式 AI 時卻往往漏洞百出。很多律師一邊用 AI 改合約，一邊卻缺乏嚴謹的機密過濾與審查機制。這代表專業服務業正面臨根本性的信賴危機；未來的競爭力不再只是誰的案件寫得快，而是誰能向客戶證明「我們的自動化流程毫無保密破口」。合規不是口號，得先從內部流程自己動手術。 <span class="src">— Legal Futures</span></div>
+            <div class="item-sentence-en lang-en-only">A report reveals significant AI governance gaps within legal firms, where automated drafting tools often bypass rigorous compliance checks. As client data vulnerability rises, the findings emphasize that legal service providers must formalize internal oversight protocols to safeguard client confidentiality and preserve professional integrity. <span class="src">— Legal Futures</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxOOGhRNUx2dVJwdVZFU2RRUVM3NWd4dnJvN21wcV8wbVNMYTZ6dVlveUxPWjNpTHJ6VElJYTZDNDUxQWx0XzBMWTdnWEtuX1dWZTVJNWFvWmZhWkVObzNfWDlrdDVNRTllckhfMjAtWE00RzhWNDlhUG82ZE5OMVZXUHFyNmVxTUwxX1IxLTFBMmQ?oc=5" target="_blank" rel="noopener">當AI沙皇遇上無人作戰司令部：科技政策已升級為大國地緣新戰場</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">An AI Accord, a New Czar and an Autonomous Warfare Command - Tech Policy Press</div>
+            <div class="item-sentence lang-zh-only">這份政策速報勾勒出令人屏息的全球政治走向：從國際 AI 協定談判、政府特派「AI沙皇」，一路延伸到無人自主武器指揮體系。這告訴我們，AI 治理早就脫離了科技圈的自說自話，正式變成大國軍備競賽與地緣政治的核心棋子。當演算法決定了戰場殺傷與全球供應鏈的生殺大權，未來的公共治理者不能只懂法律，更得懂代碼背後的權力架構與全球秩序。 <span class="src">— Tech Policy Press</span></div>
+            <div class="item-sentence-en lang-en-only">Covering the appointment of state AI czars, evolving defense agreements, and autonomous warfare commands, this policy analysis highlights how frontier AI governance has transformed into high-stakes geopolitics. Algorithmic autonomy is reshaping national defense strategies, making cross-border institutional diplomacy more critical than ever. <span class="src">— Tech Policy Press</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiSkFVX3lxTFBkSTVzMVVaU1Y4ZVJwZWxFMVgzSnRPb3ZMWEwtU3RPcHpfYWlRRWk1VDh2VXBNd0ZjOVZVaWVJTnE5UE8wczZ4ZVVR?oc=5" target="_blank" rel="noopener">智慧城市競賽大洗牌：硬體基建退場，誰能整合城市數據誰就稱霸</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">スマートシティ市場シェア上位メーカー - pando.life</div>
+            <div class="item-sentence lang-zh-only">日本智庫針對智慧城市市場龍頭的盤點顯示，產業遊戲規則正在劇變。過去大家比的是誰賣出更多感測器或智慧路燈，現在能拿下市場份額的，全是精通跨系統資料整合與市民隱私保護的綜合解決方案商。這對城市治理者的啟發是：智慧城市的核心不是買昂貴的硬體玩具，而是如何把交通、能源與民生數據融合成一套懂人性的活系統，否則只會淪為滿街無用的數位孤島。 <span class="src">— pando.life</span></div>
+            <div class="item-sentence-en lang-en-only">An analysis of leading smart city vendors reveals a decisive market shift from hardware installations to centralized data orchestration and privacy-preserving ecosystems. Successful urban innovators are prioritizing actionable cross-sector integration, ensuring technology directly improves citizen quality of life rather than merely serving vanity infrastructure. <span class="src">— pando.life</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/blogs/lohrmann-on-cybersecurity/what-the-recent-frontier-ai-incidents-mean-for-security-leaders" target="_blank" rel="noopener">前沿模型突圍失控頻發：資安長不能再把AI當成普通軟體來防禦</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What the Recent Frontier AI Incidents Mean for Security Leaders</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/857fa81/2147483647/strip/true/crop/3769x1832+0+151/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F7a%2F33%2Fb4d586cb4af0ba1158803d3cda3b%2Fadobestock-610674886.jpeg" alt="What the Recent Frontier AI Incidents Mean for Security Leaders" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">最近幾起前沿 AI 模型的突發意外，給企業資安長敲響了最刺耳的警鐘。這類具備高度自主推理能力的大模型，其潛在的提權漏洞和不可預測性，遠超出傳統防火牆的監控邏輯。這篇文章點醒了安全領袖：你不能再用管理一般 SaaS 軟體的思維來管 AI；必須把前沿系統視為某種「可能背叛系統的資深外聘員工」，隨時建立多層防線與行為隔離機制，才能在智能化狂潮中守住底線。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Recent high-profile frontier AI security breaches are forcing enterprise security leaders to rethink threat modeling. Because autonomous models exhibit unpredictable reasoning pathways, security frameworks must evolve beyond standard defensive postures toward dynamic behavioral monitoring and zero-trust confinement architectures. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-05 08:03:18 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
