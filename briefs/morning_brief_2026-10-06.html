@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>在算力失控與物質荒漠中，找回手工溫度與公共AI治理的真實邊界 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-06</div>
+    <div class="headline">在算力失控與物質荒漠中，找回手工溫度與公共AI治理的真實邊界</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Tools foster conviviality to the extent to which they can be easily used, by anybody, for the accomplishment of a purpose chosen by the user.</div>
+      <div class="quote-text-zh lang-zh-only">唯有當工具能被任何人輕易且自主地使用、用以達成自決的目標時，技術才能真正孕育共生的自由。</div>
+      <div class="quote-author">— Ivan Illich（當代哲學家與社會批判學者）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">大品牌轉向手工邊角料縫製旗幟，觸覺質地成抵禦AI生成虛無的解藥</li>
+        <li class="flash-item">美日同步敲響AI倫理警鐘，公部門全面圍剿隨意取用的影子AI模型</li>
+        <li class="flash-item">次世代醫療建築將運算架構內嵌空間，徹底翻轉傳統療癒環境體驗</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/alankitching-kyotoddd/" target="_blank" rel="noopener">活版印刷的油墨重擊：數位字型泛濫時重拾物質感</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">アラン・キッチング：活版印刷の生ける遺産</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/E716-9694.jpg" alt="アラン・キッチング：活版印刷の生ける遺産" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當我們習慣在螢幕上幾毫秒換一套無襯線字體，阿蘭·基欽（Alan Kitching）的手工鉛字展提醒了我們：字型曾經是有重量、有氣味且帶有物理阻力的。這不只是文青的懷舊復古，而是當代設計師面對演算法生成圖像時的一場知覺抗爭。物質的限制反而逼出了設計的純粹性，那些因紙張吸墨、壓力深淺留下的微小瑕疵，正是機器算不出來的生命力所在。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Alan Kitching’s letterpress retrospective in Kyoto reminds us that typography was once physical, heavy, and delightfully flawed. In an era dominated by algorithmic precision and instant digital fonts, rediscovering physical pressure and tactile ink offers modern creators a visceral counterweight to synthetic perfection. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/724497.html" target="_blank" rel="noopener">建築即運算中樞：德州大學醫療中心讓AI融入空間肌理</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">SOM、テキサス大学に新医療センターを設計。AIとデータを組み込んだ次世代の医療環境へ</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/09/ut_dmc_rendering_1-720x405.jpeg" alt="SOM、テキサス大学に新医療センターを設計。AIとデータを組み込んだ次世代の医療環境へ" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">SOM 設計的這座新醫療中心徹底打破了傳統醫院的冷硬走廊印象。它最迷人的地方不在於硬體有多奢華，而是打從藍圖階段就將 AI 運算流、臨床數據收集與病患的療癒路徑編織在一起。這預示了未來公共建築的轉向：空間不再是被動包容人類行為的容器，而是能即時感應環境、輔助診斷，甚至自主優化照護動線的「高感知有機體」。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Designed by SOM, the new UT Dell Medical Center demonstrates how physical architecture is merging seamlessly with computational intelligence. Instead of merely treating hospitals as passive shells, this project embeds real-time AI and data infrastructure into the healing environment, redefining how institutional spaces adapt to both clinical and patient needs. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/philip-lindeman-builds-a-slightly-haunted-sofia-of-night-shops-and-stray-cats-in-less-than-two-weeks/" target="_blank" rel="noopener">兩週極限產出的索菲亞暗夜：插畫家對抗過度修飾的即興力量</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Philip Lindeman builds a slightly haunted Sofia of night shops and stray cats in less than two weeks</div>
+            <img class="item-image" src="https://media.creativeboom.com/895ec011-073c-4b85-8dbb-c6bd87217a81/conversions/0849402f3c94cb185a400c06fca1d8a9fd1061bf-medium.webp" alt="Philip Lindeman builds a slightly haunted Sofia of night shops and stray cats in less than two weeks" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">荷蘭插畫家 Philip Lindeman 在不到兩週內，憑著直覺與近乎透支的體力，畫出了一座充滿野貓與深夜雜貨店的奇幻索菲亞。這件事帶給創作者最大的啟發是：完美的企劃有時會殺死靈魂。在數位工具能無限復原、精雕細琢的時代，給自己設下嚴苛的死線與限制，反而能繞過大腦的過度審查，挖出最粗礪、最坦率且充滿情緒張力的城市暗湧。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Illustrator Philip Lindeman constructed an atmospheric, nocturnal portrait of Sofia in under two weeks of sleepless creation. By embracing severe time constraints, his work bypasses digital over-polishing, demonstrating that creative intuition and raw urgency can produce urban visual storytelling far more compelling than calculated perfection. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/behold-these-giant-fabric-banners-that-prove-brands-as-big-as-fjallraven-are-betting-on-human-made/" target="_blank" rel="noopener">戶外邊角料手縫巨幅布幔：大品牌重金押注手工不完美</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Fjällräven bets on the handmade with giant stitched banners by Miscellaneous Adventures</div>
+            <img class="item-image" src="https://media.creativeboom.com/a85730f9-56bd-494a-8262-008ff8764aaa/conversions/a7207d01b85a0536d382978dff1d6476836cab56-medium.webp" alt="Fjällräven bets on the handmade with giant stitched banners by Miscellaneous Adventures" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">瑞典品牌 Fjällräven 找來工藝雙人組，用工廠廢棄裝備的碎布手工縫製活動旗幟。這絕非單純的公關永續秀，而是品牌對抗數位視覺扁平化的高明策略。當大眾看膩了向量輸出與電腦繪圖的均質看板，每一針每一線的手感拉扯、異材質拼接的皺褶，反而成了品牌最具穿透力的情感溝通媒介。不完美的手工痕跡，正是新時代的奢華密碼。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Fjällräven commissioned artisans to hand-sew colossal banners from upcycled gear scraps, spotlighting a deliberate brand pivot toward craftsmanship. In a landscape saturated with slick digital branding, tactile imperfections and human labor become the ultimate luxury, turning discarded technical fabrics into deeply authentic cultural totems. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/elizabeth-saloka-paints-groceries-and-gadgets-onto-rocks-yep-rocks/" target="_blank" rel="noopener">在億年石頭上畫平價果醬：日常消費符號的幽默碰撞</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Elizabeth Saloka paints groceries and gadgets onto rocks – yep, rocks</div>
+            <img class="item-image" src="https://media.creativeboom.com/32c77610-489f-47b5-b53b-d4a0953a5261/conversions/aa0b1fb9f51ca21893886f1e97c381bc353da1ac-medium.webp" alt="Elizabeth Saloka paints groceries and gadgets onto rocks – yep, rocks" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">把好媽媽果醬和老舊餅乾盒畫在一塊不起眼的石頭上，紐約藝術家 Elizabeth Saloka 玩的是極具諷刺與溫度的視覺遊戲。轉瞬即逝的快消品包裝，碰上需要億萬年才能風化的地質載體，瞬間產生了荒謬而迷人的張力。它提醒我們跳脫昂貴畫布的制約：藝術的價值不在於昂貴的材料，而在於你如何把人們習以為常的日常碎片，安放在出人意料的維度裡。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Elizabeth Saloka transforms ordinary pebbles into hyper-detailed canvases for grocery packaging, contrasting ephemeral consumerism with timeless geological materials. This quirky collision of mundane commercial graphics and ancient stone serves as a playful reminder that compelling art often emerges from repositioning everyday objects into unexpected physical contexts. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxNSWI5NEMxbS16UUJJMlRyWW5PMTRIQ093VUNsbHpYZDVXRk5sbGZ2MDVYenNkMEc1bDNWVWdGQjR6UV9Obzd6RV9PTDBUNFpyME9WYUN6R0hNMUZEcTFRXzBOcG9hbktiRVJKZEpaQmh0Q3NUa1FPX3hJaFRyMFhCMWg0a0x6czB0Y2hQX1NVTnVmN2l5MmZFRU8ybzNjYmhDOEtn?oc=5" target="_blank" rel="noopener">電信黑客松撬動智慧城市：AI治理不能只停在倫理白皮書</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">中華電信聚焦智慧城市應用 黑客松探索AI治理新解方 - DIGITIMES</div>
+            <div class="item-sentence lang-zh-only">中華電信以黑客松為引信，把民間開發者丟進智慧城市與 AI 治理的實戰場域。過去我們聊 AI 倫理總是流於形而上的道德勸告，但真實城市運作需要的是具體的程式碼與邊界條件。這種由底層技術競賽推動的治理實驗非常值得關注：只有當技術人員在實作中踩過資安、隱私與演算法偏誤的坑，智慧治理才有可能從宣傳口號降落成穩固的公共底座。 <span class="src">— DIGITIMES</span></div>
+            <div class="item-sentence-en lang-en-only">Chunghwa Telecom’s hackathon bridges civic technology and real-world urban AI governance. Moving past abstract ethical manifestos, this grassroots initiative challenges developers to construct viable algorithmic safeguards for smart cities, proving that durable public governance must be forged through hands-on technical experimentation rather than bureaucratic slogans. <span class="src">— DIGITIMES</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxPSjlHMFo0T28zZVhYZHpVRXAyb25sVHB2MDdSN2VhTkhYMHgxb2dWU0x6eV9PdlF5VTVuaVlsdmh6ZFlaWE5LbXJ5VV9jQ29NYVRoT2xYQzYxZjJEenFld29lOHRVZURqTktnWUZLQUhxQjU4MkVZbmw2cG9fbGVRTHI0WXFkUUc3QUlzMFFGWHNlNmJGQ3VsYVBNVGZpZ2dZWU1xM2JLMA?oc=5" target="_blank" rel="noopener">公部門圍堵影子AI：田納西州把暗黑實驗引向合規沙盒</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Building AI Governance, Monitoring Shadow AI in Tennessee - GovTech</div>
+            <div class="item-sentence lang-zh-only">田納西州政府不打算對公務員私下偷用生成式工具採取「鴕鳥政策」或全面圍堵，而是選擇直面「影子 AI（Shadow AI）」問題。當基層員工為了效率早已用不知名工具處理公務時，單純禁止只會讓風險地下化。田納西的策略是建立可視化通道與動態防護欄，這代表公共治理思維的重大進化：與其消極防堵，不如提供合規沙盒讓創新在陽光下安全奔跑。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Tennessee’s public sector is tackling shadow AI head-on by creating transparent frameworks instead of issuing futile blanket bans. As civil servants turn to unofficial tools to boost efficiency, the state provides monitored sandboxes, demonstrating that progressive public governance channels clandestine technological experimentation into secure, visible pathways. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxPSjlHMFo0T28zZVhYZHpVRXAyb25sVHB2MDdSN2VhTkhYMHgxb2dWU0x6eV9PdlF5VTVuaVlsdmh6ZFlaWE5LbXJ5VV9jQ29NYVRoT2xYQzYxZjJEenFld29lOHRVZURqTktnWUZLQUhxQjU4MkVZbmw2cG9fbGVRTHI0WXFkUUc3QUlzMFFGWHNlNmJGQ3VsYVBNVGZpZ2dZWU1xM2JLMA?oc=5" target="_blank" rel="noopener">防範資料外洩的隱形前線：地方政府如何監測未授權AI</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Building AI Governance, Monitoring Shadow AI in Tennessee - GovTech</div>
+            <div class="item-sentence lang-zh-only">未經審核的第三方 AI 工具正悄悄滲入各級公務網路，形成難以追查的資安空窗。田納西州的實踐告訴我們，AI 治理的第一步不是寫厚重的規章，而是擁有偵測內部數位足跡的「能見度」。如果你連同仁用了什麼模型、餵了什麼民眾資料都不知道，任何治理架構都是空中樓閣。把被動審計轉變為即時監控，是當前數位政府最急迫的一門實務課。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">The silent proliferation of unauthorized AI apps poses an unprecedented data integrity threat across public agencies. Tennessee&#x27;s proactive posture illustrates that foundational AI governance begins with operational visibility. Mapping out internal digital footprints allows public authorities to preemptively secure sensitive citizen data before operational vulnerabilities materialize. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxONGFQRXpTVFVUZ0N0eGp0UjBrb2ZNRFJuNV9zQ3hTbXRZR2dQQVFQRWhwSjNhdVlkeWExQ3B3T1VSYVRzeUt0UTZXWGdYelhoeklZWmU0UF9XNUxEN2lfbXV5bF9yRjdKaTZoWV9FU0M1UjFZRmhocTZtNlZ5NlROcUl0MTFNV1hxTC1kag?oc=5" target="_blank" rel="noopener">倫理失控直接重創營收：日本IBM將AI合規算成財務帳</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">日本IBMの倫理チーム「AIガバナンス、問題なら損失も」 - 日本経済新聞</div>
+            <div class="item-sentence lang-zh-only">日本 IBM 倫理團隊直言不諱：AI 治理如果沒做好，帶來的絕不只是聲譽受損，而是立即顯現的真金白銀損失。過去企業常把合規當作阻礙創新的絆腳石，但現在演算法一旦出現偏見、侵權或幻覺產出的決策失誤，往往面臨法律訴訟與合約終止。這份警告標誌著 AI 倫理正式脫離「公關慈善部門」，成為企業必須寫進財務風控清單的生存核心。 <span class="src">— 日本経済新聞</span></div>
+            <div class="item-sentence-en lang-en-only">IBM Japan’s ethics division warns that poor AI governance directly threatens commercial solvency rather than just corporate prestige. Algorithmic bias and copyright infractions now trigger direct contractual and legal liabilities, proving that AI ethics has fundamentally shifted from a corporate social responsibility talking point into a mandatory financial risk management priority. <span class="src">— 日本経済新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/artificial-intelligence/building-ai-governance-monitoring-shadow-ai-in-tennessee" target="_blank" rel="noopener">拿捏創新與防線的平衡木：田納西州CIO的務實治理課</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Building AI Governance, Monitoring Shadow AI in Tennessee</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/a28f659/2147483647/strip/true/crop/4500x2188+0+0/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F25%2F6c%2F18f628ff40cb911b25349149fdd6%2Fkristin-darby-2026-105.jpg" alt="Building AI Governance, Monitoring Shadow AI in Tennessee" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在全美州資訊長年會上，田納西州資訊長談到如何「加倍落實」AI 治理。最精采的觀點在於：嚴格的治理框架並不是創新的煞車皮，而是賽車上的安全帶。唯有底層的安全與資料隱私規則無懈可擊，公務體系才敢放開手腳導入生成式技術。這種在激進擁抱工具與守住公共防線之間的動態平衡，是所有數位轉型領導者最需要修煉的內功。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Speaking at NASCIO, Tennessee CIO Kristin Darby articulated a pragmatic formula for municipal AI governance: clear security guardrails accelerate rather than stifle administrative innovation. Establishing verifiable safety baselines empowers government agencies to confidently deploy emerging technologies without compromising public trust or institutional stability. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-06 08:03:07 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
