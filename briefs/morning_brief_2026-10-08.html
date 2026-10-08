@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>在顛覆中重構秩序：從經典品牌破格新生，到自主代理人時代的治理防衛戰 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-08</div>
+    <div class="headline">在顛覆中重構秩序：從經典品牌破格新生，到自主代理人時代的治理防衛戰</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design is only design when it brings about transformation, not when it merely produces forms.</div>
+      <div class="quote-text-zh lang-zh-only">只有當設計促成實質的轉變時，它才成其為設計；若只是製造漂亮的形體，那根本不值一提。</div>
+      <div class="quote-author">— Enzo Mari（義大利現代主義設計巨匠）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">走過重塑爭議的捷豹實車落地，證明激進美學賭局終需靠硬實力說話。</li>
+        <li class="flash-item">自主 AI 代理人大規模進駐企業，多模型治理與邊界防禦已成生存剛需。</li>
+        <li class="flash-item">純粹熱愛抗衡商業焦慮，字體社群半世紀的堅守喚醒設計的共有價值。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/10/90423/" target="_blank" rel="noopener">當博物館周邊成為流行選品：生活美學對公共文化遺產的重新解碼</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">世界の美術館・博物館の公式グッズが集結、「AMUSÉUM」が阪急うめだ本店で開催</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/amuseum-2.jpg" alt="世界の美術館・博物館の公式グッズが集結、「AMUSÉUM」が阪急うめだ本店で開催" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">把大英博物館或泰特美術館的紀念品搬進大阪百貨，表面上是一場誘人的文創展售，背後其實反映了當代大眾對「文化消費」的品味遷移。過去被視為觀光副產品的周邊物件，如今成為策展的核心主體。這提醒所有文化機構與品牌，藝術的影響力早就走下神壇；當文化符號能夠巧妙融入生活物件，它激發的情感連結往往比純粹觀看展品更為深遠。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The AMUSÉUM event at Hankyu Umeda showcases merchandise from London museums, illustrating a shift where museum souvenirs become curated design goods. This highlights the growing importance of turning cultural heritage into accessible, everyday objects that build emotional connections and engage modern audiences beyond gallery walls. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/nen1chi-rouleurstudio/" target="_blank" rel="noopener">十年一刻的微型展覽實踐：在快節奏創作浪潮中找回時間沉澱的價值</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Nen1chi 2016-2026展</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/1397292.jpg" alt="Nen1chi 2016-2026展" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在當前追求即時反饋與演算法流量的設計環境中，能夠堅持十年每年產出一次紀錄的微型展覽實屬罕見。Nen1chi 展覽不靠宏大敘事，而是以工匠般的時間維度，記錄設計師在大阪在地工作室裡的思維演變。這對創作者是一記溫柔的提醒：真正的風格與洞見從來無法速成，唯有耐得住寂寞的持續迭代，才能累積出無法被科技輕易複製的美學厚度。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The Nen1chi 2016-2026 exhibition in Osaka celebrates a decade of annual, independent creative practice. In an era dominated by rapid design cycles and algorithmic trends, this retrospective underscores the enduring value of patience, iterative craftsmanship, and long-term reflection in cultivating authentic personal expression and local design resonance. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/jaguar-type-01-is-here-and-this-coventry-kid-is-rooting-for-it/" target="_blank" rel="noopener">撕下傳統標籤的豪賭：捷豹以激進純電實車驗證品牌重塑的勇氣與代價</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Jaguar Type 01 is here, and this Coventry kid is rooting for it</div>
+            <img class="item-image" src="https://media.creativeboom.com/fb7d1d4b-41f1-4382-8938-eec35c3451eb/conversions/f671172e3cb22e1999c370ab8b4893fc6b9f07f3-medium.webp" alt="Jaguar Type 01 is here, and this Coventry kid is rooting for it" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">捷豹兩年前引起全球設計界兩極評價的識別大換血，如今終於隨著 Type 01 的亮相迎來實體檢驗。這件事的啟發在於，老牌傳統企業若想在電動化與數位時代脫胎換骨，溫和的微調往往只會迎向平庸的死亡。即使初期面臨老車迷的劇烈反彈，勇於擁抱未來主義美學、將爭議轉化為品牌重生的聲量，才是面對下一個時代時最稀缺的戰略勇氣。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Jaguar has unveiled its Type 01 production car, marking the physical realization of its controversial 2024 rebranding. The debut highlights how legacy brands must sometimes court controversy and embrace radical aesthetic departures to secure relevance in an electric era, prioritizing future survival over nostalgic comfort. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/fifty-years-on-heres-why-typocircle-still-matters-to-creatives-and-deserves-celebrating/" target="_blank" rel="noopener">拒絕被資本收買的草根社群：字體圈半世紀志工精神為何依然重要</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">50 years on, here&#x27;s why TypoCircle still matters, and deserves celebrating</div>
+            <img class="item-image" src="https://media.creativeboom.com/70100ebd-4873-4663-ae69-aa2fccad2416/conversions/99e96a4fd21ec8a04c7d68d0bb21515735809f20-medium.webp" alt="50 years on, here&#x27;s why TypoCircle still matters, and deserves celebrating" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">TypoCircle 走過五十年，依然堅持由志願者運作，並邀請設計大師推出親民海報，這在過度商業化的設計界宛如清流。當許多大型設計獎項與機構淪為公關獲利工具時，這種以純粹專業熱忱維繫的共有社群，反而成為創意人最堅強的避風港。它告訴我們，文化的生命力往往不是由資本堆砌出來的，而是來自同行之間毫無保留的交流與相互扶持。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Celebrating its 50th anniversary, the volunteer-led TypoCircle continues to champion typography without commercial pretense. By offering affordable prints by design icons, the group demonstrates that grassroots community solidarity, shared craft, and authentic passion remain the true backbone of enduring creative culture amid an overly monetized industry. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/kiss-branding-in-what-happens-when-founders-stay-out-of-their-own-rebrand/" target="_blank" rel="noopener">設計公司重塑自我的最高境界：創辦人學會退場才能看見真正新貌</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Kiss Branding on what happens when studio founders stay out of their own rebrand</div>
+            <img class="item-image" src="https://media.creativeboom.com/b357d369-7df3-4de7-a6ef-d73602691685/conversions/94821682e9020650626cd73322780c2b86a0eeec-medium.webp" alt="Kiss Branding on what happens when studio founders stay out of their own rebrand" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">做自己的品牌永遠是設計工作室最痛苦的修羅場，Kiss Branding 創辦人選擇完全放手讓團隊操刀，提供了一個極佳的管理範本。創辦人往往帶著太重的歷史包袱與情感投射，容易讓品牌重塑變成防禦性的自我妥協。敢於自我邊緣化、信任年輕世代的視角，不僅展現了成熟的領導治理胸襟，更是讓組織突破認知盲點、實現自我進化的關鍵。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Kiss Branding&#x27;s co-founder stepped aside to let her team lead their own studio redesign, offering a masterclass in leadership trust. Letting go of founder bias prevents the self-rebranding trap, proving that organizational renewal requires leaders to relinquish control and empower team perspectives to achieve authentic, future-proof identities. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE13ckE3YUZ3Uno3ejN4dzJRT0g5UFIwcFRONEdUSjg2QnQwQXBJYXBnSXhoQVRLcHdvSjlsekRCZHdRdFduaTBFbENnaHRSak43amfSAVBBVV95cUxQME9hdEFXN1k1bUlXeWVoV2gzdk10QlFGcU5NeEJWWjJEVXB4UFNxeVRsVlgwSjR4emV5dllteXFaY2EySUREZjJiZDBPams0eA?oc=5" target="_blank" rel="noopener">自主代理人狂潮下的防禦革命：企業如何替失控的邊界劃下安全底線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">萬里雲搶攻企業AI治理　邀台達電談AI實戰強化Agent資安管理 - ETtoday財經雲</div>
+            <div class="item-sentence lang-zh-only">萬里雲與台達電的交流直指當前企業 AI 轉型的最痛點：當系統從單純對話演進為擁有自主決策權的 Agent 時，資安風險已呈幾何級數放大。傳統封閉式防護再也無法應對具備自主行動能力的智慧體。這說明未來的科技治理核心，不再只是引進最新模型，而是如何替代理人設計一套具備動態約束力的安全韁繩，讓敏捷創新與業務防護達成共存。 <span class="src">— ETtoday財經雲</span></div>
+            <div class="item-sentence-en lang-en-only">CloudMile and Delta Electronics discussed AI agent governance, addressing vulnerabilities emerging from autonomous enterprise tools. As AI transitions from static chatbots to self-directed agents, companies must evolve beyond traditional cybersecurity to build dynamic governance guardrails that prevent unauthorized agent actions without stifling operational innovation. <span class="src">— ETtoday財經雲</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQSUV6ckt4N2Y0TXJsbm1HeVBnUnFiejN6UGZYc1JkRURXQjJnT3lyU3FJUE4tVEg5VVhXbHpOcF94cXRKRlFMeG5xVlVYS091ZjdaQVMwWU91bjBlcV91LVFBeTcyZnFic016Y3lEeENucmFnMVBSOUp4aTRTR1NndjdvTDZJRklHOTJvRDdXM21WV2JxNnAxUGtRV0xuLUVvVmQ5d1Rfak1tVGRLcDE4?oc=5" target="_blank" rel="noopener">終結影子科技的盲區：多模型混合時代下的內部合規治理新挑戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Rencore Launches New Multi-AI Governance Functionality - PR Newswire</div>
+            <div class="item-sentence lang-zh-only">隨著各部門自行採用不同的語言模型，企業內部正迅速形成混亂的「多重 AI 孤島」。Rencore 推出跨平台治理功能，意味著市場已敏銳察覺到影子 AI 帶來的合規黑洞。未來的數位治理者不能只靠道德規勸或一昧封鎖，而是必須建構一個能跨模型、跨雲端的統一監管中樞。唯有先將隱形風險可視化，才能讓企業在運用新工具時擁有真正的安全感。 <span class="src">— PR Newswire</span></div>
+            <div class="item-sentence-en lang-en-only">Rencore launched multi-AI governance functionality to tackle shadow AI and fragmented cloud environments. As organizations adopt diverse AI platforms, unified monitoring frameworks become essential for maintaining compliance, data privacy, and operational visibility across diverse digital ecosystems without restricting productive experimentation. <span class="src">— PR Newswire</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQSUV6ckt4N2Y0TXJsbm1HeVBnUnFiejN6UGZYc1JkRURXQjJnT3lyU3FJUE4tVEg5VVhXbHpOcF94cXRKRlFMeG5xVlVYS091ZjdaQVMwWU91bjBlcV91LVFBeTcyZnFic016Y3lEeENucmFnMVBSOUp4aTRTR1NndjdvTDZJRklHOTJvRDdXM21WV2JxNnAxUGtRV0xuLUVvVmQ5d1Rfak1tVGRLcDE4?oc=5" target="_blank" rel="noopener">從各自為政到全景管控：建構兼顧創新自主與合規防線的中樞機制</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Rencore Launches New Multi-AI Governance Functionality - PR Newswire</div>
+            <div class="item-sentence lang-zh-only">多模型治理工具的普及標誌著企業架構進入新階段。過去幾年大家拼命追趕模型算力，現在終於意識到沒有秩序的創新只會引火自焚。建立跨模型的治理平台，不是要勒緊創新的脖子，而是替分散各處的智慧節點鋪設安全的共用管線。對於正在推動數位轉型的決策者而言，治理架構的完備程度，已直接決定了組織規模化應用 AI 的天花板。 <span class="src">— PR Newswire</span></div>
+            <div class="item-sentence-en lang-en-only">The expansion of multi-model AI governance platforms marks an inflection point where enterprises pivot from ad-hoc experimentation to structural maturity. Unifying visibility and control across AI services enables businesses to scale generative automation safely while protecting intellectual property and meeting evolving regulatory requirements. <span class="src">— PR Newswire</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiTEFVX3lxTE1RZXl2Sk9sSmVrd1RoR0JHd0hCc3k1b1NVaWszNWM5RHFQdWhnRmxmS1A2WTQ1aTBfOWNvOW5mZWNLVG5wNDh1c19tMnM?oc=5" target="_blank" rel="noopener">防呆防漏成為第一要務：電信與科技巨頭聯手打造代理人保險絲</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AIエージェントの誤判断・情報漏えいを防止！NTTドコモビジネスと日本IBMがAIガバナンスで協業 - DXマガジン</div>
+            <div class="item-sentence lang-zh-only">NTT 與 IBM 宣布在 AI 治理上結盟，聚焦於防範代理人誤判與機密洩漏，這釋放出一個重要信號：AI 的可靠性已從技術指標升級為公共基礎設施議題。當企業把客服與關鍵營運託付給自動化代理人，出錯的代價將是難以承受的商譽崩塌。這場結盟代表市場正在把「風險防護」轉化為標準化的商業服務，替下一個世代的自主系統建立安全防護罩。 <span class="src">— DXマガジン</span></div>
+            <div class="item-sentence-en lang-en-only">NTT DOCOMO Business and IBM Japan partnered to deliver AI governance solutions targeting agent misjudgments and data leakage. This alliance underscores that operational reliability is now a mission-critical infrastructure requirement, turning automated safeguards into standard operational protocols for enterprise AI deployments. <span class="src">— DXマガジン</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/security/what-whole-of-state-cybersecurity-looks-like-in-maine" target="_blank" rel="noopener">打破公部門各自為政：緬因州以全域聯防重構邊緣網路治理防線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What Whole-of-State Cybersecurity Looks Like in Maine</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/58aa1bb/2147483647/strip/true/crop/4500x2188+0+0/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F8b%2F12%2F901343174e0194106ca5feff92a0%2Fcharlie-rote-2026-131.jpg" alt="What Whole-of-State Cybersecurity Looks Like in Maine" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">緬因州推動的「全州一體」資安架構，點破了公部門治理長久以來的致命弱點：地方層級與邊緣機構往往是整套防禦體系中最脆弱的一環。他們不再各自固守單一機關，而是整合資源向邊緣前線推進防線。這種去中心化協同聯防思維，對所有大型複雜組織都是極佳借鏡，證明現代防禦的強度不在於核心有多堅固，而在於最邊陲的節點是否同樣具備韌性。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Maine&#x27;s &#x27;whole-of-state&#x27; cybersecurity initiative illustrates how distributed defense protects public infrastructure by reinforcing vulnerable edge systems across state and local jurisdictions. This coordinated strategy highlights the shift toward collective digital resilience, where security is defined by how effectively peripheral units are protected. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-08 08:03:08 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
