@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從百年神木砧板到演算法倫理大限：當地方記憶與數位治理重構生活秩序 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-09</div>
+    <div class="headline">從百年神木砧板到演算法倫理大限：當地方記憶與數位治理重構生活秩序</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Craftsmanship means caring, quite simply, about the work in itself.</div>
+      <div class="quote-text-zh lang-zh-only">工匠精神的本質，純粹就是對事物本身付出深切的關懷與在乎。</div>
+      <div class="quote-author">— Richard Sennett (理查·桑內特)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">神社老樹化身料理砧板，示範地方林業與記憶的重生。</li>
+        <li class="flash-item">新加坡設下AI治理大限，推動保險業落實驗算法問責。</li>
+        <li class="flash-item">頂尖設計名所優雅謝幕，提醒創作者別在套路中弄丟玩心。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/10/90370/" target="_blank" rel="noopener">邊緣運算不再冷冰冰：AI硬體落地正考驗工業設計的人性溫潤</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】エッジコンピューティングカメラを開発するi-PRO株式会社が、インダストリアルデザイナーを募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/6a8922c0ed02c.jpg" alt="【求人情報】エッジコンピューティングカメラを開発するi-PRO株式会社が、インダストリアルデザイナーを募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當AI攝影機從機房走進街頭與醫療院所，外殼設計早已不是單純的散熱工程，而是科技與大眾心理防線的第一類接觸。i-PRO這波徵才清楚傳遞出訊號：邊緣運算的硬體競賽正轉向空間美學的博弈。設計師的任務不再只是把電路板包裝好，而是要讓具備高度感測能力的機器，在不製造隱私焦慮的前提下自然融入環境。誰能把冷酷的監控設備做得像家具般親和，誰才是真正的高階智慧硬體贏家。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Edge-computing camera developer i-PRO is recruiting industrial designers to bridge the gap between advanced surveillance technology and human environments. As AI devices move deeper into public and medical spaces, functional engineering is no longer enough; industrial design must transform intimidating sensor hardware into unobtrusive, aesthetically reassuring fixtures that foster public trust and spatial harmony. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/725166.html" target="_blank" rel="noopener">神社倒下的兩百年榧木，如何以料理道具姿態走入家庭日常？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">釜浅商店と東京チェンソーズが「東京の木のまな板」を発売 。神社にあった樹齢約200年の榧の木を料理道具へ</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/01.jpg" alt="釜浅商店と東京チェンソーズが「東京の木のまな板」を発売 。神社にあった樹齢約200年の榧の木を料理道具へ" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這項合作最迷人的地方，在於打破了老樹非得做成展示紀念物或淪為廢棄物的傳統思維。釜浅商店聯手在地林業品牌，把東京市區神社倒塌的兩百年古木轉化為切菜板，讓神聖的歲月痕跡沉澱為廚房裡的清脆切剁聲。這給地方創生帶來極大啟發：真正的在地永續不是空談減碳數據，而是把土地的故事轉譯成天天握在手裡的日常道具。唯有融入柴米油鹽，珍貴的文化資產才能真正活在當代生活中。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Kama-Asa and Tokyo Chainsaws have teamed up to turn a 200-year-old fallen nutmeg tree from a Tokyo shrine into high-end cutting boards. This circular forestry initiative connects urban consumers with local woodland heritage, proving that authentic sustainability thrives when precious ecological stories are translated into durable, functional objects embedded in everyday culinary rituals. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/that-design-thing/" target="_blank" rel="noopener">告別大都會中心主義！在被遺忘的小鎮點燃草根設計火花</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">That Design Thing: Tony Clarkson brings a design event to Shrewsbury, &#x27;the town where nothing happens&#x27;</div>
+            <img class="item-image" src="https://media.creativeboom.com/f9f68cd5-98d0-4e43-9ce3-8aa2b5c5b7b9/conversions/5dfb3d5e5e2dab71739a6597cf362a739bbdd7a2-medium.webp" alt="That Design Thing: Tony Clarkson brings a design event to Shrewsbury, &#x27;the town where nothing happens&#x27;" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">創意產業總習慣往倫敦或紐約擠，但設計師 Tony Clarkson 在自嘲「什麼事都不會發生」的什魯斯伯里創辦活動，狠狠戳破了大城市壟斷創意的神話。當一線城市的設計週逐漸淪為喧囂的公關名利場，小城鎮反而保留了最真誠的社群交流渴望。這個案例提醒我們，設計能量從不專屬於大都會；只要有人願意搭起舞台，看似偏遠的角落也能憑藉對土地的敏銳感知，長出最具黏著度與草根韌性的創意聚落。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Designer Tony Clarkson launched &#x27;That Design Thing&#x27; in Shrewsbury, a quiet UK market town often overlooked by the creative mainstream. By decentralizing design dialogue away from metropolitan capitals, the initiative proves that authentic grassroots communities can emerge anywhere, revitalizing local creative culture through accessible gatherings that celebrate regional talent without relying on commercial pretension. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/nb-studio-is-closing-after-29-years-alan-dye-wants-to-talk-about-joy/" target="_blank" rel="noopener">斬獲數十座大獎後優雅解散：頂尖名所提醒我們重新找回創作快樂</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">NB Studio&#x27;s Alan Dye on 29 years, starting again and why design needs more joy</div>
+            <img class="item-image" src="https://media.creativeboom.com/d91e18b6-df87-4b06-ba60-ad65c0d8a6b1/conversions/521ad130f7d3ceb03cbc766d59dd33719784efb8-medium.webp" alt="NB Studio&#x27;s Alan Dye on 29 years, starting again and why design needs more joy" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">營運近三十年、獲獎無數的 NB Studio 選擇拉下鐵門，創辦人甚至開心地表示期待「重當初學者」。在如今設計業被 KPI、品牌矩陣和商業套路過度綁架的環境下，這番告白就像一記清脆的警鐘：如果創作過程失去了純粹的玩心與快樂，再耀眼的成就都可能變成心靈枷鎖。這場謝幕不是撤退，而是一次優雅的自我除魅，鼓勵所有創意工作者鼓起勇氣跳出舒適圈，別讓體制磨滅了最初對美的悸動。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">After 29 celebrated years and dozens of D&amp;AD awards, London-based NB Studio is closing its doors, with co-founder Alan Dye advocating for a return to joy and beginner&#x27;s curiosity. Their decision highlights a vital industry counter-trend: resisting the pressures of relentless corporate expansion to prioritize personal creative fulfillment and meaningful artistic reinvention. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/lakshya-bhargava-on-finding-home-memory-and-meaning-in-the-act-of-painting/" target="_blank" rel="noopener">從醫學生到倫敦藝術家：在流動記憶裡描繪跨文化的精神定錨</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Lakshya Bhargava on finding home, memory and meaning in the act of painting</div>
+            <img class="item-image" src="https://media.creativeboom.com/91efea9d-f190-4dd9-9cac-b9fcf3222f2d/conversions/d5207e61a1219238929790958487fe24f0595b56-medium.webp" alt="Lakshya Bhargava on finding home, memory and meaning in the act of painting" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">藝術家 Lakshya Bhargava 從印度的醫學預科生跨界至英國頂尖藝術學院，其創作精準捕捉了當代異鄉人在空間遷徙中的精神安頓。畫面裡那些日常碎片的重組，並非廉價的懷舊鄉愁，而是透過細膩的觀察筆觸，把破碎的身分感重新縫合。在 AI 能瞬間生成海量圖像的快餐年代，這種依賴肉身經驗、時間沉澱與情感摩擦的繪畫實踐，反而成了抗衡感官麻木的深刻解方，提醒我們感知日常的深沉力量。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Indian-born painter Lakshya Bhargava, who transitioned from studying biology to graduating from the Slade, channels fleeting domestic memories and migration experiences into tactile, emotionally resonant canvases. His practice demonstrates how deliberate, hands-on painting serves as a powerful antidote to algorithmic visual noise, offering a poignant examination of displacement, belonging, and memory. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiR0FVX3lxTE1YTGlEOGQ4QVVRb2pYVVNjR25HMlhUODdUVUh5eXRIdmlLT3cxMC1Ic3BHYTUwbHo4YkxScTA1R0FLTE5oY3c4?oc=5" target="_blank" rel="noopener">離島小縣也能彎道超車！馬祖用空間圖資打造透明治理典範</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">馬祖數位治理「雙特優」！連江縣政府環境敏感地查詢再奪內政部最高肯定 - 台灣新聞雲</div>
+            <div class="item-sentence lang-zh-only">常有人以為數位治理是直轄市的特權，但連江縣在環境敏感地查詢系統上奪下全國特優，證明資源有限的離島反而能憑藉聚焦痛點跑得更靈巧。將地質、生態與法令圖資徹底透明化，本質上是一場公權力資訊的賦權運動。它讓島民與投資者能一目了然看清土地的潛在風險，不僅大幅降低行政審批的溝通成本，更向外界示範了智慧治理最接地氣、最能解決真實問題的具體模樣。 <span class="src">— 台灣新聞雲</span></div>
+            <div class="item-sentence-en lang-en-only">Lienchiang County, governing Taiwan&#x27;s remote Matsu islands, secured top national honors for its digital environmental sensitivity mapping platform. This achievement highlights that municipal digital transformation does not depend on massive budgets, but on targeted spatial data transparency that empowers local citizens, mitigates environmental hazards, and streamlines public administration. <span class="src">— 台灣新聞雲</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxOXzE5RDlSNjVIOHlIc2FIVzJscnhsVUZlWlM3ekh3UGRiVE9jOVFzYWJXbkFSRUQ2QUY3bU1fZ1k5eEYyMHlNbG1aUXpDM3MzdkVWSnZHYlNwMllMWTdDVHdzUjlQYkROSW9sbmpDTVRCUVlKNUcwMEpDSEtTWmZKUDVtRTN5Y1ZGUkowUzV3VWtIZklFaGxHODBlOEFqakxPelh3a1JzaU5VUlp2aEpTOUExWUhvTXBvZEs4QlNlbGFuN0w4MU0wSnlaZ2NITlFWdGdER2RpbTg2VUFIbXdxRlZB?oc=5" target="_blank" rel="noopener">告別黑盒子決策！新加坡為保險業設下2027演算法透明大限</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Singapore’s AI governance rules: what brokers and insurers must know before 2027 - Insurance Business</div>
+            <div class="item-sentence lang-zh-only">新加坡即將於 2027 年落地的 AI 治理規範，宣告了保險科技「演算法黑盒子」時代的徹底終結。過去保險業仰賴大數據精算，卻經常陷入歧視與不可解釋的爭議泥淖；如今監管單位強制要求透明度與責任歸屬，逼得金融機構必須在追求模型效能的同時，補足倫理學分數。這意味著負責任的 AI 架構不再只是寫在 CSR 報告裡的宣傳口號，而是未來金融業者能否保住營運特許資格的硬性生存指標。 <span class="src">— Insurance Business</span></div>
+            <div class="item-sentence-en lang-en-only">Singapore&#x27;s impending 2027 AI governance mandates for the insurance sector signal an end to algorithmic opacity in financial services. Regulators are demanding strict accountability, fairness, and explainability across underwriting models, establishing that ethical AI design is no longer an optional corporate talking point, but an essential legal baseline for market survival. <span class="src">— Insurance Business</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxOXzE5RDlSNjVIOHlIc2FIVzJscnhsVUZlWlM3ekh3UGRiVE9jOVFzYWJXbkFSRUQ2QUY3bU1fZ1k5eEYyMHlNbG1aUXpDM3MzdkVWSnZHYlNwMllMWTdDVHdzUjlQYkROSW9sbmpDTVRCUVlKNUcwMEpDSEtTWmZKUDVtRTN5Y1ZGUkowUzV3VWtIZklFaGxHODBlOEFqakxPelh3a1JzaU5VUlp2aEpTOUExWUhvTXBvZEs4QlNlbGFuN0w4MU0wSnlaZ2NITlFWdGdER2RpbTg2VUFIbXdxRlZB?oc=5" target="_blank" rel="noopener">當演算法接管核保理賠，保險經紀人如何在合規新制下重構信任？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Singapore’s AI governance rules: what brokers and insurers must know before 2027 - Insurance Business</div>
+            <div class="item-sentence lang-zh-only">新加坡這波新規表面上是針對金融機構的合規考驗，深層來看卻是對前線從業人員專業價值的重新盤整。當核保與理賠高度交給自動化工具，經紀人如果無法向保戶清楚交代系統決策的邏輯，專業信任感就會瞬間瓦解。這項政策倒逼出全新的人機協作範式：未來的專業競爭力不再是拼命比算力或速度，而是看第一線專家能否在冰冷的演算法結果之上，提供不可替代的倫理把關與人文溫度。 <span class="src">— Insurance Business</span></div>
+            <div class="item-sentence-en lang-en-only">As Singapore prepares strict AI compliance frameworks for 2027, insurance brokers and underwriters must pivot their roles toward algorithmic transparency and client advocacy. Automating risk assessments requires human professionals who can explain AI outputs with empathy, proving that technology must augment, rather than replace, human ethical discretion in risk management. <span class="src">— Insurance Business</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTFB0Y0dmNnNBa2tNbEpXSXV5aG9Ec0ZRSS1vOWY1Vjd5TGFnRkpReEZxOVR3M0lOQVN0LWdTMVBXZVZfcExaVnB6ekQ4Q1VjUVN6d0FIMmktVVE?oc=5" target="_blank" rel="noopener">走出冷硬科技展示！關西研發廊帶在智慧城市中尋找生活溫度</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">けいはんなで未来都市議論 スマートシティエキスポ開幕 - 京都新聞デジタル</div>
+            <div class="item-sentence lang-zh-only">關西文化學術研究都市舉辦的博覽會，悄悄把重心從過去炫耀性的感測器與自駕車展示，轉向探討科技如何縫合少子化與城鄉疏離。這場展會給全球智慧城市建設帶來關鍵啟發：未來的宜居城市絕非靠堆砌昂貴技術建構，而是看它能否在真實社區裡化解生活痛點。當產學研機構願意打破象牙塔、把一般市民的生活現場當成實驗室，那些智慧技術才算真正擁有了落地的靈魂。 <span class="src">— 京都新聞デジタル</span></div>
+            <div class="item-sentence-en lang-en-only">The Keihanna Smart City Expo in Kansai shifted its focus from flashy technological demonstrations to practical urban living solutions addressing population decline and community wellness. The gathering emphasizes that the future of smart cities lies not in sheer sensor density, but in human-centered innovation co-created with local citizens to improve everyday quality of life. <span class="src">— 京都新聞デジタル</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/workforce/vermont-digital-services-leader-denise-reilly-hughes-is-out" target="_blank" rel="noopener">數位轉型官員重返業界：公部門科技首長的流動與永續挑戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Vermont Digital Services Leader Denise Reilly-Hughes Is Out</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/c13105c/2147483647/strip/true/crop/410x199+0+82/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fb4%2F50%2F685d9fc94b36b8eb8beb857c141a%2Ftop25-2026-sm-reilly-hughes.jpg" alt="Vermont Digital Services Leader Denise Reilly-Hughes Is Out" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">佛蒙特州科技首長在帶領數位轉型數年後重返民間，折射出全球公共治理普遍面臨的結構性難題。私部門出身的高階技術人才往往能為僵化的官僚體系注入現代化活力，但體制摩擦、薪資落差與政治週期也經常讓任期受限。這件事提醒所有政府團隊：數位治理絕不能寄託於一兩位明星首長的個人英雄主義，唯有建立起能留住技術專業的組織文化與接班梯隊，治理的數位韌性才可能真正延續。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Denise Reilly-Hughes&#x27; departure as Vermont&#x27;s State CIO to return to the private sector underscores the fragile continuity of public sector tech leadership. While private-sector talent accelerates government modernization, sustained institutional agility requires systemic culture shifts and robust succession planning rather than relying exclusively on individual technocratic leaders. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-09 08:04:03 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
