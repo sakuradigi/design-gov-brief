@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>當數位生成遇上手工反思：從基礎設施防禦到創作者生存的跨界重塑 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-10</div>
+    <div class="headline">當數位生成遇上手工反思：從基礎設施防禦到創作者生存的跨界重塑</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is the knack of so arranging the world that we don&#x27;t have to experience it.</div>
+      <div class="quote-text-zh lang-zh-only">科技就是一種將世界安排妥當，好讓我們不必親身體驗它的手腕。</div>
+      <div class="quote-author">— Max Frisch</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">AI 生成時代下，手繪像素與細膩排版成設計師突圍關鍵</li>
+        <li class="flash-item">企業治理從口號走向硬核，AI 基礎設施指標成資安新焦點</li>
+        <li class="flash-item">美阿肯色州推全州聯防，地方公共治理進入跨部門整合期</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/column/adobe-202610/" target="_blank" rel="noopener">AI時代點閱戰：設計細節才是抓住眼球的關鍵底氣</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI時代、プロはどう作る？アドビと広がる表現の最前線 | AI時代、プロはどう作る？アドビと広がる表現の最前線：第1回YUCOdesign</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/media_1120dd2599581b6b7af87e30bcbfefeb60a78e714.jpg" alt="AI時代、プロはどう作る？アドビと広がる表現の最前線 | AI時代、プロはどう作る？アドビと広がる表現の最前線：第1回YUCOdesign" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在社群圖文氾濫的今天，AI 固然能秒生素材，但真正拉開差距的從來不是工具本身，而是設計師對細節質感的拿捏。YUCOdesign 的案例告訴我們，當大眾產製門檻降到最低，視覺的微調與情感傳遞反而成了稀缺資產。能精準掌握受眾微表情與版面節奏的人，才能把點擊率轉化成持久的品牌認同。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">As AI tools lower barriers to visual creation, meticulous design refinement and emotional resonance become vital differentiators for driving genuine audience engagement across social media channels. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/724554.html" target="_blank" rel="noopener">戰後橫濱光影展：歷史鏡頭給當代都市規劃的深層鏡像</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">横浜都市発展記念館の「戦後横浜の光と影」展 。3人の写真家が捉えた昭和の占領、復興、都市と人々の姿</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/09/sub1-6.jpg" alt="横浜都市発展記念館の「戦後横浜の光と影」展 。3人の写真家が捉えた昭和の占領、復興、都市と人々の姿" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">橫濱都市發展紀念館透過三位攝影家的視角回望戰後重建，這不僅是懷舊，更是一場關於城市韌性的現場對話。都市不是冷冰冰的鋼筋水泥，而是由人的創傷、適應與生機交織而成。在我們熱烈討論未來智慧城市的當下，凝視這段光影記憶，能提醒治理者永遠要把『居民的真實生活』放在規劃的核心。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Reflecting on postwar Yokohama through three photographers&#x27; lenses reveals human resilience during urban reconstruction, reminding modern planners that cities are fundamentally shaped by human experience rather than mere infrastructure. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/danny-ische-draws-pixels-cross-stitch-and-paperclips-all-with-a-trusty-pencil/" target="_blank" rel="noopener">用鉛筆手繪低解析度像素材質：逆向對抗演算法的美學叛逆</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Danny Ische draws pixels, cross-stitch and paperclips – all with a trusty pencil</div>
+            <img class="item-image" src="https://media.creativeboom.com/4b07cd4a-b722-4beb-844f-73226166c2d7/conversions/2ce977011de4d209df4cc5f82fccd304d50e1bc3-medium.webp" alt="Danny Ische draws pixels, cross-stitch and paperclips – all with a trusty pencil" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">藝術家 Danny Ische 選擇用最樸素的鉛筆，一筆一畫臨摹數位像素與迴紋針的質感，給了我們一記當頭棒喝。在 AI 追求極致高清、一鍵生成的狂潮裡，故意用極致的手工去重現『數位低畫質』，本質上是對速食視覺文化的一場優雅反抗，迫使觀者停下腳步重新審視真實與虛擬的界線。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Danny Ische hand-draws pixelated textures and office objects with pencils, offering an analog rebellion against instant digital perfection and prompting viewers to question the boundary between reality and simulation. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/macfadden-thorpe-gives-dave-eggerss-free-alternative-to-art-school-a-bendy-salty-identity/" target="_blank" rel="noopener">免費藝術學院的流動識別：讓公共教育擺脫沉悶官僚味</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">MacFadden &amp; Thorpe gives Dave Eggers&#x27;s free alternative to art school a bendy, salty identity</div>
+            <img class="item-image" src="https://media.creativeboom.com/8b9c8582-14a2-4364-b31c-fba56591e25d/conversions/6c090ddbedef770319a301269a398c67c8ebcb5c-medium.webp" alt="MacFadden &amp; Thorpe gives Dave Eggers&#x27;s free alternative to art school a bendy, salty identity" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">舊金山海濱這個由資深藝術家帶新秀的免學費計畫，找來設計團隊打造如水波般靈動的視覺識別。這件事最酷的地方在於，社會公益或另類教育不該長得一副苦哈哈或死板的樣子。透過充滿活力且帶著在地鹽味的視覺語言，新型態的公共學習社群展現了自豪感，也成功拉近了與大眾的距離。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Designing a fluid visual identity for a tuition-free art mentorship program demonstrates how public educational initiatives can project vibrancy and local identity rather than dull bureaucratic aesthetics. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/tips/busy-briefs-shortening-days-10-ways-to-survive-the-last-quarter-of-the-year/" target="_blank" rel="noopener">第四季防爆肝指南：創意人在年底衝刺期的能量管理學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Busier briefs, shorter days: 8 ways to survive the last quarter of the year</div>
+            <img class="item-image" src="https://media.creativeboom.com/38bd7217-7f7f-4692-a4f0-2b497fbeda7d/conversions/40d7b6563e488f737c1e1b63d9044c94a9e67671-medium.webp" alt="Busier briefs, shorter days: 8 ways to survive the last quarter of the year" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">每年最後一季總是案量爆炸、白晝變短，創意工作者特別容易陷入耗竭。這篇文章匯集第一線同行的生存法則，核心在於打破『必須隨時保持產出』的病態焦慮。學會設定邊界、策略性排定優先順序，不僅是為了活過十二月，更是長期維持設計敏銳度與身心健康的底線思維。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Navigating the demanding final quarter requires creative professionals to set firm boundaries and manage energy strategically, transforming year-end survival tactics into sustainable creative habits. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE1EZ1NuWlIxUmhmSHI3MmI0S3c1NEdwS3g2aWszSVBqTDBvTUVBdWVMYS1QZk5WcDh5Rll4RndGR0VYUmJIZVNIa3JpWWpLOG5zbWUwb3ByM3VMLTlranBR?oc=5" target="_blank" rel="noopener">台廠AnyInsight獲ASOCIO首獎：AI信任架構躍升國際競爭力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AnyInsight.ai獲ASOCIO全球商業服務獎AI治理與資安獲國際肯定- 商情 - 工商時報</div>
+            <div class="item-sentence lang-zh-only">AnyInsight.ai 在國際獎項脫穎而出，標誌著 AI 產業的競爭已經從單純的算力、模型大小，全面轉向『合規治理』與『資安防護』。能把黑箱般的演算法梳理成安全、可信任的商業方案，才是企業級客戶願意掏錢的關鍵。這對台灣軟體出海來說，指明了一條靠穩健治理突圍的新路徑。 <span class="src">— 工商時報</span></div>
+            <div class="item-sentence-en lang-en-only">AnyInsight.ai&#x27;s recognition underscores that global AI competitiveness is shifting toward trust, governance, and cybersecurity, providing enterprise clients with robust compliance solutions beyond raw model capabilities. <span class="src">— 工商時報</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE12RE85N01nT0ctWGZvQlprNVpIYlRXcF9oM1JnTU9CUVJvTDRJQ2RFRjVOUkJ1UlNqb2k1N0tfMHkxY04wTXQwUW82S1pnakxyTlczRXkzLTNPa2NwLXI1NmN6cHV6dkkxUFpPQUxrUHY5M1gtOVBDM3hJSS0?oc=5" target="_blank" rel="noopener">Recorded Future推AI基礎設施指標：治理防線退守到底層資產</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Recorded Future Introduces AI Infrastructure Indicator Lists, Strengthening AI Governance​​ - Recorded Future</div>
+            <div class="item-sentence lang-zh-only">威脅情報巨頭 Recorded Future 推出 AI 基礎設施指標清單，象徵著 AI 治理終於不再打高空。以往大家只談生成內容倫理，現在防禦焦點已經落實到伺服器、API 和數據管道等實體與網路底層。唯有把底層資產的漏洞摸透，企業談 AI 治理與防禦才不會淪為紙上談兵。 <span class="src">— Recorded Future</span></div>
+            <div class="item-sentence-en lang-en-only">Recorded Future&#x27;s introduction of AI Infrastructure Indicator Lists moves AI governance from abstract ethics to concrete defense, focusing on safeguarding the underlying physical and network assets against emerging threats. <span class="src">— Recorded Future</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE12RE85N01nT0ctWGZvQlprNVpIYlRXcF9oM1JnTU9CUVJvTDRJQ2RFRjVOUkJ1UlNqb2k1N0tfMHkxY04wTXQwUW82S1pnakxyTlczRXkzLTNPa2NwLXI1NmN6cHV6dkkxUFpPQUxrUHY5M1gtOVBDM3hJSS0?oc=5" target="_blank" rel="noopener">威脅情報切入AI供應鏈：資安監測從應用層直擊底層管線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Recorded Future Introduces AI Infrastructure Indicator Lists, Strengthening AI Governance​​ - Recorded Future</div>
+            <div class="item-sentence lang-zh-only">這項新指標清單的推出，反映了資安界對 AI 供應鏈投毒與惡意操控的警覺已達新高點。單純防守模型輸出端已經不夠，安全團隊必須具備洞悉 AI 運行環境各節點的能力。這代表未來合格的治理架構，必須與即時威脅情報深度綁定，才能因應新型態的自動化攻擊浪潮。 <span class="src">— Recorded Future</span></div>
+            <div class="item-sentence-en lang-en-only">Monitoring AI infrastructure indicators addresses critical supply-chain risks, emphasizing that effective modern AI governance requires real-time intelligence integrated directly into operational computational pipelines. <span class="src">— Recorded Future</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiSkFVX3lxTE8yTk1sZVFVSjlkSXhjR1dWUTJNQ3J3dGthMS1WdTRvUVBrZHNZUk1HRzN1U1IzSW1fREdUODVUR2ZHSk03Q2FuSXFB?oc=5" target="_blank" rel="noopener">日本智慧城市市佔重構：本土廠商如何接軌在地公共需求</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">スマートシティ国内メーカーとシェア - pando.life</div>
+            <div class="item-sentence lang-zh-only">日本本土廠商在智慧城市領域的市佔版圖變化，反映出地方創生正走向務實期。早年盲目採購大型跨國系統的時代已過，現在地方政府更看重廠商是否理解在地社區痛點、能否提供輕量且客製化的方案。這提醒我們，成功的智慧治理不在於技術多酷炫，而在於跟在地脈絡的黏著度。 <span class="src">— pando.life</span></div>
+            <div class="item-sentence-en lang-en-only">Shifting market dynamics among domestic smart city vendors in Japan highlight a growing demand for pragmatism, where localized solutions outperform generic high-tech platforms in addressing community needs. <span class="src">— pando.life</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/security/its-cyber-office-live-arkansas-eyes-whole-of-state-security" target="_blank" rel="noopener">阿肯色州推全州聯防：打破穀倉效應的公共資安治理革命</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Its Cyber Office Live, Arkansas Eyes Whole-of-State Security</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/0a6a2d2/2147483647/strip/true/crop/8126x3950+0+757/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F6f%2Ff3%2Ff99e211e40eda88546ebee8c53de%2Fadobestock-389993413.jpeg" alt="Its Cyber Office Live, Arkansas Eyes Whole-of-State Security" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">阿肯色州推動全州統一的網路安全辦公室，把原本各自為政的政府部門拉到同一條防線上。這種『全州一盤棋』（Whole-of-State）的做法，是公共治理打破官僚穀倉的典範。在地方資源有限的情況下，整合指揮鏈與情報共享，才是抵禦針對關鍵基礎設施攻擊的最佳防禦策劃。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Arkansas&#x27;s whole-of-state cybersecurity initiative dismantles bureaucratic silos, uniting departmental defenses into a consolidated operational model that maximizes resilience across shared public infrastructure. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-10 08:02:55 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
