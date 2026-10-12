@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從實體自駕與 AI 代理的身分治理，到經典品牌脫胎換骨的設計反思 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-12</div>
+    <div class="headline">從實體自駕與 AI 代理的身分治理，到經典品牌脫胎換骨的設計反思</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">We shape our buildings; thereafter they shape us.</div>
+      <div class="quote-text-zh lang-zh-only">我們塑造了建築，而後建築形塑了我們。</div>
+      <div class="quote-author">— Winston Churchill</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">歐盟法規落地倒數，機器人與自駕車正式迎來「高風險」問責時代</li>
+        <li class="flash-item">當軟體代理人能自主下單，身分存取管理必須徹底拋棄「人類中心」思維</li>
+        <li class="flash-item">捷豹電動新車 Type 01 落地，用實體造車工藝回應當年爭議滿天飛的品牌重塑</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/725869.html" target="_blank" rel="noopener">跳脫貴族框架的文化策展：德川義親特展帶你看見跨國移動如何重塑地方美學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">徳川美術館で企画展「旅する侯爵 徳川義親」開催</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/main-2.jpg" alt="徳川美術館で企画展「旅する侯爵 徳川義親」開催" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">德川美術館這場「旅する侯爵」展覽，看似只是家族歷史回顧，其實暗藏著地方文化機構轉型的重大啟示。德川義親身為末代大名後代與文庫創辦人，他的足跡串起了東南亞探索與近代博物館學的萌芽。這件事對策展人與文化經營者的啟發在於：與其把老牌博物館當作供奉古董的靈堂，不如透過特定人物的動態旅程，把封閉的貴族收藏轉化為開放的全球對話網絡。地方文博空間要活化，關鍵在於重新挖掘歷史人物身上的「游牧精神」，讓老故事長出跨文化的當代共鳴。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Tokugawa Art Museum&#x27;s exhibition on Marquis Yoshichika Tokugawa highlights how an aristocrat&#x27;s global journeys laid the groundwork for modern cultural institutions. It demonstrates how historical museums can reframe legacy collections into dynamic intercultural narratives, inspiring modern curators to revitalize heritage institutions through the lens of human movement and cross-border curiosity. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/kitahamanominoichi-nakanoshimapark/" target="_blank" rel="noopener">中之島水岸策展：北濱蚤之市如何藉由老件市集活化公共空間生活感</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">第18回 北浜蚤の市</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/1397649-740x560.jpg" alt="第18回 北浜蚤の市" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">北濱蚤之市邁入第18屆，選在大阪中之島公園絕非偶然。這不只是一群古物愛好者的擺攤聚會，而是藉由「老物件的流轉」，重新定義市民與城市濱水空間的互動關係。市集策劃最忌諱把空間變成純粹的消費商場，而北濱蚤之市成功示範了：把設計選品、復古工藝與水岸綠地結合，能自然誘發人們停留、慢步與交談。對城市治理者與活動策劃者來說，這證明了公共場域的活力不需要蓋大建築，只要一套精準的生活美學策展，就能賦予公園長久的文化黏著度。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The 18th Kitahama Flea Market at Osaka&#x27;s Nakanoshima Park showcases the power of placemaking through vintage aesthetics and public waterfront spaces. By integrating curated crafts with open park environments, the event shows urban designers how ephemeral markets can activate civic spaces, fostering organic community interaction without heavy infrastructural investment. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/jaguar-type-01-is-here-and-this-coventry-kid-is-rooting-for-it/" target="_blank" rel="noopener">捷豹首款量產電動車 Type 01 現身：用實體產品直面重塑爭議的造車豪賭</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Jaguar Type 01 is here, and this Coventry kid is rooting for it</div>
+            <img class="item-image" src="https://media.creativeboom.com/fb7d1d4b-41f1-4382-8938-eec35c3451eb/conversions/f671172e3cb22e1999c370ab8b4893fc6b9f07f3-medium.webp" alt="Jaguar Type 01 is here, and this Coventry kid is rooting for it" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">兩年前 Jaguar 推出那個前衛到激怒老車迷的全新品牌識別時，幾乎所有人都在等著看笑話；如今首款量產純電車 Type 01 終於落地。這件事教給所有品牌主最殘酷也最真實的一課：視覺重塑引發的反彈從來不是死局，只要端出的實體產品能撐得起這份野心。如果只是換個極簡 logo 卻賣老調重彈的車，品牌必定自毀；但若用極具未來感的工業設計去兌現爭議性承諾，陣痛期就會化為前進的動能。敢賭未來，就得用硬實力讓懷疑者閉嘴。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Following its highly controversial rebrand, Jaguar has unveiled the Type 01, its first production electric vehicle of the new era. This milestone illustrates that radical aesthetic pivots can survive intense public backlash if backed by bold physical execution, showing brands that polarizing rebrands must be validated through substantive product innovation. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/fifty-years-on-heres-why-typocircle-still-matters-to-creatives-and-deserves-celebrating/" target="_blank" rel="noopener">走過半世紀的 TypoCircle：純粹由志工撐起的美學社群為何比商業組織更長青？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">50 years on, here&#x27;s why TypoCircle still matters, and deserves celebrating</div>
+            <img class="item-image" src="https://media.creativeboom.com/70100ebd-4873-4663-ae69-aa2fccad2416/conversions/99e96a4fd21ec8a04c7d68d0bb21515735809f20-medium.webp" alt="50 years on, here&#x27;s why TypoCircle still matters, and deserves celebrating" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">一個沒有龐大企業贊助、全靠志工熱血運作了50年的字體社群 TypoCircle，找來 Paula Scher 等大師發行平價海報慶生。在這個被演算法與昂貴設計年費綁架的時代，這座社群提醒了我們「純粹的創作熱情」有多稀缺且珍貴。大型設計組織往往隨著商業化而官僚化，失去草根活力；但 TypoCircle 證明了，只要保持非營利與扁平交流，設計師彼此分享技藝的初心就能跨越半世紀。對今日深陷倦怠感的創意人而言，找回不為KPI服務的小圈子，才是走得長遠的秘密。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Celebrating 50 years, the volunteer-led TypoCircle marks its milestone with affordable posters by design luminaries. The organization proves that peer-driven, non-commercial design collectives can outlast bureaucratic industry bodies, highlighting how genuine passion, grassroots solidarity, and accessible design education remain vital remedies against creative industry burnout. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/kiss-branding-in-what-happens-when-founders-stay-out-of-their-own-rebrand/" target="_blank" rel="noopener">創辦人退場才是真信任：Kiss Branding 把自家品牌改造全權交給團隊的勇氣</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Kiss Branding on what happens when studio founders stay out of their own rebrand</div>
+            <img class="item-image" src="https://media.creativeboom.com/b357d369-7df3-4de7-a6ef-d73602691685/conversions/94821682e9020650626cd73322780c2b86a0eeec-medium.webp" alt="Kiss Branding on what happens when studio founders stay out of their own rebrand" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">設計工作室幫自己做品牌重塑，往往比服務客戶痛苦十倍，因為老闆自己通常就是最難搞的「奧客」。里茲設計事務所 Kiss Branding 創辦人 Poonam Saini Kilb 選擇徹底放手，由年輕團隊全權操刀。這個舉動點破了創意治理的痛點：創辦人的執念往往會成為組織演化的最大瓶頸。當領導者有勇氣交出主導權，不僅激發了團隊的主人翁意識，更讓品牌跳脫初創期的個人色彩，真正長出接軌未來的全新面貌。想讓公司進化，創辦人得先學會閉嘴放手。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Kiss Branding co-founder Poonam Saini Kilb chose to step aside and let her team lead their agency&#x27;s rebrand. This case reveals a critical lesson in creative leadership: founders often become the greatest bottleneck to reinvention. Relinquishing creative control builds organizational resilience and yields a brand identity that reflects collective future ambitions. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiO0FVX3lxTE44SS1Nb3hDaGFXVE0yNmpNV2c2a0NLT3hUWE1JQXdMdG4zeEE0VHFVZ3RKcGlJbl84NWdr?oc=5" target="_blank" rel="noopener">自駕與具身機器人告別法規蜜月期：歐盟 AI 法風險分級如何迫使硬體重構設計安全</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">智慧型機器人 101｜EP05 機器人與 AI 治理，歐盟 AI 法怎麼管機器人與自駕車（系列完結）智慧型機器人 101（之九・之十）：AI 治理的四個領域，歐盟人工智慧法的風險分級與高風險要求 - Howl.link</div>
+            <div class="item-sentence lang-zh-only">別以為歐盟 AI 法只管螢幕裡的演算法，當 AI 進入自駕車與具身機器人，它就是能直接造成人身傷亡的實體存在。這篇系列探討歐盟嚴格的高風險評估標準，清楚指出了趨勢分水嶺：硬體工程師再也不能把「合規」當成事後法務工作，而是必須在感測架構、控制迴路的第一天就把治理邏輯寫進去。對於造車與機器人團隊來說，安全不再只是機械強度，而是你的模型決策在出事時能不能被白話解釋、被外部稽核。這條紅線正在徹底重塑未來的硬體設計方法論。 <span class="src">— Howl.link</span></div>
+            <div class="item-sentence-en lang-en-only">Analyzing the EU AI Act&#x27;s risk categorization for autonomous vehicles and robotics, this report demonstrates that AI governance has moved firmly into physical reality. Hardware makers must integrate auditability, transparency, and safety protocols from day one, proving that regulatory compliance is now an architectural imperative rather than a bureaucratic afterthought. <span class="src">— Howl.link</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPbWVtRXhwRjN6Y2REYmlvcU55Sk53N3VZUGk2YlhNSnlQbEtwSE5WR3Z5OGJwWm1idzBpY24zYlhURmdndDFrcTcwNkRCM3VRNER4cVhoWFlHVEgyUjdiSWpENjBKT0U4bS1WZlRaLWo3ZXY1ZGwyVkZxTzRfd0Z5dWtn?oc=5" target="_blank" rel="noopener">從寫扣教育到無人機戰火：當演算法現實主義劫持下一代的技術世界觀</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Coding Kids, Drone Wars and Algorithmic Realism - Tech Policy Press</div>
+            <div class="item-sentence lang-zh-only">這篇文章精準戳破了科技樂觀主義的糖衣：我們從小教孩子學寫程式，以為是在賦能未來，但背後支撐技術演進的龐大資本，往往流向無人機戰爭與自動化監控。這就是所謂的「演算法現實主義」——把技術的殘酷應用包裝成不可逆的歷史必然。對於科技教育者與政策制定者來說，這是一個警鐘：如果我們只教孩子寫扣的技術工具，卻不培養他們質疑系統權力、審視倫理後果的批判思維，我們培養出的就不會是改變世界的創作者，而只是自動化武器體系裡的螺絲釘。 <span class="src">— Tech Policy Press</span></div>
+            <div class="item-sentence-en lang-en-only">Discussing algorithmic realism alongside youth coding and autonomous warfare, this critique challenges techno-optimistic educational narratives. It underscores that teaching coding devoid of sociopolitical critique merely channels future labor into militarized and surveillance-driven systems, urging educators to pair technical skills with structural ethical inquiry. <span class="src">— Tech Policy Press</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPbWVtRXhwRjN6Y2REYmlvcU55Sk53N3VZUGk2YlhNSnlQbEtwSE5WR3Z5OGJwWm1idzBpY24zYlhURmdndDFrcTcwNkRCM3VRNER4cVhoWFlHVEgyUjdiSWpENjBKT0U4bS1WZlRaLWo3ZXY1ZGwyVkZxTzRfd0Z5dWtn?oc=5" target="_blank" rel="noopener">揭開算力霸權的面紗：科技政策必須正面迎擊無人化軍備競賽的倫理黑洞</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Coding Kids, Drone Wars and Algorithmic Realism - Tech Policy Press</div>
+            <div class="item-sentence lang-zh-only">延續科技與暴力的深刻反思，無人機戰爭正在把軍事殺戮變成冷冰冰的數據最佳化問題。當生命被簡化為辨識框與目標機率，社會對暴力的感知就徹底麻木了。這件事的重大意義在於：科技政策不能再只停留在個資保護或反壟斷這些溫和議題，治理者必須跨入「演算法武器化」的核心戰場。讀者需要認清，如果公民社會不強制要求技術透明與武力授權的外部監督，演算法將以極高效率抹去人性底線，把整個地球變成一場缺乏痛感的自主作戰演練場。 <span class="src">— Tech Policy Press</span></div>
+            <div class="item-sentence-en lang-en-only">Further examining the intersection of defense tech and automated systems, this analysis warns of how algorithmic realism abstracts the brutality of modern warfare. It urges policymakers to confront algorithmic weaponization head-on, establishing strict international oversight before human accountability is completely engineered out of lethal decision-making. <span class="src">— Tech Policy Press</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPVkdYRk41aE1FRjBXeHRqTTcwb0pWeVk1aDlleHVIc0VjYWkzeHpvdTJjNDdud3haQXpmdjc0cFRBUENaZW4yZjNiN1NWRTc2djZma0dzY2s1V2FBR3YzMnhaLXdackxzNTFZQktnWHhQa1d0cm9hQzFnb19NNzdxTFkxaTVuZ0dFTFZ4UzYxOWliblgtbVVXM0JlT2R0bjFOaE9LV3ZIZlpVZWVJbGg0?oc=5" target="_blank" rel="noopener">納德拉提超知能治理「走出版模」：微軟拋七原則，宣告 AI 安全重心轉向系統層</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Microsoftのサティア・ナデラCEO、超知能時代のAIガバナンスは「モデル外」で 7原則を提示 - 디지털투데이</div>
+            <div class="item-sentence lang-zh-only">微軟 CEO 納德拉提出超知能時代的七大原則，最關鍵的一句話就是 AI 治理必須在「模型之外（Outer-loop）」。這代表整個科技界對 AI 安全的思維發生了根本轉變：你不能單靠訓練模型時微調或加 prompt 防護，因為大模型本身就是不可預測的黑盒子。真正的治理必須做在系統架構、執行環境與外圍防護網上。對企業技術主管來說，這是一個直接指引：別再幻想買到一個「百分之百安全」的完美模型，把預算花在搭建外部監控、斷路機制與存取控制，才是活過下一輪技術風暴的正解。 <span class="src">— 디지털투데이</span></div>
+            <div class="item-sentence-en lang-en-only">Microsoft CEO Satya Nadella&#x27;s seven principles for superintelligence governance argue that safety must be enforced outside the model itself. Acknowledging that neural weights are unpredictable black boxes, this approach shifts compliance and safety focus onto architectural guardrails, system boundaries, and runtime controls, redefining enterprise AI infrastructure strategy. <span class="src">— 디지털투데이</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/blogs/lohrmann-on-cybersecurity/how-can-we-manage-identity-access-for-ai-agents" target="_blank" rel="noopener">當 AI 代理人開始刷卡簽約：身分存取管理（IAM）如何打破「只認人類」的過時假設</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How Can We Manage Identity Access for AI Agents?</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/190ea98/2147483647/strip/true/crop/4402x2140+0+307/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fa7%2F68%2F0eba99ea4a0fa1034f1aecc1f9fa%2Fadobestock-2210670045.jpeg" alt="How Can We Manage Identity Access for AI Agents?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">過去企業的資安與身分認證（IAM）都是為人類員工設計的——帳號、密碼、雙因子驗證。但當擁有高度自主權的 AI 代理人（Agent）開始自己調用 API、搬移資料甚至代表公司簽約時，整個信任體系瞬間崩潰。這篇文章切中的正是當前最棘手的漏洞：你該如何授權一個非人類實體？它的權限邊界在哪？它出包時誰在法律上簽字？治理非人類身分不再是科幻題，而是明天早上資安長就得面對的實務風暴；跟不上這波存取架構翻修，企業就是大門敞開任由代理人橫衝直撞。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Managing identity and access management (IAM) for autonomous AI agents presents a profound governance challenge, as existing protocols are designed solely for human actors. Organizations must rapidly formulate frameworks for synthetic identities, establishing granular permissions and dynamic accountability rails to keep autonomous agents from bypassing conventional enterprise security perimeters. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-12 08:03:24 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
