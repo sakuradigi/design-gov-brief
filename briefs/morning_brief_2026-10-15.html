@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>廢棄高架化身美學走廊、企業AI治理大脫節：空間再造與科技秩序的重構浪潮 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-15</div>
+    <div class="headline">廢棄高架化身美學走廊、企業AI治理大脫節：空間再造與科技秩序的重構浪潮</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">The role of the designer is that of a good, thoughtful host anticipating the needs of his guests.</div>
+      <div class="quote-text-zh lang-zh-only">設計師的角色，就像一位體貼而周到的主人，隨時預測並滿足客人的需求。</div>
+      <div class="quote-author">— Charles Eames</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">東京將舊高架路變身展覽聚落，示範都市閒置空間的美學活化法。</li>
+        <li class="flash-item">歐英八成企業AI治理跟不上技術腳步，科技風險已全面浮上檯面。</li>
+        <li class="flash-item">英國倡議團體用黃色特價標籤顛覆零售語彙，幽默突圍嚴肅母職困境。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/725885.html" target="_blank" rel="noopener">東京舊高架道路化身設計聚落：公共基礎設施退場後的美學重生</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">「DESIGNART TOKYO 2026」 旧東京高速道路「KK線」を舞台に約150組が集結</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/9d015ea7ef508c11e2c7df2740f24013.jpg" alt="「DESIGNART TOKYO 2026」 旧東京高速道路「KK線」を舞台に約150組が集結" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">都市更新不再只是拆除重建，而是讓功成身退的混凝土巨構轉生為文化容器。這次東京將即將改建的舊高速公路KK線直接變成150組創作者的實驗場，這件事之所以重要，是因為它打破了展覽非得關在白盒子美術館裡的慣性。當公共空間的物理機能消退，注入設計介入不僅能重新連結市民與都市記憶，更示範了一種低成本卻極具感染力的城市品牌重塑路徑。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Tokyo transforms its decommissioned KK expressway into an expansive open-air stage for DESIGNART TOKYO 2026, hosting over 150 creative units. This milestone project demonstrates how obsolete urban infrastructure can be revitalized into dynamic public cultural spaces, offering a compelling blueprint for community-driven place-making without resorting to wholesale demolition. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/726467.html" target="_blank" rel="noopener">落合陽一萬博場館落地橫濱：世博遺產如何轉化為常設沉浸體驗？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">横浜ランドマークタワーに落合陽一の「null²ⁿ」オープン。大阪・関西万博を継承し、6つの「間」で新たな体験を</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/ea8703843e447dd34dca7ce322c5b176.jpg" alt="横浜ランドマークタワーに落合陽一の「null²ⁿ」オープン。大阪・関西万博を継承し、6つの「間」で新たな体験を" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">世博展館往往面臨閉幕即拆除的資源浪費宿命，但落合陽一將大阪萬博的「null²」概念直接轉移至橫濱地標塔，打造成常設型數位劇場。這背後代表的趨勢是：一次性盛會的體驗設計，必須提前思考長效落地策略。透過六個不同的沉浸空間，它將數位與實體世界交融的哲思從短期話題淬煉為可持續營運的都市休閒地標，為大型展演IP的延續提供了極佳解法。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Yoichi Ochiai&#x27;s &#x27;null²ⁿ&#x27; pavilion has officially opened as a permanent theater in the Yokohama Landmark Tower, carrying forward the design philosophy of the Osaka-Kansai Expo. By reconfiguring experimental multimedia spaces for commercial permanence, the project shows how high-concept temporary architectural and digital assets can sustain long-term engagement. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/andre-britz-draws-landscapes-from-memory-in-a-book-held-together-with-an-elastic-band/" target="_blank" rel="noopener">用一條粉紅橡皮筋捆綁的記憶繪本：不完美留白激發的情感共鳴</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">André Britz draws dimly remembered landscapes, in a book held together with a pink elastic band</div>
+            <img class="item-image" src="https://media.creativeboom.com/1f860ca1-5eab-4e07-849b-5d4a27f615d8/conversions/cb8596680b1c5b9500565bf911ab718caac3a894-medium.webp" alt="André Britz draws dimly remembered landscapes, in a book held together with a pink elastic band" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">德國設計師 André Britz 刻意用未完工的裝訂感與模糊風景，去捕捉那些深藏腦海卻日漸褪色的私密角落。這作品妙就妙在那條看似隨興的粉紅橡皮筋——在當前講求高精細渲染與無暇印刷的時代，故意保留未完成與粗糙的手感，反而能給予讀者呼吸與投射自我記憶的留白空間。它提醒我們，最強烈的視覺共鳴往往來自於脆弱與不完整，而不是過度包裝的完美。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">German graphic designer André Britz creates a poignant artist book capturing hazy personal landscapes, bound together casually with a pink elastic band. The deliberately unfinished aesthetic challenges modern polished publishing, proving that embracing imperfection and tactile fragility invites deeper emotional projection from readers revisiting their own fading memories. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/how-two-simple-dots-gave-pictoplasma-a-face-after-20-years-of-neutral-design/" target="_blank" rel="noopener">兩個黑點就能賦予字體生命：極簡符號如何瓦解視覺疲乏</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How two simple dots gave Pictoplasma a fresh personality for 2026</div>
+            <img class="item-image" src="https://media.creativeboom.com/256cad58-790d-4ba1-a47e-9705b827ae07/conversions/921579662dd4026753716233b30cc5600e39f952-medium.webp" alt="How two simple dots gave Pictoplasma a fresh personality for 2026" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在視覺資訊過載的世界裡，越複雜的角色設計往往越容易讓人麻木。andstudio 為柏林經典角色設計節 Pictoplasma 打造全新識別，僅靠著在字體上加上兩顆小黑點，就瞬間喚醒大腦天生將萬物看成人臉的「空想性錯視」。這個案子給設計師最大的啟發在於：高明的品牌重塑不需要繁複的特效，懂得槓桿人類最本能的認知心理學，微小的符號調度就能創造爆發性的親和力。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Design agency andstudio revitalizes the Pictoplasma festival identity by cleverly positioning two simple dots within typographic forms to evoke instant facial expressions. By tapping into human pareidolia, the brand system bypasses overdesigned visuals, proving that psychological resonance and maximum personality can stem from the most disciplined minimalist interventions. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/pregnant-then-screwed-makes-clever-use-of-simple-design-to-highlight-a-vital-gender-issue/" target="_blank" rel="noopener">翻玩超市特價爆炸貼紙：用低俗商業視覺撕開性別退休金黑洞</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Pregnant Then Screwed subverts the conventions of retail design to highlight a vital gender issue</div>
+            <img class="item-image" src="https://media.creativeboom.com/4f6b3f3e-8b6b-44d1-919a-dad2414cf15a/conversions/63aa7a18d2e77a9f26844620fea2021c43feff02-medium.webp" alt="Pregnant Then Screwed subverts the conventions of retail design to highlight a vital gender issue" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">英國倡議團體 Pregnant Then Screwed 挑中了大家在特賣會最常看到的霓虹黃「爆炸貼紙」，用來諷刺因育兒被迫中斷職場的母親在退休金制度裡遭受的「大甩賣」對待。這種拿俗氣、吵雜的零售視覺來包裹嚴肅社會議題的手法極為聰明——它瞬間降解了沉重議題的閱讀門檻，用帶著幽默刺點的視覺反差，讓被忽視的結構性不公在街頭直接撞進大眾視野。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Charity campaign Pregnant Then Screwed cleverly subverts the tacky retail neon starburst visual language to expose the UK pension penalties faced by working mothers. By contrasting cheap bargain aesthetics with serious institutional inequity, the design cuts through traditional charity fatigue and forces public confrontation with structural gender pay gaps. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiOkFVX3lxTE9jMk9xOWFtVU9LTzY1UDJBMVpBcDRsT2wzOFhHOTNhQWEtNGVObkE4VWRYM0FFVmVoaXc?oc=5" target="_blank" rel="noopener">高雄從重工業轉型AI重鎮：地方治理如何靠產業換骨逆轉城市命運？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">關注高雄AI產業生態系發展陳其邁：高雄已躍升領先者加速推動傳統產業轉型與智慧城市治理持續擴大競爭優勢 - ENN台灣電報</div>
+            <div class="item-sentence lang-zh-only">傳統重工業聚落的轉型，常常卡在舊包袱與新技術的斷層中。高雄積極建構AI產業生態圈並推動智慧治理，代表地方政府已從過去單純招商引資的「房東模式」，進化為主動撮合傳產與新科技的「系統整合者」。這對區域治理的啟示在於，智慧城市不能只是掛滿感測器的面子工程，必須將AI技術深植到在地的製造與日常治理痛點中，才能真正形成不可替代的產業護城河。 <span class="src">— ENN台灣電報</span></div>
+            <div class="item-sentence-en lang-en-only">Kaohsiung accelerates its structural shift from a heavy-industry hub into an AI ecosystem leader, integrating smart governance with traditional manufacturing. This strategic pivot illustrates how modern municipal leadership must move beyond passive real estate subsidies toward active cross-sector orchestration, ensuring digital intelligence solves tangible urban and industrial challenges. <span class="src">— ENN台灣電報</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxPYllSV3VHTVpCVHNWS3ZoT1FEUThyZEVFdnBqbWRTTjcybkZ1Zlh0SnBGb3J3YkU1b3RUZlVldE5tY1N2RVUzZEFpQkFZOGU2MnZPYzc1aEtuSUFPYk1vX0swZFI0RDNTM240dGFtU2ttSklJQTVIQWVLcVV2aW1lX0ZtaWk3QmpiRTA5MlI2Wl9kN2p5d3dIUl9LM21RZUFvQmtNTVQwQU1OUXIxUUVUdEliTHdtb2RrMDBqQzlQTUZ5ZW9yUGtURXZROGtDdUlQMVZ1N2ZGSjVuYzNl?oc=5" target="_blank" rel="noopener">八成英企AI治理全面脫節：當技術狂飆撞上盲目推進的管理真空</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Eight in Ten UK Businesses Struggle to Keep Pace with AI Governance, IBM Study Finds - TradingView</div>
+            <div class="item-sentence lang-zh-only">IBM最新的研究揭露了一個殘酷事實：英國高達八成的企業在導入AI時，內部管控框架根本完全跟不上進度。這不再只是技術部門的代碼問題，而是企業最高管理層的系統性盲區。讀者必須意識到，搶著部署生成式工具如果沒有相應的透明度、偏見修正與風險評估機制，省下的營運成本遲早會被數據洩漏與公關危機成倍吞噬，AI落地的真正勝負在於制度防禦力。 <span class="src">— TradingView</span></div>
+            <div class="item-sentence-en lang-en-only">An IBM study reveals that eighty percent of UK businesses are struggling to maintain adequate AI governance alongside rapid technological adoption. The findings emphasize that technical acceleration without transparent oversight frameworks creates massive organizational liabilities, signaling that sustainable digital transformation requires governance readiness before tooling rollouts. <span class="src">— TradingView</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxPNGxXdkluWDVUdENPSlBpTkR4RXoxcmR1YXBJdld3d1RXMUxjZHBwaS1tSE5WbU1ESXRrSGM5WXc1MzFtaWdXa3dIRUp6dUp6NTBfQXlFRmszWThhb2ZsLWw1eTJRSlJJTlNsbmozOG9RVG45SGtLellteFlyeEgxZGZ1S2xVb3E0X21ETlF5NjlyaFF0MFNCbGx3b0xJOWFhZWE5QVNBMG82U0NyZEViTC1Jc3BIT2l3Snk4RW1vVFllLUlZ?oc=5" target="_blank" rel="noopener">歐洲企業AI資安事件頻傳：缺乏合規指引正釀成不可控的系統風險</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">IBM study finds AI governance lagging behind incidents at EMEA firms - StreetInsider</div>
+            <div class="item-sentence lang-zh-only">當歐洲與中東企業的AI事故發生率攀升，治理機制的滯後已經從潛在隱憂演變成實質災難。很多組織誤以為買了現成AI模型就等於完成數位升級，卻忽視了日常維運中的防護漏洞。這篇報告敲響的警鐘是：治理不是防礙創新的絆腳石，反而是讓AI能夠安全運轉的剎車系統。沒有透明清晰的內部規則，任何創新的產出都隨時可能引爆無法收拾的法律與信譽危機。 <span class="src">— StreetInsider</span></div>
+            <div class="item-sentence-en lang-en-only">A new IBM study underscores that AI governance across EMEA enterprises is dangerously lagging behind the rising frequency of operational incidents. As organizations rush deployment without comprehensive oversight protocols, they expose critical vulnerabilities, demonstrating that institutional resilience and proactive compliance must accompany algorithmic innovation. <span class="src">— StreetInsider</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQekxCaG5BbFZuMW5RdVlTM2RrWXJxLXl4NXFRX29FTzVHSGpKOTl1b1VvV1hCVlZEU3RSd3hBREd1ZDNSRUJIVEhGRVA5QUVKRXI3YVQyb1lqY3Q3Nm4xX1BONDloT2RmMk5weFU0ZE4wSEV1bGVJZzU0dERHY1VYYVlrU1FOR21IWVgxN3JBZ09MTFJybTM4ZVRJYm1Ha3kwSlN3?oc=5" target="_blank" rel="noopener">智慧城市AI標準化底定：從野蠻生長走向互通相容的治理轉折點</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">スマートシティにおける人工知能の活用に関する標準規格を最終決定する。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">智慧城市推動多年，最怕的就是各部門各買各的系統、彼此無法對話的「數位孤島」。這份針對智慧城市AI標準規格的確立，象徵公共科技治理正式告別盲目拼裝的實驗期。標準化意味著採購有章可循、跨部門數據得以無縫流動，同時也替未來公私協作劃出了公平透明的技術底線。想要做大智慧治理，統一的架構語言永遠比單點的花俏技術更關鍵。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">The finalization of standardized AI guidelines for smart cities marks an essential transition from fragmented municipal pilot projects to scalable, interoperable urban systems. Establishing unified technical baselines ensures seamless data exchange, prevents vendor lock-in, and provides civil administrators with a reliable framework for accountable public-sector automation. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/security/mississippi-senators-consider-expert-advice-on-cybersecurity" target="_blank" rel="noopener">密西西比聚焦全州資安防禦：打破官僚本位主義的區域防衛新戰略</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Mississippi Senators Consider Expert Advice on Cybersecurity</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/2d97aad/2147483647/strip/true/crop/840x408+0+100/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F7f%2F55%2F8b9b55c94d46a0a2962a54f1128c%2Fmississippi-cyber-meeting.jpg" alt="Mississippi Senators Consider Expert Advice on Cybersecurity" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">地方政府的資安防禦最常死於「各自為政」：州議會、學區、地方警局各自拉防線，往往讓駭客從最脆弱的環節輕易攻破。密西西比州參議員諮詢專家推動「全州一體化」資安戰略，核心就在於打破行政藩籬，將資源集中拉起共同防線。這項舉措點出當代公共治理的關鍵思維：數位時代的防禦縱深不能再畫地自限，整體聯防與資產透明化才是抵禦現代威脅的唯一解方。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Mississippi state senators consult cybersecurity experts to craft an integrated, whole-of-state defense strategy against mounting digital infrastructure threats. By moving away from departmental silos, this coordinated legislative initiative aims to establish unified defensive baselines across state agencies and municipalities, addressing vulnerabilities through shared resilience. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-15 08:03:27 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
