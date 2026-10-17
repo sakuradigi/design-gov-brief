@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>當邊緣算力走進泥濘、傳統農業翻轉國際：科技治理與真實人性的前線突圍 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-17</div>
+    <div class="headline">當邊緣算力走進泥濘、傳統農業翻轉國際：科技治理與真實人性的前線突圍</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">We shape our tools and thereafter our tools shape us.</div>
+      <div class="quote-text-zh lang-zh-only">我們先塑造了工具，隨後工具便塑造了我們。</div>
+      <div class="quote-author">— John Culkin (常常被誤植為 Marshall McLuhan 的媒介理論家)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">AI不再坐冷氣房，硬體耐受度與組織文化決定落地勝負</li>
+        <li class="flash-item">從雲林智慧農業到檀香山公民自決，在地治理正在重塑數位民主</li>
+        <li class="flash-item">高齡跑者與剝除感官的沉浸藝術，指引體驗設計回歸血肉本質</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/726784.html" target="_blank" rel="noopener">AI 走出冷氣辦公室，強固型硬體如何把邊緣算力推進泥濘工地？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">デル、過酷な現場向けの「Dell Pro Rugged」2製品発売。耐衝撃・防塵防水性能とAI対応を両立した堅牢型ノートPC</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/dell-pro-pr713260t-laptop-c-30030lf090-bk.jpg" alt="デル、過酷な現場向けの「Dell Pro Rugged」2製品発売。耐衝撃・防塵防水性能とAI対応を両立した堅牢型ノートPC" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">過去我們談人工智慧，總想像在明亮乾淨的辦公室跑雲端模型，但真正的生產力痛點往往在狂風暴雨的離岸風場或高溫粉塵的工地現場。戴爾這波強固型筆電的升級，象徵邊緣 AI 算力必須徹底與極端耐受度妥協。這給設計師與科技業的啟發很簡單：下一代產品的勝負，不在於跑分多漂亮，而是當環境爛到極致時，你的智慧系統是否依然穩如泰山。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Dell&#x27;s latest rugged notebooks bring AI computing directly to extreme outdoor job sites. This launch highlights an emerging shift where edge AI capabilities must integrate seamlessly with heavy-duty physical resilience, proving that real innovation thrives outside comfortable air-conditioned server rooms and directly inside demanding, real-world operational environments. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/10/90450/" target="_blank" rel="noopener">球團品牌不再只是賣周邊：英超 Brighton 攜手日本設計師的文化轉向</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Brighton &amp; Hove Albion FC公式ライセンス商品化へ、「DESIGNERS COLLECTION – EDITION #001」が作品募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/Brighton_2026_27204558_Bg1xTpWu-1.jpg" alt="Brighton &amp; Hove Albion FC公式ライセンス商品化へ、「DESIGNERS COLLECTION – EDITION #001」が作品募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">運動授權商品往往擺脫不了制式大隊旗或俗氣隊徽印花的宿命，但英超 Brighton 找日本獨立設計師開展新系列，本質上是一場「文化在地化」的叛逆實驗。三笘薰的影響力只是敲門磚，球團真正想做的是把足球轉化為街頭生活風格。這提醒品牌經營者：與其硬銷死忠信仰，不如借用異質文化的設計語言，把運動週邊重塑成連非球迷都渴望穿出門的美學物件。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Brighton &amp; Hove Albion FC&#x27;s collaboration with Japanese designers moves beyond conventional sports merchandise, transforming club identity into sophisticated lifestyle aesthetics. Driven by Kaoru Mitoma&#x27;s local cultural resonance, this creative initiative illustrates how modern sports franchises can elevate brand collateral through high-concept design, successfully attracting audiences far beyond traditional football fandom. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://smashingmagazine.com/2026/10/is-your-organization-messing-up-ai-adoption/" target="_blank" rel="noopener">組織導入 AI 又卡關？其實你踩的坑跟二十年前數位轉型一模一樣</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Is Your Organization Messing Up AI Adoption?</div>
+            <img class="item-image" src="https://files.smashing.media/articles/is-your-organization-messing-up-ai-adoption/is-your-organization-messing-up-ai-adoption.jpg" alt="Is Your Organization Messing Up AI Adoption?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">很多企業以為買了 AI 授權就能自動起飛，結果只是在混亂的舊流程上貼金箔。這篇文章一語道破殘酷現實：技術從來不是門檻，人性抗拒與破碎的組織架構才是。AI 導入本質上是工作權力與溝通方式的再分配。如果你沒有先搞清楚團隊的工作心理、重塑協作流程，再強大的生成工具最後也只會淪為同仁拿來寫應酬客套信的高級打字機。 <span class="src">— Smashing Magazine</span></div>
+            <div class="item-sentence-en lang-en-only">Paul Boag argues that contemporary AI integration stumbles over the exact same cultural hurdles faced by past digital transformations. The core challenge is not acquiring advanced technology, but restructuring internal workflows and addressing human resistance. Sustainable AI adoption demands redesigning organizational habits before expecting productivity tools to deliver meaningful, long-term operational impact. <span class="src">— Smashing Magazine</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/britains-oldest-running-team-has-a-combined-age-of-321-and-rankin-shot-their-portraits/" target="_blank" rel="noopener">平均年齡八十歲的跑團大片，如何狠狠撕掉運動品牌對青春的迷思？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Britain&#x27;s oldest running team has a combined age of 321, and Rankin shot their portraits</div>
+            <img class="item-image" src="https://media.creativeboom.com/17f779d4-7c29-4495-954f-3ce9b4d2d988/conversions/a732319876c6de28e0c259151b5d2e81c8a14415-medium.webp" alt="Britain&#x27;s oldest running team has a combined age of 321, and Rankin shot their portraits" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">英國調查顯示多數人在 39 歲就掛起跑鞋，但這組合計 321 歲的高齡跑團，在鏡頭下展現出的肌理與鬥志卻徹底震撼了年輕人。這場行銷戰役完全顛覆了「運動等於年輕肉體」的刻板視覺語彙。它告訴內容創作者：最動人的美學不在於平滑無瑕，而在於歲月洗練後的生命韌性。當品牌敢於擁抱真實老齡，反而能激發跨世代對生活渴望的深層共鳴。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Photographed by Rankin, a new campaign highlights Britain&#x27;s oldest running team, whose members range from 75 to 85, challenging the industry&#x27;s obsession with youth culture. By celebrating raw physical endurance and defying demographic assumptions, the project provides a compelling visual narrative that inspires audiences of all ages to rethink longevity and athletic vitality. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/this-immersive-art-event-strips-you-of-your-clothes-your-phone-and-your-voice-for-three-and-a-half-hours/" target="_blank" rel="noopener">收手機、脫光衣服、禁語：當代感官超載下的「受虐式」極致藝術反思</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Is this the most intense art experience in the world?</div>
+            <img class="item-image" src="https://media.creativeboom.com/be471408-3679-4620-bc8e-7d1a4dd2cc29/conversions/69c9bca72343a930f8e9e8e711c933e1bc1deaef-medium.webp" alt="Is this the most intense art experience in the world?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這場靈感取自佛教「回峰行」的沉浸體驗，逼迫參與者脫光衣服、交出手機並閉嘴三個半小時。在演算法餵食成癮、注意力零碎的時代，這種近乎苦行的設計並非獵奇，而是一場對抗感官麻痺的激進排毒。它給體驗設計師的終極警示是：當外在刺激過剩已成日常，未來最奢華、最震撼的沉浸體驗，反而是替受眾創造「徹底的匱乏」與「赤裸的自我面對」。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">The immersive art experience Chapter Five/KAIHOGYO strips attendees of clothing, smartphones, and speech for three and a half hours, evoking ancient ascetism to trigger altered states of consciousness. It marks a radical design trend responding to chronic sensory overload, demonstrating that profound modern engagement often requires enforced deprivation rather than digital stimulation. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMitANBVV95cUxOMXB1MXZpazk0cjBkdVBnZ2wyclhSTlFiYUpWQ3ZwdjVYUUwzck94TWE3OGZkdVJGUmllUzhsU2NMQTRwRGNwWFByYldhcU9MUVZnaXpIcXJpX09xSXZjcVJUWnJ6NElINkQyWnZQYlQ3OFZxcGNoS3FGVnA2UFFTLWkxa09YSjRDV1B0d0x3d05hM1J6ejhwcVQ2TWtOMjFRUzRucF84S0dBMXRCLUZ1QUpKWTk1Rk9waTAtV0tqM0hpcFl4VGJPWE0ydWZta1Atd3lpbF8yMV9QMVJjeDdRVlZ4cDZwVTlvcHVXV1h2TXFuVWxfXzRMSkFXX2J0SHlxalZaVlhBV1hOZzA1ZWtwcWpHTHViQ21XeFEwT183SHA3bEJ1eGtMY1J0UjNITnltNzhsWUxCWGNsQjg1V0VpODd5MDJKZmhTTG4zS2FJZ1g5d0hvRzJxS19hdXJXd3kwSERQazI0Ukx0ckNfOHVVcS00Q0JyOHZ0SGFtV21WbUdHRHZjN3JGM1BteEQ4NF91a1JEdVdIdE9WcHBabTBsbVNYbVhZbVRYdGo3WUowNnhkQldC?oc=5" target="_blank" rel="noopener">誰說鄉村注定落後？雲林如何靠智慧農業與數據治理奪下全球七大智慧城市</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">雲林入選ICF全球七大智慧城市 張麗善赴美分享農業轉型智慧治理成果 - Yahoo新聞</div>
+            <div class="item-sentence lang-zh-only">雲林打敗眾多都會區入選全球 ICF 七大智慧城市，給了地方創生極佳的示範。它證明了「智慧治理」不是一線都會區專屬的高冷玩具，真正的治理創新是蹲在田埂間，利用物聯網和精準數據幫農民解決缺工、產銷失衡與極端氣候問題。這對公共政策設計者而言是記響鐘：別再盲目複製大都市的儀表板，貼近在地核心產業的痛點轉型，才是最硬派的智慧升級。 <span class="src">— Yahoo新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Yunlin County&#x27;s recognition among the ICF Top7 Intelligent Communities illustrates how rural agricultural regions can outpace metropolises through pragmatic smart governance. By applying Internet of Things (IoT) sensors and data-driven logistics to frontline farming challenges, Yunlin offers an inspiring paradigm for municipal digital transformation rooted deeply in local economic realities. <span class="src">— Yahoo新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPamtFUUlTdmVhMVBuVFgyUTJpNUFycUQ2LWpJUXZsUnc3b2Z2Qlc3bnNtU25LTjl3ZTZlX3JNV2FLbXJzY2o0QU5NaXUwZHdtRG81TkRpRVEyMlkzMUFJekFFekRkLUNldWh2b2EyelJad0hwVzhlSXFmbUxFdDVQem5rMFdWdENpLTlJczNmeldlejFDNlZOMURjWEh5MFBXMXlQX3FXNlJHVXdPbVJpV1ZJWGZOaHNSbUkyVGFPYWRzYnZReFVjdy1tWQ?oc=5" target="_blank" rel="noopener">演算法攸關生死！健保與醫療保險體系的 AI 治理框架為何刻不容緩？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Proposed AI Governance Framework: Risk-Mitigation Recommendations for Health Plans - Crowell &amp; Moring LLP</div>
+            <div class="item-sentence lang-zh-only">當醫療保險機構開始用 AI 審核理賠、評估投保風險時，黑箱模型造成的偏見可能直接剝奪病患的就醫權益。這份針對健康保險提出的治理框架，核心不在於限制技術，而是為自動化決策建立防護網。這對任何涉足敏感領域的設計師都是提醒：當演算法介入社會資源分配時，透明度與人工介入審查不是繁瑣的公文，而是保護弱勢不被程式碼無聲淘汰的人道底線。 <span class="src">— Crowell &amp; Moring LLP</span></div>
+            <div class="item-sentence-en lang-en-only">Crowell &amp; Moring&#x27;s proposed AI governance framework addresses the severe ethical risks of automated decision-making within health insurance systems. As machine-learning algorithms increasingly evaluate patient coverage and claims, robust risk-mitigation measures become mandatory to protect consumers against systemic algorithmic bias and ensure equitable access to critical medical services across the board. <span class="src">— Crowell &amp; Moring LLP</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPamtFUUlTdmVhMVBuVFgyUTJpNUFycUQ2LWpJUXZsUnc3b2Z2Qlc3bnNtU25LTjl3ZTZlX3JNV2FLbXJzY2o0QU5NaXUwZHdtRG81TkRpRVEyMlkzMUFJekFFekRkLUNldWh2b2EyelJad0hwVzhlSXFmbUxFdDVQem5rMFdWdENpLTlJczNmeldlejFDNlZOMURjWEh5MFBXMXlQX3FXNlJHVXdPbVJpV1ZJWGZOaHNSbUkyVGFPYWRzYnZReFVjdy1tWQ?oc=5" target="_blank" rel="noopener">醫療算力擴張後的責任防線：保險業 AI 風險管理如何重塑數位信任？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Proposed AI Governance Framework: Risk-Mitigation Recommendations for Health Plans - Crowell &amp; Moring LLP</div>
+            <div class="item-sentence lang-zh-only">醫療保險業引進 AI，本質上是一把雙面刃：它能大幅縮短核保流程，卻也可能因訓練偏差導致系統性拒保。這份建議書揭示了企業從「衝刺效益」邁入「責任防守」的轉折期。給所有科技創新者的教訓非常直白：如果你的智慧系統無法在法規與病患信任上給出清晰的決策軌跡，技術跑得再快，最後都會被隨之而來的信任危機與集體訴訟徹底吞噬。 <span class="src">— Crowell &amp; Moring LLP</span></div>
+            <div class="item-sentence-en lang-en-only">Navigating algorithmic liability in health plans requires moving beyond operational efficiency to prioritize transparency and risk management. This compliance guidance highlights how healthcare entities must integrate continuous model auditing into their digital stacks, ensuring that automated administrative speed never undermines patient safety, fairness, or hard-won institutional trust. <span class="src">— Crowell &amp; Moring LLP</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiSkFVX3lxTE15Y1ZxX0ZrN3U5MlczdmhaQ1lnTUxIQ2tUbEFycVQzemV4ZFJXSGpFWGgzZ1hNcFdzM0M1OGRTTWJPQmw0dFB4U1Rn?oc=5" target="_blank" rel="noopener">合規即服務崛起：2026 AI 治理平台排行榜背後的百億安全賽道</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AIガバナンスプラットフォームメーカー上位企業2026 - pando.life</div>
+            <div class="item-sentence lang-zh-only">過去企業把 AI 合規視為法務部門的被動麻煩，如今「AI 治理平台」卻成了兵家必爭的獨立軟體市場。這份廠商盤點反映出產業生態的巨變：當各國監管法規如暴雨般降臨，能即時監控模型漂移、偏見與版權風險的自動化工具成了剛需。這暗示著新一輪軟體創業機會——未來的超級獨角獸，往往不是產出內容的模型製造者，而是負責給龐大 AI 踩煞車的守門人。 <span class="src">— pando.life</span></div>
+            <div class="item-sentence-en lang-en-only">The 2026 market ranking for AI governance platforms highlights the rapid rise of compliance-as-a-service solutions. As global tech regulations intensify, specialized platforms that proactively monitor model drift, algorithmic bias, and security vulnerabilities are transforming from optional enterprise add-ons into critical infrastructure necessary for operational viability. <span class="src">— pando.life</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/analytics/honolulu-ballot-measure-puts-data-and-innovation-to-voters" target="_blank" rel="noopener">公投決定設不設「數位長」？檀香山把數據創新交給公民自決的前衛實驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Honolulu Ballot Measure Puts Data and Innovation to Voters</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/d1b0558/2147483647/strip/true/crop/4000x1944+0+322/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F3d%2F86%2F6970a8514b59a58e1bf53261ffac%2Fadobestock-458831229.jpeg" alt="Honolulu Ballot Measure Puts Data and Innovation to Voters" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">檀香山即將在選票上讓選民決定是否常設「數據與創新辦公室」及數位長一職。這個舉動極具象徵意義：政府把數位治理的高度從官僚內部的行政指令，升格為經過民意授權的公共契約。這提醒數位治理的推動者，公共數據的開放與創新若想長治久安，不能只靠幾位熱血首長的個人意志，唯有將數位知情權扎根於民主機制，技術創新才不會淪為隨政權輪替的短期煙火。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Honolulu&#x27;s upcoming ballot measure asking voters whether to establish a dedicated Office of Data and Innovation reflects a pioneering approach to digital governance. Codifying the Chief Data Officer&#x27;s role into the city charter transforms municipal digital modernization from a discretionary administrative project into a transparent, legally mandated civic priority. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-17 08:03:04 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
