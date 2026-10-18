@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從工具巨頭的版稅海盜危機，到醫療自主代理與在地智慧治理的落地轉型 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-18</div>
+    <div class="headline">從工具巨頭的版稅海盜危機，到醫療自主代理與在地智慧治理的落地轉型</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">We do not merely design objects, we design the conditions for our own future behaviour.</div>
+      <div class="quote-text-zh lang-zh-only">我們設計的不僅是物品本身，更是我們未來行為發生的土壤與條件。</div>
+      <div class="quote-author">— Tony Fry (當代設計哲學家與轉型設計先驅)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">開源 AI 複製軟體生態引爆創意圈版權變革，設計訂閱經濟正面臨類似當年音樂 Napster 的顛覆風暴</li>
+        <li class="flash-item">醫療自主代理 AI 帶來全新臨床治理挑戰，美國醫學會率先界定權責以防技術在診間失控脫軌</li>
+        <li class="flash-item">智慧城市競賽不再拚硬體堆疊，雲林以農業轉型入選全球前七大證明在地韌性才是核心競爭力</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/719300.html" target="_blank" rel="noopener">重看吉田璋也：讓傳統民藝活進現代生活的設計生產力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">パナソニック汐留美術館で「吉田璋也のデザイン」展開催。“民藝のプロデューサー”が構想した新作民藝運動をたどる</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/08/bb62c0da4eab56294c50cf2d35863811.jpg" alt="パナソニック汐留美術館で「吉田璋也のデザイン」展開催。“民藝のプロデューサー”が構想した新作民藝運動をたどる" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">很多時候我們以為設計只是外觀造型，但早在半個世紀前，吉田璋也就在做今天所謂的「社會設計」與「文化創生」。這場展覽提醒我們，他並非單純保存傳統，而是以製作人的眼界，串連工藝職人與當代生活需求，把日常器物變成滋養常民美感的載體。在今天追逐演算法與速成消費的當下，這種有意識地透過設計活化在地產業的精神，才是品牌真正能長青的底氣。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The retrospective of Shoya Yoshida at Panasonic Shiodome Museum revisits the pioneer of Japan&#x27;s New Folk Craft Movement. Rather than merely preserving relics, Yoshida acted as a visionary design producer, connecting traditional craftsmanship to everyday functional modern living. His sustainable, community-driven philosophy provides contemporary designers with essential lessons on social design and resilient cultural heritage preservation. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/10/90551/" target="_blank" rel="noopener">世紀中葉現代風不退燒，老物件在快節奏時代為何更迷人</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ミッドセンチュリー期の名作デザインが集う「TOKYO MODERNISM SHOW 2026」、過去最大規模で開催</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/unnamed.jpg" alt="ミッドセンチュリー期の名作デザインが集う「TOKYO MODERNISM SHOW 2026」、過去最大規模で開催" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Mid-Century Modern 歷經數十年依舊統治著全球的審美話題，東京這場歷來最大規模的展覽揭示了一個集體心理：在數位虛擬與速食消費氾濫的今天，人們無比渴望能經得起時間推敲的「真實感」。那些兼具人體工學、工業量產可行性與溫潤木質細節的經典家具，不只是拍照打卡的背景，更是一種對「永續耐用」生活的無聲宣言。經典從不過時，過時的只有跟風炒作的平庸設計。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">TOKYO MODERNISM SHOW 2026 brings iconic mid-century modern designs to MUJI HOTEL GINZA, representing the enduring cultural resonance of post-war design. In an era dominated by fleeting digital interfaces and disposable products, the tactile authenticity, ergonomic longevity, and functional elegance of vintage craftsmanship offer contemporary urbanites a grounded anchor for sustainable and meaningful everyday living. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/ai-just-cloned-adobes-apps-for-free-is-this-design-softwares-napster-moment/" target="_blank" rel="noopener">AI 免費複製專業工具鏈，設計軟體壟斷迎來震撼解構</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI just cloned Adobe&#x27;s apps for free. Is this design software&#x27;s Napster moment?</div>
+            <img class="item-image" src="https://media.creativeboom.com/ea9102c9-4b4c-48bc-86eb-55b602eb4998/conversions/d3512325f6d35bc3e8f339b9f1c502523afe0d4f-medium.webp" alt="AI just cloned Adobe&#x27;s apps for free. Is this design software&#x27;s Napster moment?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這篇文章點破了設計圈不敢大聲說的秘密：當開源 AI 能在幾天內模仿出巨頭軟體的介面與核心功能時，高昂的訂閱制神話就正式裂解了。這就像當年 Napster 顛覆唱片業一樣，設計工具正從少數寡佔企業的手中被「民主化」。對創作者來說，工具不再是身分象徵或昂貴門檻，真正的決勝點回歸到個人的美學判斷力、概念企劃與敘事能力，軟體工程與介面設計的定義即將徹底翻盤。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">AI-driven autonomous code generation has enabled the rapid cloning of complex creative suites, echoing the disruptive Napster moment for the software industry. As high-priced proprietary subscription models face democratization through open tools, software ceases to be a competitive moat. This fundamental shift compels designers to transcend tactical technical skills and anchor their real value in conceptual depth, strategic taste, and creative vision. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/kanaisasaki-is-formed-from-in-house-designers-who-have-made-a-career-out-of-staying-curious/" target="_blank" rel="noopener">大企業裡的自由靈魂：設計師雙軌實踐破除創作枯竭</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Kanaisasaki is formed from in-house designers who have made a career out of staying curious</div>
+            <img class="item-image" src="https://media.creativeboom.com/7f9eccf0-0eb8-4bdc-b7a7-2812fe1e41b8/conversions/e1febaf89bd7f104bcde0f990f0be2001aeb33f1-medium.webp" alt="Kanaisasaki is formed from in-house designers who have made a career out of staying curious" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">很多人常在「體制內穩定薪資」與「獨立創作自由」之間痛苦二選一，但 Kanaisasaki 這對搭檔給了極具啟發的解法。他們在大型文具企業深耕十餘年，同時維持獨立工作室的先鋒實驗，讓商業常識與前衛靈感互為養分。這告訴所有創意工作者，保持好奇心不需要衝動辭職，學會利用組織資源磨練尺度感，再用個人專案釋放叛逆，才是長跑型創作者最健康的生存姿態。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Tokyo-based creative duo Kanaisasaki illustrates how in-house corporate stability and experimental studio freedom can successfully coexist. Working within a renowned stationery giant while running an independent practice, they cross-pollinate institutional rigor with unrestrained curiosity. Their dynamic offers creative professionals an inspiring blueprint for balancing structural resources with personal artistic integrity without succumbing to burnout or ideological compromise. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/the-experience-of-seeing-the-work-is-pretty-particular-lily-bunney-on-her-detailed-paintings-filled-with-grids-and-pixels/" target="_blank" rel="noopener">當像素回到畫布：用幾何網格找回數位時代的專注凝視</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">&#x27;The experience of seeing the work is pretty particular&#x27;: Lily Bunney on her detailed paintings filled with grids and pixels</div>
+            <img class="item-image" src="https://media.creativeboom.com/abf4a4f7-0738-48ca-9df1-88e3522a66e2/conversions/82b47fc14601ab197ce07d8fdabf11515c71dd49-medium.webp" alt="&#x27;The experience of seeing the work is pretty particular&#x27;: Lily Bunney on her detailed paintings filled with grids and pixels" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">英國藝術家 Lily Bunney 的作品遠看像一張模糊的低解析度數位照片，近看卻是耗費數百小時手工繪製的微型網格。這種將數位世界的「像素」還原成「顏料顆粒」的創作方式，狠狠敲了現代人的腦袋一下：我們每天滑動數以萬計的數位影像，卻早已失去了耐心觀看的感知能力。她用極度繁複的手工反抗演算法的輕浮，逼著觀眾停下腳步，重新體會時間在物件上沉澱的厚度。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">British artist Lily Bunney translates the cold digital logic of pixels into labor-intensive, hand-painted tactile grids. While resembling digital artifacts from afar, her work demands intimate, patient observation in physical space. Bunney’s meticulous methodology directly challenges contemporary visual hyper-consumption, compelling audiences to decelerate, reclaim their fragmented attention spans, and rediscover emotional depth through deliberate, mathematically inspired slow art. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi2wJBVV95cUxQYTRFdmNYYU0zelkxX2d3U283aVpGMUc0RHhmbVZudE4tZF9SRzcyYVg4UjhpZ1dXTHAzMlJXNTVWcDNGMWI0Vms4RTdxY0xvX0EyNlZzc1pqWlotdmR2RlZEVGRfa0FMLTVpWU9jN1E2cDdUWkhXU25fRndzclk0aTNkUjJvMjV5VzB5S1M0QThnbTNzbDZsZ2dycUk1OGNrbjd6RUxuQXYtb0xhay1EeGNpaU1aLTFUckNfVkVGWDlQMU83d0tLSC1PWU5sclotQ095VjJaUFVsaUVKeThjdWY4cVY5ZHJZREtsT0lqTDQtMVFiLWxTa2wzOWJpYThsUUV3RDBqWkdkY2VneEZtbUtTUmZEZjRxWGh4NUR5Qk1pRUF0VHI4b0ZnT0dkbUsxOHZlZEhVaEZmOEhiS080QVRFVVVEaE5FbU5SNUMteVZKRXNjSVRUdzNXMA?oc=5" target="_blank" rel="noopener">智慧城市不是都會專利：雲林翻轉農業大縣的韌性啟示</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">雲林再獲2026ICF全球7大智慧城市 張麗善赴美哥倫布領獎 - Yahoo新聞</div>
+            <div class="item-sentence lang-zh-only">雲林再次擠進 ICF 全球前七大智慧城市，這件事最重要的意義在於打破了「智慧城市等於一線都會科技炫技」的偏見。真正的數位治理，從來不是在富裕城市安裝滿街酷炫的電子看板，而是如何在資源稀缺的農業縣，運用低成本感知設備與數據治理，解決農漁業缺工、極端氣候適應與高齡長照問題。用科技解決在地最痛的痛點，才是公共治理最扎實的溫度。 <span class="src">— Yahoo新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Yunlin’s repeated inclusion in the ICF Top 7 Intelligent Communities proves that impactful digital governance is not the exclusive domain of capital-rich metropolises. Instead of pursuing superficial technology showcases, Yunlin leverages pragmatic digital solutions to address rural realities—such as climate-resilient agriculture, demographic aging, and regional logistics. The achievement provides an actionable model for resource-constrained regions globally. <span class="src">— Yahoo新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPenZTOTUtQ1NGUzRJeVhZc3NIR0ZsdlZBWFk4UUpBQ3lUX3VJc2I5T0drd1dkbHRIVW5VTTRrc2ptOGd3NFhlSVdQYzF1LUs3QlAyNC1ZX2VYRnRtUlVubmtrQlQyVXdaN3QzM21YN0RpVDh6ZUUxVW1zVElkUFpSOTZOcWZNTWtzYkkzT2I0REtScHhJaE1CMmQyTE02d0x2MTRNbzljSWNhb3ktalE?oc=5" target="_blank" rel="noopener">中東 AI 狂飆背後的隱憂：技術狂歡若缺治理準繩將成泡沫</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">IDC report shows glaring AI governance gap across the UAE - Arabian Business</div>
+            <div class="item-sentence lang-zh-only">阿聯酋近年在算力與模型投資上傲視全球，但這份 IDC 報告卻敲響了警鐘：當大家都在爭相採購晶片、建構龐大資料中心時，內部數據治理規範與問責機制卻大面積脫節。這對所有急於把 AI 引進日常業務的組織都是當頭棒喝。光有運算力不代表競爭力，如果沒有清查好資料偏差、隱私邊界與輸出風險，跑得越快的演算法，最終只會以更快的速度釀成無法收拾的信任危機。 <span class="src">— Arabian Business</span></div>
+            <div class="item-sentence-en lang-en-only">An IDC report highlights a pronounced AI governance deficit across the UAE, sharply contrasting its aggressive infrastructure spending with missing accountability mechanisms. This divergence underscores a vital lesson for public and private organizations alike: technological capacity without robust governance protocols, algorithmic fairness, and data privacy is precarious. Long-term innovation velocity ultimately relies on institutional integrity, ethical guardrails, and sustainable user trust. <span class="src">— Arabian Business</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWHpsNFBWMDdsUVpza0hwN3BMeUZnSEhhdkNIWWNNS01KUWg2ZFZpLU5KSktYUFo2alVPQTJRQlV6eEZqdWo4cU50R2hXc19hb29pU1c3ZzJSVkl4dTY0Nk5yc3ZtUDRRV09NN1lsUmRmSmJrZTRxTXoyTU1fZGF3bEZ0MFlNQUVCTWQ3Wm9SUWpoNjdjSTRMTnBVQkkydTI5T2lJUG9BTHlSNzRnOGloTncyWXowOC1CcFJ0cDFTY0NCdw?oc=5" target="_blank" rel="noopener">當 AI 開始自主決策：醫界架起防護網釐清人機新責任</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">American Medical Association rolls out governance framework for agentic AI solutions - Fierce Healthcare</div>
+            <div class="item-sentence lang-zh-only">過去的 AI 只負責給診斷建議，但「Agentic AI（自主代理）」卻能自主規劃治療流程甚至串接用藥系統，這直接挑戰了傳統醫療責任的底線。美國醫學會此時出台治理框架，關鍵不在於限制創新，而是為即將到來的「代理人時代」畫出紅線：演算法可以自主運作，但臨床裁量與對病患生命的道德承諾絕不能外包。這項標準將成為各行各業面對高自主 AI 時的關鍵治理參照。 <span class="src">— Fierce Healthcare</span></div>
+            <div class="item-sentence-en lang-en-only">The American Medical Association&#x27;s new governance framework for agentic AI marks a pivotal shift toward overseeing autonomous clinical decision-makers. Unlike passive diagnostic assistants, agentic models take proactive operational steps, demanding unambiguous human-in-the-loop oversight and clear liability boundaries. The framework offers a critical template for ethical deployment across high-stakes domains, asserting that moral responsibility cannot be delegated to black-box systems. <span class="src">— Fierce Healthcare</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNVHZNd3BVS3ZaSkRTV1NrM2JOZjV6NFFhMDZSVlJkZnliMUNPYmI5c1hKRGEyUDJEWGtWZm5HS2JrVDgxdnFfVnNWblExc0NqakpaZGlDLXhMMXIxWlFVaFlGMnM3QnJUeDMtTVVYdld5YVNXZjBxeW9UNC03Ym5SWlRyMA?oc=5" target="_blank" rel="noopener">數位治理的最後一哩路：峴港推廣單一入口市民服務的啟示</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ダナン・スマートシティ・アプリケーションのインストールと利用を促進する。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">越南峴港大力推廣單一智慧城市 App 的安裝與使用，背後反映的是新興經濟體推動政府數位化時的關鍵門檻：蓋系統容易，改變民眾的使用習慣難。一個好的市民 App 不該是各局處政績的雜亂拼盤，而是要能像消費型軟體那樣流暢好用，解決繳費、報修與福利申請等日常瑣事。政府治理的數位化成熟度，最終不是看後台多先進，而是看一般平民百姓願不願意留在手機首頁天天使用。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Da Nang&#x27;s campaign to promote its unified smart city application underscores that the true bottleneck of municipal digital transformation is adoption, not engineering. Building intuitive, citizen-centric service portals that seamlessly resolve everyday civic administrative burdens is essential. Emerging cities demonstrate that sustainable public-sector innovation relies fundamentally on service accessibility, human-centered UI design, and continuous public engagement. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/security/embracing-whole-of-state-and-growing-talent-from-within" target="_blank" rel="noopener">打破各自為政的黑洞：全州一體化防禦如何從內部培育防護人才</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Embracing Whole-of-State and Growing Talent From Within</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/efd1528/2147483647/strip/true/crop/4500x2188+0+0/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F77%2F8c%2Fc1a194b5408b9b9bfee13969773c%2Fbryce-bailey-2026-108.jpg" alt="Embracing Whole-of-State and Growing Talent From Within" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">內布拉斯加州資安長推動的「Whole-of-State（全州一體化）」模式，點出了當前公共治理最需要的系統思維：在駭客眼裡，地方基層水電局或小學網站與首府機關根本沒有分別，任何小裂縫都能攻破整個防線。透過建立實習機制從校園內部育才，並跨層級共享防禦資源，他們示範了治理現代化不能靠高價買外包軟體交差，而是要像生態系一樣，把在地人才與各級公部門編織成防護網。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Nebraska&#x27;s &#x27;Whole-of-State&#x27; cybersecurity strategy, paired with in-house internship development, highlights the transition from fragmented procurement to systemic institutional resilience. Recognizing that fragmented local jurisdictions often represent the weakest defensive link, the state creates an interconnected talent pipeline and synchronized infrastructure. This approach offers public administrators a compelling lesson in capacity building, showing resilience stems from people and unified coordination, not just software licenses. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-18 08:03:35 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
