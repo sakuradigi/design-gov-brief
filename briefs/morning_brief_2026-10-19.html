@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從符號留白到演算法邊界：視覺回歸純粹感知，公共治理加速重構信任機制 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-19</div>
+    <div class="headline">從符號留白到演算法邊界：視覺回歸純粹感知，公共治理加速重構信任機制</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technologies are not merely aids to human activity, but also powerful forces acting to reshape that activity and its meaning.</div>
+      <div class="quote-text-zh lang-zh-only">科技不僅僅是人類活動的輔助工具，它本身就是重塑這些活動及其深層意涵的強大力量。</div>
+      <div class="quote-author">— Langdon Winner</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">留白與未完成感，正是抗衡機器生成焦慮的視覺解方。</li>
+        <li class="flash-item">AI 應用跨越狂熱期，國際標準與合規認證成落地剛需。</li>
+        <li class="flash-item">挪用街頭特價貼紙談性別倡議，展現公共溝通的穿透力。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/10/90382/" target="_blank" rel="noopener">實體奢華體驗逆襲：老牌珠寶陳列設計揭示開箱儀式感的新商機</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】ジュエリーのパッケージやディスプレイツールを手がける株式会社原口が、プロダクトデザイナーを募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/6aac8b752dd76.jpg" alt="【求人情報】ジュエリーのパッケージやディスプレイツールを手がける株式会社原口が、プロダクトデザイナーを募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">數位浪潮越洶湧，實體開箱與空間陳列的情緒張力反而越珍貴。老牌珠寶配件廠招募設計師的動向，反映出當代品牌對「最後一哩儀式感」的渴求。包裝不再只是保護商品的耗材，而是將物件神聖化、讓消費者五感沉浸的關鍵載體。懂得以微小細節編排觸覺與視覺層次的設計師，正重新定義新時代的奢華厚度，這提醒我們實體體驗依然是品牌無可取代的情感錨點。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese packaging specialist Haraguchi is recruiting product designers to elevate its jewelry display and packaging offerings. As consumer expectations for tactile engagement grow in an increasingly digital world, deliberate craftsmanship in unboxing and retail presentation proves that physical touchpoints remain irreplaceable in establishing emotional brand value. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/sakamototakatani-azabudaihills/" target="_blank" rel="noopener">坂本龍一與高谷史郎的環境藝術：以聲音與光影重構人與空間的靜默共振</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">RYUICHI SAKAMOTO + SHIRO TAKATANI</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/0W4A7038.jpg" alt="RYUICHI SAKAMOTO + SHIRO TAKATANI" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當都會空間被喧鬧的資訊過度填塞，大師們選擇用幾近透明的聲響與微光替城市解毒。麻布台之丘這場展覽不僅是向坂本龍一致敬，更展示了環境藝術如何溫柔介入高密度的建築肌理。高谷史郎的光影與坂本的聲音編排交織成一種深邃的「在場感」，提醒當代空間設計師：最高明的場域體驗不是刺激感官，而是創造能讓人安靜呼吸、重新感受自我存在的精神留白。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Azabudai Hills Gallery presents the ambient collaboration between Ryuichi Sakamoto and Shiro Takatani, merging spatial soundscapes with minimal visual installations. The exhibition illustrates how environmental art can subtly reshape public consciousness in urban landscapes, proving that profound spatial resonance comes from thoughtful emptiness rather than visual overload. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/andre-britz-draws-landscapes-from-memory-in-a-book-held-together-with-an-elastic-band/" target="_blank" rel="noopener">擁抱未完成的脆弱：以一條橡皮筋裝幀封存模糊記憶的詩意設計</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">André Britz draws dimly remembered landscapes, in a book held together with a pink elastic band</div>
+            <img class="item-image" src="https://media.creativeboom.com/1f860ca1-5eab-4e07-849b-5d4a27f615d8/conversions/cb8596680b1c5b9500565bf911ab718caac3a894-medium.webp" alt="André Britz draws dimly remembered landscapes, in a book held together with a pink elastic band" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">追求工整精確的數位時代，反而扼殺了記憶本身的毛邊與溫度。德國設計師這本只靠粉紅橡皮筋裝訂的風景畫冊，大膽挑戰了書籍裝幀必須牢固完美的既定規則。刻意保留的未完成感，恰恰如實還原了記憶隨時間褪色、流動的真實狀態。這項作品給內容創作者的重要啟示在於：在演算法能輕易產出完美成品的今天，不完美的手感與脆弱性，才是最能觸動人心的稀缺資產。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">German graphic designer André Britz creates a landscape art book bound loosely by a single pink elastic band, intentionally evoking an unfinished aesthetic. By embracing imperfections and impermanence, the project shows how physical print design can capture the fragile, fading nature of human memory far more poignantly than rigid perfection. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/how-two-simple-dots-gave-pictoplasma-a-face-after-20-years-of-neutral-design/" target="_blank" rel="noopener">只要兩個圓點就能賦予靈魂：字體擬人化如何顛覆角色設計的視覺常規</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How two simple dots gave Pictoplasma a fresh personality for 2026</div>
+            <img class="item-image" src="https://media.creativeboom.com/256cad58-790d-4ba1-a47e-9705b827ae07/conversions/921579662dd4026753716233b30cc5600e39f952-medium.webp" alt="How two simple dots gave Pictoplasma a fresh personality for 2026" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">誰說角色設計非得有繁複的肢體表情？柏林角色設計節 Pictoplasma 大膽拋棄過去二十年的中性識別，僅用純字體加上兩顆點，就巧妙引發人類天生的「空想性錯視」。這套新識別精準展示了設計的減法魅力：最高明的互動不是把故事全盤托出，而是丟出極簡的線索，讓觀者的想像力自動補完生命力。這種幽默又克制的視覺語言，為當代品牌塑造立下了極具啟發性的典範。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Design agency andstudio reimagined the visual identity for Pictoplasma by transforming typography into expressive characters using just two simple dots. By harnessing pareidolia, this minimalist typographic intervention proves that personality and character design do not rely on excessive decoration, but rather on intuitive visual triggers that invite audience participation. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/pregnant-then-screwed-makes-clever-use-of-simple-design-to-highlight-a-vital-gender-issue/" target="_blank" rel="noopener">特價貼紙變身抗議武器：挪用大賣場視覺符號直擊職場母職的退休金困境</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Pregnant Then Screwed subverts the conventions of retail design to highlight a vital gender issue</div>
+            <img class="item-image" src="https://media.creativeboom.com/4f6b3f3e-8b6b-44d1-919a-dad2414cf15a/conversions/63aa7a18d2e77a9f26844620fea2021c43feff02-medium.webp" alt="Pregnant Then Screwed subverts the conventions of retail design to highlight a vital gender issue" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">嚴肅的公共議題若只用生硬的報告呈現，往往難以跨出同溫層。倡議團體巧妙挪用大賣場促銷常見的螢光爆炸貼紙，將俗艷的消費符號轉化為抗議體制的視覺武器，尖銳諷刺女性因生育而面臨的退休金隱形損失。這項案例示範了何謂高段的社會創新溝通：借用街頭大眾最熟悉的商業符號來刺破結構性不公，讓人在會心一笑的瞬間猛然意識到體制的荒謬，具備強大的公眾傳播穿透力。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Advocacy charity Pregnant Then Screwed subverts the familiar neon starburst of retail clearance stickers to highlight the severe pension penalty faced by working mothers in the UK. This clever subversion demonstrates how hijacking everyday commercial graphic devices can make complex socio-economic injustices immediately legible and emotionally impactful to the wider public. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiS0FVX3lxTFBRWWg2R29KQkswNGplWl94UGZMdUd2U3I4ejVDOEhya0tydmNqemVpcmtldEhuOEdrb1BtTlJ0bDEwOVdCWXNoald4bw?oc=5" target="_blank" rel="noopener">從狂熱落地到秩序重整：台灣通路巨頭佈局 AI 治理揭示的合規剛需潮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">展碁國際取得AvePoint台灣及亞太代理權 擴大企業AI治理布局 - iThome</div>
+            <div class="item-sentence lang-zh-only">企業導入生成式工具的狂歡期過後，資訊長們真正焦慮的是資料外洩與合規失控的風險。展碁取得 AvePoint 代理權的商業布局，宣告了市場正式從「探索 AI 技術」轉向「補足治理拼圖」的關鍵轉折。未來企業競爭力不再只看導入了多少酷炫模型，而是看能否在內部建立透明可控的數據生命週期架構。AI 治理不再是阻礙創新的煞車皮，反而是企業敢於加速前進的安全帶。 <span class="src">— iThome</span></div>
+            <div class="item-sentence-en lang-en-only">Weblink International has secured distribution rights for AvePoint to expand enterprise AI governance across Taiwan and the Asia-Pacific. As organizations move past generative AI experimentation, establishing systematic data protection and compliance frameworks becomes the critical prerequisite for sustainable enterprise adoption, transforming governance into a strategic enabler. <span class="src">— iThome</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxOWF92ZlVfZ1dLaWdSOXV4UmJYTU5Famctcm85NmxDNkhJTGN5eUE5YmEwc1VYcHdWWWhLLU5sUlFjeDg3YjV0NzFfSF9BNXVqdjVoYmVnd2ZqdVhzYWRtaDhiOFMyQ0RTTTFtRFVsOTJSb1lzMlJvckg0Y2w3S1FJRWtDbW03TlFjemxBZ0p3bHFVNlF0b3lJMnduRlVld2hBeER4ZUtQZ2lqcUhJdjdEbGVmR3Nodw?oc=5" target="_blank" rel="noopener">當巨輪開進演算法深水區：航運重工業面對資安課責與智慧治理的生存戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Digital Ship Summit 2026: Consolidation, Cyber Accountability and AI Governance - Digital Ship</div>
+            <div class="item-sentence lang-zh-only">作為全球實體物流骨幹的海運業，正面臨自動化軟體介入帶來的深層治理挑戰。當智慧導航與智慧港口連成一氣，任何一處數位斷裂都可能引發跨國供應鏈停擺。2026 數位船舶峰會點出的核心問題，已不再是軟體有多智慧，而是系統出錯時「責任由誰承擔」。在高度碎片化的國際航運架構下，如何落實明確的網路課責與演算法審計體系，已是重工業邁向智慧轉型的生死關卡。 <span class="src">— Digital Ship</span></div>
+            <div class="item-sentence-en lang-en-only">The Digital Ship Summit 2026 focuses on industry consolidation, cyber accountability, and AI governance in maritime operations. As automated vessels and digital navigation systems become standard, establishing clear legal liabilities and robust security protocols is critical to preventing catastrophic cyber failures across vulnerable global supply chains. <span class="src">— Digital Ship</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxOWF92ZlVfZ1dLaWdSOXV4UmJYTU5Famctcm85NmxDNkhJTGN5eUE5YmEwc1VYcHdWWWhLLU5sUlFjeDg3YjV0NzFfSF9BNXVqdjVoYmVnd2ZqdVhzYWRtaDhiOFMyQ0RTTTFtRFVsOTJSb1lzMlJvckg0Y2w3S1FJRWtDbW03TlFjemxBZ0p3bHFVNlF0b3lJMnduRlVld2hBeER4ZUtQZ2lqcUhJdjdEbGVmR3Nodw?oc=5" target="_blank" rel="noopener">產業整併下的數位脆弱性：全球海運生態系如何在平台集中化下守護韌性</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Digital Ship Summit 2026: Consolidation, Cyber Accountability and AI Governance - Digital Ship</div>
+            <div class="item-sentence lang-zh-only">伴隨全球航運巨頭的整併浪潮，營運數據與調度系統迅速向少數超級數位平台集中，這看似提升了運作效率，卻悄悄放大了系統性風險。當所有雞蛋放在同一個演算法籃子裡，單點故障將演變成全球性的連鎖危機。這提醒各產業決策者：數位治理的核心不在於追求絕對的集權與效率，而是在架構設計上保留足夠的模組化容錯空間，唯有具備分散式韌性的系統，才能扛得住未來的黑天鵝事件。 <span class="src">— Digital Ship</span></div>
+            <div class="item-sentence-en lang-en-only">Discussions at the Digital Ship Summit also emphasize the systemic vulnerabilities arising from rapid maritime industry consolidation. As operational control concentrates into fewer digital platforms, maintaining technological diversity and decentralized fault-tolerance becomes paramount to safeguarding global logistical infrastructure against concentrated digital shocks. <span class="src">— Digital Ship</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE14ZkxNZzVYWEpWMjlveHMwZUpDNUdmaHNIaUk1MTJ5bDdkbS13SERvOEhBWWhVUFBGYVBzdVZyWGQ4N2JKUS00bFRfSXdldE82NnR2Y2c1Vm52bUJ0TmZ2SEFPMW5Bbkc0d0E?oc=5" target="_blank" rel="noopener">演算法的全球合格印記：ISO 42001 標誌著企業 AI 從口號邁向標準化認證</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">First Recon AI、SOCOTECとAIガバナンス・ISO/IEC 42001に関する無料ウェビナーを開催 - PR TIMES</div>
+            <div class="item-sentence lang-zh-only">過去企業宣稱的負責任 AI 往往流於公關包裝，但隨著 ISO/IEC 42001 國際管理體系標準的普及，產業遊戲規則已被徹底改寫。由專業驗證機構主導的治理研討會顯示，AI 風險管控正迅速變成進入跨國供應鏈的必要門檻。未來想要贏得客戶信任，光靠自吹演算法有多準確毫無意義，能夠出具經過第三方驗證的生命週期風險評估流程，才是企業在智慧時代立足的硬實力證明。 <span class="src">— PR TIMES</span></div>
+            <div class="item-sentence-en lang-en-only">First Recon AI and SOCOTEC hosted a webinar on ISO/IEC 42001, highlighting the international standard for AI management systems. This certification framework indicates that corporate AI governance has transitioned from vague ethical pledges to rigorous, auditable operational standards required for global market competitiveness. <span class="src">— PR TIMES</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/blogs/lohrmann-on-cybersecurity/government-contracts-whats-needed-to-protect-the-data" target="_blank" rel="noopener">合約條款即公共防線：政府採購如何從第一行文字築起全民數據安全的護城河</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Government Contracts: What’s Needed to Protect the Data?</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/59589bb/2147483647/strip/true/crop/4032x1960+0+605/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F8c%2Ffa%2F06e8a6564286aa4846789e45df55%2Fimg-4120.jpeg" alt="Government Contracts: What’s Needed to Protect the Data?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">公部門推動數位轉型時最大的安全漏洞，往往不是駭客技術有多高超，而是採購發包合約中對資料權責的界定太過模糊。這篇資安專欄精闢指出，防護機制不能等到系統驗收才亡羊補牢，而必須從招標文件的條款設計開始著手。將隱私保護、存取權限與供應商違約責任具體編碼進合約語言，是當代公共治理官僚最重要、卻常被忽視的基本功，合約本身就是捍衛公共利益的第一道防線。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Analyzing public sector data protection, GovTech underscores that cybersecurity and privacy governance must be embedded directly into government contract clauses from procurement inception. Properly drafted contractual frameworks establish unambiguous vendor accountability, serving as the essential structural foundation for public data sovereignty. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-19 08:03:52 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
