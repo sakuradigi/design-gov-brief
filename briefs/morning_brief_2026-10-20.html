@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從衛星查漏水到工藝復興：當科技治理撞上真實溫度，品牌與社會如何重新找回人的價值？ · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-20</div>
+    <div class="headline">從衛星查漏水到工藝復興：當科技治理撞上真實溫度，品牌與社會如何重新找回人的價值？</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is the knack of so arranging the world that we don&#x27;t have to experience it.</div>
+      <div class="quote-text-zh lang-zh-only">科技就是一種將世界安排妥當，好讓我們不必親身體驗世界的巧計。</div>
+      <div class="quote-author">— Max Frisch (瑞士建築師與劇作家)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">設計界在生成式浪潮後重新擁抱「手作工藝與在地根基」</li>
+        <li class="flash-item">AI治理從冷冰冰的法規合規轉變為資訊服務商的獲利引擎</li>
+        <li class="flash-item">新墨西哥用衛星與演算法抓地下漏水，示範了何謂有感的公部門創新</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/726451.html" target="_blank" rel="noopener">當實木遇上塑料背靠：Monza椅示範了異材質碰撞的工業詩意</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">コンスタンチン・グルチッチが手がけた伊・PLANK社のスタッキングチェア。「MONZA」 マスターウォールが取り扱い開始</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/PLANK_MONZA-CHAIR_001.jpg" alt="コンスタンチン・グルチッチが手がけた伊・PLANK社のスタッキングチェア。「MONZA」 マスターウォールが取り扱い開始" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">經典之所以歷久不衰，往往來自對日常工業材質的極致誠實。Konstantin Grcic替PLANK設計的Monza椅，最迷人之處就在於它大膽將溫潤天然的梣木結構，與色彩鮮明的射出成型聚丙烯背靠無縫接合。這提醒了當代設計人：永續與現代感不需要二選一，只要拿捏好結構的誠實性與可維護性，量產家具一樣能擁有工藝品等級的情感共鳴。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Konstantin Grcic&#x27;s iconic Monza stacking chair blends natural solid wood framing with a brightly colored polypropylene backrest, demonstrating how thoughtful industrial design and material honesty can create enduring, sustainable furniture for modern living spaces. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/726244.html" target="_blank" rel="noopener">廚房不只是煮飯的地方：跨國共創實驗室如何重塑未來居家核心</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AXISに「ARIAFINA（アリアフィーナ） LABORATORY」オープン。キッチン空間の未来を体験・検証する共創型ラボ</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/260913_ARIAFINA10696_0930_RGB.jpg" alt="AXISに「ARIAFINA（アリアフィーナ） LABORATORY」オープン。キッチン空間の未来を体験・検証する共創型ラボ" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">富士工業攜手義大利Elica打造的ARIAFINA實驗室，證明了抽油煙機這類傳統「黑手家電」也能進化為體驗美學的核心。他們不再只是把排煙設備藏在櫥櫃後面，而是將空氣流動、光影與社交動線當成整體生活空間來研發。未來的智慧居家不是堆疊螢幕或聯網功能，而是透過跨文化共創，重新定義人與居家空氣的無形關係。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The newly opened ARIAFINA LABORATORY in Tokyo reimagines kitchen appliances through collaborative design, blending Japanese engineering with Italian aesthetics to elevate everyday air management into a holistic architectural and social experience. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/booms-shakes/booms-shakes-october/" target="_blank" rel="noopener">逃離AI同質化焦慮：創意產業為何在十月集體掀起「工藝與在地」復興？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Booms &amp; Shakes: October&#x27;s strategy power moves, Manchester mergers, and why craft is the word of the month</div>
+            <img class="item-image" src="https://media.creativeboom.com/a371e412-9e48-4a3d-b5d4-e0a4de204ef5/conversions/518804d861720b35bd97679349f4adf64a1c9923-medium.webp" alt="Booms &amp; Shakes: October&#x27;s strategy power moves, Manchester mergers, and why craft is the word of the month" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當AI生成圖表與視覺變得唾手可得，全球創意產業反而開始瘋狂追逐「真材實料的工藝」與「具備在地根基的策略併購」。這份產業動態明白點出：過度依賴演算法的結果就是美學高度均質化，客戶現在願意買單的，反而是帶有人味、手工痕跡與深度在地洞察的不可替代性。這敲響了警鐘，也為手藝人指明了方向。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">October’s creative industry shifts highlight high-level strategy hires, regional agency mergers, and an overwhelming revival of authentic craft, serving as a collective antidote against homogenous AI-generated aesthetics. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/books/mark-mcnultys-in-clubland-documents-35-years-of-rave-culture-from-acid-house-to-the-age-of-the-superclub/" target="_blank" rel="noopener">從地下狂歡到主流神壇：35年銳舞文化教我們如何守護社群的野性</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">New book In Clubland documents 35 years of rave culture, from acid house to the superclub era</div>
+            <img class="item-image" src="https://media.creativeboom.com/01366413-d7e8-4100-a351-ddf532cb3fb9/conversions/a8b63ef486d5744a11f514429613259a01cd7921-medium.webp" alt="New book In Clubland documents 35 years of rave culture, from acid house to the superclub era" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這本收錄了550多張影像的攝影集，不只是一趟懷舊之旅，更是一部關於「次文化如何被商業資本收編」的演進史。從早年廢棄倉庫裡的酸浩室互助社群，到後來高度商業化的超級夜店，這提醒了文化策展與城市治理者：最迷人的都市活力永遠來自邊緣野生的草根空間，一旦把銳角全部磨平、規訓得太徹底，文化就失去了讓靈魂震顫的生命力。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Photographer Mark McNulty&#x27;s book In Clubland captures 35 years of UK rave culture, tracing its evolution from illegal acid house gatherings to polished superclubs and prompting reflection on community autonomy. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/collins-centres-a-new-identity-for-a-payroll-platform-on-banknote-colours-and-building-blocks/" target="_blank" rel="noopener">枯燥薪資系統大翻身：Collins用鈔票色票與積木打破B2B設計沉悶</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Collins centres Remote&#x27;s new identity on banknote colours and building blocks</div>
+            <img class="item-image" src="https://media.creativeboom.com/a077405b-3fee-479e-ab6a-4f1c8f0a55fd/conversions/3a0ccb72fe1c06e0907695c789133b45dd533a84-medium.webp" alt="Collins centres Remote&#x27;s new identity on banknote colours and building blocks" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">誰說處理薪資轉帳和法規合規的SaaS工具就得長得呆板無聊？知名設計公司Collins替Remote打造的新識別，巧妙汲取世界各國紙鈔的繽紛色彩與幾何疊加積木元素。這告訴所有B2B品牌設計師：越是牽涉繁複流程與枯燥數字的基礎服務，越需要用大膽明快的視覺隱喻，把繁瑣痛苦轉譯為直覺且令人信賴的現代體驗。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Design agency Collins has refreshed Remote&#x27;s global HR platform identity, utilizing vibrant banknote hues and modular building block motifs to inject optimism and humanity into mundane payroll operations. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiO0FVX3lxTFBTSFlUV29vdno3OTBhaXVkVXRHTkt5UmFJakZ3NWZJUlJGcXVjYVBqaG9IMzdBX3BVMmJJ?oc=5" target="_blank" rel="noopener">盲目引進AI卻逼走老師傅：組織在數位轉型中最危險的隱性失憶</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">缺工的社會，為什麼讓老師傅離開？｜AI 治理研究系列 第100集 WP100 - Howl.link</div>
+            <div class="item-sentence lang-zh-only">當社會高喊大缺工與AI降本增效時，許多組織卻在不知不覺中把身懷絕技的資深匠人排除在外。演算法能歸納既有數據，卻永遠無法捕捉老師傅指尖的體感經驗與直覺判斷。如果治理者只把人當作過渡成本來裁減，最後只會換來失去靈魂的空轉架構。真正的智慧轉型，應該是讓AI成為傳承匠人隱性知識的數位學徒。 <span class="src">— Howl.link</span></div>
+            <div class="item-sentence-en lang-en-only">Examining workforce shortages alongside digital shifts, this inquiry reveals how reckless automation risks pushing experienced craftsmen out, stressing that true AI governance must preserve irreplaceable human tacit knowledge. <span class="src">— Howl.link</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNZlZOQ2tGSDRNSkNnTFY0NnFPZ1Z5eF9tMmducU1SVFhzbEtYQ1FMVlI1UzIxLU9reGxrX3NYeGc0TXFDeGZXUlhvNUN4d2F1c0lzZ1RZMmU3VjU4d25IWkltc1NVeDFpVVJoejBkTnpaR2c2NnU3N0lVUndoYTl1OVJ0VUtUdFIyZjNXZDdkNXF2NWY0TzdFN3o0ZWh2ZTNSUm5CQnJRcURCWjd2MVlpSA?oc=5" target="_blank" rel="noopener">把合規變成搖錢樹：資安服務商如何將「AI治理」包裝成熱門商品？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Portal26 Launches AI Governance Platform to Help MSPs Monetize Enterprise AI - Konsulteer</div>
+            <div class="item-sentence lang-zh-only">過去企業談AI治理往往覺得是額外成本與絆腳石，但Portal26這套平台卻精準翻轉了邏輯，協助託管服務商（MSP）把風險監控與合規檢查變成可計價變現的新業務。這給治理推動者的最大啟發是：光喊合規口號推不動變革，唯有把治理工具轉化為保障業務推進、甚至能直接開立發票的實用賦能體系，企業才會真正積極擁抱。 <span class="src">— Konsulteer</span></div>
+            <div class="item-sentence-en lang-en-only">Portal26 launched a specialized AI governance platform empowering managed service providers to commercialize compliance and risk management, turning theoretical AI safety frameworks into actionable, revenue-generating enterprise services. <span class="src">— Konsulteer</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNZlZOQ2tGSDRNSkNnTFY0NnFPZ1Z5eF9tMmducU1SVFhzbEtYQ1FMVlI1UzIxLU9reGxrX3NYeGc0TXFDeGZXUlhvNUN4d2F1c0lzZ1RZMmU3VjU4d25IWkltc1NVeDFpVVJoejBkTnpaR2c2NnU3N0lVUndoYTl1OVJ0VUtUdFIyZjNXZDdkNXF2NWY0TzdFN3o0ZWh2ZTNSUm5CQnJRcURCWjd2MVlpSA?oc=5" target="_blank" rel="noopener">影子AI氾濫成災：企業該如何透過服務化架構建立全員防護盾？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Portal26 Launches AI Governance Platform to Help MSPs Monetize Enterprise AI - Konsulteer</div>
+            <div class="item-sentence lang-zh-only">員工私下拿未授權的AI工具處理商業文件，已是每家企業無法迴避的暗湧。面對這波去中心化的應用狂潮，一味防堵只會引來反彈。透過MSP建立標準化的監控與賦能架構，讓所有生成式工具的使用足跡透明化，才是治本之道。治理不是阻擋創新的煞車皮，而是讓大家可以在安全邊界內放膽踩油門的防滾籠。 <span class="src">— Konsulteer</span></div>
+            <div class="item-sentence-en lang-en-only">Addressing the widespread adoption of unsanctioned generative AI tools in corporate settings, standardized governance platforms help IT providers establish clear audit trails without strangling employee innovation. <span class="src">— Konsulteer</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxNOEFSNWxCTWtwVDVOdm1LLVhfd1RBZlFwOUxWdVJRU3cybHBKNW5SaUlMSHM0d0p1VTdOZXhaTU05aVZBX0c3ZWRwTFpJNHFOeGJpQ190TDBDck5GTHpwaWVDVEd4djFRNU8xOGliSU8yNTZvSGpJT1Myb0JnZlJIbmVCTTl3cm0zZlI4Xy1SLXhPR3dHaUZTLWxqMWRpVk9sTDAyZnhMM2RRTkRNOUtIZk9kd1IwdDBlQlE?oc=5" target="_blank" rel="noopener">演算法吞噬企業秘密：當智慧財產與AI倫理規範交織的治理大考</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">「営業秘密」の保護と利活用 第8回：AIガバナンスと知財ガバナンスが重なる時代に、企業は何を問われるのか―「AI事業者向けプリンシプル・コード」から考える - PwC</div>
+            <div class="item-sentence lang-zh-only">PwC這份剖析直指未來競爭的核心：當AI吃進海量資料做微調與推理，企業的營業秘密邊界正全面瓦解。以往智財保護看的是專利與保密協議，現在則必須深入檢視資料治理鏈與演算法透明度。企業若不能在「內部機密防護」與「開放模型創新」之間劃出清晰的護城河，就可能在不知不覺中把核心護城河雙手奉送給雲端大模型。 <span class="src">— PwC</span></div>
+            <div class="item-sentence-en lang-en-only">PwC explores the convergence of trade secret protection and AI governance, advising organizations to establish robust data provenance mechanisms so intellectual property is not compromised by LLM integration. <span class="src">— PwC</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/products/new-mexico-looks-to-space-for-help-combatting-water-waste" target="_blank" rel="noopener">雷達看穿地表抓漏：新墨西哥州用太空科技化解水資源隱形危機</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">New Mexico Looks to Space for Help Combatting Water Waste</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/38f16ff/2147483647/strip/true/crop/6019x2926+178+0/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F5c%2F97%2F4cf636d848bbb0ad4f0937f8c4db%2Fadobestock-542731339.jpeg" alt="New Mexico Looks to Space for Help Combatting Water Waste" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">新墨西哥州引進衛星雷達與AI分析地下自來水漏水點，預計每年搶救逾3億加侖珍貴飲用水。這個公部門案例漂亮示範了何謂「聰明治理」：傳統抓漏得開挖道路、耗費大量人力巡檢，現在從太空一眼照亮隱形耗損。面對極端氣候帶來的乾旱壓力，善用現成的高空遙測技術來升級老舊管網維護，才是最優雅低碳的基礎建設投資。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">New Mexico is employing satellite radar and machine learning through its LeakTracer initiative to pinpoint underground water leaks, saving over 300 million gallons of water annually through smart public infrastructure governance. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-20 08:03:06 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
