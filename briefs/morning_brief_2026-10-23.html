@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apple 類比波紋重塑串流美學，新北與紐約用 AI 智慧改寫公共治理規則 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-23</div>
+    <div class="headline">Apple 類比波紋重塑串流美學，新北與紐約用 AI 智慧改寫公共治理規則</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is society made durable.</div>
+      <div class="quote-text-zh lang-zh-only">科技，就是凝固並延續下來的社會體系。</div>
+      <div class="quote-author">— Bruno Latour</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">Apple Music 拋棄純向量，用真實油滴震動找回聲音的物理觸感。</li>
+        <li class="flash-item">新北智慧哨兵改寫環境執法，從被動受理投訴轉為主動精準獵漏。</li>
+        <li class="flash-item">紐約將 AI 培訓納入公共基建，避免科技轉型淪為少數菁英特權。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/10/90556/" target="_blank" rel="noopener">打破平面與數位藩籬：廣告製作團隊靠全渠道敘事應對體驗變革</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】グラフィックデザインを主軸とする広告制作会社の株式会社モスデザイン研究所が、Webデザイナーなど2職種を募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/6abe03d6f3cc5.jpg" alt="【求人情報】グラフィックデザインを主軸とする広告制作会社の株式会社モスデザイン研究所が、Webデザイナーなど2職種を募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">日本老牌設計公司公開招募跨域設計師，這背後反映的其實是傳統廣告產業的集體焦慮與進化。現在的品牌體驗早就不再區分純紙本或純螢幕，單一技能的視覺執行者已經很難撐起完整的品牌故事。設計團隊開始拆除專業高牆，將文字企劃、實體包裝與數位介面編織在一起。這對創作者是個明確訊號：未來的設計競爭力，在於你能不能靈活跨界串聯不同媒介的感官語言。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese design firm Moss Design Institute is recruiting cross-disciplinary talent, highlighting the ongoing industry shift away from isolated print or digital specializations. Contemporary creative agencies must integrate physical packaging, web experiences, and copywriting into cohesive brand ecosystems, signaling that future design value lies in cross-medium storytelling. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/vivianesassen-themass/" target="_blank" rel="noopener">當 AI 生成影像氾濫：攝影師以幾何光影與身體解構重塑真實觸感</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ヴィヴィアン・サッセン「Myriads」</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/OFT-260825-TheMass-VivianeSassen-KV2.jpg" alt="ヴィヴィアン・サッセン「Myriads」" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">荷蘭攝影師 Viviane Sassen 在東京展出新作，她用極致對比的陰影與大膽色塊，把人體肢體切碎重組成超現實圖景。在演算法一秒就能生成精緻假照片的時代，這種帶有強烈實體感與幾何拼貼的創作反而更具震撼力。這提醒了所有創作者，藝術的價值不在於完美無瑕的算力模擬，而在於那種帶有瑕疵、具備觸覺記憶與意識形態冒險的真實人類凝視。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Viviane Sassen&#x27;s Tokyo exhibition explores surreal geometry and human forms. In an era saturated with synthetic imagery, her high-contrast and tactile compositions offer a refreshing counterweight, reminding visual creators that artistic authenticity stems from physical vulnerability, abstract human intention, and tactile depth rather than algorithmic visual perfection. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/apple-musics-new-logo-was-shaped-by-fred-again-and-a-bath-of-mineral-oil/" target="_blank" rel="noopener">告別冷冰冰的向量符號：Apple 藉真實聲波與礦物油找回視覺有機性</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Apple Music&#x27;s new logo was shaped by Fred Again and a bath of mineral oil</div>
+            <img class="item-image" src="https://media.creativeboom.com/f0483d4b-6893-4edc-bad5-edb4885a88f9/conversions/b62c93fdc8522ade2ae9125200ea39fa538362f8-medium.webp" alt="Apple Music&#x27;s new logo was shaped by Fred Again and a bath of mineral oil" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Apple Music 近期迎來重大改版，新識別不是坐在電腦前拉貝茲曲線拉出來的，而是將聲音頻率打入礦物油中記錄下的流體波紋。這象徵數位設計正從過度純粹的扁平幾何，大步轉向擁抱物理世界的偶然與有機感。串流平台爭奪的不再只是演算法推薦，而是如何透過帶有溫度與觸覺記憶的視覺語言，喚醒使用者對音樂本質的感官共鳴。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Apple Music unveiled its first brand identity redesign, utilizing Fred Again&#x27;s audio vibrations in mineral oil rather than static vector calculations. This bold visual departure illustrates how major tech platforms are abandoning sterile digital aesthetics to embrace physical, organic textures that resonate emotionally with their listeners. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/as-thought-bubble-comics-festival-turns-20-meet-the-indie-creators-who-could-be-the-next-big-thing/" target="_blank" rel="noopener">拒絕好萊塢式套路疲勞：獨立漫畫節走過二十載守護小眾敘事沃土</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">As Thought Bubble comic art festival turns 20, meet the indie creators who could be the next big thing</div>
+            <img class="item-image" src="https://media.creativeboom.com/2d3f48bc-fa8d-4278-b2da-45816ae2344c/conversions/0adf3f8af4d7468a9fe10fa9f37d1298caa76959-medium.webp" alt="As Thought Bubble comic art festival turns 20, meet the indie creators who could be the next big thing" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">英國獨立漫畫藝術節迎來二十歲生日，現場擠滿了不妥協的獨立創作者。當好萊塢超級英雄電影與商業 IP 陷入嚴重的敘事疲倦期，大眾才驚覺最有生命力的點子，往往藏在這些次文化地下市集裡。這個節慶的存在告訴我們：健康的文化生態不能只靠資本巨頭支撐，唯有持續給予獨立聲音發芽的空間，整個視覺敘事產業才不至於走向枯竭。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Celebrating its 20th anniversary, the UK-based Thought Bubble festival showcases indie comic creators defying mainstream formulas. As corporate IP franchises experience creative fatigue, subcultural gatherings demonstrate that authentic storytelling and groundbreaking visual experiments thrive in decentralized, grass-roots communities supported by passionate micro-audiences. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/why-is-this-new-york-agency-asking-women-to-send-nudes/" target="_blank" rel="noopener">用網路迷因包裝嚴肅公衛：創意廣告翻轉私密話術搶救女性健康</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why is a creative agency in New York asking women to &#x27;send nudes&#x27;?</div>
+            <img class="item-image" src="https://media.creativeboom.com/fe586e69-0534-47b1-b25e-62f63cafa04e/conversions/4a288bc8c9a938b2517aca9853ce88d12b36ed5a-medium.webp" alt="Why is a creative agency in New York asking women to &#x27;send nudes&#x27;?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">紐約一間創意機構發起活動，要求女性互傳「私密照」，實質上是倡導乳房自我檢查。這波操作的高明之處在於，它直接挪用了當代社群文化中最常見、帶點禁忌的網路話術，一口氣撕掉傳統衛教廣告說教又沉悶的標籤。好設計和好創意從來不該正襟危坐，當你能借力打力借用大眾早已熟知的文化符碼時，再難推動的公共議題也能瞬間引起全民共鳴。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">A provocative New York ad campaign turns the ubiquitous digital request for nudes into an urgent self-examination breast cancer reminder. By appropriating provocative internet slang, the project demonstrates how disruptive cultural memes can disarm audiences, bypass message fatigue, and transform taboo public health topics into viral life-saving conversations. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE5JVkxLSEFUUVNRNl9NUU9HYU1LcXlBNW5fLTZMMUJlZHMzZ3pSdGN3Y1d2U1V5c3BYbTJmU2JBUDhsT3R5VlZwNU9wNzFwcmdwZGlF?oc=5" target="_blank" rel="noopener">從被動等檢舉到主動獵漏：新北靠智慧哨兵打贏環境執法資訊戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">2026環境保護組首獎：新北智慧稽查／哨兵守護｜新北市環境保護局 - 未來城市＠天下</div>
+            <div class="item-sentence lang-zh-only">新北環保局靠智慧稽查系統拿下大獎，這件事的真正啟發在於公共治理思維的範式轉移。以前抓偷排廢氣廢水，靠的是民眾受不了打電話、稽查員疲於奔命；現在透過 AI 感測器與大數據預測，公部門能像哨兵一樣預先鎖定熱點。這不僅大幅釋放了基層人力，更將執法從落後的「亡羊補牢」，升級為具備主動威懾力的現代化科技治理網絡。 <span class="src">— 未來城市＠天下</span></div>
+            <div class="item-sentence-en lang-en-only">New Taipei City Environmental Protection Department won a major award for deploying AI-driven sentry sensors. This represents a paradigm shift from reactive citizen complaint processing to proactive, automated environmental monitoring, showing how public sector agencies can transform labor-intensive inspections into high-efficiency, data-informed regulatory ecosystems. <span class="src">— 未來城市＠天下</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPVmtCU2o4NVhHb0tkeG0tMkVaQWgzbVVfRGJVNFFBTmNiVm95dFpCd1RwWHR2NTc5TUVnX0c1R2ZIYTVfUVZTbnc1MUtJaVZ4bFM0LWNLWEk5cHdZMDlLOGotM3p2QjluQnNlNTdkeUdkZlJKVXdoenJKT29jX1V0QTNCMnd1endwYVh6d1NyVURrZzFjUjdzUnB2VFo?oc=5" target="_blank" rel="noopener">供應鏈黑箱成最大未爆彈：企業 AI 治理已跨出內控走向外部溯源</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The State of AI Governance in Third-Party Risk - Compliance Week</div>
+            <div class="item-sentence lang-zh-only">現在企業談 AI 治理，光管好自己內部的工程師早就遠遠不夠用了。大部分企業使用的 AI 模組與資料都來自第三方外包，如果供應商的演算法有偏見、資料涉嫌侵權或存在漏洞，出事時買單的依然是你的企業信譽。這篇分析敲響了警鐘：真正的治理創新必須把觸角伸向整條供應鏈，將合規檢驗從被動填表，轉化為持續且動態的演算法倫理審計。 <span class="src">— Compliance Week</span></div>
+            <div class="item-sentence-en lang-en-only">AI governance is shifting towards rigorous third-party risk assessment. As enterprises increasingly rely on external vendors for algorithmic models, blind reliance on third-party black boxes exposes companies to systemic compliance, ethical, and privacy threats that require active vendor audits rather than passive checklist verifications. <span class="src">— Compliance Week</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxPVmtCU2o4NVhHb0tkeG0tMkVaQWgzbVVfRGJVNFFBTmNiVm95dFpCd1RwWHR2NTc5TUVnX0c1R2ZIYTVfUVZTbnc1MUtJaVZ4bFM0LWNLWEk5cHdZMDlLOGotM3p2QjluQnNlNTdkeUdkZlJKVXdoenJKT29jX1V0QTNCMnd1endwYVh6d1NyVURrZzFjUjdzUnB2VFo?oc=5" target="_blank" rel="noopener">別把信任押在他人程式碼：演算法審查成為現代企業必備的防護網</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The State of AI Governance in Third-Party Risk - Compliance Week</div>
+            <div class="item-sentence lang-zh-only">承接第三方風險的討論，這篇文章進一步點出治理的執行痛點：許多組織連外包廠商用了哪些 AI 工具都毫無頭緒。當法規環境越來越嚴苛，把責任推給「供應商沒告知」已經不再是合法免責說詞。未來的組織架構裡，勢必需要一套清晰的問責機制，專門評估外部科技引進所帶來的隱形倫理風險，這將成為企業穩健運營不可或缺的護城河。 <span class="src">— Compliance Week</span></div>
+            <div class="item-sentence-en lang-en-only">Organizations face growing accountability challenges when external software incorporates hidden automated decision-making tools. As global regulatory standards tighten, leaders must develop continuous transparency metrics, proving that responsible governance requires inspecting every externally sourced algorithmic workflow rather than trusting vendor marketing claims. <span class="src">— Compliance Week</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE05YVB6Y29HMUxqQTlMVm9NaVR1eVl0ZUZzQ045b3dUVzBtekRJWFZTTDVuRDNXOEdiQ0JYekc3R3F6UlpQODlvczBKaUtGcm5DSVRFTHJQV2FVdndCbm4xeURfMFR2ZHpYOWdqZEdhZkY?oc=5" target="_blank" rel="noopener">智慧城市不只是裝感測器：日本柏之葉以知識聚落證明永續生命力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">「柏の葉」が描く未来のまち 知の集積で持続的な変革を[PR] - 日経BizGate</div>
+            <div class="item-sentence lang-zh-only">日本柏之葉智慧城市向世界展示了截然不同的城市演進藍圖。許多地方政府把智慧城市做成昂貴的硬體展示間，柏之葉卻把重點放在產官學與居民的「知識集聚」。科技在其中只是催化劑，真正的核心在於如何讓社區在面對超高齡化與淨零轉型時，能自主演化出應變方案。城市進化的關鍵從來不是冰冷的機器，而是人與知識的有機聚合。 <span class="src">— 日経BizGate</span></div>
+            <div class="item-sentence-en lang-en-only">Japan&#x27;s Kashiwa-no-ha smart city demonstrates that urban longevity relies on community knowledge-sharing and cross-sector collaboration rather than mere sensor deployment. By synchronizing research, civic participation, and industrial testbeds, it provides an adaptable model for addressing systemic demographic and climate realities. <span class="src">— 日経BizGate</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/network/whats-new-in-digital-equity-new-yorks-ai-jobs-institute" target="_blank" rel="noopener">消弭演算法時代的新階級：紐約把 AI 技能視為人人共享的公共基建</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What’s New in Digital Equity: New York’s AI Jobs Institute</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/47c53cd/2147483647/strip/true/crop/5015x2438+0+137/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F90%2F9c%2F4c9c28994970928f0546f1e986ed%2Fadobestock-2051436655.jpeg" alt="What’s New in Digital Equity: New York’s AI Jobs Institute" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">紐約市成立 AI 就業學院並加碼數位包容基金，直指新科技浪潮最殘酷的核心問題：階級分化與性別落差。當高端工程師享受紅利的同時，基層勞工往往最先面臨衝擊。紐約的做法很有前瞻性，他們把 AI 素養當成自來水或電力一般的「公共基礎設施」，主動遞到邊緣社群手中。這告訴我們，進步的科技治理不是跑得有多快，而是有沒有把每個人都帶上車。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">New York City&#x27;s AI Jobs Institute and related digital inclusion initiatives treat emerging technical literacies as essential municipal infrastructure. By proactively lowering access barriers for marginalized groups and closing gender utilization divides, the policy serves as a vital safeguard against technology-driven socioeconomic inequality. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-23 08:03:19 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
