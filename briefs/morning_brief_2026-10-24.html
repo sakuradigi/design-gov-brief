@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>在深偽時代用設計奪回肖像主權，以歷史與人本思維重塑城市治理 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-24</div>
+    <div class="headline">在深偽時代用設計奪回肖像主權，以歷史與人本思維重塑城市治理</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Planning and design are not scientific activities, but argumentative processes where we constantly negotiate human values.</div>
+      <div class="quote-text-zh lang-zh-only">規劃與設計並非純粹的科學活動，而是一場我們不斷協商人類價值的論辯歷程。</div>
+      <div class="quote-author">— Horst Rittel（設計理論家與現代規劃體系先驅）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">Twinnin 打造防偽標章，用視覺識別替真實肖像權築起防線。</li>
+        <li class="flash-item">富咸隊從百年球場手繪字取樣，示範文化遺產如何變身品牌新血。</li>
+        <li class="flash-item">長灘市任命教育背景科技長，象徵智慧治理回歸數位平權本質。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/space/bunkyosha/" target="_blank" rel="noopener">文響社把「幽默學習」實體化：用空間打破辦公室的無聊教條</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">空間デザイン事例 | 文響社のオフィス</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/01_9020.jpg" alt="空間デザイン事例 | 文響社のオフィス" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">以爆紅教育讀物起家的文響社，把他們的企業靈魂——「玩心與求知慾」直接蓋成了實體空間。現代工作環境早已告別純粹追求坪效的工廠式思維，這個案例告訴我們，辦公室本質上就是品牌文化的實體沉浸載體。當空間能夠自然激發員工打破常規的對話與靈感碰撞，它就不只是打卡上班的地點，而是驅動內容創新的核心生產力引擎。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Bunkyosha&#x27;s new office showcases how corporate workspace design can embody a brand&#x27;s playful and educational identity. Moving away from rigid corporate norms, the interior fosters creativity and intellectual curiosity. It demonstrates that contemporary office environments should function as tangible expressions of company culture, transforming daily work settings into dynamic incubators for innovative storytelling and spontaneous collaboration among teams. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/727579.html" target="_blank" rel="noopener">對抗冰冷數據的叛逆：企業設計師在工業浪漫中找回創作靈魂</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Industrial Romanticism 2 展に向け、参加デザイナー7名が語る、デザインのロマンとはなにか（後編）</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/roundtable_all.jpg" alt="Industrial Romanticism 2 展に向け、参加デザイナー7名が語る、デザインのロマンとはなにか（後編）" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在當前極度講求商業轉化率與數據指標的開發體系中，七位企業內部設計師跳出來重新探討「設計的浪漫」。這不是在無病呻吟，而是對市場千篇一律的極簡同質化發出反思。真正的浪漫往往來自於設計師對材質、手感與情感連結的非理性執著，而這份感性直覺，往往才是打破演算法盲區、賦予硬體產品真正靈魂與長期辨識度的關鍵關鍵。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The Industrial Romanticism exhibition gathers in-house designers to challenge the hyper-rational, metric-driven landscape of modern industrial design. By reclaiming emotional resonance and poetic intuition, these creators argue that subjective passion is essential to differentiating brands in an oversaturated market. This movement reminds us that enduring product appeal often stems from deeply human sensibilities rather than purely optimized data points. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://smashingmagazine.com/2026/10/accordion-icons-which-work-best/" target="_blank" rel="noopener">手風琴選單的微細節：降低介面摩擦比炫技動畫重要百倍</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Accordion Icons: Which Work Best?</div>
+            <img class="item-image" src="https://files.smashing.media/articles/how-name-things-choose-accordion-icons/accordion-icons-which-work-best.jpg" alt="Accordion Icons: Which Work Best?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">數位介面中最常見的手風琴折疊選單，往往是考驗用戶體驗同理心的試金石。研究明確指出，複雜的分拆選單或語意不清的圖示只會製造使用者的認知負擔，而樸素直觀的角括號才是最安全的解法。這提醒所有產品團隊：在追求花俏微互動的同時，永遠不要為了視覺新奇而犧牲可預期性，優秀的介面美學應該是隱形且毫不費力的順暢引導。 <span class="src">— Smashing Magazine</span></div>
+            <div class="item-sentence-en lang-en-only">This deep dive into accordion UI components emphasizes that user clarity trumps visual novelty. Analyzing split menus, ambiguous iconography, and navigational friction, the study proves that conventional caret symbols remain the most dependable choice. For digital product designers, it serves as an indispensable reminder that minimizing cognitive load through predictable, intuitive design patterns is the cornerstone of seamless digital accessibility and user satisfaction. <span class="src">— Smashing Magazine</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/can-a-trust-mark-keep-your-face-out-of-ai-unitedus-thinks-so-with-its-rebrand-for-twinnin/" target="_blank" rel="noopener">防範深偽盜臉的第一道防線：用雷射防偽標章捍衛真實人類</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Can a trust mark keep your face out of AI? UnitedUs thinks so with its rebrand for Twinnin</div>
+            <img class="item-image" src="https://media.creativeboom.com/3eaa4193-2b21-44ab-86bc-b1e8e49cb4e2/conversions/4cb56a1d353ed2ac6a05c5a8f611ea7c5f7b0b4c-medium.webp" alt="Can a trust mark keep your face out of AI? UnitedUs thinks so with its rebrand for Twinnin" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">面對生成式 AI 肆意抓取人臉與合成替身的危機，設計工作室 UnitedUs 替 Twinnin 打造了宛如全像防偽雷射的「認證人類」識別標章。這標誌著設計的核心任務正在轉型——從過往單純的美化商品，跨入捍衛個人數位主權與建立社會信任的防禦前線。當真實與虛擬的界線逐漸瓦解，視覺符號成了守護個資自主權不可或缺的制度化媒介。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">UnitedUs created a striking visual identity for Twinnin featuring a holographic-style &#x27;Verified Human&#x27; mark to protect personal likenesses from unauthorized AI exploitation. This initiative marks a crucial shift in design&#x27;s societal role, moving from aesthetic styling to ethical safeguarding. In an era plagued by deepfakes, such trust marks empower individuals by visually verifying authentic human consent and defending digital autonomy. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/fulham-fcs-new-identity-is-built-on-lettering-found-at-londons-oldest-stadium/" target="_blank" rel="noopener">老球場磚瓦裡挖出的現代字體：富咸隊示範遺產如何活化品牌</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How Music founded a football identity on lettering found at London&#x27;s oldest stadium</div>
+            <img class="item-image" src="https://media.creativeboom.com/fd2114e8-4197-414b-ab4b-def9c9d7f640/conversions/10a0fb6159b26487f7a80cb6df918d4c8c22b31f-medium.webp" alt="How Music founded a football identity on lettering found at London&#x27;s oldest stadium" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">足球俱樂部更新視覺往往會引來死忠老球迷的強烈反彈，但倫敦富咸隊卻巧妙地從百年主場的手繪標誌中提煉出專屬字型。這套新識別不僅充滿強悍的現代張力，骨子裡更流淌著歷史的記憶與溫度。它給所有文化治理與品牌轉型的啟示在於：創新的最佳起點不是推倒重來，而是帶著敬意從既有的歷史地景中萃取基因，轉化為未來的視覺語言。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Fulham FC&#x27;s comprehensive rebrand avoids generic corporate modernization by drawing inspiration from historic hand-rendered lettering found within Craven Cottage. Developed with type foundry F37, the bespoke typography bridges nostalgic heritage with contemporary digital flexibility. It serves as a masterclass in identity design, proving that authentic cultural resonance is achieved when institutions innovate by honoring their physical and architectural origins. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE01OVdmUmdVTXVxRV9UbFRDZkxsaVdhMFY1b05LUkpGeUdyVVVfSWFfVFA3R0NMQmhPZm1YakFURmoxTzRUamd6WEhpYVNVc0ZnbXc?oc=5" target="_blank" rel="noopener">智慧城市告別大拜拜：從實用切入的 5G 與 AI 基礎設施韌性</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">遠傳電信攜手桃園市 運用5G與AI打造韌性與節能智慧城市 - Zeek玩家誌</div>
+            <div class="item-sentence lang-zh-only">遠傳電信與桃園市的合作，展示了智慧城市建設思維的重要轉向。過去許多智慧專案常淪為曇花一現的形象宣傳，而如今焦點已扎實轉移至水電能耗調控、交通號誌最佳化與災害預警等韌性基礎建設上。公部門引進電信級的算力與物聯網技術，意味著未來的城市治理不再靠直覺拍腦袋，而是靠即時動態數據進行極致的精細化運作與減碳。 <span class="src">— Zeek玩家誌</span></div>
+            <div class="item-sentence-en lang-en-only">Far EasTone&#x27;s collaboration with Taoyuan City exemplifies the evolution of smart city governance from flashy tech displays to pragmatic urban resilience. Leveraging 5G infrastructure and predictive AI, the initiative targets energy conservation, traffic optimization, and disaster mitigation. This public-private partnership highlights that future civic sustainability depends on real-time data governance, turning connectivity into concrete public value and operational efficiency. <span class="src">— Zeek玩家誌</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxOakIwbXhFWjc1QmhuMEg4bDZ1ZjdaTFFNUUZNUllPTFFFem91ZlNKUmpleXdhRVJQc3JuSjRhTHZnRFk0MVk3TUFrVFg4TTNKX0o0VHV1R09qLU9TcEYtRk9uTmZoSnJiNnZjYWM5QWh3ZUtVcVRaN20yMFljU0NVcmpkTnRGaEJVRFFEbHd1cVQyU09CaHRhNw?oc=5" target="_blank" rel="noopener">算力爆炸下的制度解方：企業導入 AI 已進入治理與成本博弈期</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">IBM Think: 5 thoughts on tokens, AI governance, and quantum - SDxCentral</div>
+            <div class="item-sentence lang-zh-only">IBM Think 大會揭示了一個殘酷現實：生成式 AI 的競賽已經從比拼模型參數量，轉向企業能否承擔龐大的 Token 消耗與合規責任。沒有嚴密治理框架的技術落地，只會為組織堆疊昂貴的技術負債與法律隱患。想要把 AI 轉化為長期社會效益，關鍵不是追逐最新玩具，而是建立一套能動態監控資料偏見、保護隱私且合乎運算經濟的治理架構。 <span class="src">— SDxCentral</span></div>
+            <div class="item-sentence-en lang-en-only">Insights from IBM Think underscore that enterprise artificial intelligence has matured beyond experimental pilot projects into rigorous governance and cost accounting. Managing token economics and ethical compliance is now paramount to sustainable integration. Organizations must recognize that effective technological adoption requires robust accountability frameworks, ensuring AI systems remain legally compliant, resource-efficient, and aligned with broader societal values and user privacy expectations. <span class="src">— SDxCentral</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxOakIwbXhFWjc1QmhuMEg4bDZ1ZjdaTFFNUUZNUllPTFFFem91ZlNKUmpleXdhRVJQc3JuSjRhTHZnRFk0MVk3TUFrVFg4TTNKX0o0VHV1R09qLU9TcEYtRk9uTmZoSnJiNnZjYWM5QWh3ZUtVcVRaN20yMFljU0NVcmpkTnRGaEJVRFFEbHd1cVQyU09CaHRhNw?oc=5" target="_blank" rel="noopener">量子算力倒數計時：數位治理防線必須提前迎戰未來加密顛覆</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">IBM Think: 5 thoughts on tokens, AI governance, and quantum - SDxCentral</div>
+            <div class="item-sentence lang-zh-only">在討論 AI 治理的同時，量子運算的演進正以更迅猛的姿態逼近現有資安防線。這意味著我們現行的身分認證與資料主權機制，在不久的將來都可能面臨被徹底破解的系統性風險。先進的科技治理必須具備「前瞻防禦」的視野，及早將抗量子加密納入長遠的數位基建藍圖中，才不會在下一個算力世代驟然降臨時讓公共系統陷入停擺。 <span class="src">— SDxCentral</span></div>
+            <div class="item-sentence-en lang-en-only">Discussions surrounding emerging technologies at IBM Think also highlight the urgent need for post-quantum cryptographic readiness alongside AI oversight. As quantum capabilities accelerate, existing public and private security models face fundamental vulnerabilities. Proactive digital governance mandates that institutional leaders invest in quantum-resistant architectures today, preventing systemic infrastructural failures and protecting confidential societal datasets before traditional encryption methods become obsolete. <span class="src">— SDxCentral</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxOWVNERzdOSzBsQmd4aDN2ckYtMEJCMHNVRlRza19fZmhSY3hhUERiaWZLbUtMOVVmTjROd2hTbVp1WWR6OGYtMVhjbk5oXzhGZ2IwN21scnQySDdRb1hMc2lZamlmV184SGtsRnFTQVZCN3gzWFRFaTRtcmpXU01SR3RqNEh4dl9vd3JFa2c2TTV6UQ?oc=5" target="_blank" rel="noopener">巨額資本空降新興都會：胡志明市智慧生態城面臨的治理考驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">総工費14億ドルのロッテ・エコ・スマートシティ・トゥーティエム「メガ」プロジェクトの建設が開始された。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">樂天集團在胡志明市守添新區斥資 14 億美元打造的生態智慧城正式動土，反映出東南亞新興市場跳過漸進式都市化、直接空降科技都會的雄心。然而，這種由單一跨國財團主導的造鎮計畫，也是一把雙面刃。地方治理者必須在吸引招商熱錢的同時，嚴格捍衛水文防洪平衡、公共空間開放性與社會包容度，避免智慧城市淪為少數精英的孤島。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Lotte&#x27;s 1.4-billion-dollar Eco Smart City project in Ho Chi Minh City&#x27;s Thu Thiem area demonstrates the rapid leapfrogging of urban development in Southeast Asia. While promising sustainable infrastructure and cutting-edge digital integration, the mega-development raises crucial urban governance challenges. Civic authorities must carefully balance private capital investments with public accessibility, social inclusivity, and environmental resilience to prevent the district from becoming an exclusive enclave. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/workforce/long-beach-calif-s-new-tech-director-hails-from-education" target="_blank" rel="noopener">從教育現場借鏡智慧市政：科技長換人象徵公共服務回歸人本</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Long Beach, Calif.’s New Tech Director Hails From Education</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/7555b72/2147483647/strip/true/crop/5470x2659+0+199/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F83%2Fcb%2F094bc2324ae58323f736a4a3d4f9%2Fadobestock-180066180.jpeg" alt="Long Beach, Calif.’s New Tech Director Hails From Education" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">加州長灘市延攬擁有深厚教育背景的 Tendaji K. Jamal 出任科技創新局長，這項任命傳遞出極為深刻的治理信號。長久以來，政府科技職位往往迷信矽谷科技精英，卻忽略了公共科技的核心是「人」的理解與普及。教育者懂得如何弭平學習落差，當這份同理心注入市政體系，數位落差、長者介面友善度以及公民參與度才能真正被擺在第一線。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">The appointment of an education veteran as Long Beach&#x27;s Director of Technology and Innovation signals an inspiring philosophical shift in civic leadership. Moving away from purely technocratic appointments, the city prioritizes user empathy, digital literacy, and equitable public access. This human-centered approach ensures that municipal technological advancements genuinely serve diverse citizens, dismantling the digital divide rather than widening inequalities through overly complex digital systems. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-24 08:03:25 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
