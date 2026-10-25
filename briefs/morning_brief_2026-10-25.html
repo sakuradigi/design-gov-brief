@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>在精準演算與冰冷體制下：擁抱不完美的設計浪漫與AI信任治理 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-25</div>
+    <div class="headline">在精準演算與冰冷體制下：擁抱不完美的設計浪漫與AI信任治理</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">To design is to devise courses of action aimed at changing existing situations into preferred ones.</div>
+      <div class="quote-text-zh lang-zh-only">所謂設計，就是策劃一系列行動方案，將現狀轉化為我們更嚮往的樣貌。</div>
+      <div class="quote-author">— Herbert A. Simon</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">工業設計不再只談功能，日本創作者重新追尋製造背後的浪漫與溫度。</li>
+        <li class="flash-item">反向操作才是流量密碼：奧斯陸用厭世搞怪幽默成功重塑城市觀光品牌。</li>
+        <li class="flash-item">從公部門惰性到AI網路攻擊，現代治理的核心都在於制度信任而非責怪個人。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/727542.html" target="_blank" rel="noopener">當量產只剩性價比，日本設計師重拾工業製造的浪漫靈魂</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Industrial Romanticism 2 展に向け、参加デザイナー7名が語る、デザインのロマンとはなにか（前編）</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/410-273-verA.png" alt="Industrial Romanticism 2 展に向け、参加デザイナー7名が語る、デザインのロマンとはなにか（前編）" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在一切講求極致效率與規格競爭的現代製造業中，設計師往往被壓縮成流水線的齒輪。這場展覽最迷人的地方，在於七位企業內設計師不再只聊良率與市場調查，而是把目光轉向「浪漫」——那種對材質紋理的執著、形狀探索的悸動。這提醒我們，好產品打動人心的從來不是冰冷的硬體跑分，而是創作者在標準化製程中偷偷注入的人性溫度。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Seven in-house designers explore the emotional essence of manufacturing in the &#x27;Industrial Romanticism 2&#x27; exhibition. Moving beyond mere efficiency and specifications, they highlight the tactile and poetic elements often lost in mass production, reminding us that truly resonant industrial design stems from human affection rather than clinical optimization alone. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/swedentextiles-setagayaartmuseum/" target="_blank" rel="noopener">在日常織品裡看見平實哲學：北歐設計如何療癒高壓焦慮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">スウェーデン・テキスタイル</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/09/E722-9541.jpg" alt="スウェーデン・テキスタイル" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當代生活充斥著過載的數位螢幕與精緻包裝的商品，但瑞典織品展給了我們另一種解題思路。北歐設計之美不在於華麗炫技，而是將森林苔蘚、光影變換自然揉進窗簾與毛毯等日常器物中。這種「在生活中安身立命」的工藝哲學，恰恰打中了現代人對平靜與歸屬感的渴望，證明最持久的設計美學永遠根植於對真實生活的敏銳觀察與溫柔陪伴。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The Swedish Textile exhibition in Tokyo showcases how Nordic design integrates natural elements into everyday household fabrics. Emphasizing functional warmth, sustainable materiality, and simple living, the collection highlights that the most enduring aesthetic experiences emerge not from extravagant luxury, but from humble domestic rhythms that reconnect people with nature. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/casey-roarty-digs-through-facebook-marketplace-listings-and-transforms-his-findings-into-art/" target="_blank" rel="noopener">二手交易拍壞的照片，竟成對抗AI精準審美的當代藝術</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Casey Roarty digs through Facebook Marketplace listings and transforms his findings into art</div>
+            <img class="item-image" src="https://media.creativeboom.com/0e73a5e4-e93c-4b8a-8f62-028bb12fd305/conversions/317c29cfa20e349a2e8c60972d3c3d42fc8f158b-medium.webp" alt="Casey Roarty digs through Facebook Marketplace listings and transforms his findings into art" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">設計師從二手交易平台上那些曝光過度、手抖模糊、構圖糟糕的拍賣廢照中取材，將它們重新畫成精采的普普藝術。這件事太有意思了！在AI生成圖像越來越完美無瑕、視覺審美高度同質化的今天，這群「演算法不會推薦的破圖」反而帶有極其生動的人間煙火氣。不完美的瑕疵往往才是最真實的情感載體，給了設計師突破常規的創作養分。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Graphic designer Casey Roarty repurposes awkwardly framed, low-quality secondhand marketplace photos into compelling contemporary art. In an era dominated by hyper-polished digital aesthetics and generative AI, this playful project celebrates the raw imperfections and unintentional humor of everyday amateur photography as vital visual inspiration. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/oslos-grumpiest-resident-returns-new-halfdan-winter-campaign-generates-5m-views/" target="_blank" rel="noopener">誰說觀光宣傳只能陽光燦爛？奧斯陸用厭世歌舞片逆向突圍</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Oslo&#x27;s grumpiest resident is back – and this time he&#x27;s singing</div>
+            <img class="item-image" src="https://media.creativeboom.com/e4516e52-bd10-468e-ab71-939c4a547c94/conversions/57a0842335d87dd99e238da0b5b24884481b6d65-medium.webp" alt="Oslo&#x27;s grumpiest resident is back – and this time he&#x27;s singing" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">大家都習慣了旅遊廣告中碧海藍天和遊客燦笑的套路，但奧斯陸卻反其道而行，讓全城最厭世的居民在聖誕節唱起恐怖音樂劇。這種自嘲幽默完全打破了官方宣傳的油膩感，反而讓人覺得這座城市既幽默又自信。公部門在做品牌行銷時最怕不講人話，奧斯陸向全世界示範：誠實面對自己的古怪與不完美，往往比擺拍完美的宣傳照更能換來受眾的信任與熱愛。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">VisitOSLO returns with another viral winter tourism campaign, turning their famously deadpan protagonist into the star of a comedic Christmas horror musical. By ditching generic postcard perfection for authentic self-deprecating humor, the campaign demonstrates how municipal branding can generate immense cultural capital through witty, honest storytelling. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://smashingmagazine.com/2026/10/embracing-playful-imperfection-css-random-function/" target="_blank" rel="noopener">告別死板格線：原生CSS隨機函數替網頁注入有機生命力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Embracing Playful Imperfection With The CSS `random()` Function</div>
+            <img class="item-image" src="https://files.smashing.media/articles/embracing-playful-imperfection-css-random-function/embracing-playful-imperfection-css-random-function.jpg" alt="Embracing Playful Imperfection With The CSS `random()` Function" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">設計系統過去極度追求像素級的對齊與一致性，結果讓現代網站變得像千篇一律的無聊模版。原生CSS即將支援的random()函數，讓開發者不用再掛載龐大的JS程式庫，就能輕鬆替文字排版與卡片邊角加入些微的隨機旋轉與位移。這代表網頁體驗正在從「機器人般的規整」轉向「手作般的有機感」，讓程式碼能像大自然造物一樣，帶有一點迷人的不完美。 <span class="src">— Smashing Magazine</span></div>
+            <div class="item-sentence-en lang-en-only">Smashing Magazine details how the upcoming native CSS `random()` function introduces controlled, playful imperfections to digital typography and layouts without external scripts. This evolution reflects a growing web design shift from rigid, sterile design system templates toward dynamic, organic digital interfaces with distinct personality. <span class="src">— Smashing Magazine</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE1CZnVaaFBoRThpaWFQU1BaTndEZ3ROUXg1WnhQSHE1dWxHaUZaam5QdTd0blhqLUg1aWhuS1piQ1h1TG9aOUlYdjlIbVBQMVFyT0Y4eExtbXlJVGVf?oc=5" target="_blank" rel="noopener">公務員甩鍋摸魚？別怪個人品格，關鍵在體制設計的死角</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">公務員偷懶？還是制度？負面組織行為的四條判定規則｜AI 治理研究系列 第70集 WP070 - YouTube</div>
+            <div class="item-sentence lang-zh-only">很多時候我們看到公部門行政效率低落，直覺反應就是罵公務員懶惰，但這其實是制度設計失敗的典型替罪羊。這部影片一針見血地指出：負面組織行為往往源自權責不清、激勵錯位或防禦性心態。如果治理架構本身在「做多錯多」時懲罰積極作為，再有熱情的人也會學會躺平。社會創新要成功，必須先停止道德審判，轉而修正深層的遊戲規則與激勵路徑。 <span class="src">— YouTube</span></div>
+            <div class="item-sentence-en lang-en-only">Analyzing public sector inertia, this video essay demonstrates that negative bureaucratic behaviors typically stem from flawed organizational incentives and vague governance rules rather than personal moral failures. Transforming administrative performance requires systemic workflow reforms and constructive institutional accountability rather than futile finger-pointing. <span class="src">— YouTube</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiQEFVX3lxTE5pWU1pdjR5Q0ltQjhFeEJueXpkSGhfa1JtU3hfVjhsNVFGWmkxbkhoSVYtSnZPb2xDbzhaUjJWemQ?oc=5" target="_blank" rel="noopener">歐盟AI法案正式落地：合規不再是法務功課而是核心競爭力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">EU AI Act - PPC Land</div>
+            <div class="item-sentence lang-zh-only">歐盟AI法案的全面推動，意味著全球人工智慧的「野蠻生長時代」正式劃下句點。很多人以為法規只是繁文縟節，但它實質上是在重塑科技商業的護城河：未來能把演算法偏見、透明度與隱私安全直接寫進底層架構的團隊，才能贏得市場信任。這場監管海嘯告訴所有數位產品的建造者，把倫理責任前置到設計流程裡，才是長久生存的唯一正解。 <span class="src">— PPC Land</span></div>
+            <div class="item-sentence-en lang-en-only">As the EU AI Act establishes comprehensive regulatory frameworks across high-risk applications, digital marketers and developers face stringent transparency demands. Compliance can no longer remain a retroactive legal check; ethical governance must be integrated directly into product architecture to earn enterprise consumer trust. <span class="src">— PPC Land</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxNeWhyUVNFdU96UFRfUGpGT3RNQXJsa3lZaVlkZ1pXLURWUVY2ZTk1SzFqejVIa1gwcmhrcngtd095UlhFOHUxWWQzc00tRVoySjNfelJ5dGFMSjU3ZmtBeUYyT3NwWjdwSW1wODRBM2FfSjlyX3RyVW0xY1NveG5tZnhVNlR0bGhvdlRERmxwem9VVjlDVEMwSG54Ujk3eXlUTG9jMU5IcGNWcEhwQzVOOTB0WnRCU1VCS3VaX0VoRHNaUXlYQ2hKREV2M1BXdw?oc=5" target="_blank" rel="noopener">衝刺速度不等於勝出：高階數位長齊聚紐約聚焦AI信任治理</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">High Stakes, Higher Speed: Trust and AI Governance Lead CDO Magazine’s New York Leadership Summit - CDO Magazine</div>
+            <div class="item-sentence lang-zh-only">在紐約領導峰會上，各家資料長（CDO）討論最熱烈的不是哪家模型算力更強，而是「速度越快，翻車風險越高」。當企業紛紛搶著導入生成式AI時，如果缺乏堅實的資料治理與信任機制，產生的幻覺與漏洞足以在一夕間摧毀品牌商譽。現在科技競爭的決勝點已經從單純的「技術跑多快」，轉變成「誰能在兼顧安全底線的同時穩健落地」，信任才是最稀缺的資產。 <span class="src">— CDO Magazine</span></div>
+            <div class="item-sentence-en lang-en-only">At the CDO Magazine Leadership Summit in New York, technology executives underscored that speed without trust invites catastrophic organizational risks. Establishing robust AI governance and resilient data infrastructure has superseded raw implementation pace as the decisive competitive factor for forward-looking modern enterprises. <span class="src">— CDO Magazine</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdWFnN1VUR3RMc2Zrd0NnTVpVYXdwQjZhbGNMcFZGVzdwUUVJak1Fa3dNUmZDaUVkLUw3dGxsaDFzWDItT016SkFLcXpNZGJIWW5OY01Wc0lpcE5EZXpkU3lUNDF2dWNuTEw0LXBiQXJNRXJ4Z0pPeXA2YjU1R1c1Z1pZRHJpX1pKbmxkaFBOVUlFcWJZUlc4eGxDeUhPSUQ2dnJfZzA0ZUhsdWg2RC10OFV0RlJydzNP?oc=5" target="_blank" rel="noopener">樂天生態智慧城動工：胡志明市新區示範永續都市實驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ロッテ・エコ・スマートシティ・トゥーティエムが起工式に向けて準備中：トゥーティエム開発における新たな節目。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">越南胡志明市守添新區的動工，展現了東南亞新興城市跳過傳統基建、直接擁抱智慧永續城市的野心。由外資整合商業、生態與數位科技的造鎮模式，考驗著地方政府在土地開發與公眾福祉之間的平衡能力。這種大型跨國都市治理實驗告訴我們：未來的城市競爭力不在於蓋了多少摩天大樓，而在於能否用科技將生態永續深深嵌入城市的日常生活紋理中。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">The groundbreaking of Lotte Eco Smart City Thu Thiem marks a major development milestone for Ho Chi Minh City. By combining commercial real estate, green public infrastructure, and digital municipal services, the megaproject exemplifies how emerging Southeast Asian urban centers leverage foreign investment to build climate-adaptive smart environments. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://statescoop.com/virginia-governor-orders-statewide-plan-to-address-ai-cyberattacks/" target="_blank" rel="noopener">防範AI新型網路攻擊：維吉尼亞州啟動全州聯防戰略體系</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Virginia governor orders statewide plan to address AI cyberattacks</div>
+            <img class="item-image" src="https://statescoop.com/wp-content/uploads/sites/6/2026/05/GettyImages-2262916373.jpg" alt="Virginia governor orders statewide plan to address AI cyberattacks" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">維吉尼亞州長發布行政命令，要求全面建立應對AI網路威脅的跨部門聯防機制。這件事向所有治理者敲響了警鐘：當駭客開始利用AI自動化尋找資安漏洞時，傳統各管各的防守方式早已徹底失效。公部門必須像科技公司一樣建立即時協同網絡。在智慧化時代，安全防護不能再靠事後亡羊補牢，而必須轉化為具備自適應能力的動態敏捷治理體系。 <span class="src">— StateScoop</span></div>
+            <div class="item-sentence-en lang-en-only">Virginia&#x27;s governor has mandated a comprehensive statewide strategy to combat AI-enhanced cyberattacks across public agencies and private tech partners. The executive directive emphasizes that confronting automated digital threats requires breaking bureaucratic silos and transitioning from reactive perimeter defense to an integrated, adaptive statewide posture. <span class="src">— StateScoop</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-25 08:05:09 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
