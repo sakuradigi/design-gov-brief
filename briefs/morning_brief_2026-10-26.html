@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從恆久設計的美學反思，到自主 AI 衝擊下的公共治理與數位主權保衛戰 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-26</div>
+    <div class="headline">從恆久設計的美學反思，到自主 AI 衝擊下的公共治理與數位主權保衛戰</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technologies are not merely aids to human activity, but also powerful forces acting to reshape that activity and its meaning.</div>
+      <div class="quote-text-zh lang-zh-only">技術絕非只是人類活動的輔助工具，它更是一股重塑這些活動及其意義的強大力量。</div>
+      <div class="quote-author">— Langdon Winner</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">創意顧問取代單純視覺代工，設計全面介入商業底層策略。</li>
+        <li class="flash-item">自主 AI 代辦公務引爆爭議，政府系統面臨人機分流考驗。</li>
+        <li class="flash-item">反抗科技寡頭數位壟斷，公民社會積極重拾未來治理主權。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/10/90558/" target="_blank" rel="noopener">創意顧問取代單純視覺代工：日本設計界掀起策略導向轉型潮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】クリエイティブコンサルティング会社の株式会社CCが、アートディレクターなど3職種を募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/63b66f84129e4.jpg" alt="【求人情報】クリエイティブコンサルティング会社の株式会社CCが、アートディレクターなど3職種を募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">現在設計界最缺的早已不是把圖修漂亮的工匠，而是懂商業邏輯的軍師。日本 CC 公司的徵才動向正說明了這點：頂尖創意人紛紛從傳統廣告代理跳出，轉型為直面企業核心痛點的「創意顧問」。這意味著視覺美學不再只是最後的包裝紙，而是從策略發想階段就得介入的關鍵決策力。設計師若想在未來站穩腳跟，就得學會用商業語言講述美感價值，才能在董事會上擁有一席之地。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese creative consulting firm CC, founded by industry veterans Koichiro Toda and Taro Saito, is expanding its team by recruiting art directors and producers. This hiring move illustrates a broader industry trend where design studios evolve beyond traditional advertising production into high-level business consulting, directly shaping brand strategy and corporate communication from the inside out. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/10/90787/" target="_blank" rel="noopener">衛浴巨頭跨界藝術祭：用策展重新定義人與空間的親密感</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">LIXILが「DESIGNART TOKYO 2026」に出展。これからの住体験を紐解く展示を11月2日から開催</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/700_437_202609291354356abb448b27332.jpg" alt="LIXILが「DESIGNART TOKYO 2026」に出展。これからの住体験を紐解く展示を11月2日から開催" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當大眾對冷冰冰的建材規格逐漸麻木，老牌衛浴大廠 LIXIL 選擇在 DESIGNART TOKYO 用藝術策展給出解方。這不只是辦一場吸睛的展覽，而是大型企業向生活風格品牌轉型的教科書案例。透過藝術家重新拆解水與日常居住的關係，他們成功把實體五金轉化為撫慰心靈的生活哲學。這提醒了所有品牌：在講求感性價值的時代，能引起大眾對美好生活共鳴的，往往是美學體驗而非規格數據。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Housing and water technology giant LIXIL is participating in DESIGNART TOKYO 2026 to present an exhibition exploring future living experiences in Omotesando. By collaborating with the creative community, the company moves beyond utilitarian hardware to explore how aesthetic curation and design-driven sensory experiences can elevate daily domestic life and sustainable lifestyle choices. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/sea-turns-30/" target="_blank" rel="noopener">當快潮流席捲全球：倫敦老牌工作室用三十年證明耐看設計的力量</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">SEA turns 30 with a new anniversary book celebrating design that lasts</div>
+            <img class="item-image" src="https://media.creativeboom.com/fcd10b60-11d5-44a2-a164-384f8757a7e1/conversions/50110d9e3148ec574727122bb95019a5381a3d10-medium.webp" alt="SEA turns 30 with a new anniversary book celebrating design that lasts" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在社群演算法和 AI 快速生成洗禮的今天，倫敦設計工作室 SEA 用走過三十年的歷程提醒我們：真正的好設計經得起時間淘洗。他們慶祝週年的方式不是炫耀科技，而是回歸手工書籍的細膩質感與長年建立的人際信任。這給了焦慮追逐流行趨勢的創意人一記溫柔當頭棒喝：風格速成容易，但能跨越世代的簡約純粹與厚實底蘊，才是設計難以被機器取代的靈魂核心。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Celebrating its 30th anniversary, London design studio SEA is releasing a special commemorative book reflecting on three decades of timeless work. Founder Bryan Edmondson highlights that enduring client relationships, meticulous craftsmanship, and resisting ephemeral design fads have been pivotal in sustaining the studio&#x27;s legacy amidst rapid technological shifts in the global design landscape. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/adobe-max-2026/" target="_blank" rel="noopener">睽違十一年重返科技盛會：設計人如何與生成式工具焦慮握手言和</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Adobe MAX, it&#x27;s been a while: why Creative Boom is heading to Miami after 11 years away</div>
+            <img class="item-image" src="https://media.creativeboom.com/584bb55f-3c97-468b-937b-a57cf970e7ce/conversions/3d12d9889c0343f3ec8062cb2dc22be45b891f9a-medium.webp" alt="Adobe MAX, it&#x27;s been a while: why Creative Boom is heading to Miami after 11 years away" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">經歷過被 AI 焦慮轟炸的兩年，資深設計媒體人選擇重返 Adobe MAX，背後的心態轉變耐人尋味。我們終於從「機器會不會搶走飯碗」的恐慌，走向「如何讓科技替人類創意服務」的冷靜共存期。這篇文章最打動人的地方在於坦然放下完美主義，直面工具演變。比起緊繃地跟軟體競賽，設計師更需要回到線下聚會，在真實的同儕溫度與思想碰撞中，重新找回創作的本能與樂趣。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Creative Boom&#x27;s founding editor reflects on returning to Adobe MAX after an eleven-year absence, examining the evolving relationship between designers and creative technology. The piece captures a healthy industry transition from algorithmic existential anxiety toward pragmatically adopting new digital tools while reaffirming the irreplaceable value of human community, personal growth, and authentic storytelling. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/davy-denduyver/" target="_blank" rel="noopener">一條動態換來品牌重塑合約：社群平台如何打破設計傳統接案壁壘</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">From Creative Boom&#x27;s Instagram to a full rebrand: How Davy Denduyver met A Human Agency</div>
+            <img class="item-image" src="https://media.creativeboom.com/67725a0f-c071-4f5b-96f4-632013fb6be6/conversions/281a1073fd0226753e4d9fa92f19741df9fa5e28-medium.webp" alt="From Creative Boom&#x27;s Instagram to a full rebrand: How Davy Denduyver met A Human Agency" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">誰說大專案一定要經過層層比稿和官僚提案？比利時設計師 Davy Denduyver 僅憑社群上一張視覺作品，就拿下了一家創意代理商的全面品牌重塑案。這件事告訴我們，創作者經濟徹底瓦解了傳統商業藩籬，設計師的社群動態就是全天候營業的全球櫥窗。只要個人視覺語彙足夠鮮明獨特，即便遠在千里之外，頻率相通的合作夥伴自然會穿過演算法找到你，讓才華直接變現。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">A chance encounter on Instagram led Ryan Claydon of A Human Agency to commission Belgian designer Davy Denduyver for a comprehensive brand refresh. This collaboration demonstrates how decentralized social platforms continue to upend traditional corporate procurement, enabling independent designers with distinctive visual aesthetics to secure major international rebranding projects directly through organic discovery. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi2gJBVV95cUxObUVSQmpFTWhTemdPUUxiRUFRV1lHM0RWczlUeVRILVhXMjZoN3RtSFFvR1dabV9wbnhTU19hTFNYczVKbTBOWTd0WFRRV2xPUEp6bk0zdFlONDJNQ0RPcDZBQmRaenNNeW5NVmk1WTZQMmFEZHJLNVU1S1lvMlNWaW8zMUpxTVhpRkFYdmo2RDYtT1lWN0daaThXVHdVWjNMUDJ0WXo3Z01mNGxlTnlTT2VIeDdFMUlETGcyTEVSaVZQU2NlRnFfMHZkdTlQeW5veVlUTUZkVlJsV1ZaMFJ6RGpoekY3WUpJY0tseW1vZl9XU3dtNUhjRVR6ZTF3SXpBV0kzcllRQXRGZ0tnVUdFbGhhXzh4VG5HbXdlVzFKYlpSQzAxVFVDX2JLU0pRbGJfSlA3QjNMVDNDYm4yOUY2RUYtYVJKNFFNTG5UcTFRek5wV05QRXJqempB?oc=5" target="_blank" rel="noopener">地方選戰打出科技牌：AI 治理能否真正解鎖市民最頭痛的交通死結？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">藍營竹縣造勢 徐欣瑩：AI治理、解決塞車、每胎10萬元補助 吳旭智：竹北超越台北 - Yahoo新聞</div>
+            <div class="item-sentence lang-zh-only">選舉造勢喊出「AI 治理」，聽起來很炫，但市民最在意的還是下班能不能別塞在路上。新竹這場選戰交鋒點出了一個關鍵現象：AI 不再只是中央部會的高調政策，更成為地方首長爭取民心的萬靈丹。然而把演算法套進市政，考驗的不僅是技術硬體，更是跨部門數據整合與人本思維的細緻度。如果科技沒辦法替市民爭取到更多陪伴家人的時間，那再先進的模型也不過是口號一場。 <span class="src">— Yahoo新聞</span></div>
+            <div class="item-sentence-en lang-en-only">During local campaign rallies in Hsinchu County, candidates proposed incorporating AI governance to solve chronic traffic congestion alongside traditional demographic subsidies. This political narrative highlights how artificial intelligence is shifting from high-level state discourse to grassroots municipal politics, raising critical questions about whether algorithmic infrastructure can genuinely resolve complex civic bottlenecks without fundamental urban planning reform. <span class="src">— Yahoo新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOLXY3WVlmcENlaklrMTBvTlFUSjRTbnJPd0hadThsSjY5bkpHUi1xZFlwV3dMcEtCSGhTcE5aOVZoOV9fc0lYaTJUdkRxclJKaFRaQS13T2ZlV09TWGJrZDhZSTF5RXJCRkVobTBVOW9XN3N2b2ZrVGV6UjJXMDNjYzZHckhwdFpmSVVKYw?oc=5" target="_blank" rel="noopener">對抗科技寡頭與政治強人：公民社會奪回未來想像的數位治理突圍戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How to Reclaim the Future from Strongmen and Oligarchs - Tech Policy Press</div>
+            <div class="item-sentence lang-zh-only">當少數矽谷富豪與威權領袖聯手掌控演算法、基礎設施與話語權，未來的模樣難道只能由他們說了算？這篇文章敲響了數位民主的警鐘。我們不能再把網路當成純粹的消費娛樂場所，因為科技架構本質上就是權力分配的戰場。公民社會與政策制定者必須攜手打破科技寡頭的壟斷，建立具公共性的替代方案，才能避免數位未來淪為極端個人利益的附庸，守住屬於大眾的民主空間。 <span class="src">— Tech Policy Press</span></div>
+            <div class="item-sentence-en lang-en-only">Tech Policy Press investigates how the convergence of political autocrats and tech oligarchs threatens democratic governance and monopolizes civil imaginations of the future. The essay advocates for proactive civil society mobilization, public interest technology alternatives, and robust regulatory counterweights to dismantle monopolistic control over digital infrastructure and safeguard democratic discourse in an increasingly privatized cyberspace. <span class="src">— Tech Policy Press</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMingFBVV95cUxQcDFpUDBQazFEZkFWYkdrMW5Yblc1QUdnVUhCUzBmbUJ0YTc2T3FLYnpGQlEybjdfMWl0cTN4ZzkwdG5YaGZUaUM5RlBoVWNJU0x5QVBNaXU2SXFtc0c5TDYzWWxHdWRraUhsQWwyclhETFRsdGFVdWlEYnlWTG9zR1dJcTQ3YUZfaG5JUTRkb3RwNHBPbVBuWTR5elBKZw?oc=5" target="_blank" rel="noopener">南北半球共商治理規則：英奈聯手打造更具包容性的數位貿易標準</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">UK and Nigeria Strengthen AI Governance and Digital Trade Standards - Head Topics</div>
+            <div class="item-sentence lang-zh-only">全球 AI 治理常常被歐美掌控話語權，但這次英國與奈及利亞的合作釋放出一個關鍵訊號：新興市場正在進入規則制定的牌桌。非洲擁有龐大的年輕數位人口，如果治理框架忽略了他們的脈絡，任何全球標準都只是半套。這項合作不只關乎數位貿易關稅，更在摸索一套能跨越經濟落差的科技倫理基準。唯有納入更多元的在地聲音，未來的數位世界才不會淪為新的數位殖民主義。 <span class="src">— Head Topics</span></div>
+            <div class="item-sentence-en lang-en-only">The United Kingdom and Nigeria have forged a strategic partnership to strengthen AI governance frameworks and harmonize digital trade standards between the two nations. This initiative marks a crucial step toward including the Global South in digital rulemaking, ensuring emerging market realities are reflected in international standards surrounding ethical AI, algorithmic accountability, and cross-border data flows. <span class="src">— Head Topics</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiRkFVX3lxTE1UenJoblpTMkZqRzhybW4zRGcyLUNBLTJfRHNGOGpUYVZPeGRqU3pJaDQzQmkxbi16aU9kbjE1cU0zeDg0bEE?oc=5" target="_blank" rel="noopener">百年重工業的數位換心手術：傳統巨頭如何建立負責任 AI 防護網</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ABEJA、ENEOSのAIガバナンス体制構築強化を支援 - Dellows News</div>
+            <div class="item-sentence lang-zh-only">日本百年能源巨頭 ENEOS 找上 AI 新創 ABEJA 搭建治理架構，這件事極具指標意義。老牌重工業想用 AI 優化提煉與營運，最怕的不是演算法不夠聰明，而是出了事故誰該負責。這說明了當前企業導入新科技時，「安全煞車系統」比「油門加速器」更值錢。具備制度設計能力的治理專家正成為市場新寵，唯有把倫理防線與合規路徑鋪平，龐大傳統企業才能安心加速其數位轉型。 <span class="src">— Dellows News</span></div>
+            <div class="item-sentence-en lang-en-only">AI startup ABEJA has partnered with Japanese energy titan ENEOS to establish a robust internal AI governance framework. As legacy industrial giants integrate algorithmic decision-making across complex physical infrastructures, this strategic collaboration underscores the growing corporate imperative to institute transparent risk management, ethical guardrails, and compliance mechanisms alongside operational technological deployment. <span class="src">— Dellows News</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/blogs/lohrmann-on-cybersecurity/should-government-websites-block-personal-ai-agent-transactions" target="_blank" rel="noopener">當市民派 AI 助理代辦公務：政府數位服務面臨人機分流的制度衝擊</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Should Government Websites Block Personal AI Agent Transactions?</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/41d21bb/2147483647/strip/true/crop/7707x3746+0+703/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fe0%2F5f%2F1124b4684daf8adcf19a8c712262%2Fadobestock-2201636315-editorial-use-only.jpeg" alt="Should Government Websites Block Personal AI Agent Transactions?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">如果未來報稅、申請補助或查詢戶籍，都是市民的手機 AI 代理人自行上網搞定，政府系統接得住嗎？GovTech 討論的正是這個迫在眉睫的難題。過去公部門網站都是「設計給真人看」的，現在突然湧入成千上萬個機器人代辦，身分認證、個資洩漏與法律責任界線全被模糊了。公部門如果只會盲目封鎖，只會激化數位斷層；如何設計出讓人類與 AI 代理人共存的下一代公共服務介面，是所有治理者的必修課。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">As citizens increasingly deploy autonomous personal AI agents to handle digital transactions, GovTech explores whether public sector websites should restrict automated interactions. The emergence of agentic AI disrupts conventional user authentication, cybersecurity assumptions, and legal liability models, forcing government agencies to fundamentally redesign digital public interfaces to safely accommodate both human constituents and autonomous machine delegates. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-26 08:03:41 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
