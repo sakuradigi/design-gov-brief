@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從前橋地方創生到離線AI治理：設計如何重構真實信任？ · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-27</div>
+    <div class="headline">從前橋地方創生到離線AI治理：設計如何重構真實信任？</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design is not just what it looks like and feels like. Design is how it works, and how it connects human beings to their surroundings.</div>
+      <div class="quote-text-zh lang-zh-only">設計不只是外觀與感覺，設計是運作的機制，更是將人與其周遭世界連結起來的方式。</div>
+      <div class="quote-author">— Victor Papanek</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">日本前橋用建築與藝術翻轉衰退街區，示範了長效型地方設計。</li>
+        <li class="flash-item">樂高攜手傻瓜龐克，證明品牌最高境界是把狂熱粉絲變成共創者。</li>
+        <li class="flash-item">美國地方政府引進離線AI轉錄，在保護隱私與落實透明間取得平衡。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/722926.html" target="_blank" rel="noopener">達文西名作首度赴日展出：古典巨作背後折射當代視覺想像的本質</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">国立新美術館の「ルーヴル美術館展 ルネサンス」。レオナルド・ダ・ヴィンチ《美しきフェロニエール》が初来日</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/09/bc3621dc38e3791b1dbe5671ea6754dd.jpg" alt="国立新美術館の「ルーヴル美術館展 ルネサンス」。レオナルド・ダ・ヴィンチ《美しきフェロニエール》が初来日" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">羅浮宮文藝復興特展登陸東京，不僅帶來達文西名作，更展出杜勒從未親眼見過犀牛卻憑想像刻劃的經典木版畫。這背後揭示了一個當代啟示：在AI生成影像氾濫的今天，文藝復興時期藝術家如何透過微薄線索建構世界，提醒了我們「人類想像力」與「對細節的偏執」才是視覺傳達的靈魂。觀展不只是懷舊，而是重溫人類如何用畫筆賦予未知事物真實感的原始力量。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The Louvre&#x27;s Renaissance exhibition arrives at Tokyo&#x27;s National Art Center, featuring Leonardo da Vinci and Albrecht Dürer&#x27;s iconic rhinoceros woodcut. Dürer&#x27;s ability to illustrate an unseen creature purely through imagination serves as a timeless reminder of human creativity&#x27;s power in an era dominated by automated generative imagery. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/report/maebashi-biennale-2026-1/" target="_blank" rel="noopener">前橋國際藝術祭登場：用頂級建築與在地策展翻轉地方創生的典範</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">まちづくりの取り組みがアートと建築を楽しむ国際芸術祭に結実。初開催の「前橋国際芸術祭」レポート（1）</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/02.jpg" alt="まちづくりの取り組みがアートと建築を楽しむ国際芸術祭に結実。初開催の「前橋国際芸術祭」レポート（1）" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">群馬縣前橋市近年透過白井屋飯店、美術館等前衛建築改建，成功擺脫蕭條意象，如今更催生出首屆前橋國際藝術祭。這件事極具指標性：它打破了「為了辦節慶而辦活動」的煙火式思維，而是先把城市基礎設施、當代建築美學與在地居民生活扎實黏合，再順水推舟轉化為國際盛會。這對所有苦思地方創生與城市品牌的策劃者來說，是絕佳的實戰教科書。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The inaugural Maebashi Biennale transforms a revitalized regional Japanese city through world-class architecture and art. Unlike temporary PR stunts, this festival leverages long-term urban design projects, like the Shiroiya Hotel, proving that durable placemaking comes from embedding contemporary aesthetics directly into daily civic life. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/international-assembly-2026-glasgows-design-festival-turns-with-a-secret-stage-and-a-night-in-a-medieval-castle/" target="_blank" rel="noopener">格拉斯哥設計節移師古堡：逃離常規展場的沉浸式社群體驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">International Assembly 2026: Glasgow&#x27;s festival returns with a secret stage and a night in a castle</div>
+            <img class="item-image" src="https://media.creativeboom.com/a9b810e7-0727-44c2-a402-411a5a74912a/conversions/267860bd412fcbbcb46bc5973726d37200a19bec-medium.webp" alt="International Assembly 2026: Glasgow&#x27;s festival returns with a secret stage and a night in a castle" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">面對陰冷冬季，蘇格蘭設計節 International Assembly 選擇把設計師拉進中世紀古堡與隱密舞台。這反映了設計產業聚會的根本質變：讀者與設計師早就厭倦了冰冷的白盒子展覽與千篇一律的簡報，人們渴望的是帶有冒險感、能促成深度對話的「儀式感場域」。跳脫舒適圈的空間設計，往往才是激發非典型跨界合作與創意靈感的真正溫床。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Glasgow&#x27;s International Assembly design festival breaks away from conventional convention halls by hosting stages in medieval castles. This trend reflects an evolving desire among creative professionals for immersive, atmosphere-driven gatherings that foster genuine community exchange over standard slide presentations and passive panel listening. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/lego-and-daft-punks-team-up-highlights-exactly-how-brands-should-interact-with-fans/" target="_blank" rel="noopener">樂高聯手傻瓜龐克：把粉絲當共創夥伴才是當代品牌的造神公式</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Lego and Daft Punk&#x27;s team-up highlights exactly how brands should interact with fans</div>
+            <img class="item-image" src="https://media.creativeboom.com/ee963d43-4301-4e19-99d3-db4ca9e05404/conversions/d36bbc9be1ef4dabd2a0d6930d7053fd8b583228-medium.webp" alt="Lego and Daft Punk&#x27;s team-up highlights exactly how brands should interact with fans" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">樂高將粉絲提案的 Daft Punk 積木組正式量產，並用極富懸念的神秘行銷引爆社群。這件事的重要性在於它揭示了社群時代的品牌權力轉移：傳統品牌習慣單向灌輸價值，但頂尖品牌早已轉型為「文化策展人」，賦予核心粉絲共同定義產品的權力。當狂熱消費者的心血被官方認可，所引爆的品牌忠誠度與病毒傳播力，是任何高昂廣告預算都買不到的。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Lego&#x27;s official collaboration with Daft Punk—originating from a fan submission—illustrates the modern shift in brand building. By treating dedicated enthusiasts as creative collaborators rather than mere consumers, brands cultivate profound organic loyalty and transform subcultural passion into commercially successful mainstream phenomena. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/stocksys-2027-visual-insights-report-explores-why-some-images-connect-with-audiences-and-others-dont/" target="_blank" rel="noopener">Stocksy年度視覺報告：當生成圖片氾濫，真實的關係連結成稀缺價值</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Stocksy&#x27;s 2027 Visual Insights Report explores why some images connect with audiences so well</div>
+            <img class="item-image" src="https://media.creativeboom.com/6107cf07-9447-4bb0-883d-0a04971c18b6/conversions/66092d43d96adcc649331980692fa8418fe6274c-medium.webp" alt="Stocksy&#x27;s 2027 Visual Insights Report explores why some images connect with audiences so well" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">圖庫平台 Stocksy 發表 2027 視覺趨勢報告，直指在「任何畫面都能被AI一鍵生成」的時代，單純的視覺美感已失去辨識度。真正能打動人心的視覺，在於畫面中人與環境、主體與客體之間微妙的介系詞關係與情緒張力。對視覺傳達者而言，這意味著你的競爭力不再是技術精細度，而是你能否捕捉到那種演算法算不出來的、帶有瑕疵卻無比真實的人性片刻。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Stocksy&#x27;s 2027 Visual Insights Report asserts that aesthetic representation is no longer sufficient when AI generates flawless imagery on demand. The value now resides in contextual emotional nuance and relational tension, urging visual creators to focus on authentic human imperfections that algorithms fail to simulate. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE50dWtld2lLMDNRczVLcVFVU2xWTFY0NWRybldfTnpyTmZHMG5kU2J0WDBDYThSN3BJVzVFNzByb3NaNGhSYVp5NmZHOU5ZcmY3d3c?oc=5" target="_blank" rel="noopener">高雄攜手AWS推港都AI日：地方政府如何從應用買方變身生態推手</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">高雄市政府與AWS共同舉辦「2026 亞馬遜港都 AI 創新日」 加速智慧城市發展與產業轉型出海 - 蕃新聞</div>
+            <div class="item-sentence lang-zh-only">高雄市政府與雲端巨頭 AWS 舉辦 AI 創新日，推動在地智慧城市轉型與企業出海。這代表台灣地方治理邏輯的升級：公部門不再只是被動採購智慧方案的客戶，而是利用國際大廠資源搭台，扮演推動在地產業技術出海的生態整合者。地方治理的勝負關鍵，已從鋪橋造路的硬體思維，轉變為能否替城市媒合具國際擴展性的數位基礎設施。 <span class="src">— 蕃新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Kaohsiung City&#x27;s partnership with AWS for Harbor AI Innovation Day showcases local governments evolving from passive tech buyers into ecosystem enablers. The initiative accelerates smart city applications while helping homegrown enterprises scale internationally through global cloud infrastructures. <span class="src">— 蕃新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxNTlNYSHZCTUVKc3JMbU1uV0Y4dDljcDZtUGRCTFlpTF9zTFNrYzRIbmhZdlhtdFduUWJBRGpKRWtqaEhoR2haTGltNnhERHk1OHdJTzhjX2F2NERXOTdYSFFTTnVmdk4yV2JGQUhFeWRZNWFRTmlhMFN0ZlZNN1VUMGJ2SEotM2RMbVlxaUcwajVkRUNqNHpSOXJrcm5wNEZyOXNheFlQajU4NXAwS0E?oc=5" target="_blank" rel="noopener">美國醫院協會聚焦AI落地治理：醫療場域必須從算力狂熱走向防禦性安全</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Virtual session to discuss how hospitals put AI governance into practice - American Hospital Association</div>
+            <div class="item-sentence lang-zh-only">美國醫院協會舉辦線上研討會，探討醫療體系如何將抽象的 AI 治理原則轉化為臨床日常操作。醫療是最不能容忍「幻覺」與黑箱的領域，這場討論的核心趨勢在於：AI 的導入焦點已從單純提升診斷效率，轉向如何建構多層次的防錯機制與倫理把關。對政策與治理端來說，沒有可操作的治理防線，再強大的生成式模型也無法在公共健康領域安全著陸。 <span class="src">— American Hospital Association</span></div>
+            <div class="item-sentence-en lang-en-only">The American Hospital Association convened clinical leaders to operationalize AI governance. The discussions underscore that in high-stakes healthcare environments, raw computational capability matters less than rigorous ethical oversight, hallucination prevention, and actionable patient privacy protocols. <span class="src">— American Hospital Association</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMirgFBVV95cUxNTlNYSHZCTUVKc3JMbU1uV0Y4dDljcDZtUGRCTFlpTF9zTFNrYzRIbmhZdlhtdFduUWJBRGpKRWtqaEhoR2haTGltNnhERHk1OHdJTzhjX2F2NERXOTdYSFFTTnVmdk4yV2JGQUhFeWRZNWFRTmlhMFN0ZlZNN1VUMGJ2SEotM2RMbVlxaUcwajVkRUNqNHpSOXJrcm5wNEZyOXNheFlQajU4NXAwS0E?oc=5" target="_blank" rel="noopener">臨床AI落地盲區：醫療機構為何急需標準化風險評估流程？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Virtual session to discuss how hospitals put AI governance into practice - American Hospital Association</div>
+            <div class="item-sentence lang-zh-only">延續醫療AI治理的深入探討，各院所共同面臨的痛點是「演算法評估標準不一」。當不同供應商的預測模型進入急診與病房，前線醫護往往缺乏統一套件來驗證其偏差與穩定性。這件事帶給治理者的啟發是：數位轉型的瓶頸往往不在技術研發，而在於機構內部是否具備跨領域的評鑑制度，讓科技在不破壞醫病信任的前提下平穩運作。 <span class="src">— American Hospital Association</span></div>
+            <div class="item-sentence-en lang-en-only">As hospitals integrate third-party algorithmic diagnostics, standardizing validation processes becomes an urgent institutional imperative. Successful digital healthcare governance hinges on establishing clear cross-functional frameworks that evaluate model bias and clinical safety before deployment. <span class="src">— American Hospital Association</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNaDljMjZGbHBWc1A3d3I3STdIQzRCMDJMTEVtdE9nNi1XRjJyanBOQll1VVd0d1lDaTU4c0FHci03YS1iOS1TWC1MY0p1dDFwSVJybEw2TlN6LUo3MkdBZVdkQVhWbXQwYVZYSkNBc2Ewa3A5UmdlOUFVQTJhaEpxbnRn?oc=5" target="_blank" rel="noopener">印尼強化資料保護與AI治理：東南亞新興市場的數位主權保衛戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">インドネシアはデータ保護のため、AIガバナンスを強化する。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">印尼政府近期宣告收緊AI治理政策並強化資料保護法制。這反映出新興國家面對跨國科技巨頭時，日益強烈的「數位主權」意識。東南亞正迎來AI基礎建設的投資爆發期，但印尼選擇在起跑點設立界線，要求在地數據在地保護。這提醒了所有科技布局者：未來的AI治理版圖將是高度碎片化的，因地制宜的合規能力將成為跨國拓展的核心競爭力。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Indonesia&#x27;s move to tighten AI governance and personal data protection underscores rising digital sovereignty across Southeast Asia. As global tech capital floods regional markets, local authorities are proactively defining regulatory boundaries to safeguard citizen privacy and national digital assets. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/artificial-intelligence/ai-transcription-and-translation-minus-the-cloud-connection" target="_blank" rel="noopener">紐澤西市議會引進離線AI轉錄：不連雲端才能兼顧隱私與民主透明</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Transcription and Translation, Minus the Cloud Connection</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/0e342e4/2147483647/strip/true/crop/4521x2198+0+73/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F9e%2F76%2F4d151cc146a3b86ecac646df4f0d%2Fadobestock-2220165182.jpeg" alt="AI Transcription and Translation, Minus the Cloud Connection" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">紐澤西州新布朗斯維克市議會採用完全本地端運行的 AI 轉錄與翻譯技術，大幅降低會議參與門檻，且全程斷絕雲端連線。這個案子極具啟發性：在公部門急著擁抱主流商業雲端模型的浪潮下，回歸邊緣運算（Edge AI）反而解決了政府最在意的資安與隱私外洩隱憂。這證明了智慧政府的技術選型，不一定要盲目追逐大模型，恰到好處的輕量在地架構更有助於落實公共信任。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">The New Brunswick City Council in New Jersey deployed an entirely on-premise AI transcription system for municipal meetings. Operating independently of the cloud, this approach provides transparent multilingual civic access while eliminating data privacy vulnerabilities, demonstrating the distinct civic value of local edge computing. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-27 08:03:25 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
