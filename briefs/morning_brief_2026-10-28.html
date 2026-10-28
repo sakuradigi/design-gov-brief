@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從跨尺度設計到自主代理治理：當物質美學重構生活，AI正重塑公共信任的骨架 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-28</div>
+    <div class="headline">從跨尺度設計到自主代理治理：當物質美學重構生活，AI正重塑公共信任的骨架</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Architecture is not about space but about time, and how we negotiate our fragile relationship with material reality.</div>
+      <div class="quote-text-zh lang-zh-only">建築探討的從來不是空間，而是時間，以及我們如何與脆弱的物質現實展開博弈。</div>
+      <div class="quote-author">— Juhani Pallasmaa</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">建築大師把巨型思維縮小進日常家具，設計界正掀起一場跨尺度的物質對話。</li>
+        <li class="flash-item">自主AI代理全面進駐公私部門，資料邊界與主權防護成為數位治理最硬核的戰場。</li>
+        <li class="flash-item">當代市集演繹策展新維度，藝術與地方風土正聯手反擊過度標準化的消費體驗。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/728114.html" target="_blank" rel="noopener">當造樓巨擘轉向微觀器物，Foster+Partners揭示工業設計的極致尺度轉換</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Foster + Partners Industrial Design展「One to one」開催。家具から建築システムまで、デザインの思考と制作プロセスをたどる</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/FPIDExhibition_Digital_Static_1920x1080_04.png" alt="Foster + Partners Industrial Design展「One to one」開催。家具から建築システムまで、デザインの思考と制作プロセスをたどる" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">頂尖建築事務所跨界做家具，絕非玩票性質的周邊商品，而是將掌控摩天大樓結構與材料系統的嚴密邏輯，濃縮到人體可觸摸的尺度。這場展覽提醒我們，好的工業設計往往來自對整體環境的空間敏銳度；當我們習慣把室內與建築拆開看待時，頂尖團隊正用一體成型的思維，示範如何讓一盞燈或一張椅子承載整座城市的工程哲學。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Foster + Partners showcases its industrial design portfolio at Tokyo&#x27;s AXIS Gallery, demonstrating how complex architectural engineering seamlessly scales down into everyday furniture and objects. The exhibition emphasizes holistic material systems bridging interior objects with broader urban environments. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/10/90837/" target="_blank" rel="noopener">逃離演算法同質化！東京生活市集如何用跨界策展救贖實體消費的溫度</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">アート・クラフト・フードが集う「SUPER ART &amp; CRAFT MARKET 2026」が、東京ミッドタウン日比谷で開催</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/65348-242-d5ba5b9139b72894ac965d82dc7ae904-1920x1280-1.webp" alt="アート・クラフト・フードが集う「SUPER ART &amp; CRAFT MARKET 2026」が、東京ミッドタウン日比谷で開催" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當線上購物被精準推薦算得死死的時候，人們反而開始渴望那種不期而遇的粗糙與驚喜。BEAMS與音樂經紀機構聯手在日比谷打造的這場市集，把當代藝術、工藝手作與地方風味混融在一起，本質上是一場「體驗策展」的社會實驗。它證明了實體商業空間的未來不再是單純陳列貨品，而是為大眾提供具備社群共鳴的文化現場。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Curated by BEAMS Creative and Avex Creators Agency, the Super Art &amp; Craft Market 2026 brings art, crafts, and food to Hibiya. This initiative reflects a growing consumer appetite for authentic, tactile experiences and cultural serendipity in physical spaces over algorithmic e-commerce. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/cesar-cid-turns-famous-artists-into-letters-in-his-playful-alphabet-series/" target="_blank" rel="noopener">用一個英文字母辨識藝術大師：平面轉譯如何淬鍊出超越時代的視覺DNA</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">César Cid turns famous artists into letters in his playful alphabet series</div>
+            <img class="item-image" src="https://media.creativeboom.com/726dd27b-b04b-4de9-b227-df28995ee596/conversions/b7f2ba3b532ca2049386b351a3310ca0bdd75040-medium.webp" alt="César Cid turns famous artists into letters in his playful alphabet series" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">把草間彌生、畢卡索等巨匠的標誌風格濃縮進26個英文字母，這不只是好玩有趣的字型遊戲，更是一場關於視覺符號記憶度的殘酷測試。這項創作給品牌與創作者最深刻的啟發在於：真正的原創美學，即使抽離了原本的巨幅畫布或雕塑，只剩下幾何線條與色彩，依然能在三秒內被大眾辨識。你的個人品牌是否也具備這種極致純粹的辨識度？ <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Designer César Cid reimagined 26 iconic artists into an illustrated alphabet, challenging visual minimalism. The project serves as an inspiring design exercise, proving that truly enduring artistic styles retain absolute recognition even when radically abstracted into typographical glyphs. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/type-drop/the-best-new-typefaces-for-october-2026/" target="_blank" rel="noopener">硬度計遇到蕾絲刺繡！十月新字型浪潮預示著後數位時代的感官反叛</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The best new typefaces for October 2026</div>
+            <img class="item-image" src="https://media.creativeboom.com/3b9f0f5a-a3bd-4990-b177-0b5a34c4da0a/conversions/065ee9d63a9b0d98ce651c81d7f53ac6935cb59a-medium.webp" alt="The best new typefaces for October 2026" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">從工業莫氏硬度計汲取靈感的粗獷粗襯線，到用蕾絲記憶編織的展示字體，十月的新字型展現出一種強烈的「物質回魂」傾向。在AI幾秒鐘就能生成平庸標準字的時代，字型設計師們刻意走向極端——要麼極度硬核、要麼極度纖細柔軟。這告訴設計圈，字體正在從無聲傳達訊息的工具，升級為宣示品牌情緒與審美立場的視覺圖騰。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Creative Boom showcases October&#x27;s standout typefaces, ranging from industrial-inspired slabs to lace-woven display fonts. The collection signals a distinct movement where type designers push sensory extremes to counter sterile, AI-generated typographic uniformity with tangible emotional narratives. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/books/socialist-hotels-relive-the-concrete-dreams-of-the-soviet-era-with-this-beautiful-photobook/" target="_blank" rel="noopener">鐵幕背後的烏托邦殘影：冷戰時期社會主義飯店的美學遺產與權力符號</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Socialist Hotels: relive the concrete dreams of the Soviet era with these beautiful photos</div>
+            <img class="item-image" src="https://media.creativeboom.com/1e4111b6-337c-41f9-86ca-2278665d73da/conversions/d2769a806672a65612c128405699a9f49659a9b0-medium.webp" alt="Socialist Hotels: relive the concrete dreams of the Soviet era with these beautiful photos" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這本記錄蘇聯時期飯店建築的攝影集，撕開了外界對鐵幕生活只有灰暗單調的刻板印象。那些龐大且奇特的粗獷主義混凝土結構，既是昔日國家展示技術實力的宣傳櫥窗，也是當年構想集體度假烏托邦的實體容器。凝視這些空間能讓我們反思：建築空間從來就不是中立的，它永遠在無聲地投射特定時代的意識形態與權力渴望。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">A new photographic retrospective documents the hospitality architecture of the socialist Soviet era. The monumental, brutalist hotels highlight how leisure spaces were deliberately engineered to project state ideology, collective optimism, and mid-century architectural ambitions. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE9PcnNyVUVsU1JCQnZfUW1NNmhzVVNsRHRtdV85Z0xVYTE0SC0xajczdHRRWl90RTJSRDFHRV9CcTVMMy1pM0dEYWRxOHF5azBlU1hMN25Sa2xVWktzYjkwYkQ1ZDE0Y1pWZ1pv?oc=5" target="_blank" rel="noopener">地方政府打入科技深水區：新北市聯手微軟與超微，開啟公共服務AI治理試驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">新北攜微軟、超微 推進AI治理 - 中時新聞網</div>
+            <div class="item-sentence lang-zh-only">地方政府擁抱AI早已過了「聊天機器人回答市民問題」的初階階段。新北市直接攜手微軟與超微這類底層算力與架構巨頭，象徵公共部門正試圖建構能自主運作的治理骨幹。這件事的關鍵不在於買了多少伺服器，而在於公部門如何面對運算主權、演算法透明度以及市民資料的邊界。地方自治體正成為全球前沿治理架構的真實試驗場。 <span class="src">— 中時新聞網</span></div>
+            <div class="item-sentence-en lang-en-only">New Taipei City is partnering with Microsoft and AMD to advance municipal AI governance. This collaboration moves public service beyond basic automation toward robust infrastructure, addressing critical systemic issues such as algorithmic transparency, data ethics, and computational sovereignty. <span class="src">— 中時新聞網</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxNazlhSFJrWUhoRDhaM0ZCS3hiYTJnWS0wSVQ0dTVYWFpPblQ1dGJRbENxWFV0TjliVS0zem1OWmstMS1QZjNHdGJGeF9iLUJvR2UzZlJkcy10N194N3RCSS1JOFRYUWNhSG5mYndDQkp5WUhLempwemJQNG1zT3paYUJnWlg1QkJ3RFVVbkxB?oc=5" target="_blank" rel="noopener">當企業數據被生成式AI穿透：AvePoint新平台點出資訊合規的生死焦慮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AvePoint Launches Platform for Enterprise AI Governance and Security - Redmondmag.com</div>
+            <div class="item-sentence lang-zh-only">很多企業興沖沖導入AI工具後，才驚覺內部敏感資料像是打開了潘朵拉盒子，毫無防護地被模型吞噬。AvePoint推出專注治理與安全的平台，恰恰切中了這個產業痛點。未來幾年，企業競爭的分水嶺不再是「誰用的AI比較聰明」，而是「誰能把資料底線守得滴水不漏」。缺乏嚴密護欄的AI創新，只是一場隨時可能引爆的資安災難。 <span class="src">— Redmondmag.com</span></div>
+            <div class="item-sentence-en lang-en-only">AvePoint launched an enterprise AI governance and security platform to tackle corporate data exposure. As generative tools deeply infiltrate operational workflows, the primary enterprise competitive edge is shifting from raw AI capability to rigorous data hygiene and boundary control. <span class="src">— Redmondmag.com</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxPR3dZZG90WUEzMkZsN3NhS3lPVzRXeU41VnRCbGlzMDBLWTVQWjlrV3hKT0tNaktwUjdBTlMyZFdjN3dIVHNFVnZKWkVwcHlWbHZJdURrZWN5d05uQ2Y4Tm55TWFPYVhTdmtDblhVR0h0SXl2YVRZaGgtWDNNOTMxaVEyWjFtbjRLTld5dzZIYjRBMTgwLXI2bVc3ZGVNdzg?oc=5" target="_blank" rel="noopener">從被動回應到主動出擊：自主代理AI普及前夜，資安防線面臨維度重構</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How agentic AI governance tackles data, security challenges - TechTarget</div>
+            <div class="item-sentence lang-zh-only">過去我們防範的是「人輸入提示詞洩密」，但當AI演變成具備自主規劃、呼叫API甚至執行任務的代理人（Agent）時，傳統的資安規則瞬間失效。這篇文章點出了即將到來的深層治理危機：當多個代理人在企業內部自行溝通決策，身分驗證與授權機制該怎麼訂？如何給擁有行動力的演算法戴上韁繩，將是接下來十年最關鍵的架構課題。 <span class="src">— TechTarget</span></div>
+            <div class="item-sentence-en lang-en-only">TechTarget analyzes how agentic AI governance must evolve beyond traditional data safeguards. As autonomous agents gain execution capabilities across multiple systems, establishing dynamic identity verification and authorization becomes the ultimate cybersecurity imperative. <span class="src">— TechTarget</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxNb001SGhuc1NjSlJKYWR6LXBQUTU0OWNsX1M0UGJTVEpZTEgtN1o1Z2lleTZpT3pmNEphUjR0bVg0S2QzNTJpeVdnQ3ExLXdpZnZjS3hxRkdrNjdyeGttMjBScDltNjVjZnRGNm5DVDNkT2tvV0RMc3hKUkhOX1Q0M3VfR2RRZEctcDJZZXJTUEpCeDBFTk5rcDY5MnE1anlPUUF3?oc=5" target="_blank" rel="noopener">東南亞數位主權崛起：越南攜手聯合國深造治理，搶佔全球南方科技話語權</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ベトナムと国連は、情報通信およびデジタルガバナンス分野における協力を強化する。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">越南與聯合國在資通訊與數位治理上的深化合作，折射出發展中國家不再甘於只當歐美科技大廠的代工基地或單純的市場。透過引入多邊組織的制度標準，越南正試圖在資料主權、跨境數位規範等議題上建立自己的框架。這種「以制度對接全球」的策略，正是新興國家在數位地緣政治夾縫中爭取自主性的生存智慧。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Vietnam strengthens its cooperation with the United Nations on telecommunications and digital governance. The strategic alliance reflects the Global South&#x27;s ambition to actively establish national digital sovereignty and normative frameworks rather than passively adopting Western tech paradigms. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/biz/early-adopters-take-up-gemini-for-government-services" target="_blank" rel="noopener">告別繁瑣公文與補助審查：美國公部門實測Gemini，公務員工作模式正被改寫</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Early Adopters Take Up Gemini for Government Services</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/2b0b810/2147483647/strip/true/crop/6000x2917+0+0/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fb1%2Fae%2F57a2fc9445e1a9b6cda7175b17c9%2Fgoogle-gemini.jpeg" alt="Early Adopters Take Up Gemini for Government Services" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">政策研究與補助款審查這類耗費大量人力的例行公事，往往是公務體系最容易卡關的瓶頸。美國基層政府導入Gemini的早期實踐，並不是為了取代公務員，而是把他們從文字苦役中解放出來。這項變革對公部門最大的啟發在於：數位轉型不是買炫砲的科技，而是用最合適的自動化工具消除官僚阻力，讓公共服務重新把心力留給需要同理心的真實溝通。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">U.S. government agencies are adopting Google&#x27;s Gemini to automate grant reviews, policy research, and administrative tasks. The initiative highlights a trend where public sector automation shifts away from bureaucracy toward human-centric workflows, freeing civil servants to focus on empathetic citizen engagements. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-28 08:03:21 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
