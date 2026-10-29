@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從綠能代價的殘酷美學到民主防禦：當設計翻轉權力階級，AI治理全面制度化 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-29</div>
+    <div class="headline">從綠能代價的殘酷美學到民主防禦：當設計翻轉權力階級，AI治理全面制度化</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Convivial tools are those which give each person who uses them the greatest opportunity to enrich the environment with the fruits of his or her vision.</div>
+      <div class="quote-text-zh lang-zh-only">所謂共生型的工具，就是能賦予每位使用者最大的機會，用自身視野的成果來豐富周遭的環境。</div>
+      <div class="quote-author">— Ivan Illich（伊凡·伊利希，奧地利哲學家與社會批判家）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">皇家畫家為街角小鋪作畫，翻轉貴族視角的庶民尊嚴美學。</li>
+        <li class="flash-item">空拍攝影揭露潔淨能源代價，戳破零碳口號的地景反思。</li>
+        <li class="flash-item">選舉防衛跳脫投票機迷思，民主治理聚焦全景流程韌性。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/10/727503.html" target="_blank" rel="noopener">藝術打破工廠邊界！東京葛飾老聚落靠物質實驗重構城市想像</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">SKACで「SKAC EXTENSION 2026」を開催。素材・アート・都市を横断する7つのプロジェクト</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/me_036.jpg" alt="SKACで「SKAC EXTENSION 2026」を開催。素材・アート・都市を横断する7つのプロジェクト" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當代地方創生最怕流於表面的彩繪牆與網美咖啡，東京葛飾 SKAC 的擴展計畫給了我們全新思路。他們邀請藝術團隊「目 [mé]」以物料、空間與空間感知為核心，直視工業邊緣街區的物質紋理。這代表藝術介入都市不再只是「裝飾」，而是化身為引發公共對話的感知觸媒，讓市民重新體會自己與空間材料的深刻連結。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The expansion program &#x27;SKAC EXTENSION 2026&#x27; in Katsushika, Tokyo, brings artists like 目 [mé] together to traverse materials, art, and urban spaces. Instead of superficial placemaking, it uses radical materiality and sensory experiences to reconnect citizens with the industrial fabric of the neighborhood. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/kobeartsalone2026/" target="_blank" rel="noopener">老洋房變身私密沙龍：神戶北野用策展重燃歷史街區的生活靈魂</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">KOBE ART SALONE 2026</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/1400492.jpg" alt="KOBE ART SALONE 2026" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">歷史建物的活化常常陷入純粹觀光化的瓶頸，變成賣明信片與紀念品的空殼。「神戶藝術沙龍 2026」選擇在北野異人館重現古典沙龍的私密感與對話氛圍，把展覽化為一種生活美學的沉浸體驗。這提醒了文化治理者：守護歷史街區不該靠封存，而是要透過當代藝術策展，把活生生的人際交流重新引流回古老磚瓦之中。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Kobe Art Salone 2026 activates historic western-style residences in Kitano through intimate salon-style exhibitions. Rather than turning heritage into sterile tourist traps, the event weaves contemporary artworks into historical spaces, reviving intimate dialogue and everyday aesthetic encounters within historic architecture. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/royal-portrait-painter-swaps-palaces-for-a-barnsley-chippy-a-catford-corner-shop-and-a-pub-run-by-slugger/" target="_blank" rel="noopener">為炸魚薯條店長畫油畫！可口可樂翻轉皇家美學，看見日常的偉大</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Royal portrait painter swaps palaces for a Barnsley chippy, a Catford corner shop and a pub run by &#x27;Slugger&#x27;</div>
+            <img class="item-image" src="https://media.creativeboom.com/99730ed1-413f-4182-b1ed-972cb29b59a4/conversions/45f7e95c61a620399a85d4d4924a0f282d32f82e-medium.webp" alt="Royal portrait painter swaps palaces for a Barnsley chippy, a Catford corner shop and a pub run by &#x27;Slugger&#x27;" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">古典油畫肖像向來是皇室與豪門炫耀權威的特權符號，但這次曾為英王查爾斯作畫的皇家畫家，卻把畫布留給了炸魚薯條店與街角雜貨鋪老闆。這波品牌行動之所以迷人，是因為它優雅地完成了「美學平權」：它用最崇高的藝術媒介向社區默默支撐日常的無名英雄致敬，告訴我們每位認真生活的人，都配得上王室等級的凝視。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Coca-Cola collaborated with royal portrait artists to paint everyday independent business owners, including chippy cooks and corner-shop keepers. By subverting an elitist visual medium historically reserved for monarchs, the project democratizes aesthetic dignity and celebrates the grassroots pillars of local communities. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/how-mother-design-turned-a-seance-into-a-new-identity-for-purple-garden/" target="_blank" rel="noopener">通靈服務也能很當代：設計如何撕掉標籤，把神秘學變成心靈探索</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How Mother Design turned a séance into a new identity for Purple Garden</div>
+            <img class="item-image" src="https://media.creativeboom.com/af84f641-c883-4cdd-83db-65f48b7af3a1/conversions/452e16689042fc9c747d4b0ecff5311bc19be1b7-medium.webp" alt="How Mother Design turned a séance into a new identity for Purple Garden" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">提到算命占卜，多數人腦中浮現的不是俗氣的水晶球就是廉價的霓虹招牌。設計工作室 Mother Design 替 Purple Garden 打造的全新識別，大膽融入炭筆筆觸與當代紫色調，把玄學重塑成一場精緻的心靈探索之旅。這件事告訴品牌人：卓越的視覺設計擁有「去污名化」的力量，能把充滿刻板印象的邊緣產業，翻轉為令人共鳴的現代生活風格。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Mother Design revamped psychic services platform Purple Garden with charcoal textures and sophisticated violet palettes. The rebrand sheds the cheap clichés typically tied to astrology and divination, successfully transforming an oft-marginalized service into an empathetic, contemporary wellness experience. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/books/tom-hegen-explores-the-landscapes-that-are-paying-an-invisible-price-for-clean-energy/" target="_blank" rel="noopener">乾淨能源的骯髒代價！空拍攝影殘酷揭露綠色轉型背後的地景疤痕</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Tom Hegen explores the landscapes that are paying an invisible price for clean energy</div>
+            <img class="item-image" src="https://media.creativeboom.com/89135291-5b19-4f1d-b333-977fc0dfde14/conversions/0b2cce6edde5eafe8f520158e03e79ceae21c0be-medium.webp" alt="Tom Hegen explores the landscapes that are paying an invisible price for clean energy" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">大家都在歌頌電動車與鋰電池，但我們往往選擇性忽視挖掘這些稀有金屬所造成的生態災難。攝影師 Tom Hegen 在新書中以壯麗的高空視角捕捉礦區，那些鮮豔卻有毒的地景呈現出驚人的殘酷美感。這組作品的重要啟示在於：真正的永續治理不能建立在看不見的犧牲之上，視覺藝術有責任逼我們直面減碳敘事裡的科技代價。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Tom Hegen&#x27;s aerial photography series &#x27;The Mineral Age&#x27; exposes the massive mining landscapes required to fuel low-carbon technologies. By contrasting toxic extraction sites with geometric abstract beauty, the project forces society to confront the hidden ecological costs behind our clean energy ambitions. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE4yR2p1cG5zVmxRR09JaXdtQ2FiempJMXh4YXdWOW5ybk9HR0ZnRkI5VDAzUWladWpUQUo2Y3czcHl2eFFxdVFIcV9LS0xJbmdLeUE?oc=5" target="_blank" rel="noopener">告別口號式自律！AI 治理邁向制度化稽核，信任不再只是說說而已</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">匯智深化AI治理專業 團隊完成人工智慧管理系統主導稽核員訓練 - 蕃新聞</div>
+            <div class="item-sentence lang-zh-only">許多組織談人工智慧治理時，常常淪為漂亮的道德宣言，缺乏真正的執行力。匯智團隊完成主導稽核員訓練，象徵台灣產業正跟上國際 ISO/IEC 42001 的規範浪潮。這代表 AI 治理進入了「可驗證、可問責」的硬實力階段；未來企業想證明自己的模型值得信賴，靠的不是行銷說詞，而是扎扎實實的管理流程與稽核機制。 <span class="src">— 蕃新聞</span></div>
+            <div class="item-sentence-en lang-en-only">A Taiwanese consulting team completed lead auditor training for AI management systems, highlighting a critical shift from abstract ethics to standardized compliance. It signifies that AI governance is no longer just theoretical, but a rigorous, verifiable institutional requirement for enterprise trustworthiness. <span class="src">— 蕃新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOUllRMlpUVFhmVF81Q0F4NjR2amNGWUZGV1hNdUZUVnY1TmZRbTYyRk5YYWpQLTcxVEUyU09lTXQtNUVyaEpBNnVlTTdZRks1N2haelRsY1JCV3YzajRIU29qVUFxMVR6aEk1V3JPX1BQVmZQNUpyNFZIc2VEWEFmamZjTGdzNml5akR0dllfcDNnOUk1ZF9idG0zMmJxcU93a2hyM0tPdDBzdnFXWV9OaUZ3?oc=5" target="_blank" rel="noopener">資安大廠插旗演算法評估：AI 治理已從道德清單變成技術剛需</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">VikingCloud Introduces AI Governance Assessments - Security Today</div>
+            <div class="item-sentence lang-zh-only">資安服務商 VikingCloud 推出 AI 治理評估服務，說明了一件關鍵趨勢：AI 風險早已不是單純的演算法偏差問題，而是直接威脅商業運作的資安危機。當各國監管法規不斷收緊，企業如果無法即時掌握 AI 系統的資料外洩與合規盲點，將面臨巨大的營運衝擊。這股服務化浪潮預示著，AI 體檢即將變成所有數位產品上線前的必備門檻。 <span class="src">— Security Today</span></div>
+            <div class="item-sentence-en lang-en-only">VikingCloud has launched dedicated AI Governance Assessments, marking the merging of cybersecurity operations and algorithmic oversight. As regulatory scrutiny tightens, assessing data privacy and model risks is shifting from a voluntary corporate checklist into an indispensable operational safeguard. <span class="src">— Security Today</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOUllRMlpUVFhmVF81Q0F4NjR2amNGWUZGV1hNdUZUVnY1TmZRbTYyRk5YYWpQLTcxVEUyU09lTXQtNUVyaEpBNnVlTTdZRks1N2haelRsY1JCV3YzajRIU29qVUFxMVR6aEk1V3JPX1BQVmZQNUpyNFZIc2VEWEFmamZjTGdzNml5akR0dllfcDNnOUk1ZF9idG0zMmJxcU93a2hyM0tPdDBzdnFXWV9OaUZ3?oc=5" target="_blank" rel="noopener">防堵影子工具洩密！企業面對生成式爆發，更需要結構化風險地圖</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">VikingCloud Introduces AI Governance Assessments - Security Today</div>
+            <div class="item-sentence lang-zh-only">員工私下使用未授權的生成式工具早已是辦公室公開的秘密，這種「影子 AI」讓企業資料處於高度外洩風險中。VikingCloud 的評估方案之所以受到關注，在於它幫組織在防堵與創新之間找到了平衡點。治理的目的從來不是禁止工具，而是透過清晰的風險分級與制度輔導，讓團隊在安全透明的邊界內大膽發揮創造力。 <span class="src">— Security Today</span></div>
+            <div class="item-sentence-en lang-en-only">Addressing the widespread issue of &#x27;Shadow AI&#x27; in corporate environments, VikingCloud&#x27;s assessment framework helps companies chart their exposure. Good governance is not about blanket bans; it provides actionable risk maps so organizations can adopt generative tools securely and innovatively. <span class="src">— Security Today</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNMW92MGJwMFFneGx1M2MyVDdtSWFyVFhvUk5kcXBOQ3l5eWVHR05XdFVRbkM3RTlENWpUeXlidEFGalBLXzNrTlFqMjNQa3RpbXFDd2hzZHR2VXZ6XzBOelhEUHZjOXg3SWc0Wi1Ma0d5NF9GanhxN25HQkZ4RlBSZFRBWjRJX3F6ZVdJNWVvdU11UDBfVlQydUpKTjNOa2pXN2Z2bnZyV2hHZjJqdlc4c2FKMUI?oc=5" target="_blank" rel="noopener">不做科技殖民地！東南亞藉能力賦權，開闢以人為本的自主治理路</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">能力のギャップを埋め、安全で人間中心のAIガバナンスを推進する。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">在美歐強權主導的 AI 規則賽局中，發展中國家很容易淪為被動接受標準的旁觀者。越南強調縮小數位技能差距、推動以人為本的 AI 治理，背後蘊含強烈的在地自主意識。這提醒我們：健全的科技治理不能單向移植西方標準，唯有讓本土人才具備駕馭與監督技術的能力，才能確保演算法發展真正服務於在地社會的公平福祉。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Vietnam is pushing for human-centric AI governance through localized capacity building and digital empowerment. This effort demonstrates how emerging economies are striving to avoid technological dependency, ensuring that algorithm regulations are shaped by local realities rather than purely imported frameworks. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/security/in-elections-cybersecurity-extends-beyond-voting-machines" target="_blank" rel="noopener">民主防衛不能只盯投票機！選務資安必須深入基層行政的隱形動脈</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">In Elections, Cybersecurity Extends Beyond Voting Machines</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/ccf9f27/2147483647/strip/true/crop/940x457+0+85/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F99%2F39%2F01378c7361118e5fcf4350f648d1%2Fshutterstock-1159332316-2.jpg" alt="In Elections, Cybersecurity Extends Beyond Voting Machines" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">大家聊到選舉資安，目光總停留在電子投票機有沒有被黑客入侵，但真正的破口往往潛伏在我們看不見的行政後台。選民登記資料庫、通訊名冊與基層傳輸流程，才是整個民主體系中最脆弱的環節。這篇文章給公共治理者的核心啟示是：資安是一張完整的系統網，守護民主的關鍵不在於單一設備的炫技，而是端到端的流程韌性。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Election cybersecurity extends far beyond ballot machines to encompass voter registration databases, local network transmissions, and administrative workflows. True resilience in democratic governance relies on securing the invisible operational plumbing rather than merely inspecting the front-end voting hardware. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-29 08:04:06 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
