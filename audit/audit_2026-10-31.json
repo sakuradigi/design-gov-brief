@@ -1,0 +1,1022 @@
+{
+  "date": "2026-10-31",
+  "generated_at": "2026-10-31T00:03:21.746561+00:00",
+  "model_used": "Gemini 3.8 Flash",
+  "total_raw_articles": 101,
+  "total_verified": 59,
+  "total_failed": 42,
+  "selected_design": 5,
+  "selected_gov": 5,
+  "articles": [
+    {
+      "title": "The people using AI should set its strategy",
+      "url": "https://uxdesign.cc/the-people-using-ai-should-set-its-strategy-473c7f2ebb94?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-30T07:06:26+00:00"
+    },
+    {
+      "title": "How I stopped dreading AI and started studying it full-time",
+      "url": "https://uxdesign.cc/how-i-stopped-dreading-ai-and-started-studying-it-full-time-fee7afc2b967?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-28T23:24:01+00:00"
+    },
+    {
+      "title": "Beyond chatbots: UX for deep AI research",
+      "url": "https://uxdesign.cc/designing-for-ai-deep-research-lessons-from-google-perplexity-and-microsoft-b32fa2f21e7e?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-28T23:23:05+00:00"
+    },
+    {
+      "title": "The AI reckoning in UX was 20 years in the making",
+      "url": "https://uxdesign.cc/the-ai-reckoning-in-ux-was-20-years-in-the-making-ecd7e36185de?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-28T23:22:26+00:00"
+    },
+    {
+      "title": "Autonomy by design: how gamification and AI can respect (or rewrite) our choices",
+      "url": "https://uxdesign.cc/autonomy-by-design-how-gamification-and-ai-can-respect-or-rewrite-our-choices-122ad795ec57?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-28T23:21:43+00:00"
+    },
+    {
+      "title": "Smaller teams want design leaders who make, again. Here’s how.",
+      "url": "https://uxdesign.cc/smaller-teams-want-design-leaders-who-make-again-heres-how-b8939221bd7b?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-28T09:37:57+00:00"
+    },
+    {
+      "title": "The agent woke up before you did",
+      "url": "https://uxdesign.cc/the-agent-woke-up-before-you-did-a61cfc3948c7?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-28T09:34:18+00:00"
+    },
+    {
+      "title": "The time AI saves designers usually disappears. Here’s how to keep it.",
+      "url": "https://uxdesign.cc/the-time-ai-saves-designers-usually-disappears-heres-how-to-keep-it-61eb38e1ed69?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-27T11:13:45+00:00"
+    },
+    {
+      "title": "Going nowhere fast",
+      "url": "https://uxdesign.cc/going-nowhere-fast-7436dd29c54f?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-27T11:13:03+00:00"
+    },
+    {
+      "title": "Building an AI-ready design system library: Code → Figma with MCP.",
+      "url": "https://uxdesign.cc/building-an-ai-ready-design-system-library-code-figma-with-mcp-ec5d9e8c90d2?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-26T21:33:16+00:00"
+    },
+    {
+      "title": "Henry Chalfant's legendary New York subway graffiti photos pull into Amsterdam at life size",
+      "url": "https://www.creativeboom.com/news/art-is-not-a-crime/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-29T07:15:00+00:00"
+    },
+    {
+      "title": "How do I exorcise a nightmare client and ensure they don't rise from the dead?",
+      "url": "https://www.creativeboom.com/dear-boom/dear-boom-how-do-i-exorcise-a-nightmare-client-and-ensure-they-dont-rise-from-the-dead/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-29T07:15:00+00:00"
+    },
+    {
+      "title": "A new Halloween game turns your unread emails into zombies you can actually kill",
+      "url": "https://www.creativeboom.com/news/a-new-halloween-game-turns-your-unread-emails-into-zombies-you-can-actually-kill/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-29T07:00:00+00:00"
+    },
+    {
+      "title": "Why Studio Atipus designed a wine label to look like it's been shot from a speeding train",
+      "url": "https://www.creativeboom.com/work/why-studio-atipus-designed-a-wine-label-to-look-like-its-been-shot-from-a-speeding-train/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-29T06:15:00+00:00"
+    },
+    {
+      "title": "Royal portrait painter swaps palaces for a Barnsley chippy, a Catford corner shop and a pub run by 'Slugger'",
+      "url": "https://www.creativeboom.com/news/royal-portrait-painter-swaps-palaces-for-a-barnsley-chippy-a-catford-corner-shop-and-a-pub-run-by-slugger/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T07:00:00+00:00"
+    },
+    {
+      "title": "How Mother Design turned a séance into a new identity for Purple Garden",
+      "url": "https://www.creativeboom.com/work/how-mother-design-turned-a-seance-into-a-new-identity-for-purple-garden/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T07:00:00+00:00"
+    },
+    {
+      "title": "Tom Hegen explores the landscapes that are paying an invisible price for clean energy",
+      "url": "https://www.creativeboom.com/books/tom-hegen-explores-the-landscapes-that-are-paying-an-invisible-price-for-clean-energy/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T06:45:00+00:00"
+    },
+    {
+      "title": "Span's identity for Illinois Department of Human Rights turns a common piece of punctuation into a rallying cry",
+      "url": "https://www.creativeboom.com/work/spans-identity-for-illinois-department-of-human-rights-turns-a-common-piece-of-punctuation-into-a-rallying-cry/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T06:30:00+00:00"
+    },
+    {
+      "title": "César Cid turns famous artists into letters in his playful alphabet series",
+      "url": "https://www.creativeboom.com/work/cesar-cid-turns-famous-artists-into-letters-in-his-playful-alphabet-series/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-27T09:15:00+00:00"
+    },
+    {
+      "title": "The best new typefaces for October 2026",
+      "url": "https://www.creativeboom.com/type-drop/the-best-new-typefaces-for-october-2026/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-27T07:15:00+00:00"
+    },
+    {
+      "title": "Socialist Hotels: relive the concrete dreams of the Soviet era with these beautiful photos",
+      "url": "https://www.creativeboom.com/books/socialist-hotels-relive-the-concrete-dreams-of-the-soviet-era-with-this-beautiful-photobook/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-27T07:15:00+00:00"
+    },
+    {
+      "title": "Uncommon's rebrand of global powerhouse White & Case ditches every law firm cliché",
+      "url": "https://www.creativeboom.com/work/this-rebrand-ditches-every-law-firm-cliche-as-white-case-loses-the-navy-blue/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-27T06:45:00+00:00"
+    },
+    {
+      "title": "Take a trip back to Perth’s rave scene in Simon Wright’s design retrospective",
+      "url": "https://www.creativeboom.com/books/take-a-trip-back-to-perths-rave-scene-in-simon-wrights-design-retrospective/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-27T06:30:00+00:00"
+    },
+    {
+      "title": "International Assembly 2026: Glasgow's festival returns with a secret stage and a night in a castle",
+      "url": "https://www.creativeboom.com/news/international-assembly-2026-glasgows-design-festival-turns-with-a-secret-stage-and-a-night-in-a-medieval-castle/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-26T14:00:00+00:00"
+    },
+    {
+      "title": "Lego and Daft Punk's team-up highlights exactly how brands should interact with fans",
+      "url": "https://www.creativeboom.com/insight/lego-and-daft-punks-team-up-highlights-exactly-how-brands-should-interact-with-fans/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-26T07:30:00+00:00"
+    },
+    {
+      "title": "Stocksy's 2027 Visual Insights Report explores why some images connect with audiences so well",
+      "url": "https://www.creativeboom.com/insight/stocksys-2027-visual-insights-report-explores-why-some-images-connect-with-audiences-and-others-dont/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-26T07:15:00+00:00"
+    },
+    {
+      "title": "This floating sauna's brand uses a simple typographic trick to stunning effect",
+      "url": "https://www.creativeboom.com/work/this-floating-saunas-brand-uses-a-simple-typographic-trick-to-stunning-effect/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-26T07:00:00+00:00"
+    },
+    {
+      "title": "Michelle Gruppetta's riso-printed animation reveals what sound sensitivity actually feels like",
+      "url": "https://www.creativeboom.com/work/michelle-gruppettas-riso-printed-animation-reveals-what-sound-sensitivity-actually-feels-like/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-26T06:45:00+00:00"
+    },
+    {
+      "title": "AKT London: Inside Two Times Elliott’s Visual Identity",
+      "url": "https://abduzeedo.com/akt-london-inside-two-times-elliotts-visual-identity/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-30T22:06:23+00:00"
+    },
+    {
+      "title": "Cuberto Unveils Wickret UI/UX Design & Mobile Banking System",
+      "url": "https://abduzeedo.com/cuberto-unveils-wickret-uiux-design-mobile-banking-system/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-30T19:07:01+00:00"
+    },
+    {
+      "title": "Packaging Design: Kocktail Reusable Glass on Dieline",
+      "url": "https://abduzeedo.com/packaging-design-kocktail-reusable-glass-dieline/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-30T13:10:08+00:00"
+    },
+    {
+      "title": "Typography: Sausage Regular Display Serif by JFFF",
+      "url": "https://abduzeedo.com/typography-sausage-regular-display-serif-jfff/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-30T13:00:58+00:00"
+    },
+    {
+      "title": "Cepa Studio’s Motion Design for TIF Be Bold",
+      "url": "https://abduzeedo.com/cepa-studios-motion-design-tif-be-bold/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-30T12:58:43+00:00"
+    },
+    {
+      "title": "Brand Identity: WING’IN by Brandegree",
+      "url": "https://abduzeedo.com/brand-identity-wingin-brandegree/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-30T12:55:57+00:00"
+    },
+    {
+      "title": "The Web Design of Gleb Kuznetsov’s Portfolio",
+      "url": "https://abduzeedo.com/web-design-gleb-kuznetsovs-portfolio/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-30T00:50:00+00:00"
+    },
+    {
+      "title": "Typography: PP Altera Variable Typeface by Pangram Pangram",
+      "url": "https://abduzeedo.com/typography-pp-altera-variable-typeface-pangram-pangram/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-29T22:07:10+00:00"
+    },
+    {
+      "title": "Inside Omlet: Brand Identity by Ragged Edge",
+      "url": "https://abduzeedo.com/inside-omlet-brand-identity-ragged-edge/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-29T21:06:53+00:00"
+    },
+    {
+      "title": "How Matúš Hnát Crafted Book Design for Lucky Star 3rd Ed.",
+      "url": "https://abduzeedo.com/how-matus-hnat-crafted-book-design-lucky-star-3rd-ed/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-29T19:07:11+00:00"
+    },
+    {
+      "title": "The Web Design of Assembly Coffee London",
+      "url": "https://abduzeedo.com/web-design-assembly-coffee-london/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-29T13:52:52+00:00"
+    },
+    {
+      "title": "Oslo Tennisklubb: Brand Identity by Garcy Studio",
+      "url": "https://abduzeedo.com/oslo-tennisklubb-brand-identity-garcy-studio/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-29T13:41:57+00:00"
+    },
+    {
+      "title": "Ismael Branco Crafts Relentlessly Brand Identity",
+      "url": "https://abduzeedo.com/ismael-branco-crafts-relentlessly-brand-identity/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-29T13:35:33+00:00"
+    },
+    {
+      "title": "Typography: Gregory Grotesk by Jakob Runge & TypeMates",
+      "url": "https://abduzeedo.com/typography-gregory-grotesk-jakob-runge-typemates/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-29T13:15:53+00:00"
+    },
+    {
+      "title": "Aira: Inside Kurppa Hosk's Clean Energy Visual Identity",
+      "url": "https://abduzeedo.com/aira-inside-kurppa-hosks-clean-energy-visual-identity/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-28T22:04:54+00:00"
+    },
+    {
+      "title": "Driessen Architectuur: Minimalist Web Design & Grid Craft",
+      "url": "https://abduzeedo.com/driessen-architectuur-minimalist-web-design-grid-craft/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-28T19:03:11+00:00"
+    },
+    {
+      "title": "Graphic Design: Théâtre La Licorne by Caserne",
+      "url": "https://abduzeedo.com/graphic-design-theatre-la-licorne-caserne/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-28T13:03:30+00:00"
+    },
+    {
+      "title": "Ballet National de Marseille: Kinetic Web Design & CSS Type",
+      "url": "https://abduzeedo.com/ballet-national-de-marseille-kinetic-web-design-css-type/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-27T22:07:10+00:00"
+    },
+    {
+      "title": "How COLLINS Reimagined Branding for Muse Group",
+      "url": "https://abduzeedo.com/how-collins-reimagined-branding-muse-group/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-27T19:03:31+00:00"
+    },
+    {
+      "title": "Inside the Craft of Woven Whisky Branding by Freytag Anderson",
+      "url": "https://abduzeedo.com/inside-craft-woven-whisky-branding-freytag-anderson/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-27T17:04:15+00:00"
+    },
+    {
+      "title": "Franki Branding: Inside Koto's New Identity",
+      "url": "https://abduzeedo.com/franki-branding-inside-kotos-new-identity/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-27T01:27:18+00:00"
+    },
+    {
+      "title": "WA3RM: Inside Lundgren+Lindqvist Packaging Design",
+      "url": "https://abduzeedo.com/wa3rm-inside-lundgrenlindqvist-packaging-design/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-26T22:02:43+00:00"
+    },
+    {
+      "title": "Typography: Eredivisie Display by Blaze Type",
+      "url": "https://abduzeedo.com/typography-eredivisie-display-blaze-type/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-26T19:03:22+00:00"
+    },
+    {
+      "title": "App and web design: Calmaria a quiet place to breathe",
+      "url": "https://abduzeedo.com/app-and-web-design-calmaria-quiet-place-breathe/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-26T18:12:34+00:00"
+    },
+    {
+      "title": "Brand Identity: Eames Institute by Manual",
+      "url": "https://abduzeedo.com/brand-identity-eames-institute-manual/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-26T13:01:42+00:00"
+    },
+    {
+      "title": "Inside Senhor Paulinho’s Brand Identity for Arado 2026",
+      "url": "https://abduzeedo.com/inside-senhor-paulinhos-brand-identity-arado-2026/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-26T04:18:01+00:00"
+    },
+    {
+      "title": "Brand Identity: Rothfield by Studio Julius",
+      "url": "https://abduzeedo.com/brand-identity-rothfield-studio-julius/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-26T04:14:00+00:00"
+    },
+    {
+      "title": "Typography: Exemplar by Letters from Sweden",
+      "url": "https://abduzeedo.com/typography-exemplar-letters-sweden/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-26T03:02:03+00:00"
+    },
+    {
+      "title": "Best of the Week: Monospaces, Engraved Cotton, and Can Wine",
+      "url": "https://abduzeedo.com/best-week-monospaces-engraved-cotton-and-can-wine/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-25T13:03:48+00:00"
+    },
+    {
+      "title": "Inside Varley Art Gallery: Branding by Underline Studio",
+      "url": "https://abduzeedo.com/inside-varley-art-gallery-branding-underline-studio/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-24T22:04:51+00:00"
+    },
+    {
+      "title": "How Florian Cornut Crafted Graphic Design for Shapes & Forms",
+      "url": "https://abduzeedo.com/how-florian-cornut-crafted-graphic-design-shapes-forms/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-24T19:07:07+00:00"
+    },
+    {
+      "title": "TASTWERK Tijdschrift 001: Editorial Design by Wessam Hussien",
+      "url": "https://abduzeedo.com/tastwerk-tijdschrift-001-editorial-design-wessam-hussien/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-10-24T13:06:13+00:00"
+    },
+    {
+      "title": "種と根っこ ― 都市の耕し方",
+      "url": "https://www.japandesign.ne.jp/event/seedsandroots-operacity/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T04:25:49+00:00"
+    },
+    {
+      "title": "テーマは「なぜ、あの商品は売れた？」、翔泳社×小学館が共同でYouTubeチャンネル「＠HitZine」をスタート",
+      "url": "https://www.japandesign.ne.jp/news/2026/10/90861/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T03:00:50+00:00"
+    },
+    {
+      "title": "10p10fp展 2026",
+      "url": "https://www.japandesign.ne.jp/event/10p10fp2026-kenchikukaikan/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T02:40:34+00:00"
+    },
+    {
+      "title": "博物館でアジアの旅　カラフルアジア",
+      "url": "https://www.japandesign.ne.jp/event/colorfulasia-tnm/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T02:35:44+00:00"
+    },
+    {
+      "title": "Plastic Circle　Jun Konishi",
+      "url": "https://www.japandesign.ne.jp/event/konishijun-ataka/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T02:00:07+00:00"
+    },
+    {
+      "title": "走水水源地 2026",
+      "url": "https://www.japandesign.ne.jp/event/hashirimizuwater2026/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T01:55:05+00:00"
+    },
+    {
+      "title": "TAKASHI TESHIMA DESIGN | 対照的な2つの要素の両立",
+      "url": "https://www.japandesign.ne.jp/event/teshimatakashi-autobahnkkline/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T01:25:59+00:00"
+    },
+    {
+      "title": "2026年秋に行きたい、東京都内のデザイン＆アートイベント10選",
+      "url": "https://www.japandesign.ne.jp/report/november-event-2026/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T01:00:35+00:00"
+    },
+    {
+      "title": "地球外知的生命体建築展",
+      "url": "https://www.japandesign.ne.jp/event/anesakitakumi-gankagarou/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T01:00:23+00:00"
+    },
+    {
+      "title": "【求人情報】蜂蜜を軸とした事業を展開するL’ABEILLE株式会社が、アートディレクター兼デザイナーを募集",
+      "url": "https://www.japandesign.ne.jp/news/2026/10/90821/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T00:00:30+00:00"
+    },
+    {
+      "title": "芹沢銈介と萠木会の作家たち",
+      "url": "https://www.japandesign.ne.jp/event/serizawakeisuke-mingeikanosaka/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-29T05:20:30+00:00"
+    },
+    {
+      "title": "「KYOTO ART BOOK FAIR 2027」が、2027年5月に京都市京セラ美術館で初開催",
+      "url": "https://www.japandesign.ne.jp/news/2026/10/90844/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-29T03:00:29+00:00"
+    },
+    {
+      "title": "KOBE ART SALONE 2026",
+      "url": "https://www.japandesign.ne.jp/event/kobeartsalone2026/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T06:50:34+00:00"
+    },
+    {
+      "title": "注目のデザイナー | 業天昭人",
+      "url": "https://www.japandesign.ne.jp/designer/324_akihito_gyoten",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T06:30:44+00:00"
+    },
+    {
+      "title": "日比野克彦、内藤廣、齋藤精一、川村元気らが登壇、都市型イベント「FUTURE VISION SUMMIT 2026」が開催",
+      "url": "https://www.japandesign.ne.jp/news/2026/10/90839/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T03:00:13+00:00"
+    },
+    {
+      "title": "EcoSmart Fireから柴田文江デザインの暖炉「Halo」登場。現代の暮らしのなかに炎の揺らぎを",
+      "url": "https://www.axismag.jp/posts/2026/10/727522.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-29T02:01:04+00:00"
+    },
+    {
+      "title": "SKACで「SKAC EXTENSION 2026」を開催。素材・アート・都市を横断する7つのプロジェクト",
+      "url": "https://www.axismag.jp/posts/2026/10/727503.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T07:17:18+00:00"
+    },
+    {
+      "title": "日立GLSからグリルレスIHクッキングヒーター「MUTRAL」登場。対面キッチンに調和するミニマルな加熱調理機器",
+      "url": "https://www.axismag.jp/posts/2026/10/722613.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T01:00:00+00:00"
+    },
+    {
+      "title": "Foster + Partners Industrial Design展「One to one」開催。家具から建築システムまで、デザインの思考と制作プロセスをたどる",
+      "url": "https://www.axismag.jp/posts/2026/10/728114.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-27T08:12:23+00:00"
+    },
+    {
+      "title": "HAYから新作チェア「Pack Chair」と「Backflip Chair」登場。ジャスパー・モリソンとグドムンドゥル・ルドヴィクが手がける2脚",
+      "url": "https://www.axismag.jp/posts/2026/10/723291.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-27T05:25:20+00:00"
+    },
+    {
+      "title": "国立新美術館の「ルーヴル美術館展 ルネサンス」。レオナルド・ダ・ヴィンチ《美しきフェロニエール》が初来日",
+      "url": "https://www.axismag.jp/posts/2026/10/722926.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-26T10:36:36+00:00"
+    },
+    {
+      "title": "ロンドンのバタシー発電所に「Apple Music Hall」オープン。600人規模のライブ会場と録音・映像制作機能を一体化",
+      "url": "https://www.axismag.jp/posts/2026/10/727393.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-26T02:32:30+00:00"
+    },
+    {
+      "title": "Arriving Next Month, Connecticut’s Mobile ID Has One Catch",
+      "url": "https://www.govtech.com/gov-experience/arriving-next-month-connecticuts-mobile-id-has-one-catch",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T23:22:39+00:00"
+    },
+    {
+      "title": "GIS, Digital Tools Can Help Cities Manage Utility Systems",
+      "url": "https://www.govtech.com/infrastructure/gis-digital-tools-can-help-cities-manage-utility-systems",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T22:59:48+00:00"
+    },
+    {
+      "title": "As Deadline Looms, .Gov Domains Are a Minority in Vermont",
+      "url": "https://www.govtech.com/security/as-deadline-looms-gov-domains-are-a-minority-in-vermont",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T22:23:47+00:00"
+    },
+    {
+      "title": "Your Mayor May Change. Your Digital Services Shouldn’t.",
+      "url": "https://www.govtech.com/voices/your-mayor-may-change-your-digital-services-shouldnt",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-30T20:24:02+00:00"
+    },
+    {
+      "title": "North Carolina RFP Seeks AI Vendors’ ‘Frontier Models’",
+      "url": "https://www.govtech.com/artificial-intelligence/north-carolina-rfp-seeks-ai-vendors-frontier-models",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-29T22:27:18+00:00"
+    },
+    {
+      "title": "What’s New in Digital Equity: Minimum Digital Living Standard",
+      "url": "https://www.govtech.com/network/whats-new-in-digital-equity-minimum-digital-living-standard",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-29T22:00:02+00:00"
+    },
+    {
+      "title": "Survey Outlines Government’s Progress on Modernization, AI",
+      "url": "https://www.govtech.com/artificial-intelligence/survey-outlines-governments-progress-on-modernization-ai",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-29T16:26:55+00:00"
+    },
+    {
+      "title": "In Elections, Cybersecurity Extends Beyond Voting Machines",
+      "url": "https://www.govtech.com/security/in-elections-cybersecurity-extends-beyond-voting-machines",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T23:18:19+00:00"
+    },
+    {
+      "title": "Missouri CIO John Laurent Set to Retire at the End of 2026",
+      "url": "https://www.govtech.com/workforce/missouri-cio-john-laurent-set-to-retire-at-the-end-of-2026",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T22:05:44+00:00"
+    },
+    {
+      "title": "For Its First Solution, NYC PIT Crew Targets Click to Cancel",
+      "url": "https://www.govtech.com/civic/for-its-first-solution-nyc-pit-crew-targets-click-to-cancel",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T21:34:04+00:00"
+    },
+    {
+      "title": "Center for Civic Futures awards grant to Nava Labs to help modernize state benefits technology with AI",
+      "url": "https://statescoop.com/center-for-civic-futures-awards-grant-to-nava-labs-to-help-modernize-state-benefits-technology-with-ai/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": false,
+      "pub_date": "2026-10-30T19:33:12+00:00"
+    },
+    {
+      "title": "Report: Over 42 million records exposed by local government technology platform for civic engagement",
+      "url": "https://statescoop.com/report-over-42-million-records-exposed-by-local-government-technology-platform-for-civic-engagement/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-29T22:25:16+00:00"
+    },
+    {
+      "title": "Aspen Institute warns states need funding to strengthen EBT security",
+      "url": "https://statescoop.com/aspen-institute-warns-states-need-funding-to-strengthen-ebt-security/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": false,
+      "pub_date": "2026-10-29T19:43:36+00:00"
+    },
+    {
+      "title": "A strategic guide to digital transformation in state government",
+      "url": "https://statescoop.com/transforming-government-sap/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": false,
+      "pub_date": "2026-10-29T18:30:00+00:00"
+    },
+    {
+      "title": "Philadelphia launches toolkit to help neighborhoods prepare for climate risks",
+      "url": "https://statescoop.com/philadelphia-launches-toolkit-to-help-neighborhoods-prepare-for-climate-risks/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T21:39:10+00:00"
+    },
+    {
+      "title": "Missouri CIO set to retire at the end of the year",
+      "url": "https://statescoop.com/missouri-cio-set-to-retire-at-the-end-of-the-year/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-28T20:32:57+00:00"
+    },
+    {
+      "title": "More than half of K-12 schools reported cyber incidents amid staffing, funding gaps",
+      "url": "https://statescoop.com/more-than-half-of-k-12-schools-reported-cyber-incidents-amid-staffing-funding-gaps/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-27T20:42:01+00:00"
+    },
+    {
+      "title": "Georgia says Anthropic AI agent accessed public election data, not its voter registration system",
+      "url": "https://statescoop.com/georgia-says-anthropic-ai-agent-accessed-public-election-data-not-its-voter-registration-system/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-27T19:34:08+00:00"
+    },
+    {
+      "title": "Los Angeles launches website to make City Council proceedings easier to follow",
+      "url": "https://statescoop.com/los-angeles-launches-website-to-make-city-council-proceedings-easier-to-follow/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-10-27T15:12:38+00:00"
+    }
+  ]
+}

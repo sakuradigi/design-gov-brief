@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>打破權威陳規的叛逆美學，與深耕公共信任的長效治理 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-10-31</div>
+    <div class="headline">打破權威陳規的叛逆美學，與深耕公共信任的長效治理</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is society made durable.</div>
+      <div class="quote-text-zh lang-zh-only">科技，就是讓社會關係變得持久的物質化載體。</div>
+      <div class="quote-author">— Bruno Latour</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">品牌視覺大膽叛逆，從律所到公部門皆用張力取代保守。</li>
+        <li class="flash-item">數位證件與網域升級卡關，揭示技術落地需破除生態穀倉。</li>
+        <li class="flash-item">首長換屆服務不該斷，公共數位基建需要長遠系統韌性。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/seedsandroots-operacity/" target="_blank" rel="noopener">告別冰冷的水泥巨獸，城市設計重新學會向下扎根</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">種と根っこ ― 都市の耕し方</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/cb8310b236646f29ccde9982e1ffa7d4.jpg" alt="種と根っこ ― 都市の耕し方" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當都市生活被過度精緻的鋼筋水泥填滿，我們與土地的連結幾乎斷裂。這檔展覽點出當代空間設計的重大轉向：未來的永續城市不再只是堆砌綠建築標章，而是如何像耕作一樣，重新讓自然韻律與地方根脈滲透進市民日常。設計師現在要解的不是效率問題，而是如何修復人與環境的共生感。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The exhibition &quot;Seeds and Roots&quot; at Tokyo Opera City Art Gallery invites urbanites to reconsider the relationship between human habitats and the natural world. It underscores a growing design trend toward ecological grounding and regenerative urban living, urging planners and creators to look beyond mere concrete functionalism and cultivate deep, living roots within modern cityscapes. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/10/90861/" target="_blank" rel="noopener">傳統出版跨界拆解爆款秘密，商業設計回歸人性本質</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">テーマは「なぜ、あの商品は売れた？」、翔泳社×小学館が共同でYouTubeチャンネル「＠HitZine」をスタート</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/hitzine.jpg" alt="テーマは「なぜ、あの商品は売れた？」、翔泳社×小学館が共同でYouTubeチャンネル「＠HitZine」をスタート" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">兩大日本出版巨頭聯手做影音頻道拆解「爆款」，反映出商業內容正從單純追逐流行，轉向深度剖析「集體心理」。在注意力極度碎片化的時代，一件產品能賣爆從來不只是行銷預算夠多，而是精準擊中了時代的情緒痛點。這給創作者的啟發是：與其盲目跟風，不如看懂背後的共鳴公式。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese publishing powerhouses Shoeisha and Shogakukan have launched a joint YouTube channel, &quot;@HitZine,&quot; dedicated to analyzing why products become massive commercial hits. This collaboration reflects an evolving media landscape where success is deconstructed through consumer empathy and product storytelling, offering valuable strategic lessons for modern brand builders and designers. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/why-studio-atipus-designed-a-wine-label-to-look-like-its-been-shot-from-a-speeding-train/" target="_blank" rel="noopener">撕掉酒標的優雅陳腔，用飛馳列車捕捉微醺的動態詩意</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why Studio Atipus designed a wine label to look like it&#x27;s been shot from a speeding train</div>
+            <img class="item-image" src="https://media.creativeboom.com/4017c142-52f5-4812-8caa-8768f33cac49/conversions/5308b9851eda773963425bb6a7a033b8a32f3527-medium.webp" alt="Why Studio Atipus designed a wine label to look like it&#x27;s been shot from a speeding train" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">傳統葡萄酒標總愛用老莊園或燙金字體裝高雅，但 Studio Atipus 偏偏把標籤做成「奔馳列車窗外拍到的模糊風景」。這個叛逆的視覺語言精準抓住「品酒時的感官流動」。它告訴品牌設計師：別再被產業慣例綁架，當你敢把抽象的心理體驗具象化，包裝就不再只是容器，而是一段引人入勝的故事前奏。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Studio Atipus designed a dynamic wine label for Maria Rigol Ordi that mimics a blurred landscape captured from a speeding train. By breaking away from traditional, stuffy wine packaging conventions, the design visualizes sensory momentum and emotion, proving that innovative typography and kinetic aesthetics can radically refresh even the most heritage-heavy industries. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/spans-identity-for-illinois-department-of-human-rights-turns-a-common-piece-of-punctuation-into-a-rallying-cry/" target="_blank" rel="noopener">公民權利不再是艱澀法條，標點符號化身平權抗爭號角</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Span&#x27;s identity for Illinois Department of Human Rights turns a common piece of punctuation into a rallying cry</div>
+            <img class="item-image" src="https://media.creativeboom.com/5138f56e-212a-428a-b1f1-da04ba5a1d1f/conversions/63e3f7b09f0289f65e3b30455bf976855685abb6-medium.webp" alt="Span&#x27;s identity for Illinois Department of Human Rights turns a common piece of punctuation into a rallying cry" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">政府機關的識別常給人冷冰冰、滿滿公文距離感的印象。Span 這次替伊利諾州人權部操刀，直接從歷史抗爭海報提煉能量，甚至把日常標點符號變成捍衛權利的戰鬥符號。這正是公共設計最需要的變革：讓法律保護傘看起來有溫度、有力量，讓老百姓一眼就知道自己的基本權利該怎麼使用。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Design studio Span revamped the identity for the Illinois Department of Human Rights by turning everyday punctuation marks into powerful rallying cries inspired by civil rights protest graphics. The rebrand demonstrates how civic design can demystify bureaucratic institutions, transforming dry administrative legal rights into visually accessible, empowering tools for everyday citizens. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/this-rebrand-ditches-every-law-firm-cliche-as-white-case-loses-the-navy-blue/" target="_blank" rel="noopener">律師事務所告別沉悶深藍，大膽字型顛覆專業服務常規</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Uncommon&#x27;s rebrand of global powerhouse White &amp; Case ditches every law firm cliché</div>
+            <img class="item-image" src="https://media.creativeboom.com/ead7f8e1-6e7e-4dbc-8725-9d753ad1f787/conversions/29af68975195296e65ae0634c48e164223f65e21-medium.webp" alt="Uncommon&#x27;s rebrand of global powerhouse White &amp; Case ditches every law firm cliché" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">誰說頂級法律事務所只能是一成不變的沉穩深藍？Uncommon 這次大膽掀桌，用極具張力的動態字體打破「律師就該保守克制」的刻板印象。這代表高度專業導向的 B2B 品牌也開始意識到：在所有人都在裝嚴肅的紅海裡，敢展現個性和活力，反而是最稀缺、最能打動新一代商業領袖的信任策略。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Uncommon Creative Studio overhauled the brand identity for global law firm White &amp; Case, discarding corporate clichés like predictable navy blue in favor of striking, kinetic typography. This bold move highlights an emerging trend in professional service branding, where traditional corporate conservatism gives way to dynamic, fearless design that commands modern market attention. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/gov-experience/arriving-next-month-connecticuts-mobile-id-has-one-catch" target="_blank" rel="noopener">數位駕照雖已入駐手機，生態系卡關讓虛實過渡陷尷尬</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Arriving Next Month, Connecticut’s Mobile ID Has One Catch</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/6dff431/2147483647/strip/true/crop/500x243+0+135/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F93%2F30%2Fa7b65888552abea45d5b0d57476d%2Fshutterstock-mobile-apps.jpg" alt="Arriving Next Month, Connecticut’s Mobile ID Has One Catch" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">康乃狄克州終於推出手機數位證件，但尷尬的是「除了機場，大部分地方還不能用」。這精闢點出智慧治理的經典痛點：技術開發從來不是最難的，跨機構與民間通路的整合速度才是成敗關鍵。如果線下場景沒跟上，再潮的數位身分證也只是手機裡好看的擺設，政府在推動數位轉型時必須同步補足場景信任。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Connecticut is launching mobile driver’s licenses on smartphones, yet their immediate utility remains largely restricted to TSA airport checkpoints. This partial rollout illustrates the persistent gap in public digital transformation: deploying mobile technology is easy, but achieving widespread merchant and agency infrastructure interoperability is what truly determines successful civic adoption. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/infrastructure/gis-digital-tools-can-help-cities-manage-utility-systems" target="_blank" rel="noopener">地圖不只是導航，空間數據正打破跨局處的地下穀倉</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">GIS, Digital Tools Can Help Cities Manage Utility Systems</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/c655c8e/2147483647/strip/true/crop/5472x2660+0+494/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F17%2F79%2Fca94e09746f6a07bc319cab8e4e4%2Fgis-graphic.jpg" alt="GIS, Digital Tools Can Help Cities Manage Utility Systems" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">城市水電管網埋在地下，往往也是各局處各自為政的混亂地帶。越來越多城市透過 GIS 空間數位工具把水、電、工務資料疊合在同張圖台上。這背後的治理啟示是：打破公部門「資料穀倉」最有效的方式，往往是給所有人一個直觀的空間視覺化介面。當地下管線變得透明，危機預警和資源調度才能真正跑在災難前面。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Cities are increasingly relying on Geographic Information System (GIS) tools to integrate multi-departmental utility data into centralized platforms. By providing cross-agency visibility into hidden underground infrastructure, this spatial approach dismantles bureaucratic data silos, enabling municipal governments to transition from chaotic, reactive troubleshooting to coordinated, predictive urban asset management. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/security/as-deadline-looms-gov-domains-are-a-minority-in-vermont" target="_blank" rel="noopener">資安大限在即地方卻不動如山，基層數位治理亟需減負</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">As Deadline Looms, .Gov Domains Are a Minority in Vermont</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/0af8eb3/2147483647/strip/true/crop/5877x2857+0+72/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fdf%2Fbf%2Fb27459b14605bd8cd32621e6277d%2Fadobestock-115746063.jpeg" alt="As Deadline Looms, .Gov Domains Are a Minority in Vermont" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">聯邦政府要求全面改用安全的「.gov」網域，但佛蒙特州竟然還有三分之二的鄉鎮沒跟上。別怪基層公務員懶惰，這赤裸裸揭示了城鄉數位資源的殘酷落差：小地方根本沒有專門的 IT 人員處理搬遷與設定。上級如果只想著用硬性期限施壓，卻不給實質的代管或資源減負，數位防禦的木桶最短板永遠補不齊。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">As federal deadlines approach, two-thirds of Vermont towns have yet to migrate their official websites to the secure .gov domain. This sluggish adoption underscores the critical resource divide in local government IT, proving that cybersecurity mandates cannot succeed through policy decrees alone without hands-on operational support for understaffed municipalities. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/voices/your-mayor-may-change-your-digital-services-shouldnt" target="_blank" rel="noopener">鐵打的市民服務流水的官，數位治理如何擺脫選戰輪替</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Your Mayor May Change. Your Digital Services Shouldn’t.</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/43951c1/2147483647/strip/true/crop/6957x3382+590+0/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F0f%2F85%2F648415b045dc91e6aadaa8371aee%2Fadobestock-540242752.jpeg" alt="Your Mayor May Change. Your Digital Services Shouldn’t." loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">首長四年一換，但市民每天要繳費、申請補助的需求永遠都在。文章直指痛點：很多優秀的數位便民服務常隨著政治換屆而慘遭廢止或腰斬。真正的智慧政府必須具備「抗政權更迭的韌性」，把數位基礎建設制度化、模組化，讓數位服務像自來水一樣穩定，而不是淪為每任市長宣傳期的新玩具。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Mayoral changes often disrupt local digital services, as incoming administrations chase flashy new initiatives. To protect community wellbeing, municipal governments must build resilient digital infrastructures and institutional memory that outlast political election cycles, ensuring that critical citizen-facing services remain stable, continuous, and decoupled from shifting partisan priorities. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://statescoop.com/center-for-civic-futures-awards-grant-to-nava-labs-to-help-modernize-state-benefits-technology-with-ai/" target="_blank" rel="noopener">當 AI 走入社福救濟第一線，老舊系統轉型攸關弱勢溫飽</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Center for Civic Futures awards grant to Nava Labs to help modernize state benefits technology with AI</div>
+            <div class="item-sentence lang-zh-only">別以為 AI 只能拿來寫簡報做圖，它現在正被用來拆解低收入家庭申請白卡或糧食券時面臨的老舊官僚系統障礙。這個專案的核心價值在於：用智慧科技為社會安全網排障。當補助申請流程能縮短幾天、審核不再被老舊伺服器卡死，科技才真正兌現了縮小不平等、賦予底層生活尊嚴的公共價值。 <span class="src">— StateScoop</span></div>
+            <div class="item-sentence-en lang-en-only">Nava Labs received a grant from the Center for Civic Futures to modernize aging state benefits infrastructure, including Medicaid and SNAP systems, using artificial intelligence. This initiative highlights a compassionate frontier for emerging technology: leveraging AI to overhaul antiquated welfare administration, streamline service delivery, and preserve the safety net for vulnerable citizens. <span class="src">— StateScoop</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-10-31 08:03:21 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
