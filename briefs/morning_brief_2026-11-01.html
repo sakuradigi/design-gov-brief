@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從跨域設計策展到數位孿生城市：當生成科技遇上公民參與的隱私大考驗 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-01</div>
+    <div class="headline">從跨域設計策展到數位孿生城市：當生成科技遇上公民參與的隱私大考驗</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is not destiny. We shape our tools and then our tools shape us.</div>
+      <div class="quote-text-zh lang-zh-only">技術並非宿命。是我們先形塑了工具，接著工具才形塑了我們。</div>
+      <div class="quote-author">— Langdon Winner</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">設計不再畫地自限，跨界策展與字體實驗重塑視覺敘事</li>
+        <li class="flash-item">智慧城市走向數位孿生，空間資料與AI結合深化治理決策</li>
+        <li class="flash-item">公民參與平台驚爆個資外洩，數位公共建設迎來信任危機</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/column/souieba202610/" target="_blank" rel="noopener">跳脫單一領域框架：東京設計節示範如何用跨界重塑公共對話</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">JDN編集部の「そういえば、」 | 編集部の「そういえば、」－Featured Projects 2026</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/souieba2610.jpg" alt="JDN編集部の「そういえば、」 | 編集部の「そういえば、」－Featured Projects 2026" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Featured Projects 2026 在東京品川登場，向我們展示了當代設計早已告別「視覺美化」的單一維度。這場跨域盛會集結了產品、介面、建築與社會設計者，核心在於探索設計如何介入複雜的社會系統。對創意人來說，這代表未來的設計競爭力不再只是軟體熟練度，而是穿梭不同領域、組織集體對話的轉譯能力。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Featured Projects 2026 in Tokyo highlights a growing trend toward interdisciplinary design festivals, bringing together diverse creative fields to address complex systemic challenges through collaborative cross-sector dialogues. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/10p10fp2026-kenchikukaikan/" target="_blank" rel="noopener">光影、工業與空間的交會：SIGMA 相機展演當代造物精神</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">10p10fp展 2026</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/72019.png" alt="10p10fp展 2026" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">建築會館舉辦的 10p10fp 展，透過日本光學名廠 SIGMA 與十位創作者的視角，重新審視影像工具與建築空間的張力。在演算法生成圖像泛濫的時代，這類實體展覽反其道而行，強調器材工藝的沉靜感與純粹的光學感知。這提醒了設計師：回歸物理世界的材料質地與空間氛圍，往往是突破數位疲勞的最佳解方。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The 10p10fp exhibition showcases the intersection of Japanese optical precision and architectural space, reminding creators of the tactile value of craft and physical presence in an increasingly virtual world. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://smashingmagazine.com/2026/10/desktop-wallpaper-calendars-november-2026/" target="_blank" rel="noopener">把螢幕當作情緒畫布：全球設計師的微型日常美學抵抗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">A Spark Of Color In November’s Gray (2026 Wallpapers Edition)</div>
+            <img class="item-image" src="https://archive.smashing.media/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/8edeb776-d8d5-4b5b-867f-6964f7addcd6/nov-17-colorful-autumn-preview-opt.png" alt="A Spark Of Color In November’s Gray (2026 Wallpapers Edition)" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Smashing Magazine 延續多年的月曆桌布企劃看似平凡，實則是全球草根設計社群少數持續運作的美學實驗場。設計師們利用極小幅寬，為冰冷的數位操作環境注入色彩與情緒價值。這件事的迷人之處在於，它證明了開源共享與無償創作依然能為灰暗的數位日常帶來喘息空間，體現了溫柔的數位社群陪伴感。 <span class="src">— Smashing Magazine</span></div>
+            <div class="item-sentence-en lang-en-only">Smashing Magazine&#x27;s curated November wallpapers serve as a creative playground for global designers to infuse emotional warmth into everyday digital interfaces, championing open, community-driven visual culture. <span class="src">— Smashing Magazine</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/cesar-cid-turns-famous-artists-into-letters-in-his-playful-alphabet-series/" target="_blank" rel="noopener">把巨匠風格濃縮成二十六個字母：視覺符號學的極致遊戲</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">César Cid turns famous artists into letters in his playful alphabet series</div>
+            <img class="item-image" src="https://media.creativeboom.com/726dd27b-b04b-4de9-b227-df28995ee596/conversions/b7f2ba3b532ca2049386b351a3310ca0bdd75040-medium.webp" alt="César Cid turns famous artists into letters in his playful alphabet series" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">設計師 César Cid 將二十六位藝術大師的經典筆觸轉化為英文字母，成功玩出兼具辨識度與幽默感的「Artphabet」。這不只是趣味致敬，更是高超的視覺符號降維練習——抽離原作繁複的構圖，只留下最本質的色彩與筆法。在注意力零碎的社群時代，能把龐大藝術史濃縮成幾毫秒即可辨讀的字型符號，正是當代視覺工作者最犀利的本領。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">César Cid&#x27;s Artphabet playfully translates master painters&#x27; distinctive styles into letterforms, demonstrating how high art can be distilled into accessible visual tokens for contemporary graphic culture. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/type-drop/the-best-new-typefaces-for-october-2026/" target="_blank" rel="noopener">從工業硬度到蕾絲記憶：字型設計正在重拾故事與情感溫度</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The best new typefaces for October 2026</div>
+            <img class="item-image" src="https://media.creativeboom.com/3b9f0f5a-a3bd-4990-b177-0b5a34c4da0a/conversions/065ee9d63a9b0d98ce651c81d7f53ac6935cb59a-medium.webp" alt="The best new typefaces for October 2026" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">十月的最新字體發表展現了極端的美學跨度：從硬派剛烈的工業粗襯線，到揉合紡織記憶的細膩展示字型。在 AI 能隨意生成字體的當下，專業造字者轉而向文化記憶與物質隱喻挖掘靈感。字型不再只是承載文字的容器，而是品牌與創作者傳遞獨特文化態度、抗拒演算法同質化的核心戰略資產。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">October’s fresh crop of typefaces reflects an emotional turn in typography, where designers draw inspiration from industrial scales and textile memories to resist algorithmic homogeneity. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE5IWkJmVHhNWGp1eFJ5a1pBSk9lLVJsOFg5UWhBYU9WLVRfbThDbjE2SWdBaHFpWHhRWW9QeDNqUEJoY3BIVWF2clhyeWNtdjhqZUtPSg?oc=5" target="_blank" rel="noopener">從口號到落地：地方智慧城市治理關鍵在於公共服務的人性化</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">江啟臣宣示 打造台中為智慧城市 - 臺灣導報</div>
+            <div class="item-sentence lang-zh-only">台中宣示加速發展智慧城市，反映出台灣地方治理在面對區域競爭時的焦慮與轉型渴望。然而智慧城市不能只停留在鋪設感測器或建置儀表板的硬體思維。對市民而言，這場升級的真正價值在於長者照護、交通微循環與防災決策能否變得有感。唯有將技術退居幕後、把市民體驗放在首位，智慧治理才不會淪為昂貴的政績煙火。 <span class="src">— 臺灣導報</span></div>
+            <div class="item-sentence-en lang-en-only">Taichung&#x27;s renewed smart city ambition illustrates the broader push for municipal modernization, where technological infrastructure must prioritize citizens&#x27; everyday experiences over mere tech displays. <span class="src">— 臺灣導報</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNX2wwTTQxYnhJRFNET19pMHlRUzBpcHhiUDZka1RmOTVJU3RzWmh1bnVsbjBFeWI2aWdiYUZNSWRZemVxTkNEVG5uQWhTQ0Z0MjhwM1lCZC1fdEE4TTVOdUpZNWFMUXBiYVVVcFlqZGZwdm96Z0RuRExsNFgwa2JmMzBLZVpiMUlIeXA2TWliT1JQYVFIekN2OXhRaERXMWc?oc=5" target="_blank" rel="noopener">科技巨頭組隊訂規矩：企業 AI 治理正在從空談轉向產業結盟</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Cisco Systems (CSCO) Became A Founding Member Of An Enterprise AI Governance Alliance - Yahoo Finance</div>
+            <div class="item-sentence lang-zh-only">思科宣布加入企業級 AI 治理聯盟創始成員，象徵科技界開始正視生成式工具進入商業深水區後的信任危機。過去各自為政的道德指引已不足以應對法規監管與資安風險，大廠組隊聯手制定標準，是為了搶先定義企業安全部署的遊戲規則。這顯示出未來的數位治理不再是政府單向監管，而是跨國巨頭主導的技術防線整合。 <span class="src">— Yahoo Finance</span></div>
+            <div class="item-sentence-en lang-en-only">Cisco&#x27;s role as a founding member of an enterprise AI governance alliance underscores how tech leaders are proactively setting operational guardrails to build trust and navigate growing regulatory pressure. <span class="src">— Yahoo Finance</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNX2wwTTQxYnhJRFNET19pMHlRUzBpcHhiUDZka1RmOTVJU3RzWmh1bnVsbjBFeWI2aWdiYUZNSWRZemVxTkNEVG5uQWhTQ0Z0MjhwM1lCZC1fdEE4TTVOdUpZNWFMUXBiYVVVcFlqZGZwdm96Z0RuRExsNFgwa2JmMzBLZVpiMUlIeXA2TWliT1JQYVFIekN2OXhRaERXMWc?oc=5" target="_blank" rel="noopener">AI 落地倒逼底層重整：企業結盟背後是資安架構的全面洗牌</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Cisco Systems (CSCO) Became A Founding Member Of An Enterprise AI Governance Alliance - Yahoo Finance</div>
+            <div class="item-sentence lang-zh-only">同樣聚焦於思科加入 AI 治理聯盟的訊息，從另一視角看，這是一場關於基礎設施安全話語權的爭奪戰。企業要放手讓 AI 自動化運作，前提是網路通道與資料邊界的防護足夠牢固。當治理不再是法務部門的合規清單，而是直接內嵌於網路架構的日常運作時，誰能提供可信的治理機制，誰就能主導下一波企業轉型紅利。 <span class="src">— Yahoo Finance</span></div>
+            <div class="item-sentence-en lang-en-only">The enterprise AI governance alliance reflects a deeper shift in digital infrastructure, moving governance from corporate compliance checklists into real-time network and security architecture. <span class="src">— Yahoo Finance</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE9sM2lMdnM3ZFh0d2VrQW5DdXI4bUFrc2RxMnp5V0t4OEx3N3ZRV1BMWWFIU3VFWGZsN0tKYXloTmltYXFwZktNdHJfdnZHVlBBM08yeE40eHVTVEVpeFpqYXB5WUl3VE9LVlJFUEh0bHpCZWtkbkpxSjlrYw?oc=5" target="_blank" rel="noopener">用數位孿生重構國土想像：日本國交省推動 3D 城市與 AI 的治理革命</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">「3D都市モデルとAI時代のスマートシティ」と題し、国土交通省 小林 - ニコニコニュース</div>
+            <div class="item-sentence lang-zh-only">日本國土交通省分享 3D 都市模型與 AI 的融合進展，代表其指標性的「Project PLATEAU」已進入精緻化落地階段。將整個城市的物理空間轉化為可運算的開放資料，能讓防災模擬、交通減碳甚至日照權分析變得極度精確。這提醒了治理創新的推動者：空間資料不只是地圖，它是連結物理世界與虛擬決策最關鍵的公共底座。 <span class="src">— ニコニコニュース</span></div>
+            <div class="item-sentence-en lang-en-only">Japan&#x27;s Ministry of Land, Infrastructure, Transport and Tourism is merging 3D urban models with AI, demonstrating how digital twin platforms can revolutionize disaster prevention and urban planning. <span class="src">— ニコニコニュース</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://statescoop.com/report-over-42-million-records-exposed-by-local-government-technology-platform-for-civic-engagement/" target="_blank" rel="noopener">四千兩百萬筆資料裸奔：公民參與平台資安漏洞戳破數位信任泡泡</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Report: Over 42 million records exposed by local government technology platform for civic engagement</div>
+            <img class="item-image" src="https://statescoop.com/wp-content/uploads/sites/6/2019/10/GettyImages-1162361864.jpg" alt="Report: Over 42 million records exposed by local government technology platform for civic engagement" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">地方政府廣泛使用的公民參與平台 CitySourced 驚爆嚴重漏洞，高達四千兩百萬筆陳情與個資直接暴露在網路上。這是一場諷刺的治理災難——政府號召公民熱心回報問題，卻連最基本的資料防護都做不好。當數位參與的代價是隱私被公諸於世，市民對智慧政府的脆弱信任將迅速瓦解，證明了沒有資安底線的科技參與只是空中樓閣。 <span class="src">— StateScoop</span></div>
+            <div class="item-sentence-en lang-en-only">A massive leak exposing over 42 million records on the civic platform CitySourced highlights the fragile state of municipal cybersecurity, threatening the very trust required for digital civic engagement. <span class="src">— StateScoop</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-01 08:02:50 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
