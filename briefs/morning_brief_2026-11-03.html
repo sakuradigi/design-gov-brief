@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>工具平權顛覆創意壟斷，真實世界基建與傳統文化正迎來數位轉型大洗牌 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-03</div>
+    <div class="headline">工具平權顛覆創意壟斷，真實世界基建與傳統文化正迎來數位轉型大洗牌</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is the campfire around which we tell our stories, but the craft is the wood that keeps it burning.</div>
+      <div class="quote-text-zh lang-zh-only">技術是我們圍繞著述說故事的營火，但唯有工藝才是讓它持續燃燒的柴薪。</div>
+      <div class="quote-author">— Laurie Anderson</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">Affinity 免費降臨 iPad 撼動訂閱制，創作工具主導權重新回歸設計師手中</li>
+        <li class="flash-item">駭客目標轉向供電與水網，數位防禦重心已正式從伺服器移往實體管線</li>
+        <li class="flash-item">衛星物聯網與農業省數位化，證明偏遠與在地資產才是下個創新戰場</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/729215.html" target="_blank" rel="noopener">跳脫白盒子展覽！峇里島海灘如何示範融合風土的永續策展新浪潮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">バリの浜辺で交わる世界のデザイン 「Jia CURATED 2026」に見る持続可能なイベントのかたち</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/11/Jia-CURATED-2026-credits-Priska-Joanne_6539.jpg" alt="バリの浜辺で交わる世界のデザイン 「Jia CURATED 2026」に見る持続可能なイベントのかたち" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">我們看慣了威尼斯雙年展那種光鮮亮麗卻製造龐大垃圾的臨時場館，Jia CURATED 這次把展場直接搬到海灘上，狠狠示範了什麼叫「借用自然而非征服自然」。它打破了設計展只能在冷冰冰白盒子空間進行的慣性，把亞洲設計力融入當地的潮汐與海風中。這背後揭示的趨勢很明確：未來的永續設計聚會不再比拚誰搭的舞台最氣派，而是比誰能在活動落幕後，對地方生態留下最少痕跡、卻對社群激發最深層的文化共鳴。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Moving design gatherings away from sterile white cubes, Jia CURATED 2026 takes place on Pengembak Beach in Bali. It challenges traditional exhibition paradigms by embedding pan-Asian creativity into coastal ecology. This shifts the focus of sustainable curatorial practices from merely minimizing carbon footprints to actively harmonizing event production with indigenous environments and regional design communities. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/matsuriart-whatcafe/" target="_blank" rel="noopener">當百年太鼓遇上當代藝廊：日本祭典傳統工藝的破圈自救方程式</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Matsuri × Art Exhibition – 祭の多面体 –</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/1405058.jpg" alt="Matsuri × Art Exhibition – 祭の多面体 –" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">傳統工藝瀕臨失傳往往不是因為技術不夠好，而是失去了現代生活的使用場景。宮本卯之助商店把製作神輿和太鼓的匠人手藝，搬進當代藝廊 WHAT CAFE，這可不是單純的懷舊復古，而是一場聰明的品牌轉型實驗。把「祭典」解構成當代藝術的視覺語彙與裝置空間，等於給了老技藝一張進入年輕世代審美圈的通行證。這告訴我們，守護地方文化遺產最有效的手段不是把它當古董供著，而是大膽讓它和當代潮流雜交。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The Matsuri × Art Exhibition at Tokyo&#x27;s WHAT CAFE, staged with Miyamoto Unosuke Shoten, reinterprets traditional festival craftsmanship through the lens of contemporary art. By detaching age-old artisan skills like taiko and shrine making from fixed rituals, the exhibition demonstrates how heritage crafts can rejuvenate themselves and capture urban lifestyles without losing their cultural soul. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/tools/behold-affinity-for-ipad-the-app-that-wants-to-retire-your-four-other-apps/" target="_blank" rel="noopener">Canva 出大招讓 Affinity 登陸 iPad，軟體巨頭壟斷時代宣告終結？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Affinity finally comes to iPad, and illustrators get a free all-in-one app</div>
+            <img class="item-image" src="https://media.creativeboom.com/330b0636-bb5f-40ef-b3cc-c77e361dcce2/conversions/e7bf1edf06d51ef604e6c9cf741c2362eeaf24e6-medium.webp" alt="Affinity finally comes to iPad, and illustrators get a free all-in-one app" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">設計師們被龐大又昂貴的訂閱制綁架太久，這次 Canva 帶著 Affinity 登陸 iPad 且核心功能直接免費，簡直是在整個創意軟體市場投下一顆深水炸彈。它不只是幫你省下幾百美元的年費，更是把原本分散在不同 App 的向量、排版與繪圖流程一口氣整合。這代表專業創作工具的普及化進入新階段，創作者再也不需要為了單一功能繳納「軟體租金稅」，生產力工具正在從高牆花園走向人人唾手可得的新生態。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Canva&#x27;s release of Affinity for iPad—offering its core creative suite entirely free—strikes a massive blow against predatory creative software subscriptions. By unifying vector, raster, and layout capabilities into a single lightweight platform, it dramatically lowers entry barriers for creators while proving that high-end digital illustration workflows are escaping proprietary walled gardens. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/london-and-la-studio-howhow-launches-a-new-name-visual-identity-and-website/" target="_blank" rel="noopener">替別人做品牌也要誠實面對自己：設計名所 How&amp;How 的品牌翻轉啟示</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How&amp;How launches a new name, strategy, visual identity and website</div>
+            <img class="item-image" src="https://media.creativeboom.com/d1c3189b-b681-4305-b29c-19b8a5838c0e/conversions/f78f5f4ff765ac00bfa120731f338266493cbc1c-medium.webp" alt="How&amp;How launches a new name, strategy, visual identity and website" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">設計公司常常忙著幫客戶改頭換面，卻忘了回頭檢視自己的招牌是不是早就跟不上野心。How&amp;How 這次大動作更新識別與策略，本質上是一次高難度的「自省手術」。在疫情後遠距協作常態化、設計同質化嚴重的市場裡，只靠漂亮作品集已經不夠用了，你必須清楚講出自己相信什麼價值。這給所有創意經營者的啟示是：品牌重塑不是換個新 Logo，而是勇敢砍掉模糊不清的定位，重新向市場宣告你下一個五年的核心戰略。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Design agency How&amp;How has unveiled a comprehensive rebrand spanning strategy, visual identity, and online presence. Serving as a prime case study in agency self-reflection, this refresh underscores how creative firms must continually clarify their core positioning. In a crowded landscape, success demands authentic storytelling, moving far beyond polished aesthetics into bold, mission-driven strategy. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/work/wildwood-is-a-great-leap-forward-for-animation-heres-why-you-need-to-see-it-on-a-big-screen/" target="_blank" rel="noopener">手作逐格撞上最尖端 CG：萊卡動畫《Wildwood》示範實體質感的終極反撲</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Wildwood: a big leap forward for animation that you need to see on a big screen</div>
+            <img class="item-image" src="https://media.creativeboom.com/e25add93-72d6-4f07-bf02-bd24edc3597a/conversions/cf4c72a92ecdbe6a9cd2f52541c2fbc977ba3f8f-medium.webp" alt="Wildwood: a big leap forward for animation that you need to see on a big screen" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在滿大街都是純數位算圖與 AI 生成動畫的今天，萊卡工作室耗費數年推出的《Wildwood》，用最硬核的「逐格定格加數位合成」給了觀眾一記當頭棒喝。大螢幕上那種木頭紋理、布料微顫與指紋殘留的溫度，是純代碼算不出來的人性張力。這件事的啟示在於，數位工具愈是萬能，大眾對「真實手作感」的渴望就愈強烈；未來的極致視覺美學，不是非黑即白地在實體與虛擬二選一，而是讓兩者在最高精度下互相成全。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Laika&#x27;s epic feature Wildwood exemplifies the potent hybrid of traditional stop-motion and cutting-edge visual effects, demanding the theatrical experience. As algorithmic generation floods screens with frictionless pixels, the deliberate tactile imperfections and immense craft embedded in physical puppets offer a uniquely human resonance, charting a compelling path for modern cinematic art. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMisgJBVV95cUxOb3o4WUlqcTdIa2V1OWF0YnNJRzhuZGxJTGJJN21OdkNwblBFcXZQbmE5MWZoLUJPMk5OR0NzMFlCQm5samlEWVZLRWxvaURHRnpCT3BXT1lIUXVxUmtMQlpBX25vb2kwVml1TlJsTWRHek1qcTNXeXVRYnBFc1hCaW9GUXZrcW84UWgyOEpsaWJNc3M1blJCWl9PWGZJNy02dzJXLWxOLS1teHI4NjRGRzlkNWRFSFBPajBIRDBIZWVvQUxyc1cyMjRUNDFDZEZnS2xaeTdPa0djRV8tMUJXMVdmU2NlQTloOWV1ZmlycENjSVowekJ3RXBIMHpyeGdwb3d4OUROQUEyaHNXdGRReWJwc296akJ0bDFJVG9CeUtKZXBNMU9DSnl1OE10dVQ5b3c?oc=5" target="_blank" rel="noopener">低軌衛星串起智慧城市盲區：神盾與 Sateliot 正在重塑全域治理神經網</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Creative5 神盾衛星攜Sateliot 亮相2026全球智慧城市博覽會 - Yahoo新聞</div>
+            <div class="item-sentence lang-zh-only">我們過去談智慧城市，視角往往被局限在光纖和 5G 覆蓋極佳的都會核心，但真正的考驗永遠在收訊不良的邊陲角落。神盾衛星與 Sateliot 聯手把低軌衛星直連標準物聯網技術帶進實用階段，象徵著城市韌性治理從「局部連線」跨入「全域無死角」。不管是沿海離岸風場、深山水文監測還是偏鄉公用事業，衛星技術填補了最後一哩路的漏洞，這提醒我們未來的公共服務不再依賴地面基地台，天空才是下一代基建骨幹。 <span class="src">— Yahoo新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Creative5 and Sateliot showcased their integrated LEO satellite and cellular IoT solutions for smart cities. By eliminating connectivity gaps in remote or maritime infrastructure, this satellite-enabled paradigm shifts municipal governance from localized urban centers to ubiquitous territory-wide resilience, unlocking real-time data feeds for critical public assets without costly terrestrial infrastructure. <span class="src">— Yahoo新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE13NmpWWHlkaUxGa202VTRYTUpGbEF1M0hLcDJCNGJGX3hkWWYyWU1fdmUwMlIxaEhDYzJIYVFNZFdDdDdROUliQ3pHNkJySmVCY2dJenFVcU1McXZySGx0ZWNMdVROdlYzMV9HdHBHQ213T2x0cVdJV0FJVEE3UQ?oc=5" target="_blank" rel="noopener">實體世界正淪為駭客遊樂場：當管線與電網成為數位攻防新前線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Hackers’ latest playground: the real world - Tech Brew</div>
+            <div class="item-sentence lang-zh-only">網路攻擊早就脫離了盜取信用卡號或搞癱網站的古老劇本，現在駭客盯上的是你的水閥開關、天然氣加壓站和交通號誌。當真實世界裡的各種機械設備全面聯網，物理防護與資安防線的界線已徹底蒸發。這件事為什麼重要？因為這代表設計城市系統的人，不能再把資訊安全當成最後才掛上去的補丁，而必須從零組件與管線配置階段，就把「被黑客入侵時如何優雅降級」的系統韌性刻進工程藍圖裡。 <span class="src">— Tech Brew</span></div>
+            <div class="item-sentence-en lang-en-only">Cyber threats have decisively pivoted from digital assets to physical critical infrastructure, turning power grids, water networks, and smart transportation systems into prime targets. As operational technology blends seamlessly with public networks, urban designers and public administrators must embed zero-trust architectures and fail-safe physical redundancies directly into municipal engineering frameworks. <span class="src">— Tech Brew</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE13NmpWWHlkaUxGa202VTRYTUpGbEF1M0hLcDJCNGJGX3hkWWYyWU1fdmUwMlIxaEhDYzJIYVFNZFdDdDdROUliQ3pHNkJySmVCY2dJenFVcU1McXZySGx0ZWNMdVROdlYzMV9HdHBHQ213T2x0cVdJV0FJVEE3UQ?oc=5" target="_blank" rel="noopener">工控系統不能只懂連網！忽視實體隔離的物聯網躍進正在帶來公共災難</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Hackers’ latest playground: the real world - Tech Brew</div>
+            <div class="item-sentence lang-zh-only">很多政府部門為了追逐智慧化指標，把原本封閉運作了三十年的老舊閥門和控制器直接接上雲端，結果等於是為境外威脅大開後門。我們常誤以為「連上網路就是進步」，卻忘了安全防護的成本往往高過感測器本身。這給所有推動公部門數位轉型者的警惕是：不是每一根水管或電線桿都需要即時上雲，懂得保留機械式的實體斷開機制、在便利性與致命脆弱之間劃出紅線，才是成熟治理者該有的清醒認知。 <span class="src">— Tech Brew</span></div>
+            <div class="item-sentence-en lang-en-only">Connecting legacy operational machinery directly to the internet under the banner of municipal modernization introduces catastrophic vulnerabilities. Without robust air-gapping, cyberattacks on urban supply systems can produce immediate physical harm. True resilience demands questioning excessive connectivity and retaining failsafe analog disconnects to shield indispensable civic lifelines. <span class="src">— Tech Brew</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxONS15Y1VRVEdNM05LTTRoQnZRdGUtZXZ3cVlCb0J2a3haelIwc1U2TV9pMzQ2Y2RfbU9qWHNHckRndkduQ25pcXV6OW4wdUZKR093VXF5cFQtLU0tMlVkYWtLbGFzSXdSTFR1Qjg1R0Qwc05kTGhVR3JYYXFzenEzaHAtYzdDSlZGYk5VLS0zSEdLQU5EN1ktazVwLTA4R3NCcVJJ?oc=5" target="_blank" rel="noopener">不甘只當農業穀倉！越南同塔省砸四兆越盾的跨越式智慧轉型賭注</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ドンタップ省は、デジタル変革とスマートシティに4兆2000億ベトナムドン以上を投資する計画だ。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">這是一場非典型的二線省份突圍戰。越南湄公河三角洲的同塔省向來以稻米和水產聞名，如今卻豪擲超過 4.2 兆越盾押注數位治理與智慧城市。這背後的野心很明確：後發地區不再按部就班走先工業化後資訊化的老路，而是試圖直接用數位骨幹打通農業產銷、民生服務與地方行政。如果同塔省能成功把數位神經接進田間地頭，它將成為全球南方所有農業重鎮跳過傳統繁瑣官僚、實現跨越式治理的最佳示範。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Vietnam&#x27;s Dong Thap province is investing over 4.2 trillion VND into comprehensive digital transformation and smart city infrastructure. By actively modernizing its agricultural supply chains and municipal services simultaneously, this Mekong Delta province demonstrates how emerging agricultural economies can bypass legacy bureaucratic roadblocks, leveraging digital governance to drive inclusive local development. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/workforce/in-nebraska-a-regional-cios-exit-triggers-a-recruitment" target="_blank" rel="noopener">地方政府資訊長離職潮背後：智慧城市真正缺的不是代碼，而是跨界操盤手</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">In Nebraska, a Regional CIO’s Exit Triggers a Recruitment</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/df7feaa/2147483647/strip/true/crop/500x243+0+79/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F87%2Fba%2F59be3601454e8ed03379347cf539%2Fshutterstock-2155121503.jpg" alt="In Nebraska, a Regional CIO’s Exit Triggers a Recruitment" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">內布拉斯加林肯市與蘭開斯特郡正在緊急物色新任資訊長，這反映了全球地方政府普遍遭遇的共同痛點：懂技術的高手多，但既能應付議會質詢、摸熟老舊官僚流程，又懂雲端架構的跨界領導者打著燈籠都找不著。智慧城市推不動，從來不是採購不到好設備，而是卡在人事體系跟不上技術節奏。地方治理如果不能打破公務員薪資與升遷天花板、給技術決策者更大的施展空間，再偉大的科技藍圖最後都只會淪為抽屜裡的採購合約。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">The departure of Lincoln and Lancaster County&#x27;s regional CIO underscores a critical human capital crisis in local government innovation. Implementing smart city initiatives requires leaders who comfortably bridge legacy bureaucracies, fiscal politics, and bleeding-edge technologies. Public sector agencies must rethink their hiring frameworks to attract visionary technologists capable of sustaining civic transformation. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-03 08:03:19 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
