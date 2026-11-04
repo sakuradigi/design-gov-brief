@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從電動車審美撞臉到醫療 AI 奪回主動權：在科技狂飆下找回人的主體性 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-04</div>
+    <div class="headline">從電動車審美撞臉到醫療 AI 奪回主動權：在科技狂飆下找回人的主體性</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Man needs a tool with which to work, not tools to work for him.</div>
+      <div class="quote-text-zh lang-zh-only">人需要的是能與之協作的工具，而不是替人代勞而奴役人的工具。</div>
+      <div class="quote-author">— Ivan Illich (伊凡·伊里奇)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">電動車設計集體撞臉，缺乏情感識別的品牌正失去靈魂。</li>
+        <li class="flash-item">醫療 AI 的勝負在於治理，把最後決策權穩穩留給醫師。</li>
+        <li class="flash-item">加州以社區光儲打造微電網，讓公共設施化身防災韌性堡壘。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/11/90869/" target="_blank" rel="noopener">百年雨具品牌招募時裝設計師：生活選品日常化的逆襲</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】傘メーカーの株式会社中谷が、ファッションデザイナーを募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/6aded1cdbc639.jpg" alt="【求人情報】傘メーカーの株式会社中谷が、ファッションデザイナーを募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當百年老牌雨具廠開始大動作徵求時裝設計師，代表傳統製造業終於想通了：雨傘不再只是防雨的消耗品，而是自我風格的延伸配件。在極端氣候讓雨具變成高頻生活物件的今天，跳脫單純機能思維、把日常必需品化為穿搭時尚，正是老牌製造業者撕下代工標籤、直接向新世代生活美學對話的關鍵轉型策略。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Nakatani, a century-old Japanese umbrella manufacturer, is recruiting fashion designers to elevate everyday rain gear into expressive lifestyle accessories. This move reflects a broader industrial trend where traditional manufacturers pivot from pure functionality toward aesthetic-driven consumer engagement, transforming basic necessities into personal style statements amidst shifting climate realities. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/729057.html" target="_blank" rel="noopener">打破學科邊界的空間敘事：中原崇志如何以體驗連結人與場域</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">異なる専門性をつなぎ、人の体験を設計する 建築家、ミュージアムデザイナーの中原崇志</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/01_SonyPark_KYOTO_2022_1110-0303.jpg" alt="異なる専門性をつなぎ、人の体験を設計する 建築家、ミュージアムデザイナーの中原崇志" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">建築師中原崇志的角色轉換給了我們一個大啟發：未來的空間設計早就超越了單純的硬體結構，而是「人與情緒如何流動」的跨領域編舞。無論是打造 Sony Park 還是當代展場，他把策展、聲光與空間體驗拆解重組。這提醒設計師，在體驗經濟時代，能串聯跨專業溝通、將深奧內容轉化為直覺身體感的人，才是最稀缺的跨界導演。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Architect and exhibition designer Takashi Nakahara bridges disparate creative disciplines to sculpt intuitive human experiences. His approach demonstrates that modern spatial practice must move beyond static forms, transforming physical venues into dynamic narrative environments where diverse specialist perspectives converge to orchestrate sensory, emotional journeys for everyday visitors. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/inspiration/inspired-by-strangers-dreams-moho-builds-glittering-slightly-unsettling-worlds/" target="_blank" rel="noopener">把全球陌生人的夢變動態珠寶：在虛擬焦慮中打撈集體潛意識</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Inspired by strangers&#x27; dreams, Moho builds glittering, slightly unsettling worlds</div>
+            <img class="item-image" src="https://media.creativeboom.com/09b551fc-63eb-4540-a421-1538c27ca994/conversions/6fbbdcfdd970748d2b5a1c808a6f7a06739da8f5-medium.webp" alt="Inspired by strangers&#x27; dreams, Moho builds glittering, slightly unsettling worlds" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">首爾藝術家 Moho 蒐集全世界陌生人投稿的夢境，用珍珠和亮片渲染出一幕幕璀璨卻略帶詭譎的數位動畫。這不只是一場吸睛的視覺實驗，更揭示了在數位疏離時代，人們極度渴望共享脆弱與私密體驗。當大家都沉迷於演算法生成完美假象時，將未經修飾的潛意識夢境轉化為情感載體，反而成為擊中觀眾心靈的強烈美學解藥。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Seoul artist Moho turns crowd-sourced dreams into shimmering, uncanny animations adorned with pearls and sequins. By mining collective subconsciousness, the work demonstrates how raw human vulnerabilities can be translated into evocative digital art that counters algorithm-driven uniformity, forging authentic emotional resonance across a hyper-connected yet emotionally isolated global audience. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/is-it-a-problem-that-all-electric-car-brands-all-look-the-same/" target="_blank" rel="noopener">電動車集體撞臉危機：當科技極簡淪為無聊同質化的代名詞</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Koto: We need to talk about how all electric car brands look the same</div>
+            <img class="item-image" src="https://media.creativeboom.com/a22a11c5-c2fa-42ff-a7fe-37e3ab07124a/conversions/8ede552707852d0d3c68ccb2aa06eaa0844b39fd-medium.webp" alt="Koto: We need to talk about how all electric car brands look the same" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">走在街上，你分得清各家電動車嗎？設計事務所 Koto 一語道破產業盲點：當所有車廠都在追求流線曲面、貫穿式燈條和冷冰冰的極簡介面，電動車正陷入嚴重的審美疲勞。這代表盲目追逐「未來科技感」反而扼殺了品牌靈魂。在硬體底盤高度標準化的市場裡，誰能先放下千篇一律的無機未來感、找回具有溫度與文化辨識度的設計語言，誰才能真正突圍。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Creative studio Koto challenges the aesthetic homogenization of electric vehicles, where nearly every brand adopts identical sleek contours and minimalist styling. As EV hardware converges, distinct brand personalities and emotional resonance will become the ultimate differentiators, proving that formulaic futurism inevitably breeds consumer fatigue in design-led markets. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://smashingmagazine.com/2026/11/modern-css-might-make-your-front-end-more-complex/" target="_blank" rel="noopener">CSS 越強系統越崩潰？別讓前端炫技拆解了團隊的架構共識</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Modern CSS Might Make Your Front-End More Complex</div>
+            <img class="item-image" src="https://files.smashing.media/articles/modern-css-might-make-your-front-end-more-complex/modern-css-might-make-your-front-end-more-complex.jpg" alt="Modern CSS Might Make Your Front-End More Complex" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">現代 CSS 功能突飛猛進，許多原本得靠 JS 實現的互動現在寫幾行樣式就能搞定，但這真的是好事嗎？這篇文章給所有技術團隊潑了一記清醒的冷水：當介面邏輯被分散在 CSS 與 JS 之間，整個專案的可讀性與除錯成本反而急遽飆升。這提醒我們，追求新技術的「優雅單解」往往伴隨著宏觀維護成本，系統架構的清晰度永遠比少寫兩行代碼更值錢。 <span class="src">— Smashing Magazine</span></div>
+            <div class="item-sentence-en lang-en-only">Modern CSS capabilities tempt developers to replace JavaScript logic, yet splitting application logic across layers often inflates architectural complexity. Gabriel Shoyombo reminds us that true engineering elegance lies in holistic maintainability, urging product teams to weigh clever localized syntax tricks against long-term cognitive load and collaborative maintainability. <span class="src">— Smashing Magazine</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE5BVjNiVUFpQnFxdUJjOGpJUmlub09fRjFBN3d0UDh3cDlrZERnb3JpbHNDaUJUTHRrVi15Rlc1cGFRTW1FQlF1YVhtNFZobl9Z0gFWQVVfeXFMTU9sRHRwTDB1S3dBeWF2WmFadTJ1RHNMS09hc3NaVlRmUHF1TjF1ZWkwSUhuQ1JjczBDMUtua0V0Zi1FQ2tIUGprM0pHa0FYNUtHSEFTX1E?oc=5" target="_blank" rel="noopener">拒絕數位鐵幕的角力：AI 全球治理走向地緣與標準規範爭奪戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">李強提AI治理「反對數位鐵幕」 - UDN</div>
+            <div class="item-sentence lang-zh-only">中國高層在國際場合疾呼反對「數位鐵幕」，表面上是倡導開放合作，背後實則是全球 AI 治理標準的白熱化角力。隨著歐美築起高階算力壁壘與合規高牆，新興市場正在尋求打破技術封鎖的另一條敘事通道。這意味著未來的 AI 競爭早就不只是大模型參數量之爭，更是制度設計、開源生態與誰能定義「全球公共產品」的國際治理話語權戰役。 <span class="src">— UDN</span></div>
+            <div class="item-sentence-en lang-en-only">China&#x27;s warning against a digital iron curtain signals an intensifying struggle over global AI governance norms. Beyond raw computing power, geopolitical competition is increasingly defined by who controls regulatory frameworks, open ecosystems, and technological standards, forcing international stakeholders to navigate fragmented algorithmic boundaries and competing multilateral visions. <span class="src">— UDN</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxORWVwMlFrclR5X3FYWFJoUjRJbk1sUkItQkFfMTB5VkpheHlSblEzd1JhR1dSOHUydno2cC1CNnNUWXdYeHlfWjc4dzN4SlZlLWlja3hJTVRlZmo1MXhIOUlQNS14MTR0YVFDRldUMmE5aGpMWmVkVEkxNTRrRW1ldE51Szh3TWROb1FkVHkxUEROUzdWS2F4ZkJB?oc=5" target="_blank" rel="noopener">堅守人機協作主控權：醫療 AI 落地不是取代專家而是重塑信任</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Strong AI governance keeps clinicians in control - Healthcare Finance News</div>
+            <div class="item-sentence lang-zh-only">醫療圈給出了導入 AI 最清醒的範本：嚴謹的治理架構並不是要綁手綁腳，而是為了確保第一線醫師永遠握有最終決策權。當黑盒子演算法深入診斷流程，盲目依賴會釀成醫療風險，全面抗拒又會錯失提效契機。唯有把責任邊界劃清、讓醫生能夠監督並質疑模型的推論，人機協同才能真正落實為救命的助手，而不是製造醫療糾紛的定時炸彈。 <span class="src">— Healthcare Finance News</span></div>
+            <div class="item-sentence-en lang-en-only">Robust AI governance in healthcare ensures clinicians remain firmly in control rather than relinquishing critical authority to opaque black-box models. Establishing transparent operational boundaries builds vital clinical trust, proving that algorithmic safety, clinical accountability, and workflow innovation can reinforce one another in high-stakes environments. <span class="src">— Healthcare Finance News</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxORWVwMlFrclR5X3FYWFJoUjRJbk1sUkItQkFfMTB5VkpheHlSblEzd1JhR1dSOHUydno2cC1CNnNUWXdYeHlfWjc4dzN4SlZlLWlja3hJTVRlZmo1MXhIOUlQNS14MTR0YVFDRldUMmE5aGpMWmVkVEkxNTRrRW1ldE51Szh3TWROb1FkVHkxUEROUzdWS2F4ZkJB?oc=5" target="_blank" rel="noopener">演算法不能替醫生扛責：智慧醫療需建立賦權而非奪權的治理防線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Strong AI governance keeps clinicians in control - Healthcare Finance News</div>
+            <div class="item-sentence lang-zh-only">醫院管理層最常犯的錯，就是把 AI 視為降本增效的自動駕駛工具，卻忽視了臨床醫療本質上是一場「倫理與問責」的承擔。高水準的 AI 治理不是一疊厚厚的免責聲明，而是打造一套能讓醫護隨時介入、即時糾錯的防禦機制。這對所有高風險產業都是極佳借鏡：科技的終極價值是為專業人員賦權，而不是透過自動化把人的判斷力邊緣化。 <span class="src">— Healthcare Finance News</span></div>
+            <div class="item-sentence-en lang-en-only">Successful healthcare AI integration requires framing algorithmic tools as cognitive enhancers rather than autonomous replacements for clinical judgment. Strong governance structures empower medical practitioners to interrogate model outputs, safeguarding vital patient outcomes while ensuring moral and operational accountability remains anchored at the bedside. <span class="src">— Healthcare Finance News</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5rZHMxRWZfTWRSdHo2dFVkcWVNaHRmVnc4TE1XdS0tRC1QUnlia3dZbU9OQnhzZlVhSWljbE5NaXlKYXRHSlhOR2dvSFUzVG9VZVIwSVFOZkZWX0J6T3RnRjFQc2FrUldaY1J2NFhMMi1BSVd2YU9NSExZMDhWQmM?oc=5" target="_blank" rel="noopener">當一元化治理撞上實務現實：集中管控平台真能解鎖 AI 安全嗎？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AIガバナンス一元化の「理想と限界」とは？ 米Dataikuの新サービスから考察（ITmedia エンタープライズ） - Yahoo!ニュース</div>
+            <div class="item-sentence lang-zh-only">許多企業迷信只要買一套「全方位集中治理平台」就能一勞永逸搞定 AI 風險，但 Dataiku 的新服務剛好凸顯了這個理想的現實痛點。由上而下的集中管控看似滴水不漏，卻往往因過度僵化而扼殺前線團隊的敏捷創新，最後演變成各部門陽奉陰違的「影子 AI」。治理的藝術不在於建一座中央集權的監獄，而在於如何設計出能融入日常工作流的輕量守衛機制。 <span class="src">— Yahoo!ニュース</span></div>
+            <div class="item-sentence-en lang-en-only">Unified AI governance platforms promise centralized oversight, but often collide with operational friction across agile development teams. To avoid bureaucratic paralysis or non-compliant shadow systems, organizations must design adaptable, context-aware governance guardrails directly into everyday workflows rather than relying solely on rigid, top-down software dashboards. <span class="src">— Yahoo!ニュース</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/infrastructure/with-solar-battery-storage-resilience-comes-to-bay-area" target="_blank" rel="noopener">市政公有設施變身韌性微電網：社區光能儲電重構在地防災防線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">With Solar, Battery Storage, Resilience Comes to Bay Area</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/bb90d80/2147483647/strip/true/crop/4032x1960+0+119/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F4b%2Fee%2Fd98667c241c7bc747fd0eb8d63ea%2Fadobestock-627475210.jpeg" alt="With Solar, Battery Storage, Resilience Comes to Bay Area" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">加州灣區透過公私協力，在多個城市的市政設施屋頂裝設太陽能與儲能系統，這展示了能源轉型最接地氣的解法。過去面對極端氣候導致的停電，城市只能被動應對；如今將圖書館、消防站變成具備獨立孤島運轉能力的能源節點。這告訴我們，氣候韌性治理不再只是宏大的碳中和口號，而是透過分散式基礎建設，為地方社群築起真正斷電時能救命的安全網。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Ava Community Energy’s municipal solar and battery microgrids demonstrate how local infrastructure anchors climate resilience. By transforming everyday public facilities into self-sustaining energy nodes during grid disruptions, the Bay Area establishes a decentralized, actionable blueprint for municipal climate adaptation and community disaster preparedness. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-04 08:04:00 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
