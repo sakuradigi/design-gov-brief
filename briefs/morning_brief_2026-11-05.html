@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從跨界視覺到醫療AI治理：在地文化突圍與數位公共服務的典範轉移 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-05</div>
+    <div class="headline">從跨界視覺到醫療AI治理：在地文化突圍與數位公共服務的典範轉移</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is the campfire around which we tell our stories, but the quality of the gathering still depends on the warmth of the humans around it.</div>
+      <div class="quote-text-zh lang-zh-only">技術是我們圍坐講故事的營火，但聚會的溫度終究取決於圍繞在旁的人性。</div>
+      <div class="quote-author">— Laurie Anderson</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">立陶宛設計所十年磨一劍，證明數位時代地理邊界已不再限制全球野心。</li>
+        <li class="flash-item">北市聯手銀行推抵押權AI秒級塗銷，公私協同讓便民服務真正走入日常。</li>
+        <li class="flash-item">美國醫學會祭出AI治理框架，醫療專業自主與演算法透明度成全球新標竿。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/architectureofdreams-aitoumuseum/" target="_blank" rel="noopener">以陶為鏡：古墓明器折射跨越千年的理想建築空間</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">夢見る建築―中国古代の明器に宿る建築の断片</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/E725-9574.jpg" alt="夢見る建築―中国古代の明器に宿る建築の断片" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">愛知縣陶磁美術館展出的古代隨葬陶明器，表面上是古代喪葬器具，本質上卻是漢代人對理想居所與秩序宇宙的微縮投射。這給現代建築與策展人的最大啟發在於：微縮模型從來不只是工程草圖，而是集體潛意識裡對「家」與「庇護所」的精神寄託。跳脫單純的古物陳列，從空間哲學視角審視這些古陶，正是當代設計尋找空間情感厚度的最好靈感庫。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The Aichi Prefectural Ceramic Museum explores ancient Chinese burial mingqi, revealing how these miniature ceramic models captured cultural ideals of domestic architecture, spiritual cosmos, and daily life across dynastic transitions. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/ceramics-is-art-mcart/" target="_blank" rel="noopener">打破工藝與雕塑界線：現代陶藝如何翻轉日常器物敘事</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ゲンダイトウゲイ＊ミニ＊クロニクル―やきものはアートだ！</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/64bc9f6d73320988c98199f04cbfbc07.jpg" alt="ゲンダイトウゲイ＊ミニ＊クロニクル―やきものはアートだ！" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">兵庫陶藝美術館這場編年展拋出「陶藝即藝術」的宣言，點出了現代器物設計的核心轉折：黏土早已跳脫實用器皿的束縛，演變為乘載觀念與情緒的前衛媒介。對當代創作者而言，材質從來沒有階級之分。當我們把傳統工藝拉進當代語境，如何保留手作質感的溫度，同時介入公共論述與概念表達，正是所有創作者在數位浪潮下重拾物質存在感的必修課。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Hyogo Ceramic Art Museum highlights modern ceramics as a potent fine art medium, chronicling how twentieth-century artisans transformed utilitarian earth into conceptual sculptures that challenge the boundaries of fine art. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/insight/andstudios-augustinas-paukste-on-10-years-of-building-a-global-studio-from-vilnius/" target="_blank" rel="noopener">跳脫邊緣地理宿命：立陶宛設計所十年突圍全球市場的策略思維</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Andstudio on the challenges of building a global studio from Lithuania</div>
+            <img class="item-image" src="https://media.creativeboom.com/a66afe07-aeb2-4058-8266-f3e97829d798/conversions/fb0ebe0e32ffd1c0ffc6c8ebb26277e25dbb0b7f-medium.webp" alt="Andstudio on the challenges of building a global studio from Lithuania" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">立陶宛首都維爾紐斯的 Andstudio 迎來十週年，他們從小國地方工作室長成國際級設計旗艦，給所有非歐美核心圈團隊最棒的借鏡：在這個數位無國界的年代，「邊緣」反而是提煉獨特美學視角的秘密武器。只要建立清晰的敘事體系與敏捷的跨國協作機制，地處非主流設計中心不但不是絆腳石，反而是擺脫同質化趨勢、在全球視覺市場殺出血路的最佳辨識度。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Vilnius-based Andstudio celebrates its tenth anniversary, demonstrating how design studios outside traditional global hubs can successfully leverage distinct cultural perspectives and agile storytelling to build an internationally competitive brand identity. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/yinka-ilori-brings-his-joyful-love-of-colour-to-reimagine-the-tottenham-hotspur-away-shirt/" target="_blank" rel="noopener">當奈及利亞色彩撞擊英超球衣：跨界街頭美學重構球場社群認同</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Yinka Ilori brings joy and colour to the Tottenham Hotspur away shirt</div>
+            <img class="item-image" src="https://media.creativeboom.com/7cf2b391-b450-4f3c-b619-43d597af9a96/conversions/e52963f74da123938096e2fe7d164c65cba26f03-medium.webp" alt="Yinka Ilori brings joy and colour to the Tottenham Hotspur away shirt" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">藝術家 Yinka Ilori 替托特納姆熱刺設計的客場球衣，把英超長年被商業套路綁架的機能服飾，變成了充滿北倫敦多元族裔生命力的流動畫布。這件事的啟發在於：頂級運動IP正在告別千篇一律的企業圖騰，轉而向具有深厚在地故事的街頭視覺創作者借火。美學不再只是裝飾，而是將球隊身份與城市多元移民社群緊密縫合的文化紐帶。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">British-Nigerian artist Yinka Ilori brings his joyful color palette to Tottenham Hotspur’s away jersey, illustrating how high-profile sports franchises are revitalizing club identity through cross-cultural community storytelling and vibrant urban aesthetics. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/inspiration/burger-trees-spying-fruit-and-flying-taxis-discover-the-digital-clay-world-of-daniel-jurman/" target="_blank" rel="noopener">90年代黏土復古潮：數位定格動畫如何治癒當代視覺審美疲勞</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Burger trees, spying fruit and flying taxis: the digital clay world of Daniel Jurman</div>
+            <img class="item-image" src="https://media.creativeboom.com/922e1b5e-1e68-4eb4-a98d-2f28d6a7aa41/conversions/cc5f82660222448892889dc5ca4ab414e1c380b9-medium.webp" alt="Burger trees, spying fruit and flying taxis: the digital clay world of Daniel Jurman" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">紐約插畫家 Daniel Jurman 用數位黏土打造出漢堡樹、間諜水果等奇幻微縮世界，精準重現90年代 MTV 頻道的混亂幽默。在當前 AI 生成圖極度平滑、千篇一律的精緻陷阱裡，這種帶有怪誕手作感、停格停頓與不完美質感的視覺語言，反而成為抓住年輕世代眼球的解毒劑。不完美與幽默感，正在成為人造視覺抵禦演算法同質化最強大的武器。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">New York animator Daniel Jurman crafts nostalgic digital-clay vignettes reminiscent of 1990s MTV bumpers, showing how delightfully weird, tactile aesthetics can stand out against the overly polished sameness of contemporary generative visuals. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE0wM2lzMjVTcW9WT205NndIWVNoS0NDS0hTVjR0MlAzM3VMdmNxMlJaWml5eU9YU09tbkEwTms3VTlpSnU4elQ2Y2toNFhTcmlrbXc?oc=5" target="_blank" rel="noopener">告別臨櫃繁瑣公文：北市府聯手銀行用AI讓抵押權塗銷兩分鐘搞定</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">北市府攜5家銀行推抵押權塗銷一站式服務AI助攻最快2分鐘完成蔣萬安：簡政便民讓智慧城市融入日常 - 蕃新聞</div>
+            <div class="item-sentence lang-zh-only">台北市府聯手五家金融機構推動跨機關「抵押權塗銷」一站式服務，將過去耗時數天的行政審核縮短至兩分鐘。這項變革的本質不是「秀技術」，而是數位治理思維的徹底顛覆：政府不再要求民眾在各個封閉系統間跑腿，而是透過資料互通與公私跨界，把行政摩擦力降到最低。唯有讓有感便利自然融入民眾生活細節，智慧城市才真正脫離了口號包裝。 <span class="src">— 蕃新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Taipei City collaborates with five major commercial banks to launch an AI-powered, one-stop mortgage cancellation service, slashing processing times to two minutes and exemplifying human-centered, frictionless public digital governance. <span class="src">— 蕃新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxQX1VSaTIwWDhXNXJlbDhDNldzTDlNdmh4TWQ0bTQyYUl0cjBKUnBCQ2Q1ZWRXQ2hTNGM4enA1SVBQbDZIeFRiWDZRTHZPdW9qS2VuYUhsc09kdHNFeVh4VF81XzlfNUtUWnl4dFowWTJkWENnZEItZ205WDhyS0h2dWNyX0QzX0wwWXBidWJKMm83cmN1UnAxempn0gGfAUFVX3lxTFBhRUtqMmNRVzVnZkJfbVJPSEppd0YwZUQ4aXBhOEE5dnlTR0ZsUms4ZjlpU2l1M1VCa0dxOU5GVTJ0NDh5dVJEVGhnVzNzVXZkNEFqYXJiVHhwcmFxemdJd0IybWtZdEZTQlFRR0lPNGZucmhOZUd1MXNFcmhBUkc3UlRUbm1rR0UtZEtncjJDSkhybXZaM1k3MWxMc0xxaw?oc=5" target="_blank" rel="noopener">把關演算法行醫紅線：美國醫學會AI治理框架確立臨床透明度基石</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">American Medical Association Releases AI Governance Framework - The National Law Review</div>
+            <div class="item-sentence lang-zh-only">美國醫學會（AMA）正式端出醫療 AI 治理架構，為醫療科技狂飆的時代釘下安全界線。這份框架的核心啟發在於：AI 可以作為診斷與處方的高效副駕駛，但醫療決策的透明度、公平性與臨床自主權絕不容妥協。隨著醫療大模型落地，各國治理者必須迅速從「技術狂熱」走向「臨床風險定錨」，守住病患隱私與專業責任的基本盤。 <span class="src">— The National Law Review</span></div>
+            <div class="item-sentence-en lang-en-only">The American Medical Association has introduced a comprehensive AI governance framework, setting critical standards for algorithmic transparency, clinical autonomy, and equity as healthcare institutions integrate diagnostic automation. <span class="src">— The National Law Review</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxQX1VSaTIwWDhXNXJlbDhDNldzTDlNdmh4TWQ0bTQyYUl0cjBKUnBCQ2Q1ZWRXQ2hTNGM4enA1SVBQbDZIeFRiWDZRTHZPdW9qS2VuYUhsc09kdHNFeVh4VF81XzlfNUtUWnl4dFowWTJkWENnZEItZ205WDhyS0h2dWNyX0QzX0wwWXBidWJKMm83cmN1UnAxempn0gGfAUFVX3lxTFBhRUtqMmNRVzVnZkJfbVJPSEppd0YwZUQ4aXBhOEE5dnlTR0ZsUms4ZjlpU2l1M1VCa0dxOU5GVTJ0NDh5dVJEVGhnVzNzVXZkNEFqYXJiVHhwcmFxemdJd0IybWtZdEZTQlFRR0lPNGZucmhOZUd1MXNFcmhBUkc3UlRUbm1rR0UtZEtncjJDSkhybXZaM1k3MWxMc0xxaw?oc=5" target="_blank" rel="noopener">醫療AI不能只是黑盒子：臨床倫理與演算法信任機制的制度化重塑</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">American Medical Association Releases AI Governance Framework - The National Law Review</div>
+            <div class="item-sentence lang-zh-only">從 AMA 接續推進的治理規範可以看出，醫療界已不再爭論「要不要用 AI」，而是進入「如何確保模型可被問責」的深水區。這對醫療科技開發者是一記警鐘：單純追求模型預測準確率的時代已經過去，能否提供清楚的模型可解釋性、解決少數族群訓練數據偏差，已成為產品能否真正進入診間的生死門檻，治理能力直接轉化為商業合規能力。 <span class="src">— The National Law Review</span></div>
+            <div class="item-sentence-en lang-en-only">The AMA&#x27;s latest guidance underlines that clinical AI readiness hinges on algorithmic accountability and data equity, pushing health-tech innovators to prioritize model interpretability over raw computational power. <span class="src">— The National Law Review</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiTEFVX3lxTE41VW55R0g5RElrbUJ2VVVyTHlTVDN5VXdvb1BtcnNrUDEwRk5LZTNKQk1sSTRDSWZ3S0dnSkM0MnBWUURaRTFqZ3FxWEQ?oc=5" target="_blank" rel="noopener">AI治理成為法務新藍海：日本商業律師大獎折射企業合規的典範轉移</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ビジネスロイヤーズアワード2026発表、グランプリにAIガバナンスの古川直裕弁護士 - 弁護士ドットコム</div>
+            <div class="item-sentence lang-zh-only">日本「Business Lawyers Awards 2026」將大獎頒給深耕 AI 治理的古川直裕律師，釋出極為清晰的產業訊號：AI 合規已不再是科技法務的邊緣課題，而是直接躍升為跨國企業戰略防禦的核心引擎。在生成式技術快速改寫各行各業業務流程之際，能把深奧的演算法倫理、資料安全轉譯為商業落地防禦盾牌的法律專家，將是下一輪商業競爭中最搶手的舵手。 <span class="src">— 弁護士ドットコム</span></div>
+            <div class="item-sentence-en lang-en-only">Attorney Naohiro Furukawa won the Grand Prix at Japan&#x27;s Business Lawyers Awards 2026 for his AI governance leadership, signaling that algorithmic risk management is now a core strategic imperative for modern corporate counsel. <span class="src">— 弁護士ドットコム</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/gov-experience/nebraskas-cio-of-2-5-years-is-resigning-governor-says" target="_blank" rel="noopener">內布拉斯加資訊長離任震撼彈：揭示州政府科技現代化的人才延續困境</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Nebraska’s CIO of 2.5 Years Is Resigning, Governor Says</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/6756853/2147483647/strip/true/crop/5903x2870+0+0/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fae%2Fe6%2F41fb2e244fd8a6b168ef01a3825d%2F2409-matthew-mccarville-ne-09.jpg" alt="Nebraska’s CIO of 2.5 Years Is Resigning, Governor Says" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">內布拉斯加州資訊長掌舵兩年半後突然請辭，由行政首長暫代，折射出各級公部門在推動科技數位轉型時的普遍痛點：人才流動率過高與策略斷層。在數位治理日趨複雜的今天，公共科技現代化絕不能只倚賴明星技術官僚的個人魅力，如何建立不受人事更迭動搖的制度化技術架構與傳承機制，是所有推動智慧政務的公部門必須面對的硬課題。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Nebraska State CIO Matthew McCarville&#x27;s sudden resignation highlights the vulnerability of public-sector digital modernization efforts to leadership turnover, stressing the need for institutionalized tech resilience over individual leadership. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-05 08:03:08 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
