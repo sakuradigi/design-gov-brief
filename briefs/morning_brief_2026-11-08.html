@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從皮相擬真到原生內核：AI浪潮下設計師的批判自覺與公共治理的理性轉向 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-08</div>
+    <div class="headline">從皮相擬真到原生內核：AI浪潮下設計師的批判自覺與公共治理的理性轉向</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is the knack of so arranging the world that we don&#x27;t have to experience it.</div>
+      <div class="quote-text-zh lang-zh-only">科技就是一種巧妙的安排，讓我們得以不必親身經歷這個世界。</div>
+      <div class="quote-author">— Max Frisch (瑞士建築師、劇作家兼小說家)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">AI讓視覺產製扁平化，設計核心轉向脈絡思維與原生互動</li>
+        <li class="flash-item">告別公部門科技盲從，採購前先問『真的需要新軟體嗎』</li>
+        <li class="flash-item">智慧城市退潮盤整，實踐檢驗概念展示與日常運營的落差</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/shukushaku-eandygallery/" target="_blank" rel="noopener">微縮維度的空間重構：從比例尺中反思建築本質與感知邊界</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">縮尺彫刻・縮尺絵画</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/1405412.jpg" alt="縮尺彫刻・縮尺絵画" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">這場展覽將縮尺模型與繪畫抽離純粹的工程工具定位，轉化為獨立的感知載體。在數位建模主導的當下，重提「縮尺」意味著重拾人與實體空間尺度的對話權。它提醒創作者，比例不僅是數字運算，更是感知與物理現實之間的折衝過程；當工具被賦予美學思維，微小的模型也能承載宏大的空間哲學。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The Scale Sculpture and Scale Painting exhibition redefines architectural models not merely as planning aids, but as autonomous aesthetic artifacts. It invites observers to reconsider how physical proportions and spatial sensibilities shape our relationship with built environments, serving as a poetic counterbalance to purely digital architectural representations. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/superopenstudio-2026/" target="_blank" rel="noopener">開放工作室的社群韌性：走進創作現場打破藝術的象牙塔</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">SUPER OPEN STUDIO 2026</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/1405850.jpg" alt="SUPER OPEN STUDIO 2026" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">邁入第十餘年的相模原開放工作室計畫，向我們展示了地方文化營造如何扎根於最真實的日常勞動。藝術不再高高掛在白盒子美術館，而是透過敞開的工作室大門，讓公眾看見汗水、顏料與實驗挫折。這種開放策略不僅消除藝術與大眾的藩籬，更為周邊城鎮構築出極具活力的文化網絡與社區向心力。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">SUPER OPEN STUDIO 2026 invites the public directly into artists&#x27; daily workspaces across Kanagawa, stripping away institutional barriers. By demystifying the creative process, the initiative builds deep community connections and turns local art studios into active nodes for cultural dialogue, proving that openness creates lasting grassroots vitality. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/otherwise-youre-just-a-machine-a9d3b21179b5?source=rss----138adf9c44c---4" target="_blank" rel="noopener">當生成式工具普及：思考與判斷力才是設計師不被取代的靈魂</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Otherwise you’re just a machine</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*Cp5ZcUv0cM4ifwpONSgZ3g.png" alt="Otherwise you’re just a machine" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">如果設計產出只剩完美的排版與無懈可擊的色票，那設計師本質上跟機器無異。這篇文章直戳產業痛點：AI能以零成本生成光鮮亮麗的介面，卻無法替你理解混亂的商業脈絡、組織政治與真實的人性脆弱。未來的設計門檻不是「你會用什麼軟體」，而是你能否在混沌中釐清問題，並給出帶有同理心與邏輯的價值判斷。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">As generative AI effortlessly commodifies polished UI, the true value of human designers shifts toward contextual reasoning and ethical discernment. The article argues that visual proficiency is no longer a moat; instead, deep empathy, critical problem framing, and navigating complex human needs are what prevent designers from becoming redundant machines. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/inspiration/peter-daviss-gig-pose/" target="_blank" rel="noopener">舉起的手機與缺席的共感：畫布下當代人被螢幕綁架的狂歡</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Peter Davis&#x27;s Gig Pose paintings capture the phones-in-the-air moment at every concert</div>
+            <img class="item-image" src="https://media.creativeboom.com/6089858d-1368-42de-8177-0f1e21368c7e/conversions/530afe8682d14681e87cbd7616ce65ab7a4db85c-medium.webp" alt="Peter Davis&#x27;s Gig Pose paintings capture the phones-in-the-air moment at every concert" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">彼得·戴維斯的油畫精準捕捉了現代演唱會的荒謬奇觀：全場觀眾不約而同舉起手機，透過冰冷鏡頭凝視舞台上的肉身。這系列作品不僅是諷刺，更拋出深刻的社會學哉問：我們究竟是在享受當下的音樂，還是在為社群動態製造生存證明？當數位中介全面介入生活，親臨現場的純粹感動是否正在不可逆地流失？ <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Artist Peter Davis captures modern concert culture where audiences view performances through glowing smartphone screens rather than their own eyes. His paintings provoke essential questions about presence and digital performativity, highlighting how the compulsion to document experiences for social media often displaces genuine emotional immersion in live moments. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/native-is-a-floor-not-a-ceiling-09bc4f27ddce?source=rss----138adf9c44c---4" target="_blank" rel="noopener">原生系統才是體驗基石：拒絕膚淺的UI擬真與風格套皮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Native is a floor, not a ceiling</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*tmilNueBY4CBfNN99ZX5vA.jpeg" alt="Native is a floor, not a ceiling" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當AI能輕易產出華麗的動態與光影時，視覺的「精緻度」已經嚴重貶值。作者一針見血地指出：原生系統架構（Native）是底線而非天花板。真正頂尖的數位體驗，在於底層邏輯與硬體生態、使用者直覺的深度咬合，而不是浮於表面、看似前衛的UI仿造。追逐炫目的外皮只是走捷徑，扎根本質才能跑贏演算法。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">In an era where AI renders visual polish cheap, native design represents the foundational floor of utility rather than a decorative ceiling. True interface excellence lies in deep system integration, responsiveness, and behavioral coherence, warning designers that superficial visual trends will always be outpaced by systemic authenticity. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi0gJBVV95cUxQbUFMZ19jZVd5b2VWVy1zMFRudFdhXzFFS1lSbE5tRGxwa21fSEdKNFMtTTVjMWFRLV9WQzlvRXhtNFJCWjhlSkt2WHVuX0hpN1hBdEpqU29JNWViQlY1RGlxZVE4UUVCNDlaSVNuQWR3d3JZNERQbjVMMHBQWlNWclJDZUNSM0NwQXg0a3FBeGdmV3QxdUlFb045VkhoTDc2MWxaRW90TUtsekJmQlJBODFFd0RFV0pDcDRlWEdNb0RqN3ZVVVpTdWF2VDhpV0NWY05KNDk3bTFKV1dXT0tudkllNGk5QzhmM2N0NGZ0UEg2SjZRbVo4RnZCLUNIbXhqTDdQNk9nVEJzclloZjJuQUNla1dDa1lhWXZ1QW1rb0YwQ2pBUnFhMkR5UUNtNlo4OHBfeGpmYjFUVVhZT3BsSFhaSEt0X2tiRS1UUEJ0VjlFUQ?oc=5" target="_blank" rel="noopener">給自動化套上韁繩：AI多雲維運治理從被動應付轉向主動掌控</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">CloudBolt 雲端平台強化 AI 治理 助企業掌控自動化維運 - 商傳媒 - SUN MEDIA</div>
+            <div class="item-sentence lang-zh-only">企業導入AI已從「概念驗證」進入「規模化維運」階段，但隨之而來的往往是失控的雲端支出與黑箱自動化。這則新聞點出一個重大治理趨勢：自動化工具越強大，背後的合規與監管框架就必須越精密。沒有治理的自動化只會加速出錯；唯有建立清晰的可觀測性與決策邊界，組織才能真正享受科技紅利而非反受其害。 <span class="src">— 商傳媒 - SUN MEDIA</span></div>
+            <div class="item-sentence-en lang-en-only">CloudBolt&#x27;s enhancement of AI governance platforms reflects a crucial shift from blind automation to disciplined oversight. As multi-cloud enterprise systems become increasingly algorithmic, robust governance frameworks are vital to ensure operational visibility, manage cloud expenditures, and prevent automated decisions from degenerating into unmanageable liabilities. <span class="src">— 商傳媒 - SUN MEDIA</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxObUYtZ3pEajNuYnFDTDMxdE1nQ2x2dUVRcjBicU90VlFoY0txZHkzOWNXWllWQmZYYTczdUVIX2tpRWtLRDZmeW1WS21lVTlySTJhUHNYd2Z4b0FpLW9ONUJEY3ZRay1odUdhUWJRalVSSENaeHdtd3VsUF92ejlKWVR2eWNKeGc5TU0yb2dUU2VvSXJUWmphWTFtTTdaUWQ1b2hQZks3R3ZRSVFpYlhVUWJ1QlJacnpqWG5sU2FiUFI?oc=5" target="_blank" rel="noopener">基層賦能才是數轉關鍵：印度地方稅務官員的實戰治理課</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">CMGI Conducts Hands-On Digital Governance Training for Odisha Revenue Officials at Lok Seva Bhawan - Pragativadi</div>
+            <div class="item-sentence lang-zh-only">數位治理的成敗從來不取決於中央買了多昂貴的雲端系統，而在於第一線公務員究竟會不會用、想不想用。奧迪沙邦針對基層稅務官員推動的動手實作訓練，精準擊中數位落差的死穴。唯有將抽象的政策條文轉化為直覺的操作能力，數位政府才能真正走出會議室，落地為改善民生福祉的具體服務。 <span class="src">— Pragativadi</span></div>
+            <div class="item-sentence-en lang-en-only">Odisha&#x27;s hands-on digital governance training for revenue officials demonstrates that successful public sector transformation hinges on frontline capability. Equipping grassroots administrators with practical digital skills bridges the implementation gap, transforming abstract public administration mandates into tangible, citizen-centric public service deliveries. <span class="src">— Pragativadi</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxObUYtZ3pEajNuYnFDTDMxdE1nQ2x2dUVRcjBicU90VlFoY0txZHkzOWNXWllWQmZYYTczdUVIX2tpRWtLRDZmeW1WS21lVTlySTJhUHNYd2Z4b0FpLW9ONUJEY3ZRay1odUdhUWJRalVSSENaeHdtd3VsUF92ejlKWVR2eWNKeGc5TU0yb2dUU2VvSXJUWmphWTFtTTdaUWQ1b2hQZks3R3ZRSVFpYlhVUWJ1QlJacnpqWG5sU2FiUFI?oc=5" target="_blank" rel="noopener">跨越制度鴻溝的持續培力：官僚體系現代化中的數位技能深耕</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">CMGI Conducts Hands-On Digital Governance Training for Odisha Revenue Officials at Lok Seva Bhawan - Pragativadi</div>
+            <div class="item-sentence lang-zh-only">公部門推行數位轉型最怕「一次性煙火」，後續若無持續培力，系統往往淪為裝飾。重申這類培訓的必要性在於提醒大家：制度改革與數位素養是相輔相成的漫長工程。唯有透過持續性的實戰演練，公務體系才能逐步淘汰過時的紙本思維，建立起適應二十一世紀公共治理挑戰的敏捷體質。 <span class="src">— Pragativadi</span></div>
+            <div class="item-sentence-en lang-en-only">Continuous capacity building remains the linchpin for bureaucratic modernization across administrative tiers. Moving beyond one-off training sessions, systematic digital literacy programs dismantle procedural inertia, fostering an agile civil service capable of delivering responsive, efficient public administration amid rapid technological disruptions. <span class="src">— Pragativadi</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1VU3lweFBkdU51WF9kYU1pMlNRU2E0TmVOSW8xNEtjZ3pvRldrNExYT2U5S1BXZUVPaUozblRQY3h1ZHRQX1hQVTZQSmJfNkFpeHJQaWRHN3JudEFvMGhzNl9FQnF3ek9fMFlDbVRIVUgzbUFVZDN4NEVOZnNYbWM?oc=5" target="_blank" rel="noopener">走下神壇的智慧城市：撕掉概念標籤後的落地檢驗與務實審視</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">スマートシティ、すでに街で動いているものと、まだ実験段階のもの - Pasquale Pillitteri</div>
+            <div class="item-sentence lang-zh-only">智慧城市炒作多年，究竟有多少科技真正融入了市民的呼吸之中？這篇文章冷靜地拆解了那些已經默默運轉的基建（如動態號誌控制），以及依舊漂浮在PPT上的實驗項目。它給城市規劃者的最大啟發在於：少談宏大敘事，多看日常痛點。能被城市體系消化、長期穩定運行的技術，才算得上是真正的智慧。 <span class="src">— Pasquale Pillitteri</span></div>
+            <div class="item-sentence-en lang-en-only">Deconstructing smart city rhetoric reveals a stark divide between functioning municipal technologies and perpetual experimental pilots. By focusing on operational realities rather than visionary hype, modern urban governance must prioritize scalable, durable infrastructures that meaningfully solve daily civic challenges over unproven, headline-grabbing technological novelties. <span class="src">— Pasquale Pillitteri</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/budget-finance/a-new-team-aims-to-change-how-maryland-buys-technology" target="_blank" rel="noopener">採購思維的哥白尼轉向：馬里蘭州用『這真的需要嗎』終結IT浪費</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">A New Team Aims to Change How Maryland Buys Technology</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/e6125b4/2147483647/strip/true/crop/933x454+0+84/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F34%2F8c%2F5697f64f0c86b845dbc6e2ea5ed8%2Fcomputer-purchasing-procurement.jpg" alt="A New Team Aims to Change How Maryland Buys Technology" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">馬里蘭州成立專責專家團隊，徹底顛覆了傳統IT採購流程——他們做的第一件事不是開規格標，而是質疑「這個軟體真的有必要買嗎？」。這種從需求源頭踩煞車的作法極具啟發性。它打破了公部門盲目採購新科技的慣性，把公共資金與組織精力集中在真正解決問題的刀口上，展現了高明的治理減法哲學。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">The Maryland Department of Information Technology revolutionizes public procurement by critically questioning the necessity of software before issuing RFPs. This restraint-first methodology curbs bureaucratic vendor bloat, focusing taxpayer resources on genuine institutional needs and showcasing high-maturity governance driven by subtraction rather than accumulation. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-08 08:03:38 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
