@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>當AI重塑介面與醫療治理：從歷史排版工的啟示到數據權利的制度化轉型 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-10</div>
+    <div class="headline">當AI重塑介面與醫療治理：從歷史排版工的啟示到數據權利的制度化轉型</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">We shape our tools and thereafter our tools shape us.</div>
+      <div class="quote-text-zh lang-zh-only">我們塑造了工具，而後工具也塑造了我們。</div>
+      <div class="quote-author">— John Culkin</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">介面不再只是靜態版面，情境感知正在取代傳統UI成為設計新核心</li>
+        <li class="flash-item">借鏡九零年代活字排版工退場潮，設計師該思考AI浪潮下不可替代的核心手藝</li>
+        <li class="flash-item">各國加速建構AI與隱私治理架構，從世衛醫療守則到地方政府設立隱私長已成定局</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/729574.html" target="_blank" rel="noopener">跳脫分類框架：從蟲字旁博物誌看文化認知的流動性</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">角川武蔵野ミュージアム「虫へんはみんなむし－蟲をめぐる博物誌」。カエル、タコ、虹、ハラノムシまで、虫の概念を博物画と標本からたどる</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/11/sub2.jpg" alt="角川武蔵野ミュージアム「虫へんはみんなむし－蟲をめぐる博物誌」。カエル、タコ、虹、ハラノムシまで、虫の概念を博物画と標本からたどる" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">角川武藏野博物館這場展覽妙在顛覆了現代生物學的既定框架。古人眼中的「虫」不僅包含昆蟲，連青蛙、蛇、虹甚至體內寄生蟲都算在內。這提醒我們，分類體系從來不是客觀真理，而是人類特定時空下的認知投影。在資訊架構與知識圖譜高度依賴演算法分類的今天，回看這種混雜多元的歷史視角，正好能激發設計師思考：我們是否過早將使用者的世界塞進了過度狹隘的標籤裡？ <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Kadokawa Musashino Museum explores how historical perceptions of &#x27;insects&#x27; once included frogs, rainbows, and internal parasites. The exhibition challenges rigid modern classification systems, reminding designers that taxonomy is fundamentally a cultural construct that shapes how people perceive and interact with the natural and digital world. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/yawarakanakyoso-musabi/" target="_blank" rel="noopener">設計走出象牙塔：武藏野美大以柔軟共創破解地方社會難題</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">やわらかな共創――つながる、ひらめく、変わる ムサビの社会連携</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/1406096.jpg" alt="やわらかな共創――つながる、ひらめく、変わる ムサビの社会連携" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">武藏野美術大學市谷校區展示的「柔軟共創」，展現了設計院校角色的大轉型。設計不再只是關在工作室做漂漂亮亮的產出，而是成為穿針引線的媒介，直接介入企業轉型、偏鄉振興與公部門治理。這種「軟性共創」的核心在於放下專家身段，透過原型設計與對話，引導利益關係人看見彼此的盲點。對現代創作者而言，協作與調解矛盾的能力，已經比單純的視覺表現手藝更具決定性。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Musashino Art University highlights social co-creation initiatives that tackle community and industrial challenges. Rather than focusing purely on visual craft, this model demonstrates how designers act as catalysts for systemic change, facilitating cross-sector collaboration among citizens, businesses, and government agencies to address pressing societal transitions. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/design-by-numbers-teaching-ai-prototyping-context-is-the-new-ui-c88a432a8df8?source=rss----138adf9c44c---4" target="_blank" rel="noopener">情境感知即介面：當生成式工具讓刻板版面走向退場</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Design by numbers, Teaching AI prototyping, Context is the new UI</div>
+            <img class="item-image" src="https://cdn-images-1.medium.com/max/1024/0*cheGTOf2ADgr71G_.png" alt="Design by numbers, Teaching AI prototyping, Context is the new UI" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當AI能一秒組裝出符合設計系統的標準頁面，介面設計的定義就被徹底重寫了。這篇文章點出一個關鍵轉折：「情境（Context）正在成為新的UI」。過去我們執著於按鈕怎麼擺、導覽列怎麼收，但未來的核心在於軟體能否精準感知使用者當下的意圖與環境狀態，動態生成最適合的互動模式。這意味著設計師不能再當像素搬運工，必須晉升為互動邏輯與情境感應機制的架構師。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">As generative AI automates the assembly of standardized digital interfaces, designers are shifting their focus toward context-aware systems. The primary UX challenge is no longer pixel arrangement, but curating dynamic experiences that intelligently adapt to user intent and situational context in real time. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/what-a-ruler-leaves-out-9250724a7f85?source=rss----138adf9c44c---4" target="_blank" rel="noopener">尺規丈量下的盲區：警惕設計工具對多元真實的悄悄閹割</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What a ruler leaves out</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*K1XZYBwlp7qoA0rIrwBDAg.png" alt="What a ruler leaves out" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">任何測量工具在定義世界標準的同時，都默默排除了無法被丈量的事物。這篇文章從一把尺出發，深層叩問了當代數位產品對「量化指標」的盲目崇拜。當設計只圍繞著轉換率、點擊率與固定網格時，那些幽微的文化脈絡、人類情感與非標準需求就被直接邊緣化。設計師必須保持批判自覺：你所採用的工具與框架，正悄悄決定了你看得見什麼、看不見什麼。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Reflecting on the nature of rulers and measurement systems, this critique explores how design constraints quietly exclude nuance. Relying solely on standardized metrics and structured toolsets risks blind spots, urging product designers to remain critical of what quantitative frameworks naturally leave out. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/five-pairs-of-hands-what-the-typesetters-can-teach-designers-about-ai-9d6b8e8c2285?source=rss----138adf9c44c---4" target="_blank" rel="noopener">排版工歷史重演：設計師在AI洪流下該保有的本質工藝</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Five pairs of hands: what the typesetters can teach designers about AI</div>
+            <img class="item-image" src="https://miro.medium.com/v2/da:true/resize:fill:1200:632/g:fp:0.5:0.52/0*DzAiRRarpyntojbB" alt="Five pairs of hands: what the typesetters can teach designers about AI" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">九零年代桌面出版普及時，專業排版工曾面臨滅頂之災；如今AI浪潮來襲，設計圈也瀰漫著相同的焦慮。Christian Crumlish 透過這段歷史提醒我們：科技抹去的是特定機械化工種，而不是「對排版美學、敘事節奏與人類理解力的敏銳度」。工具門檻大幅降低後，人人都能產出及格的視覺，但只有深刻理解溝通本質、懂得為複雜概念賦予靈魂的人，才能在職能整併中留下來。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Drawing parallels to the disruption of typesetters during the desktop publishing revolution, this piece examines AI&#x27;s impact on contemporary design careers. It argues that while mechanical production gets automated, true value lies in editorial judgment, taste, and the enduring craft of human-centered visual communication. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE5NSlczbVpobzFDVmQ2T01vOE1UYXRXRUN0RWREbHd1clpPd2M0UW0yTmUwbFlSRnAweTQ2R095cWxpQVJiQkFELVpNQ21wU3huMnZPWEpqMUppZGp4ZWw0aFNHMUhydXdWazJxQTJVcFJhbFRZN3Atb3hOV0M?oc=5" target="_blank" rel="noopener">美中AI治理競局：在創新鬆綁與嚴格規管間的戰略拉鋸</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">馬群傑：美陷AI 治理悖論中國迎新機遇 - 台灣中評網</div>
+            <div class="item-sentence lang-zh-only">這篇分析直指美中兩國在AI治理上的核心矛盾。西方社會在技術高速擴張與民主倫理監督之間陷入拉扯，既怕管太嚴阻礙創新，又怕放任導致偏見與失控；與此同時，不同體制則試圖以高度由上而下的標準化模式建立主導權。這場治理博弈告訴我們，AI競爭絕非單純算力與演算法的軍備競賽，誰能率先端出兼顧社會穩定、倫理共識與產業活力的監管架構，誰才握有長遠話語權。 <span class="src">— 台灣中評網</span></div>
+            <div class="item-sentence-en lang-en-only">Analyzing geopolitical AI governance, this commentary explores how Western democracies balance ethical regulation against rapid innovation pressures. The ongoing race demonstrates that AI supremacy hinges not only on algorithmic power, but on establishing cohesive regulatory and governance frameworks that balance institutional trust with technological momentum. <span class="src">— 台灣中評網</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE01WGItaVgyYzBBVi1MaEVSZ0Z6RlhkR1VHdVFPZ0YtcFQ2ZXNNQjZmQUNqSjQ1VmJyTkFqWngtb251LXFHbFhqdlo4dGcwdUN2VnZCVklfWjNMWjBYX0EwQUQ5QQ?oc=5" target="_blank" rel="noopener">守護生命底線：世衛組織醫療AI治理原則直指責任歸屬</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance in Healthcare: WHO Principles &amp; QA - CASRAI</div>
+            <div class="item-sentence lang-zh-only">醫療領域是AI應用容錯率最低的主戰場。WHO發布的AI治理守則之所以關鍵，在於它把演算法從「黑盒子魔法」拉回嚴謹的問責體系。臨床決策不能推給機器算力，透明度、演算法偏差監測與病患知情同意權成了不可退讓的底線。對產品開發團隊來說，這釋放了明確訊號：未來醫療科技的勝負手不再只是模型準確度多高，更在於整體服務流程能否禁得起倫理與法律檢驗。 <span class="src">— CASRAI</span></div>
+            <div class="item-sentence-en lang-en-only">Focusing on the WHO principles for AI governance in healthcare, this brief emphasizes accountability, transparency, and patient safety. In high-stakes medical settings, technical accuracy alone is insufficient; deployable systems must be embedded within strict ethical standards and clear liability frameworks. <span class="src">— CASRAI</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE01WGItaVgyYzBBVi1MaEVSZ0Z6RlhkR1VHdVFPZ0YtcFQ2ZXNNQjZmQUNqSjQ1VmJyTkFqWngtb251LXFHbFhqdlo4dGcwdUN2VnZCVklfWjNMWjBYX0EwQUQ5QQ?oc=5" target="_blank" rel="noopener">醫療演算法的落地防線：從品質保證切入臨床信任建構</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI Governance in Healthcare: WHO Principles &amp; QA - CASRAI</div>
+            <div class="item-sentence lang-zh-only">承接醫療AI的規範體系，CASRAI進一步聚焦在品質保證（QA）機制的實操落地。許多醫療演算法在實驗室表現驚豔，進了真實醫院卻因資料偏差與軟硬體落差大翻車。建立全生命週期的監控機制，正是為了打破醫護人員與病患對AI的不信任感。科技創新的終點不是模型上線，而是確保它在真實世界日復一日的運作中，能穩定、安全且公平地保護每條生命。 <span class="src">— CASRAI</span></div>
+            <div class="item-sentence-en lang-en-only">Highlighting quality assurance mechanisms in medical AI, this discussion addresses the gap between clinical validation and operational deployment. Continuous algorithmic auditing and robust QA protocols are essential for overcoming practitioner skepticism and safeguarding health equity in actual clinical settings. <span class="src">— CASRAI</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNeTJibUg5M0MzOGNOODJxQkRJQV84TFlqeVFzWE9TNUY4R1hHSERGOWpxNHd4M3lUX1YySTVPMDdZcXJiaFI3Qnp5NlpyVGVXd2dfVk1zd3ZKbUtZbWR4SERVUE8yY0VtdzlEdm5YWEFIb1RNYzRMQWUzNkxXRld6Y253VWZRZTIxVzZLUnN5QUNRYTQ?oc=5" target="_blank" rel="noopener">智慧電網的底層革命：大阪展覽揭示能源分散化與韌性治理</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">SMART GRID EXPO【関西】（第13回 スマートグリッド展）【11/18〜11/20・インテックス大阪】｜RX Japan合同会社 - www.event-marketing.co.jp</div>
+            <div class="item-sentence lang-zh-only">關西智慧電網展所展示的，表面上是儲能設備與輸電技術，骨子裡其實是一場基礎設施的治理典範轉移。隨著極端氣候常態化與綠能佔比攀升，集中式發電已經不堪負荷，未來城市需要的是高度分散、自給自足且能即時調度的彈性微電網。這代表城市治理必須從單向的公共服務配給，進化為數據驅動的雙向動態平衡，是實現永續韌性社會不可或缺的實體基石。 <span class="src">— www.event-marketing.co.jp</span></div>
+            <div class="item-sentence-en lang-en-only">The Smart Grid Expo in Kansai showcases critical infrastructure shifts toward decentralized, resilient energy systems. As climate disruptions increase, modern urban governance relies on microgrids and digital power distribution to transition from centralized delivery to adaptive, responsive community-level energy management. <span class="src">— www.event-marketing.co.jp</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/workforce/nevada-names-first-statewide-chief-privacy-officer" target="_blank" rel="noopener">地方公部門動起來：內華達首設隱私長樹立數據治理新標竿</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Nevada Names First Statewide Chief Privacy Officer</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/f62c3e5/2147483647/strip/true/crop/5427x2638+0+490/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Ff8%2F8f%2F820b27ed485eb1f01e1c2a526671%2Fadobestock-390858575.jpeg" alt="Nevada Names First Statewide Chief Privacy Officer" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">內華達州設立首位州級隱私長（CPO），象徵地方政府不再把資安與個資保護視為IT部門的附屬雜務，而是提升到了跨部門的戰略層次。隨著各州政府紛紛推動公共服務數位化與數據共享，如何對海量公民數據進行標準化分級與保護，成了政府公信力的試金石。這個任命反映出強烈趨勢：組織架構必須與數位風險同步升級，唯有權責明確，公民隱私才不會淪為口號。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Nevada&#x27;s appointment of its first statewide Chief Privacy Officer highlights the elevation of data governance within public administration. As digital government expands, formal executive privacy roles ensure that standardized data classification and civil privacy protections keep pace with civic tech modernization. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-10 08:03:47 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
