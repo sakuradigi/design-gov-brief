@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>當生成式工具推倒創作邊界：從開放AI生態到草根治理的權力重組 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-11</div>
+    <div class="headline">當生成式工具推倒創作邊界：從開放AI生態到草根治理的權力重組</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">We do not merely experience the world, we design the instruments that decide what can be experienced.</div>
+      <div class="quote-text-zh lang-zh-only">我們不僅是在體驗世界，更在親手設計那些決定了『何物能被體驗』的工具。</div>
+      <div class="quote-author">— Vilém Flusser (媒介哲學家)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">Adobe破除圍牆花園，開放第三方AI代理深植專業工作流程</li>
+        <li class="flash-item">新科技不是偷懶作弊，而是迫使創作者重新定義自身的感知能力</li>
+        <li class="flash-item">數位平權撞上實體產權，伊利諾寬頻基建引爆公私權益角力</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/11/90966/" target="_blank" rel="noopener">跳脫單一美學輸出：當代設計事務所全面轉向全媒介敘事戰場</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】デザイン会社のDODO DESIGNが、アートディレクター／デザイナーなど3職種を募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/11/67b6b994baba9.png" alt="【求人情報】デザイン会社のDODO DESIGNが、アートディレクター／デザイナーなど3職種を募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">日本設計公司 DODO DESIGN 開出橫跨藝術指導、動態影像到文案企劃的三合一職缺，這不只是一次例行招募，而是實體與數位媒介邊界消解的鮮明縮影。單純把版面排得漂亮早已無法抓住注意力，現在的品牌溝通需要從概念源頭就將文字哲學、空間節奏與動態感知綁在一起。這提醒了所有創意人：未來的核心競爭力不在於守著單一軟體技能，而在於你是否能把零碎的商業訊息，打造成穿透多種感官的立體敘事架構。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">DODO DESIGN&#x27;s latest multi-role hiring push across art direction, motion design, and copywriting signals a crucial shift in modern creative agencies. Visual craftsmanship alone is no longer enough to build enduring brands; designers must now orchestrate cohesive narrative experiences across static, temporal, and textual dimensions to cut through today&#x27;s fragmented media landscape effectively. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/729088.html" target="_blank" rel="noopener">微觀器物即宏觀都市：諾曼·福斯特揭示跨尺度設計的同一底層邏輯</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ノーマン・フォスターが語る、建築とプロダクトをつなぐデザイン</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/ax238_cs_foster_01.jpg" alt="ノーマン・フォスターが語る、建築とプロダクトをつなぐデザイン" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當代建築大師諾曼·福斯特剖析從一張日常餐桌到整座摩天大樓的設計共鳴，本質上是在瓦解專利學科的壁壘。無論尺度大小，設計都在解決同一個核心難題：人如何與空間結構互動。對現代設計者來說，這是一個重要提醒：過度專注於介面像素或特定材質，容易讓人迷失在細節的死胡同裡。學會用宏觀的系統架構思維審視微小元件，才能讓你的作品既具備觸手可及的溫潤體驗，又經得起龐大脈絡的嚴苛考驗。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Renowned architect Norman Foster explores the shared methodology connecting small-scale furniture design with monumental architecture. By examining how structural discipline and human interaction scale across diverse mediums, Foster reminds creative practitioners that enduring systems thinking must harmonize both the intimate, tactile details of everyday objects and the expansive complexities of public urban environments. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/what-being-the-new-kid-taught-me-about-persuasion-as-a-designer-c731818f91d9?source=rss----138adf9c44c---4" target="_blank" rel="noopener">別只想推銷精美方案：打動跨部門夥伴的秘密在於賦予對方角色價值</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">What being the new kid taught me about persuasion as a designer</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*CC58LbAG6zbjSnfTzjfBtg.jpeg" alt="What being the new kid taught me about persuasion as a designer" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">很多設計師推動方案失敗，常以為是視覺不夠驚艷或邏輯不夠嚴密，但殘酷的真相是：人們點頭答應一個想法，往往不是因為點子本身有多神，而是因為這個方案讓他們看到了『自己能因此成為什麼樣的角色』。這篇文章一語道破設計職場的溝通盲區。把提案從單純的自我美學證明，轉換成共同創造未來的聚光燈，讓利害關係人在你的設計裡看見他們自身的價值與勝算，才是真正高段的設計領導力。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Persuasion in design rarely hinges on presenting flawless wireframes or impeccable rationale alone. As this piece highlights, stakeholders buy into projects when the vision elevates their own professional identity and purpose. True design influence requires empathy-driven narrative framing that invites partners to become key protagonists within the proposed transformation. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/every-new-medium-gets-called-cheating-b990d7d53c0e?source=rss----138adf9c44c---4" target="_blank" rel="noopener">歷史總在重複標籤作弊：新媒介從來不是投機而是迫使我們直面真實靈魂</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Every new medium gets called cheating</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/0*nMvP-oS9EeG8QApU.jpg" alt="Every new medium gets called cheating" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">就像莫內當年用便攜顏料在戶外畫出《日出·印象》卻被主流學院諷刺偷懶一樣，如今 AI 工具也被許多人貼上作弊標籤。然而歷史告訴我們，每當工具大幅降低了操作技術的苦工門檻，創作者才真正被迫剝除技術包裝，直球對決『你到底想表達什麼本質』。對設計師而言，不必抗拒自動化工具的入侵；接受自己在全新媒介面前的笨拙，才是打破僵化美學肌肉記憶、探索前所未見表達語彙的必經蛻變。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Throughout art history, groundbreaking mediums have consistently faced accusations of cheating before being acknowledged as radical catalysts for innovation. Embracing emerging generative tools is not about cutting corners, but rather about relinquishing familiar crutches to confront deeper creative intent, pushing creators to explore uncharted artistic territories with vulnerability. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.creativeboom.com/news/adobe-max-2026-all-the-big-announcements/" target="_blank" rel="noopener">打破壟斷築起協同舞台：Adobe開放外接AI代理重塑專業工作流自主權</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Bring your own agent: Adobe opens Creative Cloud to outside AI</div>
+            <img class="item-image" src="https://media.creativeboom.com/99124f9e-5263-4c9d-9203-b35fed8c52f8/conversions/24d9239594bc1f071215996e1c922c8bb025c4e4-medium.webp" alt="Bring your own agent: Adobe opens Creative Cloud to outside AI" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Adobe 宣布 Creative Cloud 全面接納第三方 AI 代理，並承諾保留完整圖層編輯彈性，象徵著創意軟體巨頭終於看清閉門造車的局限。這對設計產業意義重大：未來的霸主不再是自成封閉花園的演算法，而是能將各種開源、私有智慧工具靈活串接的開放工作平台。創作者終於不必在軟體生態與尖端模型之間痛苦二選一，能依照自定義的設計品味打造專屬的 AI 智囊團，徹底拿回創作流程的主導權。 <span class="src">— Creative Boom</span></div>
+            <div class="item-sentence-en lang-en-only">Adobe&#x27;s bold move to integrate external AI agents into its flagship Creative Cloud applications signals an era of open collaborative ecosystems over walled gardens. By preserving fully editable layer control, the platform empowers creative professionals to orchestrate custom intelligent tools without sacrificing agency, precision, or proprietary workflows. <span class="src">— Creative Boom</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxOWmNsWDBzVW1TZkxMMS00WVJ5NHgtTHBYUWMtM3pnNFp3OE9nT0NZOXYxUEY2VGR3SUZhSkVydlczb19WVmRRYTRpM2djaVdvRFhuNWJTTGM4eUVsdEhSRi1OWjVVcXJ3WW5PcWM3WDRaOWNSajFaWjNLVUYyc0ZpUjdUMzlGZEJQYUpVNEhfVGlITGZwWUJDUkNn?oc=5" target="_blank" rel="noopener">單打獨鬥防不住深層漏洞：企業防禦演算法風險必須走向跨生態集體免疫</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI漏洞衝擊企業資安 CISO會長金慶柏建議強化AI治理與供應鏈聯防 - DIGITIMES</div>
+            <div class="item-sentence lang-zh-only">資安長們指出 AI 漏洞已不再只是單一系統當機，而是能沿著供應鏈串接毒害整套營運網絡。這項洞察徹底推翻了傳統築高牆式的防禦思維，因為你的合作夥伴引入的任何未經審查的模型，都可能成為你的破口。企業如果要認真落實數位韌性，就不能把治理當作合規公文，而必須建立動態聯防的信任協定。當科技演變為深不可測的黑盒子，透明公開的生態系互信機制，才是最難被攻破的安全防線。 <span class="src">— DIGITIMES</span></div>
+            <div class="item-sentence-en lang-en-only">Securing modern enterprises against intricate AI vulnerabilities demands moving past siloed IT protections toward collective, supply-chain-wide defense frameworks. As algorithmic integrations proliferate, real organizational resilience relies on proactive cross-border transparency, shared threat intelligence, and collaborative governance protocols that treat security as an interconnected ecosystem responsibility. <span class="src">— DIGITIMES</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNRUdBeEZjYkZ5YlVMUndFNGVaeENURnFrMXZ1dmJxRU41R1JNS05tWjZFN2Q4bXdoRHFaTlR2ejV4QjFxTW15MzNtOHdXZUlFVDdLbW9qSE90REFEcDFWV2FRNktJZ0owMVllOW05T1RvTlEwYVVOWUVkaXVUUDJDX1d4MUgzbmtmRkpOREZlRGlVOVQ1VFdTNlNTOVJhbldrLVV1aG5qQzJ0Ukl1TGJEaW5peXAxeVd3STVLemZOMFlNb28temZ1TWlaMA?oc=5" target="_blank" rel="noopener">搶佔下一個世代戰略高地：公共科研預算如何重新分配攸關數位主權歸屬</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Rep. Zoe Lofgren lays out potential science, tech policy agenda | POLITICO at B20 USA - Politico</div>
+            <div class="item-sentence lang-zh-only">美國國會議員針對國家科學技術政策提出的宏觀藍圖，核心圍繞在如何確保基礎科學研究不再被私部門的短期商業利益牽著鼻子走。這場政策倡議背後反映出全球政府的深層集體焦慮：當尖端算力與前瞻科研被少數科技寡頭完全壟斷時，公共利益將蕩然無存。只有透過具前瞻性的公共投資與民主治理架構，社會才能在面對失控的科技狂飆時，牢牢守住符合普羅大眾福祉的價值指南針。 <span class="src">— Politico</span></div>
+            <div class="item-sentence-en lang-en-only">Legislative debates led by Representative Zoe Lofgren spotlight the vital necessity of public investments in foundational science and emerging technologies. Safeguarding democratic values amidst rapid technological disruption requires structural policy agendas that prevent monopolistic capture, ensuring breakthroughs serve broader societal interests rather than purely short-term corporate commercial agendas. <span class="src">— Politico</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNRUdBeEZjYkZ5YlVMUndFNGVaeENURnFrMXZ1dmJxRU41R1JNS05tWjZFN2Q4bXdoRHFaTlR2ejV4QjFxTW15MzNtOHdXZUlFVDdLbW9qSE90REFEcDFWV2FRNktJZ0owMVllOW05T1RvTlEwYVVOWUVkaXVUUDJDX1d4MUgzbmtmRkpOREZlRGlVOVQ1VFdTNlNTOVJhbldrLVV1aG5qQzJ0Ukl1TGJEaW5peXAxeVd3STVLemZOMFlNb28temZ1TWlaMA?oc=5" target="_blank" rel="noopener">別讓僵化條文扼殺實驗火苗：科技立法必須在容錯空間與社會共識間取得動態妥協</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Rep. Zoe Lofgren lays out potential science, tech policy agenda | POLITICO at B20 USA - Politico</div>
+            <div class="item-sentence lang-zh-only">審視華府的科技監管議程，能發現制定政策最難的從來不是寫下嚴格的處罰條例，而是在保障公民權利的同時，留給實驗性突破足夠的喘息空間。一旦法律定得太死，創新只會流向監管盲區；若是放任自流，又會釀成不可逆的社會裂痕。成熟的科技治理應當像一套優雅的敏捷設計，透過持續小步試錯與跨界對話來動態修訂界限，而非妄想用一份終極法案一勞永逸地解決所有未知挑戰。 <span class="src">— Politico</span></div>
+            <div class="item-sentence-en lang-en-only">Crafting resilient technology policy is fundamentally an exercise in dynamic balance between public accountability and room for bold experimentation. Policymakers must move away from rigid, punitive mandates toward adaptive regulatory sandboxes that evolve alongside algorithmic capabilities, maintaining civic trust without dampening foundational innovation. <span class="src">— Politico</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE5Mbm90elZ0cW5qd2xNMF9qb0tCWTBCWnZLcU1IODZhQ1BnUHBDWFhhdm1EbXUyTm5FRDFmX2lVTXIyaHg2S0JlckRmM1Y1NkVXWjFF?oc=5" target="_blank" rel="noopener">把守門人移到使用者的指尖：端點瀏覽器防禦成為落實日常科技治理的關鍵解方</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">「ブラウザー側で守る」というアプローチ--AIガバナンスを実効化する新潮流 - ZDNET Japan</div>
+            <div class="item-sentence lang-zh-only">傳統由雲端伺服器集中管理的機制，往往在使用者隨手貼上機密資料時為時已晚；這篇報導提出將防護焦點轉移到『瀏覽器端』，展現了一種務實的微觀治理轉向。最有效的防護永遠發生在行為互動發生的那零點幾秒。透過在介面前端給予即時回饋與安全引導，我們不再需要仰賴繁瑣的禁令來阻礙生產力，而是用更體貼的互動設計，自然而然地協助每個人在日常習慣中實踐負責任的數位行為。 <span class="src">— ZDNET Japan</span></div>
+            <div class="item-sentence-en lang-en-only">Shifting AI governance directly to the browser edge marks an intuitive paradigm shift in data privacy and user protection. By intercepting sensitive inputs at the immediate point of human-computer interaction, organizations can implement actionable, unobtrusive guardrails that cultivate secure user habits without obstructing daily productivity or technological utility. <span class="src">— ZDNET Japan</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://statescoop.com/illinois-weighs-broadband-access-against-farmland-property-rights/" target="_blank" rel="noopener">光纖網路碾過世代耕作地：數位包容的美好願景為何踩進土地正義的地雷區</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Illinois weighs broadband access against farmland property rights</div>
+            <img class="item-image" src="https://statescoop.com/wp-content/uploads/sites/6/2026/11/GettyImages-2168973879.jpg" alt="Illinois weighs broadband access against farmland property rights" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">伊利諾州推動農村寬頻建設卻意外引發農民針對土地產權的抗爭，血淋淋地揭示了宏大的『縮短數位落差』口號若脫離在地脈絡，將會製造出多麼荒謬的新矛盾。鋪設高速光纖確實是社會平權的美意，但當施工機具未經協商直接破壞農民世代賴以維生的肥沃土壤時，進步的意義便大打折扣。這提醒了所有公共治理者：任何打著公共利益旗幟的硬體轉型，若忽視受影響社群的實體生計與情感記憶，終將被反彈吞噬。 <span class="src">— StateScoop</span></div>
+            <div class="item-sentence-en lang-en-only">Illinois&#x27; struggle to deploy rural high-speed broadband without infringing upon generational farmland property rights illustrates the acute frictions between infrastructural progress and local sovereignty. Bridging digital divides cannot succeed in an abstract vacuum; public initiatives must respect physical livelihoods to prevent social disenfranchisement in the pursuit of modernization. <span class="src">— StateScoop</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-11 08:03:56 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
