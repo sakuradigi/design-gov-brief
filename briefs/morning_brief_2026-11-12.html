@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從AI實時治理到空間通用共融：當科技成本與人性尊嚴正面交鋒 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-12</div>
+    <div class="headline">從AI實時治理到空間通用共融：當科技成本與人性尊嚴正面交鋒</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Design is not the cosmetic treatment of artifacts, but the structuring of human experience.</div>
+      <div class="quote-text-zh lang-zh-only">設計絕非人造物的表面修飾，而是人類經驗的建構。</div>
+      <div class="quote-author">— Gui Bonsiepe (吉·邦西佩，烏爾姆設計學院設計理論家)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">AI計費時代全面來臨，體驗設計須從免費轉向信任營造。</li>
+        <li class="flash-item">資安合規告別事後稽核，毫秒級即時防禦成AI治理新標準。</li>
+        <li class="flash-item">嘉義以全齡視角打造智慧城，證明有感的照護才是治理核心。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/727844.html" target="_blank" rel="noopener">土壁與金屬的張力對比：割烹空間如何用質地重塑日式靜謐</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">CASE-REALが福岡の割烹料理店「上田」を設計。 土壁と石、金属を組み合わせ、静けさと緊張感のある空間を構成</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/ueda_03-720x480.jpeg" alt="CASE-REALが福岡の割烹料理店「上田」を設計。 土壁と石、金属を組み合わせ、静けさと緊張感のある空間を構成" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">好的空間不靠浮誇裝飾說話，而是用材料本身的對話定調氣氛。CASE-REAL 這次巧妙將粗獷土壁、冷冽金屬與石材揉合在一起，在看似極簡的日式割烹店裡製造出微妙的感官緊繃感。這代表當代商業空間正告別「一味柔和」的日系無印風，改用強烈材質衝突來喚醒顧客對料理與當下的專注度。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">CASE-REAL&#x27;s interior design for the Kappo restaurant Ueda in Fukuoka challenges traditional gentle aesthetics by juxtaposing raw earthen walls with sleek metals and stone. This intentional contrast creates a delicate tension and calm atmosphere. It signals a shift in contemporary hospitality design, where tactile contradictions are leveraged to heighten sensory awareness and deepen the dining experience rather than relying on conventional minimalism. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/11/91017/" target="_blank" rel="noopener">拆解柯比意的B面人生：跨界玩物如何催生現代主義靈感</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">クルマ・絵画・音楽・写真から建築家ル・コルビュジエの「B面」に迫る、企画展が11月22日から開催</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/11/72594-5-2c9ee0c41dc3d2bf9c205cd11771546b-1414x2000-1.webp" alt="クルマ・絵画・音楽・写真から建築家ル・コルビュジエの「B面」に迫る、企画展が11月22日から開催" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">我們常把柯比意奉為冷靜理性的建築巨擘，但這檔展覽偏偏要看他的「副業」——汽車、繪畫與音樂。這點醒了我們：偉大的系統性創新，往往來自設計師跨領域的純粹偏執與生活玩味。別再把自己限縮在單一專業裡，當你開始觀察跨領域的節奏與機械美感，那些看似無關的「B面」嗜好，才是形塑原創觀點的真正催化劑。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">A new exhibition in Tokyo explores the lesser-known &#x27;B-side&#x27; of architect Le Corbusier through his fascination with automobiles, paintings, music, and photography. By highlighting his diverse personal passions, the showcase illustrates how groundbreaking spatial thinking originates from multidisciplinary curiosities. For contemporary creators, it underscores that breakthrough ideas often stem not from narrow specialization, but from cross-pollinating hobbies and unexpected cultural intersections. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/why-are-we-cloning-photoshop-52e6e165eef7?source=rss----138adf9c44c---4" target="_blank" rel="noopener">別再用AI抄Photoshop了：下一代工具需要全新心智模型</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Why are we cloning Photoshop?</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*Xh48AEBSG8maSKJqeuFfvQ.png" alt="Why are we cloning Photoshop?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">大家看到開源社群用 AI 複製出免費版 Photoshop 就拍手叫好，但老實說，這完全浪費了生成式技術的潛力。把三十年前的圖層和工具列思維套在 AI 上，只是穿新鞋走老路。未來的設計軟體不該是「換皮版舊軟體」，而是要重新想像人與電腦的協作關係——從精準微調工具轉向意圖驅動的創作夥伴。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">The emergence of AI-powered clones of legacy software like Photoshop misses a transformative opportunity. While replicating expensive software with open-source models offers cost advantages, it stubbornly clings to decades-old mental models like toolbars and layers. True design innovation lies not in simply democratizing outdated interfaces, but in reinventing human-computer interaction to center around intent-driven workflows and fluid creative partnership. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/every-click-has-a-price-now-who-designs-how-that-feels-e3f00b6cabb8?source=rss----138adf9c44c---4" target="_blank" rel="noopener">當每次點擊都要算錢：體驗設計如何化解用戶的AI代幣焦慮</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Every click has a price now. Who designs how that “feels”?</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:1200/1*9uqAutsVFqEDaAeZlf7T9w.png" alt="Every click has a price now. Who designs how that “feels”?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">吃到飽的免費 AI 時代正式結束，現在用戶每點一次生成，背後都是實打實的算力帳單。UX 設計師面臨全新考驗：怎麼在介面上呈現扣點或計費，才不會讓人感到被勒索甚至不敢探索？未來的設計不再只是追求流暢無阻，而是要精巧地傳遞「這筆花費很值得」的心理反饋，把成本透明度變成建立信任的品牌體驗。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">As running AI models becomes increasingly costly, the era of frictionless, unlimited software usage is over. Product designers must now tackle the UX of cost metering, figuring out how to display token usage and price-per-action without triggering user anxiety. Successful digital products will need to transform monetization friction into perceived value, crafting transparent interfaces that build trust rather than discouraging genuine exploration. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://uxdesign.cc/the-bathroom-flaws-that-infuriate-every-designer-a26d50145d47?source=rss----138adf9c44c---4" target="_blank" rel="noopener">讓所有人受挫的公廁細節：通用設計不是選配而是文明底線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">The bathroom flaws that infuriate every designer</div>
+            <img class="item-image" src="https://miro.medium.com/v2/resize:fit:474/1*OwYv8eOyWVKKOm2QxbYeqw.jpeg" alt="The bathroom flaws that infuriate every designer" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">輪椅使用者在洗手台前受困、感應式水龍頭讓人抓狂，公廁裡那些看似微不足道的尷尬，正是設計脫離人性的鐵證。我們總愛談宏大的智慧城市或吸睛視覺，卻常在最基本的生理需求空間上破功。通用設計從來就不是為了少數人開恩的無障礙設施，而是當每個人在生病、抱小孩或年老時，都能保有尊嚴的生活必備考量。 <span class="src">— UX Collective</span></div>
+            <div class="item-sentence-en lang-en-only">Everyday frustrations in public restrooms, especially for wheelchair users and caregivers, expose a critical disconnect between surface-level aesthetics and true usability. Universal design should never be treated as an afterthought or a compliance checklist. When public spaces fail at basic human hygiene, society fails its vulnerable members. Prioritizing thoughtful ergonomics and accessibility ensures fundamental human dignity across every physical environment. <span class="src">— UX Collective</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE5lanEwNHFQZVNBU0IyN0xFeEtjMnByX3dkM0Zic2d4eEI3c1FIOFA0RDVYNmpvdmNnbG5QRmFkeEFfd29GZnZzNnFwNXh4cHVUWmh2OUVOcV9YMElWSl9NQ3pPdjZ6S0ZsTXpCcVg3Wnlzdk91?oc=5" target="_blank" rel="noopener">告別科技秀：嘉義用全齡視角翻轉智慧城市的治理思維</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">2026智慧城市展 「家城×嘉義」勾勒全齡智慧宜居新藍圖 - 嘉義市政府</div>
+            <div class="item-sentence lang-zh-only">很多地方政府做智慧城市，最後往往淪為滿螢幕的數據圖表展示，市民卻無感。嘉義提出「家城」概念聰明的地方在於，它把核心拉回到高齡化社會的真實日常——醫療接駁、照護支援與社區陪伴。這給公部門一個關鍵啟示：科技只是底層骨架，真正能讓人想住下來的城市，是用有感服務消弭長輩與孩童的數位落差，把科技融入有溫度的家。 <span class="src">— 嘉義市政府</span></div>
+            <div class="item-sentence-en lang-en-only">Chiayi City&#x27;s presentation at the Smart City Expo emphasizes an age-friendly living blueprint, moving past flashy technological dashboards toward meaningful civic care. By centering municipal innovation on senior healthcare, accessible mobility, and community connectivity, the initiative demonstrates that smart governance succeeds only when technology humanely addresses shifting demographics, fostering an inclusive environment where all generations feel supported and connected. <span class="src">— 嘉義市政府</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQR1BocTh3RHBkN2diYy02VDZKXy00Z1VYaFZUcmtKZkJ2T1RSUHRQQWhXN2RQamZZWnlnVEpGMm1ZMlVyeGh4a2JIMk5GN2pZa2NIalhTWk1kMGtnYXNsdnJqeVM4dkMxVXpjanNEY0kyczBFN1BKdzRTLWdBY2UtQ2h5cTVLTDNFcDRyd2dCeFhYQmJZSmFzaF9rOHBqdEhWa1dV?oc=5" target="_blank" rel="noopener">從紙上談兵到即時攔截：資安合規巨頭如何改寫AI防護規則</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Vanta Buys Pillar to Tie AI Governance to Real-Time Controls - BankInfoSecurity</div>
+            <div class="item-sentence lang-zh-only">過去企業談 AI 治理，大多是簽簽切結書、寫寫合規報告的被動防禦，但生成式模型的風險瞬息萬變。Vanta 買下 Pillar 的舉動標誌著一個轉折：未來的治理不能等事後稽核，而是要在資料傳輸的毫秒間進行即時攔截與動態修補。這告訴所有組織管理者，把風險控制直接做進自動化工作流，才是推動創新而不翻車的唯一解方。 <span class="src">— BankInfoSecurity</span></div>
+            <div class="item-sentence-en lang-en-only">Compliance platform Vanta&#x27;s acquisition of Pillar Security signals a pivotal shift from static, retrospective compliance audits to active, real-time AI controls. As generative AI models integrate deeply into enterprise workflows, governance must evolve to identify prompts and vulnerabilities on the fly. This acquisition underscores that modern compliance demands automated, continuous risk mitigation embedded directly into software architectures. <span class="src">— BankInfoSecurity</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQR1BocTh3RHBkN2diYy02VDZKXy00Z1VYaFZUcmtKZkJ2T1RSUHRQQWhXN2RQamZZWnlnVEpGMm1ZMlVyeGh4a2JIMk5GN2pZa2NIalhTWk1kMGtnYXNsdnJqeVM4dkMxVXpjanNEY0kyczBFN1BKdzRTLWdBY2UtQ2h5cTVLTDNFcDRyd2dCeFhYQmJZSmFzaF9rOHBqdEhWa1dV?oc=5" target="_blank" rel="noopener">告別事後補破網：AI防禦併購潮宣告信任科技全面實戰化</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Vanta Buys Pillar to Tie AI Governance to Real-Time Controls - BankInfoSecurity</div>
+            <div class="item-sentence lang-zh-only">當企業對生成式 AI 從「新鮮試水」邁入「深水區營運」，資安防護與倫理審查就成了不能妥協的基本功。這樁收購案反映出市場對「AI 信任科技」的渴求，已經從宣誓性口號轉變為實打實的工具鏈整合。未來的技術領導者不能只問 AI 能省多少工，更要具備一眼看穿資料流動破口的系統架構力，才能在合規與速度間取得平衡。 <span class="src">— BankInfoSecurity</span></div>
+            <div class="item-sentence-en lang-en-only">Vanta&#x27;s acquisition of Pillar Security reflects a broader enterprise trend toward operationalizing AI safety. Businesses are moving past experimental pilots into enterprise-wide deployments where data leakage and unmonitored agentic behavior present serious liabilities. Integrating real-time guardrails into existing compliance suites confirms that trust technologies have graduated from theoretical frameworks into essential enterprise infrastructure. <span class="src">— BankInfoSecurity</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE4tRGljV2VOXzhCQms1d0Q4Umh5M19OVGtLZHRFdk13aGh5SEpjRDRXT3pSLVBJdVR0dngwbU9aSUZET01UZkhJU0NUS040TnIxa0NQZ3oxNzJ5bXRZeUlXSXBQUWw2Q2Ju?oc=5" target="_blank" rel="noopener">跨越地緣對立的考驗：聯合國呼籲建立無國界AI治理底線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">激動の世界を読む：AIガバナンス 国境なきリスク 今こそ行動＝国連事務次長・中満泉 - 毎日新聞</div>
+            <div class="item-sentence lang-zh-only">聯合國副秘書長中滿泉的警示切中要害：演算法不認國界，一旦自主武器或深度偽造引發跨國危機，沒有任何國家能置身事外。然而各國目前仍陷於軍備競賽與地緣防堵，忽視了共同協議的急迫性。這提醒國際社會，AI 治理不能再是美歐中各自為政的角力，而是迫切需要像核武條約般的全球最低護欄，在失控骨牌倒下前守住文明底線。 <span class="src">— 毎日新聞</span></div>
+            <div class="item-sentence-en lang-en-only">UN Under-Secretary-General Izumi Nakamitsu warns that AI risks inherently ignore national borders, demanding immediate multilateral action. As geopolitical rivalries intensify, the fragmentation of governance frameworks leaves global systems vulnerable to rogue algorithms, autonomous weapons, and synthetic media. Nakamitsu advocates for an enforceable baseline akin to non-proliferation treaties, emphasizing that shared technological guardrails are critical to preventing systemic global instability. <span class="src">— 毎日新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/biz/with-marketplace-city-maryland-doit-aims-to-ease-procurement" target="_blank" rel="noopener">解放僵化的官僚採購：馬里蘭州用數據平台為政府科技引路</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">With Marketplace.city, Maryland DoIT Aims to Ease Procurement</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/4a552f2/2147483647/strip/true/crop/5464x2656+0+282/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fe6%2F06%2Fc7898421450aaf1434f215cc845a%2Fshutterstock-1230955369.jpg" alt="With Marketplace.city, Maryland DoIT Aims to Ease Procurement" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">公部門之所以常被笑稱數位落後，罪魁禍首往往不是缺錢，而是那套耗時數年、防弊大於興利的僵化採購法規。馬里蘭州導入 Clearbox 平台直接用即時市場數據做供應商評估，打破了以往資訊不對稱與公務員怕犯錯的枷鎖。這項改革證明，公共治理要升級，得先從優化底層的採購工具下手，才能讓前瞻的民間新創真正進得來。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Maryland&#x27;s Department of Information Technology has partnered with Marketplace.city to deploy the Clearbox platform, streamlining vendor assessments through real-time market intelligence. Public sector procurement has long been criticized for sluggishness and risk aversion that stifle innovation. By equipping officials with transparent comparative data, this approach modernizes public purchasing, helping government agencies adopt cutting-edge civic technologies much more swiftly and reliably. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-12 08:04:12 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
