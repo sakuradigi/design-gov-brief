@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>感官美學翻轉實體體驗，全球治理體系邁入全員參與新階段 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-13</div>
+    <div class="headline">感官美學翻轉實體體驗，全球治理體系邁入全員參與新階段</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is the answer, but what was the question?</div>
+      <div class="quote-text-zh lang-zh-only">技術是答案，但我們當初的問題究竟是什麼？</div>
+      <div class="quote-author">— Cedric Price</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">聲音與風暴化為視覺語言，展現設計界對感官互動的深刻探索。</li>
+        <li class="flash-item">從中保科到卡達政府，AI治理正從公關口號加速轉化為制度標配。</li>
+        <li class="flash-item">麻州注資地方公共AI，引導科技回歸氣候與勞動等真實社會挑戰。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/11/91030/" target="_blank" rel="noopener">紙本編輯魂的延伸：soda design 招募揭示全方位視覺整合趨勢</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【求人情報】エディトリアルデザインを中心に手がけるsoda designが、グラフィックデザイナーなど2職種を募集</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/11/6aea5abc76cc6.jpg" alt="【求人情報】エディトリアルデザインを中心に手がけるsoda designが、グラフィックデザイナーなど2職種を募集" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當數位浪潮沖刷出版業，做書籍編輯設計出身的工作室反而站穩了腳步。soda design 這波徵才反映出當前品牌市場的一大轉變：客戶不再滿足於冷冰冰的數位介面，而是渴望紙本那種講究排版節奏、故事鋪陳的手感。能夠將編輯思維無縫移植到包裝、Logo 與數位主視覺的跨界設計師，正在成為品牌重塑中最搶手的核心戰力。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Tokyo-based soda design is recruiting graphic designers to bridge print editorial craft with holistic branding systems, showcasing how traditional editorial sensitivity brings vital narrative depth to modern commercial identities across diverse physical and digital mediums. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/730997.html" target="_blank" rel="noopener">當聽覺成為空間骨架：鈴木友里倫敦個展重構互動感官邊界</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">ロンドンでスズキユウリの個展「Onomatopia」開催。音が構造となる5つの実験的ランドスケープ</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/11/OSH_YS-3.jpg" alt="ロンドンでスズキユウリの個展「Onomatopia」開催。音が構造となる5つの実験的ランドスケープ" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">設計如果只能用看的，未免太無趣了。聲音藝術家鈴木友里在倫敦推出的「Onomatopia」個展，把擬聲詞與聲波實體化為景觀，提醒我們「聲音」本身就是強大的空間架構。在過度依賴螢幕視覺的時代，這種將日常聽覺經驗轉譯為可觸碰、可共鳴裝置的嘗試，正是未來實體公共空間與體驗設計極度渴望的突破口。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Sound artist Yuri Suzuki&#x27;s latest London exhibition, &#x27;Onomatopia&#x27;, transforms acoustic elements into immersive physical landscapes, demonstrating how tactile sonic environments can challenge screen fatigue and revolutionize contemporary spatial interaction design. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/blaest-technical-outerwear-visual-identity-kurppa-hosk/" target="_blank" rel="noopener">把狂風鑄造成字體：Kurppa Hosk 為挪威機能品牌注入自然張力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Blæst: Technical Outerwear Visual Identity by Kurppa Hosk</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_blaest-www-kurppahosk-com.jpg" alt="Blæst: Technical Outerwear Visual Identity by Kurppa Hosk" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">戶外機能品牌的視覺常常流於千篇一律的極簡科幻感，但 Kurppa Hosk 為挪威雨衣品牌 Blæst 打造的識別卻反其道而行。他們直接把「狂風」的動能注入怪誕字體與渦流符號中，讓大自然不再只是衣服防禦的對象，而是視覺語言的母體。這證明了當品牌識別能誠實消化環境特質時，機能服飾也能散發極具態度的美學厚度。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Kurppa Hosk developed a dynamic visual identity for Norwegian rainwear label Blæst, turning the raw energy of coastal wind into bespoke typography and swirling marks, setting a new aesthetic standard for technical apparel storytelling. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/branding-alpha-bank-pentagram-and-dalziel-pow/" target="_blank" rel="noopener">告別冷漠櫃檯：Pentagram 聯手 Dalziel &amp; Pow 翻轉希臘百年銀行體驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Branding: Alpha Bank by Pentagram and Dalziel &amp; Pow</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_alpha-bank-branding-pentagram-dalziel-pow.jpg" alt="Branding: Alpha Bank by Pentagram and Dalziel &amp; Pow" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">實體銀行存在的意義是什麼？當所有轉帳都能在手機完成，Pentagram 與零售設計團隊 Dalziel &amp; Pow 給出了漂亮的答卷。他們翻新 Alpha Bank 的視覺與分行，將原先公事公辦的辦事處變成有溫度的顧問沙龍。這不只是換換招牌，更是傳統金融機構在數位時代捍衛實體價值的生存示範——唯有把人際交流置於核心，空間才具備無可取代的意義。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Pentagram and Dalziel &amp; Pow revitalized Greece&#x27;s Alpha Bank by integrating a sharp visual identity with hospitality-driven branch environments, turning bureaucratic banking spaces into welcoming community touchpoints for genuine financial consultation. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/branding-anagram-brand-identity-pact/" target="_blank" rel="noopener">從單一像素玩出萬花筒：Pact 用八位元密碼重塑 Web3 創投美學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Branding: Anagram Brand Identity by Pact</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_1600_27.jpg" alt="Branding: Anagram Brand Identity by Pact" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">區塊鏈與去中心化創投往往給人晦澀或浮誇的印象，但設計工作室 Pact 為 Anagram 打造的系統卻從最樸素的「單一正方形」出發。透過排列組合，這個方塊演變出符號系統、嚴謹網格與帶有復古未來感的 8-bit 色彩。這套設計巧妙呼應了 Web3 底層協議由簡入繁的建構邏輯，用精準的幾何美學替前衛資本市場建立了清晰可信的視覺秩序。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Design studio Pact crafted a modular identity for decentralized VC firm Anagram, starting with a humble square that multiplies into an 8-bit glyph system, effectively translating complex cryptographic principles into an accessible and playful visual language. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMickFVX3lxTFB1YlYwUFZpQUxyZTRMeW4tX0p6Rm5Za3VqUktNMFhnRE01d3p5VVI3MXpnOERNeHkxOTk5RHJqeXk0RUdoVkstbEY0MFdjbU9NSHJPaDhTeDFYMm03cmpPZEZZSGh1bDdNMWRoc1UxT2RRdw?oc=5" target="_blank" rel="noopener">保全龍頭的數位轉身：中保科將 AI 治理納入日常防線的深層意涵</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">中保科AI治理建完善機制| 個股情報| 股市 - UDN</div>
+            <div class="item-sentence lang-zh-only">安全監控產業對技術的信任度要求極高，中保科建立完善 AI 治理機制的舉動，正揭示了產業洗牌的關鍵節點。當攝影機和感測器全面導入演算法，業者要賣的不再只是保全硬體，而是「資料如何被判讀」的公信力。在客戶隱私與資安威脅雙重夾擊下，把演算法管理做得透明嚴謹，本身就是一門最難被模仿的商業護城河。 <span class="src">— UDN</span></div>
+            <div class="item-sentence-en lang-en-only">Taiwan SECOM is establishing comprehensive AI governance frameworks across its surveillance operations, highlighting how institutional algorithmic transparency and data integrity have evolved into vital competitive moats within the physical security sector. <span class="src">— UDN</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQbk9uY1NOTEROeGplbGtIRUYweEpQa1JYQXJUcWdBY0h0dE5xSlV2VmJxV1FFeE53RFJ3enVIZmVuSDg1TDRGemllcHU3a1ZuaHZCREpELWNzQ0NEOEdxdEE1M3pXRmxJMzgtU0pFNjItbVI5SGxBb1RmZFBkdGxrSDdOZUIzQmhVMWZrQk5zZERiaksyWUJad3o1ZllVZkd5V0Vr?oc=5" target="_blank" rel="noopener">國家級戰略落地：卡達通訊部攜手新創敲定 AI 治理合作範式</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">MCIT, Artificial Mind sign AI governance agreement - Qatar Tribune</div>
+            <div class="item-sentence lang-zh-only">中東近年積極從石油經濟轉型為數位樞紐，卡達通訊部（MCIT）與 Artificial Mind 簽署 AI 治理協議，正是一記強烈訊號。政府不再只是技術的採購者或事後監管者，而是直接拉著科技新創建立在地化治理規則。這種公私協同模式既能防範演算法風險，又替本土算力生態鋪路，展示了新興科技大國如何用靈活身段主導秩序建設。 <span class="src">— Qatar Tribune</span></div>
+            <div class="item-sentence-en lang-en-only">Qatar&#x27;s Ministry of Communications and Information Technology partnered with Artificial Mind to establish national AI governance benchmarks, underscoring how proactive public-private alliances can drive sovereign technological capability while safeguarding public accountability. <span class="src">— Qatar Tribune</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQbk9uY1NOTEROeGplbGtIRUYweEpQa1JYQXJUcWdBY0h0dE5xSlV2VmJxV1FFeE53RFJ3enVIZmVuSDg1TDRGemllcHU3a1ZuaHZCREpELWNzQ0NEOEdxdEE1M3pXRmxJMzgtU0pFNjItbVI5SGxBb1RmZFBkdGxrSDdOZUIzQmhVMWZrQk5zZERiaksyWUJad3o1ZllVZkd5V0Vr?oc=5" target="_blank" rel="noopener">防禦性敏捷：中東數位轉型背後的雙軌制度實驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">MCIT, Artificial Mind sign AI governance agreement - Qatar Tribune</div>
+            <div class="item-sentence lang-zh-only">這份卡達官方協議的延伸價值在於「治理沙盒」的示範效應。在全球多數政府還在為了如何撰寫監管法規而爭論不休時，海灣國家傾向透過專案式合作先行試錯。把具備演算法實力的企業拉進決策桌，能在維持技術研發活力的同時預防歧視與資訊外洩，為資源型國家轉向高科技治理提供了務實的參考範本。 <span class="src">— Qatar Tribune</span></div>
+            <div class="item-sentence-en lang-en-only">The governance agreement signed by Qatar&#x27;s MCIT reflects an agile regulatory sandbox approach, allowing government authorities to build responsive algorithmic standards alongside tech innovators rather than relying on delayed bureaucratic interventions. <span class="src">— Qatar Tribune</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE4yb3c4bEJQZ3g1VHgtaUFMclJGZjBUOXBYTkZLWU1nYTF0Vi14cWdaSjhDYUJad2hJOEJRQ2NXbHVXSXp3SHhMNzdhdjFocHZVZmJudlFRcE1LSzB0NEtBUzZpQmJVYWRGY1BOUGNZWlNWa09WY2ZHUzQ2OA?oc=5" target="_blank" rel="noopener">安全感來自全員共識：Alive 證明 AI 治理本質上是組織文化工程</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">AI時代のお客様の安心を、全社の学びと仕組みから。アライブ、AIガバナンスとセキュリティ教育を推進 - ニコニコニュース</div>
+            <div class="item-sentence lang-zh-only">日本企業 Alive 推動全員 AI 治理與資安培訓，戳破了「治理只是法務部門職責」的迷思。在生成式工具普及的今天，真正的防線永遠在第一線員工的日常操作裡。透過自上而下的教育訓練，讓每位夥伴理解隱私界線與科技倫理，這種全員參與的組織文化，才是數位轉型過程中賦予客戶信任的最扎實基石。 <span class="src">— ニコニコニュース</span></div>
+            <div class="item-sentence-en lang-en-only">Japanese company Alive&#x27;s enterprise-wide AI governance and cybersecurity training demonstrates that technological risk management is ultimately a cultural discipline requiring daily awareness from all employees rather than static legal mandates. <span class="src">— ニコニコニュース</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/artificial-intelligence/massachusetts-invests-3-3m-to-find-new-challenges-for-ai" target="_blank" rel="noopener">公共資金的精準投射：麻州注資三百萬美元重塑 AI 社會價值</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Massachusetts Invests $3.3M to Find New Challenges for AI</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/5c380d8/2147483647/strip/true/crop/947x460+0+85/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F15%2F07%2F949b8d386d1cda7b2d858e6fde3c%2Fshutterstock-478950571.jpg" alt="Massachusetts Invests $3.3M to Find New Challenges for AI" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">AI 開發不該只是矽谷巨頭爭奪千億估值的軍備競賽。麻州政府投入 330 萬美元，明確鎖定沿海防汛預測、疾病追蹤與勞工轉型等痛點，把公共資源精準導向市場常忽視的民生領域。這項政策告訴我們：公共治理者最有力的槓桿，正是引導頂尖算力解決氣候與就業等真實公共危機，讓科技進步真正惠及普通大眾。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Massachusetts is allocating $3.3 million toward targeted AI initiatives focusing on coastal flooding, public health, and workforce training, demonstrating how targeted municipal investment can channel advanced technology toward urgent social and environmental priorities. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-13 08:03:39 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
