@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從復古數位美學到跨國治理協商：當品牌擁抱在地符碼，AI 落地正式邁向務實規範時代 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-14</div>
+    <div class="headline">從復古數位美學到跨國治理協商：當品牌擁抱在地符碼，AI 落地正式邁向務實規範時代</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is not destiny. We shape our tools and then our tools shape us, but only if we know who we are before we build them.</div>
+      <div class="quote-text-zh lang-zh-only">科技從非宿命。我們塑造工具，工具隨後也塑造我們；但前提是，我們在動手造物前，得先明白自己是誰。</div>
+      <div class="quote-author">— Langdon Winner（政治哲學家與科技社會學家）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">三宅一生用紐約日常符碼重構服裝生命力，示範頂級品牌在地化不靠堆砌而是文化提煉</li>
+        <li class="flash-item">懷舊 CRT 介面混血 AI 雲端代理人，復古運算美學為冰冷科技重新注入人情溫度</li>
+        <li class="flash-item">美歐各國同步推動 AI 落地指南與跨國治理，科技治理焦點正式由理論轉入基層防護</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/interview/issey-miyake-newyork-1/" target="_blank" rel="noopener">三宅一生紐約旗艦店視覺解密：讓衣服成為呼吸於街頭的共鳴生命體</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">「ISSEY MIYAKE / NEW YORK」ビジュアルシリーズ 街と衣服。共鳴するひとつの生命体（1）</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/issey00.jpg" alt="「ISSEY MIYAKE / NEW YORK」ビジュアルシリーズ 街と衣服。共鳴するひとつの生命体（1）" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">品牌跨國落地最怕落入陳腔濫調。三宅一生紐約旗艦店視覺企劃最迷人之處，在於團隊不搞高高在上的純藝術說教，而是把標誌性壓褶布料直接丟進大蘋果的日常環境裡。當經典黃色計程車、外帶紙咖啡杯與飄逸織物在鏡頭下碰撞，服裝不再只是櫥窗展示品，而是真正活在城市肌理中的有機生命。這告訴品牌設計師：頂級在地化行銷不是去硬蹭地標，而是精準捕捉城市的日常節奏，讓產品自然長進消費者的生活情境裡。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">ISSEY MIYAKE&#x27;s New York flagship launch redefines visual branding by blending iconic pleats with everyday urban symbols like yellow cabs and paper cups. Instead of treating fashion as an isolated luxury artifact, the campaign frames clothing as an organic lifeform coexisting with the metropolis, illustrating how global brands can authentically root themselves in local city rhythms. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/interview/issey-miyake-newyork-2/" target="_blank" rel="noopener">馬丁尼要插三顆橄欖：視覺提案背後的紐約微文化與品牌精準提煉</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">「ISSEY MIYAKE / NEW YORK」ビジュアルシリーズ 街と衣服。共鳴するひとつの生命体（2）</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/L1030123-1.jpg" alt="「ISSEY MIYAKE / NEW YORK」ビジュアルシリーズ 街と衣服。共鳴するひとつの生命体（2）" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">第二篇專訪揭露了視覺企劃深度的秘密：「馬丁尼裡放三顆橄欖」才是最地道的紐約喝法。這種對在地飲酒文化的微小堅持，恰恰是好創意與平庸行銷的分水嶺。設計團隊在極短提案週期內，不急著炫耀技法，反而花大把時間考究紐約人的日常偏執與黑色幽默。這項案例給視覺總監們的啟發是：文化符碼的威力在於細節的純度；當你抓對了一個圈內人才懂的文化梗，在地受眾對品牌的認同感與敬意便油然而生。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The second installment of ISSEY MIYAKE’s campaign reveals how creative director Kawashima captured authentic New York identity through micro-cultural nuances, such as insisting on three olives in a martini. It underscores that successful cross-border branding relies not on sweeping cultural cliches, but on precise, well-researched details that resonate deeply with local collective consciousness. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/inside-ardor-retro-computers-phosphor-crt-uiux-design/" target="_blank" rel="noopener">當復古 CRT 螢幕遇上雲端 AI：科技不必冰冷，懷舊像素正是新情感解方</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Inside Ardor Retro Computer’s Phosphor CRT UI/UX Design</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_ardor-retro-computer-minimal-gallery-minimal-gallery.jpg" alt="Inside Ardor Retro Computer’s Phosphor CRT UI/UX Design" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">科技界這幾年充斥著千篇一律的極簡玻璃擬態與漸層色彩，美學早已審美疲勞。設計師 Viacheslav Sheikin 替 Ardor 打造的 UI，大膽將先進 AI 雲端代理人塞進僅有 8 色的復古磷光 CRT 終端機中，連跳過開機畫面的 ASCII 碼都充滿儀式感。這不只是文青式的懷舊復古，更是為黑盒子般不可捉摸的 AI 賦予可觸摸、可理解的具象外殼。這股趨勢點出：未來的酷科技，往往需要借道復古介面來換取使用者的心理安全感與情感連結。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Viacheslav Sheikin’s UI/UX concept for Ardor Retro Computer stages a modern AI agent inside an 8-color phosphor CRT display, complete with ASCII boot sequences. This interface highlights an emerging counter-trend: balancing intimidating, black-box AI technology with tactile, nostalgic retro-computing aesthetics to rebuild emotional trust and delight between users and intelligent systems. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/porto-rocha-unveils-almeida-dale-brand-identity/" target="_blank" rel="noopener">用純粹之藍與自製字型，Porto Rocha 為巴西最大畫廊打造極致安靜力量</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Porto Rocha Unveils Almeida &amp; Dale Brand Identity</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_1600_31.jpg" alt="Porto Rocha Unveils Almeida &amp; Dale Brand Identity" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">替頂尖當代畫廊做識別，最忌諱設計師自我膨脹搶了藝術品鋒頭。紐約知名設計工作室 Porto Rocha 為巴西 Almeida &amp; Dale 操刀的全新品牌系統，用一款專屬打造的字體「Diakritik AD」與極度純粹的一抹藍色定調全域。這種作法高明在於「克制的奢華」——藍色強烈得足以讓人一眼辨識，卻又沉穩得足以退居畫作身後成為完美背景。這對品牌顧問是絕佳教材：高階品牌的長青視覺，往往建立在對核心元素的極限收斂上。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Design studio Porto Rocha unveiled a striking new visual identity for Brazil’s premier art gallery, Almeida &amp; Dale, anchored by a custom typeface and a singular, immersive shade of blue. The project showcases how ultra-restrained graphic language and high-contrast minimalism can provide a gallery with distinct brand recognition without overpowering the exhibited art. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/how-make-rotating-3d-cube-text-animation-ascentedesign/" target="_blank" rel="noopener">動態文字排版新解法：旋轉 3D 方塊教學揭示社群吸睛的微互動邏輯</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How to Make a Rotating 3D Cube Text Animation in ascente.design</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_3d-rotation.jpg" alt="How to Make a Rotating 3D Cube Text Animation in ascente.design" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在動態牆停留時間以毫秒計算的時代，平面排版已死，動態才是基本盤。這篇教大家在 ascente.design 中利用 Drum wrap 功能製作 3D 逐行翻轉立方體文字的教學，背後揭示的是數位字型學的演進：文字不再只是閱讀載體，它本身就是立體空間裡的動態雕塑。對於社群創意工作者而言，掌握這種輕量化、免昂貴 3D 軟體門檻的空間文字特效，是打破平台演算法漠視、在數秒內勾住受眾手指下滑節奏的最強武器。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">A practical design guide from Abduzeedo demonstrates how to craft a looping 3D rotating text animation using simple wrap techniques. As visual attention spans shrink across social media feeds, kinetic and spatial typography is shifting from high-budget studio experiments to essential daily creative skills for engaging digital-first audiences. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE9CUHBvOERFaEN6MlV1VGFOclN1MG55ZmNKTlF4SmY2b2N0U1dUQ1VTb1dPSE1FT29fVjJKVHFUdEZPcldkRkRQUnAzQlo4N0ZtdlZPaUpXNA?oc=5" target="_blank" rel="noopener">林谷隆獲傑出資訊人才獎：台中數位治理背後的民生數位化務實哲學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">六都唯一 台中數位治理再獲肯定 林谷隆勇奪傑出資訊人才獎殊榮 - 觀傳媒</div>
+            <div class="item-sentence lang-zh-only">官方獎項往往充斥公關包裝，但台中市數位治理局長林谷隆拿下這座全國人才獎，背後傳遞出地方政府治理轉型的實質轉變。過去公部門數位化常淪為「為蓋 App 而蓋」的蚊子工程，如今焦點全面轉向跨局處資料整合、便民儀表板與市民日常服務打通。這件事的啟發在於：真正的智慧城市創新不是採購最炫的硬體，而是懂得用數位思維拆除官僚本位主義的高牆，讓科技在市民日常生活中真正省時、有感且透明。 <span class="src">— 觀傳媒</span></div>
+            <div class="item-sentence-en lang-en-only">Taichung City&#x27;s digital governance director Lin Ku-lung was recognized with the Outstanding Information Talent Award, highlighting practical advancements in regional civic tech. The achievement signals an important shift in municipal public administration, moving away from superficial hardware purchases toward meaningful cross-departmental data integration and genuinely user-centric civic services. <span class="src">— 觀傳媒</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxPSzRReDdwc29wV1V3REhGcVVVRl82Z0htVk5fX2FQUWtaYkYzTHJ1Y0xTMEU3aU9SSHpObWtqYXdZTW05YlA0QThSR1dkR1lnYzZDZGhoTWhPUHhOb2VVR25IYnpLUkREYUtVbU53eUZ6T2t2a2ZNQnh3RVpJdFhWMjFqeGdYeXpUbDNNMlJkckp6bjJHSnhPSUZYcWlrZWPSAVpBVV95cUxPS0JDVkNyT0Y4cF93Rkh3RDN2bFhxekh5dk13QTlpbHo1X2ltTU1FUjJfY2tBS25RV1Q0U2lrOXhka0dRQ09Pcnl2VVNpY19hMVRVeWFtX0x6bUE?oc=5" target="_blank" rel="noopener">歐盟主動敲門美國國會：AI 治理告別各吹各的調，跨大西洋博弈定生死</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">EU seeks talks with US Congress on global AI governance - MLex</div>
+            <div class="item-sentence lang-zh-only">歐盟主動尋求與美國國會就全球 AI 治理展開對話，這絕對是地緣科技政治的重頭戲。歐盟手握全球最嚴苛的《人工智慧法案》，美國則坐擁最強大的商業模型與算力生態，兩者若各走各路，只會讓企業疲於奔命，甚至形成治理監管套利的灰色地帶。這次敲門代表治理者意識到：AI 模型的跨境流動性無法單邊管束。跨國協商的啟示在於，全球科技企業必須提早將法規相容性架構植入產品底層，以應對即將到來的跨國監管合流。 <span class="src">— MLex</span></div>
+            <div class="item-sentence-en lang-en-only">The European Union is initiating high-level talks with the US Congress regarding unified artificial intelligence governance frameworks. As cross-border AI models render unilateral domestic policies ineffective, this move highlights the urgent geopolitical necessity of harmonizing regulatory compliance between Europe’s rigorous safety rules and America&#x27;s aggressive tech innovation engine. <span class="src">— MLex</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE9VR1pJbVlkdThoeVV0OV82U0dtd0hQWUJzeEY5TXNZdzIyRFFqQnhEcXN6MHhUY0tPcHlLblFZSzRxXzBZOElIT3U3RGdqSEtLZlpwZFN2cFRHSVJEbERvdlh6Z0h1X2FpWFZ2WWRtTjNETU9LS3fSAXZBVV95cUxQZkhuX3RjTVExaFloTjJlYjJsZnBpOEtKSWV3UWRJNk9aWDNmMWxnY0UwQ2FId21yMEhTR2R4V0xXNGxaYmg2ak5nMi04alh4ZVpnUVR3dERYQ2NST0hqNHRNM2ZfdF9BLWV2OE1BQVRXQkp5UUpn?oc=5" target="_blank" rel="noopener">肯塔基大學科技政策修訂惹議：學術自由與機構資安監控的失衡拉鋸</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">UK officials defend proposed change to tech policy after pushback from faculty, advocates - Lexington Herald Leader</div>
+            <div class="item-sentence lang-zh-only">肯塔基大學擬修訂科技政策卻引來教職員與公民倡議團體強烈反彈，官員不得不親上火線滅火。這場爭議的本質，是校方以「資安維護與數位合規」之名，推動可能侵蝕教學研究隱私與學術自由的技術監管。這為所有組織管理者敲響警鐘：推行數位安全政策時，若只採取自上而下的單向防禦思維，缺乏與第一線使用者的透明共識，科技政策非但不能築起防火牆，反而會演變成摧毀組織信任基礎的政治風暴。 <span class="src">— Lexington Herald Leader</span></div>
+            <div class="item-sentence-en lang-en-only">University of Kentucky officials are facing intense pushback over proposed tech and surveillance policy revisions, which faculty argue could undermine academic freedom. The conflict illustrates the mounting tension within public institutions between maintaining strict enterprise cybersecurity and preserving the intellectual privacy and autonomy essential to scholarly research. <span class="src">— Lexington Herald Leader</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVmJxR1FJRXpzbE5OTWhrS0prNFVPT2dpb1AxSDdnbnV3VWtFRzJlZzlVREJ4MUtQeF9HZU8yZTVjNkZvYjFrazA4OGZsQmNzM3h1bUM3aGI1N0VkTnZORXFOcVkzdDhyWUJKTDFZUk5uSjBNNEtlWnJ2ZmZPTGJKdzRmYUQ1YnpGWFN2OXBuemlzbmlGUFlpc2w0MlZBcm4wbFp4c2Q4TEVXM1hna1VBM3NSXy1QLWs3Tm5QMy00S2xhUjl6RlhtY1FPcXNkaE1xSkE?oc=5" target="_blank" rel="noopener">智慧電網帶動變流器市場暴衝：能源轉型的無名英雄才是硬派基建核心</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">計器用変流器市場の2035年予測：スマートグリッドの導入と再生可能エネルギーの統合が成長をけん引 - IndexBox</div>
+            <div class="item-sentence lang-zh-only">大家談能源轉型都在瘋太陽能板、風機與電動車，但 IndexBox 最新報告直指核心：真正撐起 2035 年智慧電網與綠能整合的關鍵引擎，其實是看似冷門的「計器用變流器（Instrument Transformers）」。綠電具備極強的間歇性與波動性，沒有高精度的電網監控元件，再生能源根本無法安全併網。這個產業預測提醒治理與永續決策者：淨零碳排不能只停留在宣傳願景，把資源砸進精密測量等「看不見的深層底座」，轉型才走得下去。 <span class="src">— IndexBox</span></div>
+            <div class="item-sentence-en lang-en-only">A comprehensive market forecast for instrument transformers highlights that modernizing the grid is the foundational bottleneck for the renewable energy transition through 2035. While visible renewable assets dominate public headlines, the real operational success of decarbonization hinges on these unsung precision components that enable stable, smart grid integration. <span class="src">— IndexBox</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/artificial-intelligence/georgia-ai-playbook-is-a-starting-point-for-cities-counties" target="_blank" rel="noopener">喬治亞州發布地方 AI 教戰手冊：讓基層官員不再因恐慌而抗拒科技創新</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Georgia AI Playbook Is a Starting Point for Cities, Counties</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/a16693f/2147483647/strip/true/crop/4592x2232+0+64/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Faa%2F6a%2F3dbf1b3b431dba5684a10fd272df%2Fadobestock-2009284777.jpeg" alt="Georgia AI Playbook Is a Starting Point for Cities, Counties" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">面對 AI 浪潮，許多地方市縣官員不是過度樂觀踩雷、就是嚇得因噎廢食。喬治亞州科技領袖與議員聯手編寫的 AI 手冊極具標竿意義：它不講天花亂墜的演算法理論，而是直接給出基層能操作的資安防線、市民隱私保護準則與採購防坑守則。這份教戰守則的真正價值在於「技術降維」：將前沿複雜的科技治理轉譯成基層公務員看得懂、用得上的操作手冊，唯有如此，科技公義與行政效率才能真正落地生根。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">State leaders and lawmakers in Georgia have released a foundational AI playbook specifically designed to guide local cities and counties. By offering pragmatic frameworks for data protection, public accountability, and risk mitigation, the guide demystifies emerging technologies for local civil servants, preventing costly bureaucratic missteps while safely encouraging civic innovation. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-14 08:03:38 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
