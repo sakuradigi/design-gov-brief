@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從實體手作的視覺叛逆到雲端癱瘓的治理警鐘：在秩序與失控間重構公共感知 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-15</div>
+    <div class="headline">從實體手作的視覺叛逆到雲端癱瘓的治理警鐘：在秩序與失控間重構公共感知</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">People need not only to obtain things, they need above all the freedom to make things among which they can live.</div>
+      <div class="quote-text-zh lang-zh-only">人們需要的往往不只是獲得現成之物，更關鍵的是擁有親手創造所居之物的自由。</div>
+      <div class="quote-author">— Ivan Illich (奧地利哲學家、社會評論家)</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">告別演算法平庸，設計圈重拾實體觸感與叛逆排版尋回情感共鳴。</li>
+        <li class="flash-item">亞洲新興市場全面迎戰 AI 治理，合規框架正轉化為在地產業護城河。</li>
+        <li class="flash-item">微軟服務中斷逼政府發動態應急，單一依賴暴露出公共數位脆弱性。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/726647.html" target="_blank" rel="noopener">普立茲克大師聯手縫合地景：貝耶勒基金會用庭園重構慢節奏藝文場域</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Beyeler(バイエラー)財団、ピーター・ズントーによる新施設を公開。レンゾ・ピアノの既存館と庭園でつながる新たな美術館群</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/05_Fondation-Beyeler_Ensemble_3255_Iwan-Baan.jpg" alt="Beyeler(バイエラー)財団、ピーター・ズントーによる新施設を公開。レンゾ・ピアノの既存館と庭園でつながる新たな美術館群" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">兩位普立茲克得主在同一個園區交手，這不是比拼誰蓋的建築更搶眼，而是一場關於空間退讓的精采示範。彼得·祖姆托的新館沒有搶去倫佐·皮亞諾原作的光彩，反而藉由林蔭與水景串連歷史建物。這點出了當代美術館的演進方向：未來的文化地標不再盲目崇拜孤立的巨型奇觀，而是學習如何把自己藏進自然與城市紋理，為喧囂的當代人營造出能放慢呼吸、沉澱思緒的心靈避風港。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The Beyeler Foundation&#x27;s expansion merges Peter Zumthor&#x27;s new pavilions with Renzo Piano&#x27;s iconic museum through historical gardens. Moving beyond monolithic starchitecture, this ensemble demonstrates how cultural institutions can integrate architecture with nature to cultivate tranquil, restorative public spaces. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/730981.html" target="_blank" rel="noopener">把聲音化為生活微型儀式：克里斯·卡爾邁耶展現喚醒感官的物件設計</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">暮らしに小さな儀式を生み出す、音のオブジェ。クリス・カルマイヤーの日本初作品展「Furniture Music」</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/11/1-listening-system_web.jpg" alt="暮らしに小さな儀式を生み出す、音のオブジェ。クリス・カルマイヤーの日本初作品展「Furniture Music」" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當智慧家居塞滿冷冰冰的觸控螢幕和語音助理時，卡爾邁耶的「家具音樂」給了我們截然不同的想像。他把看似平凡的生活物件變成了可以主動觸碰、擊打並發出共鳴的樂器。這件事的啟發在於，科技產品不該總是把人變成被動接收資訊的廢人。透過帶有儀式感的觸覺與聽覺反饋，物件能重新挑起我們對日常生活的專注力，在乏味的日常節奏中敲出一片靈性縫隙。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Chris Kallmyer&#x27;s &#x27;Furniture Music&#x27; exhibition in Tokyo transforms everyday domestic objects into tactile sonic sculptures. Countering the sterile automation of modern smart homes, this work showcases how sensory-rich industrial design can restore mindfulness and small ceremonial moments to our daily domestic routines. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/julia-brand-identity-inside-hey-studios-ribbon-wordmark/" target="_blank" rel="noopener">實體緞帶打結定格成商標：Hey Studio 在 AI 浪潮下的觸覺手作逆襲</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Julia Brand Identity: Inside Hey Studio&#x27;s Ribbon Wordmark</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_1600_33.jpg" alt="Julia Brand Identity: Inside Hey Studio&#x27;s Ribbon Wordmark" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">在人人只要打兩句 prompt 就能產出一堆精美字體的時代，Hey Studio 竟然拿真的絲帶手動打結，再把那些微小的摺痕和陰影拍下來當作品牌核心。這絕不是在裝文青，而是一次精準的審美反撲。當數位向量符號廉價泛濫，真正具備情感厚度與排他性的，恰恰是那些帶有物理摩擦力與隨機瑕疵的手作感。這種「低科技的高級感」，正是品牌打破同質化困局的王牌。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Hey Studio crafted the Julia brand identity by physically folding ribbons and photographing them rather than relying purely on vector typography. This tactile approach counters the flood of synthetic visuals, proving that tangible craft and deliberate imperfections carry unmatched emotional depth in modern branding. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/graphic-design-toronto-symphony-orchestra-underline-studio/" target="_blank" rel="noopener">多倫多交響樂團品牌重塑：用律動襯線體卸下殿堂古典樂的沉重階級感</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Graphic Design: Toronto Symphony Orchestra by Underline Studio</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_toronto-symphony-orchestra-underlinestudio-com.jpg" alt="Graphic Design: Toronto Symphony Orchestra by Underline Studio" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">古典樂團常常面臨一個尷尬難題：既想維持百年的殿堂尊嚴，又怕年輕人覺得高不可攀。Underline Studio 給出的解法很俐落，他們保留了象徵底蘊的襯線體骨架，卻讓字母「S」化作迴旋共鳴的音浪，配上活潑的季度色彩。這告訴所有傳統文化機構，年輕化不用全盤拋棄歷史，只要抓住聲音與視覺的感官聯覺，老靈魂也能在當代數位載體上跳出輕快自在的舞步。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Underline Studio&#x27;s rebranding for the Toronto Symphony Orchestra pairs an echoing serif monogram with vibrant, season-coded palettes. The identity successfully dismantles the intimidating, elite aura of classical institutions, proving heritage organizations can remain culturally approachable without sacrificing historical prestige. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/ray-gun-magazine-design-broke-every-rule/" target="_blank" rel="noopener">重讀雷射槍雜誌的混亂美學：在過度整潔的數位時代找回文字的情緒靈魂</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Ray Gun Magazine: The Design That Broke Every Rule</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_1600_14.jpg" alt="Ray Gun Magazine: The Design That Broke Every Rule" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">回看 90 年代大衛·卡森把《Ray Gun》內文排得亂七八糟、甚至直接用象形文字當字體，在今天被簡潔 UI 和格線系統規訓的我們眼裡，簡直像外星產物。但這篇回顧丟給我們一個直擊靈魂的問題：易讀性難道真的是傳播的唯一指標嗎？當所有 App 和網站長得像雙胞胎一樣無聊，適度擁抱混亂與情緒化的破壞式排版，反而能激起久違的人性共鳴與叛逆想像。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Reflecting on David Carson&#x27;s 1992 launch of Ray Gun magazine reveals the raw power of expressive, rule-breaking typography. In today&#x27;s landscape of standardized interfaces and sterile minimalism, Carson&#x27;s radical editorial design reminds us that emotional connection often outweighs mechanical readability. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFA3dFk5YXlQTXJPZUpEYTBqT1JzYVV3Y0VQU0xWUTVZUEtQcllxdWlMeUpnZl9jSDNDaHlDQTk1SUZ6STlJcGRlMklWSXhJeERObVZOalpORHR3Sy1rdmZj?oc=5" target="_blank" rel="noopener">傳統保全轉型智慧生態圈：中保科技以嚴謹治理架構打造 AI 服務護城河</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">中保科技前三季營運穩健EPS 4.94元深化AI治理計畫開創智慧服務新價值| 產經 - 非凡新聞台</div>
+            <div class="item-sentence lang-zh-only">別以為安控老牌轉型只會採購一堆攝影機裝上 AI 鏡頭，這份財報透露的更深層訊號是：真正的 AI 轉型決勝點是「治理機制」。當影像辨識和數據流深入社區與企業命脈，如果沒有清楚的隱私防護和演算法稽核，技術跑越快風險就越大。中保把 AI 治理當成戰略底座，證明了老牌防護企業想吃到智慧城市紅利，靠的不是炒作技術名詞，而是打造讓人安心交付數據的信任資產。 <span class="src">— 非凡新聞台</span></div>
+            <div class="item-sentence-en lang-en-only">Taiwan SECOM&#x27;s solid earnings highlight its transition toward AI-driven smart services supported by structured governance. The security firm demonstrates that sustainable tech transformation requires robust algorithmic oversight and data stewardship, turning trust into a defensible commercial barrier. <span class="src">— 非凡新聞台</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNSklUR3NFMU03MVYxYmIycVVXYl9tTzZ5dE5SWUVXWDhZRzd3SUN2NHhqMk96YlpzNDRBbk5xOVhUY2NBTVZ1NlJBQlFENDRKdE9QdW1vLWZPR1F0NWs5ODFfMktBUU5sU29jb0dkaWJJamdUSkZscGxzNjJVazNtRlpIVzcybXFqaWhoWFhzTC1hTE50VUM2bUZZVzdvV1RLRlY3ZUlnUkU3bEVCeG5CVUhGdFBXaVBEeHVrcUk3V0U?oc=5" target="_blank" rel="noopener">頒布 EO 131 成立專責委員會：菲律賓在東南亞搶先建立國家級 AI 治理航標</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">EO 131: Philippine AI Governance Framework and Council - Aureada CPA Law Firm</div>
+            <div class="item-sentence lang-zh-only">菲律賓這道第 131 號行政命令釋放了一個關鍵訊號：新興國家不再只甘於當外國科技巨頭的便宜勞動力或資料標註代工廠。透過直屬總統府的 AI 治理理事會，他們搶在法規失控前定義出在地的倫理與發展防線。這對跨國企業是個提醒，未來想在東南亞跑馬圈地，單純套用矽谷模式已經行不通，理解並融入在地化、兼顧包容性與監管框架的政策敏銳度才是通關密碼。 <span class="src">— Aureada CPA Law Firm</span></div>
+            <div class="item-sentence-en lang-en-only">Philippine Executive Order 131 establishes a unified National AI Governance Framework and Advisory Council. This strategic shift moves the nation from a passive outsourced labor hub to an active policymaker, setting crucial ethical guardrails for technological deployment across the region. <span class="src">— Aureada CPA Law Firm</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNSklUR3NFMU03MVYxYmIycVVXYl9tTzZ5dE5SWUVXWDhZRzd3SUN2NHhqMk96YlpzNDRBbk5xOVhUY2NBTVZ1NlJBQlFENDRKdE9QdW1vLWZPR1F0NWs5ODFfMktBUU5sU29jb0dkaWJJamdUSkZscGxzNjJVazNtRlpIVzcybXFqaWhoWFhzTC1hTE50VUM2bUZZVzdvV1RLRlY3ZUlnUkU3bEVCeG5CVUhGdFBXaVBEeHVrcUk3V0U?oc=5" target="_blank" rel="noopener">守護外包命脈的法制攻防：菲律賓 AI 治理新規如何替百萬勞工築起轉型防線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">EO 131: Philippine AI Governance Framework and Council - Aureada CPA Law Firm</div>
+            <div class="item-sentence lang-zh-only">從法遵角度深入剖析這項行政命令，會發現菲律賓政府真正的焦慮在於龐大的 BPO 客服與後勤產業。生成式 AI 正在殘酷血洗客服市場，政府急著立規矩，表面上是控管風險，骨子裡是替百萬從業人員爭取數位升級的時間差。這代表 AI 治理從來不只是法學家的清談，它本質上就是一場國家級的就業保護戰，誰能把法規框架轉化為人才再培訓的跳板，誰才能在自動化海嘯中活下來。 <span class="src">— Aureada CPA Law Firm</span></div>
+            <div class="item-sentence-en lang-en-only">A deeper look at Philippine EO 131 reveals a vital defense mechanism for its massive business process outsourcing industry. By instituting comprehensive AI governance, the state aims to mitigate automation risks, protect employment, and guide the strategic upskilling of its vital service sector. <span class="src">— Aureada CPA Law Firm</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxPZTBnTjFZLTEwTGw2RXF6OVd6MFFaVWp0Yy1NSnBpN1lXWUVoazNHc2NHRjBRTDE0c0xUVVU5VlQtajRBbkF3UXRZcXdYcXVTbjlxdXhuTW1VMTRnZ2N3S0pFZXBOQWJucXZnN2JjWjRROFFPWVZmdk9vOVgzRjU2Ul92VGZHQmk4VnloY3NGbDQ?oc=5" target="_blank" rel="noopener">西寧省打造同步智慧城市模型：越南地方政府跳過花俏大屏的實用主義治理</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">タイニン省は、同期化された現代的なスマートシティモデルを目指している。 - Vietnam.vn</div>
+            <div class="item-sentence lang-zh-only">很多新興城市的智慧城市計畫最後都淪為只供長官參觀的華麗戰情室，但越南西寧省提出的同步模型卻踩得很實。他們聚焦在基層行政體系與在地基礎設施的數據打通，不求一步登天，而是追求系統間的無縫對接。這給所有資源有限的地方治理者上了一課：智慧化的關鍵不是花大錢買酷炫演算法，而是老老實實解決公部門資訊孤島的沈痾，讓公共服務真正順暢地流動起來。 <span class="src">— Vietnam.vn</span></div>
+            <div class="item-sentence-en lang-en-only">Tay Ninh province in Vietnam is pursuing a synchronized smart city framework centered on operational integration. By prioritizing practical inter-agency data interoperability over superficial showcases, the initiative demonstrates how regional governments can deploy scalable public sector digitization with limited resources. <span class="src">— Vietnam.vn</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/gov-experience/government-comms-move-to-social-media-amid-microsoft-outage" target="_blank" rel="noopener">微軟 Outlook 當機迫使官員轉移社群：公共部門過度仰賴單一雲端的韌性警訊</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Government Comms Move to Social Media Amid Microsoft Outage</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/d7303a2/2147483647/strip/true/crop/1170x569+0+43/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F70%2Ff2%2F683d118e4fba891401ff74136776%2Fsocial.jpg" alt="Government Comms Move to Social Media Amid Microsoft Outage" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當政府官方電郵掛點，堂堂公務體系竟然只能跑到社群平台上對著大眾發推特更新，這畫面既荒謬又令人警惕。這場小插曲撕開了現代數位政府看似強大、實則脆弱的遮羞布。把所有雞蛋全放在少數幾家跨國雲端巨頭的籃子裡，一旦服務斷線，整個公共通訊機制瞬間陷入半癱瘓。所謂的數位韌性，不能只寫在演習簡報上，平時就得備妥不依賴單一巨頭的替代通訊管道才是真防線。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">A Microsoft Outlook outage forced municipal officials to pivot to social media platforms for critical public communications. The incident underscores severe vulnerabilities in modern civic tech, illustrating the urgent danger of public services relying entirely on centralized proprietary cloud infrastructure. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-15 08:03:38 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
