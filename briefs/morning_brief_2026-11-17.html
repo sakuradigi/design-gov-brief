@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>經典重塑與數據賦能：從實體工藝復興到公部門AI治理的雙重演進 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-17</div>
+    <div class="headline">經典重塑與數據賦能：從實體工藝復興到公部門AI治理的雙重演進</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">We shape our tools and thereafter our tools shape us.</div>
+      <div class="quote-text-zh lang-zh-only">我們塑造了工具，此後工具便塑造了我們。</div>
+      <div class="quote-author">— John Culkin</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">老字號與傳奇設計回歸，用數位互動和永續手作重塑時代記憶。</li>
+        <li class="flash-item">公部門數位轉型邁入深水區，公務員的AI數據素養成為施政關鍵。</li>
+        <li class="flash-item">智慧城市走向雙軸轉型，數位治理與淨零碳排已成國際外交新語言。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/11/91121/" target="_blank" rel="noopener">老字號蛋捲跨界數位藝術，零食體驗轉譯為沈浸式品牌展演</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">お菓子とアートが出会う「ヨックモックデジタルアートギャラリー～おかしなミュージアム～」が原宿で開催</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/11/yokumoku.jpg" alt="お菓子とアートが出会う「ヨックモックデジタルアートギャラリー～おかしなミュージアム～」が原宿で開催" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">經典品牌最怕在數位原生代眼前老去。Yoku Moku 這次跳出單純的伴手禮定位，在潮流重鎮原宿打造結合數位藝術的快閃美術館，展現老牌甜點重塑消費者體驗的企圖。這件事的背後趨勢在於：實體零售不再只是賣產品，而是提供可被分享的文化感受與感官記憶。把味覺與數位光影揉合，不僅為老品牌注入潮流魂，更讓產品本身轉化為社交貨幣與情感連結，是傳統品牌對抗時代遺忘的高明打法。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Yoku Moku launched a three-day digital art gallery in Harajuku, merging sensory confectionery experiences with immersive visual installations. This initiative reflects a broader trend of heritage consumer brands pivoting toward experiential engagement to connect with younger audiences and transform everyday products into culturally resonant lifestyle memories. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/727874.html" target="_blank" rel="noopener">岡本太郎經典骰子椅再現，用天然藤編向現代人傳遞永續生命力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">岡本太郎の「サイコロ椅子」再復刻。1957年の造形を受け継ぎ、ラタンの手仕事で再び製品化</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/95b58fa50819b704128d1327f424cb63.png" alt="岡本太郎の「サイコロ椅子」再復刻。1957年の造形を受け継ぎ、ラタンの手仕事で再び製品化" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">大師設計不是放在博物館膜拜的古董，而是能融入當代生活的實用美學。GLOCAL STANDARD PRODUCTS 復刻岡本太郎1957年的骰子椅，捨棄工業塑化，堅持採用職人手工藤編。這提醒了當代設計師：面對極簡氾濫的塑料家具，手工天然材的溫度反而是稀缺品。重啟大師跨時代造形，不僅是向日本戰後現代主義致敬，更證明了好的設計能穿越半世紀，在永續浪潮下依然散發野性而優雅的生命力。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">GLOCAL STANDARD PRODUCTS has reissued Taro Okamoto&#x27;s 1957 Dice Chair using traditional handcrafted rattan. This revival demonstrates how mid-century modern design principles can align seamlessly with contemporary sustainability demands, offering tactile authenticity and enduring value in an era dominated by mass-produced disposable furnishings. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/packaging-design-olearius-olive-oil-vrai-studio/" target="_blank" rel="noopener">精準座標取代華麗插畫，橄欖油包裝吹起極簡理性質感風</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Packaging Design: Olearius Olive Oil by vrai studio</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_olearius-olive-oil-packaging-packaging-world.jpg" alt="Packaging Design: Olearius Olive Oil by vrai studio" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">市面上橄欖油包裝往往被莊園風景插畫和義式老字體給塞滿，但 vrai studio 為法國 Olearius 操刀的視覺卻反其道而行。他們用深色藥劑瓶身搭配醒目的黃色包裝盒，甚至直接把橄欖園的 GPS 經緯度化為視覺焦點。這代表消費品美學正從「情感鄉愁」轉向「理性溯源」。當產地資訊變成優雅的排版符號，不僅建立了純淨的高級感，更讓講究透明度的現代消費者一眼看出專業與自信。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Vrai studio created a minimalist packaging design for French olive oil brand Olearius, featuring dark apothecary flasks and precise GPS coordinates. The approach reflects a growing aesthetic shift toward factual transparency and scientific refinement, moving away from conventional pastoral romance to build immediate trust. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/object-01-3d-printed-chair-nako-baev/" target="_blank" rel="noopener">回收塑料遇上粗獷主義，3D列印單椅演繹重磅量體新美學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">THE OBJECT 01: 3D-Printed Chair by Nako Baev</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_sustainable-design-meets-3d-printed-chair-nako-baev.jpg" alt="THE OBJECT 01: 3D-Printed Chair by Nako Baev" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">誰說3D列印家具只能是空心輕巧或充滿有機曲線？設計師 Nako Baev 用回收 PETG 打造重達20公斤的休閒椅，將粗獷主義的厚重結構與日式節制線條完美揉合。這項作品打破了大眾對循環材料「廉價、脆弱」的偏見，宣告3D列印已正式跨入高階家具製造領域。材料回收不再是環保贖罪券，而是創造獨特建築雕塑感、賦予空間莊嚴份量感的先鋒設計語彙。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Designer Nako Baev introduced THE OBJECT 01, a 20-kilogram modular chair 3D-printed from recycled PETG that bridges brutalist weight and Japanese minimalism. The design challenges the perception of recycled materials as fragile, proving additive manufacturing can produce imposing, sculptural statement furniture with environmental responsibility. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/allo-open-source-typography-josh-puckett/" target="_blank" rel="noopener">開源字型打破商業藩籬，多軸可變字體賦予創作者無限彈性</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Allo: Open Source Typography by Josh Puckett</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_allo-your-friendly-neighborhood-font-josh-puckett_3.jpg" alt="Allo: Open Source Typography by Josh Puckett" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">字型設計曾是商業軟體的昂貴授權遊戲，但 Josh Puckett 推出的開源字型 Allo 再次改寫了規則。這款由 Inter 演化而來的字型具備三維可變軸與真實斜體，還附上極具玩心的互動範例網站。這象徵著設計開源運動正邁入高成熟度階段：免費不再等於陽春，社群共創能產出足以媲美商用頂級字型的專業工具。它降低了數位介面的排版門檻，也讓全球獨立創作者擁有更多視覺自由。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Josh Puckett unveiled Allo, a versatile open-source variable typeface family featuring three dynamic axes, true obliques, and an interactive specimen site. Derived from Inter, the project underscores how open-source typography is democratizing high-quality interface design, providing professional-grade typographic tools freely to creators worldwide. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE5XOWFZenBHNjlMVGsyWXRWRFYtWEhJdk9VV3V4NDdnbTJ0OC00bW16RTc3NVNWal8yUEo4d0V4WHFCaWZfeXdrQldwZGRKLU9Sdmg2OXdJVmNFYmZoQkwwZUk2QUkwWExU?oc=5" target="_blank" rel="noopener">地方官僚體系導入資訊骨幹，臺中數位治理實踐獲中央首肯</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">六都唯一！台中副秘書長林谷隆獲傑出資訊人才獎 卓榮泰頒獎肯定數位治理 - 新華報導</div>
+            <div class="item-sentence lang-zh-only">政府談智慧城市多年，往往淪為煙火式APP發布，但關鍵在於基層架構是否有懂技術的掌舵者。臺中市府高層獲頒傑出資訊人才獎，反映出公部門高階幕僚的專業背景正在典範轉移。未來的市政不再只是土木開路或人情協調，如何打通各局處龐雜的數據孤島、讓便民服務自動化，才是現代首長的真正考驗。專業資訊治理正在從技術支援角色，躍升為城市決策的核心引擎。 <span class="src">— 新華報導</span></div>
+            <div class="item-sentence-en lang-en-only">Taichung City&#x27;s deputy secretary-general Lin Ku-lung was recognized with the Outstanding Information Talent Award for driving municipal digital transformation. This achievement highlights a shift in public administration where Chief Information Officers and data strategists are increasingly central to shaping effective urban policy and streamlined citizen services. <span class="src">— 新華報導</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxNWjU1Sjc3cXZBdGlaeENWeU52c2wyM2JxMUlzckFVa0Z5ZWRYbktycHBOSVpWb2NoRDZWb0VJREk4TTZ2UXhlOG1FS0drYjFVUkxTbXJfV3N5d2RucExnUDdBYjFfVGE1SWd5eWRxZlR2dlNpMHBoaEFPbDlqV0RBQkYxcjhpaUJLUjhXanI1VzJvRXh4UlJnTWMxbEh6cE1pYkpWcTUyTkk4SmJFNTFiVUFZdjZVSVdxbmxkVVBrakxYQ0hQZWZiYTlEcktqeHdkLU13bEJWR3lNai00cHRmeTZ3?oc=5" target="_blank" rel="noopener">空氣品質監測市場十年激增，環境數據成智慧城市治理剛需</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">大気質モニター市場の2035年展望：規制要件とスマートシティ需要が拡大を後押し - ニュースと統計 - IndexBox</div>
+            <div class="item-sentence lang-zh-only">從 IndexBox 的市場展望來看，全球空氣監測設備的需求將持續暴衝至2035年。這絕非單純的硬體買賣，而是宣告全球城市治理全面進入「數據驅動」時代。當極端氣候和永續法規越來越嚴苛，政府與企業若沒有即時、高精度的環境感知數據，就無法做出合法且有效的治理決策。環境感測器已不再是附屬品，而是未來智慧城市的呼吸神經元與減碳基礎建設。 <span class="src">— IndexBox</span></div>
+            <div class="item-sentence-en lang-en-only">A market report by IndexBox projects substantial growth in air quality monitoring through 2035, driven by tighter environmental regulations and smart city initiatives. Real-time environmental sensing is rapidly shifting from an optional ecological measure to mission-critical urban infrastructure that underpins urban climate governance and policy compliance. <span class="src">— IndexBox</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/workforce/maryland-data-academy-aims-to-build-state-workforce-skills" target="_blank" rel="noopener">馬里蘭州打造公務員數據學院，為體制內換上人工智慧大腦</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Maryland Data Academy Aims to Build State Workforce Skills</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/1c5a389/2147483647/strip/true/crop/840x408+0+111/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fea%2F0b%2Fd19ffdc61df1061aa6dc76787866%2Fshutterstock-130285649.jpg" alt="Maryland Data Academy Aims to Build State Workforce Skills" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">政府要推動AI轉型，最容易卡關的從來不是預算，而是公務員的數位技能。美國馬里蘭州成立「數據學院」並推出跨局處數據中心，專門為公務人員量身訂做個人化學習路徑。這項舉措極具啟發性：真正的數位轉型不是花大錢買軟體，而是投資人的能力。當體制內的每一位行政人員都懂數據分析與AI協作，政府跨局處的「資料穀倉」才可能真正被打破，行政效率才有翻倍的可能。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Maryland has established the State Data Academy and an accompanying Data Hub to cultivate AI and data literacy among its public workforce. By providing tailored training pathways, the state tackles the core bottleneck of public sector innovation—empowering civil servants to navigate shared intelligence and modernize administrative workflows effectively. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMitANBVV95cUxQd0JOckhMeUFfZFo4X0xvb0U0cUwyV1Fjd0FFNXVUZllxdEU4UHFkcXRyRFZWeTVCVHpBaVRJM1VXal9SbmtBWmc4Si1KY3RrLVl4MG9lbW5zS0ZrdUE0N3V6V0praTZwN203eWJVTktKdG5KcjBFdjlwZGx6cUJrR0JSOFZaWXRyNlNSWFRWdTl6UEJ4LWlrNkxpTHR4TU1kQXBFX0w4cEtMMzVNNW5YOUpVMmhfTnVIZlhpWWJNZUlrR0dGUTBBQjN2V2ZkSDZMYy1IcjMySTBWbGYyLXlZRGJLUkE1cUJEeXFRcDJ5b0l4YjQxeVBmNTNPeUtPaEJrVFNMLUhXN0VhTDNhQUpXb0hjNzdiaXFMWDN6TXRhYTNzT3pPaDhFMV9wcEpTeG92eEFUUE5CVmppbnNsZmpoOFE4T0M2Nmw0TjRiZkdWaFU2VVBIeWN5UVRpZFMzYk1qeFYyelo1ck96cHpQeE1sdTZ6bnlfRUVUNndlOTBYYkZpdDFlMk5PLVhlVENtUDNSSEYxS3FtcTI3cy05eE9SN0VtTDl0NUs4VzZocUxPa0dtWWR2?oc=5" target="_blank" rel="noopener">花蓮偏鄉導入財政與AI治理，偏鄉翻轉擺脫傳統綁樁思維</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">葛如鈞、張智倫跨縣市力挺游淑貞 財政改革與AI治理成花蓮發展新動能 - Yahoo新聞</div>
+            <div class="item-sentence lang-zh-only">立法委員跨界前往花蓮力挺基層鄉鎮長，主打財政健全與AI治理新思維，這代表台灣基層選舉的論述正在悄悄改變。過去偏鄉發展往往仰賴傳統派系與一次性觀光補貼，但面對人口流失與預算緊縮，如何利用智慧工具優化行政、讓財政資源透明且精準投放，成了偏鄉逆襲的武器。這顯示科技治理思維已不再是都會特權，正在向地方扎根，重塑在地政治與治理競爭力。 <span class="src">— Yahoo新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Taiwanese legislators voiced support for local leaders in Hualien by championing fiscal reform and AI-powered governance as new drivers for regional development. This pivot signals that smart governance concepts are expanding beyond metropolitan areas into rural politics, replacing conventional patronage with data-driven administration and sustainable municipal budgeting. <span class="src">— Yahoo新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE1WZFJJeHFnTEJmZm9SMnFTanFhaGJ4LXJHazc4MzZBeTdxVGUtWEhNbWQ2cERSdW9hTzFMS1N0U3BpWlk4WmQ5OXVSaWN3WEZfTC1oZmZacExtSkpfdXZUem5kWWJQdw?oc=5" target="_blank" rel="noopener">雙軸轉型推向國際外交，臺灣以智慧治理與淨零科技鏈結世界</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">外交部長林佳龍與經濟部長龔明鑫共同主持「2026智慧城市展暨淨零城市展」聯合晚宴 - 中華民國外交部全球資訊網</div>
+            <div class="item-sentence lang-zh-only">外交部與經濟部攜手舉辦2026智慧城市暨淨零城市晚宴，背後的策略意圖十分明確：在外交處境艱難的當下，智慧科技與永續解方就是臺灣最硬核的外交護照。這不僅是展示物聯網或綠能產業，而是向全球輸出「民主體制下的高效城市治理方案」。當全世界都在尋找兼顧數位與減碳的雙軸解方，將治理技術轉化為國家軟實力，正是臺灣拓展國際空間最務實的航道。 <span class="src">— 中華民國外交部全球資訊網</span></div>
+            <div class="item-sentence-en lang-en-only">Taiwan&#x27;s Ministry of Foreign Affairs and Ministry of Economic Affairs hosted a joint gala for the 2026 Smart City Summit &amp; Net Zero City Expo. The event reflects Taiwan&#x27;s foreign policy strategy of utilizing digital governance and decarbonization technologies as diplomatic leverage to deepen multilateral relationships and export integrated public-service solutions. <span class="src">— 中華民國外交部全球資訊網</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-17 08:03:17 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>

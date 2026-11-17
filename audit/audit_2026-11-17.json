@@ -1,0 +1,1882 @@
+{
+  "date": "2026-11-17",
+  "generated_at": "2026-11-17T00:03:18.005421+00:00",
+  "model_used": "Gemini 3.8 Flash",
+  "total_raw_articles": 187,
+  "total_verified": 137,
+  "total_failed": 50,
+  "selected_design": 5,
+  "selected_gov": 5,
+  "articles": [
+    {
+      "title": "Why bother paying for software anymore?",
+      "url": "https://uxdesign.cc/why-bother-paying-for-software-anymore-e1f76093f772?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-16T21:27:14+00:00"
+    },
+    {
+      "title": "UI edge cases: A reference guide",
+      "url": "https://uxdesign.cc/ui-edge-cases-a-reference-guide-e778061588ef?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-16T21:20:24+00:00"
+    },
+    {
+      "title": "Before you ship your Wrapped, Schrödinger’s Nvidia, Infinite tokens",
+      "url": "https://uxdesign.cc/before-you-ship-your-wrapped-schr%C3%B6dingers-nvidia-infinite-tokens-64a9160bd2eb?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-16T12:17:08+00:00"
+    },
+    {
+      "title": "The trash robot that doesn’t pick up, but hands out",
+      "url": "https://uxdesign.cc/the-trash-robot-that-doesnt-pick-up-but-hands-out-9f599d49f8d0?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-16T12:16:15+00:00"
+    },
+    {
+      "title": "Decision theatre or decision design?",
+      "url": "https://uxdesign.cc/decision-theatre-or-decision-design-f1604f178685?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T23:51:42+00:00"
+    },
+    {
+      "title": "Schrödinger’s Huang: Nvidia could not be everything to everybody",
+      "url": "https://uxdesign.cc/schr%C3%B6dingers-huang-d1da36bff88c?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T23:51:27+00:00"
+    },
+    {
+      "title": "The crooked plate that felt more human than the algorithm",
+      "url": "https://uxdesign.cc/the-crooked-plate-that-felt-more-human-than-the-algorithm-40bb4e5da147?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T10:58:22+00:00"
+    },
+    {
+      "title": "AI is the new old design material",
+      "url": "https://uxdesign.cc/ai-is-the-new-old-design-material-0e7f83540c9a?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T02:33:09+00:00"
+    },
+    {
+      "title": "The AI mind tax that afflicts those who use AI best",
+      "url": "https://uxdesign.cc/the-ai-mind-tax-that-afflicts-those-who-use-ai-best-3eb67ff167d0?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-12T11:14:40+00:00"
+    },
+    {
+      "title": "Why are we cloning Photoshop?",
+      "url": "https://uxdesign.cc/why-are-we-cloning-photoshop-52e6e165eef7?source=rss----138adf9c44c---4",
+      "source": "UX Collective",
+      "category": "design",
+      "region": "none",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T22:20:42+00:00"
+    },
+    {
+      "title": "Donna Fredin switched from design to illustration, now she's drawing fun, awkward characters that capture life’s strange moments",
+      "url": "https://www.creativeboom.com/inspiration/donna-fredin-switched-from-design-to-illustration-now-shes-drawing-fun-awkward-characters-that-capture-lifes-strange-moments/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T07:00:00+00:00"
+    },
+    {
+      "title": "Studio Kiln builds a shape-shifting character for weight loss app Reset",
+      "url": "https://www.creativeboom.com/news/studio-kiln-builds-a-shape-shifting-character-for-weight-loss-app-reset/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T06:30:00+00:00"
+    },
+    {
+      "title": "Suggestive animation Beat Cancer Off finds the humour in a serious topic",
+      "url": "https://www.creativeboom.com/inspiration/suggestive-animation-beat-cancer-off-finds-the-humour-in-a-serious-topic/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T06:15:00+00:00"
+    },
+    {
+      "title": "Max Cameron's subversive cigarette packs roast the wilder claims of AI hype",
+      "url": "https://www.creativeboom.com/news/max-cameron-roasts-the-arrogance-of-ai-tech-bros-with-subversive-cigarette-packaging/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T06:15:00+00:00"
+    },
+    {
+      "title": "What 50 years in business has taught Springetts about building brands that thrive",
+      "url": "https://www.creativeboom.com/insight/what-50-years-in-business-has-taught-springetts-about-building-brands-that-thrive/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T07:00:00+00:00"
+    },
+    {
+      "title": "Tanmay Saxena on leaving a banking job to make surreal photographs about life's stranger moments",
+      "url": "https://www.creativeboom.com/inspiration/tanmay-saxena-on-leaving-a-banking-job-to-make-surreal-photographs-about-lifes-stranger-moments/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T06:45:00+00:00"
+    },
+    {
+      "title": "This identity for a women's sports community swaps cheerleading for real talk",
+      "url": "https://www.creativeboom.com/news/this-new-identity-for-a-womens-sports-community-swaps-cheerleading-for-real-talk/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T07:15:00+00:00"
+    },
+    {
+      "title": "Koto points Giffgaff towards its next chapter with a signpost-led rebrand",
+      "url": "https://www.creativeboom.com/news/koto-points-giffgaff-towards-its-next-chapter-with-an-arrow-led-rebrand/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T07:00:00+00:00"
+    },
+    {
+      "title": "This French New Wave take on Sabrina Carpenter is genius in a bottle",
+      "url": "https://www.creativeboom.com/news/this-french-new-wave-take-on-sabrina-carpenter-is-genius-in-a-bottle/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T06:45:00+00:00"
+    },
+    {
+      "title": "Blurry faces, pink skies and video game worlds: step inside Hawazin's candy-coloured paintings",
+      "url": "https://www.creativeboom.com/inspiration/blurry-faces-pink-skies-and-video-game-worlds-step-inside-hawazins-candy-coloured-paintings/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T06:30:00+00:00"
+    },
+    {
+      "title": "Bring your own agent: Adobe opens Creative Cloud to outside AI",
+      "url": "https://www.creativeboom.com/news/adobe-max-2026-all-the-big-announcements/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T12:00:00+00:00"
+    },
+    {
+      "title": "With freaky faces, warped type and happy accidents, Julien Gobled is tearing up the graphic design rulebook",
+      "url": "https://www.creativeboom.com/inspiration/with-freaky-faces-warped-type-and-happy-accidents-julien-gobled-is-tearing-up-the-graphic-design-rulebook/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T07:00:00+00:00"
+    },
+    {
+      "title": "Hanneke Rozemuller has embraced that being an illustrator is a journey without a finish line",
+      "url": "https://www.creativeboom.com/inspiration/hanneke-rozemuller-has-embraced-that-being-an-illustrator-is-a-journey-without-a-finish-line/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T06:45:00+00:00"
+    },
+    {
+      "title": "Maria Zilli's wonderfully absurd animations find romance in the most unlikely places",
+      "url": "https://www.creativeboom.com/inspiration/maria-zillis-wonderfully-absurd-animations-find-romance-in-the-most-unlikely-places/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T06:30:00+00:00"
+    },
+    {
+      "title": "Publisher Sitting Wren encourages readers to burn books - but not in the way you think",
+      "url": "https://www.creativeboom.com/news/publisher-sitting-wren-encourages-readers-to-burn-books-but-not-in-the-way-you-think/",
+      "source": "Creative Boom",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T06:15:00+00:00"
+    },
+    {
+      "title": "Packaging Design: Olearius Olive Oil by vrai studio",
+      "url": "https://abduzeedo.com/packaging-design-olearius-olive-oil-vrai-studio/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T23:11:50+00:00"
+    },
+    {
+      "title": "THE OBJECT 01: 3D-Printed Chair by Nako Baev",
+      "url": "https://abduzeedo.com/object-01-3d-printed-chair-nako-baev/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T22:07:17+00:00"
+    },
+    {
+      "title": "Allo: Open Source Typography by Josh Puckett",
+      "url": "https://abduzeedo.com/allo-open-source-typography-josh-puckett/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T21:27:58+00:00"
+    },
+    {
+      "title": "Sports: MLB Brand Identity by Mother Design",
+      "url": "https://abduzeedo.com/sports-mlb-brand-identity-mother-design/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T20:40:59+00:00"
+    },
+    {
+      "title": "Die Grotesk: Klim Type Foundry Reexamines Neo-Grotesque Type",
+      "url": "https://abduzeedo.com/die-grotesk-klim-type-foundry-reexamines-neo-grotesque-type/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T20:13:00+00:00"
+    },
+    {
+      "title": "Kuda Brand Identity Is a Masterclass in More Life by Barkas",
+      "url": "https://abduzeedo.com/kuda-brand-identity-masterclass-more-life-barkas/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T16:17:13+00:00"
+    },
+    {
+      "title": "VS/Goods: Playful Web Design for a Mockup Storefront",
+      "url": "https://abduzeedo.com/vsgoods-playful-web-design-mockup-storefront/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T15:20:33+00:00"
+    },
+    {
+      "title": "Brand Identity: St. Louis Symphony Orchestra by Pentagram",
+      "url": "https://abduzeedo.com/brand-identity-st-louis-symphony-orchestra-pentagram/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T14:11:16+00:00"
+    },
+    {
+      "title": "BOND Unveils Aleph Farms Brand Identity",
+      "url": "https://abduzeedo.com/bond-unveils-aleph-farms-brand-identity/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-15T20:11:55+00:00"
+    },
+    {
+      "title": "How Studio Freight Reimagined Thesis Brand Identity",
+      "url": "https://abduzeedo.com/how-studio-freight-reimagined-thesis-brand-identity/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-15T17:20:09+00:00"
+    },
+    {
+      "title": "Inside the Best of the Week: Backlit Ink, Waxed Kraft, and SMK",
+      "url": "https://abduzeedo.com/inside-best-week-backlit-ink-waxed-kraft-and-smk/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-15T14:12:24+00:00"
+    },
+    {
+      "title": "Inventure: Nordic Venture Capital Branding by Bedow",
+      "url": "https://abduzeedo.com/inventure-nordic-venture-capital-branding-bedow/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-14T23:10:00+00:00"
+    },
+    {
+      "title": "Julia Brand Identity: Inside Hey Studio's Ribbon Wordmark",
+      "url": "https://abduzeedo.com/julia-brand-identity-inside-hey-studios-ribbon-wordmark/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-14T20:24:09+00:00"
+    },
+    {
+      "title": "Graphic Design: Toronto Symphony Orchestra by Underline Studio",
+      "url": "https://abduzeedo.com/graphic-design-toronto-symphony-orchestra-underline-studio/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-14T20:12:14+00:00"
+    },
+    {
+      "title": "Ray Gun Magazine: The Design That Broke Every Rule",
+      "url": "https://abduzeedo.com/ray-gun-magazine-design-broke-every-rule/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-14T16:48:58+00:00"
+    },
+    {
+      "title": "Branding: Philadelphia Museum of Art Brand Identity by Gretel",
+      "url": "https://abduzeedo.com/branding-philadelphia-museum-art-brand-identity-gretel/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-14T16:18:02+00:00"
+    },
+    {
+      "title": "The Editorial Design of NZZ Libro’s Die neue Polis by unfolded",
+      "url": "https://abduzeedo.com/editorial-design-nzz-libros-die-neue-polis-unfolded/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-14T14:08:59+00:00"
+    },
+    {
+      "title": "Circuit: Civic Shuttle Brand Identity by The Collected Works",
+      "url": "https://abduzeedo.com/circuit-civic-shuttle-brand-identity-collected-works/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T23:09:47+00:00"
+    },
+    {
+      "title": "Inside Ardor Retro Computer’s Phosphor CRT UI/UX Design",
+      "url": "https://abduzeedo.com/inside-ardor-retro-computers-phosphor-crt-uiux-design/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T20:14:19+00:00"
+    },
+    {
+      "title": "Porto Rocha Unveils Almeida & Dale Brand Identity",
+      "url": "https://abduzeedo.com/porto-rocha-unveils-almeida-dale-brand-identity/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T20:11:40+00:00"
+    },
+    {
+      "title": "How to Make a Rotating 3D Cube Text Animation in ascente.design",
+      "url": "https://abduzeedo.com/how-make-rotating-3d-cube-text-animation-ascentedesign/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T16:34:18+00:00"
+    },
+    {
+      "title": "Inside the Craft of the Nubank Brand Refresh by Koto",
+      "url": "https://abduzeedo.com/inside-craft-nubank-brand-refresh-koto/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T16:17:20+00:00"
+    },
+    {
+      "title": "Twice Shy’s Tactile Soap Packaging Design for Tula Louise",
+      "url": "https://abduzeedo.com/twice-shys-tactile-soap-packaging-design-tula-louise/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T14:24:13+00:00"
+    },
+    {
+      "title": "Blæst: Technical Outerwear Visual Identity by Kurppa Hosk",
+      "url": "https://abduzeedo.com/blaest-technical-outerwear-visual-identity-kurppa-hosk/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T23:13:48+00:00"
+    },
+    {
+      "title": "Branding: Alpha Bank by Pentagram and Dalziel & Pow",
+      "url": "https://abduzeedo.com/branding-alpha-bank-pentagram-and-dalziel-pow/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T22:11:50+00:00"
+    },
+    {
+      "title": "Branding: Anagram Brand Identity by Pact",
+      "url": "https://abduzeedo.com/branding-anagram-brand-identity-pact/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T20:12:38+00:00"
+    },
+    {
+      "title": "Editorial Design: Escenas del Diseño Valenciano by Ibán Ramón",
+      "url": "https://abduzeedo.com/editorial-design-escenas-del-diseno-valenciano-iban-ramon/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T20:07:53+00:00"
+    },
+    {
+      "title": "DixonBaxi Unveils CrazyGames Brand Identity",
+      "url": "https://abduzeedo.com/dixonbaxi-unveils-crazygames-brand-identity/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T16:21:21+00:00"
+    },
+    {
+      "title": "Aeonik Soft: Rounded Neo-Grotesque Typography by CoType",
+      "url": "https://abduzeedo.com/aeonik-soft-rounded-neo-grotesque-typography-cotype/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T14:07:22+00:00"
+    },
+    {
+      "title": "GRKit Adds Film Looks and XPan Crops to Ricoh GR Cameras",
+      "url": "https://abduzeedo.com/grkit-adds-film-looks-and-xpan-crops-ricoh-gr-cameras/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T23:53:12+00:00"
+    },
+    {
+      "title": "How Studio Dumbar Crafted 3D Footwear Branding for Zellerfeld",
+      "url": "https://abduzeedo.com/how-studio-dumbar-crafted-3d-footwear-branding-zellerfeld/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T23:16:45+00:00"
+    },
+    {
+      "title": "How DesignStudio Refreshed the DNEG Brand Identity",
+      "url": "https://abduzeedo.com/how-designstudio-refreshed-dneg-brand-identity/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T20:09:45+00:00"
+    },
+    {
+      "title": "Web Design: HBO’s The Alabama Solution by tubik studio",
+      "url": "https://abduzeedo.com/web-design-hbos-alabama-solution-tubik-studio/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T20:08:41+00:00"
+    },
+    {
+      "title": "Bass X Machina: Inside BUCK's New Title Sequence",
+      "url": "https://abduzeedo.com/bass-x-machina-inside-bucks-new-title-sequence/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T16:18:47+00:00"
+    },
+    {
+      "title": "Better Half’s Arcade Graphic Design for Brex’s Fiscal Mania",
+      "url": "https://abduzeedo.com/better-halfs-arcade-graphic-design-brexs-fiscal-mania/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T14:09:27+00:00"
+    },
+    {
+      "title": "Graphic Design: Adobe MAX 2026 Brings Play Back to the Canvas",
+      "url": "https://abduzeedo.com/graphic-design-adobe-max-2026-brings-play-back-canvas/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T03:07:27+00:00"
+    },
+    {
+      "title": "Soft Labor: Tactile SVG Web Design by Other Means",
+      "url": "https://abduzeedo.com/soft-labor-tactile-svg-web-design-other-means/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T23:09:48+00:00"
+    },
+    {
+      "title": "GoFundMe Brand Identity Is a Masterclass in Branding by Koto",
+      "url": "https://abduzeedo.com/gofundme-brand-identity-masterclass-branding-koto/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T20:15:14+00:00"
+    },
+    {
+      "title": "delaCrem: Artisanal Gelato Brand Identity by Mucho",
+      "url": "https://abduzeedo.com/delacrem-artisanal-gelato-brand-identity-mucho/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T20:10:28+00:00"
+    },
+    {
+      "title": "Brand Identity: Connected Pets Sub-Brands by HOW+HOW",
+      "url": "https://abduzeedo.com/brand-identity-connected-pets-sub-brands-howhow/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T19:29:41+00:00"
+    },
+    {
+      "title": "Inside the Craft of Zap Energy Brand Identity by Manual",
+      "url": "https://abduzeedo.com/inside-craft-zap-energy-brand-identity-manual/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T16:11:51+00:00"
+    },
+    {
+      "title": "Book Design: The Hudson Transparencies by Pentagram",
+      "url": "https://abduzeedo.com/book-design-hudson-transparencies-pentagram/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T14:03:14+00:00"
+    },
+    {
+      "title": "Editorial Design: Typography 47 by Slanted Publishers",
+      "url": "https://abduzeedo.com/editorial-design-typography-47-slanted-publishers/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T04:55:24+00:00"
+    },
+    {
+      "title": "Inside Weekend Vikings’s Web Design for Driftlines",
+      "url": "https://abduzeedo.com/inside-weekend-vikingss-web-design-driftlines/",
+      "source": "Abduzeedo",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T03:45:55+00:00"
+    },
+    {
+      "title": "Should You Actually Add AI To That? A Four-Question Audit For Product Teams",
+      "url": "https://smashingmagazine.com/2026/11/should-you-add-ai-audit-product-teams/",
+      "source": "Smashing Magazine",
+      "category": "design",
+      "region": "none",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T10:00:00+00:00"
+    },
+    {
+      "title": "お菓子とアートが出会う「ヨックモックデジタルアートギャラリー～おかしなミュージアム～」が原宿で開催",
+      "url": "https://www.japandesign.ne.jp/news/2026/11/91121/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T08:15:15+00:00"
+    },
+    {
+      "title": "【求人情報】グラフィックデザインを主軸とする株式会社K’sが、グラフィックデザイナー（アートディレクター候補）を募集",
+      "url": "https://www.japandesign.ne.jp/news/2026/11/91055/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T00:00:00+00:00"
+    },
+    {
+      "title": "「ISSEY MIYAKE / NEW YORK」ビジュアルシリーズ 街と衣服。共鳴するひとつの生命体（1）",
+      "url": "https://www.japandesign.ne.jp/interview/issey-miyake-newyork-1/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T06:45:13+00:00"
+    },
+    {
+      "title": "「ISSEY MIYAKE / NEW YORK」ビジュアルシリーズ 街と衣服。共鳴するひとつの生命体（2）",
+      "url": "https://www.japandesign.ne.jp/interview/issey-miyake-newyork-2/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T06:44:23+00:00"
+    },
+    {
+      "title": "【求人情報】エディトリアルデザインを中心に手がけるsoda designが、グラフィックデザイナーなど2職種を募集",
+      "url": "https://www.japandesign.ne.jp/news/2026/11/91030/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T00:00:06+00:00"
+    },
+    {
+      "title": "2026年度日本空間デザイン賞グランプリに、「YKK AP技術館」など3作品が決定",
+      "url": "https://www.japandesign.ne.jp/news/2026/11/91072/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T07:35:07+00:00"
+    },
+    {
+      "title": "AI時代の創作作法を示す書籍『レンズのない写真論　エンド・オブ・ノスタルジア 』が発売",
+      "url": "https://www.japandesign.ne.jp/news/2026/11/91014/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T03:00:09+00:00"
+    },
+    {
+      "title": "織りなす記憶、つながる世界",
+      "url": "https://www.japandesign.ne.jp/event/antoniettagrassi-takamadogallery/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": false,
+      "pub_date": "2026-11-12T02:00:46+00:00"
+    },
+    {
+      "title": "OPEN SITE 11",
+      "url": "https://www.japandesign.ne.jp/event/opensite11-tokas/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T01:00:53+00:00"
+    },
+    {
+      "title": "クルマ・絵画・音楽・写真から建築家ル・コルビュジエの「B面」に迫る、企画展が11月22日から開催",
+      "url": "https://www.japandesign.ne.jp/news/2026/11/91017/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T03:00:15+00:00"
+    },
+    {
+      "title": "カイ・フランク展 時代を超えるフィンランド・デザイン",
+      "url": "https://www.japandesign.ne.jp/event/kajfranck-museumeki/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T02:00:30+00:00"
+    },
+    {
+      "title": "HAL ca New Album『WA/VE』 × FLIGHTGRAF New Kinetic Light Artwork『LOOP』",
+      "url": "https://www.japandesign.ne.jp/event/halca-sunabako/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T01:00:42+00:00"
+    },
+    {
+      "title": "【求人情報】デザイン会社のDODO DESIGNが、アートディレクター／デザイナーなど3職種を募集",
+      "url": "https://www.japandesign.ne.jp/news/2026/11/90966/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T00:00:46+00:00"
+    },
+    {
+      "title": "永山祐子、STUTSらが登壇、中高生と「仕事」を考えるトークプログラムが「MUTEK.JP 2026」で開催",
+      "url": "https://www.japandesign.ne.jp/news/2026/11/91019/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T03:00:33+00:00"
+    },
+    {
+      "title": "日常を見限らない　視覚のワークショップ",
+      "url": "https://www.japandesign.ne.jp/event/shikakuwrokshop-seikatsukobo/",
+      "source": "JDN (Japan Design Net)",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T02:00:06+00:00"
+    },
+    {
+      "title": "岡本太郎の「サイコロ椅子」再復刻。1957年の造形を受け継ぎ、ラタンの手仕事で再び製品化",
+      "url": "https://www.axismag.jp/posts/2026/11/727874.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T02:10:25+00:00"
+    },
+    {
+      "title": "蔵王の風景と手仕事をつなぐ温泉旅館",
+      "url": "https://www.axismag.jp/posts/2026/11/731584.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-15T02:30:00+00:00"
+    },
+    {
+      "title": "Beyeler(バイエラー)財団、ピーター・ズントーによる新施設を公開。レンゾ・ピアノの既存館と庭園でつながる新たな美術館群",
+      "url": "https://www.axismag.jp/posts/2026/11/726647.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T03:30:00+00:00"
+    },
+    {
+      "title": "暮らしに小さな儀式を生み出す、音のオブジェ。クリス・カルマイヤーの日本初作品展「Furniture Music」",
+      "url": "https://www.axismag.jp/posts/2026/11/730981.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T02:32:53+00:00"
+    },
+    {
+      "title": "ロンドンでスズキユウリの個展「Onomatopia」開催。音が構造となる5つの実験的ランドスケープ",
+      "url": "https://www.axismag.jp/posts/2026/11/730997.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T08:22:51+00:00"
+    },
+    {
+      "title": "Barbie × gomi、廃棄予定のバービー人形をテックプロダクトへ再生。リサイクル素材でつくる「Childhood Memories Collection」を発表",
+      "url": "https://www.axismag.jp/posts/2026/11/728940.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T02:13:57+00:00"
+    },
+    {
+      "title": "素材の可能性を拡張する、東レとクリエイターの実践 Case 3 / Inspiration ── CFRP × nomena",
+      "url": "https://www.axismag.jp/posts/2026/11/729956.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T00:30:00+00:00"
+    },
+    {
+      "title": "CASE-REALが福岡の割烹料理店「上田」を設計。 土壁と石、金属を組み合わせ、静けさと緊張感のある空間を構成",
+      "url": "https://www.axismag.jp/posts/2026/11/727844.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T05:36:13+00:00"
+    },
+    {
+      "title": "竹下早紀の個展「Made You Look.」開催。素材と構造の小さな差異から、ものの見え方をひらく",
+      "url": "https://www.axismag.jp/posts/2026/11/730566.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T01:33:00+00:00"
+    },
+    {
+      "title": "ノーマン・フォスターが語る、建築とプロダクトをつなぐデザイン",
+      "url": "https://www.axismag.jp/posts/2026/11/729088.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T09:00:00+00:00"
+    },
+    {
+      "title": "ミラノに「Colombo’s Archive」オープン。鋼管家具、自転車、現代美術を横断する100年超の産業・デザイン史を保存",
+      "url": "https://www.axismag.jp/posts/2026/11/728144.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T04:54:15+00:00"
+    },
+    {
+      "title": "シグマ、世界最小ボディのフルサイズミラーレス「Sigma FP2」を発表。",
+      "url": "https://www.axismag.jp/posts/2026/11/728614.html",
+      "source": "AXIS Web",
+      "category": "design",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T01:12:00+00:00"
+    },
+    {
+      "title": "外交部長林佳龍與經濟部長龔明鑫共同主持「2026智慧城市展暨淨零城市展」聯合晚宴 - 中華民國外交部全球資訊網",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1WZFJJeHFnTEJmZm9SMnFTanFhaGJ4LXJHazc4MzZBeTdxVGUtWEhNbWQ2cERSdW9hTzFMS1N0U3BpWlk4WmQ5OXVSaWN3WEZfTC1oZmZacExtSkpfdXZUem5kWWJQdw?oc=5",
+      "source": "中華民國外交部全球資訊網",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T08:00:00+00:00"
+    },
+    {
+      "title": "智慧城市展暨淨零城市展登場 蔣萬安分享臺北AI應用成果 - 臺北市政府全球資訊網",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNVy14ODdvX2NwRlZ3OGpVSnMxSE1UOTl0emxGUXVFZ2FWanhJUXg5THFVNkt0VFpReWszVVVGRnJVN3E2M1FjbzZJeWp5LTI5Z1hFVHQ1azVCSk1rX3BneXFKRUt4eUFqek1tbkV4enBCaE4tLXBZal91SzhnNW0ya05DNlQ?oc=5",
+      "source": "臺北市政府全球資訊網",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T06:52:58+00:00"
+    },
+    {
+      "title": "從智慧城市展到防災交流 高雄與菲律賓武端市深化城市合作 - 財訊",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9oY3QxREpZcU9jVGxMTldQU2JxNEQ1WjRfQ3IxZ2kwaVJHYi04T09pZmtDMDQwVldGTFpEOU83bWFNckUxclZyNnlxUUdGZDJUVW52Tmt3amZsYkxPM3ZMcWhoVDk2OVRoQkRXTVJjYnRKQkt2alVrbFpBTQ?oc=5",
+      "source": "財訊",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T08:00:00+00:00"
+    },
+    {
+      "title": "自由開講》美國AI治理 從護欄走向驗證之爭 - 自由評論網",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE45eHlzWVF1eXhWYkUxRnVWNjR3TWZlNUlXY1J2WXZXZkNRQWptR1BRRTF2Mk1hSE9vVm1rNmVGeUJvMjJlR0s0RTVXcW43Yi1TMkt4dzViZGx1OG54d25PSHZn0gFnQVVfeXFMTVFaaHpVX0tuY3N4NjZzYUdfTlM3aHhCVUZnMEtvVWFGSmFDSjlFdFNucGFxWTY4cmw2R0VmVGdmY2t2T1pORjlmRE8xZWg0WkdCZ0V4TXZXMjdsMXJ5dFdfZ0pxY1l1TQ?oc=5",
+      "source": "自由評論網",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-15T12:00:00+00:00"
+    },
+    {
+      "title": "中保科前三季每股賺4.94元；深化AI治理計畫 - 台視全球資訊網",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQcUZ1ZWYxVUFQV0NKdUJBTENUclVWRWljT182QjdrZHNWVExFVndjdFl0cHgwVUtTSEtxS3F1cEZqYzRqUEpoYTlvSkRSb3JKT2p6bXJTaHRROEIxSnhqN3diYzlDQ2JpRXUwc3o4YUUtSVFBdnFjaVpJT1AteHNDYVVrYnB1cEkzZUhTM3hoOFY0VWVBckN5dWdlOUpHN0VMSk04TkFUYVFrazQ?oc=5",
+      "source": "台視全球資訊網",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T04:17:46+00:00"
+    },
+    {
+      "title": "AIFF 從合規走向可信任 BSI 構築可信賴 AI 基石 - CIO Taiwan",
+      "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE5SQUNTbUNiMThKTExXLWhDVV9fT1RYUGJsUU43dzY3bVlaU1FQZTM1NndLcFRxYjdlak1BbnRDcXJzTHFj?oc=5",
+      "source": "CIO Taiwan",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T04:23:35+00:00"
+    },
+    {
+      "title": "AI漏洞衝擊企業資安 CISO會長金慶柏建議強化AI治理與供應鏈聯防 - DIGITIMES",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPMDJybzZKTDdyM0U5Nks4VVpKYzBlWnhXcmp1c1N1Ml9VeUFyV294OHlrREVLSHhKQ3RPcGhGWDFmMmNZNF9FTUJJNkNJZjFYRy1oTUdlcUh1WThNcnlEUjhaX3c5Q2F3Y2tNMnk5SE1TRDZOQkN3VERpVk5XZXpRdVd5Znp0TWkxR3FJUk9R?oc=5",
+      "source": "DIGITIMES",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T19:13:52+00:00"
+    },
+    {
+      "title": "AI資料中心用電與環境衝擊成COP31焦點，環境部：目前依法無須環評，但應建立低碳AI治理模式 - iThome",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBYNGloa1FhME00ZlVKQkhzTGlJZlNZaWpEUnZzQ1czR05IYUEzeE15VnExbHV0T1ZSb2dyQjg3RkFEb0YwNV9OTUxBYnlmQQ?oc=5",
+      "source": "iThome",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-16T10:35:26+00:00"
+    },
+    {
+      "title": "AI治理導入城市建設！王美惠提出智慧城市政策藍圖 交通、長照醫療、教育及防災全面升級 - 台灣新聞雲",
+      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE0zaXNxcGlPQ1F2ZER2bHR2V0hueEdFUjVFNXNXcW92akdyWUJMcFFfMzZIUUdhT2FQbjBaZ1ZialQ2N2FOZDY4?oc=5",
+      "source": "台灣新聞雲",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T06:30:14+00:00"
+    },
+    {
+      "title": "中保科前3季淨利年增近4%EPS達 4.94元 將擴大AI治理應用 - 鉅亨網",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE50Ty1EU0xzdjBwTThXaVo0N1NEVXdtcFBKYWNzRzFZalV2azgxS0p6UktiZ0Rfclk0SGFYVUt0OVVJWjUzNkthSFRBWTJrVG8?oc=5",
+      "source": "鉅亨網",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-12T10:38:57+00:00"
+    },
+    {
+      "title": "六都唯一 台中數位治理再獲肯定 林谷隆勇奪傑出資訊人才獎殊榮 - 觀傳媒",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9CUHBvOERFaEN6MlV1VGFOclN1MG55ZmNKTlF4SmY2b2N0U1dUQ1VTb1dPSE1FT29fVjJKVHFUdEZPcldkRkRQUnAzQlo4N0ZtdlZPaUpXNA?oc=5",
+      "source": "觀傳媒",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T11:25:27+00:00"
+    },
+    {
+      "title": "中保前三季EPS4.94元 宣示全面推動AI治理計畫 - 自由時報",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1WOGF6ZGtOejRXLW5qdE40Z2tlWF8yRDFwRXh5RlM0Q1NtcEJJMUt4NFFsWXEtbDFKVGRuSk0yS082NnFMWG9yVGFfU2R1VjZVTmh4eDJQQzk?oc=5",
+      "source": "自由時報",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-12T11:03:35+00:00"
+    },
+    {
+      "title": "中保科AI治理 建完善機制 - UDN",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA5dWM4LXJ1N1ZNaG9yUnlLV015UVhOaXFjUHdQLWZ5ejktc0JFTGNzT29QOVgycDFUeUpDcVlqMDN0eFFLWTl5THpRRFNGbk1P0gFWQVVfeXFMUFlEbll3RlZRSHZjcUpkODZkSTFRZ29KMDRHam9NSW9ZS2ZrdVZqVUdOT0xKbXVOaElEbmxWMnR3VUpiQXhvdTctampvbGJhems4SVRsN1E?oc=5",
+      "source": "UDN",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-12T17:29:11+00:00"
+    },
+    {
+      "title": "安碁資訊(6690) Q3 EPS 3.04元 創同期新高 AI SOC、AI治理成下一波成長引擎 - 理財周刊",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBMWWlITFZjUzA1ak1fd3hXYk41am4xaTl6TXVFVmw4OVhoSjdQU214UUNtNkl6TDNrM285a0JfRGQtejBzNHE0dXl0RDl2OTlyRXROTHdQYmUxNXBMV2xtZEg0Qk1DS19HVmJmY0cwVQ?oc=5",
+      "source": "理財周刊",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T07:37:34+00:00"
+    },
+    {
+      "title": "破解演算法黑箱！直擊公部門AI治理與個資防衛戰| 雜誌 - UDN",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5rSWxCNzM4QlhNLW9zdlFoUEZ1UDVBNVVwYkdQWkhzMkE4eE0yUzlLTW5YRkhlcVNOaFJ6ZkQtU19UbkJkNEc3Z0J4anp0Nllr?oc=5",
+      "source": "UDN",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-14T23:38:28+00:00"
+    },
+    {
+      "title": "葛如鈞、張智倫跨縣市力挺游淑貞 財政改革與AI治理成花蓮發展新動能 - Yahoo新聞",
+      "url": "https://news.google.com/rss/articles/CBMitANBVV95cUxQd0JOckhMeUFfZFo4X0xvb0U0cUwyV1Fjd0FFNXVUZllxdEU4UHFkcXRyRFZWeTVCVHpBaVRJM1VXal9SbmtBWmc4Si1KY3RrLVl4MG9lbW5zS0ZrdUE0N3V6V0praTZwN203eWJVTktKdG5KcjBFdjlwZGx6cUJrR0JSOFZaWXRyNlNSWFRWdTl6UEJ4LWlrNkxpTHR4TU1kQXBFX0w4cEtMMzVNNW5YOUpVMmhfTnVIZlhpWWJNZUlrR0dGUTBBQjN2V2ZkSDZMYy1IcjMySTBWbGYyLXlZRGJLUkE1cUJEeXFRcDJ5b0l4YjQxeVBmNTNPeUtPaEJrVFNMLUhXN0VhTDNhQUpXb0hjNzdiaXFMWDN6TXRhYTNzT3pPaDhFMV9wcEpTeG92eEFUUE5CVmppbnNsZmpoOFE4T0M2Nmw0TjRiZkdWaFU2VVBIeWN5UVRpZFMzYk1qeFYyelo1ck96cHpQeE1sdTZ6bnlfRUVUNndlOTBYYkZpdDFlMk5PLVhlVENtUDNSSEYxS3FtcTI3cy05eE9SN0VtTDl0NUs4VzZocUxPa0dtWWR2?oc=5",
+      "source": "Yahoo新聞",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T08:30:00+00:00"
+    },
+    {
+      "title": "中保科前3季EPS逼近5元 全面推動AI治理計畫 - 中時新聞網",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBmVXRNa1hrcDZpZVVvMUVnOVlvNzVvR3hzUVJMd3BNcmh6eVFtV1JDY2VER1hHNzVWaDAtUVlmYzhVVVZBMms4bDRNUF9yWFNkdTQ3am1zTkk4Y0FlS3k0cHRDY1lweFh5c1ZkZ2N3?oc=5",
+      "source": "中時新聞網",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-12T11:40:56+00:00"
+    },
+    {
+      "title": "台中智慧城市再獲國家級肯定！副秘書長林谷隆勇奪傑出資訊人才獎六都唯一獲獎- 生活新聞 - PChome Online 新聞",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNzk3d0NJTHdmdjdJSkt1OU5LWGhKaWt4YnpGS2F5V2VaZ25mZlFqX3k0cUowMFktRFAxeHpEOWVFQUdSTzFmMzd5UHhfcngxdlRVTjlhWXZ5NkNTUldYT01MX2xsZnJTUHlyLVJaUW02U3AyS2dFQkdDSm42QW91TE5Vbm5jZ1ZR?oc=5",
+      "source": "PChome Online 新聞",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T16:00:00+00:00"
+    },
+    {
+      "title": "美中俄元首會周四登場中東局勢、俄烏停火談判、AI 治理等將成火線話題| 中東戰火連綿| 全球 - UDN",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1GOXZJQ2laMkJPMUozR2hHZVJiSHc3RTM4S2pOckZIZFByZHhZazNmVE1TYWZXOGxURUp6OS1Sd0JYOGZ5QjI3SmpZUW41M3YwZG1J?oc=5",
+      "source": "UDN",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-16T18:10:31+00:00"
+    },
+    {
+      "title": "AI時代寬頻業大拓賽道 中嘉集團加速佈局三大市場 全光網路串聯智慧城市、 企業與家庭 - 風傳媒",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5PbnlTYkpJLTNFZHhuajR4LWNkelpqQVg0UGl3Y2dLaUFxWEwwczlWUXNuY192YXBfOGoyU05relRVTDVUX3poSlgzTlN6cVNP?oc=5",
+      "source": "風傳媒",
+      "category": "gov",
+      "region": "tw",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-16T08:55:00+00:00"
+    },
+    {
+      "title": "六都唯一！台中副秘書長林谷隆獲傑出資訊人才獎 卓榮泰頒獎肯定數位治理 - 新華報導",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5XOWFZenBHNjlMVGsyWXRWRFYtWEhJdk9VV3V4NDdnbTJ0OC00bW16RTc3NVNWal8yUEo4d0V4WHFCaWZfeXdrQldwZGRKLU9Sdmg2OXdJVmNFYmZoQkwwZUk2QUkwWExU?oc=5",
+      "source": "新華報導",
+      "category": "gov",
+      "region": "tw",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T10:08:00+00:00"
+    },
+    {
+      "title": "花王・桑原裕史執行役員「『花王AIガバナンス』で正道を歩む」 - 日経BP",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1CMWdzdTdralg2Tmp4UUlvREpOeE9DODJqOWZGUmEzYl9FVGVZaDNyRkFGZWhLR1VWS0VWeTRoN2hxZzZPeGRMemVtTG9zdVppLWFFOWFMSG5ONk9EeFQyTXRmanA0TWMtTTdLRFZ3MnA?oc=5",
+      "source": "日経BP",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T15:07:01+00:00"
+    },
+    {
+      "title": "AIガバナンスは「コンプライアンス」ではない――AIエージェント時代に経営層が取り組むべき「攻めと守り」の統合的戦略 - ITmedia エグゼクティブ",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0xNHB2SGJNX0pXRXZmX19XZFhXSENneWN0M0dmM0RXT09DTlRCT2taS2NTVkhjclRkTXV6enZtbUhNYlNBM1ZkQmItLU53cEp2YkFPNXV5alp6QlRxYXRHaXlMU0JTeV9GYjFkbkxwUTNJWUNJaEZ6RXBlTVdOQQ?oc=5",
+      "source": "ITmedia エグゼクティブ",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T23:00:00+00:00"
+    },
+    {
+      "title": "日本気象協会、第13回スマートグリッド展【関西】に出展 ～日本気象協会のエネルギー事業者向けサービスを紹介します～ - 一般財団法人 日本気象協会",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFB1U054Ul94WnVkRjdTU0F5NFpsbFNzUlFyaDZwQUVmaGRlcGIxcGtZeFZxNFZzeF92bWs4SDJjQ1MxZ2w1a3hUbm5LMEk2TmFmY0xB?oc=5",
+      "source": "一般財団法人 日本気象協会",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T02:12:24+00:00"
+    },
+    {
+      "title": "「ブラウザー側で守る」というアプローチ--AIガバナンスを実効化する新潮流 - ZDNET Japan",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5Mbm90elZ0cW5qd2xNMF9qb0tCWTBCWnZLcU1IODZhQ1BnUHBDWFhhdm1EbXUyTm5FRDFmX2lVTXIyaHg2S0JlckRmM1Y1NkVXWjFF?oc=5",
+      "source": "ZDNET Japan",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-10T23:00:00+00:00"
+    },
+    {
+      "title": "フォーティエンス、AIガバナンスの整備状況を可視化する診断サービスを提供 - クラウド Watch",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE03SURwNjhDTENSTUE0V2tKdkEtYm5nNXp3VktjcWdxRE9JeWE5NmxGWlNIQzV4dkhKenpWV0p3MzY2Z1ktRHN3WE1YREVubEg4bExoQlVRcy05YVFyb3VseXNLYnZnSVk?oc=5",
+      "source": "クラウド Watch",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T05:04:00+00:00"
+    },
+    {
+      "title": "実効性ある「AIガバナンス評議会」の作り方 - Forbes JAPAN",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1PRHRYbkFxMzZfS0VDZEVjYVpicGhqNmIxd2RXMkNrc052TWFEdURhcVdZYXg0VUJ3bk1jRUtJMlMyb2pJeTl3aHJKOGtSTnBsLW9ocmlaRk1LUQ?oc=5",
+      "source": "Forbes JAPAN",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T00:43:00+00:00"
+    },
+    {
+      "title": "東京都が国際的なスマートシティーイベントで最高賞を受賞 小池百合子知事が式典に参加 - JAPAN Forward",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPcFRsZWNJN0RpSWVKZ3JEMDhkTUhla0xDZDhUX1NMTlZQTFV5UDJnTXVmeWV5cGdWOHRsS1IxdUxpSHE0QkhmdHVaMXRiT1dxcUh2RnljQ0t1cmx6eGtPYlZFN1UwMlJtMElaUi0yU0ZLMmdaeWRFYjBQVlVRVW1KWjB2RkZ4Wk9xZ2txWEtqMA?oc=5",
+      "source": "JAPAN Forward",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T12:39:41+00:00"
+    },
+    {
+      "title": "【記者解説】大津市のMICE誘致 スマートシティ分野の国際会議開催へ（BBCびわ湖放送） - Yahoo!ニュース",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9QLWlGT1UtR0N6RVRuQ0lwR200azNvTmFJZE1USG53WXpibWpoLU5HUGdqem9xajE3SE5EZ2F5aWxaWFEwa0MzSW0wdVdBc0VLLWJpaHZIdUpyTDRXNmxwZlBxcEtvT09WZC1HMEJtZlZxaThqWlhXQmIybF8wN0U?oc=5",
+      "source": "Yahoo!ニュース",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T11:15:00+00:00"
+    },
+    {
+      "title": "Kia PBVジャパン、Geotab、マクニカが連携、Kia PV5向けフリート管理システムの提供を開始 - 株式会社マクニカ",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1MWjRFZDBSdnlSMWlwVE5jREdOdlBON25xTU1tZmtjXzJsUk9CQUVQVDMxNFdkdVR1c2FrVGtKaE1mNEJYNW9IbTRLc0RONGR0V1IxTHRfWEF5d204SXJVQUFoSnhkWHZwNWdSLQ?oc=5",
+      "source": "株式会社マクニカ",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T03:45:33+00:00"
+    },
+    {
+      "title": "〈永遠の実験場か〉｢サグラダ･ファミリア化｣する会津若松スマートシティ構想…国費注入とアクセンチュア依存の行方 - 東洋経済オンライン",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBRZXFaQjhWUFMyZkxwbjUwVVBidWx6dmlLT2RPV1NpNUNXTnhkcGJHUUt5enRpdUZUN3ItYU5PSHNJbFFsbkpIM19lSl91WmM5UjJLLWFKSGNuNXZkc29V?oc=5",
+      "source": "東洋経済オンライン",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T21:00:00+00:00"
+    },
+    {
+      "title": "BRJ、広島大学スマートシティ共創コンソーシアムとの電動マイクロモビリティ実証事業Phase3を実施 - ICT教育ニュース",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFB6UmxRNlFXbG5pRW5QQ2p0QmRRT2tRMXpNNC1fU0E3WXlldXN1bzc3SDFReU1zcXBCYnotUHItc2F1VGdIczFtbjl5TW4?oc=5",
+      "source": "ICT教育ニュース",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-15T23:53:39+00:00"
+    },
+    {
+      "title": "フォーティエンス、AIガバナンス診断サービスを提供開始 - マイナビニュース",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1abU8yRXNRWGFtdlBJU3UySENSb0ZxajlnejFHVVpSV2pkSU1UclEtaVgtel9VdE9lalA4RTdEU1hBclBKYmxyZF9jYVFpSHc3eWp1YU9jYWdtNGNCUWkyY3c1RFhNSkNC?oc=5",
+      "source": "マイナビニュース",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T07:00:00+00:00"
+    },
+    {
+      "title": "激動の世界を読む：AIガバナンス 国境なきリスク、今こそ行動＝国連事務次長・中満泉 - 毎日新聞",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE4tRGljV2VOXzhCQms1d0Q4Umh5M19OVGtLZHRFdk13aGh5SEpjRDRXT3pSLVBJdVR0dngwbU9aSUZET01UZkhJU0NUS040TnIxa0NQZ3oxNzJ5bXRZeUlXSXBQUWw2Q2Ju?oc=5",
+      "source": "毎日新聞",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T17:01:15+00:00"
+    },
+    {
+      "title": "DeNA、スポーツ・スマートシティ事業で新施設2拠点が貢献 「THE LIVE」「ワンダリア横浜」などが四半期で約10億円の売上収益押し上げ - gamebiz【ゲームビズ】",
+      "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTFB3eEJDcUFXSWR2Ui1FTDlUenVGaVJCTlI0TTJzZmZMV3M2LUdPdURmUjhPaDlLbHRRRFlhelhiNVg3VlNv?oc=5",
+      "source": "gamebiz【ゲームビズ】",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T08:49:00+00:00"
+    },
+    {
+      "title": "Optro – リスク、監査、コンプライアンス、AIガバナンスのためのGRCプラットフォーム - quasa.io",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbENvSHVzQXZTcDk2dkI1dk9wMVJ2dWFXYXVYemgtM2FCZ2ItWnJURFhQVnJUalJ0TjJfVjhIOEJ1Q0hyanAxQWplblpvMXVjVTc2MkZUMHVSdHdlS3dFNnFWajJrYzVicEViWUVoU1YxUXNZTWtUb3l0bnNFTmZ0S0NiWUVBVG1PbWUyOWNqQjZNSmdNRzA2dnd3U1N5LTgzR3pyU0paTUw?oc=5",
+      "source": "quasa.io",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-14T11:00:54+00:00"
+    },
+    {
+      "title": "台湾・中保科技、今期前三半期のEPS4.94台湾ドル 林建涵董事長がAIガバナンス推進、見積作業を97%短縮 - BigGo ファイナンス",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE54YWoybUxsRl85c2d4RXZKNkwwUXF1aDJHRzBWZk5xTUtzanBaRjMtSjZmZERyWE5NcEhVQk0wVWdnaXRRYmU5M1pFZUtYUDRZcVZyOGFEejdESjhwakxpNmhMaGxzUFZrc3JvNjRzSlR1Y1Ix?oc=5",
+      "source": "BigGo ファイナンス",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-12T11:05:00+00:00"
+    },
+    {
+      "title": "九大キャンパス跡地の日本最大級スマートシティー始動、名称を「HAKOZAKI BLOCK」に決定（要約） - ITmedia",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE16X3JVTXlHM0ZYOEtkV1hzUTJFc2xOenVGZUxPMURzaWkzUGF2WmQ0SElDaXc1aXMzSGV6MC11Tm91OXNZUVBfbHNWOGprWGw5S0dsYU1qRTlndnQzQnAyMERKZ09TbU55RWhGdw?oc=5",
+      "source": "ITmedia",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T09:00:00+00:00"
+    },
+    {
+      "title": "AIの不正利用やAIの暴走をどう防ぐ？ ―― 安全性と生産性を両立するAIガバナンス戦略 - ZDNET Japan",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1QLVhQdW15WEdWNmFkV2hHWEluSml2T3FJeG15cFd0WkpISzhYWDFoRTRWWVM4RXVLUEl2YTQtaDVJd3FoMmIzb3JELUJtX1pMWFB0NG41WEVDZ3FQMVpELW4zQl9vRlU?oc=5",
+      "source": "ZDNET Japan",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T05:00:00+00:00"
+    },
+    {
+      "title": "〈永遠の実験場か〉｢サグラダ･ファミリア化｣する会津若松スマートシティ構想…国費注入とアクセンチュア依存の行方 - 東洋経済オンライン",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBnd0t4WVhlTWxfblpxMjc5SG5wZjRFeG9lQ1ZBcmJTSVVQbEVyczBiNUx5Unp1amp4cEg0SWo1ZHI4bzdPVGE1Q0VMclZfYTBOcXQwNUY3bUEyc1U?oc=5",
+      "source": "東洋経済オンライン",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T21:00:00+00:00"
+    },
+    {
+      "title": "【独自検証】アクセンチュアと会津若松のタッグは成功か失敗か…｢スマートシティ15年史｣が突きつける地域DXのリアル - 東洋経済オンライン",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5xOUtxSEl1eThQOEdVZmJTRDdycWpxTFFwRmJoTFIwbUN4eHJKckN5X0VIVTVsc3lud0R6dmotX1ZPcUhmSng3eE5tMHFVbnFoVmthZzN6WF9GbTN1Rl8w?oc=5",
+      "source": "東洋経済オンライン",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-15T21:00:00+00:00"
+    },
+    {
+      "title": "テレコム費用管理からAIガバナンスへ：IntraTEMがTEMをどのように拡張しているか - HackerNoon",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWnlPVkdhMTJQOUVpdnQ5bkFSWkIwQkxvdF9saE1FYWZ6ZE5yaXF1d05YczhicmxDZ09zMWg3WE0wMzI1ZFFYRHZ4WkZSVXRKZWxlbTJ5dVdqRXFfbE9ob1UzcTBmQ0kyT0s1WDlXNFpnNl9fSFlYMHJTWGhma3RiOG5rNnNyNEpWSC1vaXUyeUIweFl3LU0xTmpJOXVLYXU3RU9EY0hDcWx5Q2NWVWc?oc=5",
+      "source": "HackerNoon",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T01:04:42+00:00"
+    },
+    {
+      "title": "大気環境監視システム市場、2035年までの見通し：スマートシティ需要が成長を後押し - ニュースと統計 - IndexBox",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOUHlYemVoc1Y0TTJhV1VMYTNsamFxVENPdDEzdTBpMllYdmJtOFhuRDFpNnpFYTB6ZkNBRjU0SGh3OVRmY3NZNlVEdUpQRFdJZGswczUxOGhJVGV2dDF4ZWtqeXc3RlpQZkRoZWtTWTlRZHRoVEFSaWJEVDZscnNXM1hjRVhSVWNuU2NsZFNzS21INHBVZDN1NUtWMml1Z2d1bHd2dkRGY1RNY0NoXzEza1FJNVBab0ZBUFdVcEd2V2ZZSE95ekJYWA?oc=5",
+      "source": "IndexBox",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-16T11:21:04+00:00"
+    },
+    {
+      "title": "大気質モニター市場の2035年展望：規制要件とスマートシティ需要が拡大を後押し - ニュースと統計 - IndexBox",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNWjU1Sjc3cXZBdGlaeENWeU52c2wyM2JxMUlzckFVa0Z5ZWRYbktycHBOSVpWb2NoRDZWb0VJREk4TTZ2UXhlOG1FS0drYjFVUkxTbXJfV3N5d2RucExnUDdBYjFfVGE1SWd5eWRxZlR2dlNpMHBoaEFPbDlqV0RBQkYxcjhpaUJLUjhXanI1VzJvRXh4UlJnTWMxbEh6cE1pYkpWcTUyTkk4SmJFNTFiVUFZdjZVSVdxbmxkVVBrakxYQ0hQZWZiYTlEcktqeHdkLU13bEJWR3lNai00cHRmeTZ3?oc=5",
+      "source": "IndexBox",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T21:56:05+00:00"
+    },
+    {
+      "title": "エーピーコミュニケーションズ、「AIガバナンスの導入・伴走支援」を提供開始 - ニコニコニュース",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5FRHdCckt3eWlOWC1NZ1B6eFJiRVdpRkQ3Q2NmVWwySE9XVHJwdUY5SzZmWDFLYXVIaWJTX2lFQy0tYm02T0VKanNSY0lFU3dRT0dGX0dkSk9sVnUzeFVnZEw0TmQ0dw?oc=5",
+      "source": "ニコニコニュース",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T13:15:18+00:00"
+    },
+    {
+      "title": "電力線搬送通信機器市場、2035年までの見通し：スマートグリッド需要が成長を後押し - ニュースと統計 - IndexBox",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOM3BUaUp5Q3lLSkpuaEx4dEFiTFpRLWtacUZtLXlFd3ZXNzI3MzZsTHpTSVRqQ1FMVklBUENQcTlsbDk2dE1tMDRIckNLSy1CaERtMEFYMGpJblJ5bWxfaHFlNVZScjVTWVZTQVBJVUw1ZmpVX2Jtb3ZIU21ubDVvalQzRDFuNFdwVUtBR1FrQmdfZndyVzJhbm9BMnBkbjVING90UmY2cW4yZU1RRkprZ0VicWpJRHdCeC1HNzdzeTBjcUMyY3lKRFZudUNTUWZ2TEJwSUx3S3JRcTRYb29MZC0tengyak9OUG1LeUllZWd1Zw?oc=5",
+      "source": "IndexBox",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-16T12:21:04+00:00"
+    },
+    {
+      "title": "MaaSの終着点は未来の「スマートシティ」 米国の最新事情 （2ページ目） - 日経クロストレンド",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNNm91c19OanZPZFd2WW51ZUxXMnowTDBtcEZ2dlZTaFVtT2FFaVRnZXY5enZYTld3VkRydVZwbmJmcE9Lcm9ncDdkMThWdDZYZk1jRXQ3VzJuV3ZpanJZSXh5TE4yWi12cHR4cUZBaEh3NVFXMHc1XzNMZ09DNEJ6bGdrSDhzX2VoWWJSTm9lNEgtRlViS0FZLVMtQTY?oc=5",
+      "source": "日経クロストレンド",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-14T15:17:49+00:00"
+    },
+    {
+      "title": "計器用変流器市場の2035年予測：スマートグリッドの導入と再生可能エネルギーの統合が成長をけん引 - IndexBox",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVmJxR1FJRXpzbE5OTWhrS0prNFVPT2dpb1AxSDdnbnV3VWtFRzJlZzlVREJ4MUtQeF9HZU8yZTVjNkZvYjFrazA4OGZsQmNzM3h1bUM3aGI1N0VkTnZORXFOcVkzdDhyWUJKTDFZUk5uSjBNNEtlWnJ2ZmZPTGJKdzRmYUQ1YnpGWFN2OXBuemlzbmlGUFlpc2w0MlZBcm4wbFp4c2Q4TEVXM1hna1VBM3NSXy1QLWs3Tm5QMy00S2xhUjl6RlhtY1FPcXNkaE1xSkE?oc=5",
+      "source": "IndexBox",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T21:06:06+00:00"
+    },
+    {
+      "title": "jyp8909@mk.co.kr - 매일경제",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9tUnQxVXRXb2F6c3Nta09PMTQ0SVhhSWlLVjM4MGhocG16ei1SUWc4N2hIY3JCNGViN0hPR0YtSDROcU5HbkNNSl92N2Q0LW9NeGVCckxR?oc=5",
+      "source": "매일경제",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-15T07:02:21+00:00"
+    },
+    {
+      "title": "メーターボックス市場2035年予測：スマートグリッド展開と公益インフラ更新が成長を牽引 - IndexBox",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNcE81SncySVVfWGR1UVlsWG5zLXdkaTBOX3V5OGI2c1hXWHdyaGRiQzVIV1dxY0gxa1Z4bFVYNW5JQW1HczkxYzYzREU2UnVYbEJjcWxnQ3Fkb0tYbHc5WDNUNFc3SGw4eThmSV9XQTU2UHZYZDNHbDB6cDVoVnJVU1NSbDFucjFKY0lHZThQUWExTFFpZzh2cVRqcjlmSVphYk40anl1aTVaSXppc05IM3JRLThPZ3ZYR0dtU29kdWwzbU5BYk5UdW5n?oc=5",
+      "source": "IndexBox",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-12T13:06:04+00:00"
+    },
+    {
+      "title": "Godot、「KOBEスマートシティ推進コンソーシアム」に加入 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBHRWdsVTg5YXhUSjdRbVpHOGNLOFYzendyZy1RT3hoMGpQR0tyV3Q0VkFnNTdLWnE1NjI1WjREd1JOQ3NIdTA3QTd5VW9yeUNoc21VQXRvV0lMbXI1VWpfSm12RnlzR01OOVE?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T02:00:02+00:00"
+    },
+    {
+      "title": "釜山市が世界最大のスマートシティ博覧会であるスペイン「2026スマートシティエキスポワールドコングレス(SCEWC)」に地域革新企業と共に参加し、369万ドル(約49億ウォン)規模の輸出相談実績を上げ.. - 매일경제",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9hcVpGSWduaHpMT21GdTMzaV9UZ19FZ0xLRHdOY2k1cW9nQUVvOWVKbFdYbHFOdktMekVqVVdwdTZsZVZjcFdUcXB1VzJHSXRoc1E?oc=5",
+      "source": "매일경제",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T01:47:21+00:00"
+    },
+    {
+      "title": "組織のうちAIガバナンスを導入しているのは10%のみ - Lenovoの調査 - Mezha.net",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOU3JOUk9HOTdQRXAtVmQ5Tm8tVW80QktWN2trYUhwcDJLbFBZQ1NUX2FGbWlLa3hWa0dSQ1MtbU1WcnJqazctNU9pVlhoU3ExbUFTWmtlUWRXNHB0RG1tbG02eHdHdXhmYUNCVW9VbnY4RmdnTjBNYmg5ZWpCTnZXdEJJMGxPbm1YUUc3dXVYalBVM1BG?oc=5",
+      "source": "Mezha.net",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-12T06:17:00+00:00"
+    },
+    {
+      "title": "フォーティエンスコンサルティング、AIガバナンス診断サービスを提供開始 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBMV0tLUU1qX3d3UDVGVzZ3Rjl5UU1lNGw5Y1JiMUJCS0dfdlU1dHJxalYzTktVVEluVk9EVm5DX2tyLUdtUG1DQ1NyMlJWajJtZWUyMVMtcDJXWHdQbU9SU0d6SWZZaXNuRGc?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T02:00:02+00:00"
+    },
+    {
+      "title": "Godot、「KOBEスマートシティ推進コンソーシアム」に加入 - Excite エキサイト",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5iaUhUNVd2Y2pXQmg5S2o0QzByVExfNmlpelVsMWR4dXRVZVdOYjdyOXd4cXJMcnVPTGUwUnBMY2IzdkpJZ1pjZGZXVy1IMXNtZGZLWHFwMmp2eUNFZXd2LUNTS3ZiY1NnZEVsWE9kYi11djk3?oc=5",
+      "source": "Excite エキサイト",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T03:45:00+00:00"
+    },
+    {
+      "title": "電力メーター市場2035年予測：スマートグリッド更新とAMI義務化が拡大を後押し - ニュースと統計 - IndexBox",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPalJuMXlON25pLUZaNDhQUk1nOWlPb1FDNXdNMTR3dzI2bnNPN2EzQ2tKdjNwSW1ucGsyZktOSG9UeE83WENCcG13SmxyZS13cWVvMjNrRmMyLTBBSUdqOHV2MDl5ZlVZWWN4TUoxeVVDbzBYSHUyNUFGR3haNkRnNnA4YjlzbkJ2NEJKd0t6bm5fZnlFOE9CVkpPeUplbGdYbmVFSWwxTnJTZTNpekdQRFVNWnc4WFBzanlteDFiM0ZYaUdRV2RqOGNYV1ZscGc?oc=5",
+      "source": "IndexBox",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-15T15:41:06+00:00"
+    },
+    {
+      "title": "スマートシティと連携した物流インフラの開発。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUlAyWmNnZHZETzVoZVNMZXNQMUVtOG1YbFIwR18yd01GWUJFcl9KN0tLV21rNkpmR0o3bjVPX1hPaWdYNHJRWGxYd0pLYTRlWDE0Wld4R1Q2RHBRbWhFWW4xZ1pzS2c5MjZDN2RKQVIzME5XSmIwVGo5bnU2VXFrcWhhWE1mWk0?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-15T23:00:58+00:00"
+    },
+    {
+      "title": "12月23日(水) 開催！ 令和8年度『デジタル・スマートシティ浜松フォーラム 』 - イザ！",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5ZQmRrUDltTldJb25kNFV2elMwV2pycllCTFdXTkVQTUV0cGtJQW11Zi1vdEhhb1l5N2FFU2s2eXdjZ3dPUVZhbkhpY0JscE9wQWloM1dCVlc2c0dUeW5EdVhwdWJFVU1JdVJESDJLTWhwX2FLMFZSbzlB?oc=5",
+      "source": "イザ！",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T08:00:00+00:00"
+    },
+    {
+      "title": "広島大学スマートシティ共創コンソーシアムと連携した電動マイクロモビリティの実証事業Phase3を実施 - PR TIMES",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBYLXk5OFM4M0lGVkZ2WC1DaG5tWV9pUkxueFpyU1lFTGRpNGpvRVZLQ1M1TXZPYU1VQVFCN3N1dUtSUFQyZnU3bzdzX0o0RlAxWm1sVVlnRHhYNW1HWmpfM2RqdWFqV09hR2c?oc=5",
+      "source": "PR TIMES",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-12T05:51:34+00:00"
+    },
+    {
+      "title": "タイニン省は、同期化された現代的なスマートシティモデルを目指している。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPZTBnTjFZLTEwTGw2RXF6OVd6MFFaVWp0Yy1NSnBpN1lXWUVoazNHc2NHRjBRTDE0c0xUVVU5VlQtajRBbkF3UXRZcXdYcXVTbjlxdXhuTW1VMTRnZ2N3S0pFZXBOQWJucXZnN2JjWjRROFFPWVZmdk9vOVgzRjU2Ul92VGZHQmk4VnloY3NGbDQ?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T13:22:48+00:00"
+    },
+    {
+      "title": "【インフォグラフィック】2035年までの国家スマートシティ開発ビジョン - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPbk9PQ1NCY28wRU81VTBNREpLVzVCSzBoYjJoX1pmS0lQcnYwMkpsckpyZDgwekphQTAwZ2VLQTUyeXRjUmNiVER2TEJvR0pPYk1CZkRHN1R6ejNfZjg4RXZsc2V0SzNjQ3hlNmZBOUNDUU1FU0pEckZ2cnBHbU52OTVac3hhdEF1Z2pCQzQxbUhQWXJXcGc0d0drVmRuOUU?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T09:09:38+00:00"
+    },
+    {
+      "title": "AI時代のお客様の安心を、全社の学びと仕組みから。アライブ、AIガバナンスとセキュリティ教育を推進 - ニコニコニュース",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE4yb3c4bEJQZ3g1VHgtaUFMclJGZjBUOXBYTkZLWU1nYTF0Vi14cWdaSjhDYUJad2hJOEJRQ2NXbHVXSXp3SHhMNzdhdjFocHZVZmJudlFRcE1LSzB0NEtBUzZpQmJVYWRGY1BOUGNZWlNWa09WY2ZHUzQ2OA?oc=5",
+      "source": "ニコニコニュース",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-12T17:00:12+00:00"
+    },
+    {
+      "title": "タイは太陽光発電を推進し、スマートグリッド開発のための政策を整備している。 - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQb3IyZ3lFOUlIelMxR0haWEZENm9PY1BXY2J0LWpDX1BfSlVMMEVuSXpaTDVWcHVWUDN6X0JXOG9pRlZoTlRXQl9kT2N5NU5LS1hmbVZ0S2FRTGRibzNsWmpTWlZJaVlGNG5CZHktelNFWUYyUHJ2YUZybHY0akJSdjhPM1JFOGRMWjNUVkZLZjhJd3lPcnFPQjdFRjlvTHNwc2tXSExadjRDQmJPOWtBSA?oc=5",
+      "source": "Vietnam.vn",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T13:20:50+00:00"
+    },
+    {
+      "title": "『柏の葉街まるごとフェスティバル』11月22日（日）開催「挑戦と共創」をテーマに約15個のプログラムを街全体で開催 - ニコニコニュース",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5TZHZhaUdydDZ2WUJkUktwOGdmd2NkNXNrRzRsMVQ5VllHNXZCUGNZZnpqUjBoS0J1WFdOQ3ZTeWdWVDRpaWtOeVR0azY1ZWpsVlVNQ1dTZDhNOUdHb1A5NXpiTjdXRmxJbE5iOHlQWXhnRmRtY190TTQ5WQ?oc=5",
+      "source": "ニコニコニュース",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-16T07:45:23+00:00"
+    },
+    {
+      "title": "エーピーコミュニケーションズが提供するAIガバナンス支援サービスの魅力と特徴 - ニュースメディアVOIX",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9oTU9CQlRpY2ZGa2w5QTl1OEEwekdWR1F0ZE9fWEV3aEpTQkZjUmpTTlBERmM5OXRWcXZsQXkyX1dydDZXbk43N0duQU5jWTJiZGpkVUxNZjJaQ0k4cWF5ZV9XOUc2Q1Y1WWZ3?oc=5",
+      "source": "ニュースメディアVOIX",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T08:18:20+00:00"
+    },
+    {
+      "title": "アライブ、全社で取り組むAIガバナンスと情報セキュリティ教育の実施 - ニュースメディアVOIX",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE90U3FINm01eERsZ3BSbGg0aEhUaXJIblNKVGpVZS1lUVA3MGttaXh2VEJRVTNoc1p6VHBEVnVRVTVTN0pjZnRsNFlEYXVFUy0wQWFIQ1U2V1k4dkw0UDdMbEVxM1pOMFNBOHhOZjlZM1M5MmJ1MGRz?oc=5",
+      "source": "ニュースメディアVOIX",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T14:07:39+00:00"
+    },
+    {
+      "title": "フォーティエンスコンサルティングが提供開始するAIガバナンス診断サービスの全貌 - ニュースメディアVOIX",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5NdVhpWGY2ejVROHhmejhfUW0yNVFLSDNxQTBEQ1BLV3h5NEtGUE5BYTRuVlhGem9zR2lPaXFKY1EzYVVVV1FTQThvU0ZWa0dJRi14Q3l0R0xiVDZfSExfNmhCVFBZbjFNVldwTTFB?oc=5",
+      "source": "ニュースメディアVOIX",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T09:55:49+00:00"
+    },
+    {
+      "title": "Godot、持続可能な未来を目指す「KOBEスマートシティ推進コンソーシアム」に参加 - ニュースメディアVOIX",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5IQl9rZ0lZQVNWQU5LdC1DNnc3WnNXR1dzRW1sQnRtdWs2NEdNaWZMR01MUlJHemZpeFdOWTREM3Jxemtxa0g5TDg3NUJDU0dxcnhSNVUtRWNHRnZ3WlNfUG00SDJocVpYaEZZWGxiZHViUkdBNE5J?oc=5",
+      "source": "ニュースメディアVOIX",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-11T08:46:14+00:00"
+    },
+    {
+      "title": "フォーティエンス、AIガバナンス診断サービスを提供開始 - ライブドアニュース",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE01M05TNFdHUEluV0YzSVNPX3pwWm9iRXBfR3AwRGpqRkE3X1VvM2ZrcGY5Y01KX2NKU1o3cWNoQTJUMUx2VWM1eXBEV1BIMVVuUDJSUW41ZTdKNFExY05F?oc=5",
+      "source": "ライブドアニュース",
+      "category": "gov",
+      "region": "jp",
+      "verified": false,
+      "has_og_image": false,
+      "pub_date": "2026-11-11T08:04:28+00:00"
+    },
+    {
+      "title": "エーピーコミュニケーションズがAIガバナンスの導入・伴走支援を提供開始 - Dellows News",
+      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE5nZXJ4ejY1cU0tX0N0N0YyWG9yVjBvZ3I0RHpmdldDeHp0Vmx6SXRpelQ2S2lPTVQ5QWl1VmJUdkMwT095X2dv?oc=5",
+      "source": "Dellows News",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T04:00:00+00:00"
+    },
+    {
+      "title": "広島大学スマートシティ共創コンソーシアムと連携した電動マイクロモビリティの実証事業Phase3を実施 (2026年11月12日掲載) - ライブドアニュース",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBmOU0wdENxdldjSC1SbF9SWVEzV0ttV1FSY2JXS3NPQzlzYWRQdTdJaGYwRzVRcXBWcW9ILWx2QlFtQXh2Zk96WW5zU0xQUGZ3UzVMMUYwLWFqS1ZNYUEtSlJn?oc=5",
+      "source": "ライブドアニュース",
+      "category": "gov",
+      "region": "jp",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T05:51:34+00:00"
+    },
+    {
+      "title": "Maryland Data Academy Aims to Build State Workforce Skills",
+      "url": "https://www.govtech.com/workforce/maryland-data-academy-aims-to-build-state-workforce-skills",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T23:24:40+00:00"
+    },
+    {
+      "title": "New York State Seeks Input on New Digital Access Initiative",
+      "url": "https://www.govtech.com/gov-experience/new-york-state-seeks-input-on-new-digital-access-initiative",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T22:04:34+00:00"
+    },
+    {
+      "title": "Report: Cyber Criminal Use of AI Increasingly Sophisticated",
+      "url": "https://www.govtech.com/security/report-cyber-criminal-use-of-ai-increasingly-sophisticated",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T21:25:33+00:00"
+    },
+    {
+      "title": "5 Immediate Lessons From the Global Microsoft Outage",
+      "url": "https://www.govtech.com/blogs/lohrmann-on-cybersecurity/5-immediate-lessons-from-the-global-microsoft-outage",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-15T10:01:00+00:00"
+    },
+    {
+      "title": "Georgia AI Playbook Is a Starting Point for Cities, Counties",
+      "url": "https://www.govtech.com/artificial-intelligence/georgia-ai-playbook-is-a-starting-point-for-cities-counties",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T23:24:44+00:00"
+    },
+    {
+      "title": "Government Comms Move to Social Media Amid Microsoft Outage",
+      "url": "https://www.govtech.com/gov-experience/government-comms-move-to-social-media-amid-microsoft-outage",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T22:41:03+00:00"
+    },
+    {
+      "title": "Texas Lawmakers Will Consider Creating a Department of AI",
+      "url": "https://www.govtech.com/artificial-intelligence/texas-lawmakers-will-consider-creating-a-department-of-ai",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T18:53:18+00:00"
+    },
+    {
+      "title": "North Carolina Chatbot Offers Cybersecurity Help to Businesses",
+      "url": "https://www.govtech.com/security/north-carolina-chatbot-offers-cybersecurity-help-to-businesses",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T17:18:08+00:00"
+    },
+    {
+      "title": "Massachusetts Invests $3.3M to Find New Challenges for AI",
+      "url": "https://www.govtech.com/artificial-intelligence/massachusetts-invests-3-3m-to-find-new-challenges-for-ai",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T23:44:23+00:00"
+    },
+    {
+      "title": "What’s New in Digital Equity: Model for State Legislation",
+      "url": "https://www.govtech.com/network/whats-new-in-digital-equity-model-for-state-legislation",
+      "source": "GovTech",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T22:27:57+00:00"
+    },
+    {
+      "title": "Maryland launches Data Academy to strengthen state workforce’s data skills",
+      "url": "https://statescoop.com/maryland-launches-data-academy-to-strengthen-state-workforces-data-skills/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T19:36:04+00:00"
+    },
+    {
+      "title": "New York launches initiative to gather feedback to shape future of state ID portal",
+      "url": "https://statescoop.com/new-york-launches-initiative-to-gather-feedback-to-shape-future-of-state-id-portal/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-16T16:00:00+00:00"
+    },
+    {
+      "title": "Nevada names its first chief privacy officer",
+      "url": "https://statescoop.com/nevada-names-its-first-chief-privacy-officer/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-13T21:22:46+00:00"
+    },
+    {
+      "title": "New law adds satellite emergency alerts into federal warning system, but researchers question its impact",
+      "url": "https://statescoop.com/new-law-adds-satellite-emergency-alerts-into-federal-warning-system-but-researchers-question-its-impact/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": false,
+      "pub_date": "2026-11-13T21:21:15+00:00"
+    },
+    {
+      "title": "Georgia Technology Authority unveils AI playbook for state’s local governments",
+      "url": "https://statescoop.com/georgia-technology-authority-unveils-ai-playbook-for-states-local-governments/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T22:53:32+00:00"
+    },
+    {
+      "title": "NASCIO: States shouldn’t wait to start preparing for cyber risks posed by quantum computing",
+      "url": "https://statescoop.com/nascio-states-shouldnt-wait-to-start-preparing-for-cyber-risks-posed-by-quantum-computing/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T20:22:08+00:00"
+    },
+    {
+      "title": "Pennsylvania launches Medicare fraud e-hotline ahead of open enrollment",
+      "url": "https://statescoop.com/pennsylvania-launches-medicare-fraud-e-hotline-ahead-of-open-enrollment/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-12T20:20:42+00:00"
+    },
+    {
+      "title": "Illinois weighs broadband access against farmland property rights",
+      "url": "https://statescoop.com/illinois-weighs-broadband-access-against-farmland-property-rights/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T22:23:04+00:00"
+    },
+    {
+      "title": "States face data integration challenges as they prepare to verify Medicaid recipients’ education status under H.R. 1",
+      "url": "https://statescoop.com/states-face-data-integration-challenges-as-they-prepare-to-verify-medicaid-recipients-education-status-under-h-r-1/",
+      "source": "StateScoop",
+      "category": "gov",
+      "region": "insight",
+      "verified": true,
+      "has_og_image": true,
+      "pub_date": "2026-11-10T22:09:23+00:00"
+    }
+  ]
+}
