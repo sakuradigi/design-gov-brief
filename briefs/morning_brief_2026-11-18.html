@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從傳統工藝降維生活到數據治理實戰：當設計撕下神秘標籤、城市學會動態防禦 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-18</div>
+    <div class="headline">從傳統工藝降維生活到數據治理實戰：當設計撕下神秘標籤、城市學會動態防禦</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Good design is not an end in itself; it is the visible expression of an enlightened social and cultural attitude.</div>
+      <div class="quote-text-zh lang-zh-only">優秀的設計本身不是目的，而是一種開明社會與文化態度的具體顯現。</div>
+      <div class="quote-author">— Otl Aicher</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">傳產工藝降維轉型生活道具，黑手技術正在重塑日常美學。</li>
+        <li class="flash-item">智慧治理不再靠砸錢買軟體，公私共創生態才是永續解方。</li>
+        <li class="flash-item">生成式工具狂飆之下，金融與醫療的治理斷層正加速現形。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/729586.html" target="_blank" rel="noopener">黑手技術的優雅降維：汽車零件鋁壓鑄變身廚房生活道具</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">田井鐵工、新ブランド「Tai36」を発表。自動車部品のアルミダイカスト技術を包丁や家具へ展開</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/11/H_D1-004.jpg" alt="田井鐵工、新ブランド「Tai36」を発表。自動車部品のアルミダイカスト技術を包丁や家具へ展開" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當汽車產業供應鏈面臨轉型陣痛，田井鐵工把原本藏在引擎裡的超精細鋁壓鑄工藝，轉移到天天摸得到的菜刀手柄上。這不只是製造業找新出路，更是工業美學走進日常廚房的降維打擊。讀者能看到：傳產的真價值不是盲目追逐高科技，而是把扎實的底層硬功夫，重新包裝成現代人渴望的細緻手感與生活溫度。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Tai Tekko launched its new lifestyle brand Tai36, translating automotive aluminum die-casting craftsmanship into refined kitchen tools. Starting with an ergonomic knife handle, this initiative demonstrates how traditional industrial manufacturers can pivot by repurposing high-precision engineering into tactile, consumer-facing everyday objects. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/interview/bauhausmaruei-vw-1/" target="_blank" rel="noopener">在全數位時代，為什麼頂尖空間設計依然迷戀紙筆草圖？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">手描きから始まる空間デザイン。バウハウス丸栄が大切にする細やかなものづくり（1）</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/NISH1116-1.jpg" alt="手描きから始まる空間デザイン。バウハウス丸栄が大切にする細やかなものづくり（1）" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">空間設計工具早就全面軟體化，但巴ウハウス丸栄依然堅持從手繪塗鴉啟動概念。電腦向量圖給的是冰冷座標，人手筆觸留下的才是對動線、光影與人情溫度的第一直覺直覺。這提醒所有做設計的朋友：數位工具是幫你加速執行的催化劑，而不是創意的母胎；找回指尖畫在紙上的摩擦感，往往才是做出讓人想停留空間的靈魂所在。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Bauhaus Maruei highlights the synergy between traditional hand-drawn sketching and Vectorworks digital modeling in commercial spatial design. The firm proves that while advanced software ensures execution precision, the human warmth and intuitive nuances of initial hand drawings remain indispensable for crafting deeply engaging physical environments. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/xk-studio-timeline-navigation-web-design-bureau-cool/" target="_blank" rel="noopener">把網頁變成剪輯台！時間軸底片導航打破傳統捲動邏輯</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">XK Studio: Timeline Navigation Web Design by Bureau Cool</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_xk-studio-hover-states.jpg" alt="XK Studio: Timeline Navigation Web Design by Bureau Cool" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Bureau Cool 為動態工作室 XK Studio 打造的新官網，直接把剪輯軟體的時間軸與底片齒孔搬到底部，隨著滑鼠滑動無縫切換動態影片。這打破了過去十年網頁千篇一律的卡片排版，把瀏覽行為升格成一場親手刷影格的沉浸互動。做數位產品的人該反思：與其讓使用者機械式下滑，不如把介面工具化，讓造訪網站本身就像在把玩一件精巧的儀器。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Bureau Cool designed an unconventional website for motion practice XK Studio, integrating an interactive filmstrip timeline and playtime markers at the bottom. By syncing continuous video playback with dynamic scrubbing, the interface transforms passive web browsing into an intuitive, tactile editing room experience. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/estudio-caxa-unveils-outra-coisa-brand-identity/" target="_blank" rel="noopener">告別無聊性冷淡！熱帶調酒用荒謬塗鴉玩出反叛生命力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Estúdio Caxa Unveils Outra Coisa Brand Identity</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_1600_40.jpg" alt="Estúdio Caxa Unveils Outra Coisa Brand Identity" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">厭倦了近年罐裝調酒界氾濫的極簡文青風嗎？巴西工作室 Estúdio Caxa 替 Outra Coisa 打造的視覺，直接用歪歪扭扭的鉛筆線條、高飽和色彩與毫無道理的幽默感直球對決。這說明大眾品牌市場正在迎來美學疲勞的拐點：在演算法把一切算得太乾淨的時代，大膽擁抱不完美、粗糙但生猛的「荒謬感」，反而能瞬間抓住年輕人渴望宣洩的心。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Estúdio Caxa developed an exuberant brand identity for Brazilian mixed drink Outra Coisa, blending rum, mate, and pineapple with raw hand-drawn doodles and punchy colors. The visual system shuns minimalist industry conventions, embracing deliberate playful nonsense to capture a vibrant, authentic tropical energy. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/mother-design-reimagines-modern-wellness-branding-keen/" target="_blank" rel="noopener">撕掉江湖術士標籤：25歲算命老平台如何重塑身心靈生活風</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Mother Design Reimagines Modern Wellness Branding for Keen</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_keen-mother-design.jpg" alt="Mother Design Reimagines Modern Wellness Branding for Keen" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">靈媒占卜平台 Keen 走過四分之一個世紀，找來 Mother Design 徹底洗白。設計團隊抽乾了水晶球與紫袍神祕學的陳腐氣息，換上溫暖的幾何門戶符號與當代插畫，包裝成現代人都需要的「情緒健康與日常指引」。品牌治理的精髓莫過於此：當舊品類被刻板印象困住時，別急著換產品，換一套與主流生活風格對話的美學語彙，就能讓邊緣生意翻身進主流客廳。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Mother Design rebranded Keen, a 25-year-old psychic reading platform, transforming it into a modern emotional wellness service. Utilizing warm typography, soothing portal imagery, and contemporary editorial illustrations, the redesign successfully removes archaic occult stereotypes to position intuitive guidance as an accessible self-care practice. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFB3UnpMWHB5SW5WZGZtd2tCYnlrcmQ0YjBHVzM5VkRodjQxUUVvbXN5YjZIblU5N0YxOUpncGYxQ09yZzJ2VDFYQ0tvSEFnTkpqZWQ4?oc=5" target="_blank" rel="noopener">別再靠感覺畫紅線！桃園用AI打造動態防禦的交通治理戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">2026 桃園智慧城市論壇｜道安改善幅度六都第一！把桃園 AI 經驗推向全台 - 未來城市＠天下</div>
+            <div class="item-sentence lang-zh-only">桃園把道路安全改善幅度推上六都第一，靠的不是口號，而是把事故熱點、號誌動態與車流特徵交給 AI 演算，化被動取締為主動干預。這標誌著地方治理正在走出「哪裡出事補哪裡」的落後循環，邁入預警式公共設計。未來的智慧城市不再是買幾面華麗儀表板的大拜拜，而是讓演算邏輯深入街道神經，實實在在救下每一條人命。 <span class="src">— 未來城市＠天下</span></div>
+            <div class="item-sentence-en lang-en-only">Taoyuan City leveraged AI-driven video analytics and predictive signaling to achieve the largest traffic safety improvement among Taiwan&#x27;s special municipalities. Presented at the 2026 Smart City Forum, this case illustrates how algorithmic interventions can replace reactive infrastructure fixes to deliver dynamic, evidence-based urban public safety. <span class="src">— 未來城市＠天下</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxOek81VFo2TnZGb0ktdi1FT2V3UF9LcWJqbTAzWmE4ZUFIZGhfMDdPRXhzQjUyRU5VYmpWMFdjMGNVZVY0QmVXU293S2QwSlNrLWxjcVFma0E5aVV0em5FODRYdWVWd2ZpVWhqZ2RPSk5yUEtSWUxCX2xFblllQktROHhtdTd3R2UtQ01JQWJWWTRMMVNjdDZidmhvTlROSWYyQXFnb1c5bHJiVmUwWl9CWW9ZQzJ4ckJ2QVY5b19LZGdPamlPanc?oc=5" target="_blank" rel="noopener">金融機構AI跑得太快，安大略證委會重話點出問責防護網斷層</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Ontario Securities Commission flags AI governance gaps among registered firms - Lexpert</div>
+            <div class="item-sentence lang-zh-only">加拿大安大略證券委員會對註冊金融機構發出警告：大家導入生成式 AI 算投報、寫報告超積極，內部治理與稽核機制卻全在原地踏步。這敲響了金融創新的警鐘，技術上馬如果沒有透明度與偏見防護，演算法出包就是骨牌效應。對所有決策者來說，導入科技從來不是買了授權就好，沒有建好內部防火牆與決策鏈，AI 就只是隨時引爆的合規地雷。 <span class="src">— Lexpert</span></div>
+            <div class="item-sentence-en lang-en-only">The Ontario Securities Commission identified critical AI governance gaps across registered financial firms, warning of unchecked model risks, algorithmic bias, and inadequate oversight frameworks. Regulators emphasize that financial institutions must balance rapid automated technology adoption with robust internal controls and clear accountability mechanisms. <span class="src">— Lexpert</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxObTEyZ1AyVGJtZFZHQWxfdHdEZUlJWDFWbUhrQlprNFlLeHpUeC1MUFRBNzM4VjA2SUZaZjB0WHJNRFBjOGpNcXhiSWdZaWJCcXJrejhFcXhtMEk0Tlp6U2ZtcEpRR1lTSF92WGhGcXQ4V2lfVGxNRlROQ0gtOFp2SkVhbUlaME1HVnQxX1laOHd2eUxlcFBDaHJHbUFOWGZldFFjSkdn?oc=5" target="_blank" rel="noopener">病患隱私面臨暗礁：智利醫療AI在現行法規下的無形漏洞</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Chilean Healthcare AI Governance Faces Gaps Despite Existing Legal Protections - Bioengineer.org</div>
+            <div class="item-sentence lang-zh-only">智利最新研究指出，現行法規即便看似保護隱私，卻完全擋不住醫療 AI 演算法帶來的資料濫用與隱性偏見風險。醫療治理最危險的盲點就是「以為有舊法管就安全」，卻忽略了機器學習的不透明性。這對各國公衛治理是記重擊：如果不從演算法黑盒子的架構層面重新立法，智慧醫療帶來的可能不是救命效率，而是難以彌補的社會不平等與倫理災難。 <span class="src">— Bioengineer.org</span></div>
+            <div class="item-sentence-en lang-en-only">A critical assessment of Chilean healthcare AI governance revealed significant gaps despite existing privacy statutes. The findings indicate that legacy regulatory frameworks fail to address algorithmic bias, automated diagnostic accountability, and medical data exploitation, underscoring the urgent need for specialized AI safety policies. <span class="src">— Bioengineer.org</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE5tV3Nuakh3VjZzc1JCRnlTdnpUMkdRTUhCWURpeEd2eXYtbHRPTFJLU2NLRzVmMUx6NnJsV2NxZDRfMGFlbE9jUC1peC1BTUpNeDBKWldvSTcwQWdOclJ3?oc=5" target="_blank" rel="noopener">不花一毛顧問費？會津若松打破外包迷思的15年智慧城共創</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">【直撃】｢コンサル料は1円も払ってない｣…会津若松市長が明かす､アクセンチュアと歩んだスマートシティ15年の真実 - 東洋経済オンライン</div>
+            <div class="item-sentence lang-zh-only">會津若松市長大方坦承與 Accenture 合作 15 年沒付過半毛顧問費，震驚地方官場。這不是吃霸王餐，而是把城市當作真實實驗場，讓科技巨頭帶資源來共創、共享數據效益與衍生專利。台灣與全球公部門最常踩的坑就是花大錢買一堆用幾年就爛掉的系統；唯有把甲乙方關係扭轉成休戚與共的生態夥伴，智慧治理才能走得長長久久。 <span class="src">— 東洋経済オンライン</span></div>
+            <div class="item-sentence-en lang-en-only">The Mayor of Aizuwakamatsu revealed that the city paid zero consulting fees during its 15-year smart city partnership with Accenture. Instead of traditional outsourcing, the municipality offered a live urban testbed, establishing a collaborative ecosystem where public infrastructure and private innovation co-create lasting digital public services. <span class="src">— 東洋経済オンライン</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/workforce/honolulu-names-new-cdo-head-of-data-and-innovation" target="_blank" rel="noopener">島嶼政府全面現代化：檀香山設資料創新長，喚醒沉睡公部門數據</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Honolulu Names New CDO, Head of Data and Innovation</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/c25d388/2147483647/strip/true/crop/5423x2636+0+494/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F2d%2F4b%2Fffa3f62b4567a87ca6af5943b23e%2Fadobestock-439770870.jpeg" alt="Honolulu Names New CDO, Head of Data and Innovation" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">夏威夷檀香山正式設立「數據與創新辦公室」，並指派首位數位創新長 Kuroiwa，宣告島嶼治理進入數據導向時代。公部門最大的痛點往往不是缺乏資源，而是各局處各自為政的數據孤島，讓便民服務動輒卡關。成立跨部門專責大腦，代表市政不再憑長官拍腦袋做決策，而是用清晰的資料流暢通公共服務，展現小巧而敏捷的現代政府樣貌。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">The City and County of Honolulu appointed Jared Kuroiwa as Chief Data Officer to lead its newly established Office of Data and Innovation. This strategic leadership move aims to dismantle bureaucratic data silos, enabling agile, data-driven municipal operations and improved public service delivery for island residents. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-18 08:04:17 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
