@@ -29,7 +29,7 @@
 
 ## 🏗️ 運作架構 (Architecture)
 
-1. **GitHub Actions (`daily_brief.yml`)**：每日早上 8:00 (台北時間) 自動觸發。
+1. **GitHub Actions (`daily_brief.yml`)**：每日早上 8:00 (台北時間) 觸發，距上期滿 2 天才出報（隔日出；可用 repo Variable `INTERVAL_DAYS` 調整，手動 Run workflow 一律照跑）。
 2. **Python 爬蟲 (`generate_daily_brief.py`)**：拉取 RSS 進行過濾、配額與 HTTP 200 檢查，並擷取各文章的 `og:image` 縮圖。
 3. **LLM 洞見萃取**：透過 Gemini API 解析文章，產出大標題、快訊與各篇文章的深度中英雙語洞見。
 4. **HTML 渲染與靜態生成**：將結果套用美觀的版型，寫入 `briefs/` 並同步更新 `index.html` 首頁歸檔卡片。

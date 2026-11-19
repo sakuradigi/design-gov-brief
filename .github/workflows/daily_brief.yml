@@ -10,7 +10,7 @@ on:
       - 'index.html'
       - 'README.md'
   schedule:
-    - cron: '0 0 * * *'  # 每天 UTC 0:00 (台北 08:00) 執行
+    - cron: '0 0 * * *'  # 每天 UTC 0:00 (台北 08:00) 觸發；是否真的出報由下方 Cadence check 決定
   repository_dispatch:
     types: [run-daily-brief]
   workflow_dispatch:
@@ -24,23 +24,49 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 出報節奏：距上期滿 INTERVAL_DAYS 天才出（預設 2＝隔日出）；未到期整個 job 綠燈跳過。
+      # 手動 Run workflow 一律照跑（方便補報/測試）。想改回每天：Settings → Variables 新增 INTERVAL_DAYS=1
+      - name: Cadence check（隔日出報）
+        id: guard
+        env:
+          INTERVAL_DAYS: ${{ vars.INTERVAL_DAYS || '2' }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import datetime, glob, os, re, sys
+          tz = datetime.timezone(datetime.timedelta(hours=8))
+          today = datetime.datetime.now(tz).date()
+          dates = sorted(re.findall(r"\d{4}-\d{2}-\d{2}", " ".join(glob.glob("briefs/morning_brief_*.html"))))
+          latest = datetime.date.fromisoformat(dates[-1]) if dates else None
+          gap = (today - latest).days if latest else 999
+          interval = int(os.environ["INTERVAL_DAYS"])
+          manual = os.environ["EVENT"] == "workflow_dispatch"
+          run = manual or gap >= interval
+          print(f"今天 {today}，上期 {latest}（相隔 {gap} 天，間隔 {interval}，手動={manual}）→ {'出報' if run else '跳過'}", file=sys.stderr)
+          print(f"skip={'false' if run else 'true'}")
+          EOF
+
       - name: Set up Python
+        if: steps.guard.outputs.skip == 'false'
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Install dependencies
+        if: steps.guard.outputs.skip == 'false'
         run: |
           python -m pip install --upgrade pip
           pip install requests google-generativeai
 
       - name: Run Daily Brief Generator
+        if: steps.guard.outputs.skip == 'false'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python generate_daily_brief.py
 
       - name: Commit and Push changes
+        if: steps.guard.outputs.skip == 'false'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
