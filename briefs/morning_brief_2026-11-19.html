@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從跨國鐵道重塑到AI寧靜界面：空間美學、演算法風險與地方數位韌性的共振日常 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-19</div>
+    <div class="headline">從跨國鐵道重塑到AI寧靜界面：空間美學、演算法風險與地方數位韌性的共振日常</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Architecture is not just about building spaces, but about inventing relationships between people and their living environment.</div>
+      <div class="quote-text-zh lang-zh-only">建築不只是建造空間，更是在為人與其所處的生活環境發明新的連結關係。</div>
+      <div class="quote-author">— Tatiana Bilbao</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">日本策展借老屋喚醒街區，設計不再只是擺盤而是城市再生的關鍵槓桿。</li>
+        <li class="flash-item">從炫技轉向降噪，AI 產品界面吹起「寧靜哲學」與東方庭園留白風潮。</li>
+        <li class="flash-item">智慧治理直面演算法死角，從離島數位韌性到聯邦資安預警全面進入深水區。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/maaf-2026/" target="_blank" rel="noopener">跳脫白盒子展場：松本建築藝術祭用老屋活化翻轉地方創生想像</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">マツモト建築芸術祭 2026 advance</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/10/1ab8df4282d67926ecd39cab91e9ca4e.jpg" alt="マツモト建築芸術祭 2026 advance" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">松本建築藝術祭今年將 19 處散落市區的近代建築化為展場，這不僅是一場展覽，更是地方策展的教科書示範。過去地方創生常陷入「為觀光而造景」的空洞套路，但這場活動直接借力歷史老屋的空間記憶，讓當代藝術與常民生活街景自然對話。對設計師與城市規劃者來說，最大的啟發在於：與其花大錢蓋蚊子館，不如盤點現有空間紋理，用輕量、精準的藝術介入，就能激發市民對地方認同的深度共鳴。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Matsumoto Architecture Art Festival 2026 advance activates 19 heritage venues across Matsumoto City, demonstrating how lightweight artistic curation breathes new vitality into historic architecture and inspires community-centric urban regeneration. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/731390.html" target="_blank" rel="noopener">超越消費主義的共鳴：DESIGNART TOKYO 用永續工藝重構生活美學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">「DESIGNART TOKYO 2026」レポート。 今年のテーマは響き続けるものづくり「Hibiki」</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/11/AUTOBAHN-_-KK-Line-1.jpg" alt="「DESIGNART TOKYO 2026」レポート。 今年のテーマは響き続けるものづくり「Hibiki」" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">邁入第十屆的 DESIGNART TOKYO 以「響 (Hibiki)」為題，串聯東京 70 個跨界場域。當全球設計界都在反思過度生產與消費時，日本設計師們正透過材質研究與跨域對話，尋找能「在時間裡持續迴響」的器物本質。這提醒了所有創作者，未來的品牌溢價不再來自光鮮亮麗的短期視覺衝擊，而是物件能否在材質、循環利用與文化脈絡中，找到讓人願意長久珍藏的價值感。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">Celebrating its 10th edition with the theme &#x27;Hibiki&#x27;, DESIGNART TOKYO 2026 integrates craft, interior, and art across 70 venues, urging designers to build emotional resonance and long-term sustainability rather than pursuing transient consumer trends. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/designstudios-cross-border-brand-identity-eurostar/" target="_blank" rel="noopener">兩大鐵道巨頭合體：Eurostar 重塑跨國移動品牌的視覺整合學</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">DesignStudio’s Cross-Border Brand Identity for Eurostar</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_eurostar-uniting-rail-giants-bold-new-brand-design-studio.jpg" alt="DesignStudio’s Cross-Border Brand Identity for Eurostar" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當歐洲兩大高鐵品牌 Eurostar 與 Thalys 整合，DesignStudio 透過重塑六角星標誌與定制字體，俐落化解跨文化併購常有的品牌混亂。這套識別之所以高明，在於它既保留了歷史積累的信任感，又注入跨國穿梭的現代流暢節奏。它告訴我們：品牌重塑不是單純換套 Logo，而是為跨越地域、語言與組織文化的龐大實體，梳理出直覺且充滿情感黏性的共同體驗。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">DesignStudio unified rail giants Eurostar and Thalys with an agile visual identity anchored by a refreshed star mark and bespoke typography, proving that brand mergers require an intuitive bridge across borders and organizational cultures. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/parniera-brand-identity-inside-igor-noras-sculpted-system/" target="_blank" rel="noopener">絲綢金屬的柔韌對比：Parniera 奢華識別如何用衝突感講故事</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Parniera Brand Identity: Inside Igor Nora&#x27;s Sculpted System</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_1600_42.jpg" alt="Parniera Brand Identity: Inside Igor Nora&#x27;s Sculpted System" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">設計師 Igor Nora 為精品品牌 Parniera 打造的「雕塑二元性」視覺系統，大膽將蠶絲的纖細與鍛造黃金的剛硬放在同一維度對比。很多時候高端品牌往往落入極簡或無聊的陳腔濫調，但這個案例示範了如何透過材質意象的極端衝突，在標誌與字體細節裡提煉出品牌張力。對於做品牌體驗的人來說，尋找矛盾並在設計中達成平衡，往往就是創造獨特品牌記憶點的秘密武器。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Igor Nora&#x27;s brand identity for Parniera marries the fragility of silk with the permanence of sculpted gold, showcasing how contrasting sensory textures can craft an unforgettable, multi-layered luxury narrative. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/fractional-calm-ai-product-uiux-design-mano-mano/" target="_blank" rel="noopener">拒絕科技焦慮：Fractional 用日式禪意替複雜 AI 工具減法降噪</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Fractional: Calm AI Product UI/UX Design by Mano a Mano</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_fractional-mano-mano.jpg" alt="Fractional: Calm AI Product UI/UX Design by Mano a Mano" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">當多數 AI 工具介面塞滿炫目的儀表板與密密麻麻的生成進度條時，Mano a Mano 為 Fractional 打造的介面卻反其道而行，引進枯山水網格與溫潤的襯線體，帶來難得的寧靜感。這指出了下一個階段 AI 產品體驗的核心趨勢：在演算法能力大幅同質化的今天，「降低使用者的認知負荷」比「炫耀算力」更具競爭力。能幫人找回專注與平靜的介面，才是真正高段的體驗設計。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Mano a Mano crafts a calm UI/UX design for AI platform Fractional using Zen garden-inspired grids and serif typography, demonstrating that reducing cognitive fatigue is the definitive competitive edge for next-generation digital tools. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiR0FVX3lxTE0wTFVjWU5qR2dMMEtzaVlfRnZtd0hZaTRqeDhuX0Z0ZDVfR09TVWZqOVMyZXFKODNxU1BGTS1tZmROcnpGcmg0?oc=5" target="_blank" rel="noopener">邊陲海島的逆襲：馬祖端出 21 億數位藍圖如何重新定義離島治理</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">王忠銘火力全開！反擊政策質疑、端出21億元「韌性智慧島嶼」藍圖 從人才培育到AI治理，強調馬祖不能走回頭路！ - 台灣新聞雲</div>
+            <div class="item-sentence lang-zh-only">馬祖提出 21 億元的「韌性智慧島嶼」計畫，企圖將離島從被動接受資源的弱勢角色，轉型為 AI 治理與數位韌性的實驗場。傳統偏鄉政策往往只停留在硬體修補，但連江縣直面人才外流與地理孤立，試圖借力演算法與科技基建建立自給自足的治理能量。這啟發了所有地方首長：面對極端氣候與地緣政治挑戰，小巧的地方政府若敢於前瞻佈局智慧基礎，反而能把地理劣勢扭轉為敏捷創新的試點優勢。 <span class="src">— 台灣新聞雲</span></div>
+            <div class="item-sentence-en lang-en-only">Matsu&#x27;s announcement of a NT$2.1 billion resilient smart island blueprint showcases how geographically vulnerable territories can transform geopolitical and logistical constraints into opportunities through agile AI governance and infrastructure. <span class="src">— 台灣新聞雲</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQVFB6NVV1eFdQVGRyYXZhRUJQWHFDM21nZndoekJXcktCakQ0bWRyQjJucHd3R3BPNHdRVHQyWmlhbGFPVFhvYUY1c1NEOGVnRTBuU3hDWVlrOVAtbjM0dXBQRUJSNmV5ZGhiNDYyOENFRW1UbjlKRjZuX1pWRlB5TVZRb2wwSXMwdFhDSjlR?oc=5" target="_blank" rel="noopener">自動化不是免死金牌：美聯邦政府拉響 AI 黑盒子與資安治理警報</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Feds Warns of Cybersecurity and AI Governance Risks - BankInfoSecurity</div>
+            <div class="item-sentence lang-zh-only">美國聯邦監管機構針對 AI 工具快速普及帶來的資安漏洞發出嚴厲預警，痛陳許多機構在享受自動化紅利時，根本沒算清演算法失控與資料外洩的隱形成本。這提醒我們：AI 導入不該只是追求效率的軍備競賽。如果組織治理沒有跟上，每一次未經檢驗的智慧化流程，本質上都是在替未來的系統性潰敗埋下地雷。回歸審慎的防護架構，已是所有擁抱 AI 組織的必修課。 <span class="src">— BankInfoSecurity</span></div>
+            <div class="item-sentence-en lang-en-only">Federal regulators issued stark warnings regarding cybersecurity and algorithmic vulnerabilities, signaling that institutional AI adoption must prioritize systemic oversight and risk resilience over blind operational speed. <span class="src">— BankInfoSecurity</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQVFB6NVV1eFdQVGRyYXZhRUJQWHFDM21nZndoekJXcktCakQ0bWRyQjJucHd3R3BPNHdRVHQyWmlhbGFPVFhvYUY1c1NEOGVnRTBuU3hDWVlrOVAtbjM0dXBQRUJSNmV5ZGhiNDYyOENFRW1UbjlKRjZuX1pWRlB5TVZRb2wwSXMwdFhDSjlR?oc=5" target="_blank" rel="noopener">看不見的幽靈漏洞：金融機構為何必須重構 AI 風險防禦底線</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Feds Warns of Cybersecurity and AI Governance Risks - BankInfoSecurity</div>
+            <div class="item-sentence lang-zh-only">在金融與關鍵基礎設施高度仰賴機器學習的當下，監管機構再度聚焦 AI 帶來的連鎖資安衝擊。這場預警背後的深層意涵在於：當攻擊者也開始用 AI 尋找攻擊面，傳統靜態的安全防護早已失效。現代治理者必須明白，防禦體系必須是動態進化的，把透明度與邊界防守嵌入演算法生命週期的每一步，才能在演算法風險爆發時擁有足夠的應變底氣。 <span class="src">— BankInfoSecurity</span></div>
+            <div class="item-sentence-en lang-en-only">Mounting cybersecurity concerns in financial sectors highlight that conventional defenses are obsolete against machine-speed threats, demanding dynamic, embedded AI governance throughout every operational layer. <span class="src">— BankInfoSecurity</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPUkpSSUtSQzZQVlpaRUJXblBHZHRySzRCbEQ2d3JQdW5mQnl3ZnBZTG5SdnZUSEdDdU9aUFdzWDV6d2haaW5LcGdDNXo3Qy1tdEg0SjdwSTE1VkhGa1RBemY0M0N0bjdPRnFtZ0U1bGQwdlhkazhsUTF6NXFDQ3FHa1RB?oc=5" target="_blank" rel="noopener">告別一次性稽核：OneTrust 動態模型監控揭示 AI 治理新標準</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">OneTrust、モデルインテリジェンスと継続的な監視によりAIガバナンスを拡充 - Unite.AI</div>
+            <div class="item-sentence lang-zh-only">OneTrust 宣布擴充其 AI 治理平台，透過模型智慧與持續性監控，顛覆過去「上線前檢查一次就交差」的傳統合規思維。這項技術演進意味著：演算法偏見、資料飄移與隱私外洩不是靜態問題，而是會隨著時間演化的動態風險。這給企業經營者的啟示很直接：治理工具必須軟體化、即時化，只有把持續監測內建到研發管線裡，企業才能在日趨嚴苛的法規浪潮下從容應對。 <span class="src">— Unite.AI</span></div>
+            <div class="item-sentence-en lang-en-only">OneTrust expanded its governance suite with model intelligence and continuous monitoring, establishing that AI compliance must evolve from static paperwork into automated, real-time lifecycle tracking. <span class="src">— Unite.AI</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/workforce/tennessee-secretary-of-state-finds-a-tech-leader-in-indiana" target="_blank" rel="noopener">搶奪技術將才：美國州政府跨州獵才背後的公部門數位轉型戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Tennessee Secretary of State Finds a Tech Leader in Indiana</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/078aa7f/2147483647/strip/true/crop/410x199+0+122/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F22%2F1d%2F355967994b27a2c23bd796591376%2Ftop25-2026-sm-fulk.jpg" alt="Tennessee Secretary of State Finds a Tech Leader in Indiana" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">田納西州州務卿延攬印第安納州的技術創新舵手 Robert Fulk 擔任數位技術領袖，反映出公部門對頂尖科技專才的渴求已升級為州際競爭。過去公務體系常因薪資與文化僵化留不住人，但隨著民眾對智慧便民服務的期待飆升，政府部門開始不計代價引進實戰派跨界人才。這說明了數位轉型說到底就是人才戰，沒有懂科技語言又通曉公共行政的橋樑型舵手，再華麗的智慧藍圖也只是空中樓閣。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Tennessee&#x27;s recruitment of Indiana&#x27;s tech innovation leader Robert Fulk illustrates the intensifying battle within the public sector to secure cross-disciplinary tech leadership capable of driving meaningful administrative modernization. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-19 08:03:53 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
