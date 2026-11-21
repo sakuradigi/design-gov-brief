@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從跨界視覺實驗到公部門科技治理：設計與數位主權的雙軌革新 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-21</div>
+    <div class="headline">從跨界視覺實驗到公部門科技治理：設計與數位主權的雙軌革新</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is not destiny; it is the terrain upon which the social choices of a generation are played out.</div>
+      <div class="quote-text-zh lang-zh-only">科技絕非宿命；它是同代人展現社會抉擇的實踐場域。</div>
+      <div class="quote-author">— Langdon Winner</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">非營利與重工業品牌不約而同用動態視覺重塑數位時代的親和力與專業感。</li>
+        <li class="flash-item">美國加州與肯塔基加速推進 AI 防護與零信任架構，資安治理正式升格核心戰略。</li>
+        <li class="flash-item">數位公共服務迎來爆發期，政府開始搶攻工程與產品人才以擺脫官僚遲鈍。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/11/91158/" target="_blank" rel="noopener">降噪耳機不再只是配件，更是數位創作者必備的「心理防護罩」</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">クリエイティブワークに没入できる静寂空間を実現。オーディオテクニカが新型イヤホン「ATH-TWX9MK3」を発売</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/11/audio.jpg" alt="クリエイティブワークに没入できる静寂空間を実現。オーディオテクニカが新型イヤホン「ATH-TWX9MK3」を発売" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">鐵三角推出頂級降噪耳機 ATH-TWX9MK3，表面上是常規的硬體升級，背後卻反映了遠距與自由工作者對「專注力經濟」的深度焦慮。當居家與咖啡廳成為常態工坊，外在聲音干擾成了創意的最大殺手。耳機設計的典範已經轉移：它不再只是追求發燒級音質的玩具，而是幫知識工作者在混亂世界中快速劃出「心流邊界」的生產力儀器。硬體的美感與被動聲學整合，正是讓人在幾秒內進入沉浸狀態的關鍵所在。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">Audio-Technica launched the ATH-TWX9MK3 flagship wireless earbuds, engineered specifically for immersive remote creative work. Featuring enhanced noise cancellation and ergonomic dual-color aesthetics, the release demonstrates how audio peripherals are shifting from pure listening entertainment to essential productivity infrastructure that safeguards deep focus in distracting modern workspaces. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/732072.html" target="_blank" rel="noopener">當百年前的曼·雷打破媒材邊界，給當代跨界創作者上了寶貴的一課</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">KOTARO NUKAGAでマン・レイ個展「Man Ray: Light and Matter」。写真、絵画、ドローイング15点から、メディアを越えた実験をたどる</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/11/MR_013_c.jpg" alt="KOTARO NUKAGAでマン・レイ個展「Man Ray: Light and Matter」。写真、絵画、ドローイング15点から、メディアを越えた実験をたどる" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">六本木這場曼·雷（Man Ray）特展把攝影、繪畫和素描放在同一個維度審視，提醒了我們一件重要的事：真正偉大的創意從來不該被工具定義。曼·雷當年在暗房裡「玩光」玩出超現實主義新風貌，對比今天大家被各種生成式 AI 框架綁住的焦慮，簡直是一記當頭棒喝。這告訴現代設計師，技術只是顯影液，最重要的永遠是你如何突破既有媒材的語彙，去挖掘物質與光影背後那層沒人看過的詩意。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">KOTARO NUKAGA presents &#x27;Man Ray: Light and Matter&#x27; in Tokyo, exhibiting 15 experimental works across photography, painting, and drawing. The exhibition serves as a profound reminder for modern creators that artistic innovation relies not on technological fidelity, but on transcending medium constraints to redefine perception through light, form, and material experimentation. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/helloasso-civic-non-profit-brand-identity-bruno/" target="_blank" rel="noopener">捨棄假掰文青風！非營利組織用大膽字體與素人肖像找回公民溫度</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">HelloAsso: Civic Non-Profit Brand Identity by Bruno</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_bruno-s-helloasso-identity-follows-france-s-brand-identity.jpg" alt="HelloAsso: Civic Non-Profit Brand Identity by Bruno" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">法國設計團隊 Bruno 替非營利平台 HelloAsso 打造的全新識別超有啟發性。過去大眾對公益倡議的視覺印象往往是軟性、無害甚至略帶土味，但這次他們反其道而行，換上硬派的 Franklin Gothic 字體和不修圖的真實成員肖像。這代表當代公民科技品牌的成熟：它不再靠乞求同情來吸引眼球，而是用自信、街頭感且具高易讀性的視覺語言，證明做公共服務也能俐落、有骨氣且深具群眾力量。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">French design agency Bruno rebranded civic non-profit platform HelloAsso using unpolished member portraits, bold pictograms, and Franklin Gothic typography. The new visual identity shifts civic platforms away from generic corporate softness toward an authentic, community-driven aesthetic that commands cultural confidence and civic participation. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/mutabor-unveils-voith-brand-identity/" target="_blank" rel="noopener">百年傳統重工業的動態化轉身：單一箭頭如何撐起現代螢幕宇宙？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Mutabor Unveils the Voith brand identity</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_1600_48.jpg" alt="Mutabor Unveils the Voith brand identity" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">德國設計名所 Mutabor 替跨國工程巨頭 Voith 操刀的新識別，展現了傳統 B2B 品牌面對數位化轉型的標準教科書打法。只靠一個具速度感的「V 向量」符號搭配客製字體與螢幕專用藍色，就讓笨重的重工業機械瞬間俐落起來。這對很多陷入包袱的傳產品牌是個好警訊：別再把企業歷史當成視覺贅肉，萃取最具象徵性的動態幾何，才能在數位載體上傳遞出前瞻與敏捷的科技自信。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Mutabor redesigned the corporate identity for German engineering giant Voith, anchoring the entire system on a dynamic &#x27;V-Vector&#x27; chevron, a custom typeface, and digital-first blues. The project demonstrates how heavy-industry legacy brands can achieve visual agility and contemporary authority through geometric precision and screen-native design languages. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/web-design-petrillo-studios-interactive-chronometer/" target="_blank" rel="noopener">跳脫平庸排版模板：把個人作品集變成能動手把玩的精密計時儀器</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Web Design: Petrillo Studio’s Interactive Chronometer</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_petrillo-studio-minimal-gallery-minimal-gallery.jpg" alt="Web Design: Petrillo Studio’s Interactive Chronometer" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">設計師 Arthur Petrillo 將個人官網首頁直接做成一座互動碼表，四個角落鎖住巨大數字，指針還能讓訪客隨意拖曳。在模板化網頁滿街跑的今天，這種充滿機械玩具感與極致版面張力的設計，給了數位介面一種罕見的「實體觸感」。這件事的重要性在於：數位體驗不該只有無聊的滑動與點擊，透過重新解構「時間」與「儀表板」的概念，網頁能從冷冰冰的資訊容器，昇華成讓用戶嘴角上揚的探索遊樂場。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Arthur Petrillo’s portfolio site transforms the landing experience into an interactive red chronometer featuring draggable clock hands and oversized numerical anchors. This tactile web experiment breaks away from generic scrolling patterns, illustrating how playful mechanical metaphors can inject curiosity, delight, and memorable craftsmanship into modern web interactions. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/biz/nava-notches-major-growth-makes-leadership-changes" target="_blank" rel="noopener">數位公共服務不再是做功德！公益科技巨頭架構重組背後的轉型野心</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Nava Notches Major Growth, Makes Leadership Changes</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/fb4681d/2147483647/strip/true/crop/1500x729+0+54/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2Fce%2F36%2F19c9084041d49f32f71641e995bc%2Fadobestock-2169656816.jpeg" alt="Nava Notches Major Growth, Makes Leadership Changes" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">專注於美國公共服務數位化的公共利益公司 Nava 兩年內規模翻倍，並設立了技術運營長與策略長等新架構。這透露出一個強烈訊號：打造好用的政府系統已經脫離了「志工打帶跑」的草創階段，進入具備大規模交付能力的現代化軟體企業規模。當民眾對公共福利申請系統的期待已經逼近一般商用 App 時，這類公共科技團隊唯有建立成熟的組織陣型，才能持續接下龐大的數位政府外包案，徹底取代笨重的老牌承包商。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Public benefit corporation Nava restructured its executive leadership following rapid growth, creating a dedicated CTOO role and transitioning co-founder Sha Hwang to Chief Strategy Officer. The shift highlights how civic tech consultancies are maturing into resilient, enterprise-scale organizations capable of modernizing critical public service infrastructure efficiently. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/artificial-intelligence/california-governor-asks-legislature-to-expand-ai-safeguards" target="_blank" rel="noopener">加州州長催生新法：AI 監管不再是紙上談兵，而是與風險賽跑的實戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">California Governor Asks Legislature to Expand AI Safeguards</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/8163aac/2147483647/strip/true/crop/5184x2520+0+468/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F17%2Ff0%2Fc24d34524d4298d437906c2c8959%2Fadobestock-56800179-min.jpeg" alt="California Governor Asks Legislature to Expand AI Safeguards" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">加州州長紐森要求立法機構擴大對人工智慧的安全防護框架，這背後代表了地方政府對生成式科技失控風險的真實焦慮。過去矽谷信奉「快速行動、打破常規」，但如今當深度偽造、自動化偏見甚至基礎設施威脅迫在眉睫，政府無法再慢條斯理等聯邦法規。加州作為科技心臟，它的立法動作往往會成為全球標準的起點。如何在不扼殺創新活力的同時立下防護圍欄，將是所有治理者接下來最重要的考驗。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">California Governor Gavin Newsom urged state lawmakers to expand AI safety frameworks following acute assessments from the Government Operations Agency. As local and state authorities face rapidly evolving algorithmic threats, California&#x27;s decisive regulatory movement continues to establish influential blueprints balancing innovation safeguards and public trust. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://statescoop.com/new-government-leaders-urged-to-prioritize-tech-talent-as-ai-modernization-reshape-public-services/" target="_blank" rel="noopener">政府老是做出難用系統？關鍵根本不在買軟體，而在搶頂尖產品人才</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">New government leaders urged to prioritize tech talent as AI, modernization reshape public services</div>
+            <img class="item-image" src="https://statescoop.com/wp-content/uploads/sites/6/2023/07/GettyImages-56731993-1.jpg" alt="New government leaders urged to prioritize tech talent as AI, modernization reshape public services" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">科技專家呼籲新任政府領導者必須將攬才重心轉向工程、數據與產品專家，這點破了長期以來公共數位治理的盲點。許多官僚總以為買套新的雲端系統就能完成現代化，卻忘了如果沒有懂產品思維的人留在體制內監督與迭代，最後只會換來另一堆昂貴的數位垃圾。現代政府若想跟上 AI 浪潮，最重要的不是發包預算，而是改革僵化的公務員晉用體制，把真正會寫扣、會做使用者研究的專家請進核心決策圈。 <span class="src">— StateScoop</span></div>
+            <div class="item-sentence-en lang-en-only">Experts are urging newly elected government officials to prioritize technical talent over bureaucratic outsourcing, emphasizing in-house software engineering, data, and product capabilities. Sustainable public service modernization requires transforming civil service hiring to build agile, internal tech competencies capable of deploying responsive modern services. <span class="src">— StateScoop</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/security/new-kentucky-ciso-bob-brooks-leads-zero-trust-cybersecurity-project" target="_blank" rel="noopener">肯塔基州全面押注「零信任」：地方政府如何打一場打不完的資安防禦戰？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">New Kentucky CISO Bob Brooks Leads Zero Trust Cybersecurity Project</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/ac100fd/2147483647/strip/true/crop/1500x729+0+135/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F4c%2F96%2F3ee12d334249880138ad3da616ae%2Fadobestock-283639870.jpeg" alt="New Kentucky CISO Bob Brooks Leads Zero Trust Cybersecurity Project" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">肯塔基州資安長正全力推動將於 2027 年到位的全州「零信任」（Zero Trust）架構，這象徵傳統邊界防禦思維的徹底瓦解。以往政府網路習慣把防護牆築得高高的，裡面卻暢行無阻；但現在勒索軟體與內部威脅猖獗，「永不信任、始終驗證」成了保命唯一解。這件事的啟發在於：數位化程度越高的政府，體質就越脆弱。肯塔基的工程表明，地方政府不能再存有僥倖心態，必須把嚴謹的動態身分驗證深植於每一次數位互動之中。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Kentucky CISO Bob Brooks is spearheading a state-wide zero-trust cybersecurity project targeting complete rollout by 2027. Moving away from perimeter defenses toward continuous verification, this initiative underlines how regional governments must fundamentally reconstruct their security architectures to withstand relentless cyber incursions. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/workforce/should-the-state-cio-be-on-the-governors-cabinet" target="_blank" rel="noopener">資訊長該不該進州長內閣？一場關乎科技治理話語權的政治角力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Should the State CIO Be on the Governor’s Cabinet?</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/250db4c/2147483647/strip/true/crop/840x408+0+15/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F32%2F21%2Fb74111f94100bf9051243219eb8b%2Ffeature-seatatdesk.jpg" alt="Should the State CIO Be on the Governor’s Cabinet?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">美國約有一半的州 CIO 名列州長內閣，這篇探討指出了公部門權力結構的核心問題：科技主管到底只是打雜修電腦的配角，還是推動全州治理轉型的策略大腦？坐上內閣桌椅固然代表能第一時間影響施政優先級，但若缺乏跨部門的溝通與政治協商手腕，職銜再高也只是空殼。這對所有組織都是個警醒：真正的數位轉型從不是技術問題，而是科技領袖能否在核心權力結構中，把技術語言轉化為全民受益的政策成果。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">An analysis explores whether state Chief Information Officers should sit on gubernatorial cabinets. While formal executive status provides vital leverage for funding and priority alignment, true digital leadership effectiveness equally relies on cross-agency coalition building and translating technological infrastructure into tangible public value. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-21 08:03:01 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
