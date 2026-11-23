@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從百年制度重塑到主動式韌性：當視覺設計向歷史取經，數位治理重寫文明契約 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-23</div>
+    <div class="headline">從百年制度重塑到主動式韌性：當視覺設計向歷史取經，數位治理重寫文明契約</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is society made durable.</div>
+      <div class="quote-text-zh lang-zh-only">科技，不過是凝固而持久的社會關係。</div>
+      <div class="quote-author">— Bruno Latour（法國哲學家暨社會學家）</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">頂尖品牌不再賣弄炫技，而是將社群所有權轉化為活態視覺系統。</li>
+        <li class="flash-item">全球南方跳脫歐美框架，正以數位公共基建重塑跨國治理外交版圖。</li>
+        <li class="flash-item">面對系統性當機常態，智慧公共治理的真本事在於主動同理與優雅復原。</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/vintageartisanmarket-yokohamasymphostage/" target="_blank" rel="noopener">當老靈魂走進鋼筋水泥：橫濱職人市集如何用手作溫度活化冰冷商辦空間</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Vintage &amp; Artisan Market in みなとみらい</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/11/90053.jpg" alt="Vintage &amp; Artisan Market in みなとみらい" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">把古董家具與手作職人搬進嶄新的現代複合商業大樓，表面上是個假日市集，骨子裡其實是城市空間的療癒實驗。在高度數位化、講求效率的都會日常中，人們對「有磨損痕跡的物件」產生了前所未有的渴望。商辦不再只是上班打卡的地方，透過引入帶有時間厚度的生活器物，公共場域正在轉型為重聚情感與生活記憶的社交錨點。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The Vintage &amp; Artisan Market at Yokohama Symphostage demonstrates how modern commercial architecture can integrate craft and vintage culture. By juxtaposing time-worn objects within polished urban developments, the event transforms a transactional corporate space into a vibrant community hub, satisfying a growing urban appetite for authenticity and tactile storytelling in an increasingly digital world. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/event/botanicalart-fuchushibijutsukan/" target="_blank" rel="noopener">從植物圖鑑到居家美學：自然主義回潮不是裝飾風潮而是當代生活自救</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">花のある暮らし　ボタニカルアートとデザイン</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/11/E738-9814.jpg" alt="花のある暮らし　ボタニカルアートとデザイン" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">府中市美術館這場展覽最迷人的地方，在於梳理了植物畫如何從嚴謹的科學記錄，演變為滲透日常的印花與家飾設計。當代人重新狂熱於花草美學，絕非單純的裝飾主義復辟，而是面對高壓數位生活時的一種感官自救。把植物的自然秩序引進客廳，本質上是我們試圖在水泥叢林中，找回與大地生命週期的共感與安定感。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The botanical art and design exhibition at Fuchu Art Museum traces the evolution of botanical illustration from scientific documentation to domestic design. This enduring aesthetic reflects more than mere decorative flair; it highlights a modern psychological necessity to reconnect with the natural world, countering digital fatigue by embedding biological rhythms into daily living environments. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/how-someone-reimagined-co-op-brand-identity/" target="_blank" rel="noopener">拆解百年標誌做成開放積木！英國 Co-op 示範如何把會員所有權化為視覺系統</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">How SomeOne Reimagined the Co-op brand identity</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_1600_52.jpg" alt="How SomeOne Reimagined the Co-op brand identity" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">SomeOne 把英國合作社百年歷史的四葉標誌，拆解成象徵每個社員的幾何形狀，這是一次教科書等級的品牌重塑。他們沒有把歷史包袱當作負擔，而是把「合作社人人都是老闆」的社會理想，直接翻譯成自由變化的設計語言。在平台壟斷的時代，這種將權力下放、強調社群共治的視覺系統，才是贏得年輕世代信任的真武器。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">SomeOne’s rebranding of the historic UK Co-op deconstructs its legacy emblem into dynamic &#x27;Membershapes,&#x27; visually translating cooperative ownership into a flexible identity system. The project moves beyond conventional corporate aesthetics, demonstrating how progressive branding can tangibly reflect democratic governance and member-centric values, thereby reinforcing trust and community relevance in an era dominated by centralized digital platforms. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/johnson-banks-unveils-riba-brand-identity/" target="_blank" rel="noopener">負空間才是建築的靈魂！英國皇家建築師學會用空間留白顛覆兩百年老招牌</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Johnson Banks Unveils the RIBA brand identity</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_1600_3d.jpg" alt="Johnson Banks Unveils the RIBA brand identity" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">Johnson Banks 替兩百歲的英國皇家建築師學會換新裝，最妙的一手就是「用字母之間的虛空間構成立體感」。建築本來就是實體材料與虛擬空間的博弈，設計團隊用建築師最懂的行話——留白與光影，做出了極具衝擊力的動態字體。這告訴所有百年老機構：想要展現權威，不必擺出高高在上的官僚架勢，用自己的專業本質去玩視覺，反而最顯自信。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Johnson Banks reimagined the Royal Institute of British Architects (RIBA) identity for its bicentennial by foregrounding negative space within a bold typographic system. By speaking the foundational language of architecture—the tension between solid form and void—the brand revitalizes a historic institution, replacing traditional institutional stiffness with contemporary architectural agility and understated cultural confidence. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/best-week-die-grotesk-b416-and-sonnys-corner/" target="_blank" rel="noopener">對抗 AI 完美的平庸感：頂尖字體與排版設計為何集體轉向復古與機械美學？</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Best of the Week: Die Grotesk, B416, and Sonny&#x27;s Corner</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_best-of-week-2026-W47.jpg" alt="Best of the Week: Die Grotesk, B416, and Sonny&#x27;s Corner" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">從 Klim 設計的粗獷無襯線字體，到各路工作室對日常機械零件與歷史檔案的致敬，這週的視覺精選透露出明確的訊號：設計圈正在對 AI 生成的「無瑕疵平庸」展開反撲。刻意保留的金屬粗糙感、歷史字型的微妙笨拙，反而成了最具人味的設計辨識度。當技術讓完美變得廉價時，帶著時間灰塵與工藝痕跡的真實感才是真奢侈。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Featuring releases like Klim&#x27;s Die Grotesk and historical archival revivals, this weekly roundup signals a creative pivot toward mechanical pragmatism and deliberate imperfection. As generative AI floods the landscape with frictionless polish, leading designers are increasingly turning to industrial mechanics and archival heritage to inject humanity, friction, and contextual depth into contemporary visual culture. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQVHg2ZlVlaFBzUFNVZEJPRTZiaGo1TzJFOThrN0ZielBhX0lsakd2Wm5DLXVGSEJ4M0hrQVduMkoyaGVpRDZsa1AwOTJ2MGx4NG1IVENSTy1jSXdwZ010akt2U3hVS0lxWHRYVmVEQVZOWHYwSXRtSTdvUWoteWlTZUdLWUZLb1dVMUFJRkktdFVhdUk?oc=5" target="_blank" rel="noopener">寫給下個世紀的文明契約：AI 治理不能只忙著防弊，更要重塑世界公民公義</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">從 AI 治理到 AI for Good：寫給 2100 年的「新文明契約」與世界公民行動 - Yahoo新聞</div>
+            <div class="item-sentence lang-zh-only">這篇文章跳脫了技術規格與法律圍堵的小格局，直接把 AI 治理拉到「百年文明契約」的高度。我們現在對算力、數據主權與倫理邊界的每一次爭吵，其實都在定義下一個世紀人類如何共存。如果治理只聚焦在防範假訊息與侵權，就太浪費這場革命了；它真正的意義在於迫使世界公民重新思考：當機器承擔了智力勞動，社會資源該如何重新公平分配？ <span class="src">— Yahoo新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Framing artificial intelligence governance as a century-spanning social contract, this perspective urges humanity to move beyond defensive regulation and embrace proactive civic action. The true significance of this discourse lies in designing systemic fairness and collective well-being, recognizing that today’s ethical frameworks will determine whether emerging technological power deepens planetary inequality or revitalizes global democratic citizenship by the century’s end. <span class="src">— Yahoo新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxPMUNxV3JLU3NxZ2lJdDIzSlNyQjRRSVB3ZnQwTU5VVGs4T2EzQ2VFQTF4eXFfUU82MV9jZ0p6aWpObW4yUGhSSi1hTDI4Tm1OUnhocW9wZ2NqWEJPQ0pCRk5nWDY4WG1BMTFBNHVDYUkzSGZ4aDZiNUJMQXgxTzYxOWVGUjl5ZWRHYl9ROWt6NmRlZU0wRkNtbTMtQWZXM0RXdTE2VXZzcEtwSEZOR2FlakJ6Xy12a3NGNTcwTnpkQmJBT3UxMGFEejhmQWZyV1VlMHp0ZWx5Zw?oc=5" target="_blank" rel="noopener">跳脫西方數位霸權！印度與埃及結盟輸出數位公共基建，開拓治理新版圖</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Union Minister Jitendra Singh advocates deeper India-Egypt cooperation in digital governance and Capacity Building - News On AIR</div>
+            <div class="item-sentence lang-zh-only">印度與埃及深化數位治理與人才培育合作，背後是全球南方（Global South）正在成型的獨立技術版圖。長期以來發展中國家只能被動買歐美科技巨頭的昂貴方案，但印度證明了自己那套低成本、全民覆蓋的「數位公共基建」（如身分認證與即時支付）同樣能跑得很漂亮。這種南南合作象徵著治理話語權的轉移，數位主權不再是富國俱樂部的專利。 <span class="src">— News On AIR</span></div>
+            <div class="item-sentence-en lang-en-only">The partnership between India and Egypt on digital governance highlights the growing momentum of Global South collaboration in public technology. By sharing expertise in scalable, low-cost digital public infrastructure, India is advancing an alternative governance model that challenges Western technological hegemony, empowering developing nations to construct sovereign, inclusive digital architectures tailored to their unique socioeconomic realities. <span class="src">— News On AIR</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxPMUNxV3JLU3NxZ2lJdDIzSlNyQjRRSVB3ZnQwTU5VVGs4T2EzQ2VFQTF4eXFfUU82MV9jZ0p6aWpObW4yUGhSSi1hTDI4Tm1OUnhocW9wZ2NqWEJPQ0pCRk5nWDY4WG1BMTFBNHVDYUkzSGZ4aDZiNUJMQXgxTzYxOWVGUjl5ZWRHYl9ROWt6NmRlZU0wRkNtbTMtQWZXM0RXdTE2VXZzcEtwSEZOR2FlakJ6Xy12a3NGNTcwTnpkQmJBT3UxMGFEejhmQWZyV1VlMHp0ZWx5Zw?oc=5" target="_blank" rel="noopener">買系統容易換腦袋難：印埃合作點出數位轉型成敗在於「公務體系能力重構」</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Union Minister Jitendra Singh advocates deeper India-Egypt cooperation in digital governance and Capacity Building - News On AIR</div>
+            <div class="item-sentence lang-zh-only">同樣是看印度與埃及的治理合作，更底層的痛點其實在於「公務員的心態升級」。很多政府以為買了 AI 平台或雲端系統就叫智慧治理，結果公務員還是用上世紀的蓋章思維在跑流程。印埃兩國把「治理能力培育」放在合作第一順位，正好打中要害：數位轉型從來不是資訊工程問題，而是一場組織文化與官僚心智模型的再造手術。 <span class="src">— News On AIR</span></div>
+            <div class="item-sentence-en lang-en-only">Focusing on the capacity-building dimension of the India-Egypt governance accord, this initiative addresses the primary bottleneck of public-sector modernization: institutional mindset. True administrative transformation cannot be purchased off the shelf through software; it requires systematically reskilling public servants and redesigning bureaucratic instincts to foster an agile, service-oriented culture capable of leveraging digital infrastructure effectively. <span class="src">— News On AIR</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/blogs/lohrmann-on-cybersecurity/where-next-after-a-series-of-headline-grabbing-outages" target="_blank" rel="noopener">別再幻想零故障！從關鍵基建大當機看政府必須學會的「優雅復原力」</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Where Next After a Series of Headline-Grabbing Outages?</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/6ad4806/2147483647/strip/true/crop/5656x2749+0+479/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F89%2F32%2F4497b6564696a4ad376acd0cb4a7%2Fadobestock-2082424156.jpeg" alt="Where Next After a Series of Headline-Grabbing Outages?" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">最近一連串震驚各界的關鍵基礎設施大當機，給所有推動數位治理的人潑了一桶冷水。過去我們總以為把系統做得滴水不漏就好，但現實證明：在大規模網路攻擊與複雜依賴鏈面前，斷線只是時間問題。未來的治理成熟度，不再看你多久沒出包，而是看當系統崩潰時，你有沒有備案能讓民生服務不中斷、而且在最短時間內優雅爬起來。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">Recent high-profile outages across critical infrastructure indicate that the pursuit of absolute digital infallibility is an illusion. Discussions from leading cybersecurity summits highlight that modern governance must pivot from rigid defense to systemic resilience. The hallmark of institutional strength is no longer an unbroken uptime record, but the operational agility to maintain essential citizen services and recover gracefully during unavoidable collapses. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE52NHk5MEZWWGRmWDV4RUJBdjRMalFBUmVhM2JkRmREdzlKbDI0TDA2cnppcW9KbmxGS1BmTmFPWWg3V1FzRDU4TzFib0tCdVZETXc?oc=5" target="_blank" rel="noopener">從被動臨櫃到主動敲門：新竹縣示範如何用 AI 把冰冷政務轉化為有感服務</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">竹縣發表AI數位治理藍圖 以「主動服務」打造有溫度的智慧城市 - 蕃新聞</div>
+            <div class="item-sentence lang-zh-only">新竹縣端出 AI 數位治理藍圖，最打動人的關鍵字是「主動服務」。過去政府運作習慣坐等民眾拿號碼牌臨櫃申辦，甚至設下層層申請門檻；而主動治理則是透過數據預判家庭變故、托育需求或長照痛點，在民眾開口前就把資源送到家。科技在公共治理裡的最高境界，不是秀技術肌肉，而是化身成溫柔的雷達，接住那些不會大聲疾呼的弱勢需求。 <span class="src">— 蕃新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Hsinchu County’s artificial intelligence governance roadmap shifts municipal administration from passive, counter-based processing to proactive service delivery. By harnessing predictive analytics to identify citizens&#x27; welfare and care needs before they officially file requests, the initiative humanizes public governance. It illustrates that technological advancement in public management is most impactful when expanding empathy and institutional accessibility. <span class="src">— 蕃新聞</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-23 08:04:14 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
