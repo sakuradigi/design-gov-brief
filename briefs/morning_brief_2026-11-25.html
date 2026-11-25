@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從隱面幻形到影子AI防線：當視覺語彙拆解神話，科技治理正重組現實秩序 · 早晨簡報</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --base-font-size: 16px;
+  --bg-top: #F9F9F7;
+  --bg-bottom: #FCFCFB;
+  --text-main: #2E2C27;
+  --text-sub: #6B6A63;
+  --border-color: #E4E3DC;
+  --accent-color: #C6613F;
+}
+
+html { font-size: var(--base-font-size); }
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--bg-bottom);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.band { width: 100%; }
+.band-top { background: var(--bg-top); border-bottom: 1px solid #E1E1DF; }
+.band-bottom { background: var(--bg-bottom); }
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 40px;
+}
+
+.band-top .inner { padding: 48px 40px 36px; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-home {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-home:hover { color: var(--accent-color); }
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn-group {
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.btn-ctrl {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+  cursor: pointer;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+.btn-ctrl:last-child { border-right: none; }
+.btn-ctrl:hover, .btn-ctrl.active {
+  background: #F0EFEA;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.day-date {
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: "Noto Serif TC", "PMingLiU", "Songti TC", Georgia, serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 960px;
+  margin-bottom: 28px;
+}
+
+/* 每日格言區塊 */
+.quote-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+}
+
+.quote-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.quote-text-en {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.quote-text-zh {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* 「一句話快訊」區塊 */
+.flash-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px 26px;
+  margin-bottom: 8px;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.flash-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flash-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+.flash-item:last-child { margin-bottom: 0; }
+
+.flash-item::before {
+  content: "⚡";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 0.8125rem;
+}
+
+.section-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.list-block { margin-bottom: 48px; }
+.list-block:last-child { margin-bottom: 0; }
+
+.item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.item:hover { border-color: #B4B3A8; }
+
+.item-num {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-variant-numeric: tabular-nums;
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.item-body { flex: 1; }
+
+.item-title {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.item-title a, .item-sentence a, .item-sentence-en a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+}
+.item-title a:hover { color: var(--accent-color); }
+
+.item-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-top);
+}
+
+.item-sentence {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.item-sentence-en {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #7B7973;
+}
+
+.item-sentence .src, .item-sentence-en .src {
+  text-decoration: underline;
+  text-decoration-color: #B4B3A8;
+  text-underline-offset: 3px;
+  color: var(--text-sub);
+}
+
+.calm-line {
+  font-size: 0.9375rem;
+  color: var(--text-sub);
+  padding: 8px 0 0;
+}
+
+/* 頁尾中元資料與生成資訊欄位 (Timestamp & LLM Model) */
+.page-footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--text-sub);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-pill {
+  background: #F0EFEA;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+body.lang-zh-mode .lang-en-only { display: none !important; }
+body.lang-en-mode .lang-zh-only { display: none !important; }
+
+@media (max-width: 768px) {
+  .headline { font-size: 1.625rem; }
+  .inner { padding: 32px 20px; }
+  .band-top .inner { padding: 32px 20px 24px; }
+  .toolbar { flex-direction: column; align-items: flex-start; }
+  .item { padding: 16px; }
+  .page-footer { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body class="lang-both-mode">
+
+<div class="band band-top">
+  <div class="inner">
+
+    <div class="toolbar">
+      <a href="../index.html" class="nav-home">← 返回日報歸檔總覽頁面</a>
+      <div class="controls-group">
+        <div class="control-btn-group">
+          <button class="btn-ctrl" onclick="changeFontSize(-1)" title="縮小字體">A-</button>
+          <button class="btn-ctrl" onclick="resetFontSize()" title="重置字體">標準</button>
+          <button class="btn-ctrl" onclick="changeFontSize(1)" title="放大字體">A+</button>
+        </div>
+        <div class="control-btn-group">
+          <button class="btn-ctrl active" id="btn-lang-both" onclick="setLanguage('both')">中英</button>
+          <button class="btn-ctrl" id="btn-lang-zh" onclick="setLanguage('zh')">繁中</button>
+          <button class="btn-ctrl" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-date">2026-11-25</div>
+    <div class="headline">從隱面幻形到影子AI防線：當視覺語彙拆解神話，科技治理正重組現實秩序</div>
+
+    <!-- 💡 每日格言 -->
+    <div class="quote-card">
+      <div class="quote-title">💡 每日格言 · Daily Insight</div>
+      <div class="quote-text-en lang-en-only">Technology is not destiny. We shape our tools and thereafter our tools shape us.</div>
+      <div class="quote-text-zh lang-zh-only">科技絕非宿命。是我們先塑造了工具，隨後工具才反過來塑造了我們。</div>
+      <div class="quote-author">— John Culkin</div>
+    </div>
+
+    <!-- ⚡ 今日重點速覽（一句話快訊） -->
+    <div class="flash-card">
+      <div class="flash-header">
+        <span>⚡ 今日重點速覽 · Daily Flash Takeaways</span>
+        <span class="flash-badge">30秒速讀</span>
+      </div>
+      <ul class="flash-list">
+                <li class="flash-item">靜嘉堂面具展與劇院海報打破符號慣性，視覺設計正轉向真實人性的多面解構</li>
+        <li class="flash-item">企業軟體巨頭改組押注AI治理，面對影子AI蔓延，管理體系進入實戰架構期</li>
+        <li class="flash-item">從台北智慧出海到紐約跨區激勵，公部門正用開源整合與務實效率改寫治理邏輯</li>
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="band band-bottom">
+  <div class="inner">
+    <div class="calm-line">以下為今日從全球設計與治理媒體 RSS 即時爬取、驗證並摘要的文章。</div>
+        <div class="list-block">
+      <div class="section-heading">🎨 設計趨勢、視覺美學與 UI/UX · Design, Aesthetics & UX</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.axismag.jp/posts/2026/11/728489.html" target="_blank" rel="noopener">跳脫無表情刻板印象：靜嘉堂面具展看神性與人性的視覺魔力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">静嘉堂文庫美術館「THE MASKS：仮面に魅せられた人々」展。人がつくった人の顔。その魔力に迫る。</div>
+            <img class="item-image" src="https://www.axismag.jp/axismag-admin/wp-content/uploads/2026/10/f6346c8f3c97b45a46896d4d71debc65.jpg" alt="静嘉堂文庫美術館「THE MASKS：仮面に魅せられた人々」展。人がつくった人の顔。その魔力に迫る。" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">大眾常把「能面」當作毫無表情的代名詞，但靜嘉堂這場展覽直接打破了這層刻板偏見。面具不是為了掩蓋自我，而是古人用來具象化恐懼、神聖與幽微情緒的載體。在當代數位濾鏡與虛擬替身氾濫的時代，重新審視這些雕刻面具，會發現「人造的臉」反而映照出最真實的心理投射。對設計師來說，這是一堂深度的造型人類學：真正的視覺力量不在於無瑕，而在於光影轉換間流露的複雜人性層次。 <span class="src">— AXIS Web</span></div>
+            <div class="item-sentence-en lang-en-only">The Seikado Bunko Art Museum&#x27;s exhibition &quot;THE MASKS&quot; challenges the popular cliché of the blank Noh mask. Showcasing how carved wooden masks embody profound emotional and divine nuances, the curated collection provides valuable design inspiration, demonstrating that artificial personas can reflect deep human psychologies and cultural complexities beyond mere superficial styling. <span class="src">— AXIS Web</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.japandesign.ne.jp/news/2026/11/91161/" target="_blank" rel="noopener">直通米蘭設計週的跳板：ADF大獎示範設計競賽的實質孵化力</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">「ADFデザインアワード2027」が12月18日まで作品を募集中！受賞作品はミラノデザインウィークで展示</div>
+            <img class="item-image" src="https://www.japandesign.ne.jp/wp/wp-content/uploads/2026/11/adf-web-magazine-adf-design-award-2027.webp" alt="「ADFデザインアワード2027」が12月18日まで作品を募集中！受賞作品はミラノデザインウィークで展示" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">很多設計獎辦完就發張獎狀了事，但 ADF 設計大獎之所以值得關注，在於它把「得獎」直接對接「全球曝光」。讓新銳創作者帶著作品空降米蘭設計週，這種把獎項當成國際展演跳板的機制，才是設計社群真正需要的支持。當全球設計競賽陷入過度包裝與搶報名費的內捲，ADF 提醒了主辦方與城市治理者：競賽的終極價值不是評分，而是替尚未被看見的實體想像，搭建一條走入全球市場的實體跑道。 <span class="src">— JDN (Japan Design Net)</span></div>
+            <div class="item-sentence-en lang-en-only">The ADF Design Award 2027 offers emerging architects and designers a pragmatic launchpad by showcasing winning works at Milan Design Week. Moving away from hollow accolades, this initiative underscores how creative institutions must actively build tangible bridges between local talent and global markets rather than merely hosting theoretical design competitions. <span class="src">— JDN (Japan Design Net)</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/poster-design-maison-saint-gervais-seasons-dual-room/" target="_blank" rel="noopener">用九套動態字體打破劇院沉悶：日內瓦劇院的視覺季刊實驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Poster Design: Maison Saint-Gervais Seasons by Dual Room</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_maison-saint-gervais-2025-26-2026-27-fonts-use.jpg" alt="Poster Design: Maison Saint-Gervais Seasons by Dual Room" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">瑞士 Dual Room 為日內瓦劇院打造的新季視覺，用九款隨季節流轉切換的字體，搭配攝影師 Matthieu Croizier 略帶詭譎的人像，把文化海報變成了當代公共藝術。傳統劇院總習慣優雅規矩的排版，但這項設計證明，公共場館的品牌重塑不需要乖乖牌。透過字體張力與破格影像碰撞，它讓老建築瞬間變成街頭話題。這給文化場館的啟發是：別害怕視覺上的衝突感，大膽打破秩序才是抓住年輕受眾目光的唯一捷徑。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Studio Dual Room transformed Geneva&#x27;s Maison Saint-Gervais theater branding by deploying nine shifting typefaces across dynamic seasonal posters. Pairing unconventional typography with striking figurative photography, the project illustrates how legacy cultural venues can shed stuffy perceptions to spark vibrant street-level curiosity through provocative, boundary-pushing graphic design choices. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/book-birkenstock-inside-bureau-borsches-editorial-design/" target="_blank" rel="noopener">將兩百五十年摺成百米長軸：勃肯鞋用編輯設計解構品牌神話</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">Book of Birkenstock: Inside Bureau Borsche&#x27;s Editorial Design</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_1600_59.jpg" alt="Book of Birkenstock: Inside Bureau Borsche&#x27;s Editorial Design" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">由 Bureau Borsche 操刀的勃肯鞋歷史專書，不走傳統企業自吹自擂的編年史路線，而是把 250 年的檔案幻化成全長 130 公尺的視覺長河。它把工業模具、普羅大眾穿舊的鞋底與時尚大片平起平坐，重新定義了「產品檔案」的敘事力量。這本書告訴品牌經營者：最好的歷史敘事不是列出偉大里程碑，而是誠實展現產品如何嵌入時代的生活肌理。當設計能把工業沉積物轉譯為流行文化史，品牌的文化資本才真正立體。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Bureau Borsche designed the &#x27;Book of Birkenstock&#x27; as an uninterrupted 130-meter continuous timeline across 608 pages, celebrating 250 years of heritage. By treating raw archives, archival tooling, and worn footwear with equal editorial weight, the project demonstrates how authentic material documentation can elevate utilitarian products into deeply compelling cultural artifacts. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://abduzeedo.com/new-orbit-ultra-low-satellite-brand-identity-manual/" target="_blank" rel="noopener">讓低軌道物理學變性感：Manual 替極低軌衛星打造硬核品牌語彙</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">New Orbit: Ultra-Low Satellite Brand Identity by Manual</div>
+            <img class="item-image" src="https://cms.abduzeedo.com/sites/default/files/originals/hero_new-orbit-manual.jpg" alt="New Orbit: Ultra-Low Satellite Brand Identity by Manual" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">離地 180 公里的「極低軌道」聽起來像無聊的航太物理名詞，但設計工作室 Manual 卻把它轉化為極具詩意的視覺識別。利用帶電粒子網點、冷冽的工程線圖與粗糙的牛皮紙印刷，打破了航太科技非得科技藍或金屬銀的俗套。這專案展現了設計在尖端科技傳播中的關鍵槓桿：當複雜的深科技（Deep Tech）需要向投資人與大眾解釋自己時，感性又精準的美學轉譯，往往才是拉近認知距離的催化劑。 <span class="src">— Abduzeedo</span></div>
+            <div class="item-sentence-en lang-en-only">Design agency Manual developed a visceral brand identity for New Orbit, an aerospace startup operating in ultra-low Earth orbits. Blending charged-particle point patterns, technical blueprints, and raw tactile paper substrates, the design demystifies abstract aerospace engineering into an arresting visual narrative that makes deep-tech communication intuitively engaging and culturally relevant. <span class="src">— Abduzeedo</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-block">
+      <div class="section-heading">🏛️ 公共治理、社會創新與數位政府 · Governance, Civic Innovation & Digital Gov</div>
+      <div class="item-grid">
+        <div class="item">
+          <div class="item-num">01</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiswJBVV95cUxOV0U1Wk16WmEyZ0xYZkk4Zm5sNl95X0ZleFc0Vl8telFfNmhWM1ZxY0FXUmdCVVBaOW9SMld1MUdDem5lR1ZrZ2JzV3o3R0RWbnhnZEMxdm9NNF9rd0t2NDFuQm9YMjhLYmRMN1FlNG42OEtKSWVfWW1Id3FjNGVrbENDa3NsUVBybjZFelNQZ3hNVzVHNkVkMk5HUzBjcGtyVHlRdDVOeW00WXp0NG5wSVNjSGliRF9YZkRlSUE1WndDVGJtejRibzMzM1RjVzlQU1FUZG1WcG5HYTFzVGJMNU43Q2RBakNiSGFLeURRa1RyYjBWeGh4VTZFdkhrc1ZNNW1tNFdYVE9SZUpKRzIwWDFRNjdscUNVcXljVTVwcXBxelU3aVB1TnZaU3g1dlJOa3VF?oc=5" target="_blank" rel="noopener">從內需實驗到區域輸出：台北智慧城市赴泰國參展的治理出海記</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">北市組團參加「2026年泰國智慧城市展」成效豐碩 - Yahoo新聞</div>
+            <div class="item-sentence lang-zh-only">台北組團進軍泰國智慧城市展，不再只是官方拜會，而是把近年累積的智慧交通與公衛治理模組打包成實戰解決方案。東南亞城市正處於基礎建設翻新的狂飆期，這正是台灣軟硬整合優勢切入的黃金窗口。這趟出訪的核心啟發在於：城市治理不能關起門來自我感覺良好，把在本地試驗成功的公共服務數位化架構轉化為可輸出的「治理產品」，才是未來城市外交與產業出海的雙贏策略。 <span class="src">— Yahoo新聞</span></div>
+            <div class="item-sentence-en lang-en-only">Taipei City&#x27;s active participation in the 2026 Thailand Smart City Expo reflects a strategic transition from domestic smart experiments to exporting holistic civic-tech solutions. By sharing scalable public management models with rapidly urbanizing Southeast Asian neighbors, municipal governance becomes a potent instrument for regional technological collaboration and soft-power expansion. <span class="src">— Yahoo新聞</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">02</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNalZYY3FsQ0FqQ0ZyLU1fLTdOLTBHWEYwcGhTelU2SDU2V2VpeEJFMXBLSGtoY3liU0Y1bm1STnVXRklvZ1FkeU50d3BhTmZjUFJFLUt1NjBvdTV5cDRWSkh4TGNSUVQtMjF0VzN4aXl6TkVOWGtTRDVCTjlxQW1KR2RjRmJlZTFh?oc=5" target="_blank" rel="noopener">老牌開源巨頭更名 Choreo Labs：軟體產業轉向 AI 治理的風向球</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">WSO2 rebrands as Choreo Labs to focus on AI governance - Portal ERP</div>
+            <div class="item-sentence lang-zh-only">老牌 API 與開源整合巨頭 WSO2 正式更名為 Choreo Labs，全力押注 AI 治理與自動化平台。這個改名動作絕非表面行銷，而是標誌著企業架構軟體的典範轉移：未來的核心競爭力不再只是系統互通，而是如何管好散落各處的 AI Agent 與數據模型。對數位架構師而言，這是一個巨大訊號：AI 落地已從「功能炫技」走向「責任治理」，誰能率先提供透明、可控的 AI 運算架構，誰就能在下一輪企業數位基建中稱霸。 <span class="src">— Portal ERP</span></div>
+            <div class="item-sentence-en lang-en-only">Open-source middleware pioneer WSO2 has rebranded as Choreo Labs, marking a decisive shift toward enterprise AI governance and automation platforms. The strategic move highlights a broader industry trend where managing autonomous AI agents and complex data integrations reliably has become the cornerstone of modern corporate IT infrastructure and software architecture. <span class="src">— Portal ERP</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">03</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE1EMmRfV1VzR0ZxdUNhOEFyOFZoV1hnWUo2UjZXNUFWcFctbGEzdVFuS3VXMnltM0JjWFFHbUoyX0wzaTYtWnJ3N3o2WEVSbk0?oc=5" target="_blank" rel="noopener">告別一味禁止的防堵思維：五大維度拆解影子 AI 的治理實戰</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">シャドーAI、どう防ぐ？ AIガバナンスに欠かせない「5つの評価軸」と11の実装策 - ビジネス+IT</div>
+            <div class="item-sentence lang-zh-only">員工私下用未授權 AI 工具處理公務的「影子 AI」問題，已讓全球資安主管夜不能寐。日媒整理的五大評估維度與落地方案點出關鍵：越嚴格的禁令只會逼員工把行為地下化，健康的治理是建立透明的分級通道與採購指引。這給管理層敲響警鐘：治理不是站在創新的對立面踩煞車，而是替團隊鋪設好防護欄，讓效率工具在合規且受保護的環境下發揮作用，否則組織終將在資訊外洩與失去效率間雙輸。 <span class="src">— ビジネス+IT</span></div>
+            <div class="item-sentence-en lang-en-only">Addressing the widespread surge of &#x27;shadow AI&#x27; across corporate landscapes, this analysis provides five diagnostic axes and practical deployment tactics to manage unauthorized tool usage. Instead of issuing counterproductive blanket bans, modern IT governance focuses on transparent vetting protocols and structured adoption pathways, balancing enterprise-level cybersecurity with grassroots technological agility. <span class="src">— ビジネス+IT</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">04</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://www.govtech.com/civic/new-york-state-grants-reward-local-government-efficiency" target="_blank" rel="noopener">紐約州用補助金撬動跨區整併：打破公部門煙囪的效率實驗</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">New York State Grants Reward Local Government Efficiency</div>
+            <img class="item-image" src="https://erepublic.brightspotcdn.com/dims4/default/8cc4ec8/2147483647/strip/true/crop/1429x695+0+129/resize/1440x700!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F8d%2F41%2Ffe58f6c2441d912690abbc4c1400%2Fny-capitol.jpg" alt="New York State Grants Reward Local Government Efficiency" loading="lazy" onerror="this.style.display='none'">
+            <div class="item-sentence lang-zh-only">紐約州政府祭出「地方政府效率補助金」，專門獎勵願意跨區域整併服務、共享系統的基層單位。公部門最常見的病灶就是各自為政、重複採購，紐約州不靠由上而下的強迫命令，而是用專案經費誘導大家坐下來談整合。這種治理設計非常聰明：唯有透過財務誘因打破行政壁壘，地方才能在不犧牲公共服務品質的前提下精簡人事與 IT 支出。想提升政府效能？學會用制度設計引導跨界合作才是正解。 <span class="src">— GovTech</span></div>
+            <div class="item-sentence-en lang-en-only">New York State&#x27;s Local Government Efficiency Grant program provides direct financial incentives to reward regional municipal bodies that merge services and consolidate operational silos. By employing funding rather than bureaucratic mandates, the policy offers a strategic model for breaking administrative fragmentation and driving sustainable public-sector productivity gains. <span class="src">— GovTech</span></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item-num">05</div>
+          <div class="item-body">
+            <div class="item-title"><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE54ODVCSHdzaHluWW9fZUdlTlVXdDFXWWN6U0k2emJxTUdrUmF3Szd3b09ERUdER0ZUckJkWWZjcTJ4ZlF1SzhRTTlXaWc0akRHdXhqRnBnS0Z5TmZibzA0?oc=5" target="_blank" rel="noopener">不再只是宣傳口號：BSI 標準年會揭示 AI 治理如何與永續指標深度綁定</a></div>
+            <div class="item-original-title" style="font-size: 0.85rem; color: #888; margin-bottom: 8px;">2026 BSI國際標準管理年會：聚焦 AI 治理與永續價值鏈- 商情 - 工商時報</div>
+            <div class="item-sentence lang-zh-only">BSI 國際標準管理年會今年聚焦 AI 治理與永續價值鏈，釋出強烈訊號：算力暴增帶來的能源消耗，以及演算偏差造成的社會衝擊，已讓 AI 不得不直面 ESG 的嚴苛檢驗。過去企業談 AI 只看獲利與效率，現在連供應鏈碳足跡和演算法公平性都要算在帳上。對商業決策者而言，治理合規不再是後勤單位的瑣事，而是決定企業能否立足於國際採購清單的核心門檻，提早佈局標準化才是真正的競爭護城河。 <span class="src">— 工商時報</span></div>
+            <div class="item-sentence-en lang-en-only">The 2026 BSI International Standards Management Conference linked generative AI governance directly to sustainable supply chain accountability. Highlighting escalating computing energy demands and algorithmic fairness, the forum emphasizes that standardized compliance frameworks are no longer mere regulatory burdens, but prerequisite operational benchmarks for securing competitive, resilient global business value. <span class="src">— 工商時報</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 頁尾生成資訊欄位 (模型與時間戳記) -->
+    <footer class="page-footer">
+      <div class="meta-item">
+        <span>🤖 生成模型：</span>
+        <span class="meta-pill">RSS + Gemini 3.8 Flash</span>
+      </div>
+      <div class="meta-item">
+        <span>⏱️ 生成時間戳記：</span>
+        <span class="meta-pill">2026-11-25 08:04:16 (UTC+8)</span>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+let currentFontSize = parseInt(localStorage.getItem('brief_font_size')) || 16;
+applyFontSize(currentFontSize);
+
+function changeFontSize(delta) {
+  currentFontSize = Math.min(Math.max(currentFontSize + delta * 2, 14), 26);
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function resetFontSize() {
+  currentFontSize = 16;
+  localStorage.setItem('brief_font_size', currentFontSize);
+  applyFontSize(currentFontSize);
+}
+
+function applyFontSize(size) {
+  document.documentElement.style.setProperty('--base-font-size', size + 'px');
+}
+
+let currentLang = localStorage.getItem('brief_lang') || 'both';
+setLanguage(currentLang);
+
+function setLanguage(mode) {
+  document.body.classList.remove('lang-both-mode', 'lang-zh-mode', 'lang-en-mode');
+  document.body.classList.add('lang-' + mode + '-mode');
+  
+  document.querySelectorAll('.controls-group .btn-ctrl').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('btn-lang-' + mode);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  localStorage.setItem('brief_lang', mode);
+}
+</script>
+
+</body>
+</html>
